@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "6.1.0",
+    "@craco/craco": "6.1.1",
     "@tailwindcss/postcss7-compat": "2.0.3",
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.5",
