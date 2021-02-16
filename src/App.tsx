@@ -1,5 +1,5 @@
 import React from 'react';
-import AppHeader from './components/AppHeader'
+import AppHeader from '../src/components/app-header/AppHeader';
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
