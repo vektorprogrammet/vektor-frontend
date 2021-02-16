@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./AppHeader.scss"
 
 const AppHeader: React.FC = () => {
     
@@ -16,6 +16,7 @@ const AppHeader: React.FC = () => {
                         Velkommen
                     </h1>
                 </div>
+                <div className="app-header-element">Eksempel :)</div>
             </div>
         </div>
 
