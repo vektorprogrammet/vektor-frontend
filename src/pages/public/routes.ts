@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Assistenter from './Assistenter'
 import ForForeldre from './ForForeldre'
 import ForSkoler from './ForSkoler'
@@ -16,7 +16,10 @@ type PageRoute = {
 const routes: Array<PageRoute> = [
     {route: "/assistenter", component: Assistenter},
     {route: "/for_foreldre", component: ForForeldre},
-    {route: "/for_skoler", component: ForSkoler}
+    {route: "/for_skoler", component: ForSkoler},
+    {route: "/kontakt", component: Kontakt},
+    {route: "/om_oss", component: OmOss},
+    {route: "/team", component: Team}
 ]
 
 export default routes
