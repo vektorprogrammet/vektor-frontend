@@ -1,4 +1,5 @@
 import React from 'react';
+import AppFooter from './components/AppFooter/AppFooter'
 import AppHeader from './components/Header/AppHeader'
 
 
@@ -29,6 +30,9 @@ function App() {
 
           </Switch>
         </div>
+        <footer>
+          <AppFooter/>
+        </footer>
       </div>
     </BrowserRouter>
   );
