@@ -1,6 +1,6 @@
 import React from 'react';
 
-function OmOss() {
+const OmOss = function() {
   return <h1>Siden for OmOss</h1>;
 }
 

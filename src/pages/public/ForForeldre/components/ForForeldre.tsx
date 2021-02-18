@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ForForeldre() {
+const ForForeldre = function() {
   return <h1>Dette er siden for foreldre</h1>;
 }
 

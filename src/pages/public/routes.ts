@@ -6,9 +6,9 @@ import Kontakt from './Kontakt'
 import OmOss from './OmOss'
 import Team from './Team'
 
-type PageRoute = {
+interface PageRoute {
     route: string,
-    component: React.FC
+    component: React.FunctionComponent | React.ComponentClass
 }
 
 

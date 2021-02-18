@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Assistenter() {
+const Assistenter = function() {
   return <h1>Siden for assistsdfølaksdjflaksdfenter</h1>;
 }
 

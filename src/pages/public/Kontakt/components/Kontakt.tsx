@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Kontakt() {
+const Kontakt = function() {
   return <h1>Siden for kontakt</h1>;
 }
 
