@@ -1,6 +1,6 @@
 import React from 'react';
-import AppHeader from './components/AppHeader'
 import AppFooter from './components/AppFooter/AppFooter'
+import AppHeader from './components/Header/AppHeader'
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
