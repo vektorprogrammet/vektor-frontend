@@ -32,6 +32,6 @@ function App() : JSX.Element {
       </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
