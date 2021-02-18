@@ -1,5 +1,5 @@
 import React from 'react';
-import AppHeader from './components/AppHeader'
+import AppHeader from './components/AppHeader';
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import RoutedComponent from './components/RoutedComponent';
 
-function App() {
+const App = function() : JSX.Element {
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,7 +22,7 @@ function App() {
 
             {/* Use render when the rendered component needs props */}
             <Route path="/test_route_with_props" exact 
-            render={(props) => (
+            render={ () => (
               <RoutedComponent showText="This is a prop!"/>
             )} 
             />
@@ -32,6 +32,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
