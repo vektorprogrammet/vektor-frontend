@@ -1,5 +1,5 @@
 import React from 'react';
-import AppHeader from './components/AppHeader';
+import AppHeader from './components/Header/AppHeader';
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import RoutedComponent from './components/RoutedComponent';
 
-const App = function() : JSX.Element {
+function App() : JSX.Element {
   return (
     <BrowserRouter>
       <div className="App">
