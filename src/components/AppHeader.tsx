@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const AppHeader: React.FC = () => {
+const AppHeader = () => {
     
     return ( 
         <div>
