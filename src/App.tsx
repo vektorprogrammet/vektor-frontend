@@ -1,5 +1,6 @@
 import React from 'react';
-import AppHeader from './components/Header/AppHeader';
+import AppFooter from './components/AppFooter/AppFooter'
+import AppHeader from './components/Header/AppHeader'
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -29,6 +30,9 @@ function App() : JSX.Element {
 
           </Switch>
         </div>
+        <footer>
+          <AppFooter/>
+        </footer>
       </div>
     </BrowserRouter>
   );
