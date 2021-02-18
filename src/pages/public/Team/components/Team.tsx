@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Team() {
+const Team = function() {
   return <h1>Siden for team</h1>;
 }
 

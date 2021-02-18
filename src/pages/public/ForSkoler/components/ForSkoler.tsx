@@ -1,7 +1,7 @@
 import React from 'react';
 
-function ForSkoler() {
-  return <h1>Siden for skoler</h1>;
+const ForSkoler = function(){
+  return <h1>For skoler</h1>
 }
 
 export default ForSkoler;

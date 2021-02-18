@@ -8,7 +8,7 @@ import Team from './Team'
 
 type PageRoute = {
     route: string,
-    component: React.FC
+    component: React.FunctionComponent | React.ComponentClass
 }
 
 
