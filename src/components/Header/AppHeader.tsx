@@ -16,7 +16,7 @@ const AppHeader = () => {
                         Velkommen!
                     </h1>
                     <p>
-                        Nettsiden er for tiden under konstruksjno.
+                        Nettsiden er for tiden under konstruksjon.
                         Kom gjerne igjen senere!
                     </p>
                 </div>
