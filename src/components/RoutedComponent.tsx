@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 /* The TypeScript way: defining interface (shape of data object) for props */
 interface routedComponentProps {
