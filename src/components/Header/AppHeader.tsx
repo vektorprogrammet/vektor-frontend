@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 const AppHeader = () => {
@@ -13,8 +13,14 @@ const AppHeader = () => {
             <div className="Banner bg-white shadow">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
                     <h1 className="text-3xl font-bold leading-tight text-gray-900">
-                        Velkommen
+                        Velkommen!
                     </h1>
+                    <br/><br/>
+                    <p>
+                        Nettsiden er for tiden under konstruksjon.
+                        <br/>
+                        <b>Kom gjerne igjen senere!</b>
+                    </p>
                 </div>
             </div>
         </div>
