@@ -15,6 +15,7 @@ const AppHeader = () => {
                     <h1 className="text-3xl font-bold leading-tight text-gray-900">
                         Velkommen!
                     </h1>
+                    <br/><br/>
                     <p>
                         Nettsiden er for tiden under konstruksjon.
                         <br/>
