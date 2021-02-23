@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 const AppHeader = () => {
@@ -19,7 +19,7 @@ const AppHeader = () => {
             </div>
         </div>
 
-    )
-}
+    );
+};
 
 export default AppHeader;
