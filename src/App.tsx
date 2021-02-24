@@ -1,4 +1,5 @@
 import React from 'react';
+import routes from './pages/public/routes';
 import AppFooter from './components/AppFooter/AppFooter'
 import AppHeader from './components/Header/AppHeader'
 
@@ -17,9 +18,9 @@ function App() : JSX.Element {
         </header>
         <div className="content">
           <Switch>
-
             {/* Use component when the rendered component needs no props */}
-            <Route path="/test_route" exact component={RoutedComponent} />
+            {/* Getting the routes from the defined route file in pages */}
+            {routes.map((page_route, index) => <Route key={index} path={page_route.route} exact component={page_route.component} />)}
 
             {/* Use render when the rendered component needs props */}
             <Route path="/test_route_with_props" exact 
