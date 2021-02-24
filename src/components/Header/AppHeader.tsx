@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 
-const AppHeader: React.FC = () => {
+const AppHeader = () => {
     
     return ( 
         <div>
@@ -19,7 +19,7 @@ const AppHeader: React.FC = () => {
             </div>
         </div>
 
-    )
-}
+    );
+};
 
 export default AppHeader;

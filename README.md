@@ -39,6 +39,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## `yarn lint`
+
+Runs the linter with `eslint */**/*.{js,ts,tsx}` linting all .js, .ts and .tsx files in the project.
+
+The linter settings are stored in the [.eslintrc.js file](.eslintrc.js) which also enables TypeScript linting.
+
+Running `yarn lint --fix` will fix small auto-fixable problems.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
