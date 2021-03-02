@@ -9,11 +9,11 @@ import "./App.css";
 const App = (): JSX.Element => {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App flex flex-col min-h-screen">
         <header className="App-header">
           <AppHeader />
         </header>
-        <div className="content">
+        <main className="content flex-grow">
           <Switch>
             {/* Use component when the rendered component needs no props */}
             {/* Getting the routes from the defined route file in pages */}
@@ -26,7 +26,7 @@ const App = (): JSX.Element => {
               />
             ))}
           </Switch>
-        </div>
+        </main>
         <footer>
           <AppFooter />
         </footer>

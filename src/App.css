@@ -1,9 +1,5 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
-  font-size: calc(10px + 1vmin);
+  font-size: 14pt;
   color: #023874;
 }
 
@@ -11,3 +7,12 @@
   background-color: #6FCEEE;
 }
 
+.Footer {
+  background-color: #023874;
+}
+
+@layer components {
+  .header-link {
+    @apply text-gray-600 hover:text-blue-400;
+  }
+}
