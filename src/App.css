@@ -9,12 +9,3 @@
 .Footer {
   background-color: #023874;
 }
-
-@layer components {
-  .header-link {
-    @apply text-gray-600 hover:text-blue-400 text-lg;
-  }
-  .container {
-    @apply mx-auto p-4 max-w-6xl;
-  }
-}
