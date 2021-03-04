@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const AppHeader = (): JSX.Element => {
     return ( 
-        <nav className="Banner">
-            <div className="max-w-6xl mx-auto p-2 flex space-x-8 items-baseline">
+        <nav className="AppHeader shadow-md">
+            <div className="max-w-6xl mx-auto p-2 flex space-x-8 items-end">
                 <Link to="/">
                     <img src="images/vektor-logo.svg" alt="vektorprogrammet logo" className="h-20" />
                 </Link>

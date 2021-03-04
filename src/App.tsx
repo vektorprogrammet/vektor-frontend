@@ -9,11 +9,10 @@ import "./App.css";
 const App = (): JSX.Element => {
   return (
     <BrowserRouter>
-      <div className="App flex flex-col min-h-screen">
-        <header className="App-header">
-          <AppHeader />
-        </header>
-        <main className="content flex-grow">
+      <div className="App flex flex-col items-stretch min-h-screen">
+        <AppHeader/>
+        {/*Banner*/}
+        <main className="flex-grow">
           <Switch>
             {/* Use component when the rendered component needs no props */}
             {/* Getting the routes from the defined route file in pages */}
