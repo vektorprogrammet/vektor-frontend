@@ -1,3 +1,3 @@
-import Kontakt from './components/Kontakt';
+import Kontakt from "./components/Kontakt";
 
 export default Kontakt;
