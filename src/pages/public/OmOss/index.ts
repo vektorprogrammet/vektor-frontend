@@ -1,3 +1,3 @@
-import OmOss from './components/OmOss';
+import OmOss from "./components/OmOss";
 
 export default OmOss;

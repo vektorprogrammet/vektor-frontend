@@ -1,3 +1,3 @@
-import ForForeldre from './components/ForForeldre';
+import ForForeldre from "./components/ForForeldre";
 
 export default ForForeldre;

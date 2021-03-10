@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const OmOss = function() {
+const OmOss = (): JSX.Element => {
   return <h1>Siden for OmOss</h1>;
-}
+};
 
 export default OmOss;
