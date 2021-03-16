@@ -1,7 +1,10 @@
 import React from "react";
+import TextPictureCard from "./TextPictureCard";
 
 const ForForeldre = (): JSX.Element => {
-  return <h1>Dette er siden for foreldre</h1>;
+  return (
+    <TextPictureCard title="testTitle" text="test" imgPath="sldfkjslkdjf" />
+  );
 };
 
 export default ForForeldre;
