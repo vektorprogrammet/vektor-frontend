@@ -1,7 +1,7 @@
 import React from "react";
 
 const Kontakt = (): JSX.Element => {
-  return <h1>Siden for kontakt</h1>;
+  return <article className="container"><h1>Siden for kontakt</h1></article>;
 };
 
 export default Kontakt;

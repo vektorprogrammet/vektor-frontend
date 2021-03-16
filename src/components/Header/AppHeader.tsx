@@ -1,21 +1,23 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 const AppHeader = (): JSX.Element => {
   return (
-    <div>
-      <nav>
-        <div className="max-w-7xl mx-auto px-2 sm:px-8 lg:px-10 font-light min-h-20">
-          <h1>Vektorprogrammet</h1>
-        </div>
-      </nav>
-      <div className="Banner bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900">
-            Velkommen
-          </h1>
-        </div>
+    <nav className="AppHeader shadow-md">
+      <div className="max-w-6xl mx-auto p-2 flex space-x-8 items-end">
+        <Link to="/">
+          <img src="images/vektor-logo.svg" alt="vektorprogrammet logo" className="h-20" />
+        </Link>
+        <div className="flex-grow" />
+        <Link className="header-link" to="/assistenter">Assistenter</Link>
+        <Link className="header-link" to="/om-vektor">Om oss</Link>
+        <Link className="header-link" to="/skoler">For skoler</Link>
+        <Link className="header-link" to="/foreldre">For foreldre</Link>
+        <Link className="header-link" to="/team">Team</Link>
+        <Link className="header-link" to="/kontakt">Kontakt</Link>
       </div>
-    </div>
+    </nav>
   );
 };
 
