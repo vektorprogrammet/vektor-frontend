@@ -2,8 +2,8 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("renders logo img", async () => {
   render(<App />);
-  const linkElement = screen.getByText(/Vektorprogrammet/i);
-  expect(linkElement).toBeInTheDocument();
+  const linkElement = await screen.findByAltText("vektorprogrammet logo");
+  expect(linkElement.tagName).toBe("IMG");
 });

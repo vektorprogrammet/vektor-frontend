@@ -3,19 +3,15 @@ import FooterSponsors from "./FooterSponsors";
 
 const AppFooter = (): JSX.Element => {
   return (
-    <div style={{
-      backgroundColor: "#023874",
-      position: "absolute",
-      bottom: "0",
-      width: "100%",
-    }}
-    >
-      <h1>
-        Footer
-      </h1>
-      <p>Sponsorer og samarbeidspartnere:</p>
-      <FooterSponsors />
-    </div>
+    <footer className="Footer">
+      <div className="max-w-6xl mx-auto p-6">
+        <h1 className="text-gray-600">
+          Footer
+        </h1>
+        <p>Sponsorer og samarbeidspartnere:</p>
+        <FooterSponsors />
+      </div>
+    </footer>
   );
 };
 
