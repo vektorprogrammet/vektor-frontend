@@ -10,8 +10,8 @@ const App = (): JSX.Element => {
   return (
     <BrowserRouter>
       <div className="App flex flex-col items-stretch min-h-screen">
-        <AppHeader/>
-        {/*Banner*/}
+        <AppHeader />
+        {/* Banner */}
         <main className="flex-grow">
           <Switch>
             {/* Use component when the rendered component needs no props */}
