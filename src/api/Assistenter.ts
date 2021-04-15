@@ -56,10 +56,10 @@ export interface ForAssistenterContent {
                 alt: "fint å ha på cven",
               },
             },
-        
-
           ]
-        
+
+         
           };
+        
       };
   
