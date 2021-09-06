@@ -26,15 +26,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "airbnb",
-      "airbnb-typescript",
-      "airbnb/hooks"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
