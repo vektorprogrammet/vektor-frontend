@@ -28,7 +28,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "lint": "eslint */**/*.{js,ts,tsx}"
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "eslintConfig": {
     "extends": [
