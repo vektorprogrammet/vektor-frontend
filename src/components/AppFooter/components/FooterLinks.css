@@ -1,0 +1,16 @@
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: [first] 40px [line] auto [end];
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.footerLinks>* {
+  align-self: center;
+}
+
+.footerLinks>.icon {
+  justify-self: center;
+}
