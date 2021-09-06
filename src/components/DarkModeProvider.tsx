@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 
 export const DarkModeContext = React.createContext({
   darkMode: false,
-  setDarkMode: (() => {}) as (_: boolean)=>void,
+  setDarkMode: (() => {
+    throw new Error("No DarkModeContext provided");
+  }) as (_: boolean)=>void,
 });
 
 export const DarkModeProvider = (props: { children: JSX.Element }) => {
