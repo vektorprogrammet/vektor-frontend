@@ -43,6 +43,10 @@ module.exports = {
     ],
     "linebreak-style": "off",
     "@typescript-eslint/quotes": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"]}
+    ]
   },
 };
