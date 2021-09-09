@@ -3,25 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "6.2.0",
-    "@tailwindcss/postcss7-compat": "2.2.7",
-    "@testing-library/jest-dom": "5.14.1",
-    "@testing-library/react": "12.0.0",
-    "@testing-library/user-event": "13.2.1",
-    "@types/jest": "27.0.1",
-    "@types/node": "14.17.9",
-    "@types/react": "17.0.20",
-    "@types/react-dom": "17.0.9",
-    "@types/react-router-dom": "5.1.8",
-    "autoprefixer": "9.8.6",
-    "postcss": "8.3.6",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-router-dom": "5.2.1",
+    "@types/node": "^14.17.14",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+
     "react-scripts": "4.0.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "typescript": "4.3.5",
-    "web-vitals": "2.1.0"
+    "@craco/craco": "^6.2.0",
+    "autoprefixer": "^9.8.6",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "craco start",
@@ -29,12 +24,6 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -49,10 +38,13 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.29.0",
-    "@typescript-eslint/parser": "4.29.0",
-    "eslint": "7.32.0",
-    "eslint-config-airbnb-typescript": "12.3.1",
-    "eslint-plugin-react": "7.24.0"
+    "@types/jest": "^27.0.1",
+    "@testing-library/dom": "^8.2.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0"
   }
 }
