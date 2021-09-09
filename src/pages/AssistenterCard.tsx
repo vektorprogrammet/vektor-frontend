@@ -7,6 +7,17 @@ interface Props {
   alt: string;
 }
 
+export const scrollToBottom = () =>{
+  window.scrollTo({
+    top: document.body.offsetHeight,
+    left: 0,
+    behavior: 'smooth'
+    /* you can also use 'auto' behaviour
+       in place of 'smooth' */
+  });
+};
+
+
 const TextPictureCard = ({
   title, text, imgPath, alt,
 }: Props): JSX.Element => {
@@ -29,3 +40,5 @@ const TextPictureCard = ({
 };
 
 export default TextPictureCard;
+
+

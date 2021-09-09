@@ -1,6 +1,7 @@
 import React from "react";
 import getContent from "api/Assistenter";
 import TextPictureCard from "pages/AssistenterCard";
+import {scrollToBottom} from "pages/AssistenterCard";
 
 const Assistenter = (): JSX.Element => {
   const {
@@ -11,7 +12,21 @@ const Assistenter = (): JSX.Element => {
       <h1 className="max-w-2xl text-gray-600 text-4xl text-center font-bold mx-3">
         {title}
       </h1>
-      <p className="max-w-2xl text-center mt-4 mb-20 text-xl mx-3">{ingress}</p>
+      <p className="max-w-2xl mt-4 mb-20 text-xl mx-3">{ingress}</p>
+
+        <div className="bg-gray-200 mx-20 space-y-16 p-4 w-full text-center">
+            <p className="bg-center">
+                Disse avdelingene har opptak nå:
+            </p>
+
+
+
+            <button onClick={scrollToBottom} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Scroll ned for å søke!
+
+            </button>
+
+        </div>
 
       <div className="mb-20">
         <p className="flex justify-evenly space-x-10">
@@ -28,7 +43,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="mb-16">
-        <p className="font-bold text-2xl">
+        <p className="font-bold text-2xl text-center">
           Lærerassistent i matematikk
         </p>
 
@@ -60,7 +75,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="mb-16">
-        <p className="font-bold text-2xl">
+        <p className="font-bold text-2xl text-center">
           Arbeidsoppgaver
         </p>
 
@@ -77,14 +92,14 @@ const Assistenter = (): JSX.Element => {
         </p>
 
       </div>
-      <p className="font-bold text-2xl">
+      <p className="font-bold text-2xl text-center">
         Hvordan blir jeg Vektorassistent?
       </p>
-      <div className="inline-flex space-x-4 ...">
+      <div className="inline-flex space-x-4 mb-10">
         <div className="flex-1 ...">
           <ul className="list-disc">
 
-            <p className="font-bold">
+            <p className="font-bold text-xl my-3">
               Opptakskrav
             </p>
             <li>Du studerer på høgskole/universitet</li>
@@ -97,7 +112,7 @@ const Assistenter = (): JSX.Element => {
         <div className="flex-2 ..." />
 
         <ol className="list-decimal">
-          <p className="font-bold">
+          <p className="font-bold text-xl my-3">
             Opptaksprosessen
           </p>
           <li>Vektorprogrammet tar opp nye assistenter i starten av hvert semester</li>
@@ -110,13 +125,12 @@ const Assistenter = (): JSX.Element => {
 
       </div>
 
-      <div className="font-bold text-2xl">
+      <div className="font-bold text-3xl">
         <p>
           Søk nå!
         </p>
 
       </div>
-
     </div>
 
   );
