@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":preserveSemverRanges"],
   "lockFileMaintenance":{ "enabled": true },
   "masterIssue": true,
   "labels": ["dependencies"]
