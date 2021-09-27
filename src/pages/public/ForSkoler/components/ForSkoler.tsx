@@ -1,8 +1,8 @@
 import React from "react";
-import PageTitleCard from "components/Pages/PageTitleCard";
 import getContent from "api/ForSkoler";
-import PageParagraph from "pages/public/ForSkoler/components/PageSection";
-import BorderContentCard from "pages/public/ForSkoler/components/BorderContentCard";
+import PageTitleCard from "./PageTitleCard";
+import PageParagraph from "./PageSection";
+import BorderContentCard from "./BorderContentCard";
 
 const ForSkoler = (): JSX.Element => {
   const pageContent = getContent();
