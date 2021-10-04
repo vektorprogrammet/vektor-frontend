@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   title: string;
   text: Array<string>;
-  children: JSX.Element | undefined;
+  children?: JSX.Element | undefined;
 }
 
 /**
@@ -28,6 +28,10 @@ const PageSection: React.FC<Props> = ({ title, text, children }: Props) => {
       {children}
     </div>
   );
+};
+
+PageSection.defaultProps = {
+  children: undefined,
 };
 
 export default PageSection;
