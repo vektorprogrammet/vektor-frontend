@@ -2,6 +2,10 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
+const activeStyle: React.CSSProperties = {
+  fontWeight: "bold",
+};
+
 const AppHeader = (): JSX.Element => {
   return (
     <nav className="AppHeader shadow-md">
@@ -17,54 +21,42 @@ const AppHeader = (): JSX.Element => {
         <NavLink
           className="header-link"
           to="/assistenter"
-          activeStyle={{
-            fontWeight: "bold",
-          }}
+          activeStyle={activeStyle}
         >
           Assistenter
         </NavLink>
         <NavLink
           className="header-link"
           to="/om-vektor"
-          activeStyle={{
-            fontWeight: "bold",
-          }}
+          activeStyle={activeStyle}
         >
           Om oss
         </NavLink>
         <NavLink
           className="header-link"
           to="/skoler"
-          activeStyle={{
-            fontWeight: "bold",
-          }}
+          activeStyle={activeStyle}
         >
           For skoler
         </NavLink>
         <NavLink
           className="header-link"
           to="/foreldre"
-          activeStyle={{
-            fontWeight: "bold",
-          }}
+          activeStyle={activeStyle}
         >
           For foreldre
         </NavLink>
         <NavLink
           className="header-link"
           to="/team"
-          activeStyle={{
-            fontWeight: "bold",
-          }}
+          activeStyle={activeStyle}
         >
           Team
         </NavLink>
         <NavLink
           className="header-link"
           to="/kontakt"
-          activeStyle={{
-            fontWeight: "bold",
-          }}
+          activeStyle={activeStyle}
         >
           Kontakt
         </NavLink>
