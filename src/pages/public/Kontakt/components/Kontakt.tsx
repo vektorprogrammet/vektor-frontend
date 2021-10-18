@@ -1,5 +1,5 @@
 import React from "react";
-import KontaktCard from "pages/public/ForForeldre/components/KontaktCard";
+import KontaktCard from "pages/public/Kontakt/components/KontaktCard";
 import getContent from "api/Kontakt";
 
 const Kontakt = (): JSX.Element => {
