@@ -1,8 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import getContent from "api/Assistenter";
-import TextPictureCard from "pages/AssistenterCard";
+import TextPictureCard, {SelectCity} from "pages/AssistenterCard";
 import {scrollToBottom} from "pages/AssistenterCard";
+import ParentComponent from "pages/Citycard";
+
 document.body.style.backgroundColor = "#fafdff";
+
+
+
+function StengtOptak() {
+  const [state, setState] = useState('start');
+  const cities = ["Trondheim, Ås"];
+
+
+  return (
+
+//Make onclick button for each city and button not dissapear
+
+      <div>
+
+        <span className="flex space-x-4" >
+
+        {state === 'start' && (<SelectCity selectCity={() => setState('select-city') } cities={cities} />)}
+        {state === 'select-city'}
+
+         </span>
+
+      </div>
+  );
+
+}
+
+
 
 const Assistenter = (): JSX.Element => {
   const {
@@ -132,7 +161,8 @@ const Assistenter = (): JSX.Element => {
 
       </div>
     </div>
-      <div className="font-bold text-3xl">
+
+      <div className="font-bold text-3xl mt-20 mb-8 ">
         <p>
           Søk nå!
         </p>
@@ -140,7 +170,20 @@ const Assistenter = (): JSX.Element => {
 
 
 
-</div>
+<>
+        <span className="flex space-x-4 border-solid border-2 border-grey w-full" >
+
+          <ParentComponent/>
+
+        </span>
+
+</>
+    <div className="">
+        Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.
+    </div>
+
+    </div>
+
 
   );
 };

@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useState} from 'react'
+import { HighlightSpanKind } from 'typescript'
+
 
 interface Props {
   title: string;
@@ -6,6 +8,13 @@ interface Props {
   imgPath: URL;
   alt: string;
 }
+
+export const SelectCity = (props: any) => {
+  return(
+      <button onClick={props.selectCity}>{props.cities}</button>
+  )
+};
+
 
 export const scrollToBottom = () =>{
   window.scrollTo({
