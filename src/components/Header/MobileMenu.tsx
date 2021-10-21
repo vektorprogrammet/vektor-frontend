@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
@@ -12,36 +12,36 @@ interface Props {
 
 const MobileMenu = (props: Props): JSX.Element => {
   // Eslint forced the line below
-  const { links, menuOpen } = props;
+  const { links, menuOpen, setMenuOpen } = props;
   return (
     <div className="fixed vektor-font">
       <div
         role="button"
         tabIndex={0}
         aria-label="closeOverlay"
-        onKeyPress={() => { props.setMenuOpen(!props.menuOpen); }}
-        onClick={() => { props.setMenuOpen(!props.menuOpen); }}
+        onKeyPress={() => { setMenuOpen(!menuOpen); }}
+        onClick={() => { setMenuOpen(!menuOpen); }}
         className={`closeMenu z-50 ${menuOpen ? "open" : "closed"}`}
       />
       <div className="relative md:hidden z-10 flex shadow-md w-screen text-3xl bg-white">
         <div
-          className="burger-wrapper fixed -ml-4 -mt-4 block font-bold dark-blue-vektor md:inline-block "
+          className="fixed -ml-4 -mt-4"
         >
           <div
             role="button"
             tabIndex={0}
             aria-label="closeOverlay"
-            onKeyPress={() => { props.setMenuOpen(!props.menuOpen); }}
-            onClick={() => { props.setMenuOpen(!props.menuOpen); }}
+            onKeyPress={() => { setMenuOpen(!menuOpen); }}
+            onClick={() => { setMenuOpen(!menuOpen); }}
             className="hamburger"
           >
             <div />
           </div>
         </div>
         <Link
-          className="relative font-bold dark-blue-vektor text-2xl flex my-3 m-auto"
+          className="relative font-bold vektor-dark-blue text-2xl flex my-3 m-auto"
           onClick={() => {
-            if (props.menuOpen) { props.setMenuOpen(false); }
+            if (menuOpen) { setMenuOpen(!menuOpen); }
           }}
           to="/"
         >
@@ -53,17 +53,18 @@ const MobileMenu = (props: Props): JSX.Element => {
           <div
             role="button"
             tabIndex={0}
-            aria-label="closeOverlay"
-            onKeyPress={() => { props.setMenuOpen(!props.menuOpen); }}
-            onClick={() => { props.setMenuOpen(!props.menuOpen); }}
-            className="md:hidden slide-to-be-closed fixed expanded">
-            <nav className="slide-to-be-closed mt-23 p-4 flex flex-col text-2xl space-y-4">
+            aria-label="closeOverlayButton"
+            onKeyPress={() => { setMenuOpen(!menuOpen); }}
+            onClick={() => { setMenuOpen(!menuOpen); }}
+            className="md:hidden drawer-content fixed"
+          >
+            <nav className="drawer-content flex flex-col text-2xl">
               {links}
             </nav>
           </div>
         ) : (
-          <div className="md:hidden slide-to-be-opened fixed expand">
-            <nav className="slide-to-be-opened mt-23 p-4 flex flex-col text-2xl space-y-4">
+          <div className="md:hidden drawer-content closed-drawer fixed">
+            <nav className="drawer-content flex flex-col text-2xl">
               {links}
             </nav>
           </div>
