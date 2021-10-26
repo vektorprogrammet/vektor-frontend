@@ -5,29 +5,28 @@ name: Node.js Build CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
- 
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-    - name: yarn install, build, test and lint
-      run: | 
-        yarn install --frozen-lockfile
-        yarn build
-        yarn test
-        yarn lint
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+      - name: yarn install, build, test, lint
+        run: |
+          yarn install --immutable
+          yarn build
+          yarn test
+          yarn eslint . --ext .js,.jsx,.ts,.tsx
