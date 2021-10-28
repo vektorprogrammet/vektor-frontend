@@ -3,13 +3,25 @@
 }
 
 .Banner {
-  background-color: #6FCEEE;
+  background-color: #6fceee;
 }
 
 .Footer {
   background-color: #023874;
 }
+.members-info .counter {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.3;
+}
 
+.text-bold {
+  font-weight: 700;
+}
+.members-info .counter .count {
+  font-size: 38px;
+}
 @layer components {
   .header-link {
     @apply text-gray-600 hover:text-blue-400 text-lg;
