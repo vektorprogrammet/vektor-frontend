@@ -19,7 +19,7 @@ const TeamCard = ({
 }: Props): JSX.Element => {
   return (
     <div className="float-container">
-      <div className="w-2/5 float-left max-w-screen-sm mt-10 mb-0 ml-10 flex flex-col">
+      <div className="w-1/2 float-left max-w-screen-sm mt-10 mb-0 ml-10 flex flex-col">
         <h1 className="max-w-2xl text-gray-600 text-4xl text-left font-bold mx-3">
           {title}
         </h1>
@@ -36,12 +36,12 @@ const TeamCard = ({
           strokeWidth="2"
           stroke="#2b69b0"
           //   class="city-polyline"
-          points="1500,1500 50,50 150,50"
+          points="0,0 50,50 150,50"
         />
       </svg>
       <img
         src={imgPath.href}
-        className="float-right max-w-sm rounded-lg mt-10 mx-auto w-2/5"
+        className="float-right max-w-sm rounded-lg mx-auto w-2/5"
         alt={alt}
       />
     </div>
