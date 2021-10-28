@@ -11,7 +11,6 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "^5.2.0",
     "autoprefixer": "^9.8.6",
-    "eslint": "^8.1.0",
     "eslint-plugin": "latest",
     "eslint-plugin-import": "latest",
     "eslint-plugin-jest": "latest",
