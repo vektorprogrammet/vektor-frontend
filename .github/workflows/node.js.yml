@@ -29,4 +29,5 @@ jobs:
           yarn install --immutable
           yarn build
           yarn test
+          yarn add eslint
           yarn eslint . --ext .js,.jsx,.ts,.tsx
