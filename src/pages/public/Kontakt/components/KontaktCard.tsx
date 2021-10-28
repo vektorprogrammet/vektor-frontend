@@ -12,7 +12,7 @@ const KontaktCard = ({
 }: Props): JSX.Element => {
   return (
     <div className="float-container">
-      <div className="w-2/5 float-left max-w-screen-sm mt-10 mb-0 ml-10 flex flex-col">
+      <div className="w-2/5 float-left max-w-screen-sm mt-5 mb-0 -ml-20 flex flex-col">
         <h1 className="max-w-2xl text-gray-600 text-4xl text-left font-bold mx-3">
           {title}
         </h1>
@@ -20,7 +20,7 @@ const KontaktCard = ({
       </div>
       <img
         src={imgPath.href}
-        className="float-right max-w-md rounded-lg mt-10 mx-auto w-2/5"
+        className="float-right max-w-md rounded-lg mt-10 mr-45 w-2/5"
         alt={alt}
       />
     </div>

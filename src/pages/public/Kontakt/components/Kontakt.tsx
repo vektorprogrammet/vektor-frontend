@@ -17,7 +17,7 @@ const kontaktInfo = {
 
 const Kontakt = (): JSX.Element => {
   return (
-    <div className="max-w-screen-lg mt-10 mb-20 mx-auto ml-2 flex flex-col items-center">
+    <div className="max-w-screen-xl mt-10 mb-20 mx-auto ml-2 flex flex-col items-center">
       <KontaktCard
         key={kontaktInfo.card.title}
         title={kontaktInfo.card.title}
@@ -25,7 +25,7 @@ const Kontakt = (): JSX.Element => {
         alt={kontaktInfo.card.image.alt}
         imgPath={kontaktInfo.card.image.url}
       />
-      <h1 className="max-w-2xl text-gray-600 text-5xl text-center font-bold ml-40 mt-10 mb-10">
+      <h1 className="max-w-2xl text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
         {kontaktInfo.title}
       </h1>
     </div>
