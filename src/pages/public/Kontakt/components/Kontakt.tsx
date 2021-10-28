@@ -1,20 +1,32 @@
 import React from "react";
 import KontaktCard from "pages/public/Kontakt/components/KontaktCard";
-import getContent from "api/Kontakt";
+
+const kontaktInfo = {
+  title: "Kontakt oss",
+  card: {
+    title: "Organisasjonen",
+    text: "Vektorprogrammet er en stor organisasjon med assistenter i 4 norske byer. Under kan du kontakte vektorprogrammet i nærmeste by eller hovedstyret for generelle henvendelser.",
+    image: {
+      url: new URL(
+        "https://vektorprogrammet.no/images/organizationstructure.png",
+      ),
+      alt: "Organisasjonsstruktur",
+    },
+  },
+};
 
 const Kontakt = (): JSX.Element => {
-  const { title, card } = getContent();
   return (
     <div className="max-w-screen-lg mt-10 mb-20 mx-auto ml-2 flex flex-col items-center">
       <KontaktCard
-        key={card.title}
-        title={card.title}
-        text={card.text}
-        alt={card.image.alt}
-        imgPath={card.image.url}
+        key={kontaktInfo.card.title}
+        title={kontaktInfo.card.title}
+        text={kontaktInfo.card.text}
+        alt={kontaktInfo.card.image.alt}
+        imgPath={kontaktInfo.card.image.url}
       />
       <h1 className="max-w-2xl text-gray-600 text-5xl text-center font-bold ml-40 mt-10 mb-10">
-        {title}
+        {kontaktInfo.title}
       </h1>
     </div>
   );
