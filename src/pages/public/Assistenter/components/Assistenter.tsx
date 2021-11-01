@@ -171,11 +171,11 @@ const Assistenter = (): JSX.Element => {
 
 
 <>
-        <span className="flex space-x-4 border-solid border-2 border-grey w-full" >
+        
 
           <ParentComponent/>
 
-        </span>
+       
 
 </>
     <div className="">

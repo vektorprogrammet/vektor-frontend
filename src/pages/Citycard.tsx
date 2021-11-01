@@ -17,28 +17,31 @@ export default function ParentComponent() {
 
 
     return (
-        <div className="divide-y divide-gray">
-            <div className="bg-white  space-y-10 p-10 w-full text-center ">
+        <span className="border-solid border-2 border-grey w-full" >
+        
+            <div className="divide-y divide-gray w-full text-center align-middle ">
+                <div className="bg-white  space-y-10 p-10 w-full text-center ">
 
-                <span className="flex space-x-4 align-center text-center ">
+                    <span className="w-full flex justify-center space-x-10 ">
 
-                    <CityButton onChooseCity={setCity} city={City.TRONDHEIM} />
-                    <CityButton onChooseCity={setCity} city={City.OSLO}/>
-                    <CityButton onChooseCity={setCity} city={City.ÅS}/>
-                    <CityButton onChooseCity={setCity} city={City.BERGEN}/>
-
-
-                </span>
+                        <CityButton onChooseCity={setCity} city={City.TRONDHEIM} />
+                        <CityButton onChooseCity={setCity} city={City.OSLO}/>
+                        <CityButton onChooseCity={setCity} city={City.ÅS}/>
+                        <CityButton onChooseCity={setCity} city={City.BERGEN}/>
 
 
-            <div className="text-center">
+                    </span>
 
-                <NoAppCard cities={city}/>
 
-            </div>
+                <div className="text-center">
 
+                    <NoAppCard cities={city}/>
+
+                </div>
+
+                </div>
         </div>
-    </div>
+    </span>
     )
 }
 
