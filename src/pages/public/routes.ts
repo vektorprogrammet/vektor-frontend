@@ -2,7 +2,7 @@ import React from "react";
 import Assistenter from "./Assistenter";
 import ForForeldre from "./ForForeldre";
 import ForSkoler from "./ForSkoler";
-import Hjem from "./Home";
+import Hjem from "./Hjem";
 import Kontakt from "./Kontakt";
 import OmOss from "./OmOss";
 import Team from "./Team";
