@@ -20,7 +20,7 @@ export default function ParentComponent() {
         <span className="border-solid border-2 border-grey w-full" >
         
             <div className="divide-y divide-gray w-full text-center align-middle ">
-                <div className="bg-white  space-y-10 p-10 w-full text-center ">
+                <div className="bg-white space-y-10 p-10 w-full text-center ">
 
                     <span className="w-full flex justify-center space-x-10 ">
 
@@ -52,10 +52,24 @@ type ChildProps = {
     city: City;
 }
 
+
+
 const CityButton = ({onChooseCity, city}: ChildProps) => {
+    let color = "blue";
+    const [openTab, setOpenTab] = React.useState(1);
     return (
-        <div className="flex-container horizontal text-center">
-            <button onClick={()=>onChooseCity(city)}> {city} </button>
+
+        <div className="flex-container horizontal text-center w-full">
+            <button className="
+            text-gray-600
+            py-4
+            px-6
+            block
+            hover:text-purple-500
+            focus:outline-none
+            border-b-2
+            border-purple-500
+            " onClick={()=>onChooseCity(city)}> {city} </button>
             <br/>
         </div>
     )

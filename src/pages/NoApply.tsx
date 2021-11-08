@@ -4,22 +4,33 @@ export const NoAppCard = (props: any) =>{
     return (
         <form>
 
-            <p className="font-bold"> {props.cities}</p>
-            <label className="block">
-                <input type="email" className="form-input mt-1 block w-full border-solid border-2 border-grey" placeholder="E-post"/>
-            </label>
+            <h1 className="font-bold mt-2"> {props.cities}</h1>
 
-            <div className="flex mt-2">
-                <label className="flex items-center">
-                    <input type="checkbox" className="form-checkbox"/>
-                    <span className="ml-2">Send meg også påminnelse om neste infomøte.</span>
+                <label className="block mt-3">
+                    <input type="email" className="inline-flex items-center form-input block w-1/2 block border-solid border-2 border-grey" placeholder="E-post"/>
                 </label>
+
+            <div className="block">
+                <div className="mt-2">
+                    <div>
+                        <label className="w-1/2 inline-flex items-center text-left">
+                            <input type="checkbox" className="form-checkbox "/>
+                            <span className="ml-2">Send meg også påminnelse om neste infomøte.</span>
+
+                        </label>
+                    </div>
+                    <div>
+                        <label className="w-1/2 inline-flex items-center ">
+                            <input type="checkbox" className="form-checkbox"/>
+                            <span className="ml-2">Få påminnelse når opptaket starter </span>
+                        </label>
+                    </div>
+                </div>
             </div>
 
-            <div className="flex mt-2">
+            <div className="flex ">
                 <label className="flex items-center">
-                    <input type="checkbox" className="form-checkbox"/>
-                    <span className="ml-2">Få påminnelse når opptaket starter </span>
+
                 </label>
             </div>
 
