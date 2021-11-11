@@ -6,10 +6,10 @@ const FooterSponsors = (): JSX.Element => {
 
   return (
     <ul className="text-white">
-      <li>Sponsorer og sammarbeidspartnere</li>
+      <b><li>Sponsorer og sammarbeidspartnere</li></b>
       { sponsors.map((sponsor: Sponsor) => (
         <li key={sponsor.name}>
-          <a className="text-sm" href={sponsor.url.href}>{sponsor.name}</a>
+          <a className="text-sm hover:underline" href={sponsor.url.href}>{sponsor.name}</a>
         </li>
       )) }
     </ul>
