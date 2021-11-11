@@ -16,7 +16,7 @@ const AppHeader = (): JSX.Element => {
       <NavLink
         key={route.route}
         // className="mt-4 vektor-font font-semibold p-1"
-        className="header-link"
+        className="header-link mobile-link"
         to={route.route}
         activeStyle={activeStyle}
       >

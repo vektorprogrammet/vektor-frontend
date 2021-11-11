@@ -25,7 +25,7 @@
 
 @layer components {
   .header-link {
-    @apply text-gray-600 hover:text-blue-400 dark:text-white text-lg;
+    @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-lg md:m-0 md:p-0 md:font-normal;
   }
   .container {
     @apply mx-auto p-4;
