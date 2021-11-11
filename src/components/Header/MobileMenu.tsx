@@ -11,32 +11,21 @@ interface Props {
 }
 
 const MobileMenu = (props: Props): JSX.Element => {
-  // Eslint forced the line below
   const { links, menuOpen, setMenuOpen } = props;
   return (
     <div className="fixed vektor-font">
-      <div
-        role="button"
-        tabIndex={0}
-        aria-label="closeOverlay"
-        onKeyPress={() => { setMenuOpen(!menuOpen); }}
-        onClick={() => { setMenuOpen(!menuOpen); }}
-        className={`closeMenu z-50 ${menuOpen ? "open" : "closed"}`}
-      />
       <div className="relative md:hidden z-10 flex shadow-md w-screen text-3xl bg-white">
         <div
-          className="fixed -ml-4 -mt-4"
+          role="button"
+          tabIndex={0}
+          aria-label="closeOverlay"
+          onKeyPress={() => { setMenuOpen(!menuOpen); }}
+          onClick={() => { setMenuOpen(!menuOpen); }}
+          className="hamburger"
         >
-          <div
-            role="button"
-            tabIndex={0}
-            aria-label="closeOverlay"
-            onKeyPress={() => { setMenuOpen(!menuOpen); }}
-            onClick={() => { setMenuOpen(!menuOpen); }}
-            className="hamburger"
-          >
-            <div />
-          </div>
+          <span className={`hamburger-span  ${menuOpen ? "top-bun" : ""}`} />
+          <span className={`hamburger-span mt-3 ${menuOpen ? "patty" : ""}`} />
+          <span className={`hamburger-span mt-6 ${menuOpen ? "bottom-bun" : ""}`} />
         </div>
         <Link
           className="relative font-bold vektor-dark-blue text-2xl flex my-3 m-auto"
