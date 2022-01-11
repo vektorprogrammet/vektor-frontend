@@ -18,7 +18,7 @@ const teamInfo = {
 
 const Team = (): JSX.Element => {
   return (
-    <div className="max-w-screen-lg mt-10 mb-20 mx-auto ml-2 flex flex-col items-center">
+    <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center">
       <TeamCard
         key={teamInfo.card.title}
         title={teamInfo.card.title}
@@ -28,7 +28,7 @@ const Team = (): JSX.Element => {
         alt={teamInfo.card.image.alt}
         imgPath={teamInfo.card.image.url}
       />
-      <h1 className="max-w-2xl text-gray-600 text-5xl text-center font-bold ml-40 mt-10 mb-10">
+      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
         {teamInfo.title}
       </h1>
     </div>
