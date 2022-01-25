@@ -20,7 +20,7 @@ const AppHeader = (): JSX.Element => {
         to={route.route}
         activeStyle={activeStyle}
       >
-        {route.component.name.replace(/([A-Z])/g, " $1").trim()}
+        {route.route[1].toUpperCase() + route.route.substring(2).replace("-", " ")}
       </NavLink>
     ),
   );
