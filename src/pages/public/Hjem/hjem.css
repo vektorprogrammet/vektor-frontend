@@ -16,11 +16,6 @@ h1 {
   padding: 50px 0;
   margin: 0 auto;
 }
-p {
-  font-size: 20px;
-  line-height: 32px;
-  margin: 0 0 20px;
-}
 
 .members-info {
   max-width: 1100px;
@@ -32,10 +27,6 @@ p {
   font-size: 38px;
 }
 
-.infomeeting-banner {
-  display: block;
-}
-
 .countdown,
 a {
   color: #223;
@@ -43,12 +34,25 @@ a {
 }
 .container {
   display: flex;
-  flex-direction: flex-start;
-  align-items: left;
+  flex-direction: row;
 }
 .imageContainer {
-  flex-direction: flex-start;
+  display: flex;
 }
 .infoContainer {
-  flex-direction: flex-end;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 10%;
+}
+h1 {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+}
+
+.outerContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
