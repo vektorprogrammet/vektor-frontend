@@ -18,7 +18,7 @@ const routes: Array<PageRoute> = [
   { route: "/foreldre", component: ForForeldre },
   { route: "/skoler", component: ForSkoler },
   { route: "/kontakt", component: Kontakt },
-  { route: "/om-vektor", component: OmOss },
+  { route: "/om-oss", component: OmOss },
   { route: "/team", component: Team },
   { route: "/", component: Hjem },
 ];

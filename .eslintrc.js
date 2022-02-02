@@ -1,12 +1,12 @@
 module.exports = {
   extends: [
-    "react-app",
-    "react-app/jest",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks"
   ],
-  
+  plugins: ['react', '@typescript-eslint', 'jest'],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",
@@ -25,7 +25,7 @@ module.exports = {
     "/*",
     "!/src",
   ],
-  
+
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
@@ -46,7 +46,7 @@ module.exports = {
     "arrow-body-style": "off",
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"]}
+      { "devDependencies": ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"] }
     ]
   },
 };

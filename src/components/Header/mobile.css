@@ -1,0 +1,73 @@
+.vektor-dark-blue{
+  color:  #023874;
+} 
+
+.vektor-font{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.drawer-content{
+  width: 100%;
+  min-height: 100%;
+  align-items: center;
+  padding: 0.5rem;
+  color:  #023874;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.closed-drawer{
+  margin-left: -100%;
+}
+
+.hamburger{
+  position: fixed;
+  width: 32px;
+  height: 30px;
+  margin: 0.5em;
+  transition: all .2s ease-in-out;
+}
+
+.mobile-link{
+  margin-top: 16px;
+  font-weight: 600;
+  padding: 4px;
+}
+
+.closeMenu{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.hamburger-span{
+  position: fixed;
+  width: 32px;
+  height: 5px;
+  z-index:  -1;
+  border-radius: 3px;
+  background-color: black;
+  content: '';
+  transition: all .2s ease-in-out;
+}
+
+.top-bun {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.patty {
+  transform: scale(0);
+}
+
+.bottom-bun {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.closed{
+  display: none;
+}
+
+.open{
+  display: block;
+}

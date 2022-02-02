@@ -1,5 +1,18 @@
+
 .AppHeader {
   background-color: white;
+  transition: background-color 0.5s;
+}
+.dark .AppHeader {
+  background-color: #333;
+}
+
+.App {
+  background-color: white;
+  transition: background-color 0.5s;
+}
+.dark .App {
+  background-color: #2a2a2a;
 }
 
 .Banner {
@@ -7,7 +20,7 @@
 }
 
 .Footer {
-  background-color: #023874;
+  background-color: #223C70;
 }
 .members-info .counter {
   margin-top: 32px;
@@ -24,7 +37,7 @@
 }
 @layer components {
   .header-link {
-    @apply text-gray-600 hover:text-blue-400 text-lg;
+    @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-lg md:m-0 md:p-0 md:font-normal;
   }
   .container {
     @apply mx-auto p-4;
