@@ -9,6 +9,12 @@ h1 {
   font-weight: 900;
   margin-bottom: 15px;
 }
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
 .blackboardImg {
   display: block;
   width: 500px;
@@ -33,6 +39,7 @@ a {
   font-weight: 700;
 }
 .container {
+  flex-direction: wrap;
   display: flex;
   flex-direction: row;
 }
@@ -45,14 +52,45 @@ a {
   flex-direction: column;
   margin-left: 10%;
 }
-h1 {
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
-}
 
 .outerContainer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  height: 100%;
+}
+.numbersContainer {
+  display: flex;
+
+  border: 1px solid green;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0;
+}
+.statisticsContainer {
+  flex-direction: wrap;
+  flex-direction: column;
+  padding: 10%;
+}
+.sponsors {
+  flex-direction: wrap;
+  flex-direction: row;
+  padding: 10%;
+}
+.sponsorImg {
+  display: block;
+  width: 300px;
+
+  max-width: 100%;
+  padding: 50px 0;
+  margin: 0 auto;
+}
+.teknaImg {
+  display: block;
+  width: 300px;
+
+  max-width: 100%;
+  padding: 50px 0;
+  margin: 0 auto;
 }
