@@ -11,18 +11,20 @@ const activeStyle: React.CSSProperties = {
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const linkElements = routes.map((route) => (
-    <NavLink
-      key={route.route}
-      // className="mt-4 vektor-font font-semibold p-1"
-      className="header-link mobile-link"
-      to={route.route}
-      activeStyle={activeStyle}
-    >
-      {route.route[1].toUpperCase() +
-        route.route.substring(2).replace("-", " ")}
-    </NavLink>
-  ));
+  const linkElements = routes
+    .filter((r) => r.route != "/")
+    .map((route) => (
+      <NavLink
+        key={route.route}
+        // className="mt-4 vektor-font font-semibold p-1"
+        className="header-link mobile-link"
+        to={route.route}
+        activeStyle={activeStyle}
+      >
+        {route.route[1].toUpperCase() +
+          route.route.substring(2).replace("-", " ")}
+      </NavLink>
+    ));
 
   return (
     <nav className="AppHeader shadow-md">

@@ -20,7 +20,7 @@ const routes: Array<PageRoute> = [
   { route: "/kontakt", component: Kontakt },
   { route: "/om-oss", component: OmOss },
   { route: "/team", component: Team },
-  { route: "/h", component: Hjem },
+  { route: "/", component: Hjem },
 ];
 
 export default routes;
