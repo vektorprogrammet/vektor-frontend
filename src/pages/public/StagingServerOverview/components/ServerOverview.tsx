@@ -20,7 +20,7 @@ const ServerOverview = (): JSX.Element => {
     getServers();
   }, []);
 
-  const tableHeadClassName = "px-5 py-3 border-gray-200 bg-gray-300 text-left text-m font-bold text-gray-600 uppercase tracking-wider";
+  const tableHeadClass = "px-5 py-3 border-gray-200 bg-gray-300 text-left text-m font-bold text-gray-600 uppercase tracking-wider";
 
   return (
     <div>
@@ -28,22 +28,22 @@ const ServerOverview = (): JSX.Element => {
         <thead>
           <tr>
             <th
-              className={tableHeadClassName}
+              className={tableHeadClass}
             >
               Repo
             </th>
             <th
-              className={tableHeadClassName}
+              className={tableHeadClass}
             >
               Branch
             </th>
             <th
-              className={tableHeadClassName}
+              className={tableHeadClass}
             >
               URL
             </th>
             <th
-              className={tableHeadClassName}
+              className={tableHeadClass}
             >
               Link
             </th>
@@ -56,7 +56,8 @@ const ServerOverview = (): JSX.Element => {
                 <tr
                   key={server.branch}
                   onClick={() => {
-                    // This deep-copies the array which makes the component rerender
+                    /* Deep-copies the array which makes the component rerender
+                    when using setRows */
                     const rowsCopy = JSON.parse(JSON.stringify(rows));
                     rowsCopy[index] = rowsCopy[index] === 0 ? 1 : 0;
                     setRows(rowsCopy);
