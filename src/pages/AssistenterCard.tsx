@@ -15,7 +15,6 @@ export const SelectCity = (props: any) => {
   )
 };
 
-
 export const scrollToBottom = () =>{
   window.scrollTo({
     top: document.body.offsetHeight,
@@ -27,20 +26,21 @@ export const scrollToBottom = () =>{
 };
 
 
+
 const TextPictureCard = ({
   title, text, imgPath, alt,
 }: Props): JSX.Element => {
   return (
 
-    <div className="flex w-full mx-auto justify-between flex-wrap">
-      <div className="max-w-6xl">
+    <div className="leading-relaxed flex w-full mx-auto justify-between flex-wrap">
+      <div className="max-w-6xl ">
         <img
           src={imgPath.href}
           alt={alt}
-          className="h-24 mt-6 rounded-lg mx-auto"
+          className="h-24 mt-6 rounded-lg mx-auto mb-2"
         />
-        <p className="font-sans text-xl text-center p-2">{title}</p>
-        <p className="text-base text-center p-1">{text}</p>
+        <p className="font-sans font-bold text-xl text-vektor-darkblue text-center p-1">{title}</p>
+        <p className="font-sans text-center my-1">{text}</p>
       </div>
 
     </div>

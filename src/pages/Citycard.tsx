@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
-import NoAppCard from './NoApply'
-import {SelectCity} from "./AssistenterCard";
-import {Console} from "inspector";
+import React, {useRef, useState} from 'react'
+import ApplyCard from './ApplyReg'
+import NoApplyCard from "./NoApplyCard";
 
 enum City {
     OSLO = "Oslo",
@@ -10,67 +9,67 @@ enum City {
     ÅS = "Ås"
 }
 
-
 export default function ParentComponent() {
 
     const [city, setCity] = useState<City>(City.TRONDHEIM)
 
 
+
     return (
-        <span className="border-solid border-2 border-grey w-full" >
-        
-            <div className="divide-y divide-gray w-full text-center align-middle ">
-                <div className="bg-white space-y-10 p-10 w-full text-center ">
-
-                    <span className="w-full flex justify-center space-x-10 ">
-
-                        <CityButton onChooseCity={setCity} city={City.TRONDHEIM} />
-                        <CityButton onChooseCity={setCity} city={City.OSLO}/>
-                        <CityButton onChooseCity={setCity} city={City.ÅS}/>
-                        <CityButton onChooseCity={setCity} city={City.BERGEN}/>
+        <div className="flex-col h-screen w-screen flex items-center justify-center">
+            <span className=" border-solid border-2 border-vektor-darkblue w-content" >
+                <div className="divide-y divide-vektor-darkblue ">
+                    <span className="flex justify-center ">
+                        <CityButton onChooseCity={setCity} city={City.TRONDHEIM} isActive={city == City.TRONDHEIM} />
+                        <CityButton onChooseCity={setCity} city={City.OSLO} isActive={city == City.OSLO}/>
+                        <CityButton onChooseCity={setCity} city={City.ÅS} isActive={city == City.ÅS}/>
+                        <CityButton onChooseCity={setCity} city={City.BERGEN} isActive={city == City.BERGEN}/>
+                        </span>
 
 
-                    </span>
+                    <div className="text-center">
 
+                        {/*Use ApplyCard when users can apply and NoApllyCard when it is locked*/}
 
-                <div className="text-center">
+                        <ApplyCard cities={city}/>
 
-                    <NoAppCard cities={city}/>
-
-                </div>
+                    </div>
 
                 </div>
+            </span>
         </div>
-    </span>
     )
 }
-
 
 
 type ChildProps = {
     onChooseCity: (variable: City)=>void;
     city: City;
+    isActive: boolean;
 }
 
+//setSelected(prevState =>({tab1:"black"}))
 
-
-const CityButton = ({onChooseCity, city}: ChildProps) => {
-    let color = "blue";
-    const [openTab, setOpenTab] = React.useState(1);
+const CityButton = ({onChooseCity, city, isActive}: ChildProps) => {
+    const activeClass = isActive ? "text-vektor-darkblue" : "";
     return (
+        <div className="flex-container horizontal text-center px-3 pt-4">
+            <button
 
-        <div className="flex-container horizontal text-center w-full">
-            <button className="
+            className={`
             text-gray-600
-            py-4
-            px-6
+            font-bold
             block
-            hover:text-purple-500
+            hover:text-vektor-blue
             focus:outline-none
-            border-b-2
-            border-purple-500
-            " onClick={()=>onChooseCity(city)}> {city} </button>
+            active:blue
+            border-blue-500
+            ` + activeClass} onClick={()=> {onChooseCity(city)}}> {city} </button>
+
             <br/>
         </div>
+
     )
+
 }
+

@@ -1,6 +1,6 @@
 
 
-export const NoAppCard = (props: any) =>{
+export const NoApplyCard = (props: any) =>{
     return (
         <form>
 
@@ -15,16 +15,17 @@ export const NoAppCard = (props: any) =>{
                     <div>
                         <label className="w-1/2 inline-flex items-center text-left">
                             <input type="checkbox" className="form-checkbox "/>
-                            <span className="ml-2">Send meg også påminnelse om neste infomøte.</span>
+                            <span className="m-2">Få påminnelse om neste infomøte.</span>
 
                         </label>
                     </div>
                     <div>
-                        <label className="w-1/2 inline-flex items-center ">
+                        <label className="w-1/2 inline-flex items-center text-left">
                             <input type="checkbox" className="form-checkbox"/>
-                            <span className="ml-2">Få påminnelse når opptaket starter </span>
+                            <span className="m-2">Få påminnelse når opptaket starter </span>
                         </label>
                     </div>
+
                 </div>
             </div>
 
@@ -36,11 +37,11 @@ export const NoAppCard = (props: any) =>{
 
             <button type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded">
-                Submit
+                Søk nå!
             </button>
 
         </form>
     );
 
 }
-export default NoAppCard;
+export default NoApplyCard;

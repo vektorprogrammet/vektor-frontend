@@ -12,7 +12,6 @@ export interface ForAssistenterContent {
   title: string;
   ingress: string;
   cards: Array<TextPictureCard>;
-  bottomText: string;
 }
 
 
@@ -27,8 +26,7 @@ export default (): ForAssistenterContent => {
         " En stilling som vektorassistent varer i 4 eller 8 uker, og du kan selv velge" +
         " hvilken ukedag som passer best for deg.",
 
-    bottomText:
-            "Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.",
+
     cards: [
       {
         title: "Vær et forbilde",
@@ -41,12 +39,12 @@ export default (): ForAssistenterContent => {
       },
 
       {
-        title: "Sosiale arrangementer",
+        title: "Sosialt",
         text: "Alle assistenter blir invitert til arrangementer som f.eks. fester,"
             + " populærforedrag, bowling, grilling i parken, gokart og paintball.",
         image: {
           url: new URL("https://vektorprogrammet.no/images/calendar.svg?v=1598900041"),
-          alt: "Sosiale arrangementer",
+          alt: "Sosiale",
         },
       },
 
