@@ -4,23 +4,18 @@ export const NoApplyCard = (props: any) =>{
     return (
         <form>
 
-            <h1 className="font-bold mt-2"> {props.cities}</h1>
+            <h1 className="font-bold text-xl my-8 text-vektor-darkblue"> {props.cities}</h1>
 
                 <label className="block mt-3">
-                    <input type="email" className="inline-flex items-center form-input block w-1/2 block border-solid border-2 border-grey" placeholder="E-post"/>
+                    <input type="email" className="inline-flex items-center form-input block block border-solid border-2
+                     border-grey" placeholder="E-post"/>
                 </label>
 
             <div className="block">
                 <div className="mt-2">
-                    <div>
-                        <label className="w-1/2 inline-flex items-center text-left">
-                            <input type="checkbox" className="form-checkbox "/>
-                            <span className="m-2">Få påminnelse om neste infomøte.</span>
 
-                        </label>
-                    </div>
                     <div>
-                        <label className="w-1/2 inline-flex items-center text-left">
+                        <label className="inline-flex items-center text-left">
                             <input type="checkbox" className="form-checkbox"/>
                             <span className="m-2">Få påminnelse når opptaket starter </span>
                         </label>
@@ -36,8 +31,8 @@ export const NoApplyCard = (props: any) =>{
             </div>
 
             <button type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded">
-                Søk nå!
+                className="bg-vektor-darkblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded">
+                Send
             </button>
 
         </form>

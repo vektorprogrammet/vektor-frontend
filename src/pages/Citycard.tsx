@@ -16,17 +16,18 @@ export default function ParentComponent() {
 
 
     return (
-        <div className="flex-col h-screen w-screen flex items-center justify-center">
-            <span className=" border-solid border-2 border-vektor-darkblue w-content" >
-                <div className="divide-y divide-vektor-darkblue ">
-                    <span className="flex justify-center ">
+        <div className="my-8 flex-col w-screen flex items-center justify-center w-1/2 mx-auto">
+            <span className="border-solid border-2 border-vektor-darkblue align-items-center" >
+                <div className="divide-y divide-vektor-darkblue bg-white">
+                    <div className= "text-vektor-darkblue">
+                    <span className="flex justify-center">
                         <CityButton onChooseCity={setCity} city={City.TRONDHEIM} isActive={city == City.TRONDHEIM} />
                         <CityButton onChooseCity={setCity} city={City.OSLO} isActive={city == City.OSLO}/>
                         <CityButton onChooseCity={setCity} city={City.ÅS} isActive={city == City.ÅS}/>
                         <CityButton onChooseCity={setCity} city={City.BERGEN} isActive={city == City.BERGEN}/>
-                        </span>
+                    </span>
 
-
+                    </div>
                     <div className="text-center">
 
                         {/*Use ApplyCard when users can apply and NoApllyCard when it is locked*/}
@@ -55,7 +56,6 @@ const CityButton = ({onChooseCity, city, isActive}: ChildProps) => {
     return (
         <div className="flex-container horizontal text-center px-3 pt-4">
             <button
-
             className={`
             text-gray-600
             font-bold
@@ -63,7 +63,7 @@ const CityButton = ({onChooseCity, city, isActive}: ChildProps) => {
             hover:text-vektor-blue
             focus:outline-none
             active:blue
-            border-blue-500
+            border-vektor-darkblue
             ` + activeClass} onClick={()=> {onChooseCity(city)}}> {city} </button>
 
             <br/>
