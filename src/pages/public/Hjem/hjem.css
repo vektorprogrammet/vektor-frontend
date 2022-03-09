@@ -1,26 +1,14 @@
-.hero {
-  background-color: #e6f3f7;
-  display: flex;
-  justify-content: center;
-}
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
-  font-weight: 900;
+  letter-spacing: 0.0625em;
+  font-size: 40px;
   margin-bottom: 15px;
+  color: #223c70;
 }
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 15px;
-}
-.blackboardImg {
-  display: block;
-  width: 500px;
-  max-width: 100%;
-  padding: 50px 0;
-  margin: 0 auto;
 }
 
 .members-info {
@@ -38,19 +26,40 @@ a {
   color: #223;
   font-weight: 700;
 }
-.container {
-  flex-direction: wrap;
-  display: flex;
+.btnContainer {
+  padding-top: 10%;
   flex-direction: row;
 }
+.outerContainer {
+  width: 100%;
+  height: 200;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+}
+
 .imageContainer {
   display: flex;
 }
 .infoContainer {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-left: 10%;
+  padding-top: 20%;
+  padding-left: 5%;
+
+  position: absolute;
+  width: 40%;
+  top: 8px;
+  left: 16px;
+  text-align: left;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.assistantBtn {
+  padding-right: 1px;
 }
 
 .outerContainer {
@@ -93,4 +102,9 @@ a {
   max-width: 100%;
   padding: 50px 0;
   margin: 0 auto;
+}
+.mainImg {
+  width: 100%;
+  height: auto;
+  background-size: cover;
 }
