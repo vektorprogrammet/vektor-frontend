@@ -26,7 +26,7 @@ const AppHeader = (): JSX.Element => {
   );
 
   return (
-    <nav className="AppHeader sticky top-0 shadow-sm">
+    <nav className="AppHeader sticky top-0 shadow-sm z-1">
       <div className="hidden md:flex mx-auto p-3 space-x-8 items-center justify-center lg:px-8 w-full max-w-7xl">
         <div className="w-1/5 justify-center flex">
           <Link to="/">
