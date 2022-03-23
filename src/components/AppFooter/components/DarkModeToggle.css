@@ -37,7 +37,6 @@
 }
 
 .darkModeToggle:checked:after {
-    left: 32px;
     background-color: #222;
     padding-left: 5px;
     content: '\1F31B';
