@@ -7,13 +7,11 @@ document.body.style.backgroundColor = "#fafdff";
 
 
 
-
 // Find id to scroll to optak
 
 function StengtOptak() {
   const [state, setState] = useState('start');
   const cities = ["Trondheim, Ås"];
-
 
   return (
 
@@ -44,17 +42,17 @@ const Assistenter = (): JSX.Element => {
     <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col flex justify-center items-center ">
 
       <div className="bg-vektor-bg"/>
-      <h1 className="font-sans max-w-2xl mt-10 text-vektor-darkblue text-4xl text-center font-bold mx-3">
+      <h1 className="font-sans max-w-2xl mt-10 text-vektor-darblue text-4xl text-center font-bold mx-3">
         {title}
       </h1>
       <div className="mt-4 mb-20 text-xl ">{ingress} </div>
 
-        <div className="border-solid border-2 border-vektor-darkblue bg-white space-y-16 p-4 w-full text-center mb-14">
-                <div className="conte mx-8 bg-center font-sans font-bold text-vektor-darkblue">
+        <div className="border-solid border-2 border-vektor-darblue bg-white space-y-16 p-4 w-full text-center mb-14">
+                <div className="conte mx-8 bg-center font-sans font-bold text-vektor-darblue">
                     Disse avdelingene har opptak nå:
                 </div>
 
-                <button onClick={getId} className="outline-0 bg-vektor-darkblue hover:bg-vektor-blue text-white font-bold py-2 px-4 rounded">
+                <button onClick={getId} className="outline-0 bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 rounded">
                     Scroll ned for å søke!
 
                 </button>
@@ -75,7 +73,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="mb-16" id="tc">
-        <div className="my-2 mb-2 font-bold text-2xl text-center text-vektor-darkblue">
+        <div className="my-2 mb-2 font-bold text-2xl text-center text-vektor-darblue">
           Lærerassistent i matematikk
         </div>
 
@@ -107,7 +105,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="mb-16">
-        <div className="font-bold text-2xl my-2 mb-3 text-vektor-darkblue text-center">
+        <div className="font-bold text-2xl my-2 mb-3 text-vektor-darblue text-center">
           Arbeidsoppgaver
         </div>
 
@@ -125,7 +123,7 @@ const Assistenter = (): JSX.Element => {
 
       </div>
 
-      <div className="text-vektor-darkblue font-bold my-8 text-2xl text-center">
+      <div className="text-vektor-darblue font-bold my-8 text-2xl text-center">
         Hvordan blir jeg Vektorassistent?
       </div>
 
@@ -134,7 +132,7 @@ const Assistenter = (): JSX.Element => {
         <div className="flex-1 ...">
           <ul className="leading-loose whitespace-normal md:whitespace-pre list-disc">
 
-            <div className="text-vektor-darkblue font-bold my-3 text-lg">
+            <div className="text-vektor-darblue font-bold my-3 text-lg">
               Opptakskrav
             </div>
 
@@ -146,7 +144,7 @@ const Assistenter = (): JSX.Element => {
         </div>
 
         <div className="flex-2 ..." >
-            <div className="font-bold text-vektor-darkblue my-3 text-lg">
+            <div className="font-bold text-vektor-darblue my-3 text-lg">
                 Opptaksprosessen
             </div>
             <ol className="leading-relaxed whitespace-normal md:whitespace-pre list-decimal leading-loose ">
@@ -163,7 +161,7 @@ const Assistenter = (): JSX.Element => {
       </div>
     </div>
 
-      <div className="font-bold text-vektor-darkblue text-3xl mt-16">
+      <div className="font-bold text-vektor-darblue text-3xl mt-16">
         <div>
           Søk nå!
         </div>
@@ -173,7 +171,7 @@ const Assistenter = (): JSX.Element => {
       <ParentComponent/>
     </div>
 
-    <div className="font-bold mb-16 text-vektor-darkblue">
+    <div className="font-bold mb-16 text-vektor-darblue">
         <div>Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar. </div>
     </div>
 

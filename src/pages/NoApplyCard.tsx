@@ -4,7 +4,7 @@ export const NoApplyCard = (props: any) =>{
     return (
         <form>
 
-            <h1 className="font-bold text-xl my-8 text-vektor-darkblue"> {props.cities}</h1>
+            <h1 className="font-bold text-xl my-8 text-vektor-darblue"> {props.cities}</h1>
 
                 <label className="block mt-3">
                     <input type="email" className="inline-flex items-center form-input block block border-solid border-2
@@ -31,7 +31,7 @@ export const NoApplyCard = (props: any) =>{
             </div>
 
             <button type="submit"
-                className="bg-vektor-darkblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded">
+                className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded">
                 Send
             </button>
 

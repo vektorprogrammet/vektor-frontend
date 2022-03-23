@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         'vektor-blue':'#6fceee',
         'vektor-blue-hover':'#46b6dd',
-        'vektor-darkblue':'#023874',
+        'vektor-darblue':'#023874',
         'vektor-darkfooter': '#022346',
         'vektor-bg':'#fafdff',
       },

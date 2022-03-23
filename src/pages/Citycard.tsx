@@ -17,9 +17,9 @@ export default function ParentComponent() {
 
     return (
         <div className="my-8 flex-col w-screen flex items-center justify-center w-1/2 mx-auto">
-            <span className="border-solid border-2 border-vektor-darkblue align-items-center" >
-                <div className="divide-y divide-vektor-darkblue bg-white">
-                    <div className= "text-vektor-darkblue">
+            <span className="border-solid border-2 border-vektor-darblue align-items-center" >
+                <div className="divide-y divide-vektor-darblue bg-white">
+                    <div className= "text-vektor-darblue">
                     <span className="flex justify-center">
                         <CityButton onChooseCity={setCity} city={City.TRONDHEIM} isActive={city == City.TRONDHEIM} />
                         <CityButton onChooseCity={setCity} city={City.OSLO} isActive={city == City.OSLO}/>
@@ -52,7 +52,7 @@ type ChildProps = {
 //setSelected(prevState =>({tab1:"black"}))
 
 const CityButton = ({onChooseCity, city, isActive}: ChildProps) => {
-    const activeClass = isActive ? "text-vektor-darkblue" : "";
+    const activeClass = isActive ? "text-vektor-darblue" : "";
     return (
         <div className="flex-container horizontal text-center px-3 pt-4">
             <button
@@ -63,7 +63,7 @@ const CityButton = ({onChooseCity, city, isActive}: ChildProps) => {
             hover:text-vektor-blue
             focus:outline-none
             active:blue
-            border-vektor-darkblue
+            border-vektor-darblue
             ` + activeClass} onClick={()=> {onChooseCity(city)}}> {city} </button>
 
             <br/>
