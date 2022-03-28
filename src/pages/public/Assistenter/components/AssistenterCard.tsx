@@ -1,6 +1,4 @@
-import React, {useState} from 'react'
-import { HighlightSpanKind } from 'typescript'
-
+import React from "react";
 
 interface Props {
   title: string;
@@ -10,22 +8,21 @@ interface Props {
 }
 
 export const SelectCity = (props: any) => {
-  return(
-      <button onClick={props.selectCity}>{props.cities}</button>
-  )
+  const { selectCity, cities } = props;
+  return (
+    <button type="button" onClick={selectCity}>{cities}</button>
+  );
 };
 
-export const scrollToBottom = () =>{
+export const scrollToBottom = () => {
   window.scrollTo({
     top: document.body.offsetHeight,
     left: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
     /* you can also use 'auto' behaviour
        in place of 'smooth' */
   });
 };
-
-
 
 const TextPictureCard = ({
   title, text, imgPath, alt,
@@ -49,5 +46,3 @@ const TextPictureCard = ({
 };
 
 export default TextPictureCard;
-
-
