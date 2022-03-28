@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import getContent from "api/Assistenter";
 import TextPictureCard from "./AssistenterCard";
-import ParentComponent from "./Citycard";
-
-document.body.style.backgroundColor = "#fafdff";
+import ParentComponent from "./CityCard/Citycard";
 
 // Find id to scroll to optak
 
@@ -30,25 +28,19 @@ document.body.style.backgroundColor = "#fafdff";
   );
 }; */
 
-function getId() {
-  const element = document.getElementById("scroll");
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
 const Assistenter = (): JSX.Element => {
   const { title, ingress, cards } = getContent();
+
+  const cardElement = useRef<HTMLDivElement>(null);
+  const scrollToCard = () => cardElement.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+
   return (
     <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col flex justify-center items-center ">
       <div className="bg-vektor-bg" />
       <h1 className="font-sans max-w-2xl mt-10 text-vektor-darblue text-4xl text-center font-bold mx-3">
         {title}
       </h1>
-      <div className="mt-4 mb-20 text-xl ">
-        {ingress}
-        {" "}
-      </div>
+      <div className="mt-4 mb-20 text-xl ">{ingress}</div>
 
       <div className="border-solid border-2 border-vektor-darblue bg-white space-y-16 p-4 w-full text-center mb-14">
         <div className="conte mx-8 bg-center font-sans font-bold text-vektor-darblue">
@@ -57,7 +49,7 @@ const Assistenter = (): JSX.Element => {
 
         <button
           type="button"
-          onClick={getId}
+          onClick={scrollToCard}
           className="outline-0 bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 rounded"
         >
           Scroll ned for å søke!
@@ -173,11 +165,13 @@ const Assistenter = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="font-bold text-vektor-darblue text-3xl mt-16">
+      <div
+        className="font-bold text-vektor-darblue text-3xl mt-16"
+      >
         <div>Søk nå!</div>
       </div>
 
-      <div id="scroll">
+      <div ref={cardElement}>
         <ParentComponent />
       </div>
 
