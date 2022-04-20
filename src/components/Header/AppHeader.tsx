@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import MobileMenu from "./MobileMenu";
@@ -18,7 +17,7 @@ const AppHeader = (): JSX.Element => {
         // className="mt-4 vektor-font font-semibold p-1"
         className="header-link mobile-link"
         to={route.route}
-        activeStyle={activeStyle}
+        style={({ isActive }) => (isActive ? activeStyle : {})}
       >
         {route.route[1].toUpperCase() + route.route.substring(2).replace("-", " ")}
       </NavLink>

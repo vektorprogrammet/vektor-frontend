@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DarkModeProvider } from "components/DarkModeProvider";
 import routes from "./pages/public/routes";
 import AppFooter from "./components/AppFooter/AppFooter";
@@ -15,18 +15,17 @@ const App = (): JSX.Element => {
           <AppHeader />
           {/* Banner */}
           <main className="flex-grow">
-            <Switch>
+            <Routes>
               {/* Use component when the rendered component needs no props */}
               {/* Getting the routes from the defined route file in pages */}
               {routes.map((page_route) => (
                 <Route
                   key={page_route.route}
                   path={page_route.route}
-                  exact
-                  component={page_route.component}
+                  element={<page_route.component />}
                 />
               ))}
-            </Switch>
+            </Routes>
           </main>
           <AppFooter />
         </div>
