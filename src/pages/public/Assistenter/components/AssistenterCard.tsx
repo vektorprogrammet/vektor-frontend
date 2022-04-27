@@ -19,8 +19,7 @@ export const scrollToBottom = () => {
     top: document.body.offsetHeight,
     left: 0,
     behavior: "smooth",
-    /* you can also use 'auto' behaviour
-       in place of 'smooth' */
+
   });
 };
 

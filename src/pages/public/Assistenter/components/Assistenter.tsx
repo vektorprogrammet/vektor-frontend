@@ -3,30 +3,6 @@ import getContent from "api/Assistenter";
 import TextPictureCard from "./AssistenterCard";
 import ParentComponent from "./CityCard/Citycard";
 
-// Find id to scroll to optak
-
-/* const StengtOptak = () => {
-  const [state, setState] = useState("start");
-  const cities = ["Trondheim, Ås"];
-
-  return (
-
-  // Make onclick button for each city and button not dissapear
-
-    <div>
-
-      <span className="flex space-x-4">
-
-        {state === "start" && (<SelectCity
-          selectCity={() => setState("select-city")}
-          cities={cities} />)}
-        {state === "select-city"}
-
-      </span>
-
-    </div>
-  );
-}; */
 
 const Assistenter = (): JSX.Element => {
   const { title, ingress, cards } = getContent();
