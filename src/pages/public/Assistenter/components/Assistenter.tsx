@@ -3,7 +3,6 @@ import getContent from "api/Assistenter";
 import TextPictureCard from "./AssistenterCard";
 import ParentComponent from "./CityCard/Citycard";
 
-
 const Assistenter = (): JSX.Element => {
   const { title, ingress, cards } = getContent();
 
