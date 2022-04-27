@@ -8,7 +8,7 @@ import Team from "./Team";
 
 interface PageRoute {
   route: string;
-  component: React.FunctionComponent | React.ComponentClass;
+  component: React.ComponentType;
 }
 
 // The route with the corresponding component to render in the route
