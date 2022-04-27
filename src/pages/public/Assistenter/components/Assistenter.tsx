@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import getContent from "api/Assistenter";
 import TextPictureCard from "./AssistenterCard";
-import ParentComponent from "./CityCard/Citycard";
+import Citycard from "./CityCard/Citycard";
 
 const Assistenter = (): JSX.Element => {
   const { title, ingress, cards } = getContent();
@@ -147,7 +147,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div ref={cardElement}>
-        <ParentComponent />
+        <Citycard />
       </div>
 
       <div className="font-bold mb-16 text-vektor-darblue">

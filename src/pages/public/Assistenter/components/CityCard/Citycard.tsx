@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ApplyReg from "../ApplyReg";
 import { City, CityButton } from "./CityButton";
 
-const ParentComponent = () => {
+const Citycard = () => {
   const [city, setCity] = useState<City>(City.TRONDHEIM);
 
   return (
@@ -31,6 +31,4 @@ const ParentComponent = () => {
     </div>
   );
 };
-export default ParentComponent;
-
-// setSelected(prevState =>({tab1:"black"}))
+export default Citycard;
