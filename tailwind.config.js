@@ -8,7 +8,15 @@ module.exports = {
       'lg': '1024px',
       'xl': '1280px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        'vektor-blue':'#6fceee',
+        'vektor-blue-hover':'#46b6dd',
+        'vektor-darblue':'#023874',
+        'vektor-darkfooter': '#022346',
+        'vektor-bg':'#fafdff',
+      },
+    },
   },
   variants: {
     extend: {},
