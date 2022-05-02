@@ -17,6 +17,7 @@ jobs:
       matrix:
         node-version: [12.x, 14.x, 16.x]
 
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -24,9 +25,23 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-      - name: yarn install, build, test, lint
+      - name: yarn install, build, lint
         run: |
           yarn install --immutable
           yarn build
-          yarn test
           yarn eslint . --ext .js,.jsx,.ts,.tsx
+          
+  cypress-run:
+      runs-on: ubuntu-latest
+      container: cypress/browsers:node12.18.3-chrome87-ff82
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+
+        # Install NPM dependencies, cache them correctly
+        # and run all Cypress tests
+        - name: Cypress run
+          uses: cypress-io/github-action@v4
+          with:
+            # Specify Browser since container image is compile with Firefox
+            browser: firefox 
