@@ -31,17 +31,19 @@ jobs:
           yarn build
           yarn eslint . --ext .js,.jsx,.ts,.tsx
           
-  cypress-run:
-      runs-on: ubuntu-latest
-      container: cypress/browsers:node12.18.3-chrome87-ff82
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+  cypress_tests:
+    needs: build
+    runs-on: ubuntu-latest
 
-        # Install NPM dependencies, cache them correctly
-        # and run all Cypress tests
-        - name: Cypress run
-          uses: cypress-io/github-action@v4
-          with:
-            # Specify Browser since container image is compile with Firefox
-            browser: firefox 
+    strategy:
+      matrix:
+        browser: [chrome, firefox, edge]
+
+    container:
+      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: ${{ matrix.browser }}
