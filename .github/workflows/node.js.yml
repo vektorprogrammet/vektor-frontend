@@ -25,7 +25,13 @@ jobs:
           yarn install --immutable
           yarn build
           yarn eslint . --ext .js,.jsx,.ts,.tsx
-          
+      - name: store build artifact
+        if: ${{matrix.node-version == '16.14.2'}}
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
+
   cypress_tests:
     needs: build
     runs-on: ubuntu-latest
@@ -39,6 +45,12 @@ jobs:
       options: --user 1001
     steps:
       - uses: actions/checkout@v2
+      - name: Download the build folders
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
       - uses: cypress-io/github-action@v4
         with:
           browser: ${{ matrix.browser }}
+          build: yarn build
