@@ -31,7 +31,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "cypress run",
+    "test:firefox": "cypress run --browser firefox",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
@@ -54,6 +55,7 @@
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/tailwindcss": "^2.2.4",
+    "cypress": "10.6.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^14.0.0"
