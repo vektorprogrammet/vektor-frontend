@@ -3,6 +3,9 @@
 
 name: Node.js Build CI
 
+env:
+  NODE_VERSION: 16.14.2
+
 on:
   push:
     branches: [main]
@@ -15,22 +18,35 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: ${{env.NODE_VERSION}}
           cache: "yarn"
-      - name: yarn install, build, lint
+      - name: yarn build
         run: |
           yarn install --immutable
           yarn build
-          yarn eslint . --ext .js,.jsx,.ts,.tsx
       - name: store build artifact
-        if: ${{matrix.node-version == '16.14.2'}}
         uses: actions/upload-artifact@v3
         with:
           name: build
           path: build
+  
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Lint with eslint
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{env.NODE_VERSION}}
+          cache: "yarn"
+      - name: yarn lint
+        run: |
+          yarn install --immutable
+          yarn eslint . --ext .js,.jsx,.ts,.tsx
 
   cypress_tests:
     needs: build
