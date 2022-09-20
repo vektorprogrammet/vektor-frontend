@@ -13,20 +13,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
           cache: "yarn"
-      - name: yarn install, build, test, lint
+      - name: yarn install, build, lint
         run: |
           yarn install --immutable
           yarn build
-          yarn test
           yarn eslint . --ext .js,.jsx,.ts,.tsx
+          
+  cypress_tests:
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        browser: [chrome, firefox, edge]
+
+    container:
+      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: ${{ matrix.browser }}

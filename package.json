@@ -34,10 +34,10 @@
     "@types/react-dom": "17.0.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "test": "cypress run",
+    "test:firefox": "cypress run --browser firefox",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "browserslist": {
@@ -60,9 +60,14 @@
     "@types/jest": "^27.0.1",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/tailwindcss": "^2.2.4",
+    "@vitejs/plugin-react": "^2.1.0",
+    "cypress": "10.6.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-typescript": "^14.0.0"
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "vite": "^3.1.0",
+    "vite-plugin-svgr": "^2.2.1",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "packageManager": "yarn@3.0.2"
 }
