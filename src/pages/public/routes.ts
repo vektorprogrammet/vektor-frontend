@@ -8,7 +8,7 @@ import Team from "./Team";
 
 interface PageRoute {
   route: string;
-  component: React.FunctionComponent | React.ComponentClass;
+  component: React.ComponentType;
 }
 
 // The route with the corresponding component to render in the route
@@ -17,7 +17,7 @@ const routes: Array<PageRoute> = [
   { route: "/foreldre", component: ForForeldre },
   { route: "/skoler", component: ForSkoler },
   { route: "/kontakt", component: Kontakt },
-  { route: "/om-vektor", component: OmOss },
+  { route: "/om-oss", component: OmOss },
   { route: "/team", component: Team },
 ];
 

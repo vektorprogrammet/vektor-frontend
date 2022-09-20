@@ -3,26 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/node": "^14.17.14",
+    "@craco/craco": "^6.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@types/node": "^16.0.0",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
-    "@types/react-router-dom": "^5.1.8",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "^5.2.0",
+    "autoprefixer": "^9.8.6",
+    "eslint-plugin": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jest": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^5.3.0",
-
+    "react-router-dom": "^6.0.0",
     "react-scripts": "4.0.3",
-    "@craco/craco": "^6.2.0",
-    "autoprefixer": "^9.8.6",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "test": "cypress run",
+    "test:firefox": "cypress run --browser firefox",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "browserslist": {
@@ -38,13 +48,20 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
     "@testing-library/dom": "^8.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
-
+    "@types/jest": "^27.0.1",
+    "@types/tailwindcss": "^2.2.4",
+    "@vitejs/plugin-react": "^2.1.0",
+    "cypress": "10.6.0",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-typescript": "^14.0.0"
-  }
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "vite": "^3.1.0",
+    "vite-plugin-svgr": "^2.2.1",
+    "vite-tsconfig-paths": "^3.5.0"
+  },
+  "packageManager": "yarn@3.0.2"
 }
