@@ -8,7 +8,7 @@ import "../../../../App.css";
 
 const ServerOverview = (): JSX.Element => {
   const [servers, setServers] = useState<[StagingServerAPIResponse]>();
-  const [rows, setRows] = useState<Array<Number>>([]);
+  const [rows, setRows] = useState<Array<Boolean>>([]);
 
   useEffect(() => {
     async function getServers() {
@@ -62,7 +62,7 @@ const ServerOverview = (): JSX.Element => {
                     rowsCopy[index] = rowsCopy[index] === 0 ? 1 : 0;
                     setRows(rowsCopy);
                   }}
-                  className={`${index % 2 === 1 ? "bg-gray-900 bg-opacity-10" : ""}`}
+                  className={`cursor-pointer bg-gray-900 hover:bg-opacity-20 ${index % 2 === 1 ? "bg-opacity-10" : "bg-opacity-0"}`}
                 >
                   <td className="p-5">{server.branch}</td>
                   <td className="p-5">{server.repo.substring(("https://github.com/vektorprogrammet/").length)}</td>
@@ -77,7 +77,7 @@ const ServerOverview = (): JSX.Element => {
                 </tr>
                 <tr>
                   <td colSpan={4}>
-                    {rows[index] === 1
+                    {rows[index]
                       ? <iframe className="w-full h-96 border-b-2 border-r-2 border-l-2 border-blue-400" title="preview" src={server.url} frameBorder="1" />
                       : null}
                   </td>

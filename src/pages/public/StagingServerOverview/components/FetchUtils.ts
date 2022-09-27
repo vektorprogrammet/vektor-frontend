@@ -1,7 +1,7 @@
 const serverURL = "https://staging.vektorprogrammet.no/api/servers";
 const diskUsageURL = "https://staging.vektorprogrammet.no/api/disk-space";
 
-export async function fetchServers(): Promise<any> {
+export async function fetchServers(): Promise<[StagingServerAPIResponse]> {
   const response = await fetch(serverURL);
   const body = await response.json();
   return body;
