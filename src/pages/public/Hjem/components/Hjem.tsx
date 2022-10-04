@@ -1,28 +1,27 @@
 import { Link } from "react-router-dom";
-import "../hjem.css";
 
 const Hjem = (): JSX.Element => {
   return (
-    <div className="w-full">
-      <img className="pt-600 w-full" src="images/Rectangle.png" />
-      <div className="absolute w-full">
-        <div className="absolute flex-column w-full pl-20 py-80 bottom-0 inset-x-0 text-vektor-darblue text-xs text-left leading-4 align-text-top ">
-          <h1 className="vektor-darblue text-4xl ">Vektorprogrammet</h1>
-          <p className="text-xl max-w-sm leading-6 tracking-wide pb-10">
+    <div>
+      <div className="grid grid-cols-2 gap-2 m-20 place-content-end">
+        <div className="grid grid-rows-3 place-content-center m-20">
+          <h1 className="text-vektor-darblue text-5xl tracking-wide">
+            Vektorprogrammet
+          </h1>
+          <p className="text-vektor-darblue text-xl leading-normal max-w-sm tracking-wide text-start">
             - sender studenter til ungdomsskoler for å hjelpe til som lærerens
             assistent i matematikkundervisningen
           </p>
-          <div className="flex flex-row space-x-2 ">
-            <div className="flex space-x-4 w-1/5 justify-start">
-              <button
-                type="button"
-                className="px-8 py-3 bg-vektor-darblue text-base font-medium hover:bg-blue-400 text-white px-6 rounded-full"
-              >
-                Les mer og bli assistent
-              </button>
-            </div>
+          <div className="w-30 h-30 jplace-content-center">
+            <button
+              type="button"
+              className="bg-vektor-darblue font-medium hover:bg-blue-400 text-white rounded-full"
+            >
+              Bli assistent
+            </button>
           </div>
         </div>
+        <img className="w-full rounded-tl-[60px]" src="images/teaching.png" />
       </div>
       <div className="pl-20 pt-10 grid grid-cols-2 gap-2">
         <div>
