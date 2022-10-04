@@ -1,8 +1,5 @@
 import React from "react";
-import Trondheim from "./Trondheim";
-import Aas from "./Aas";
-import Bergen from "./Bergen";
-import Hovedstyret from "./Hovedstyret";
+import Division from "./Division";
 
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -80,22 +77,68 @@ const Tabs = () => {
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <p>
-                    <Trondheim />
+                    <Division
+                      name="Trondheim"
+                      subtitle="Norges teknisk-naturvitenskapelige universitet"
+                      mail="styret.ntnu@vektorprogrammet.no"
+                      address="Høgskoleringen 5 7491 Trondheim"
+                      contactInfos={[{ name: "Styret", mail: "styret.ntnu@vektorprogrammet.no" },
+                        { name: "Evaluering", mail: "evaluering.ntnu@vektorprogrammet.no" },
+                        { name: "Rekruttering", mail: "rekruttering.ntnu@vektorprogrammet.no" },
+                        { name: "Skolekoordinering", mail: "skolekoordinering.ntnu@vektorprogrammet.no" },
+                        { name: "Sponsor", mail: "sponsor.ntnu@vektorprogrammet.no" },
+                        { name: "Økonomi", mail: "okonomi@vektorprogrammet.no" },
+                        { name: "IT", mail: "it@vektorprogrammet.no" },
+                        { name: "Profilering", mail: "profilering.ntnu@vektorprogrammet.no" }]}
+                      contact
+                    />
                   </p>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                   <p>
-                    <Aas />
+                    <Division
+                      name="Ås"
+                      subtitle="Norges miljø- og biovitenskapelige universitet"
+                      mail="nmbu@vektorprogrammet.no"
+                      contactInfos={[{ name: "Styret", mail: "nmbu@vektorprogrammet.no" },
+                        { name: "Sponsor og økonomi", mail: "sponsor.nmbu@vektorprogrammet.no" },
+                        { name: "Skolekoordinering", mail: "skolekoordinering.nmbu@vektorprogrammet.no" },
+                        { name: "Evaluering, Rekruttering og Profilering", mail: "evaluering.nmbu@vektorprogrammet.no" }]}
+                      contact
+                    />
                   </p>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <p>
-                    <Bergen />
+                    <Division
+                      name="Bergen"
+                      subtitle="Universitetet i Bergen"
+                      mail="uib@vektorprogrammet.no"
+                      contactInfos={[{ name: "Styret", mail: "uib@vektorprogrammet.no" },
+                        { name: "Skolekoordinering", mail: "skolekoordinering.uib@vektorprogrammet.no" },
+                        { name: "Rekruttering", mail: "rekruttering.uib@vektorprogrammet.no" }]}
+                      contact
+                    />
                   </p>
                 </div>
                 <div className={openTab === 4 ? "block" : "hidden"} id="link4">
                   <p>
-                    <Hovedstyret />
+                    <Division
+                      name="Hovedstyret"
+                      description="Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen."
+                      mail="hovedstyret@vektorprogrammet.no"
+                      members={8}
+                      button
+                      contactInfos={[{ name: "Inga Bordal", title: "Leder", mail: "inga.bordal@vektorprogrammet.no" },
+                        { name: "Emma Dyvesveen Myrbekk", title: "Nestleder", mail: "emma.dyvesveen@vektorprogrammet.no" },
+                        { name: "Andreas Hope Pedersen", title: "Ekspansjon", mail: "andreas.pedersen@vektorprogrammet.no" },
+                        { name: "Erlend Marius Ommundsen", title: "IT-ansvarlig", mail: "erlend.marius@vektorprogrammet.no" },
+                        { name: "David Ramsvik", title: "Mentor", mail: "david@vektorprogrammet.no" },
+                        { name: "Ingeborg Eldevik Rusaas", title: "Profilering", mail: "ingeborg.eldevik@vektorprogrammet.no" },
+                        { name: "Adrian Larsen", title: "Sponsor", mail: "adrian@vektorprogrammet.no" },
+                        { name: "Odin Nilsen", title: "Økonomi", mail: "odin@vektorprogrammet.no" }]}
+                      contact={false}
+                    />
                   </p>
                 </div>
               </div>

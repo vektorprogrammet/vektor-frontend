@@ -1,13 +1,33 @@
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const Trondheim = (): JSX.Element => {
+interface DivisionProps {
+  name: string;
+  subtitle?: string;
+  description?: string;
+  mail: string;
+  address?: string;
+  members?: number;
+  button?: boolean
+  contactInfos: ContactInfo[];
+  contact: boolean;
+}
+interface ContactInfo {
+  name: string;
+  title?: string;
+  mail: string;
+}
+
+const Division = ({
+  name, subtitle, description, mail, members, button, address, contactInfos, contact,
+}:DivisionProps): JSX.Element => {
   return (
     <>
       <div className="grid grid-cols-2 gap-10">
         <div>
-          <div className="font-bold text-2xl text-blue-800">Trondheim</div>
-          <div className="text-base">Norges teknisk-naturvitenskapelige universitet</div>
+          <div className="font-bold text-2xl text-blue-800">{name}</div>
+          {subtitle && <div className="text-base">{subtitle}</div>}
+          {description && <div className="text-base">{description}</div>}
           <br />
           <br />
           <div className="whitespace-nowrap flex space-x-1">
@@ -16,55 +36,52 @@ const Trondheim = (): JSX.Element => {
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <polyline points="3 7 12 13 21 7" />
             </svg>
-            <a className="text-sm hover:underline" href="mailto:styret.ntnu@vektorprogrammet.no">styret.ntnu@vektorprogrammet.no</a>
+            <a className="text-sm hover:underline" href={`mailto:${mail}`}>{mail}</a>
           </div>
+          {address && (
           <div className="whitespace-nowrap flex space-x-1">
             <svg className="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <div>Høgskoleringen 5 7491 Trondheim</div>
+            <div>{address}</div>
           </div>
+          )}
+          {members && (
+          <div className="whitespace-nowrap flex space-x-1">
+            <svg className="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <div>
+              {`${members} medlemmer`}
+            </div>
+          </div>
+          )}
+          {button && (
+            <div className="py-5 left-0">
+              <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Les mer om hovedstyret</button>
+            </div>
+          )}
         </div>
         <div>
           <div className="divide-y divide-solid">
-            <div className="py-2 mt-5">
-              <div className="text-blue-800">Styret</div>
-              <a className="text-sm hover:underline" href="mailto:styret.ntnu@vektorprogrammet.no">styret.ntnu@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">Evaluering</div>
-              <a className="text-sm hover:underline" href="mailto:evaluering.ntnu@vektorprogrammet.no">evaluering.ntnu@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">Rekruttering</div>
-              <a className="text-sm hover:underline" href="mailto:rekruttering.ntnu@vektorprogrammet.no">rekruttering.ntnu@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">Skolekoordinering</div>
-              <a className="text-sm hover:underline" href="mailto:skolekoordinering.ntnu@vektorprogrammet.no">skolekoordinering.ntnu@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">Sponsor (Samarbeidskoordinatorer)</div>
-              <a className="text-sm hover:underline" href="mailto:sponsor.ntnu@vektorprogrammet.no">sponsor.ntnu@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">Økonomi</div>
-              <a className="text-sm hover:underline" href="mailto:okonomi@vektorprogrammet.no">okonomi@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">IT</div>
-              <a className="text-sm hover:underline" href="mailto:it@vektorprogrammet.no">it@vektorprogrammet.no</a>
-            </div>
-            <div className="py-2">
-              <div className="text-blue-800">Profilering</div>
-              <a className="text-sm hover:underline" href="mailto:profilering.ntnu@vektorprogrammet.no">profilering.ntnu@vektorprogrammet.no</a>
-            </div>
+
+            {contactInfos.map((data, id) => {
+              return (
+                <div className="py-2 mt-5">
+                  <div className="text-blue-800">{contactInfos[id].name}</div>
+                  {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
+                  <a className="text-sm hover:underline" href={`mailto:${contactInfos[id].mail}`}>{contactInfos[id].mail}</a>
+                </div>
+              );
+            })}
+
           </div>
         </div>
       </div>
+      {contact && (
       <div>
-        <div className="font-bold text-2xl text-blue-800 text-center pt-10">Kontakt styret i Trondheim</div>
+        <div className="font-bold text-2xl text-blue-800 text-center pt-10">{`Kontakt styret i ${name}`}</div>
         <form>
           <div className="mb-6 mt-7">
             <div className="grid xl:grid-cols-2 xl:gap-6">
@@ -96,9 +113,10 @@ const Trondheim = (): JSX.Element => {
           <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Send melding</button>
         </form>
       </div>
+      )}
 
     </>
   );
 };
 
-export default Trondheim;
+export default Division;
