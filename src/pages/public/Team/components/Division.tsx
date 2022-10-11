@@ -1,0 +1,45 @@
+import React from "react";
+
+interface Props {
+  title: string;
+  text: string;
+  mail: string;
+  numberOfMembers: string;
+}
+
+const Division = ({
+  title, text, mail, numberOfMembers,
+}: Props): JSX.Element => {
+  return (
+    <div className="rounded bg-grey-light w-64 shadow-md border-2">
+      <div className="justify-between py-1 text-center border-b-2 text-gray-600 text-lg">
+        {title}
+      </div>
+      <div className="text-sm mt-2">
+        <div className="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+          {text}
+          <br />
+          <br />
+          <br />
+          <br />
+          <svg className="h-4 w-4 text-balck" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <polyline points="3 7 12 13 21 7" />
+          </svg>
+          <a className="text-sm hover:underline" href="mailto:uib@vektorprogrammet.no">{mail}</a>
+          <br />
+          <svg className="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          {`${numberOfMembers} medlemmer`}
+        </div>
+        <button type="button" className="py-2 px-4 w-full font-medium text-mid border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700">
+          Les mer
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Division;

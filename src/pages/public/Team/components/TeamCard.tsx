@@ -18,17 +18,7 @@ const TeamCard = ({
   imgPath,
 }: Props): JSX.Element => {
   return (
-    // <div className="float-container">
-    //   <div className="w-1/2 float-left max-w-screen-sm mt-10 mb-0 ml-10 flex flex-col">
-    //     <h1 className="max-w-2xl text-gray-600 text-4xl text-left font-bold mx-3">
-    //       {title}
-    //     </h1>
-    //     <p className="max-w-2xl text-left mt-4 mb-5 text-xl mx-3">{text1}</p>
-    //     <p className="max-w-2xl text-left text-xl mx-3">{text2}</p>
-    //     <p className="max-w-2xl text-left mb-20 text-xl mx-3 font-bold">
-    //       {text3}
-    //     </p>
-    //   </div>
+
     <div className="flex w-full mx-auto justify-around flex-wrap">
       <div className="max-w-6xl mt-5 flex flex-col">
         <h1 className=" text-gray-600 text-4xl font-bold mx-3">{title}</h1>
@@ -48,7 +38,6 @@ const TeamCard = ({
               fill="none"
               strokeWidth="2"
               stroke="#2b69b0"
-              //   class="city-polyline"
               points="-60,51 30,51 90,101"
             />
           </svg>

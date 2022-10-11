@@ -1,5 +1,6 @@
 import React from "react";
 import TeamCard from "./TeamCard";
+import Tabs from "./TeamTabs";
 
 const teamInfo = {
   title: "Våre team",
@@ -31,9 +32,9 @@ const Team = (): JSX.Element => {
       <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
         {teamInfo.title}
       </h1>
+      <Tabs />
     </div>
   );
-  // return <article className="container"><h1>Siden for team</h1></article>;
 };
 
 export default Team;
