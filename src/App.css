@@ -1,8 +1,10 @@
+@import "tailwindcss/components";
 
 .AppHeader {
   background-color: white;
   transition: background-color 0.5s;
 }
+
 .dark .AppHeader {
   background-color: #333;
 }
@@ -11,6 +13,7 @@
   background-color: white;
   transition: background-color 0.5s;
 }
+
 .dark .App {
   background-color: #2a2a2a;
 }
@@ -27,6 +30,7 @@
   .header-link {
     @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-base md:m-0 md:p-0 md:font-normal;
   }
+
   .container {
     @apply mx-auto p-4;
   }
