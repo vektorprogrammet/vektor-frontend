@@ -16,8 +16,8 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the cypress tests defined in (cypress)[./cypress].
+To specify the tests to run in firefox specifically run `yarn test:firefox`
 
 ### `yarn build`
 
