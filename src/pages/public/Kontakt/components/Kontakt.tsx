@@ -1,5 +1,6 @@
 import React from "react";
 import KontaktCard from "pages/public/Kontakt/components/KontaktCard";
+import Tabs from "./KontaktOss.js";
 
 const kontaktInfo = {
   title: "Kontakt oss",
@@ -28,6 +29,7 @@ const Kontakt = (): JSX.Element => {
       <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
         {kontaktInfo.title}
       </h1>
+      <Tabs />
     </div>
   );
 };

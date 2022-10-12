@@ -41,6 +41,7 @@ module.exports = {
       "double",
       { avoidEscape: true, allowTemplateLiterals: true },
     ],
+    "react/require-default-props": "off",
     "linebreak-style": "off",
     "@typescript-eslint/quotes": "off",
     "arrow-body-style": "off",
