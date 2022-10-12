@@ -48,6 +48,17 @@ jobs:
           yarn install --immutable
           yarn eslint . --ext .js,.jsx,.ts,.tsx
 
+  vitest_tests:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: |
+          yarn install --immutable
+          yarn test:vitest
+
   cypress_tests:
     needs: build
     runs-on: ubuntu-latest
