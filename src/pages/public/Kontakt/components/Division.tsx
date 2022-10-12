@@ -66,12 +66,12 @@ const Division = ({
         <div>
           <div className="divide-y divide-solid">
 
-            {contactInfos.map((data) => {
+            {contactInfos.map((data, id) => {
               return (
                 <div className="py-2 mt-5">
-                  <div className="text-blue-800">{data.name}</div>
-                  {data.title && <div>{data.title}</div>}
-                  <a className="text-sm hover:underline" href={`mailto:${data.mail}`}>{data.mail}</a>
+                  <div className="text-blue-800">{contactInfos[id].name}</div>
+                  {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
+                  <a className="text-sm hover:underline" href={`mailto:${contactInfos[id].mail}`}>{contactInfos[id].mail}</a>
                 </div>
               );
             })}

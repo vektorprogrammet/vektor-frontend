@@ -29,11 +29,7 @@ const Kontakt = (): JSX.Element => {
       <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
         {kontaktInfo.title}
       </h1>
-      <Tabs divisions={[{ name: "Trondheim", number: 1 },
-        { name: "Ås", number: 2 },
-        { name: "Bergen", number: 3 },
-        { name: "Hovedstyret", number: 4 }]}
-      />
+      <Tabs />
     </div>
   );
 };
