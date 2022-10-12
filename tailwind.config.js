@@ -20,6 +20,7 @@ module.exports = {
         'vektor-darblue': '#023874',
         'vektor-darkfooter': '#022346',
         'vektor-bg': '#fafdff',
+        'vektor-bg2': '#e6f3f7'
       },
     },
   },
