@@ -20,11 +20,11 @@ const ServerOverview = (): JSX.Element => {
     getServers();
   }, []);
 
-  const tableHeadClass = "px-5 py-3 border-gray-200 bg-gray-300 text-left text-m font-bold text-gray-600 uppercase tracking-wider";
+  const tableHeadClass = "px-5 py-3 border-gray-200 bg-gray-300 text-left text-m font-bold text-gray-600 uppercase tracking-wider dark:bg-gray-700 dark:text-gray-300";
 
   return (
-    <div>
-      <table className="justify-center m-auto my-20">
+    <div className="overflow-x-auto my-20 mx-10 justify-center dark:bg-gray-500 dark:text-gray-300 rounded-md">
+      <table className="w-full">
         <thead>
           <tr>
             <th
@@ -69,8 +69,8 @@ const ServerOverview = (): JSX.Element => {
                   <td className="p-5">{server.url}</td>
                   <td className="p-5">
                     <a href={server.url} target="_blank" rel="noreferrer">
-                      <button onClick={(e) => e.stopPropagation()} type="button" className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
-                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      <button onClick={(e) => e.stopPropagation()} type="button" className="btn btn-info dark:btn">
+                        <FontAwesomeIcon className="text-white" icon={faExternalLinkAlt} />
                       </button>
                     </a>
                   </td>
