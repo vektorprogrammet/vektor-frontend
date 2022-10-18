@@ -20,14 +20,12 @@ module.exports = {
         'vektor-darkfooter': '#022346',
         'vektor-bg': '#fafdff',
       },
-    },
-
-    extend: {
+      
       backgroundImage : {
-          'vektor-logo': "url('public/images/vektor-logo.svg')",
-          'vektor-logo-dark': "url('public/images/vektor-logo-darkmode.png')",
-      }
-    }
+        'vektor-logo': "url('public/images/vektor-logo.svg')",
+        'vektor-logo-dark': "url('public/images/vektor-logo-darkmode.png')",
+      },
+    },
   },
   variants: {
     extend: {},
