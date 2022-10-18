@@ -29,7 +29,7 @@ const AppHeader = (): JSX.Element => {
       <div className="hidden md:flex mx-auto p-3 space-x-8 items-center justify-center lg:px-8 w-full max-w-7xl">
         <div className="w-1/5 justify-center flex">
           <Link to="/">
-            <div className="bg-vektor-logo dark:bg-vektor-logo-dark bg-contain bg-no-repeat w-36 h-20"></div>
+            <div className="bg-vektor-logo dark:bg-vektor-logo-dark bg-contain bg-no-repeat w-36 h-20" />
           </Link>
         </div>
         <div className="flex flex-grow justify-between justify-self-center max-w-lg m-auto items-center w-2/5">
