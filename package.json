@@ -32,9 +32,10 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "cypress run && vitest",
+    "test": "cypress run && vitest run",
     "test:cypress:firefox": "cypress run --browser firefox",
-    "test:vitest": "vitest",
+    "test:vitest": "vitest run",
+    "test:vitest:watch": "vitest watch",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "browserslist": {
