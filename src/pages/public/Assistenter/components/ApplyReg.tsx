@@ -4,7 +4,7 @@ export const ApplyCard = (props: any) => {
   const { cities } = props;
   return (
     <form>
-      <h1 className="text-xl my-8 text-vektor-darblue font-bold">
+      <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center">
         {" "}
         {cities}
       </h1>
