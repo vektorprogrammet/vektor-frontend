@@ -4,19 +4,20 @@ interface Props {
   title: string;
   text: string;
   mail: string;
+  button_name: string;
   numberOfMembers: number;
 }
 
 const Division = ({
-  title, text, mail, numberOfMembers,
+  title, text, mail, numberOfMembers, button_name,
 }: Props): JSX.Element => {
   return (
-    <div className="flex-none flex-col grow rounded bg-grey-light w-64 shadow-md border-2">
-      <div className="justify-between py-1 text-center border-b-2 text-gray-600 text-lg">
+    <div className="relative h-full content-center grow rounded bg-grey-light w-64 shadow-md border-2 place-items-center">
+      <div className="justify-between py-1 text-center border-b-2 text-blue-900 text-lg font-bold">
         {title}
       </div>
       <div className="text-sm mt-2">
-        <div className="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
+        <div className="bg-white p-2 rounded mt-1  cursor-pointer hover:bg-grey-lighter">
           {text}
           <br />
           <br />
@@ -38,11 +39,13 @@ const Division = ({
               <div className="top-0">{`${numberOfMembers} medlemmer`}</div>
             </div>
           </div>
+          <br />
+          <br />
         </div>
       </div>
-      <div className="inset-x-0 bottom-0">
-        <button type="button" className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700">
-          Les mer
+      <div className="absolute inset-x-0 bottom-0 align-bottom">
+        <button type="button" className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font">
+          {button_name}
         </button>
       </div>
     </div>

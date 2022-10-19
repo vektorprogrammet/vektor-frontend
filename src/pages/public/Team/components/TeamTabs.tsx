@@ -23,7 +23,7 @@ const Tabs = ({
               return (
                 <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
                   <a
-                    className={`text-base font-bold px-1 py-3 block line leading-normal hover:border-t-2 hover:border-r-2 hover:border-l-2 hover:text-gray-400 ${openTab === data.number ? `text-black bg-white border-t-2 border-r-2 border-l-2` : `text-blue-500 `}`}
+                    className={`text-base font-bold px-1 py-3 block line leading-normal hover:border-t-2 hover:border-r-2 hover:border-l-2 hover:text-vektor-blue ${openTab === data.number ? `text-vektor-darblue bg-white border-t-2 border-r-2 border-l-2` : `text-vektor-darblue `}`}
                     onClick={(e) => {
                       e.preventDefault();
                       setOpenTab(data.number);
@@ -32,7 +32,7 @@ const Tabs = ({
                     href={`#link${data.number}`}
                     role="tablist"
                   >
-                    <i className="fas fa-space-shuttle text-base mr-1" />
+                    <i className="fas fa-space-shuttle text-base mr-1 " />
                     {" "}
                     {data.name}
                   </a>
@@ -45,34 +45,34 @@ const Tabs = ({
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <p>
-                    <div className="flex flex-wrap items-stretch m-10 space-x-6 space-y-6">
-                      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Trondheim." mail="styret.ntnu@vektorprogrammet.no" numberOfMembers={9} />
-                      <Division title="EVALUERING" text="Vi sender ut spørreundersøkelser, lager statistikk av dem og skriver så semester- og årsrapporter." mail="evaluering.ntnu@vektorprogrammet.no" numberOfMembers={5} />
-                      <Division title="REKRUTTERING" text="I rekruttering jobber vi med å skaffe nye vektorassistenter." mail="rekruttering.ntnu@vektorprogrammet.no" numberOfMembers={11} />
-                      <Division title="SKOLEKOORDINERING" text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret." mail="skolekoordinering.ntnu@vektorprogrammet.no" numberOfMembers={8} />
-                      <Division title="SPONSOR" text="Vektorprogrammets bindeledd til næringslivet, samarbeidspartnere og sponsorer." mail="sponsor.ntnu@vektorprogrammet.no" numberOfMembers={6} />
-                      <Division title="ØKONOMI" text="Økonomiteamet har ansvaret for Vektorprogrammets økonomi." mail="okonomi@vektorprogrammet.no" numberOfMembers={9} />
-                      <Division title="IT" text="IT-teamet utvikler og drifter Vektorprogrammets nettside og interne datasystemer." mail="it@vektorprogrammet.no" numberOfMembers={10} />
-                      <Division title="PROFILERING" text="Profileringsteamet jobber for å gjøre Vektorprogrammet mer synlig gjennom sosiale medier." mail="profilering.ntnu@vektorprogrammet.no" numberOfMembers={7} />
+                    <div className="grid grid-cols-3 gap-8 place-items-center">
+                      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Trondheim." mail="styret.ntnu@vektorprogrammet.no" numberOfMembers={9} button_name="Les mer" />
+                      <Division title="EVALUERING" text="Vi sender ut spørreundersøkelser, lager statistikk av dem og skriver så semester- og årsrapporter." mail="evaluering.ntnu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" />
+                      <Division title="REKRUTTERING" text="I rekruttering jobber vi med å skaffe nye vektorassistenter." mail="rekruttering.ntnu@vektorprogrammet.no" numberOfMembers={11} button_name="Les mer" />
+                      <Division title="SKOLEKOORDINERING" text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret." mail="skolekoordinering.ntnu@vektorprogrammet.no" numberOfMembers={8} button_name="Les mer" />
+                      <Division title="SPONSOR" text="Vektorprogrammets bindeledd til næringslivet, samarbeidspartnere og sponsorer." mail="sponsor.ntnu@vektorprogrammet.no" numberOfMembers={6} button_name="Les mer" />
+                      <Division title="ØKONOMI" text="Økonomiteamet har ansvaret for Vektorprogrammets økonomi." mail="okonomi@vektorprogrammet.no" numberOfMembers={9} button_name="Les mer" />
+                      <Division title="IT" text="IT-teamet utvikler og drifter Vektorprogrammets nettside og interne datasystemer." mail="it@vektorprogrammet.no" numberOfMembers={10} button_name="Les mer" />
+                      <Division title="PROFILERING" text="Profileringsteamet jobber for å gjøre Vektorprogrammet mer synlig gjennom sosiale medier." mail="profilering.ntnu@vektorprogrammet.no" numberOfMembers={7} button_name="Les mer" />
                     </div>
                   </p>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                   <p>
-                    <div className="flex flex-wrap items-stretch m-10 space-x-6 space-y-6">
-                      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Ås." mail="nmbu@vektorprogrammet.no" numberOfMembers={5} />
-                      <Division title="SPONSOR" text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås." mail="sponsor.nmbu@vektorprogrammet.no" numberOfMembers={4} />
-                      <Division title="SKOLEKOORDINERING" text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene." mail="skolekoordinering.nmbu@vektorprogrammet.no" numberOfMembers={5} />
-                      <Division title="EVALUERING" text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet." mail="evaluering.nmbu@vektorprogrammet.no" numberOfMembers={8} />
+                    <div className="grid grid-cols-3 gap-8 place-items-center">
+                      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Ås." mail="nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" />
+                      <Division title="SPONSOR" text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås." mail="sponsor.nmbu@vektorprogrammet.no" numberOfMembers={4} button_name="Les mer" />
+                      <Division title="SKOLEKOORDINERING" text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene." mail="skolekoordinering.nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" />
+                      <Division title="EVALUERING" text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet." mail="evaluering.nmbu@vektorprogrammet.no" numberOfMembers={8} button_name="Les mer" />
                     </div>
                   </p>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <p>
-                    <div className="flex flex-wrap items-stretch m-10 space-x-6 space-y-6">
-                      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Bergen." mail="uib@vektorprogrammet.no" numberOfMembers={2} />
-                      <Division title="SKOLEKOORDINERING" text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret." mail="skolekoordinering.uib@vektorprogrammet.no" numberOfMembers={2} />
-                      <Division title="REKRUTTERING" text="I rekruttering jobber vi med å skaffe nye vektorassistenter!" mail="rekruttering.uib@vektorprogrammet.no" numberOfMembers={2} />
+                    <div className="grid grid-cols-3 gap-8 place-items-center">
+                      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Bergen." mail="uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
+                      <Division title="SKOLEKOORDINERING" text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret." mail="skolekoordinering.uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
+                      <Division title="REKRUTTERING" text="I rekruttering jobber vi med å skaffe nye vektorassistenter!" mail="rekruttering.uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
                     </div>
                   </p>
                 </div>
