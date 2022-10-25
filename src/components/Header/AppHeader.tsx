@@ -36,8 +36,8 @@ const AppHeader = (): JSX.Element => {
           {linkElements}
         </div>
         <div className="flex space-x-4 w-1/5 justify-start">
-          <button type="button" className="bg-blue-900 hover:bg-grey-800 text-white px-6 py-2 rounded-full">Jeg er ny</button>
-          <button type="button" className="bg-blue-400 hover:bg-blue-900 text-white px-6 py-2 rounded-full">Logg inn</button>
+          <button type="button" className="bg-vektor-darblue hover:bg-vektor-blue-hover text-white px-6 py-2 rounded-full">Jeg er ny</button>
+          <button type="button" className="bg-vektor-darblue hover:bg-vektor-blue-hover text-white px-6 py-2 rounded-full">Logg inn</button>
         </div>
       </div>
       <MobileMenu
