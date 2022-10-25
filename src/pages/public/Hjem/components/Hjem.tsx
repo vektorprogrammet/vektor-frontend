@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Hjem = (): JSX.Element => {
   return (
     <div>
-      <div className="bg-vektor-bg2 grid grid-cols-2 py-20 pr-20 place-items-center">
-        <div className="grid grid-rows-3 my-10 mb-40 justify-items-start gap-y-10">
+      <div className="bg-vektor-bg2 mx-1/4 py-40 flex flex-row  flex-wrap space-x-20 items-center justify-center  ">
+        <div className="space-y-10">
           <img className="w-64" src="images/vektor-logo.svg" />
           {/*        <h1 className="text-vektor-darblue text-5xl tracking-wide">
             Vektorprogrammet
@@ -16,40 +16,40 @@ const Hjem = (): JSX.Element => {
           <div className="flex space-x-4 justify-start">
             <button
               type="button"
-              className="bg-vektor-darblue hover:bg-vektor-blue-hover px-6 h-1/2 text-white rounded-full"
+              className="bg-vektor-darblue hover:bg-vektor-blue-hover px-6 py-2 w-1/3 text-white rounded-full"
             >
               Bli medlem
             </button>
             <button
               type="button"
-              className="bg-vektor-blue hover:bg-vektor-blue-hover px-6 h-1/2 text-white rounded-full"
+              className="bg-vektor-blue hover:bg-vektor-blue-hover px-6 py-2 w-1/3 text-white rounded-full"
             >
               Les mer
             </button>
           </div>
         </div>
         <img
-          className="w-full rounded-br-[60px] rounded-tl-[60px]"
+          className="w-1/2 rounded-br-[60px] rounded-tl-[60px]"
           src="images/vektor2.png"
         />
       </div>
-      <div className="bg-vektor-darblue pl-20 pt-10 grid grid-cols-2 place-items-start">
-        <div className="grid grid-rows-3 gap-8 mx-20 justify-items-center text-center">
+      <div className="bg-vektor-darblue flex flex-wrap items-center justify-center inline-block align-bottom w-full">
+        <div className="justify-items-center text-center space-y-4 m-20">
           <div>
             <h1 className="text-white text-4xl tracking-wide">1910</h1>
             <h2 className="text-white text-xl tracking-wide">Assistenter</h2>
           </div>
-          <h3 className="text-white text-xl w-96 tracking-wide text-start">
+          <h3 className="text-white text-xl max-w-md tracking-wide text-center">
             Over 1910 studenter har hatt et verv som vektorassistent i
             Vektorprogrammet.
           </h3>
         </div>
-        <div className="grid grid-rows-3 gap-8 mx-20 justify-items-center text-center">
+        <div className="m-20 justify-items-center text-center space-y-4">
           <div>
             <h1 className="text-white text-4xl tracking-wide">531</h1>
             <h2 className="text-white text-xl tracking-wide">I team</h2>
           </div>
-          <h3 className="text-white text-xl w-96 tracking-wide text-start">
+          <h3 className="text-white text-xl max-w-md tracking-wide text-center">
             Over 531 studenter har hatt et verv i et av Vektorprogrammets mange
             team.
           </h3>
@@ -58,8 +58,10 @@ const Hjem = (): JSX.Element => {
           <img className="blackboardImg" src="images/blackboard.png" />
         </div> */}
       </div>
-      <h1 className="flex justify-center pt-20">Sponsorer</h1>
-      <div className="pt-10 grid grid-cols-3 gap-4">
+      <h1 className="flex justify-center pt-20 text-vektor-darblue m-10 text-4xl tracking-wide">
+        Sponsorer
+      </h1>
+      <div className="flex flex-column flex-wrap lg:mx-40 m-20 items-center justify-center  place-items-start space-y-20 space-x-20">
         <img className="teknaImg" src="images/tekna.jpg" />
         <img className="sponsorImg" src="images/ntnu1.png" />
         <img className="sponsorImg" src="images/ntnu2.png" />
