@@ -27,9 +27,7 @@ const Division = ({
           <div className="font-bold text-2xl text-blue-800">{name}</div>
           {subtitle && <div className="text-base">{subtitle}</div>}
           {description && <div className="text-base">{description}</div>}
-          <br />
-          <br />
-          <div className="whitespace-nowrap flex space-x-1">
+          <div className="whitespace-nowrap flex space-x-1 mt-8">
             <svg className="h-4 w-4 text-balck" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" />
               <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -58,41 +56,37 @@ const Division = ({
           )}
           {button && (
             <div className="py-5 left-0">
-              <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Les mer om hovedstyret</button>
+              <button type="submit" className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Les mer om hovedstyret</button>
             </div>
           )}
         </div>
-        <div>
-          <div className="divide-y divide-solid">
+        <div className="divide-y divide-solid">
 
-            {contactInfos.map((data, id) => {
-              return (
-                <div className="py-2 mt-5">
-                  <div className="text-blue-800">{contactInfos[id].name}</div>
-                  {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
-                  <a className="text-sm hover:underline" href={`mailto:${contactInfos[id].mail}`}>{contactInfos[id].mail}</a>
-                </div>
-              );
-            })}
+          {contactInfos.map((data, id) => {
+            return (
+              <div className="py-2 mt-5">
+                <div className="text-blue-800">{contactInfos[id].name}</div>
+                {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
+                <a className="text-sm hover:underline" href={`mailto:${contactInfos[id].mail}`}>{contactInfos[id].mail}</a>
+              </div>
+            );
+          })}
 
-          </div>
         </div>
       </div>
       {contact && (
       <div>
         <div className="font-bold text-2xl text-blue-800 text-center pt-10">{`Kontakt styret i ${name}`}</div>
         <form>
-          <div className="mb-6 mt-7">
-            <div className="grid xl:grid-cols-2 xl:gap-6">
-              <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">
-                Ditt navn
-                <input type="name" id="name" className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500" required />
-              </label>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">
-                Din e-post
-                <input type="email" id="email" className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required />
-              </label>
-            </div>
+          <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
+            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">
+              Ditt navn
+              <input type="name" id="name" className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500" required />
+            </label>
+            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">
+              Din e-post
+              <input type="email" id="email" className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required />
+            </label>
           </div>
           <div className="mb-6">
             <label htmlFor="topic" className="block mb-2 text-sm font-medium text-gray-900">
@@ -106,7 +100,7 @@ const Division = ({
               <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300" />
             </label>
           </div>
-          <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Send melding</button>
+          <button type="submit" className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Send melding</button>
         </form>
       </div>
       )}
