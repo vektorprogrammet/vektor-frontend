@@ -10,7 +10,7 @@ const Assistenter = (): JSX.Element => {
   const scrollToCard = () => cardElement.current?.scrollIntoView({ behavior: "smooth", block: "center" });
 
   return (
-    <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col flex justify-center items-center ">
+    <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center ">
       <div className="bg-vektor-bg" />
       <h1 className="font-sans max-w-2xl mt-10 text-vektor-darblue text-4xl text-center font-bold mx-3">
         {title}
@@ -31,18 +31,16 @@ const Assistenter = (): JSX.Element => {
         </button>
       </div>
 
-      <div className="mb-16">
-        <div className="flex justify-evenly space-x-10">
-          {cards.map(({ title: cardTitle, text, image }) => (
-            <TextPictureCard
-              key={cardTitle}
-              title={cardTitle}
-              text={text}
-              imgPath={image.url}
-              alt={image.alt}
-            />
-          ))}
-        </div>
+      <div className="mb-16 flex justify-evenly space-x-10">
+        {cards.map(({ title: cardTitle, text, image }) => (
+          <TextPictureCard
+            key={cardTitle}
+            title={cardTitle}
+            text={text}
+            imgPath={image.url}
+            alt={image.alt}
+          />
+        ))}
       </div>
 
       <div className="mb-16" id="tc">
@@ -95,55 +93,49 @@ const Assistenter = (): JSX.Element => {
       <div className="text-vektor-darblue font-bold my-8 text-2xl text-center">
         Hvordan blir jeg Vektorassistent?
       </div>
-
-      <div className="flex flex-row ">
-        <div className="inline-flex space-x-16">
-          <div className="flex-1 ...">
-            <ul className="leading-loose whitespace-normal md:whitespace-pre list-disc">
-              <div className="text-vektor-darblue font-bold my-3 text-lg">
-                Opptakskrav
-              </div>
-
-              <li>Du studerer på høgskole/universitet</li>
-              <li>Du har hatt R1/S2 på videregående</li>
-              <li>
-                Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)
-                <br />
-                {" "}
-                i en periode på 4 eller 8 uker
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex-2 ...">
-            <div className="font-bold text-vektor-darblue my-3 text-lg">
-              Opptaksprosessen
+      <div className="flex flex-row space-x-16">
+        <div className="flex-1 ...">
+          <ul className="leading-loose whitespace-normal md:whitespace-pre list-disc">
+            <div className="text-vektor-darblue font-bold my-3 text-lg">
+              Opptakskrav
             </div>
-            <ol className="leading-relaxed whitespace-normal md:whitespace-pre list-decimal leading-loose ">
-              <li>
-                Vektorprogrammet tar opp nye assistenter i starten av hvert
-                semester
-              </li>
-              <li>Send inn søknad fra skjemaet lengre ned på denne siden</li>
-              <li>
-                Møt opp på intervju slik at vi kan bli bedre kjent med deg
-              </li>
-              <li>
-                Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet
-              </li>
-              <li>
-                Få tildelt en ungdomsskole som du og din vektorpartner skal dra
-                til
-              </li>
-            </ol>
+
+            <li>Du studerer på høgskole/universitet</li>
+            <li>Du har hatt R1/S2 på videregående</li>
+            <li>
+              Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)
+              <br />
+              i en periode på 4 eller 8 uker
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex-2 ...">
+          <div className="font-bold text-vektor-darblue my-3 text-lg">
+            Opptaksprosessen
           </div>
+          <ol className="whitespace-normal md:whitespace-pre list-decimal leading-loose ">
+            <li>
+              Vektorprogrammet tar opp nye assistenter i starten av hvert
+              semester
+            </li>
+            <li>Send inn søknad fra skjemaet lengre ned på denne siden</li>
+            <li>
+              Møt opp på intervju slik at vi kan bli bedre kjent med deg
+            </li>
+            <li>
+              Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet
+            </li>
+            <li>
+              Få tildelt en ungdomsskole som du og din vektorpartner skal dra
+              til
+            </li>
+          </ol>
         </div>
       </div>
 
-      <div
-        className="font-bold text-vektor-darblue text-3xl mt-16"
-      >
-        <div>Søk nå!</div>
+      <div className="font-bold text-vektor-darblue text-3xl mt-16 mb-8">
+        Søk nå!
       </div>
 
       <div ref={cardElement}>
@@ -154,7 +146,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="font-bold mb-16 text-vektor-darblue">
-        <div>Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar. </div>
+        Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.
       </div>
     </div>
   );
