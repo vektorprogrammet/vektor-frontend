@@ -9,52 +9,48 @@ const activeStyle: React.CSSProperties = {
 
 const UserAvatar = () => {
   return (
-    <div className="flex-1 navbar justify-center">
-      <div className="flex-none gap-2">
-        <button tabIndex={0} className="dropdown dropdown-end" type="button">
-          <div className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img
-                src="https://placeimg.com/80/80/people"
-                alt="profile avatar"
-              />
-            </div>
-          </div>
-          <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-            <li>
-              <a href="#0">Kontrollpanel</a>
-            </li>
-            <li>
-              <a href="#0">Min side</a>
-            </li>
-            <li>
-              <a href="#0">Profil</a>
-            </li>
-            <li>
-              <a href="#0">Mine utlegg</a>
-            </li>
-            <li className="text-red-500">
-              <a href="#0">Logg ut</a>
-            </li>
-          </ul>
-        </button>
+    <button tabIndex={0} className="dropdown dropdown-end" type="button">
+      <div className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img
+            src="https://placeimg.com/80/80/people"
+            alt="profile avatar"
+          />
+        </div>
       </div>
-    </div>
+      <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <a href="#0">Kontrollpanel</a>
+        </li>
+        <li>
+          <a href="#0">Min side</a>
+        </li>
+        <li>
+          <a href="#0">Profil</a>
+        </li>
+        <li>
+          <a href="#0">Mine utlegg</a>
+        </li>
+        <li className="text-red-500">
+          <a href="#0">Logg ut</a>
+        </li>
+      </ul>
+    </button>
   );
 };
 
 const LoginButtons = () => {
   return (
-    <div className="flex space-x-4 w-1/5 justify-start">
+    <div className="flex space-x-4">
       <button
         type="button"
-        className="bg-blue-900 hover:bg-grey-800 text-white px-6 py-2 rounded-full"
+        className="bg-blue-900 hover:bg-gray-800 text-white px-4 py-2 rounded-full duration-300"
       >
         Jeg er ny
       </button>
       <button
         type="button"
-        className="bg-blue-400 hover:bg-blue-900 text-white px-6 py-2 rounded-full"
+        className="bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
       >
         Logg inn
       </button>
@@ -64,7 +60,7 @@ const LoginButtons = () => {
 
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const linkElements = routes.map((route) => (
     <NavLink
       key={route.route}
@@ -93,7 +89,9 @@ const AppHeader = (): JSX.Element => {
         <div className="flex flex-grow justify-evenly justify-self-center max-w-lg m-auto items-center w-2/5">
           {linkElements}
         </div>
-        {isLoggedIn ? <LoginButtons /> : <UserAvatar />}
+        <div className="flex w-1/5 justify-center">
+          {isLoggedIn ? <UserAvatar /> : <LoginButtons />}
+        </div>
       </div>
       <MobileMenu
         links={linkElements}
