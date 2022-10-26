@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
-
 const Hjem = (): JSX.Element => {
+  console.log(window.screen.width);
   return (
     <div>
-      <div className="bg-vektor-bg2 mx-1/4 py-40 flex flex-row  flex-wrap space-x-20 items-center justify-center  ">
+      <div className="bg-vektor-bg2 mx-1/4 py-40 flex flex-row flex-wrap space-x-20  items-center justify-center  ">
         <div className="space-y-10">
           <img className="w-64" src="images/vektor-logo.svg" />
-          {/*        <h1 className="text-vektor-darblue text-5xl tracking-wide">
-            Vektorprogrammet
-          </h1> */}
+
           <p className="text-vektor-darblue text-xl leading-normal max-w-sm tracking-wide text-start  ">
             - sender studenter til ungdomsskoler for å hjelpe til som lærerens
             assistent i matematikkundervisningen
@@ -29,7 +26,7 @@ const Hjem = (): JSX.Element => {
           </div>
         </div>
         <img
-          className="w-1/2 rounded-br-[60px] rounded-tl-[60px]"
+          className="w-1/2 rounded-br-[60px] rounded-tl-[60px]" //sm:invisible
           src="images/vektor2.png"
         />
       </div>
@@ -54,20 +51,19 @@ const Hjem = (): JSX.Element => {
             team.
           </h3>
         </div>
-        {/* <div className="flex flex-row pt-20 place-content-left">
-          <img className="blackboardImg" src="images/blackboard.png" />
-        </div> */}
       </div>
       <h1 className="flex justify-center pt-20 text-vektor-darblue m-10 text-4xl tracking-wide">
         Sponsorer
       </h1>
-      <div className="flex flex-column flex-wrap lg:mx-40 m-20 items-center justify-center  place-items-start space-y-20 space-x-20">
-        <img className="teknaImg" src="images/tekna.jpg" />
-        <img className="sponsorImg" src="images/ntnu1.png" />
-        <img className="sponsorImg" src="images/ntnu2.png" />
-        <img className="teknaImg" src="images/tekna.jpg" />
-        <img className="sponsorImg" src="images/ntnu1.png" />
-        <img className="sponsorImg" src="images/ntnu2.png" />
+      <div className="grid lg:grid-cols-3 grid-flow-row auto-cols-auto gap-20 my-20 mx-10 justify-items-center align-center place-items-center lg:mx-40">
+        <img className="pt-5 h-24" src="images/tekna.jpg" />
+        <img className="h-20" src="images/IE.png" />
+        <img className="h-16" src="images/IV.png" />
+        <img className="h-28" src="images/kulturstyret.png" />
+        <img className="h-28" src="images/matematikkSenteret.png" />
+        <img className="h-28" src="images/sf.png" />
+        <img className="h-28 lg:col-span-2" src="images/UIB.png" />
+        <img className="h-28" src="images/VisionTech.png" />
       </div>
     </div>
   );

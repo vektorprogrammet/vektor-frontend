@@ -31,7 +31,7 @@ const AppHeader = (): JSX.Element => {
         <div className="w-1/5 justify-center flex">
           <Link to="/">
             <img
-              src="images/vektor-logo.svg"
+              src="images/vektorlogo_pil.png"
               alt="vektorprogrammet logo"
               className="h-16 lg:h-20"
             />
