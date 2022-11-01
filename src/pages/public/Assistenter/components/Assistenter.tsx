@@ -139,7 +139,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div ref={cardElement}>
-        <Citycard divisionNames={["Trondheim", "Ås", "Bergen"]} />
+        <Citycard />
       </div>
 
       <div className="font-bold mb-16 text-vektor-darblue">
