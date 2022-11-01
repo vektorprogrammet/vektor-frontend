@@ -12,7 +12,6 @@ const FooterLinks = () => {
       <div className="flex space-x-2 place-items-center">
         <a className="hover:underline" href="https://www.facebook.com/vektorprogrammet/">Trondheim</a>
         <a className="hover:underline" href="https://www.facebook.com/vektorprogrammetNMBU/">Ås</a>
-        <a className="hover:underline" href="https://www.facebook.com/Vektorprogrammet-UiO-1017596031601586/">Oslo</a>
         <a className="hover:underline" href="https://www.facebook.com/VektorprogrammetBergen/">Bergen</a>
       </div>
 

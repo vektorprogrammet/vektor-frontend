@@ -100,7 +100,7 @@ const Tabs = ({
             return (
               <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
                 <a
-                  className={`text-base font-bold px-1 py-3 block line leading-normal hover:border-t-2 hover:border-r-2 hover:border-l-2 hover:text-gray-400 ${openTab === data.number ? `text-black bg-white border-t-2 border-r-2 border-l-2` : `text-blue-500 `}`}
+                  className={`text-base font-bold px-1 py-3 block line leading-normal hover:border-t-2 hover:border-r-2 hover:border-l-2 hover:text-vektor-blue ${openTab === data.number ? `text-vektor-darblue bg-white border-t-2 border-r-2 border-l-2` : `text-vektor-darblue `}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setOpenTab(data.number);
