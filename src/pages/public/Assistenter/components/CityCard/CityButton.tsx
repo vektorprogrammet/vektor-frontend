@@ -1,10 +1,9 @@
 import React from "react";
 
 export enum City {
-  OSLO = "Oslo",
-  BERGEN = "Bergen",
   TRONDHEIM = "Trondheim",
   ÅS = "Ås",
+  BERGEN = "Bergen",
 }
 export type ChildProps = {
   onChooseCity: (variable: City) => void;
