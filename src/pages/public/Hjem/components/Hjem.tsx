@@ -1,10 +1,20 @@
+import React from "react";
+
 const Hjem = (): JSX.Element => {
   return (
     <div>
       <div className="bg-vektor-bg2 lg:py-48 pt-20 flex flex-wrap lg:space-x-20 items-center justify-center">
         <div className="flex flex-col flex-wrap mx-10 space-y-5 md:space-y-10 items-center lg:items-start justify-center">
-          <img className="w-48 md:w-64" src="images/vektor-logo.svg" />
-          <img className="w-80 visible lg:hidden" src="images/blackboard.png" />
+          <img
+            className="w-48 md:w-64"
+            alt="vektorprogrammet logo"
+            src="images/vektor-logo.svg"
+          />
+          <img
+            className="w-80 visible lg:hidden"
+            alt="Assistants explaining equation on blackboard"
+            src="images/blackboard.png"
+          />
           <p className="text-vektor-darblue text-xl leading-normal max-w-sm tracking-wide text-center md:text-start">
             - sender studenter til ungdomsskoler for å hjelpe til som lærerens
             assistent i matematikkundervisningen
@@ -26,7 +36,8 @@ const Hjem = (): JSX.Element => {
         </div>
 
         <img
-          className="w-1/2 rounded-br-[60px] rounded-tl-[60px] lg:visible invisible" //sm:invisible
+          className="w-1/2 rounded-br-[60px] rounded-tl-[60px] lg:visible invisible" // sm:invisible
+          alt="Vektor assistants"
           src="images/vektor2.png"
         />
       </div>
@@ -56,14 +67,30 @@ const Hjem = (): JSX.Element => {
         Sponsorer
       </h1>
       <div className="grid lg:grid-cols-3 grid-flow-row auto-cols-auto gap-20 my-20 mx-10 justify-items-center align-center place-items-center lg:mx-40">
-        <img className="pt-5 h-24" src="images/tekna.jpg" />
-        <img className="h-20" src="images/IE.png" />
-        <img className="h-16" src="images/IV.png" />
-        <img className="h-28" src="images/kulturstyret.png" />
-        <img className="h-28" src="images/matematikkSenteret.png" />
-        <img className="h-28" src="images/sf.png" />
-        <img className="h-28 lg:col-span-2" src="images/UIB.png" />
-        <img className="h-28" src="images/VisionTech.png" />
+        <img className="pt-5 h-24" alt="Tekna logo" src="images/tekna.jpg" />
+        <img className="h-20" alt="IE logo" src="images/IE.png" />
+        <img className="h-16" alt="IV logo" src="images/IV.png" />
+        <img
+          className="h-28"
+          alt="Kulturstyret logo"
+          src="images/kulturstyret.png"
+        />
+        <img
+          className="h-28"
+          alt="MatematikkSenteret logo"
+          src="images/matematikkSenteret.png"
+        />
+        <img className="h-28" alt="Sf logo" src="images/sf.png" />
+        <img
+          className="h-28 lg:col-span-2"
+          alt="UIB logo"
+          src="images/UIB.png"
+        />
+        <img
+          className="h-28"
+          alt="VisionTech logo"
+          src="images/VisionTech.png"
+        />
       </div>
     </div>
   );

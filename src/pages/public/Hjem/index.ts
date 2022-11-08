@@ -1,3 +1,3 @@
-    import Hjem from "./components/Hjem";
+import Hjem from "./components/Hjem";
 
 export default Hjem;

@@ -11,7 +11,7 @@ const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkElements = routes
-    .filter((r) => r.route != "/")
+    .filter((r) => r.route !== "/")
     .map((route) => (
       <NavLink
         key={route.route}
@@ -20,8 +20,8 @@ const AppHeader = (): JSX.Element => {
         to={route.route}
         style={({ isActive }) => (isActive ? activeStyle : {})}
       >
-        {route.route[1].toUpperCase() +
-          route.route.substring(2).replace("-", " ")}
+        {route.route[1].toUpperCase()
+          + route.route.substring(2).replace("-", " ")}
       </NavLink>
     ));
 
