@@ -1,32 +1,32 @@
 const Hjem = (): JSX.Element => {
-  console.log(window.screen.width);
   return (
     <div>
-      <div className="bg-vektor-bg2 mx-1/4 py-40 flex flex-row flex-wrap space-x-20  items-center justify-center  ">
-        <div className="space-y-10">
-          <img className="w-64" src="images/vektor-logo.svg" />
-
-          <p className="text-vektor-darblue text-xl leading-normal max-w-sm tracking-wide text-start  ">
+      <div className="bg-vektor-bg2 lg:py-48 pt-20 flex flex-wrap lg:space-x-20 items-center justify-center">
+        <div className="flex flex-col flex-wrap mx-10 space-y-5 md:space-y-10 items-center lg:items-start justify-center">
+          <img className="w-48 md:w-64" src="images/vektor-logo.svg" />
+          <img className="w-80 visible lg:hidden" src="images/blackboard.png" />
+          <p className="text-vektor-darblue text-xl leading-normal max-w-sm tracking-wide text-center md:text-start">
             - sender studenter til ungdomsskoler for å hjelpe til som lærerens
             assistent i matematikkundervisningen
           </p>
           <div className="flex space-x-4 justify-start">
             <button
               type="button"
-              className="bg-vektor-darblue hover:bg-vektor-blue-hover px-6 py-2 w-1/3 text-white rounded-full"
+              className="bg-vektor-darblue hover:bg-vektor-blue-hover px-6 py-2 text-white rounded-full"
             >
               Bli medlem
             </button>
             <button
               type="button"
-              className="bg-vektor-blue hover:bg-vektor-blue-hover px-6 py-2 w-1/3 text-white rounded-full"
+              className="bg-vektor-blue hover:bg-vektor-blue-hover px-6 py-2 text-white rounded-full"
             >
               Les mer
             </button>
           </div>
         </div>
+
         <img
-          className="w-1/2 rounded-br-[60px] rounded-tl-[60px]" //sm:invisible
+          className="w-1/2 rounded-br-[60px] rounded-tl-[60px] lg:visible invisible" //sm:invisible
           src="images/vektor2.png"
         />
       </div>
