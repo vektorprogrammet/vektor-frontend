@@ -4,7 +4,6 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'class', // or false or 'media'
   theme: {
     screens: {
@@ -21,6 +20,11 @@ module.exports = {
         'vektor-darkfooter': '#022346',
         'vektor-bg': '#fafdff',
         'vektor-bg2': '#e6f3f7'
+      },
+      
+      backgroundImage : {
+        'vektor-logo': "url('public/images/vektor-logo.svg')",
+        'vektor-logo-dark': "url('public/images/vektor-logo-darkmode.png')",
       },
     },
   },
