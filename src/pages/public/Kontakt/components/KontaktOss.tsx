@@ -1,13 +1,6 @@
 import React from "react";
 import Division from "./Division.js";
 
-export enum City {
-  OSLO = "Oslo",
-  BERGEN = "Bergen",
-  TRONDHEIM = "Trondheim",
-  ÅS = "Ås",
-}
-
 interface TabProps {
   divisions: DivisionList[];
 }
@@ -102,28 +95,28 @@ const Tabs = ({
   return (
     <>
       <div className="w-full">
-        <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" role="tablist">
+        <div className="flex font-medium text-center border-b" role="tablist">
           {divisions.map((data) => {
-            const chosenStyle = openTab === data.number ? `text-vektor-darblue bg-white border-t-2 border-r-2 border-l-2` : `text-vektor-darblue `;
+            const chosenStyle = openTab === data.number ? `border-t-gray-200 border-l-gray-200 border-r-gray-200 border-b-white text-vektor-darblue z-50` : `text-vektor-darblue z-50`;
             return (
-              <div className="-mb-px mr-0 last:mr-0 flex-auto text-center">
-                <a
-                  className={`text-base font-bold px-1 py-3 block line leading-normal hover:border-t-2 hover:border-r-2 hover:border-l-2 hover:text-vektor-blue ${chosenStyle}`}
+              <div className="flex-auto text-center border-gray-200 border-b-2 -mb-[2px] z-50">
+                <button
+                  type="button"
+                  className={`rounded-t-lg -mb-[2px] z-50 text-base w-full font-bold py-3 border-b-gray-200 hover:border-2 hover:border-gray-200 hover:text-vektor-blue border-2 border-b-2 border-white ${chosenStyle}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setOpenTab(data.number);
                   }}
                   data-toggle="tab"
-                  href={`#link${data.number}`}
                   role="tablist"
                 >
                   {data.name}
-                </a>
+                </button>
               </div>
             );
           })}
-        </ul>
-        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space">
+        </div>
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5">
           <TrondheimTab open={openTab === 1} />
           <AasTab open={openTab === 2} />
           <BergenTab open={openTab === 3} />
