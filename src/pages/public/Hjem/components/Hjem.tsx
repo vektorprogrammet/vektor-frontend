@@ -3,8 +3,8 @@ import React from "react";
 const Hjem = (): JSX.Element => {
   return (
     <div>
-      <div className="bg-vektor-bg2 lg:py-48 pt-20 flex flex-wrap lg:space-x-20 items-center justify-center">
-        <div className="flex flex-col flex-wrap mx-10 space-y-5 md:space-y-10 items-center lg:items-start justify-center">
+      <div className="bg-vektor-bg2 lg:py-48 p-20 flex lg:flex-row lg:space-x-20 items-center justify-center">
+        <div className="flex flex-col flex-wrap space-y-5 md:space-y-10 items-center lg:items-start justify-center">
           <img
             className="w-48 md:w-64"
             alt="vektorprogrammet logo"
@@ -36,7 +36,7 @@ const Hjem = (): JSX.Element => {
         </div>
 
         <img
-          className="w-1/2 rounded-br-[60px] rounded-tl-[60px] lg:visible invisible" // sm:invisible
+          className="w-1/2 rounded-br-[60px] rounded-tl-[60px] lg:block hidden" // sm:invisible
           alt="Vektor assistants"
           src="images/vektor2.png"
         />
