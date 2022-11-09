@@ -28,11 +28,6 @@
   transition: all .2s ease-in-out;
 }
 
-.mobile-link{
-  margin-top: 16px;
-  font-weight: 600;
-  padding: 4px;
-}
 
 .closeMenu{
   position: fixed;
