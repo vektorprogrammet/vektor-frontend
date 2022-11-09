@@ -25,19 +25,12 @@
 .Footer {
   background-color: #223C70;
 }
-.members-info .counter {
-  margin-top: 32px;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.3;
-}
+
 
 .text-bold {
   font-weight: 700;
 }
-.members-info .counter .count {
-  font-size: 38px;
-}
+
 @layer components {
   .header-link {
     @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-base md:m-0 md:p-0 md:font-normal;
