@@ -22,13 +22,13 @@ const Hjem = (): JSX.Element => {
           <div className="flex space-x-4 justify-start">
             <button
               type="button"
-              className="bg-vektor-darblue hover:bg-vektor-blue-hover px-6 py-2 text-white rounded-full"
+              className="btn btn-secondary"
             >
               Bli medlem
             </button>
             <button
               type="button"
-              className="bg-vektor-blue hover:bg-vektor-blue-hover px-6 py-2 text-white rounded-full"
+              className="btn btn-primary"
             >
               Les mer
             </button>
