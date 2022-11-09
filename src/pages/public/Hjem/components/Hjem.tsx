@@ -66,7 +66,7 @@ const Hjem = (): JSX.Element => {
       <h1 className="flex justify-center pt-20 text-vektor-darblue m-10 text-4xl tracking-wide">
         Sponsorer
       </h1>
-      <div className="grid lg:grid-cols-3 grid-flow-row auto-cols-auto gap-20 my-20 mx-10 justify-items-center align-center place-items-center lg:mx-40">
+      <div className="grid auto-cols-auto md:grid-cols-2 lg:grid-cols-3  grid-flow-row gap-20 my-20 mx-10 justify-items-center align-center place-items-center lg:mx-40">
         <img className="pt-5 h-24" alt="Tekna logo" src="images/tekna.jpg" />
         <img className="h-20" alt="IE logo" src="images/IE.png" />
         <img className="h-16" alt="IV logo" src="images/IV.png" />
