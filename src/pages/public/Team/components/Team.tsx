@@ -29,7 +29,7 @@ const Team = (): JSX.Element => {
         alt={teamInfo.card.image.alt}
         imgPath={teamInfo.card.image.url}
       />
-      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
+      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10 dark:text-gray-200">
         {teamInfo.title}
       </h1>
       <Tabs divisions={[{ name: "Trondheim", number: 1 },
