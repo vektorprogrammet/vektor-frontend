@@ -25,7 +25,7 @@ const Kontakt = (): JSX.Element => {
         alt={kontaktInfo.card.image.alt}
         imgPath={kontaktInfo.card.image.url}
       />
-      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10">
+      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10 dark:text-gray-200">
         {kontaktInfo.title}
       </h1>
     </div>

@@ -37,7 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         style={{ height: `${height}` }}
         className="overflow-hidden duration-700 ease-in-out w-full"
       >
-        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto">{content}</p>
+        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto dark:text-gray-300">{content}</p>
       </div>
     </div>
   );

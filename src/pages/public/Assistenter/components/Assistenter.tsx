@@ -10,9 +10,9 @@ const Assistenter = (): JSX.Element => {
   const scrollToCard = () => cardElement.current?.scrollIntoView({ behavior: "smooth", block: "center" });
 
   return (
-    <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col flex justify-center items-center ">
+    <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col flex justify-center items-center dark:text-gray-300">
       <div className="bg-vektor-bg" />
-      <h1 className="font-sans max-w-2xl mt-10 text-vektor-darblue text-4xl text-center font-bold mx-3">
+      <h1 className="font-sans max-w-2xl mt-10 text-vektor-darblue text-4xl text-center font-bold mx-3 dark:text-blue-300">
         {title}
       </h1>
       <div className="mt-4 mb-20 text-xl ">{ingress}</div>
@@ -46,7 +46,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="mb-16" id="tc">
-        <div className="my-2 mb-2 font-bold text-2xl text-center text-vektor-darblue">
+        <div className="my-2 mb-2 font-bold text-2xl text-center text-vektor-darblue dark:text-blue-300">
           Lærerassistent i matematikk
         </div>
 
@@ -76,7 +76,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div className="mb-16">
-        <div className="font-bold text-2xl my-2 mb-3 text-vektor-darblue text-center">
+        <div className="font-bold text-2xl my-2 mb-3 text-vektor-darblue text-center dark:text-blue-300">
           Arbeidsoppgaver
         </div>
 
@@ -92,7 +92,7 @@ const Assistenter = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="text-vektor-darblue font-bold my-8 text-2xl text-center">
+      <div className="text-vektor-darblue font-bold my-8 text-2xl text-center dark:text-blue-300">
         Hvordan blir jeg Vektorassistent?
       </div>
 
@@ -100,7 +100,7 @@ const Assistenter = (): JSX.Element => {
         <div className="inline-flex space-x-16">
           <div className="flex-1 ...">
             <ul className="leading-loose whitespace-normal md:whitespace-pre list-disc">
-              <div className="text-vektor-darblue font-bold my-3 text-lg">
+              <div className="text-vektor-darblue font-bold my-3 text-lg dark:text-blue-300">
                 Opptakskrav
               </div>
 
@@ -116,7 +116,7 @@ const Assistenter = (): JSX.Element => {
           </div>
 
           <div className="flex-2 ...">
-            <div className="font-bold text-vektor-darblue my-3 text-lg">
+            <div className="font-bold text-vektor-darblue my-3 text-lg dark:text-blue-300">
               Opptaksprosessen
             </div>
             <ol className="leading-relaxed whitespace-normal md:whitespace-pre list-decimal leading-loose ">
@@ -141,7 +141,7 @@ const Assistenter = (): JSX.Element => {
       </div>
 
       <div
-        className="font-bold text-vektor-darblue text-3xl mt-16"
+        className="font-bold text-vektor-darblue text-3xl mt-16 dark:text-blue-300"
       >
         <div>Søk nå!</div>
       </div>
@@ -150,7 +150,7 @@ const Assistenter = (): JSX.Element => {
         <Citycard />
       </div>
 
-      <div className="font-bold mb-16 text-vektor-darblue">
+      <div className="font-bold mb-16 text-vektor-darblue dark:text-blue-300">
         <div>Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar. </div>
       </div>
     </div>
