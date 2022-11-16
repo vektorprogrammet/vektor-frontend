@@ -105,7 +105,7 @@ const ForSkoler = (): JSX.Element => {
                       <td className="py-3 px-6">{city}</td>
                       <td className="py-3 px-6">
                         <a
-                          className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100" 
+                          className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
                           href={`mailto:${email}`}
                         >
                           {email}
