@@ -69,7 +69,7 @@ const ServerOverview = (): JSX.Element => {
                   <td className="p-5">{server.url}</td>
                   <td className="p-5">
                     <a href={server.url} target="_blank" rel="noreferrer">
-                      <button onClick={(e) => e.stopPropagation()} type="button" className="btn btn-info dark:btn">
+                      <button onClick={(e) => e.stopPropagation()} type="button" className="btn btn-primary dark:btn">
                         <FontAwesomeIcon className="text-white" icon={faExternalLinkAlt} />
                       </button>
                     </a>
