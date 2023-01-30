@@ -9,7 +9,7 @@ export const ApplyCard = (props: any) => {
         {cities}
       </h1>
 
-      <div className="mt-1 mb-8">Søknadsfrist: </div>
+      <div className="mt-1 mb-8 text-center">Søknadsfrist: </div>
 
       <div className="grid justify-items-center">
         <div className="flex flex-wrap w-full my-4 space-x-8 justify-center">
