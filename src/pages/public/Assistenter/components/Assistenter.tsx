@@ -17,15 +17,15 @@ const Assistenter = (): JSX.Element => {
       </h1>
       <div className="mt-4 mb-20 text-xl ">{ingress}</div>
 
-      <div className="border-solid border-2 border-vektor-darblue bg-white space-y-16 p-4 w-full text-center mb-14">
-        <div className="conte mx-8 bg-center font-sans font-bold text-vektor-darblue">
+      <div className="border-solid border-2 border-vektor-darblue bg-white space-y-16 p-4 w-full text-center mb-14 dark:bg-inherit dark:border-gray-500">
+        <div className="conte mx-8 bg-center font-sans font-bold text-vektor-darblue dark:text-gray-300">
           Disse avdelingene har opptak nå:
         </div>
 
         <button
           type="button"
           onClick={scrollToCard}
-          className="outline-0 bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 rounded"
+          className="outline-0 bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 rounded dark:text-gray-800 dark:bg-blue-300"
         >
           Scroll ned for å søke!
         </button>
