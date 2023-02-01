@@ -50,24 +50,24 @@ const HovedstyretTab = ({ open }: { open:boolean }): JSX.Element => {
   return (
     <div className={`flex flex-row content-center flex-1 ${open ? "block" : "hidden"}`}>
       <div className="flex-1">
-        <h1 className=" text-gray-600 text-4xl font-bold mx-3">Hovedstyret</h1>
-        <p className="max-w-md mt-4 mb-20 text-xl mx-3">Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen.</p>
+        <h1 className=" text-gray-600 text-4xl font-bold ml-10 dark:text-gray-200">Hovedstyret</h1>
+        <p className="max-w-md mt-4 mb-20 text-xl ml-10 dark:text-gray-300">Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen.</p>
         <div className="flex space-x-1 space-y-0 items-end">
-          <svg className="h-4 w-4 text-balck" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="h-4 w-4 text-black ml-10 dark:text-white" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" />
             <rect x="3" y="5" width="18" height="14" rx="2" />
             <polyline points="3 7 12 13 21 7" />
           </svg>
-          <a className="text-sm truncate overflow-hidden hover:underline" href="mailto:hovedstyret@vektorprogrammet.no">hovedstyret@vektorprogrammet.no</a>
+          <a className="text-sm truncate overflow-hidden hover:underline dark:text-white" href="mailto:hovedstyret@vektorprogrammet.no">hovedstyret@vektorprogrammet.no</a>
         </div>
-        <div className="flex flex-row space-x-1 items-center">
-          <svg className="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="flex flex-row space-x-1 items-center ">
+          <svg className="h-4 w-4 text-black ml-10 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
-          <div className="top-0">{`${8} medlemmer`}</div>
+          <div className="top-0 dark:text-white">{`${8} medlemmer`}</div>
         </div>
         <br />
-        <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300">
           Les mer om hovedstyret
         </button>
       </div>
@@ -75,7 +75,7 @@ const HovedstyretTab = ({ open }: { open:boolean }): JSX.Element => {
       <img
         src="https://vektorprogrammet.no/images/HS_22.jpg?v=1664622616"
         alt="Team1"
-        className="max-w-2xl mx-auto max-h-80 mr-25"
+        className="max-w-2xl mr-10 max-h-80 mr-25"
       />
     </div>
   );
@@ -89,12 +89,16 @@ const Tabs = ({
     <>
       <div className="w-full flex flex-wrap">
         <div className="w-full">
-          <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" role="tablist">
+          <ul className="flex flex-wrap text-sm font-medium text-center border-b-2 border-gray dark:text-gray-400" role="tablist">
             {divisions.map((data) => {
               return (
                 <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
                   <a
-                    className={`text-base font-bold px-1 py-3 block line leading-normal hover:border-t-2 hover:border-r-2 hover:border-l-2 hover:text-vektor-blue ${openTab === data.number ? `text-vektor-darblue bg-white border-t-2 border-r-2 border-l-2` : `text-vektor-darblue `}`}
+                    className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
+                    rounded-t-lg
+                    pb-12
+                    dark:hover:text-gray-800 transition duration-300 dark:hover:bg-gray-500
+                    ${openTab === data.number ? `text-vektor-darblue bg-white  tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2` : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`}`}
                     onClick={(e) => {
                       e.preventDefault();
                       setOpenTab(data.number);
@@ -109,7 +113,7 @@ const Tabs = ({
               );
             })}
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space">
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
             <TrondheimTab open={openTab === 1} />
             <AasTab open={openTab === 2} />
             <BergenTab open={openTab === 3} />

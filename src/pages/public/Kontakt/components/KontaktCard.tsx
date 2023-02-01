@@ -21,7 +21,7 @@ const KontaktCard = ({
       <img
         src={imgPath.href}
         alt={alt}
-        className="max-w-md rounded-lg mt-10 mx-auto max-h-44 mr-30"
+        className="max-w-md rounded-lg mt-10 mx-auto max-h-44 mr-30 dark:invert dark:saturate-0"
       />
     </div>
   );
