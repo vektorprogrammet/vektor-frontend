@@ -89,7 +89,7 @@ const Tabs = ({
     <>
       <div className="w-full flex flex-wrap">
         <div className="w-full">
-          <ul className="flex flex-wrap text-sm font-medium text-center border-b-2 border-gray dark:text-gray-400" role="tablist">
+          <ul className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400" role="tablist">
             {divisions.map((data) => {
               return (
                 <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
