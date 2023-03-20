@@ -63,29 +63,39 @@ const Evaluering = (): JSX.Element => {
             Opptak
             </div>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black m-5">
             Et verv i evalueringsteamet innebærer ca. 2 timer arbeid i uka. Vi blir enige innad i teamet om et fast 
             ukentlig møtetidspunkt som passer for alle medlemmene, og vi har ikke møter i eksamensperioden. Gjennom 
             hele året arrangeres det mange sosiale aktiviteter man kan være med på, og man står på stand minst to gang 
             si rekrutteringsperiodene. 
             </div>
-            
 
-            <div className="font-sans text-lg text-black">
-            <ul className="list-disc">
-                <li>Være en del av Vektorprogrammet og bidra til å inspirere ungdom til å studere realfag</li>
-                <li>Ta del i studentfrivilligheten</li>
-                <li>Utforme undersøkelser, lage statistikk og skrive rapporter</li>
-                <li>Skrive i tekstbehandlingssystemet LaTeX (ingen forkunnskaper nødvendig)</li>
-                <li>Ha et sosialt verv der man får venner fra ulike linjer og kull</li>
-                <li>Få en relevant attest til senere jobbsøking</li>
-            </ul>
+            <div className="grid md:grid-cols-2 ml-4 mr-4 mt-4">
+                <div className="font-sans text-lg text-black place-content-start">
+                    <div className="mb-2 mt-4">Appellerer punktene under til deg?</div>
+                    <ul className="ml-4 leading-loose whitespace-normal md:whitespace-pre list-disc">
+                        <li>Være en del av Vektorprogrammet og bidra til å inspirere ungdom til å studere realfag</li>
+                        <li>Ta del i studentfrivilligheten</li>
+                        <li>Utforme undersøkelser, lage statistikk og skrive rapporter</li>
+                        <li>Skrive i tekstbehandlingssystemet LaTeX (ingen forkunnskaper nødvendig)</li>
+                        <li>Ha et sosialt verv der man får venner fra ulike linjer og kull</li>
+                        <li>Få en relevant attest til senere jobbsøking</li>
+                    </ul>
+                    <div className="my-6">Da er evalueringsteamet stedet for deg!</div>
+                </div> 
+                
+                <img 
+                    className="max-h-96 sm:max-w-sm h-auto content-center mx-auto" 
+                    src="/public/images/team/EvalueringTor.png"/>
             </div>
-            
-            
-            
-            
-            <img className="md:max-w-xl h-auto content-center mx-auto" src="/public/images/team/EvalueringTor.png"></img>
+
+            <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">
+                Dersom du har noen spørsmål er det bare å ta kontakt med oss på <a 
+                className="hover:underline text-vektor-darblue break-all" 
+                href={`mailto:evaluering.ntnu@vektorprogrammet.no`}>
+                    evaluering.ntnu@vektorprogrammet.no.
+                </a>
+            </div>
         </div>
    );
 };

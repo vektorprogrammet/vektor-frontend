@@ -23,7 +23,7 @@ const TeamTemplate = ({
         {name}
       </h1>
       <div className="text-vektor-darblue text-center font-bold mt-7"> 
-        Epost: <a className="text-sm overflow-hidden hover:underline" href={`mailto:${mail}`}>{mail}</a>
+        Epost: <a className="text-sm overflow-hidden hover:underline break-all" href={`mailto:${mail}`}>{mail}</a>
       </div>
       <div className="font-sans font-bold text-vektor-darblue text-lg text-center m-3">
         {text}
