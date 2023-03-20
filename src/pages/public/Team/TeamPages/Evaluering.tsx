@@ -9,7 +9,7 @@ const Evaluering = (): JSX.Element => {
             members={[{ name: "Hannes Witt", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/634926da1a3a6.jpeg", role: "Leder"},
             {name: "Emma Dyvesveen Myrbekk", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/634926c5a6400.jpeg", role: "Medlem"},
             {name: "Tinus Øen", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/63492623842a1.jpeg", role: "Medlem"},
-            {name: "Maja Christine Stahl", image: "https://vektorprogrammet.no/media/cache/profile_img/images/defaultProfile.png", role: "Medlem"}]}/>
+            {name: "Maja Christine Stahl", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/640714155162e.jpeg", role: "Medlem"}]}/>
             
             <img
                 src="https://vektorprogrammet.no/images/team_images/Evaluering/Teambildet.jpg"
@@ -54,7 +54,33 @@ const Evaluering = (): JSX.Element => {
             der hvert team inviterer to andre team til en sosial sammenkomst.  
             </div>
 
+            <img
+                src="https://vektorprogrammet.no/images/team_images/20200831_175600.jpg"
+                className="md:max-w-2xl h-auto content-center mx-auto m-3 mt-3"
+            />
             
+            <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+            Opptak
+            </div>
+
+            <div className="font-sans text-lg text-black text-center m-5">
+            Et verv i evalueringsteamet innebærer ca. 2 timer arbeid i uka. Vi blir enige innad i teamet om et fast 
+            ukentlig møtetidspunkt som passer for alle medlemmene, og vi har ikke møter i eksamensperioden. Gjennom 
+            hele året arrangeres det mange sosiale aktiviteter man kan være med på, og man står på stand minst to gang 
+            si rekrutteringsperiodene. 
+            </div>
+            
+
+            <div className="font-sans text-lg text-black">
+            <ul className="list-disc">
+                <li>Være en del av Vektorprogrammet og bidra til å inspirere ungdom til å studere realfag</li>
+                <li>Ta del i studentfrivilligheten</li>
+                <li>Utforme undersøkelser, lage statistikk og skrive rapporter</li>
+                <li>Skrive i tekstbehandlingssystemet LaTeX (ingen forkunnskaper nødvendig)</li>
+                <li>Ha et sosialt verv der man får venner fra ulike linjer og kull</li>
+                <li>Få en relevant attest til senere jobbsøking</li>
+            </ul>
+            </div>
             
             
             
