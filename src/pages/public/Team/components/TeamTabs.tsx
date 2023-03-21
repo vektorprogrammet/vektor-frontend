@@ -39,7 +39,7 @@ const AasTab = ({ open }: { open:boolean }): JSX.Element => {
 const BergenTab = ({ open }: { open:boolean }): JSX.Element => {
   return (
     <div className={`flex justify-center flex-wrap ${open ? "block" : "hidden"} gap-10 `}>
-      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Bergen." mail="uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer"/>
+      <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Bergen." mail="uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
       <Division title="SKOLEKOORDINERING" text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret." mail="skolekoordinering.uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
       <Division title="REKRUTTERING" text="I rekruttering jobber vi med å skaffe nye vektorassistenter!" mail="rekruttering.uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
     </div>
