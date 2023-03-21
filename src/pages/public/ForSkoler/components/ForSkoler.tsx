@@ -56,7 +56,7 @@ const ForSkoler = (): JSX.Element => {
             "Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:",
           ]}
         >
-          <ul className="pl-4 ml-4 mb-3 list-disc">
+          <ul className="pl-4 ml-4 mb-3 list-disc dark:text-gray-300">
             {[
               "Hjelpe til med oppgaveløsing i klasserom",
               "Utfordre de sterkeste elevene med vanskeligere oppgaver",
@@ -77,7 +77,7 @@ const ForSkoler = (): JSX.Element => {
           ]}
         >
           <div>
-            <table className="table-fixed divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2">
+            <table className="table-fixed divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300">
               <thead>
                 <tr>
                   <th className="w-1/3 py-3 px-6">By</th>
@@ -105,7 +105,7 @@ const ForSkoler = (): JSX.Element => {
                       <td className="py-3 px-6">{city}</td>
                       <td className="py-3 px-6">
                         <a
-                          className="text-blue-600 hover:text-blue-800"
+                          className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
                           href={`mailto:${email}`}
                         >
                           {email}
@@ -113,7 +113,7 @@ const ForSkoler = (): JSX.Element => {
                       </td>
                       <td className="py-3 px-6">
                         <a
-                          className="text-blue-600 hover:text-blue-800"
+                          className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
                           href={url}
                         >
                           Kontakt
@@ -126,10 +126,10 @@ const ForSkoler = (): JSX.Element => {
                 })}
               </tbody>
             </table>
-            <h2 className="px-3 text-2xl text-gray-600 text-center font-bold mx-auto my-3">
+            <h2 className="px-3 text-2xl text-gray-600 text-center font-bold mx-auto my-3 dark:text-gray-200">
               Har ikke Vektorprogrammet etablert seg i din by ennå?
             </h2>
-            <p className="text-xl mb-3 px-3 mx-auto">
+            <p className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
               Ta kontakt med hovedstyret@vektorprogrammet.no for å melde din interesse!
             </p>
           </div>
