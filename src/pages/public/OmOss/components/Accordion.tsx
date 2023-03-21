@@ -25,11 +25,11 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   return (
     <div className="flex flex-col w-full items-center">
       <button
-        className={`mt-6 py-3 border-b-2 border-gray-300 box-border appearance-none cursor-pointer hover:bg-gray-200 focus:outline-none flex items-center justify-between w-full ${active ? "bg-gray-300" : "bg-gray-100"}`}
+        className={`mt-6 py-3 border-b-2 border-gray-300 dark:border-gray-600 dark:hover:bg-gray-500 box-border appearance-none cursor-pointer hover:bg-gray-200 focus:outline-none flex items-center justify-between w-full duration-200 ${active ? "bg-gray-300 dark:bg-gray-500" : "bg-gray-100 dark:bg-gray-600"}`}
         onClick={toggleAccordion}
         type="button"
       >
-        <h2 className="md:text-xl sm:text-lg pl-6 text-left w-full">{title}</h2>
+        <h2 className="md:text-xl sm:text-lg pl-6 text-left w-full dark:text-gray-300">{title}</h2>
         <FontAwesomeIcon className="mr-4" icon={symbol} size="lg" />
       </button>
       <div
@@ -37,7 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         style={{ height: `${height}` }}
         className="overflow-hidden duration-700 ease-in-out w-full"
       >
-        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto">{content}</p>
+        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto dark:text-gray-300">{content}</p>
       </div>
     </div>
   );

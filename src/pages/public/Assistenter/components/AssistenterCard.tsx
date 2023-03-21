@@ -35,7 +35,7 @@ const TextPictureCard = ({
           alt={alt}
           className="h-24 mt-6 rounded-lg mx-auto mb-2"
         />
-        <div className="font-sans font-bold text-xl text-vektor-darblue text-center p-1">{title}</div>
+        <div className="font-sans font-bold text-xl text-vektor-darblue text-center p-1 dark:text-blue-300">{title}</div>
         <div className="font-sans text-center my-1">{text}</div>
       </div>
 
