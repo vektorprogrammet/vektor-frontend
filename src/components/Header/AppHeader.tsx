@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, MouseEventHandler, SetStateAction, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import MobileMenu from "./MobileMenu";
@@ -39,7 +39,7 @@ const UserAvatar = () => {
   );
 };
 
-const LoginButtons = () => {
+const LoginButtons = ({setVisible}: {setVisible: Dispatch<SetStateAction<boolean>>}) => {
   return (
     <div className="flex space-x-4">
       <button
@@ -51,6 +51,7 @@ const LoginButtons = () => {
       <button
         type="button"
         className="bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
+        onClick={() => setVisible(true)}
       >
         Logg inn
       </button>
@@ -58,8 +59,47 @@ const LoginButtons = () => {
   );
 };
 
+
+
+const LoginPopup = ({setVisible}: {setVisible: Dispatch<SetStateAction<boolean>>}) => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const closeOrOpen: MouseEventHandler<HTMLDivElement> = (e) => {
+    const isClose = (e.target as HTMLElement).closest("#popup")
+    if (!isClose) {
+      setVisible(false);
+    }
+  }
+  return (
+    <div className="bg-black/50 fixed top-0 left-0 w-full h-screen flex justify-center items-center" onClick={closeOrOpen}>
+      <div className="bg-white flex p-7.5 flex-col rounded-lg gap-2.5" id="popup">
+        <div>
+          <p>Email</p>
+          <input className="py-6 px-4" id="email" type="text" placeholder="E-post" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+        </div>
+        <div>
+          <p>Password</p>
+          <input className="py-6 px-4" id="password" type="password" placeholder="Passord" value={password} onChange={(e) => { setPassword(e.target.value) }} />
+        </div>
+        <div>
+          <button
+          type="button"
+          className="bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
+          onClick={() => setVisible(true)}
+          >
+        Logg inn
+      </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loginPopupVisible, setLoginPopupVisible] = useState(false);
   const isLoggedIn = false;
   const linkElements = routes.map((route) => (
     <NavLink
@@ -87,7 +127,10 @@ const AppHeader = (): JSX.Element => {
           {linkElements}
         </div>
         <div className="flex w-1/5 justify-center">
-          {isLoggedIn ? <UserAvatar /> : <LoginButtons />}
+          {isLoggedIn ? <UserAvatar /> : <LoginButtons setVisible={setLoginPopupVisible}/>}
+        </div>
+        <div>
+          {loginPopupVisible ? <LoginPopup setVisible={setLoginPopupVisible}/> : null}
         </div>
       </div>
       <MobileMenu
