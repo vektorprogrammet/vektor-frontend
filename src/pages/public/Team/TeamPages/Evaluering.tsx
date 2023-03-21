@@ -73,7 +73,7 @@ const Evaluering = (): JSX.Element => {
             <div className="grid md:grid-cols-2 ml-4 mr-4 mt-4">
                 <div className="font-sans text-lg text-black place-content-start">
                     <div className="mb-2 mt-4">Appellerer punktene under til deg?</div>
-                    <ul className="ml-4 leading-loose whitespace-normal md:whitespace-pre list-disc">
+                    <ul className="ml-10 list-disc">
                         <li>Være en del av Vektorprogrammet og bidra til å inspirere ungdom til å studere realfag</li>
                         <li>Ta del i studentfrivilligheten</li>
                         <li>Utforme undersøkelser, lage statistikk og skrive rapporter</li>
@@ -86,7 +86,7 @@ const Evaluering = (): JSX.Element => {
                 
                 <img 
                     className="max-h-96 sm:max-w-sm h-auto content-center mx-auto" 
-                    src="/public/images/team/EvalueringTor.png"/>
+                    src="/images/team/EvalueringTor.png"/>
             </div>
 
             <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">
