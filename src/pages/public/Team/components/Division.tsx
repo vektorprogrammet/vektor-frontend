@@ -12,7 +12,7 @@ const Division = ({
   title, text, mail, numberOfMembers, button_name,
 }: Props): JSX.Element => {
   return (
-    <div className="relative h-full content-center grow rounded bg-grey-light w-64 shadow-md border-2 place-items-center">
+    <div className="relative grow-0 content-center grow rounded bg-grey-light w-80 shadow-md border-2 place-items-center">
       <div className="justify-between py-1 text-center border-b-2 text-blue-900 text-lg font-bold">
         {title}
       </div>
