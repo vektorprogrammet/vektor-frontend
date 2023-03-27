@@ -65,6 +65,7 @@ const LoginPopup = ({setVisible}: {setVisible: Dispatch<SetStateAction<boolean>>
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [imgClassName, setimgClassName] = useState('h-80 mb-24');
 
   const closeOrOpen: MouseEventHandler<HTMLDivElement> = (e) => {
     const isClose = (e.target as HTMLElement).closest("#popup")
@@ -73,24 +74,44 @@ const LoginPopup = ({setVisible}: {setVisible: Dispatch<SetStateAction<boolean>>
     }
   }
   return (
-    <div className="bg-black/50 fixed top-0 left-0 w-full h-screen flex justify-center items-center" onClick={closeOrOpen}>
-      <div className="bg-white flex p-7.5 flex-col rounded-lg gap-2.5" id="popup">
-        <div>
-          <p>Email</p>
-          <input className="py-6 px-4" id="email" type="text" placeholder="E-post" value={email} onChange={(e) => { setEmail(e.target.value) }} />
-        </div>
-        <div>
-          <p>Password</p>
-          <input className="py-6 px-4" id="password" type="password" placeholder="Passord" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-        </div>
-        <div>
-          <button
-          type="button"
-          className="bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
-          onClick={() => setVisible(true)}
-          >
-        Logg inn
-      </button>
+    <div className="bg-black/40 fixed top-0 left-0 w-full h-screen flex justify-center items-center" onClick={closeOrOpen}>
+      <div className="bg-white flex p-7.5 rounded-lg justify-around w-2/5 h-96 border-2 pl-16" id="popup">
+        <button className="btn btn-primary btn-square btn-outline fixed ml-96 mt-6 text-2xl cursor-pointer" onClick={() => setVisible(false)}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        <img
+            src="../images/TorPekerPåTekst.png"
+            className={imgClassName}
+            alt="vektorbilde"
+            />
+        
+        <div className="mr-44 mt-24">
+          <div>
+            <p className="font-semibold">Brukernavn/E-post</p>
+            <input className="border-2 rounded-lg py-2 px-4 w-80 my-4" 
+                  id="email" type="text" placeholder="E-post" value={email} 
+                  onChange={(e) => { setEmail(e.target.value) }} 
+                  onFocus={() => setimgClassName('h-80')}/>
+          </div>
+          <div>
+            <p className="font-semibold">Passord</p>
+            <input className="border-2 rounded-lg py-2 px-4 w-80 my-4" 
+                    id="password" type="password" placeholder="Passord" value={password} 
+                    onChange={(e) => { setPassword(e.target.value) }}
+                    onFocus={() => setimgClassName('h-80 mt-24')} />
+          </div>
+          <div>
+            <button
+            type="button"
+            className="btn btn-primary bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300 mr-24"
+            onClick={() => setVisible(true)}
+            >
+            Logg inn
+            </button>
+            <u className="text-blue-400 cursor-pointer">
+              Glemt Passord?
+            </u>
+          </div>
         </div>
       </div>
     </div>
