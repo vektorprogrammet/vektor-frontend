@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 export const DarkModeContext = React.createContext({
   darkMode: false,
   setDarkMode: (() => {
     throw new Error("No DarkModeContext provided");
-  }) as (_: boolean)=>void,
+  }) as (_: boolean) => void,
 });
 
 export const DarkModeProvider = (props: { children: JSX.Element }) => {
@@ -20,6 +20,8 @@ export const DarkModeProvider = (props: { children: JSX.Element }) => {
     setDarkModeState(newDarkMode);
   };
 
+  const providerValue = useMemo(() => ({ darkMode, setDarkMode }), [darkMode]);
+
   // Effect called on first render, and whenever darkMode changes
   // Tailwind has classes triggered by the "dark" class on parent elements
   useEffect(() => {
@@ -29,8 +31,8 @@ export const DarkModeProvider = (props: { children: JSX.Element }) => {
   }, [darkMode]);
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-      { children }
+    <DarkModeContext.Provider value={providerValue}>
+      {children}
     </DarkModeContext.Provider>
   );
 };

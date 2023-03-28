@@ -10,7 +10,7 @@ interface DivisionList {
   number: number;
 }
 
-const TrondheimTab = ({ open }: { open:boolean }): JSX.Element => {
+const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`flex justify-center flex-wrap ${open ? "block" : "hidden"} gap-10 `}>
       <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Trondheim." mail="styret.ntnu@vektorprogrammet.no" numberOfMembers={9} button_name="Les mer" />
@@ -25,7 +25,7 @@ const TrondheimTab = ({ open }: { open:boolean }): JSX.Element => {
   );
 };
 
-const AasTab = ({ open }: { open:boolean }): JSX.Element => {
+const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`flex justify-center flex-wrap ${open ? "block" : "hidden"} gap-10 `}>
       <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Ås." mail="nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" />
@@ -36,7 +36,7 @@ const AasTab = ({ open }: { open:boolean }): JSX.Element => {
   );
 };
 
-const BergenTab = ({ open }: { open:boolean }): JSX.Element => {
+const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`flex justify-center flex-wrap ${open ? "block" : "hidden"} gap-10 `}>
       <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Bergen." mail="uib@vektorprogrammet.no" numberOfMembers={2} button_name="Les mer" />
@@ -46,7 +46,7 @@ const BergenTab = ({ open }: { open:boolean }): JSX.Element => {
   );
 };
 
-const HovedstyretTab = ({ open }: { open:boolean }): JSX.Element => {
+const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`flex flex-row content-center flex-1 ${open ? "block" : "hidden"}`}>
       <div className="flex-1">
@@ -83,45 +83,43 @@ const HovedstyretTab = ({ open }: { open:boolean }): JSX.Element => {
 
 const Tabs = ({
   divisions,
-}:TabProps): JSX.Element => {
+}: TabProps): JSX.Element => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
-    <>
-      <div className="w-full flex flex-wrap">
-        <div className="w-full">
-          <ul className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400" role="tablist">
-            {divisions.map((data) => {
-              return (
-                <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
-                  <a
-                    className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
+    <div className="w-full flex flex-wrap">
+      <div className="w-full">
+        <ul className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400" role="tablist">
+          {divisions.map((data) => {
+            return (
+              <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
+                <a
+                  className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
                     rounded-t-lg
                     pb-12
                     dark:hover:text-gray-800 transition duration-300 dark:hover:bg-gray-500
                     ${openTab === data.number ? `text-vektor-darblue bg-white  tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2` : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setOpenTab(data.number);
-                    }}
-                    data-toggle="tab"
-                    href={`#link${data.number}`}
-                    role="tablist"
-                  >
-                    {data.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
-            <TrondheimTab open={openTab === 1} />
-            <AasTab open={openTab === 2} />
-            <BergenTab open={openTab === 3} />
-            <HovedstyretTab open={openTab === 4} />
-          </div>
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenTab(data.number);
+                  }}
+                  data-toggle="tab"
+                  href={`#link${data.number}`}
+                  role="tablist"
+                >
+                  {data.name}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
+          <TrondheimTab open={openTab === 1} />
+          <AasTab open={openTab === 2} />
+          <BergenTab open={openTab === 3} />
+          <HovedstyretTab open={openTab === 4} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
