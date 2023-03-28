@@ -6349,9 +6349,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:10.6.0":
-  version: 10.6.0
-  resolution: "cypress@npm:10.6.0"
+"cypress@npm:10.11.0":
+  version: 10.11.0
+  resolution: "cypress@npm:10.11.0"
   dependencies:
     "@cypress/request": ^2.88.10
     "@cypress/xvfb": ^1.2.4
@@ -6372,7 +6372,7 @@ __metadata:
     dayjs: ^1.10.4
     debug: ^4.3.2
     enquirer: ^2.3.6
-    eventemitter2: ^6.4.3
+    eventemitter2: 6.4.7
     execa: 4.1.0
     executable: ^4.1.1
     extract-zip: 2.0.1
@@ -6397,7 +6397,7 @@ __metadata:
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 53993d2d712222df13ef4802db051fee8a7ac59b180ed11b22e6f10d36f5d9b2c2622f1bbfa012f61c7756139287a976abd075275ddd37191b13f40ec8deaa85
+  checksum: 938cc6a20f7eeace5c8e850d234904ee1651cbb36d94666fe600cf17ce964e73d4f7d8d944aab677491702a57364e6aceeb4fe8bcbd96147ff5e2b575a956fb2
   languageName: node
   linkType: hard
 
@@ -8086,10 +8086,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter2@npm:^6.4.3":
-  version: 6.4.9
-  resolution: "eventemitter2@npm:6.4.9"
-  checksum: be59577c1e1c35509c7ba0e2624335c35bbcfd9485b8a977384c6cc6759341ea1a98d3cb9dbaa5cea4fff9b687e504504e3f9c2cc1674cf3bd8a43a7c74ea3eb
+"eventemitter2@npm:6.4.7":
+  version: 6.4.7
+  resolution: "eventemitter2@npm:6.4.7"
+  checksum: 1b36a77e139d6965ebf3a36c01fa00c089ae6b80faa1911e52888f40b3a7057b36a2cc45dcd1ad87cda3798fe7b97a0aabcbb8175a8b96092a23bb7d0f039e66
   languageName: node
   linkType: hard
 
@@ -17434,7 +17434,7 @@ typescript@^4.4.2:
     "@typescript-eslint/parser": ^5.2.0
     "@vitejs/plugin-react": ^2.1.0
     autoprefixer: ^10.4.10
-    cypress: 10.6.0
+    cypress: 10.11.0
     daisyui: ^2.27.0
     eslint: ^7.11.0
     eslint-config-airbnb: ^18.2.1
