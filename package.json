@@ -55,7 +55,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
     "@types/jest": "^29.0.0",
-    "@types/tailwindcss": "^2.2.4",
+    "@types/tailwindcss": "^3.0.0",
     "@vitejs/plugin-react": "^2.1.0",
     "cypress": "10.11.0",
     "eslint": "^7.11.0",
