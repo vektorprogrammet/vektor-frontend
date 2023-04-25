@@ -13,13 +13,13 @@ const Evaluering = (): JSX.Element => {
             
             <img
                 src="https://vektorprogrammet.no/images/team_images/Evaluering/Teambildet.jpg"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3 mt-20"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-20"
             />
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
             Arbeidet vårt
             </div>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black text-left m-5">
             Evalueringsteamet lager hovedsaklig spørreundersøkelser for vektorassistenter, elever, lærere, samt foreldre som deltok på semesterets foreldrekurs. Å få 
             tilbakemeldinger gjennom disse undersøkelsene er viktig for å kunne forbedre Vektorprogrammet. Når vi får svar på undersøkelsene, bruker vi statistikken fra 
             undersøkelsene til å skrive rapporter. På denne måten får vi en god oversikt over hva som fungerer bra ved Vektorprogrammet og hva som bør forbedres til neste 
@@ -31,14 +31,14 @@ const Evaluering = (): JSX.Element => {
                 <div className="m-auto object-contain">
                     <img
                         src="https://vektorprogrammet.no/images/team_images/trapp_bygg.jpg"
-                        className="max-h-80 sm:max-w-md content-center mx-auto m-3 mt-15"
+                        className="max-h-80 sm:max-w-md content-center mx-auto m-5 mt-15"
                     />
                 </div>
 
-                <div className="object-contain">
+                <div className="m-auto object-contain">
                     <img
                         src="https://vektorprogrammet.no/images/team_images/trapp_park.jpg"
-                        className="max-h-96 sm:max-w-xs content-center mx-auto m-3 mt-15"
+                        className="max-h-96 sm:max-w-xs content-center mx-auto m-5 mt-15"
                     />
                 </div>
             </div>
@@ -47,7 +47,7 @@ const Evaluering = (): JSX.Element => {
             Sosialt i evaluering
             </div>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black text-left m-5">
             Vi har hyggelige og spennende arrangementer både innad i teamet og sammen med de andre teamene i Vektorprogrammet. 
             Vi i evaluering har vært ute og spist sammen, og arrangert pizza- og spillkveld. Det skjer også mye sosialt på tvers av team, 
             blant annet hytteturer, tema-fester, 17.mai-feiring, Gokart og LazerTag. Jevnlig utover semesteret arrangeres det TeamSosial, 
@@ -56,7 +56,7 @@ const Evaluering = (): JSX.Element => {
 
             <img
                 src="https://vektorprogrammet.no/images/team_images/20200831_175600.jpg"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3 mt-3"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-3"
             />
             
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">

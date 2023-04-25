@@ -3,7 +3,7 @@ import TeamTemplate from "./TeamTemplate";
 
 const Styret = (): JSX.Element => {
     return (
-        <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
+        <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
             <TeamTemplate name="Styret" mail="styret.ntnu@vektorprogrammet.no"
             text="Ansvarlig for driften av Vektorprogrammet i Trondheim."
             members={[{ name: "David Ramsvik", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/6370f59dcadc0.jpeg", role: "Leder" },
@@ -16,7 +16,7 @@ const Styret = (): JSX.Element => {
             { name: "Ole Gunnar Røsholt Hovland", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/6261456bbbea9.jpeg", role: "Sponsor" },
             { name: "Elise Johnsrud", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/634068f19fa01.jpeg", role: "Økonomi" }]}/>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black text-left m-5 mt-20">
             Styret består av leder, nestleder, sekretær og alle teamlederne. I løpet av de ukentlige møtene gjennomgåes ukens og fremtidige saker, som kan være alt fra å organisere 
             sosiale aktiviteter til å løse problemer som oppstår under driften av Vektorprogrammet i Trondheim. På denne måten får alle team oppdatert informasjon om hverandre, slik 
             at effektivt sammarbeid muliggjøres.
@@ -24,7 +24,7 @@ const Styret = (): JSX.Element => {
 
             <img
                 src="https://vektorprogrammet.no/images/team_images/Profilering/IMG_6571.jpg"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-5"
             />
         </div>
    );

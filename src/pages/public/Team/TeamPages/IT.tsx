@@ -20,7 +20,7 @@ const IT = (): JSX.Element => {
             { name: "Filip Skaug", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/640712bcabc19.jpeg", role: "Utvikler" },
             { name: "Kaja Prestnes Lind", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/6346def4754db.jpeg", role: "Utvikler" },]}/>
 
-            <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-24">
+            <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
             IT i Vektorprogrammet
             </div>         
 
@@ -66,7 +66,7 @@ const IT = (): JSX.Element => {
 
             <img
                 src="https://vektorprogrammet.no/images/team_images/IT/IT_V23.jpg"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
             />
 
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
@@ -98,7 +98,7 @@ const IT = (): JSX.Element => {
 
             <img
                 src="https://vektorprogrammet.no/images/team_images/logosnew.png"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
             />
 
             <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">

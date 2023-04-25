@@ -15,7 +15,7 @@ const Skolekoordinering = (): JSX.Element => {
             { name: "Silje Eriksen", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/6418910b565a8.jpeg", role: "Medlem" },
             { name: "Mari Egeland", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/6418918cae91f.jpeg", role: "Medlem" },]}/>
 
-            <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-24 mb-7">
+            <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20 mb-7">
             Arbeidet vårt
             </div>
 
