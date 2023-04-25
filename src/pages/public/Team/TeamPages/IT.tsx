@@ -64,10 +64,11 @@ const IT = (): JSX.Element => {
             overnevnte tingene, vi gir deg god oppfølging og hjelp!
             </div>
 
-            <img
+            <div className="m-3">
+                <img
                 src="https://vektorprogrammet.no/images/team_images/IT/IT_V23.jpg"
-                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
-            />
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"/>
+            </div>
 
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
             Kjempegod erfaring
@@ -96,10 +97,10 @@ const IT = (): JSX.Element => {
                 </ul>
             </div> 
 
-            <img
+            <div className="m-3"><img
                 src="https://vektorprogrammet.no/images/team_images/logosnew.png"
                 className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
-            />
+            /></div>
 
             <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">
             Sjekk ut hva vi jobber med på <a href="http://github.com/vektorprogrammet" className="hover:underline text-vektor-darblue">http://github.com/vektorprogrammet</a>!
