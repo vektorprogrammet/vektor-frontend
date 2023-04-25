@@ -22,16 +22,24 @@ const Rekruttering = (): JSX.Element => {
                 Arbeidet vårt
             </div>
 
-            <div className="font-sans text-lg text-black place-self-start m-5">    
-                <li>Stå på stand</li>  
-                <li>Bleste i forelesninger</li> 
-                <li>Intervjue nye søkere</li> 
-                <li>Planlegge forberedelse-kurs</li>
-                <li>Planlegge sosiale arrangementer</li>
-                <li>Planlegge faglige arrangementer</li>     
+            <div className="grid md:grid-cols-2 ml-4 mr-4 items-center">
+                <div className="font-sans text-lg text-black place-content-start my-5">
+                    <ul className="ml-10 list-disc">
+                        <li>Stå på stand</li>  
+                        <li>Bleste i forelesninger</li> 
+                        <li>Intervjue nye søkere</li> 
+                        <li>Planlegge forberedelse-kurs</li>
+                        <li>Planlegge sosiale arrangementer</li>
+                        <li>Planlegge faglige arrangementer</li>    
+                    </ul>
+                </div> 
+                
+                <img 
+                    className="md:max-w-l max-h-80 content-right my-5 mx-auto"
+                    src="/images/team/RekrutteringTor.png"/>
             </div>
 
-            <div className="font-sans text-lg text-black place-self-start text-center m-5">
+            <div className="font-sans text-lg text-black place-self-start text-left m-5">
             Det at vi er i rekrutteringsteamet betyr at vi har en mer intens periode i januar og august,
             men har det roligere resten av semesteret. I tillegg til rekrutteringsperioden har vi også ansvar
             for de sosiale og faglige arrangementene Vektorprogrammet arrangerer. De sosiale arrangementene
@@ -43,14 +51,14 @@ const Rekruttering = (): JSX.Element => {
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
                 Sosialt i Rekruttering 
             </div>
-            <div className="font-sans text-lg text-black place-self-start text-center m-5">
+            <div className="font-sans text-lg text-black place-self-start text-left m-5">
             Vi er kanskje det teamet som liker å møtes oftest utenom vervet. Her finner vi på mye sprell
             og fanteri. Dette strekker seg fra fantastiske vors og uforglemmelige hytteturer til litt mer
             rolige og avslappede sushikvelder. Vi har også mye kontakt via vår gruppechat på snap hvor
             dagens (og nattens) festligheter deles hyppig. 
             </div>
             
-            <div className="object-contains">
+            <div className="object-contains m-3">
                 <img className="md:max-w-2xl h-auto content-center mx-auto"
                 src="https://vektorprogrammet.no/images/team_images/313096245_1158050458440674_2660066729317743376_n.jpg"/>
             </div>
@@ -59,26 +67,21 @@ const Rekruttering = (): JSX.Element => {
                 Opptak
             </div>
             
-            <div className="font-sans text-lg text-black place-self-start m-5 text-center">
+            <div className="font-sans text-lg text-black place-self-start m-3 mt-5 text-left">
             Vi i rekrutteringsteamet trenger stadig nye medlemmer. Så er du blid, hyggelig og utadvent, og har lyst på et givende og
             sosialt verv ved siden av studiene, ikke nøl med å ta kontakt!
             </div>
 
-            <div className="font-sans text-lg text-black m-5 text-center">
+            <div className="font-sans text-lg text-black place-self-start m-3 text-left">
                 Er det noe mer du lurer på er det bare å sende mail til <a 
                 className="hover:underline text-vektor-darblue break-all" 
                 href={`mailto:rekruttering.ntnu@vektorprogrammet.no`}>
                     rekruttering.ntnu@vektorprogrammet.no
                 </a>
-                <br/>
-                Hilsen oss i rekruttering!
             </div>
 
-            <div className="grid md:grid-cols-2 ml-4 mr-4 mt-1">
-                <div className="font-sans text-lg text-black place-content-start"/>
-                <img 
-                    className="md:max-w-l h-auto content-right mx-auto"
-                    src="/images/team/RekrutteringTor.png"/>
+            <div className="font-sans text-lg text-black place-self-start m-3 text-left">
+            Hilsen oss i rekruttering!
             </div>
 
         </div>

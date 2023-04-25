@@ -19,10 +19,10 @@ const Skolekoordinering = (): JSX.Element => {
             Arbeidet vårt
             </div>
 
-            <img
-                src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/IMG_2564%203.jpg"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3"
-            />
+            <div className="m-3">
+                <img src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/IMG_2564%203.jpg"
+                className="md:max-w-2xl h-auto content-center mx-auto m-3"/>
+            </div>
 
             <div className="font-sans text-lg text-black text-start mx-5 mt-10">
             Skolekoordineringsteamet har ansvaret for å fordele vektorassistentene på samarbeidsskolene våre. Der er vi som er bindeleddet mellom vektorprogrammet 
@@ -38,10 +38,10 @@ const Skolekoordinering = (): JSX.Element => {
             og det er god stemning på vektorkontoret under hele arrangementet med både kake og pizza.
             </div>
 
-            <img
-                src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/211118-170639.png"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3"
-            />
+            <div className="m-3">
+            <img src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/211118-170639.png"
+                className="md:max-w-2xl h-auto content-center mx-auto m-3"/>
+            </div>
 
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-16 mb-5">
             Sosialt i skolekoordinering
@@ -59,10 +59,10 @@ const Skolekoordinering = (): JSX.Element => {
             dette stedet å være!
             </div>
 
-            <img
-                src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/IMG_3596.jpg"
-                className="md:max-w-2xl h-auto content-center mx-auto m-3"
-            />
+            <div className="m-3">
+                <img src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/IMG_3596.jpg"
+                className="md:max-w-2xl h-auto content-center mx-auto m-3"/>
+            </div>
 
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-16 mb-4">
             Opptak

@@ -21,11 +21,10 @@ const Styret = (): JSX.Element => {
             sosiale aktiviteter til å løse problemer som oppstår under driften av Vektorprogrammet i Trondheim. På denne måten får alle team oppdatert informasjon om hverandre, slik 
             at effektivt sammarbeid muliggjøres.
             </div>
-
-            <img
+            <div className="m-3"><img
                 src="https://vektorprogrammet.no/images/team_images/Profilering/IMG_6571.jpg"
                 className="sm:max-w-2xl h-auto content-center mx-auto m-5"
-            />
+            /></div>
         </div>
    );
 };

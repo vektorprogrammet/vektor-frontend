@@ -11,10 +11,11 @@ const Evaluering = (): JSX.Element => {
             {name: "Tinus Øen", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/63492623842a1.jpeg", role: "Medlem"},
             {name: "Maja Christine Stahl", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/640714155162e.jpeg", role: "Medlem"}]}/>
             
-            <img
-                src="https://vektorprogrammet.no/images/team_images/Evaluering/Teambildet.jpg"
-                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-20"
-            />
+            <div className="m-3">
+                <img src="https://vektorprogrammet.no/images/team_images/Evaluering/Teambildet.jpg"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-20"/>
+            </div>
+
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
             Arbeidet vårt
             </div>
@@ -54,10 +55,10 @@ const Evaluering = (): JSX.Element => {
             der hvert team inviterer to andre team til en sosial sammenkomst.  
             </div>
 
-            <img
-                src="https://vektorprogrammet.no/images/team_images/20200831_175600.jpg"
-                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-3"
-            />
+            <div className="m-3">
+                <img src="https://vektorprogrammet.no/images/team_images/20200831_175600.jpg"
+                className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-3"/>
+            </div>
             
             <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
             Opptak
