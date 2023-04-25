@@ -17,7 +17,7 @@ const Sponsor = (): JSX.Element => {
                 Arbeidet vårt
             </div>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black text-left m-5">
             Samarbeidskoordinatorene har ansvaret for å skaffe midler til å drive Vektorprogrammet videre.
             Vi har kontakt med alt fra sjefer i næringslivet til studenter i andre organisasjoner. Vervet
             består både av møter/samarbeid og selvstendig ringing/mailing til bedriftene.
@@ -29,7 +29,7 @@ const Sponsor = (): JSX.Element => {
                 Sosialt i Sponsor
             </div>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black text-left m-5">
             Vi har hyggelige og spennende arrangementer både innad i teamet og sammen med de andre teamene
             i Vektorprogrammet. I Sponsor har vi vært ute og spist sammen, hatt hjemmelaget sushi og vært
             på Escape Room. Det skjer også mye sosial på tvers av team, blant annet hytteturer, fester,
@@ -43,16 +43,18 @@ const Sponsor = (): JSX.Element => {
                 Opptak
             </div>
 
-            <div className="font-sans text-lg text-black text-center m-5">
+            <div className="grid md:grid-cols-2 ml-1 mr-1 mt-1 items-center mb-2">
+            <div className="font-sans text-lg text-black text-left m-5">
             Arbeidsmengden i Sponsorteamet ligger på rundt 2-3 timer i uka, utenom eksamensperioden -
             da er det selvfølgelig ingen arbeidsoppgaver, kun frivillige sosiale arrangementer. 
             </div>
+            <img 
+                    className="max-h-96 sm:max-w-sm h-auto content-center mx-auto" 
+                    src="/images/team/SponsorTor.png"/>
+            </div>
 
-            <div className="font-sans text-lg text-black place-self-start m-5">
-                <div className="font-sans text-lg text-black text-center m-5">
+            <div className="font-sans text-lg text-black place-self-start m-5"> 
                 Som medlem i teamet får du: 
-                </div>
-
                 <li>Ansvaret for noen bedrifter eller organisasjoner som du skal kontakte eller opprettholde kontakten med.</li>
                 <li>Utfordringen med å overbevise disse om at Vektorprogrammet er verdt å støtte.</li>
                 <li>Skrive søknader til fond og legater.</li>
@@ -64,9 +66,14 @@ const Sponsor = (): JSX.Element => {
                 <li>Et meningsfylt og viktig verv.</li>
                 <li>En ny sosial arena.</li>
             </div>
+            
 
-            <div className="font-sans text-lg text-black text-center m-5">
-                Vi ser hele tiden etter nye engasjerte medlemmer. Er du interessert, ta kontakt på sponsor@vektorprogrammet.no.
+            <div className="font-sans text-lg text-black text-left m-5">
+                Vi ser hele tiden etter nye engasjerte medlemmer. Er du interessert, ta kontakt på <a 
+                className="hover:underline text-vektor-darblue break-all" 
+                href={`mailto:sponsor.ntnu@vektorprogrammet.no`}>
+                    sponsor.ntnu@vektorprogrammet.no.
+                </a>
             </div>
 
             <img className="md:max-w-xl h-auto content-right mx-auto" src="/images/team/SponsorTor.png"/>
