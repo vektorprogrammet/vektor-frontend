@@ -6,7 +6,7 @@ import Kontakt from "./Kontakt";
 import OmOss from "./OmOss";
 import Team from "./Team";
 import ServerOverview from "./StagingServerOverview";
-import Styret from "./Team/TeamPages/Evaluering";
+import Styret from "./Team/TeamPages/IT";
 
 interface PageRoute {
   route: string;

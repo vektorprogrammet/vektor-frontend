@@ -9,7 +9,7 @@ const Okonomi = (): JSX.Element => {
             members = {[{name:"Elise Johnsrud", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/634068f19fa01.jpeg", role:"Leder"},
             {name: "Rebecca Strandkleiv", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/63716eb2db339.jpeg", role: "Medlem"},
             {name: "Øyvind Halvorsen", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/633ff0c6b78ab.jpeg", role: "Medlem"},
-            {name: "Anette Johansen", image: "", role: "Medlem"},
+            {name: "Anette Johansen", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/626089fa76913.jpeg", role: "Medlem"},
             {name: "Mats Bendik Norli Kjær", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/633f0b38b6a28.jpeg", role: "Medlem"},
             {name: "Benedicte Vestrum", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/635ad061421f4.jpeg", role: "Medlem"},
             {name: "Andreas lote Henden", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/6356cefb83db6.jpeg", role: "Medlem"},
