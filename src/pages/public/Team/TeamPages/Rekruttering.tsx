@@ -60,8 +60,8 @@ const Rekruttering = (): JSX.Element => {
             </div>
             
             <div className="font-sans text-lg text-black place-self-start m-5 text-center">
-            Vi i rekrutteringsteamet trenger stadig nye medlemmer. Så er du blid, hyggelig og utadvent,
-            og har lyst på et givende og sosialt verv ved siden av studiene, ikke nøl med å ta kontakt!
+            Vi i rekrutteringsteamet trenger stadig nye medlemmer. Så er du blid, hyggelig og utadvent, og har lyst på et givende og
+            sosialt verv ved siden av studiene, ikke nøl med å ta kontakt!
             </div>
 
             <div className="font-sans text-lg text-black m-5 text-center">
