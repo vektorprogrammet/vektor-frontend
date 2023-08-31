@@ -4,6 +4,7 @@ import React, {
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import MobileMenu from "./MobileMenu";
+import Kontrollpanel from "pages/public/Kontrollpanel/components/Kontrollpanel";
 
 const activeStyle: React.CSSProperties = {
   fontWeight: "bold",
@@ -22,7 +23,7 @@ const UserAvatar = () => {
       </div>
       <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <a href="#0">Kontrollpanel</a>
+          <Link to="/kontrollpanel">Kontrollpanel</Link>
         </li>
         <li>
           <a href="#0">Min side</a>
@@ -186,7 +187,7 @@ const LoginPopup = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolea
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   const linkElements = routes.map((route) => (
     <NavLink
       key={route.route}

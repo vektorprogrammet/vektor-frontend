@@ -6,6 +6,7 @@ import AppFooter from "./components/AppFooter/AppFooter";
 import AppHeader from "./components/Header/AppHeader";
 
 import "./App.css";
+import Kontrollpanel from "pages/public/Kontrollpanel/components/Kontrollpanel";
 
 const App = (): JSX.Element => {
   return (
@@ -24,7 +25,8 @@ const App = (): JSX.Element => {
                   path={page_route.route}
                   element={<page_route.component />}
                 />
-              ))}
+              ))},
+              <Route path="/kontrollpanel" element={<Kontrollpanel />}/>
             </Routes>
           </main>
           <AppFooter />
