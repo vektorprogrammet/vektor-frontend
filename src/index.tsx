@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Kontrollpanel from "pages/public/Kontrollpanel/components/Kontrollpanel";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {window.location.pathname == "/kontrollpanel" ? <Kontrollpanel /> : <App />}
   </React.StrictMode>,
   document.getElementById("root"),
 );
