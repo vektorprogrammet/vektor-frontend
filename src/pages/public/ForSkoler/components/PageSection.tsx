@@ -17,11 +17,11 @@ interface Props {
 const PageSection: React.FC<Props> = ({ title, text, children }: Props) => {
   return (
     <div className="my-20 mx-auto">
-      <h1 className="px-3 text-3xl text-center text-gray-600 font-bold mx-auto mb-3">
+      <h1 className="px-3 text-3xl text-center text-gray-600 font-bold mx-auto mb-3 dark:text-gray-200">
         {title}
       </h1>
       {text.map((textParagraph) => (
-        <p key={textParagraph} className="text-xl mb-3 px-3 mx-auto">
+        <p key={textParagraph} className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
           {textParagraph}
         </p>
       ))}
