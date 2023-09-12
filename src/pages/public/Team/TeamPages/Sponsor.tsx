@@ -22,8 +22,8 @@ const Sponsor = (): JSX.Element => {
 
       <div className="font-sans text-lg text-black text-left m-5">
         Samarbeidskoordinatorene har ansvaret for å skaffe midler til å drive Vektorprogrammet videre.
-        Vi har kontakt med alt fra sjefer i næringslivet til studenter i andre organisasjoner. Vervet
-        består både av møter/samarbeid og selvstendig ringing/mailing til bedriftene.
+        Vi har kontakt med alt fra sjefer i næringslivet til studenter i andre organisasjoner.
+        Vervet består både av møter/samarbeid og selvstendig ringing/mailing til bedriftene.
       </div>
 
       <div className="m-3">
