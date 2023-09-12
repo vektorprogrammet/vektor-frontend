@@ -186,7 +186,7 @@ const LoginPopup = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolea
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const linkElements = routes.map((route) => (
     <NavLink
       key={route.route}
