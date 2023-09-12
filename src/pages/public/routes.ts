@@ -11,7 +11,7 @@ interface PageRoute {
   route: string;
   component: React.ComponentType;
 }
- 
+
 // The route with the corresponding component to render in the route
 const routes: Array<PageRoute> = [
   { route: "/assistenter", component: Assistenter },

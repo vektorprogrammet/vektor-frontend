@@ -4,7 +4,6 @@ import React, {
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import MobileMenu from "./MobileMenu";
-import Kontrollpanel from "pages/public/Kontrollpanel/components/Kontrollpanel";
 
 const activeStyle: React.CSSProperties = {
   fontWeight: "bold",
