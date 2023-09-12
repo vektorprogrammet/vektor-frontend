@@ -112,7 +112,7 @@ const IT = (): JSX.Element => {
       <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">
         Sjekk ut hva vi jobber med på
         {" "}
-        <a href="http://github.com/vektorprogrammet" className="hover:underline text-vektor-darblue">http://github.com/vektorprogrammet</a>
+        <a href="https://github.com/vektorprogrammet" className="hover:underline text-vektor-darblue">http://github.com/vektorprogrammet</a>
         !
       </div>
 
