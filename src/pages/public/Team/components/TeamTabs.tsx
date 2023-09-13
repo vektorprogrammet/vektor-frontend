@@ -50,7 +50,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`flex flex-row flex-col md:flex-row ${open ? "block" : "hidden"}`}>
       <div className="flex-1 md:w-1/2 object-contain">
-      <h1 className="text-gray-600 text-4xl font-bold ml-4 md:ml-10 dark:text-gray-200">Hovedstyret</h1>
+        <h1 className="text-gray-600 text-4xl font-bold ml-4 md:ml-10 dark:text-gray-200">Hovedstyret</h1>
         <div className="mt-4 mb-4 md:mb-20 text-xl ml-4 md:ml-10 dark:text-gray-300">Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen.</div>
         <div className="flex space-x-1 space-y-0 items-end ml-4 md:ml-10">
           <svg className="h-4 w-4 text-black dark:text-white" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
