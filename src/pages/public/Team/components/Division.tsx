@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -11,6 +12,7 @@ interface Props {
 const Division = ({
   title, text, mail, numberOfMembers, button_name,
 }: Props): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <div className="relative h-full content-center grow rounded bg-grey-light w-64 shadow-md border-2 place-items-center dark:bg-gray-600">
       <div className="justify-between py-1 text-center border-b-2 text-blue-900 text-lg font-bold dark:text-blue-300">
@@ -36,7 +38,7 @@ const Division = ({
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 align-bottom">
-        <button type="button" className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font duration-200">
+        <button type="button" onClick={() => navigate(`/team/${title}`)} className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font duration-200">
           {button_name}
         </button>
       </div>
