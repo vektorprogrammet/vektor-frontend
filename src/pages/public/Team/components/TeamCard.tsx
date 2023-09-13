@@ -21,7 +21,7 @@ const TeamCard = ({
 
     <div className="flex w-full mx-auto justify-around flex-wrap">
       <div className="max-w-6xl mt-5 flex flex-col">
-        <h1 className=" text-gray-600 text-4xl font-bold mx-3 dark:text-gray-200">{title}</h1>
+        <h1 className="text-gray-600 text-4xl font-bold mx-3 dark:text-gray-200">{title}</h1>
         <p className="max-w-md mt-4 mb-20 text-xl mx-3 dark:text-gray-300">
           <span className="mb-4">{text1}</span>
           {text2}
@@ -44,7 +44,7 @@ const TeamCard = ({
         <img
           src={imgPath.href}
           alt={alt}
-          className="max-w-2xl rounded-lg mx-auto max-h-80 mr-25"
+          className="w-auto max-w-full object-contain mx-auto max-h-80 mr-25"
         />
       </div>
     </div>
