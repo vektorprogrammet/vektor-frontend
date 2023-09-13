@@ -12,8 +12,8 @@ const Division = ({
   title, text, mail, numberOfMembers, button_name,
 }: Props): JSX.Element => {
   return (
-    <div className="relative h-full content-center grow rounded bg-grey-light w-64 shadow-md border-2 place-items-center dark:bg-gray-600">
-      <div className="justify-between py-1 text-center border-b-2 text-blue-900 text-lg font-bold dark:text-blue-300">
+    <div className="relative grow-0 content-center grow rounded bg-grey-light w-80 shadow-md border-2 place-items-center">
+      <div className="justify-between py-1 text-center border-b-2 text-blue-900 text-lg font-bold">
         {title}
       </div>
       <div className="text-sm mt-2 bg-white p-2 rounded cursor-pointer hover:bg-grey-lighter pb-14 dark:bg-gray-600 dark:text-gray-300">
