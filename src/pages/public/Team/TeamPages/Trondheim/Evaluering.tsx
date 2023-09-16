@@ -1,5 +1,5 @@
 import React from "react";
-import TeamTemplate from "./TeamTemplate";
+import TeamTemplate from "../TeamTemplate";
 
 const Evaluering = (): JSX.Element => {
   return (
