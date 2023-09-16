@@ -7,10 +7,11 @@ interface Props {
   mail: string;
   button_name: string;
   numberOfMembers: number;
+  url: string;
 }
 
 const Division = ({
-  title, text, mail, numberOfMembers, button_name,
+  title, text, mail, numberOfMembers, button_name, url,
 }: Props): JSX.Element => {
   const navigate = useNavigate();
   return (
@@ -38,7 +39,7 @@ const Division = ({
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 align-bottom">
-        <button type="button" onClick={() => navigate(`/team/${title}`)} className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font duration-200">
+        <button type="button" onClick={() => navigate(`/team/${url}`)} className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font duration-200">
           {button_name}
         </button>
       </div>

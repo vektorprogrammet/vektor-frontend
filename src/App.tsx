@@ -1,27 +1,29 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { DarkModeProvider } from "components/DarkModeProvider";
 import Kontrollpanel from "pages/public/Kontrollpanel/components/Kontrollpanel";
 import routes from "./pages/public/routes";
+import TrondheimRoutes from "./pages/public/Team/TeamPages/routes";
 import AppFooter from "./components/AppFooter/AppFooter";
 import AppHeader from "./components/Header/AppHeader";
-import {
-  IT,
-  Evaluering,
-  Okonomi,
-  Profilering,
-  Rekruttering,
-  Skolekoordinering,
-  Sponsor,
-  Styret,
-} from "./pages/public/Team/TeamPages/index";
-
 import "./App.css";
+
+// ScrollToTop Component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 const App = (): JSX.Element => {
   return (
     <DarkModeProvider>
       <BrowserRouter>
+        <ScrollToTop />
         {window.location.pathname === "/kontrollpanel" ? (
           <Kontrollpanel />
         ) : (
@@ -41,17 +43,16 @@ const App = (): JSX.Element => {
                 ))}
                 ,
                 <Route path="/kontrollpanel" element={<Kontrollpanel />} />
-                <Route path="/team/IT" element={<IT />} />
-                <Route path="/team/Evaluering" element={<Evaluering />} />
-                <Route path="/team/Okonomi" element={<Okonomi />} />
-                <Route path="/team/Profilering" element={<Profilering />} />
-                <Route path="/team/Rekruttering" element={<Rekruttering />} />
-                <Route
-                  path="/team/Skolekoordinering"
-                  element={<Skolekoordinering />}
-                />
-                <Route path="/team/Sponsor" element={<Sponsor />} />
-                <Route path="/team/Styret" element={<Styret />} />
+                
+                {TrondheimRoutes.map((page_route) => (
+                  <Route
+                    key={page_route.route}
+                    path={page_route.route}
+                    element={<page_route.component />}
+                  />
+                ))}
+                ,
+                
               </Routes>
             </main>
             <AppFooter />
