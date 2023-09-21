@@ -1,5 +1,5 @@
 import React, {
-  Dispatch, MouseEventHandler, SetStateAction, useState,
+  Dispatch, SetStateAction, useState,
 } from "react";
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
