@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
-
+import React, { Dispatch, SetStateAction } from "react";
 
 const LoginButtons = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolean>> }) => {
   return (

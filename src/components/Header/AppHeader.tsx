@@ -12,8 +12,6 @@ const activeStyle: React.CSSProperties = {
   fontWeight: "bold",
 };
 
-
-
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
