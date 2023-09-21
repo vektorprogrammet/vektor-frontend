@@ -1,17 +1,25 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 import { Link } from "react-router-dom";
 
 import "./mobile.css";
+import LoginPopup from "./LoginPopup";
+import UserAvatar from "./UserAvatar";
+import LoginButtons from "./LoginButtons";
 
 interface Props {
   menuOpen: boolean,
   setMenuOpen: (values: boolean) => void;
   links: Array<JSX.Element>,
+  isLoggedIn: boolean,
+  loginPopupVisible: boolean,
+  setLoginPopupVisible: Dispatch<SetStateAction<boolean>>
 }
 
 const MobileMenu = (props: Props): JSX.Element => {
-  const { links, menuOpen, setMenuOpen } = props;
+  const {
+    links, menuOpen, setMenuOpen, isLoggedIn, loginPopupVisible, setLoginPopupVisible,
+  } = props;
   return (
     <div className="fixed vektor-font">
       <div className="relative md:hidden z-10 flex shadow-md w-screen text-3xl bg-white">
@@ -36,6 +44,10 @@ const MobileMenu = (props: Props): JSX.Element => {
         >
           Vektorprogrammet
         </Link>
+
+        <div>
+          {loginPopupVisible ? <LoginPopup setVisible={setLoginPopupVisible} /> : null}
+        </div>
       </div>
       {
         menuOpen ? (
@@ -48,9 +60,13 @@ const MobileMenu = (props: Props): JSX.Element => {
             className="md:hidden drawer-content fixed"
           >
             <nav className="drawer-content flex flex-col text-2xl">
+              <div className="flex w-1/5 justify-center">
+                {isLoggedIn ? <UserAvatar /> : <LoginButtons setVisible={setLoginPopupVisible} />}
+              </div>
               {links}
             </nav>
           </div>
+
         ) : (
           <div className="md:hidden drawer-content closed-drawer fixed">
             <nav className="drawer-content flex flex-col text-2xl">
