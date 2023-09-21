@@ -6,6 +6,7 @@ import Kontakt from "./Kontakt";
 import OmOss from "./OmOss";
 import Team from "./Team";
 import ServerOverview from "./StagingServerOverview";
+import Styret from "./Team/TeamPages/IT";
 
 interface PageRoute {
   route: string;
@@ -21,6 +22,7 @@ const routes: Array<PageRoute> = [
   { route: "/kontakt", component: Kontakt },
   { route: "/om-oss", component: OmOss },
   { route: "/team", component: Team },
+  { route: "/template", component: Styret },
 ];
 
 export default routes;
