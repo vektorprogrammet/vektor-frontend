@@ -30,19 +30,15 @@ const LoginPopup = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolea
     }
   };
 
-  // Logs in the mail and password set
   const logIn = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     checkEmailAndPassword();
-    // do something to loginhere
-    // .catch((error) => {
-    //    showError(error);
-    //     });
+    // to be implemented
   };
 
   function handleEnterLogIn(event: React.KeyboardEvent<HTMLInputElement>): void {
     if (event.key === "Enter") {
-      logIn(event); // calling the same function that is called when the "Log in" button is clicked
+      logIn(event);
     }
   }
 
@@ -103,7 +99,6 @@ const LoginPopup = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolea
               onFocus={() => setimgClassName("flex flex-row mt-36 ml-4 transform duration-300")}
               onKeyDown={handleEnterLogIn}
             />
-            {/* <p className="text-red-500 font-semibold mb-2">{errorMessage}</p> */}
           </div>
           <div>
             <p className="mob-message hidden text-red-500 font-semibold">{errorMessage}</p>
