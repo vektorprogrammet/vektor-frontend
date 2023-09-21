@@ -1,66 +1,18 @@
 import React, {
-  Dispatch, SetStateAction, useState,
+  useState,
 } from "react";
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import MobileMenu from "./MobileMenu";
 import LoginPopup from "./LoginPopup";
+import UserAvatar from "./UserAvatar";
+import LoginButtons from "./LoginButtons";
 
 const activeStyle: React.CSSProperties = {
   fontWeight: "bold",
 };
 
-const UserAvatar = () => {
-  return (
-    <button tabIndex={0} className="dropdown dropdown-end" type="button">
-      <div className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img
-            src="https://placeimg.com/80/80/people"
-            alt="profile avatar"
-          />
-        </div>
-      </div>
-      <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <Link to="/kontrollpanel">Kontrollpanel</Link>
-        </li>
-        <li>
-          <a href="#0">Min side</a>
-        </li>
-        <li>
-          <a href="#0">Profil</a>
-        </li>
-        <li>
-          <a href="#0">Mine utlegg</a>
-        </li>
-        <li className="text-red-500">
-          <a href="#0">Logg ut</a>
-        </li>
-      </ul>
-    </button>
-  );
-};
 
-const LoginButtons = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolean>> }) => {
-  return (
-    <div className="flex space-x-4">
-      <button
-        type="button"
-        className="bg-blue-900 hover:bg-gray-800 text-white px-4 py-2 rounded-full duration-300"
-      >
-        Jeg er ny
-      </button>
-      <button
-        type="button"
-        className="bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
-        onClick={() => setVisible(true)}
-      >
-        Logg inn
-      </button>
-    </div>
-  );
-};
 
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);

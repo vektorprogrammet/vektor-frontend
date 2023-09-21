@@ -4,18 +4,21 @@ import { Link } from "react-router-dom";
 
 import "./mobile.css";
 import LoginPopup from "./LoginPopup";
+import UserAvatar from "./UserAvatar";
+import LoginButtons from "./LoginButtons";
 
 interface Props {
   menuOpen: boolean,
   setMenuOpen: (values: boolean) => void;
   links: Array<JSX.Element>,
+  isLoggedIn: boolean,
   loginPopupVisible: boolean,
   setLoginPopupVisible: Dispatch<SetStateAction<boolean>>
 }
 
 const MobileMenu = (props: Props): JSX.Element => {
   const {
-    links, menuOpen, setMenuOpen, loginPopupVisible, setLoginPopupVisible,
+    links, menuOpen, setMenuOpen, isLoggedIn, loginPopupVisible, setLoginPopupVisible,
   } = props;
   return (
     <div className="fixed vektor-font">
@@ -41,6 +44,7 @@ const MobileMenu = (props: Props): JSX.Element => {
         >
           Vektorprogrammet
         </Link>
+
         <div>
           {loginPopupVisible ? <LoginPopup setVisible={setLoginPopupVisible} /> : null}
         </div>
@@ -56,14 +60,10 @@ const MobileMenu = (props: Props): JSX.Element => {
             className="md:hidden drawer-content fixed"
           >
             <nav className="drawer-content flex flex-col text-2xl">
+              <div className="flex w-1/5 justify-center">
+                {isLoggedIn ? <UserAvatar /> : <LoginButtons setVisible={setLoginPopupVisible} />}
+              </div>
               {links}
-              <button
-                type="button"
-                className="bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
-                onClick={() => setLoginPopupVisible(true)}
-              >
-                Logg inn
-              </button>
             </nav>
           </div>
 
