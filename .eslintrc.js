@@ -1,12 +1,11 @@
 module.exports = {
   extends: [
     "plugin:react/recommended",
-    "plugin:jest/recommended",
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks"
   ],
-  plugins: ['react', '@typescript-eslint', 'jest'],
+  plugins: ['react', '@typescript-eslint'],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",
@@ -48,6 +47,8 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       { "devDependencies": ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"] }
-    ]
+    ],
+    "max-len": "off", // Disable max-len rule
+    "jsx-a11y/alt-text": "off" // Disable alt-text rule
   },
 };

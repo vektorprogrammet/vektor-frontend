@@ -48,6 +48,17 @@ jobs:
           yarn install --immutable
           yarn eslint . --ext .js,.jsx,.ts,.tsx
 
+  vitest_tests:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: |
+          yarn install --immutable
+          yarn test:vitest
+
   cypress_tests:
     needs: build
     runs-on: ubuntu-latest
@@ -60,9 +71,9 @@ jobs:
       image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
       options: --user 1001
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Download the build folders
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build
           path: build

@@ -21,13 +21,13 @@ const PageTitleCard = ({
   return (
     <div className="flex max-w-7xl mx-auto justify-between flex-wrap mt-10">
       <div className="max-w-6xl  m-auto">
-        <h1 className="text-left text-gray-600 px-3 text-4xl font-bold">
+        <h1 className="text-left text-gray-600 px-3 text-4xl font-bold dark:text-gray-200">
           {title}
         </h1>
-        <p className="max-w-lg text-xl mt-3 px-3">{text}</p>
+        <p className="max-w-lg text-xl mt-3 px-3 dark:text-gray-300">{text}</p>
         {link && (
           <a
-            className="block text-xl font-bold mt-3 px-3"
+            className="block text-xl font-bold mt-3 px-3 dark:text-gray-200"
             href={link?.path.href}
           >
             {link?.text}
