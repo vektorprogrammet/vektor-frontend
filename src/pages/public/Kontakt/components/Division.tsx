@@ -27,16 +27,16 @@ const Division = ({
           <div className="font-bold text-2xl text-blue-800">{name}</div>
           {subtitle && <div className="text-base">{subtitle}</div>}
           {description && <div className="text-base">{description}</div>}
-          <div className="whitespace-nowrap flex space-x-1 mt-8">
+          <div className="flex space-x-1 mt-8">
             <svg className="h-4 w-4 text-balck" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" />
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <polyline points="3 7 12 13 21 7" />
             </svg>
-            <a className="text-sm hover:underline" href={`mailto:${mail}`}>{mail}</a>
+            <a className="truncate block max-w-[200px] text-sm hover:underline" href={`mailto:${mail}`}>{mail}</a>
           </div>
           {address && (
-          <div className="whitespace-nowrap flex space-x-1">
+          <div className="flex space-x-1">
             <svg className="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
