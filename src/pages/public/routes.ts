@@ -7,6 +7,7 @@ import OmOss from "./OmOss";
 import Team from "./Team";
 import ServerOverview from "./StagingServerOverview";
 import Styret from "./Team/TeamPages/IT";
+import Skoler from "./Kontrollpanel/components/pages/Skoler";
 
 interface PageRoute {
   route: string;
@@ -23,6 +24,7 @@ const routes: Array<PageRoute> = [
   { route: "/om-oss", component: OmOss },
   { route: "/team", component: Team },
   { route: "/template", component: Styret },
+  { route: "/skoleoversikt", component: Skoler },
 ];
 
 export default routes;
