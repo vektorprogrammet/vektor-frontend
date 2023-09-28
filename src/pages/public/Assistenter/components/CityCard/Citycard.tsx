@@ -13,37 +13,35 @@ const Tab = (
 ): JSX.Element => {
   const chosenStyle = open ? `tab-active` : `text-vektor-darblue`;
   return (
-      <a
-        type="button"
-        className={`tab tab-lifted w-1/3 text-base font-bold border-white ${chosenStyle}`}
-        onClick={onTabClick}
-        data-toggle="tab"
-        role="tablist"
-      >
-        {city}
-      </a>
+    <button
+      type="button"
+      className={`tab tab-lifted w-1/3 text-base font-bold border-white ${chosenStyle}`}
+      onClick={onTabClick}
+      data-toggle="tab"
+      role="tablist"
+    >
+      {city}
+    </button>
   );
 };
 
 const Tabs = (): JSX.Element => {
   const [openTab, setOpenTab] = React.useState(City.TRONDHEIM);
   return (
-    <>
-      <div className="w-full">
-        <div className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400" role="tablist">
-          {Object.values(City).map((value) => (
-            <Tab
-              city={value}
-              onTabClick={() => setOpenTab(value)}
-              open={openTab === value}
-            />
-          ))}
-        </div>
-        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space">
-          <ApplyReg cities={openTab} />
-        </div>
+    <div className="w-full">
+      <div className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400" role="tablist">
+        {Object.values(City).map((value) => (
+          <Tab
+            city={value}
+            onTabClick={() => setOpenTab(value)}
+            open={openTab === value}
+          />
+        ))}
       </div>
-    </>
+      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space">
+        <ApplyReg cities={openTab} />
+      </div>
+    </div>
   );
 };
 
