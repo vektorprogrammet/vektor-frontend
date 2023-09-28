@@ -1,34 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
 import ApplyReg from "../ApplyReg";
-import { City, CityButton } from "./CityButton";
+import { City } from "./CityButton";
 
-const Citycard = () => {
-  const [city, setCity] = useState<City>(City.TRONDHEIM);
-
+const Tab = (
+  {
+    city,
+    onTabClick,
+    open,
+  }:{ onTabClick: ()=>void,
+    city: City,
+    open: boolean },
+): JSX.Element => {
+  const chosenStyle = open ? `tab-active` : `text-vektor-darblue`;
   return (
-    <div className="my-8 flex-col w-screen flex items-center justify-center w-1/2 mx-auto">
-      <span className="border-solid border-2 border-vektor-darblue align-items-center">
-        <div className="divide-y divide-vektor-darblue bg-white">
-          <div className="text-vektor-darblue">
-
-            <span className="flex justify-center">
-              {Object.values(City).map((cityValue) => (
-                <CityButton
-                  onChooseCity={setCity}
-                  city={cityValue}
-                  isActive={city === cityValue}
-                />
-              ))}
-            </span>
-          </div>
-          <div className="text-center">
-
-            {/* Use ApplyCard when users can apply and NoApllyCard when it is locked */}
-            <ApplyReg cities={city} />
-          </div>
-        </div>
-      </span>
-    </div>
+      <a
+        type="button"
+        className={`tab tab-lifted w-1/3 text-base font-bold border-white ${chosenStyle}`}
+        onClick={onTabClick}
+        data-toggle="tab"
+        role="tablist"
+      >
+        {city}
+      </a>
   );
 };
-export default Citycard;
+
+const Tabs = (): JSX.Element => {
+  const [openTab, setOpenTab] = React.useState(City.TRONDHEIM);
+  return (
+    <>
+      <div className="w-full">
+        <div className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400" role="tablist">
+          {Object.values(City).map((value) => (
+            <Tab
+              city={value}
+              onTabClick={() => setOpenTab(value)}
+              open={openTab === value}
+            />
+          ))}
+        </div>
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space">
+          <ApplyReg cities={openTab} />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Tabs;
