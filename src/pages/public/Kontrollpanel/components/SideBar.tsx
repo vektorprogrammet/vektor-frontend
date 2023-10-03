@@ -5,7 +5,7 @@ const HorizontalLine = (): JSX.Element => {
   return <hr className="border-t-2 border-white w-4/5 mt-4" />;
 };
 
-type IconProps = {
+interface IconProps {
   svg: React.ReactNode;
   name: string;
 };
