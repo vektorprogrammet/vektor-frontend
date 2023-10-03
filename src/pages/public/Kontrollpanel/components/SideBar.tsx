@@ -12,11 +12,11 @@ type IconProps = {
 
 const Icon: React.FC<IconProps> = ({ svg, name }) => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="bg-vektor-blue rounded-full flex items-center justify-center mt-4 w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14">
+    <div className="flex flex-col items-center justify-center my-2 sm:my-3 md:my-4">
+      <button className="bg-vektor-blue hover:bg-white rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14">
         {svg}
-      </div>
-      <div className="flex items-center justify-center text-white mt-1 text-xs md:text-sm">
+      </button>
+      <div className="text-center text-white mt-1 text-xs md:text-sm mx-2 truncate w-20 sm:w-28 md:w-36">
         {name}
       </div>
     </div>

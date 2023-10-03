@@ -3,7 +3,7 @@ import SideBar from "./SideBar";
 
 const Kontrollpanel = (): JSX.Element => {
   return (
-    <div className="border-2 border-black flex flex-row h-screen">
+    <div className="border-2 border-black flex flex-row">
       <SideBar />
 
       <div className="border-2 bg-red-200 basis-full h-full flex flex-col text-center">
