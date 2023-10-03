@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Kontrollpanel = (): JSX.Element => {
   // dummy data for buttons on control panel home page
-  const mainButtons: Array<String> = [
+  const mainButtons: Array<string> = [
     "Opptak",
     "Stillinger",
     "Team",
@@ -11,7 +11,7 @@ const Kontrollpanel = (): JSX.Element => {
     "Økonomi",
   ];
 
-  const infoCards: Array<String> = [
+  const infoCards: Array<string> = [
     "Søkere",
     "Nyheter",
   ];
@@ -29,7 +29,7 @@ const Kontrollpanel = (): JSX.Element => {
   ));
 
   const infoElements = infoCards.map((infoCard) => (
-    <div className="w-2/5 h-5/6 bg-gray-400 flex items-center justify-center rounded-lg font-bold">
+    <div key={infoCard} className="w-2/5 h-5/6 bg-gray-400 flex items-center justify-center rounded-lg font-bold">
       {infoCard}
     </div>
   ));
