@@ -1,4 +1,5 @@
 import React from "react";
+import { AppRoute } from "App";
 import Assistenter from "./Assistenter";
 import ForForeldre from "./ForForeldre";
 import ForSkoler from "./ForSkoler";
@@ -13,14 +14,14 @@ interface PageRoute {
 }
 
 // The route with the corresponding component to render in the route
-const routes: Array<PageRoute> = [
-  { route: "/assistenter", component: Assistenter },
-  { route: "/staging", component: ServerOverview },
-  { route: "/foreldre", component: ForForeldre },
-  { route: "/skoler", component: ForSkoler },
-  { route: "/kontakt", component: Kontakt },
-  { route: "/om-oss", component: OmOss },
-  { route: "/team", component: Team },
+const routes: AppRoute[] = [
+  { path: "/assistenter", element: <Assistenter />, name: "Assistenter" },
+  { path: "/staging", element: <ServerOverview />, name: "Staging" },
+  { path: "/foreldre", element: <ForForeldre />, name: "Foreldre" },
+  { path: "/skoler", element: <ForSkoler />, name: "Skoler" },
+  { path: "/kontakt", element: <Kontakt />, name: "Kontakt" },
+  { path: "/om-oss", element: <OmOss />, name: "OmOss" },
+  { path: "/team", element: <Team />, name: "Team" },
 ];
 
 export const controlRoutes: Array<PageRoute> = [];
