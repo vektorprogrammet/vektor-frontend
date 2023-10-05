@@ -1,5 +1,7 @@
 import React from "react";
-import {BrukereIcon, AssistentIcon, OpptakIcon, OpptaksstatistikkIcon, SkoleIcon, TeamIcon, TeamInteresseIcon} from './Icons';
+import {
+  BrukereIcon, AssistentIcon, OpptakIcon, OpptaksstatistikkIcon, SkoleIcon, TeamIcon, TeamInteresseIcon,
+} from "./Icons";
 
 const HorizontalLine = (): JSX.Element => {
   return <hr className="border-t-2 border-white w-4/5 mt-4" />;
@@ -8,12 +10,12 @@ const HorizontalLine = (): JSX.Element => {
 interface IconProps {
   svg: React.ReactNode;
   name: string;
-};
+}
 
 const Icon: React.FC<IconProps> = ({ svg, name }) => {
   return (
     <div className="flex flex-col items-center justify-center my-2 sm:my-3 md:my-4">
-      <button className="bg-vektor-blue hover:bg-white rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14">
+      <button type="button" className="bg-vektor-blue hover:bg-white rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14">
         {svg}
       </button>
       <div className="text-center text-white mt-1 text-xs md:text-sm mx-2 truncate w-20 sm:w-28 md:w-36">
