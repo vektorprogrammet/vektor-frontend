@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideBar from "./SideBar";
 
 const Kontrollpanel = (): JSX.Element => {
   // dummy data for buttons on control panel home page
@@ -36,8 +35,7 @@ const Kontrollpanel = (): JSX.Element => {
   ));
 
   return (
-    <div className="flex flex-row items-end flex-grow">
-      <SideBar/>
+    <div className="flex flex-row h-screen items-end flex-grow">
       <div className="basis-full h-full flex flex-col text-center">
         <div className="h-1/2 flex flex-row items-center justify-center px-12 gap-16">
           {buttonElements}

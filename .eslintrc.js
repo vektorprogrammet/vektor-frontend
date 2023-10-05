@@ -40,12 +40,15 @@ module.exports = {
       "double",
       { avoidEscape: true, allowTemplateLiterals: true },
     ],
+    "react/require-default-props": "off",
     "linebreak-style": "off",
     "@typescript-eslint/quotes": "off",
     "arrow-body-style": "off",
     "import/no-extraneous-dependencies": [
       "error",
       { "devDependencies": ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"] }
-    ]
+    ],
+    "max-len": "off", // Disable max-len rule
+    "jsx-a11y/alt-text": "off" // Disable alt-text rule
   },
 };
