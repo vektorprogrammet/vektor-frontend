@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const InfoBoks = ({ info }: { info: string[] }) => {
+interface InfoProps {
+  info: string[];
+}
+
+const InfoBoks = ({ info }: InfoProps): JSX.Element => {
   return (
-    <div className="flex gap-14 bg-vektor-blue rounded-3xl justify-around h-20 shadow-md shadow-gray-500">
-      {info.map((infoCell, index) => (
-        <p key={index} className="flex items-center justify-center">
+    <div className="flex gap-14 bg-vektor-blue rounded-2xl justify-around h-14 shadow-md shadow-gray-500 mx-8">
+      {info.map((infoCell) => (
+        <p className="flex items-center justify-center">
           {infoCell}
         </p>
       ))}
