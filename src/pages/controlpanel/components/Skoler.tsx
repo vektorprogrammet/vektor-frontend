@@ -57,7 +57,7 @@ const Skoler = (): JSX.Element => {
   ];
 
   return (
-    <div>
+    <div className="w-full">
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Skoler i Trondheim</h1>
         <div className="flex">
@@ -79,7 +79,7 @@ const Skoler = (): JSX.Element => {
           </button>
         </div>
       </div>
-      <div className="p-10 flex justify-center items-center">
+      <div className="p-10 flex justify-center items-center ml-6">
         <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
           <table className="w-full">
             <thead>
