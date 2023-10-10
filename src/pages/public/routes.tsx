@@ -5,13 +5,8 @@ import ForForeldre from "./ForForeldre";
 import ForSkoler from "./ForSkoler";
 import Kontakt from "./Kontakt";
 import OmOss from "./OmOss";
-import Team from "./Team";
 import ServerOverview from "./StagingServerOverview";
-
-interface PageRoute {
-  route: string;
-  component: React.ComponentType;
-}
+import teamRoutes from "./Team/TeamPages/routes";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [
@@ -21,9 +16,7 @@ const routes: AppRoute[] = [
   { path: "/skoler", element: <ForSkoler />, name: "Skoler" },
   { path: "/kontakt", element: <Kontakt />, name: "Kontakt" },
   { path: "/om-oss", element: <OmOss />, name: "OmOss" },
-  { path: "/team", element: <Team />, name: "Team" },
+  { path: "/team", name: "Team", children: teamRoutes },
 ];
-
-export const controlRoutes: Array<PageRoute> = [];
 
 export default routes;
