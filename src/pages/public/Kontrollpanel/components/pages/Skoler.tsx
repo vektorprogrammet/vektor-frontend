@@ -80,7 +80,7 @@ const Skoler = (): JSX.Element => {
         </div>
       </div>
       <div className="p-10 flex justify-center items-center">
-        <div className="w-10/12 border-2 mt-100 shadow">
+        <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
           <table className="w-full">
             <thead>
               <tr className="bg-white">
