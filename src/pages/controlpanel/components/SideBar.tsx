@@ -49,7 +49,7 @@ const SideBar = (): JSX.Element => {
       </div>
       <HorizontalLine />
       {linkData.map((item) => (
-        <Link to={item.to}>
+        <Link to={item.to} key={item.to}>
           <Icon svg={item.icon} name={item.name} />
         </Link>
       ))}

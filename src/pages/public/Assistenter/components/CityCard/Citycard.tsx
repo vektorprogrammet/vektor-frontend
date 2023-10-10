@@ -35,6 +35,7 @@ const Tabs = (): JSX.Element => {
             city={value}
             onTabClick={() => setOpenTab(value)}
             open={openTab === value}
+            key={value}
           />
         ))}
       </div>
