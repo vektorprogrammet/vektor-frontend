@@ -26,6 +26,10 @@
   background-color: #223C70;
 }
 
+button:hover .icon {
+  fill: #6fceee;
+}
+
 @layer components {
   .header-link {
     @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-base md:m-0 md:p-0 md:font-normal;

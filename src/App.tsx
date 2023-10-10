@@ -1,43 +1,45 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  Outlet, createBrowserRouter, RouterProvider, RouteObject,
+} from "react-router-dom";
 import { DarkModeProvider } from "components/DarkModeProvider";
-import Kontrollpanel from "pages/public/Kontrollpanel/components/Kontrollpanel";
-import routes from "./pages/public/routes";
-import AppFooter from "./components/AppFooter/AppFooter";
-import AppHeader from "./components/Header/AppHeader";
+import appRoutes from "pages/public/routes";
+import controlPanelRoutes from "pages/controlpanel/routes";
 
 import "./App.css";
+import MainPage from "pages/public";
+import ControlPanel from "pages/controlpanel";
 
-const App = (): JSX.Element => {
+const Root = (): JSX.Element => {
   return (
     <DarkModeProvider>
-      <BrowserRouter>
-        {window.location.pathname === "/kontrollpanel" ? <Kontrollpanel />
-          : (
-            <div className="App flex flex-col items-stretch min-h-screen">
-              <AppHeader />
-              {/* Banner */}
-              <main className="flex-grow">
-                <Routes>
-                  {/* Use component when the rendered component needs no props */}
-                  {/* Getting the routes from the defined route file in pages */}
-                  {routes.map((page_route) => (
-                    <Route
-                      key={page_route.route}
-                      path={page_route.route}
-                      element={<page_route.component />}
-                    />
-                  ))}
-                  ,
-                  <Route path="/kontrollpanel" element={<Kontrollpanel />} />
-                </Routes>
-              </main>
-              <AppFooter />
-            </div>
-          )}
-      </BrowserRouter>
+      <Outlet />
     </DarkModeProvider>
   );
 };
 
+export type AppRoute = RouteObject & {
+  name: string
+};
+
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "kontrollpanel",
+        element: <ControlPanel />,
+        children: controlPanelRoutes,
+      },
+      {
+        path: "",
+        element: <MainPage />,
+        children: appRoutes,
+      }],
+  },
+]);
+const App = (): JSX.Element => {
+  return <RouterProvider router={routes} />;
+};
 export default App;

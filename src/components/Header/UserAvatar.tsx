@@ -14,7 +14,7 @@ const UserAvatar = () => {
       </div>
       <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <Link to="/kontrollpanel">Kontrollpanel</Link>
+          <Link reloadDocument to="/kontrollpanel">Kontrollpanel</Link>
         </li>
         <li>
           <a href="#0">Min side</a>
