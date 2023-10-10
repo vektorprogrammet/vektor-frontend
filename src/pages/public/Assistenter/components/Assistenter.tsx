@@ -7,11 +7,10 @@ const Assistenter = (): JSX.Element => {
   const { title, ingress, cards } = getContent();
 
   const cardElement = useRef<HTMLDivElement>(null);
-  const scrollToCard = () =>
-    cardElement.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
+  const scrollToCard = () => cardElement.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
 
   return (
     <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center ">
@@ -108,7 +107,8 @@ const Assistenter = (): JSX.Element => {
             <li>Du har hatt R1/S2 på videregående</li>
             <li>
               Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)
-              <br />i en periode på 4 eller 8 uker
+              <br />
+              i en periode på 4 eller 8 uker
             </li>
           </ul>
         </div>

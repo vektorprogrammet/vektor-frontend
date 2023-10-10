@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Skoler = (): JSX.Element => {
   const [aktiveSkoler, setAktiveSkoler] = useState<boolean>(true);
   const mapToTable = (skoler: School[]) => {
     return skoler.map((school, index) => (
-      <tr key={index} className={"even:bg-white odd:bg-table-grey"}>
+      <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
         <td className="text-center py-3 px-6">{school.name}</td>
         <td className="text-center py-3 px-6">{school.contactPerson}</td>
         <td className="text-center py-3 px-6">{school.email}</td>
@@ -66,6 +66,7 @@ const Skoler = (): JSX.Element => {
               aktiveSkoler ? "border-vektor-blue-hover border-b-4 pb-1" : ""
             }`}
             onClick={() => setAktiveSkoler(true)}
+            type="button"
           >
             Aktive Skoler
           </button>
@@ -74,6 +75,7 @@ const Skoler = (): JSX.Element => {
               !aktiveSkoler ? "border-vektor-blue-hover border-b-4 pb-1" : ""
             }`}
             onClick={() => setAktiveSkoler(false)}
+            type="button"
           >
             Inaktive Skoler
           </button>
@@ -103,7 +105,7 @@ const Skoler = (): JSX.Element => {
             </thead>
             <tbody>
               {mapToTable(
-                aktiveSkoler ? aktiveSkolerListe : inaktiveSkolerListe
+                aktiveSkoler ? aktiveSkolerListe : inaktiveSkolerListe,
               )}
             </tbody>
           </table>
