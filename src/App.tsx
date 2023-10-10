@@ -33,7 +33,7 @@ const routes = createBrowserRouter([
         children: controlPanelRoutes,
       },
       {
-        path: "*",
+        path: "",
         element: <MainPage />,
         children: appRoutes,
       }],
