@@ -16,9 +16,9 @@ const EvalueringRekrutteringProfilering = (): JSX.Element => {
       />
 
       <div className="font-sans text-lg text-black text-start mx-5 mt-20">
-      Dette er teamet med de mest varierende arbeidsoppgavene. Teamet har ansvar for rekrutteringen av nye assistenter i starten av hvert semester ved å arrangere stand, holde infomøte, blestinger 
-      og henge opp plakater. I tillegg har de ansvar for å sende ut evalueringsskjemaer ved slutten av hvert semester og følge opp både ris og ros som kommer inn på disse. Teamet styrer også 
-      Vektorprogrammet Ås sine sosiale medier, og sørger for at organisasjonen er synlige rundt på campus.
+        Dette er teamet med de mest varierende arbeidsoppgavene. Teamet har ansvar for rekrutteringen av nye assistenter i starten av hvert semester ved å arrangere stand, holde infomøte, blestinger
+        og henge opp plakater. I tillegg har de ansvar for å sende ut evalueringsskjemaer ved slutten av hvert semester og følge opp både ris og ros som kommer inn på disse. Teamet styrer også
+        Vektorprogrammet Ås sine sosiale medier, og sørger for at organisasjonen er synlige rundt på campus.
       </div>
 
       <div className="m-3">

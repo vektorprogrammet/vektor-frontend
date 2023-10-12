@@ -15,8 +15,8 @@ const SponsorOkonomi = (): JSX.Element => {
       />
 
       <div className="font-sans text-lg text-black text-left m-5 mt-20">
-      Teamet har ansvar for å holde oversikt over økonomien til Vektorprogrammet på Ås. I tillegg jobber de også med å skaffe sponsorer i løpet av semesteret ved å ta 
-      kontakt med bedrifter i nærområdet.
+        Teamet har ansvar for å holde oversikt over økonomien til Vektorprogrammet på Ås. I tillegg jobber de også med å skaffe sponsorer i løpet av semesteret ved å ta
+        kontakt med bedrifter i nærområdet.
       </div>
       <div className="m-3">
         <img

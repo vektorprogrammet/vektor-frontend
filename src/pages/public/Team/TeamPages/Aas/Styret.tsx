@@ -17,9 +17,9 @@ const Styret = (): JSX.Element => {
       />
 
       <div className="font-sans text-lg text-black text-left m-5 mt-20">
-      Styret består av leder, nestleder og ledere for de ulike teamene (sponsor/økonomi, rekruttering/profilering/evaluering, skolekoordinering og sosialt). I løpet av de månedlige møtene gjennomgås 
-      månedens, samt fremtidige saker, som kan være alt fra å organisere sosiale aktiviteter til å løse problemer som oppstår under driften av Vektorprogrammet i Ås. Hver av medlemmene i styret 
-      (med unntak av leder og nestleder) har ansvar for et team bestående av 3 til 6 medlemmer som hjelper til med å utføre ulike oppgaver for sitt team. 
+        Styret består av leder, nestleder og ledere for de ulike teamene (sponsor/økonomi, rekruttering/profilering/evaluering, skolekoordinering og sosialt). I løpet av de månedlige møtene gjennomgås
+        månedens, samt fremtidige saker, som kan være alt fra å organisere sosiale aktiviteter til å løse problemer som oppstår under driften av Vektorprogrammet i Ås. Hver av medlemmene i styret
+        (med unntak av leder og nestleder) har ansvar for et team bestående av 3 til 6 medlemmer som hjelper til med å utføre ulike oppgaver for sitt team.
       </div>
       <div className="m-3">
         <img
