@@ -22,12 +22,6 @@ const Hovedstyret = (): JSX.Element => {
             role: "Nestleder",
           },
           {
-            name: "Frøya Kjepso",
-            image:
-              "https://vektorprogrammet.no/media/cache/profile_img_small/images/Profile%20photos/6356cd903dc7f.jpeg",
-            role: "Ekspansjon",
-          },
-          {
             name: "Aaryan Neupane",
             image:
               "https://vektorprogrammet.no/media/cache/profile_img_small/images/Profile%20photos/644805d1e8ef2.jpeg",
