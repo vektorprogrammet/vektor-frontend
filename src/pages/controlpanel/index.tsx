@@ -7,6 +7,7 @@ const ControlPanel = (): JSX.Element => {
     <div className="bg-gray-100 flex flex-row">
       <SideBar />
       <Outlet />
+
     </div>
   );
 };
