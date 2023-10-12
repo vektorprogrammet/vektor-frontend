@@ -1,6 +1,6 @@
 import React from "react";
-import Division from "./Division";
 import { useNavigate } from "react-router-dom";
+import Division from "./Division";
 
 interface TabProps {
   divisions: DivisionList[];

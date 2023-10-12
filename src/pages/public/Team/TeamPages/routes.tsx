@@ -24,6 +24,6 @@ const routes: AppRoute[] = [
   { path: "trondheim/skolekoordinering", element: <Skolekoordinering />, name: "skolekoordinering" },
   { path: "trondheim/sponsor", element: <Sponsor />, name: "sponsor" },
   { path: "trondheim/styret", element: <Styret />, name: "styret" },
-  { path: "hovedstyret", element: <Hovedstyret />, name: "hovedstyret"},
+  { path: "hovedstyret", element: <Hovedstyret />, name: "hovedstyret" },
 ];
 export default routes;
