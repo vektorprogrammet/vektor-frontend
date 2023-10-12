@@ -7,7 +7,10 @@ const Assistenter = (): JSX.Element => {
   const { title, ingress, cards } = getContent();
 
   const cardElement = useRef<HTMLDivElement>(null);
-  const scrollToCard = () => cardElement.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  const scrollToCard = () => cardElement.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
 
   return (
     <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center ">
@@ -120,9 +123,7 @@ const Assistenter = (): JSX.Element => {
               semester
             </li>
             <li>Send inn søknad fra skjemaet lengre ned på denne siden</li>
-            <li>
-              Møt opp på intervju slik at vi kan bli bedre kjent med deg
-            </li>
+            <li>Møt opp på intervju slik at vi kan bli bedre kjent med deg</li>
             <li>
               Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet
             </li>
