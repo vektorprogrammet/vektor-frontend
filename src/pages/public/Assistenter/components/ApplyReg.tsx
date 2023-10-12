@@ -53,8 +53,8 @@ export const ApplyCard = (props: any) => {
         </div>
 
         <div className="my-4 space-x-4">
-          <select className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold">
-            <option value="" disabled selected hidden>
+          <select className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold" defaultValue="Kjønn">
+            <option value="Kjønn" disabled>
               Kjønn
             </option>
             <option className="">Mann</option>
@@ -62,8 +62,8 @@ export const ApplyCard = (props: any) => {
             <option>Annet</option>
           </select>
 
-          <select className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold">
-            <option value="" disabled selected hidden>
+          <select className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold" defaultValue="Årstrinn">
+            <option value="Årstrinn" disabled>
               Årstrinn
             </option>
             <option>1. klasse</option>

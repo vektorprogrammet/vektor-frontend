@@ -101,7 +101,7 @@ const ForSkoler = (): JSX.Element => {
                   },
                 ].map(({ city, email, url }) => {
                   return (
-                    <tr>
+                    <tr key={city}>
                       <td className="py-3 px-6">{city}</td>
                       <td className="py-3 px-6">
                         <a
