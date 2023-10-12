@@ -10,6 +10,11 @@ import {
   Skolekoordinering,
   Sponsor,
   Styret,
+  StyretAas,
+  SponsorOkonomiAas,
+  SkolekoordineringAas,
+  EvalueringRekrutteringProfileringAas,
+  SosialtAas,
 } from "./index";
 
 // The route with the corresponding component to render in the route
@@ -23,6 +28,11 @@ const routes: AppRoute[] = [
   { path: "trondheim/skolekoordinering", element: <Skolekoordinering />, name: "skolekoordinering" },
   { path: "trondheim/sponsor", element: <Sponsor />, name: "sponsor" },
   { path: "trondheim/styret", element: <Styret />, name: "styret" },
+  { path: "aas/styret", element: <StyretAas />, name: "styret" },
+  { path: "aas/sponsor-okonomi", element: <SponsorOkonomiAas />, name: "sponsor-okonomi" },
+  { path: "aas/skolekoordinering", element: <SkolekoordineringAas />, name: "skolekoordinering" },
+  { path: "aas/evaluering-rekruttering-profilering", element: <EvalueringRekrutteringProfileringAas />, name: "evaluering-rekruttering-profilering" },
+  { path: "aas/sosialt", element: <SosialtAas />, name: "sosialt" },
 ];
 
 export default routes;

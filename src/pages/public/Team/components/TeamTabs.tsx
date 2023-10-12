@@ -29,9 +29,10 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${open ? "block" : "hidden"}`}>
       <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Ås." mail="nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" url="aas/styret" />
-      <Division title="SPONSOR" text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås." mail="sponsor.nmbu@vektorprogrammet.no" numberOfMembers={4} button_name="Les mer" url="aas/sponsor" />
+      <Division title="SPONSOR" text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås." mail="sponsor.nmbu@vektorprogrammet.no" numberOfMembers={4} button_name="Les mer" url="aas/sponsor-okonomi" />
       <Division title="SKOLEKOORDINERING" text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene." mail="skolekoordinering.nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" url="aas/skolekoordinering" />
-      <Division title="EVALUERING" text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet." mail="evaluering.nmbu@vektorprogrammet.no" numberOfMembers={8} button_name="Les mer" url="aas/evaluering" />
+      <Division title="EVALUERING" text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet." mail="evaluering.nmbu@vektorprogrammet.no" numberOfMembers={8} button_name="Les mer" url="aas/evaluering-rekruttering-profilering" />
+      <Division title="SOSIALT" text="Vi arrangerer sosiale arrangementer for assistenter og sørger for at alle trives i vervet." mail="sosialt.nmbu@vektorprogrammet.no" numberOfMembers={6} button_name="Les mer" url="aas/sosialt" />
     </div>
   );
 };
