@@ -6,3 +6,8 @@ export { default as Rekruttering } from "./Trondheim/Rekruttering";
 export { default as Skolekoordinering } from "./Trondheim/Skolekoordinering";
 export { default as Sponsor } from "./Trondheim/Sponsor";
 export { default as Styret } from "./Trondheim/Styret";
+export { default as StyretAas } from "./Aas/Styret";
+export { default as SponsorOkonomiAas } from "./Aas/SponsorOkonomi";
+export { default as SkolekoordineringAas } from "./Aas/Skolekoordinering";
+export { default as EvalueringRekrutteringProfileringAas } from "./Aas/EvalueringRekrutteringProfilering";
+export { default as SosialtAas } from "./Aas/Sosialt";
