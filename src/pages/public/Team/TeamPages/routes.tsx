@@ -1,6 +1,7 @@
 import React from "react";
 import { AppRoute } from "App";
 import Team from "../index";
+import Hovedstyret from "./Hovedstyret/Hovedstyret";
 import {
   IT,
   Evaluering,
@@ -23,6 +24,6 @@ const routes: AppRoute[] = [
   { path: "trondheim/skolekoordinering", element: <Skolekoordinering />, name: "skolekoordinering" },
   { path: "trondheim/sponsor", element: <Sponsor />, name: "sponsor" },
   { path: "trondheim/styret", element: <Styret />, name: "styret" },
+  { path: "hovedstyret", element: <Hovedstyret />, name: "hovedstyret"},
 ];
-
 export default routes;
