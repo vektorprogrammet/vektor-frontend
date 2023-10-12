@@ -1,5 +1,6 @@
 import React from "react";
 import Division from "./Division";
+import { useNavigate } from "react-router-dom";
 
 interface TabProps {
   divisions: DivisionList[];
@@ -47,6 +48,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
 };
 
 const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <div className={`flex flex-row flex-col md:flex-row ${open ? "block" : "hidden"}`}>
       <div className="flex-1 md:w-1/2 object-contain">
@@ -67,7 +69,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
           <div className="top-0 dark:text-white">{`${8} medlemmer`}</div>
         </div>
         <br />
-        <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-4 md:ml-10 dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300">
+        <button type="button" onClick={() => navigate(`/team/hovedstyret`)} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-4 md:ml-10 dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300">
           Les mer om hovedstyret
         </button>
       </div>
