@@ -52,7 +52,7 @@ const ServerOverview = (): JSX.Element => {
         <tbody>
           {servers?.map((server, index) => {
             return (
-              <>
+              <React.Fragment key={server.branch}>
                 <tr
                   key={server.branch}
                   onClick={() => {
@@ -82,7 +82,7 @@ const ServerOverview = (): JSX.Element => {
                       : null}
                   </td>
                 </tr>
-              </>
+              </React.Fragment>
             );
           })}
         </tbody>

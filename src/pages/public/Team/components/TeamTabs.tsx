@@ -94,7 +94,7 @@ const Tabs = ({
         <ul className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400" role="tablist">
           {divisions.map((data) => {
             return (
-              <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mr-0 last:mr-0 flex-auto text-center" key={data.name}>
                 <a
                   className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
                     rounded-t-lg

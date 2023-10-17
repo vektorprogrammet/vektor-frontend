@@ -64,7 +64,7 @@ const Division = ({
 
           {contactInfos.map((data, id) => {
             return (
-              <div className="py-2 mt-5">
+              <div className="py-2 mt-5" key={data.name}>
                 <div className="text-blue-800">{contactInfos[id].name}</div>
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a className="text-sm hover:underline" href={`mailto:${contactInfos[id].mail}`}>{contactInfos[id].mail}</a>
