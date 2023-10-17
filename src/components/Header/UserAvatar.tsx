@@ -17,10 +17,10 @@ const UserAvatar = () => {
           <Link reloadDocument to="/kontrollpanel">Kontrollpanel</Link>
         </li>
         <li>
-          <a href="#0">Min side</a>
+          <a href="#0">Profil</a>
         </li>
         <li>
-          <a href="#0">Profil</a>
+          <a href="#0">Mine søknader</a>
         </li>
         <li>
           <a href="#0">Mine utlegg</a>
