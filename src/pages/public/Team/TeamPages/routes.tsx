@@ -17,6 +17,7 @@ import {
   EvalueringRekrutteringProfileringAas,
   SosialtAas,
   StyretBergen,
+  SkolekoordineringBergen,
 } from "./index";
 
 // The route with the corresponding component to render in the route
@@ -37,5 +38,6 @@ const routes: AppRoute[] = [
   { path: "aas/sosialt", element: <SosialtAas />, name: "sosialt" },
   { path: "hovedstyret", element: <Hovedstyret />, name: "hovedstyret" },
   { path: "bergen/styret", element: <StyretBergen />, name: "hovedstyret" },
+  { path: "bergen/skolekoordinering", element: <SkolekoordineringBergen />, name: "hovedstyret" },
 ];
 export default routes;
