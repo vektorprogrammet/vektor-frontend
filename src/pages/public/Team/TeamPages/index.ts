@@ -13,3 +13,4 @@ export { default as EvalueringRekrutteringProfileringAas } from "./Aas/Evaluerin
 export { default as SosialtAas } from "./Aas/Sosialt";
 export { default as StyretBergen } from "./Bergen/Styret";
 export { default as SkolekoordineringBergen } from "./Bergen/Skolekoordinering";
+export { default as RekrutteringBergen } from "./Bergen/Rekruttering";
