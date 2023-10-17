@@ -11,3 +11,4 @@ export { default as SponsorOkonomiAas } from "./Aas/SponsorOkonomi";
 export { default as SkolekoordineringAas } from "./Aas/Skolekoordinering";
 export { default as EvalueringRekrutteringProfileringAas } from "./Aas/EvalueringRekrutteringProfilering";
 export { default as SosialtAas } from "./Aas/Sosialt";
+export { default as StyretBergen } from "./Bergen/Styret";
