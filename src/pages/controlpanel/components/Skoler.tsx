@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 
 const Skoler = (): JSX.Element => {
   const select = ["Aktive Skoler", "Inaktive Skoler"];
@@ -64,7 +64,7 @@ const Skoler = (): JSX.Element => {
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Skoler i Trondheim</h1>
         <div className="flex">
-          <Navbar select={select} selected={selected} setSelected={setSelected}/>
+          <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
       </div>
       <div className="p-10 flex justify-center items-center ml-6">
@@ -91,11 +91,11 @@ const Skoler = (): JSX.Element => {
             </thead>
             <tbody>
               {mapToTable(
-                selected === select[0] 
-                  ? aktiveSkolerListe 
-                  : selected === select[1] 
-                  ? inaktiveSkolerListe 
-                  : []
+                (selected === select[0]
+                  && aktiveSkolerListe)
+                  || (selected === select[1]
+                  && inaktiveSkolerListe)
+                  || ([]),
               )}
             </tbody>
           </table>
