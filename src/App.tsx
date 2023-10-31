@@ -11,6 +11,7 @@ import "./App.css";
 import MainPage from "pages/public";
 import ControlPanel from "pages/controlpanel";
 import Profil from "pages/public/Profil/components/Profil";
+import Utlegg from "pages/public/User/Utlegg";
 import appRoutes from "./pages/public/routes";
 import controlPanelRoutes from "./pages/controlpanel/routes";
 
@@ -47,7 +48,7 @@ const routes = createBrowserRouter([
           },
         ],
       },
-    ],
+      { path: "/utlegg", element: <Utlegg /> }],
   },
 ]);
 
