@@ -93,7 +93,7 @@ const Tabs = ({
   };
   const [openTab, setOpenTab] = React.useState(initialTabState);
   useEffect(() => {
-    sessionStorage.setItem('openTab', openTab.toString());
+    sessionStorage.setItem("openTab", openTab.toString());
   }, [openTab]);
   return (
     <div className="w-full flex flex-wrap">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Division from "./Division.js";
 
 interface TabProps {
@@ -91,7 +91,14 @@ const HovedstyretTab = ({ open }: { open:boolean }): JSX.Element => {
 const Tabs = ({
   divisions,
 }:TabProps): JSX.Element => {
-  const [openTab, setOpenTab] = React.useState(1);
+  const initialTabState = () => {
+    const storedTab = sessionStorage.getItem('openTab');
+    return storedTab ? parseInt(storedTab, 10) : 1;
+  };
+  const [openTab, setOpenTab] = React.useState(initialTabState);
+  useEffect(() => {
+    sessionStorage.setItem('openTab', openTab.toString());
+  }, [openTab]);
   return (
     <div className="w-full">
       <div className="flex font-medium text-center border-b" role="tablist">
