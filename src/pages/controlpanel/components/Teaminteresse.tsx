@@ -59,7 +59,7 @@ const Teaminteresse = (): JSX.Element => {
     <div className="w-full">
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Teaminteresse</h1>
-        <div className="flex">
+        <div className="flex flex-wrap ml-16">
           <button
             className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
               side === "it" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
