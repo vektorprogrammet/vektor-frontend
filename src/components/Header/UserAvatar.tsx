@@ -17,7 +17,7 @@ const UserAvatar = () => {
           <Link reloadDocument to="/kontrollpanel">Kontrollpanel</Link>
         </li>
         <li>
-          <a href="#0">Profil</a>
+          <Link reloadDocument to="/profil">Profil</Link>
         </li>
         <li>
           <a href="#0">Mine søknader</a>
