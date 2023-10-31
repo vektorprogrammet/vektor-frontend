@@ -91,7 +91,11 @@ const Skoler = (): JSX.Element => {
             </thead>
             <tbody>
               {mapToTable(
-                selected == select[0] ? aktiveSkolerListe : inaktiveSkolerListe,
+                selected === select[0] 
+                  ? aktiveSkolerListe 
+                  : selected === select[1] 
+                  ? inaktiveSkolerListe 
+                  : []
               )}
             </tbody>
           </table>
