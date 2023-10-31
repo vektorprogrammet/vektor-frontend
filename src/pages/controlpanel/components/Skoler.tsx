@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar"
 
 const Skoler = (): JSX.Element => {
-  const [aktiveSkoler, setAktiveSkoler] = useState<boolean>(true);
+  const select = ["Aktive Skoler", "Inaktive Skoler"];
+  const [selected, setSelected] = useState<string>(select[0]);
+
   const mapToTable = (skoler: School[]) => {
     return skoler.map((school, index) => (
       <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
@@ -61,24 +64,7 @@ const Skoler = (): JSX.Element => {
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Skoler i Trondheim</h1>
         <div className="flex">
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              aktiveSkoler ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setAktiveSkoler(true)}
-            type="button"
-          >
-            Aktive Skoler
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              !aktiveSkoler ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setAktiveSkoler(false)}
-            type="button"
-          >
-            Inaktive Skoler
-          </button>
+          <Navbar select={select} selected={selected} setSelected={setSelected}/>
         </div>
       </div>
       <div className="p-10 flex justify-center items-center ml-6">
@@ -105,7 +91,7 @@ const Skoler = (): JSX.Element => {
             </thead>
             <tbody>
               {mapToTable(
-                aktiveSkoler ? aktiveSkolerListe : inaktiveSkolerListe,
+                selected == select[0] ? aktiveSkolerListe : inaktiveSkolerListe,
               )}
             </tbody>
           </table>
