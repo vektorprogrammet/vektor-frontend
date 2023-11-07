@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar";
 
 const Teaminteresse = (): JSX.Element => {
-  const [side, setSide] = useState<string>("it");
+  const select = ["IT", "Evaluering", "Rekruttering", "Profilering", "Skolekoordinering", "Sponsor", "Økonomi"];
+  const [selected, setSelected] = useState<string>(select[0]);
 
   const mapToTable = (sokere: Soker[]) => {
     return sokere.map((soker, index) => (
@@ -60,69 +62,7 @@ const Teaminteresse = (): JSX.Element => {
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Teaminteresse</h1>
         <div className="flex flex-wrap ml-16">
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "it" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("it")}
-            type="button"
-          >
-            IT
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "evaluering" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("evaluering")}
-            type="button"
-          >
-            Evaluering
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "rekruttering" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("rekruttering")}
-            type="button"
-          >
-            Rekruttering
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "profilering" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("profilering")}
-            type="button"
-          >
-            Profilering
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "skolekoordinering" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("skolekoordinering")}
-            type="button"
-          >
-            Skolekoordinering
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "sponsor" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("sponsor")}
-            type="button"
-          >
-            Sponsor
-          </button>
-          <button
-            className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
-              side === "okonomi" ? "border-vektor-blue-hover border-b-4 pb-1" : ""
-            }`}
-            onClick={() => setSide("okonomi")}
-            type="button"
-          >
-            Økonomi
-          </button>
+          <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
       </div>
       <div className="p-10 flex justify-center items-center ml-6">
@@ -143,7 +83,11 @@ const Teaminteresse = (): JSX.Element => {
             </thead>
             <tbody>
               {mapToTable(
-                side === "it" ? itListe : evalueringListe,
+                (selected === select[0]
+                  && itListe)
+                  || (selected === select[1]
+                  && evalueringListe)
+                  || ([]),
               )}
             </tbody>
           </table>
