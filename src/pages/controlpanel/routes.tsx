@@ -9,7 +9,7 @@ import Teammedlemmer from "./components/Teammedlemmer";
 const routes: AppRoute[] = [
   { path: "", element: <Kontrollpanel />, name: "Kontrollpanel" },
   { path: "/kontrollpanel/skoler", element: <Skoler />, name: "Skoler" },
-  { path: "/kontrollpanel/team:team", element: <Teammedlemmer />, name: "Skoler" },
+  { path: "/kontrollpanel/teams/:id", element: <Teammedlemmer />, name: "Teammedlemmer" },
   { path: "/kontrollpanel/teaminteresse", element: <Teaminteresse />, name: "Teaminteresse" },
 ];
 
