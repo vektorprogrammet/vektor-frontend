@@ -88,12 +88,12 @@ const Tabs = ({
   divisions,
 }: TabProps): JSX.Element => {
   const initialTabState = () => {
-    const storedTab = sessionStorage.getItem('openTab');
+    const storedTab = sessionStorage.getItem('teamTab');
     return storedTab ? parseInt(storedTab, 10) : 1;
   };
   const [openTab, setOpenTab] = React.useState(initialTabState);
   useEffect(() => {
-    sessionStorage.setItem("openTab", openTab.toString());
+    sessionStorage.setItem("teamTab", openTab.toString());
   }, [openTab]);
   return (
     <div className="w-full flex flex-wrap">
