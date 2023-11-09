@@ -8,7 +8,7 @@ const OpprettTeam = (): JSX.Element => {
     <div className="flex flex-col items-center space-between w-full">
       <h1 className="text-2xl row-start-1 row-end-1 pt-10">Opprett team</h1>
       <div className="mt-10 flex text-2xl">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-12 text-xl">
           <label>Navn:</label>
           <label>Distrikt:</label>
           <label>E-post:</label>
@@ -17,20 +17,12 @@ const OpprettTeam = (): JSX.Element => {
         </div>
         <div className="ml-10 flex flex-col gap-6">
           <input type="text" placeholder="Teamnavn" className="input input-bordered input-info w-full max-w-xs" />
-          <button tabIndex={0} className="dropdown dropdown-end" type="button">
-              <p className="bg-white rounded-full text-m shadow">{distrikt}</p>
-            <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-              <li>
-                <a onClick={() => setDistrikt("Trondheim")}>Trondheim</a>
-              </li>
-              <li>
-                <a onClick={() => setDistrikt("Ås")}>Ås</a>
-              </li>
-              <li>
-                <a onClick={() => setDistrikt("Bergen")}>Bergen</a>
-              </li>
-            </ul>
-          </button>
+          <select className="select select-info w-full max-w-xs">
+            <option disabled selected>Distrikt</option>
+            <option>Trondheim</option>
+            <option>Ås</option>
+            <option>Bergen</option>
+          </select>
           <input type="text" name="epost" placeholder="E-post" className="input input-bordered input-info w-full max-w-xs" />
           <input placeholder="Beskrivelse" className="input input-bordered input-info w-full max-w-xs" />
           <textarea placeholder="Beskrivelse" className="input input-bordered input-info w-full max-w-xs" />
