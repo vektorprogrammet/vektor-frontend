@@ -9,7 +9,7 @@ import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
 const routes: AppRoute[] = [
   { path: "", element: <Kontrollpanel />, name: "Kontrollpanel" },
   { path: "/kontrollpanel/skoler", element: <Skoler />, name: "Skoler" },
-  { path: "/kontrollpanel/teams/oppretteam", element: <OpprettTeam/>, name: "Opprett nytt team" },
+  { path: "/kontrollpanel/oppretteam", element: <OpprettTeam/>, name: "Opprett nytt team" },
   { path: "/kontrollpanel/teaminteresse", element: <Teaminteresse />, name: "Teaminteresse" },
 ];
 
