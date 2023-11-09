@@ -1,5 +1,5 @@
 import react, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const Teammedlemmer = (): JSX.Element => {
@@ -8,6 +8,8 @@ const Teammedlemmer = (): JSX.Element => {
   const [selected, setSelected] = useState<string>(select[0]);
 
   const { id } = useParams();
+  const navigate = useNavigate();
+
 
   const mapToTable = (person: Person[]) => {
     return person.map((person, index) => (
@@ -80,7 +82,7 @@ const Teammedlemmer = (): JSX.Element => {
           <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
       </div>
-      <div className="p-10 flex justify-center items-center ml-6">
+      <div className="p-10 flex flex-col justify-center items-center ml-6">
         <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
           <table className="w-full">
             <thead>
@@ -93,7 +95,7 @@ const Teammedlemmer = (): JSX.Element => {
                     Epost
                   </th>
                 </tr> :
-                 <tr className="bg-white">
+                <tr className="bg-white">
                   <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
                     Navn
                   </th>
@@ -103,7 +105,7 @@ const Teammedlemmer = (): JSX.Element => {
                   <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
                     Start
                   </th>
-                </tr> }
+                </tr>}
             </thead>
             <tbody>
               {mapToTable(
@@ -119,6 +121,14 @@ const Teammedlemmer = (): JSX.Element => {
             </tbody>
           </table>
         </div>
+        {selected === select[0] ?
+          <button
+            type="button"
+            className="login-buttons mt-6 bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
+            onClick={() => navigate(`/kontrollpanel/teams/${id}/leggtil`)}
+          >
+            Legg til teammedlem
+          </button> : null}
       </div>
     </div>
   );
