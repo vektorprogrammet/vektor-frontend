@@ -1,31 +1,29 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const Teammedlemmer = (): JSX.Element => {
-
   const select = ["Aktive medlemmer", "Inaktive medlemmer", "Søkere"];
   const [selected, setSelected] = useState<string>(select[0]);
 
   const { id } = useParams();
   const navigate = useNavigate();
 
-
   const mapToTable = (person: Person[]) => {
-    return person.map((person, index) => (
+    return person.map((member, index) => (
       <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
-        <td className="text-center py-3 px-6">{person.name}</td>
-        <td className="text-center py-3 px-6">{person.position}</td>
-        <td className="text-center py-3 px-6">{person.start}</td>
+        <td className="text-center py-3 px-6">{member.name}</td>
+        <td className="text-center py-3 px-6">{member.position}</td>
+        <td className="text-center py-3 px-6">{member.start}</td>
       </tr>
     ));
   };
 
   const mapToTableSoker = (soker: Soker[]) => {
-    return soker.map((soker, index) => (
+    return soker.map((person, index) => (
       <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
-        <td className="text-center py-3 px-6">{soker.name}</td>
-        <td className="text-center py-3 px-6">{soker.epost}</td>
+        <td className="text-center py-3 px-6">{person.name}</td>
+        <td className="text-center py-3 px-6">{person.epost}</td>
       </tr>
     ));
   };
@@ -63,15 +61,15 @@ const Teammedlemmer = (): JSX.Element => {
     {
       name: "Kaja Potet",
       position: "Utvikler",
-      start: "Vår 2023"
-    }
+      start: "Vår 2023",
+    },
   ];
 
   const sokere: Soker[] = [
     {
       name: "Donald Duck",
-      epost: "donald.duck@gmail.com"
-    }
+      epost: "donald.duck@gmail.com",
+    },
   ];
 
   return (
@@ -86,26 +84,30 @@ const Teammedlemmer = (): JSX.Element => {
         <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
           <table className="w-full">
             <thead>
-              {selected === select[2] ?
-                <tr className="bg-white">
-                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                    Navn
-                  </th>
-                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                    Epost
-                  </th>
-                </tr> :
-                <tr className="bg-white">
-                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                    Navn
-                  </th>
-                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                    Stilling
-                  </th>
-                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                    Start
-                  </th>
-                </tr>}
+              {selected === select[2]
+                ? (
+                  <tr className="bg-white">
+                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                      Navn
+                    </th>
+                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                      Epost
+                    </th>
+                  </tr>
+                )
+                : (
+                  <tr className="bg-white">
+                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                      Navn
+                    </th>
+                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                      Stilling
+                    </th>
+                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                      Start
+                    </th>
+                  </tr>
+                )}
             </thead>
             <tbody>
               {mapToTable(
@@ -121,17 +123,19 @@ const Teammedlemmer = (): JSX.Element => {
             </tbody>
           </table>
         </div>
-        {selected === select[0] ?
-          <button
-            type="button"
-            className="login-buttons mt-6 bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
-            onClick={() => navigate(`/kontrollpanel/teams/${id}/leggtil`)}
-          >
-            Legg til teammedlem
-          </button> : null}
+        {selected === select[0]
+          ? (
+            <button
+              type="button"
+              className="login-buttons mt-6 bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
+              onClick={() => navigate(`/kontrollpanel/teams/${id}/leggtil`)}
+            >
+              Legg til teammedlem
+            </button>
+          ) : null}
       </div>
     </div>
   );
-}
+};
 
 export default Teammedlemmer;
