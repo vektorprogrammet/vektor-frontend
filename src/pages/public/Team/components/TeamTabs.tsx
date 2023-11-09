@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Division from "./Division";
 
 interface TabProps {
@@ -29,9 +30,10 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${open ? "block" : "hidden"}`}>
       <Division title="STYRET" text="Ansvarlig for driften av Vektorprogrammet i Ås." mail="nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" url="aas/styret" />
-      <Division title="SPONSOR" text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås." mail="sponsor.nmbu@vektorprogrammet.no" numberOfMembers={4} button_name="Les mer" url="aas/sponsor" />
+      <Division title="SPONSOR" text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås." mail="sponsor.nmbu@vektorprogrammet.no" numberOfMembers={4} button_name="Les mer" url="aas/sponsor-okonomi" />
       <Division title="SKOLEKOORDINERING" text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene." mail="skolekoordinering.nmbu@vektorprogrammet.no" numberOfMembers={5} button_name="Les mer" url="aas/skolekoordinering" />
-      <Division title="EVALUERING" text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet." mail="evaluering.nmbu@vektorprogrammet.no" numberOfMembers={8} button_name="Les mer" url="aas/evaluering" />
+      <Division title="EVALUERING" text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet." mail="evaluering.nmbu@vektorprogrammet.no" numberOfMembers={8} button_name="Les mer" url="aas/evaluering-rekruttering-profilering" />
+      <Division title="SOSIALT" text="Vi arrangerer sosiale arrangementer for assistenter og sørger for at alle trives i vervet." mail="sosialt.nmbu@vektorprogrammet.no" numberOfMembers={6} button_name="Les mer" url="aas/sosialt" />
     </div>
   );
 };
@@ -47,6 +49,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
 };
 
 const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <div className={`flex flex-row flex-col md:flex-row ${open ? "block" : "hidden"}`}>
       <div className="flex-1 md:w-1/2 object-contain">
@@ -67,7 +70,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
           <div className="top-0 dark:text-white">{`${8} medlemmer`}</div>
         </div>
         <br />
-        <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-4 md:ml-10 dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300">
+        <button type="button" onClick={() => navigate(`/team/hovedstyret`)} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-4 md:ml-10 dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300">
           Les mer om hovedstyret
         </button>
       </div>
@@ -91,7 +94,7 @@ const Tabs = ({
         <ul className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400" role="tablist">
           {divisions.map((data) => {
             return (
-              <li className="-mb-px mr-0 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mr-0 last:mr-0 flex-auto text-center" key={data.name}>
                 <a
                   className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
                     rounded-t-lg

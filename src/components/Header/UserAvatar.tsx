@@ -5,9 +5,9 @@ const UserAvatar = () => {
   return (
     <button tabIndex={0} className="dropdown dropdown-end" type="button">
       <div className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
+        <div className="w-12 rounded-full">
           <img
-            src="https://placeimg.com/80/80/people"
+            src="https://placekitten.com/80/80"
             alt="profile avatar"
           />
         </div>
@@ -17,10 +17,10 @@ const UserAvatar = () => {
           <Link reloadDocument to="/kontrollpanel">Kontrollpanel</Link>
         </li>
         <li>
-          <a href="#0">Min side</a>
+          <a href="#0">Profil</a>
         </li>
         <li>
-          <a href="#0">Profil</a>
+          <a href="#0">Mine søknader</a>
         </li>
         <li>
           <a href="#0">Mine utlegg</a>

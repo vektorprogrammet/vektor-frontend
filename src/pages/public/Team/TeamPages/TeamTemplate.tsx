@@ -25,7 +25,12 @@ const TeamTemplate = ({
       <div className="text-vektor-darblue text-center mt-5 text-base font-bold">
         Epost:
         {" "}
-        <a className="text-sm overflow-hidden hover:underline break-all text-base font-normal" href={`mailto:${mail}`}>{mail}</a>
+        <a
+          className="text-sm overflow-hidden hover:underline break-all text-base font-normal"
+          href={`mailto:${mail}`}
+        >
+          {mail}
+        </a>
       </div>
       <div className="font-sans text-vektor-darblue text-xl text-center m-3 my-5">
         {text}
@@ -33,7 +38,7 @@ const TeamTemplate = ({
       <div className="flex flex-wrap justify-center mt-10">
         {members.map((data) => {
           return (
-            <div className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5">
+            <div key={data.image} className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5">
               <Member name={data.name} role={data.role} image={data.image} />
             </div>
           );

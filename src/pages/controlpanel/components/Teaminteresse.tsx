@@ -1,69 +1,67 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 
-const Skoler = (): JSX.Element => {
-  const select = ["Aktive Skoler", "Inaktive Skoler"];
+const Teaminteresse = (): JSX.Element => {
+  const select = ["IT", "Evaluering", "Rekruttering", "Profilering", "Skolekoordinering", "Sponsor", "Økonomi"];
   const [selected, setSelected] = useState<string>(select[0]);
 
-  const mapToTable = (skoler: School[]) => {
-    return skoler.map((school, index) => (
+  const mapToTable = (sokere: Soker[]) => {
+    return sokere.map((soker, index) => (
       <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
-        <td className="text-center py-3 px-6">{school.name}</td>
-        <td className="text-center py-3 px-6">{school.contactPerson}</td>
-        <td className="text-center py-3 px-6">{school.email}</td>
-        <td className="text-center py-3 px-6">{school.phone}</td>
-        <td className="text-center py-3 px-6">{school.language}</td>
+        <td className="text-center py-3 px-6">{soker.name}</td>
+        <td className="text-center py-3 px-6">{soker.email}</td>
+        <td className="text-center py-3 px-6">{soker.phone}</td>
       </tr>
     ));
   };
 
-  interface School {
+  interface Soker {
     name: string;
-    contactPerson: string;
     email: string;
     phone: string;
-    language: string;
   }
 
-  const aktiveSkolerListe: School[] = [
+  const itListe: Soker[] = [
     {
-      name: "Amalie Skram",
-      contactPerson: "Aaryan",
+      name: "Aaryan Potet",
       email: "Aaryan.er.kul@hotmail.com",
       phone: "12345678",
-      language: "Arabisk",
     },
     {
-      name: "Blussuvoll",
-      contactPerson: "Maurice",
+      name: "Filipicus Manus",
       email: "email@domene.com",
       phone: "12345678",
-      language: "Norsk",
     },
     {
-      name: "Charlottenlund",
-      contactPerson: "Ola",
+      name: "OJ Spiderman",
       email: "email@email.com",
       phone: "12345678",
-      language: "Norsk",
     },
   ];
 
-  const inaktiveSkolerListe: School[] = [
+  const evalueringListe: Soker[] = [
     {
-      name: "St. Olav VGS",
-      contactPerson: "Ola Nordmann",
-      email: "testmail@gmail.com",
-      phone: "87654321",
-      language: "Nynorsk",
+      name: "Kaalhode",
+      email: "kaalhode@hotmail.com",
+      phone: "12345678",
+    },
+    {
+      name: "Tinitus",
+      email: "tinitus@domene.com",
+      phone: "12345678",
+    },
+    {
+      name: "Malala",
+      email: "malala@email.com",
+      phone: "12345678",
     },
   ];
 
   return (
-    <div className="w-screen">
+    <div className="w-full">
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
-        <h1 className="text-2xl row-start-1 row-end-1">Skoler i Trondheim</h1>
-        <div className="flex">
+        <h1 className="text-2xl row-start-1 row-end-1">Teaminteresse</h1>
+        <div className="flex flex-wrap ml-16">
           <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
       </div>
@@ -73,10 +71,7 @@ const Skoler = (): JSX.Element => {
             <thead>
               <tr className="bg-white">
                 <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                  Skole
-                </th>
-                <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                  Kontakperson
+                  Søker
                 </th>
                 <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
                   E-post
@@ -84,17 +79,14 @@ const Skoler = (): JSX.Element => {
                 <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
                   Telefon
                 </th>
-                <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                  Språk
-                </th>
               </tr>
             </thead>
             <tbody>
               {mapToTable(
                 (selected === select[0]
-                  && aktiveSkolerListe)
+                  && itListe)
                   || (selected === select[1]
-                  && inaktiveSkolerListe)
+                  && evalueringListe)
                   || ([]),
               )}
             </tbody>
@@ -105,4 +97,4 @@ const Skoler = (): JSX.Element => {
   );
 };
 
-export default Skoler;
+export default Teaminteresse;
