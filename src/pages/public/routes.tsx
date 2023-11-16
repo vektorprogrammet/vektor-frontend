@@ -15,7 +15,7 @@ const routes: AppRoute[] = [
   { path: "/foreldre", element: <ForForeldre />, name: "Foreldre" },
   { path: "/skoler", element: <ForSkoler />, name: "Skoler" },
   { path: "/kontakt", element: <Kontakt />, name: "Kontakt" },
-  { path: "/om-oss", element: <OmOss />, name: "OmOss" },
+  { path: "/om-oss", element: <OmOss />, name: "Om oss" },
   { path: "/team", name: "Team", children: teamRoutes },
 ];
 
