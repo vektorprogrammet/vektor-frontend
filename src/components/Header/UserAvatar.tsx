@@ -6,18 +6,19 @@ const UserAvatar = () => {
     <button tabIndex={0} className="dropdown dropdown-end" type="button">
       <div className="btn btn-ghost btn-circle avatar">
         <div className="w-12 rounded-full">
-          <img
-            src="https://placekitten.com/80/80"
-            alt="profile avatar"
-          />
+          <img src="https://placekitten.com/80/80" alt="profile avatar" />
         </div>
       </div>
       <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <Link reloadDocument to="/kontrollpanel">Kontrollpanel</Link>
+          <Link reloadDocument to="/kontrollpanel">
+            Kontrollpanel
+          </Link>
         </li>
         <li>
-          <a href="#0">Profil</a>
+          <Link reloadDocument to="/profil/1">
+            Profil
+          </Link>
         </li>
         <li>
           <a href="#0">Mine søknader</a>
