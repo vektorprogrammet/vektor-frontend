@@ -10,9 +10,9 @@ import {
 import "./App.css";
 import MainPage from "pages/public";
 import ControlPanel from "pages/controlpanel";
+import Profil from "pages/public/Profil/components/Profil";
 import appRoutes from "./pages/public/routes";
 import controlPanelRoutes from "./pages/controlpanel/routes";
-import Profil from "pages/public/Profil/components/Profil";
 
 const Root = (): JSX.Element => {
   return (
