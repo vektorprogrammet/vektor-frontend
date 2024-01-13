@@ -49,8 +49,8 @@ const Utlegg = (): JSX.Element => {
     },
   });
 
-  // Denne må være her for at dirtyFields skal oppdateres
-  formState.dirtyFields;
+  // dirtyFields må brukes for at den skal oppdateres (minneoptimering react-hook-form)
+  console.assert(formState.dirtyFields || true);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const formData = { ...data, date: dateValue.startDate };
@@ -110,7 +110,7 @@ const Utlegg = (): JSX.Element => {
   };
 
   const handlePrevious = () => {
-    if (!(currentStep === 1)) {
+    if (currentStep !== 1) {
       setCurrentStep(currentStep - 1);
     }
   };
@@ -233,6 +233,7 @@ const Utlegg = (): JSX.Element => {
           <img
             className="w-1/4 -mt-6 float-right hidden md:block"
             src="images/team/OkonomiTor.png"
+            alt=""
           />
           {stepToComponent(currentStep)}
           <p className="text-red-600 text-sm my-4 m-1 w-full max-w-xs">{currentErrorMessage}</p>
