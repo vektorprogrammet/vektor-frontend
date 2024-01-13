@@ -6,32 +6,27 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import Datepicker from "react-tailwindcss-datepicker";
+import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
 
 type Inputs = {
   amount: number
   description: string
   receipt: File
-  bankAccountNumber: number
-};
-
-type DateValue = {
-  startDate: Date | null
-  endDate: Date | null
+  bankAccountNumber: string
 };
 
 const Utlegg = (): JSX.Element => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [dateValue, setDateValue] = useState<DateValue>({
+  const [dateValue, setDateValue] = useState<DateValueType>({
     startDate: null,
     endDate: null,
   });
   const [file, setFile] = useState(new File([""], "filename"));
   const [currentErrorMessage, setCurrentErrorMessage] = useState("");
 
-  const handleDateValueChange = (newValue: DateValue) => {
-    setDateValue(newValue);
+  const handleDateValueChange = (value: DateValueType) => {
+    setDateValue(value);
   };
 
   const validateDate = (date: Date) => {
@@ -45,7 +40,7 @@ const Utlegg = (): JSX.Element => {
       amount: 0,
       description: "",
       receipt: new File([""], "filename"),
-      bankAccountNumber: 0,
+      bankAccountNumber: "0",
     },
   });
 
@@ -53,14 +48,14 @@ const Utlegg = (): JSX.Element => {
   console.assert(formState.dirtyFields || true);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const formData = { ...data, date: dateValue.startDate };
+    const formData = { ...data, date: dateValue?.startDate };
 
     // send to backend here..
     console.log("Form submitted with the following data:", formData);
   };
 
   const isCurrentInputValid = () => {
-    const date = new Date(dateValue.startDate?.toString() || "");
+    const date = new Date(dateValue?.startDate?.toString() || "");
     switch (currentStep) {
       case 1:
         if (formState.errors.amount || !formState.dirtyFields.amount) {
