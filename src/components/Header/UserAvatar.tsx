@@ -24,7 +24,7 @@ const UserAvatar = () => {
           <a href="#0">Mine søknader</a>
         </li>
         <li>
-          <a href="#0">Mine utlegg</a>
+          <Link reloadDocument to="/utlegg">Mine utlegg</Link>
         </li>
         <li className="text-red-500">
           <a href="#0">Logg ut</a>
