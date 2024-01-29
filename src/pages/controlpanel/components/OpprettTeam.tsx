@@ -1,8 +1,11 @@
 import { ChangeEvent, useState } from "react";
-
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 const OpprettTeam = (): JSX.Element => {
 
   const [bold, setBold] = useState(false);
+  const [value, setValue] = useState('');
+
 
   const handleBoldChange = (event: ChangeEvent<HTMLInputElement>) => {
     setBold(event.target.checked);
@@ -35,6 +38,7 @@ const OpprettTeam = (): JSX.Element => {
         checked={bold}
         onChange={handleBoldChange}
       />
+      <ReactQuill theme="snow" value={value} onChange={setValue} />
           <textarea placeholder="Beskrivelse" style={{ fontWeight: bold ? 'bold' : 'normal' }} className="textarea textarea-info"/>
           <button type="button" className="login-buttons bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300">
             Opprett team
