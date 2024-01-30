@@ -1,15 +1,36 @@
 import { ChangeEvent, useState } from "react";
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
+import ImageUploader from 'quill-image-uploader';
+
 import 'react-quill/dist/quill.snow.css';
 const OpprettTeam = (): JSX.Element => {
 
-  const [bold, setBold] = useState(false);
   const [value, setValue] = useState('');
+  Quill.register('modules/imageUploader', ImageUploader);
 
+  const formats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+  ];
 
-  const handleBoldChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setBold(event.target.checked);
-  };
+  var toolbarOptions = [
+  [{ 'header': [1, 2, false] }],
+
+  ['bold', 'italic', 'underline', 'image'],        // toggled buttons
+
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+
+  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+
+  ['clean']                                         // remove formatting button
+];
 
   return (
     <div className="flex flex-col items-center space-between w-full">
@@ -32,14 +53,9 @@ const OpprettTeam = (): JSX.Element => {
           </select>
           <input type="text" name="epost" placeholder="E-post" className="input input-bordered input-info w-full max-w-xs" />
           <input placeholder="Beskrivelse" className="input input-bordered input-info max-w-xs" />
-          <input
-        name="bold"
-        type="checkbox"
-        checked={bold}
-        onChange={handleBoldChange}
-      />
-      <ReactQuill theme="snow" value={value} onChange={setValue} />
-          <textarea placeholder="Beskrivelse" style={{ fontWeight: bold ? 'bold' : 'normal' }} className="textarea textarea-info"/>
+          <div className="textarea textarea-info h-64">
+            <ReactQuill theme="snow" value={value} modules={{toolbar: toolbarOptions}} onChange={setValue} className="h-48"/>
+          </div>
           <button type="button" className="login-buttons bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300">
             Opprett team
           </button>
