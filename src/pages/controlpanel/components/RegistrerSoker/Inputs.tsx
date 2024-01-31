@@ -35,7 +35,7 @@ const Input:React.FC<InputProps> = ({name, label, placeholder, pattern, type, er
 
 export const NameInput:React.FC<TextProps> = ({ name, label }) => {
     return (<>
-        <Input name={name} type="text" label={label} pattern="/^[A-ZÆØÅÉÈÊËÍÎÏÓÒÔÕÖÚÙÛÜÀÁÂÃÄÇÐÑÌÏÒÓÔÕÖÙÚÛÜÝa-zæøåéèêëíîïóòôõöúùûüàáâãäçðñìïòóôõöùúûüý]*$/" error="Navnet må starte med stor bokstav, og kun ha gyldige bokstaver i seg."/>
+        <Input name={name} type="text" label={label} error="Navnet må starte med stor bokstav, og kun ha gyldige bokstaver i seg."/>
     </>);
 }
 interface HasName {
@@ -43,7 +43,7 @@ interface HasName {
 }
 export const PhoneInput:React.FC<HasName> = ({name}) => {
     return (<>
-        <Input name={name} label="Telefon" placeholder="xxxxxxxx" type="tel" error="Ikke et gyldig telefonnummer."/>
+        <Input name={name} label="Telefon" placeholder="--------" type="tel" error="Ikke et gyldig telefonnummer."/>
     </>)
 }
 
