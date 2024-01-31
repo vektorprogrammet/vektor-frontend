@@ -7,6 +7,7 @@ import Kontakt from "./Kontakt";
 import OmOss from "./OmOss";
 import ServerOverview from "./StagingServerOverview";
 import teamRoutes from "./Team/TeamPages/routes";
+import Utlegg from "./User/Utlegg";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [
@@ -15,8 +16,9 @@ const routes: AppRoute[] = [
   { path: "/foreldre", element: <ForForeldre />, name: "Foreldre" },
   { path: "/skoler", element: <ForSkoler />, name: "Skoler" },
   { path: "/kontakt", element: <Kontakt />, name: "Kontakt" },
-  { path: "/om-oss", element: <OmOss />, name: "OmOss" },
+  { path: "/om-oss", element: <OmOss />, name: "Om oss" },
   { path: "/team", name: "Team", children: teamRoutes },
+  { path: "/utlegg", element: <Utlegg />, name: "Utlegg" },
 ];
 
 export default routes;
