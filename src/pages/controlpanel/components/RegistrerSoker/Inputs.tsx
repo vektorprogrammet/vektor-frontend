@@ -21,13 +21,13 @@ const Input:React.FC<InputProps> = ({name, label, placeholder, pattern, type, er
     return (<>
         <div className="w-full">
             { label !== undefined &&
-                <label className="mr-4" htmlFor={toId(name)}>{label}</label>
+                <label className="" htmlFor={toId(name)}>{label}</label>
             }
             { error !== undefined &&
-                <input name={name} id={toId(name)} type={type} placeholder={placeholder} pattern={pattern} title={error} />
+                <input className="w-full" name={name} id={toId(name)} type={type} placeholder={placeholder} pattern={pattern} title={error} />
             }
             { error === undefined &&
-                <input name={name} id={toId(name)} type={type} placeholder={placeholder} pattern={pattern} />
+                <input className="w-full" name={name} id={toId(name)} type={type} placeholder={placeholder} pattern={pattern} />
             }
         </div>
     </>);
@@ -65,9 +65,9 @@ interface SelectProps {
 
 export const SelectInput:React.FC<SelectProps> = ({name, label, options}) => {
     return (<>
-        <div className="w-full">
-            <label className="label w-full" htmlFor={toId(name)}>{label}</label>
-            <select name={name} className="select w-full" id={toId(name)}>
+        <div className="w-5/6">
+            <label className="" htmlFor={toId(name)}>{label}</label>
+            <select name={name} className="w-5/6 mr-4" id={toId(name)}>
                 <option value="" disabled selected>Velg</option>
                 {options.map((option) => (
                     <option value={option.id}>{option.name}</option>

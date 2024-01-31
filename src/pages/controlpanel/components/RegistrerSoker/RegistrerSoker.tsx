@@ -62,39 +62,47 @@ const RegistrerSoker:React.FC = () => {
     }
     return (
         <>
-            <section className="flex flex-col items-center w-full h-screen">
+            <section className="flex flex-col items-center w-screen h-screen">
                 { isBoxVisible && <>
-                    <div className="m indicator">
-                        <div className="indicator-item indicator-top">
-                            <button onClick={removeBox} className="btn btn-primary">X</button>
-                        </div>
-                        <div className="card border">
-                            <div className="card-body">
-                            <h2 className="card-title">Søknad registrert!</h2> 
+                    <div className="flex rounded-lg bg-green-300 w-4/6 p-5 justify-between my-5">
+                        <div className="">
+                            <div className="">
+                            <h2 className="text-2xl">Søknad registrert!</h2> 
                             <p>En bekreftelsesmail med videre informasjon er sendt til assistenten.</p>
                             </div>
+                        </div>
+                        <div className="">
+                            <button onClick={removeBox} className="">x</button>
                         </div>
                     </div>
                     </>
                 }
-                <h1 className="w-1/2 text-5xl text-center mb-5">Registrer søker NTNU Høst 2023</h1>
-                <form onSubmit={submitForm} className="flex flex-col justify-center w-1/2">
-                    <section className="flex flex-col w-full">
-                        <section className="flex justify-between">
-                            <NameInput name="fornavn" label="Fornavn" />
-                            <NameInput name="etternavn" label="Etternavn" />
+                <h1 className="w-1/2 text-5xl text-center my-5">Registrer søker NTNU Høst 2023</h1>
+                <form onSubmit={submitForm} className="flex flex-col justify-center w-1/2 gap-10">
+                    <section className="self-center flex flex-col w-full gap-5">
+                        <section className="flex justify-around w-full gap-10">
+                            <div className="w-full">
+                                <NameInput name="fornavn" label="Fornavn" />
+                            </div>
+                            <div className="w-full">
+                                <NameInput name="etternavn" label="Etternavn" />
+                            </div>
                         </section>
-                        <section className="flex justify-between">
-                            <PhoneInput name="telefon" />
-                            <EmailInput name="epost" />
+                        <section className="flex justify-around w-full gap-10">
+                            <div className="w-full">
+                                <PhoneInput name="telefon" />
+                            </div>
+                            <div className="w-full">
+                                <EmailInput name="epost" />
+                            </div>
                         </section>
                     </section>
-                    <section className="grid grid-cols-6 w-full">
+                    <section className="self-start flex w-1/2">
                         <SelectInput name="linje" label="Linje" options={ LINJER } />
                         <SelectInput name="aarstrinn" label="Årstrinn" options={ AARSTRINN } />
                         <SelectInput name="kjonn" label="Kjønn" options={ KJONN } />
                     </section>
-                    <button type="submit">Registrer</button>
+                    <button className="self-center rounded border-2 text-white hover:bg-green-400 bg-green-500 border-green-600 px-5 py-2" type="submit">Registrer</button>
                 </form>
             </section>
         </>
