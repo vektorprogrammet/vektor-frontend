@@ -60,11 +60,12 @@ const RegistrerSoker:React.FC = () => {
     const removeBox = () => {
         setIsBoxVisible(false)
     }
+    
     return (
         <>
             <section className="flex flex-col items-center w-screen h-screen">
                 { isBoxVisible && <>
-                    <div className="flex rounded-lg bg-green-300 w-4/6 p-5 justify-between my-5">
+                    <div className="flex rounded-lg bg-green-300 w-1/2 p-5 justify-between my-5">
                         <div className="">
                             <div className="">
                             <h2 className="text-2xl">Søknad registrert!</h2> 
