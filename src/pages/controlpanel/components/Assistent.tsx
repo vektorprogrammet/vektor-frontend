@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import { sys } from "typescript";
 
 const Assistent = (): JSX.Element => {
   const select = ["Assistenter", "Vikarer"]
@@ -8,13 +9,9 @@ const Assistent = (): JSX.Element => {
   const mapToTable = (skoler: School[]) => {
     return skoler.map((school, index) => (
       <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
-        <td className="text-center py-3 px-6">{school.name}</td>
-        <td className="text-center py-3 px-6">{school.school}</td>
-        <td className="text-center py-3 px-6">{school.email}</td>
-        <td className="text-center py-3 px-6">{school.semester}</td>
-        <td className="text-center py-3 px-6">{school.department}</td>
-        <td className="text-center py-3 px-6">{school.bolk}</td>
-        <td className="text-center py-3 px-6">{school.dag}</td>
+        {Object.values(school).map((value, valueIndex) => (
+          <td key={`${index}-${valueIndex}`} className="text-center py-3 px-6">{value}</td>
+        ))}
       </tr>
     ));
   };
