@@ -1,12 +1,17 @@
 import React from "react";
 import { DarkModeProvider } from "components/DarkModeProvider";
 import {
-  Outlet, createBrowserRouter, RouterProvider, RouteObject,
+  Outlet,
+  createBrowserRouter,
+  RouterProvider,
+  RouteObject,
 } from "react-router-dom";
 
 import "./App.css";
 import MainPage from "pages/public";
 import ControlPanel from "pages/controlpanel";
+import Profil from "pages/public/Profil/components/Profil";
+import Utlegg from "pages/public/User/Utlegg";
 import appRoutes from "./pages/public/routes";
 import controlPanelRoutes from "./pages/controlpanel/routes";
 
@@ -19,7 +24,7 @@ const Root = (): JSX.Element => {
 };
 
 export type AppRoute = RouteObject & {
-  name?: string
+  name?: string;
 };
 
 const routes = createBrowserRouter([
@@ -35,8 +40,15 @@ const routes = createBrowserRouter([
       {
         path: "",
         element: <MainPage />,
-        children: appRoutes,
-      }],
+        children: [
+          ...appRoutes,
+          {
+            path: "profil/:id",
+            element: <Profil />,
+          },
+        ],
+      },
+      { path: "/utlegg", element: <Utlegg /> }],
   },
 ]);
 
