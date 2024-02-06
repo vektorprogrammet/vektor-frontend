@@ -1,6 +1,4 @@
-import React, {
-  useState,
-} from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import MobileMenu from "./MobileMenu";
@@ -32,18 +30,32 @@ const AppHeader = (): JSX.Element => {
       <div className="hidden md:flex mx-auto p-3 space-x-6 items-center justify-center lg:px-8 w-full max-w-7xl">
         <div className="w-1/5 justify-center flex">
           <Link to="/">
-            <img src="images/vektor-logo.svg" alt="vektorprogrammet logo" className="h-16 lg:h-20 dark:hidden" />
-            <img src="images/vektor-logo-darkmode.png" alt="vektorprogrammet logo" className="h-16 lg:h-20 hidden dark:block" />
+            <img
+              src="/images/vektor-logo.svg"
+              alt="vektorprogrammet logo"
+              className="h-16 lg:h-20 dark:hidden"
+            />
+            <img
+              src="/images/vektor-logo-darkmode.png"
+              alt="vektorprogrammet logo"
+              className="h-16 lg:h-20 hidden dark:block"
+            />
           </Link>
         </div>
         <div className="flex flex-grow justify-evenly justify-self-center max-w-lg m-auto items-center w-2/5">
           {linkElements}
         </div>
         <div className="flex w-1/5 justify-center">
-          {isLoggedIn ? <UserAvatar /> : <LoginButtons setVisible={setLoginPopupVisible} />}
+          {isLoggedIn ? (
+            <UserAvatar />
+          ) : (
+            <LoginButtons setVisible={setLoginPopupVisible} />
+          )}
         </div>
         <div>
-          {loginPopupVisible ? <LoginPopup setVisible={setLoginPopupVisible} /> : null}
+          {loginPopupVisible ? (
+            <LoginPopup setVisible={setLoginPopupVisible} />
+          ) : null}
         </div>
       </div>
       <MobileMenu

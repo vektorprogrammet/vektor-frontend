@@ -6235,6 +6235,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dayjs@npm:^1.11.10":
+  version: 1.11.10
+  resolution: "dayjs@npm:1.11.10"
+  checksum: a6b5a3813b8884f5cd557e2e6b7fa569f4c5d0c97aca9558e38534af4f2d60daafd3ff8c2000fed3435cfcec9e805bcebd99f90130c6d1c5ef524084ced588c4
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.6.0, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -11318,6 +11325,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"norwegian-utils@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "norwegian-utils@npm:0.4.1"
+  checksum: cee2786afbcad16161cbc6d36e589184d668c06582ec57e6991f1510d41f4eef9c0c0d7034c3f7df4547a1d92b85f2c2500924def215ebb9fa03065d8ac985fb
+  languageName: node
+  linkType: hard
+
 "npm-run-path@npm:^4.0.0, npm-run-path@npm:^4.0.1":
   version: 4.0.1
   resolution: "npm-run-path@npm:4.0.1"
@@ -13021,6 +13035,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.47.0":
+  version: 7.47.0
+  resolution: "react-hook-form@npm:7.47.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: dec192fec9c54e436f9e47008635dd7849b6b119ed477a9b0cd491367a0b2ced3427cd937febfb245e1cb7578c863917181d903eff4519c2787bf713ec7d3426
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -13144,6 +13167,16 @@ __metadata:
   bin:
     react-scripts: bin/react-scripts.js
   checksum: 92afa2f245c7092ccc97d5609dc7a2130616262e34da7f15072d9442e2d2e1d4909a91022abd1faac1336eb17c5525a10d9bd43e1ae374c7ec941ca20addca68
+  languageName: node
+  linkType: hard
+
+"react-tailwindcss-datepicker@npm:^1.6.6":
+  version: 1.6.6
+  resolution: "react-tailwindcss-datepicker@npm:1.6.6"
+  peerDependencies:
+    dayjs: ^1.11.6
+    react: ^17.0.2 || ^18.2.0
+  checksum: d995a775aa773fadf36dda67f6b678e5a5682df2df339289ae0a079f77e7a629c92092826e2570ae45245f0f5e19fc4f909e59ed316e837727e46fe3fd837360
   languageName: node
   linkType: hard
 
@@ -15248,6 +15281,7 @@ typescript@^4.4.2:
     autoprefixer: ^10.4.10
     cypress: 12.8.1
     daisyui: ^2.27.0
+    dayjs: ^1.11.10
     eslint: ^7.11.0
     eslint-config-airbnb: ^19.0.0
     eslint-config-airbnb-typescript: ^14.0.0
@@ -15256,12 +15290,15 @@ typescript@^4.4.2:
     eslint-plugin-jsx-a11y: latest
     eslint-plugin-react: latest
     eslint-plugin-react-hooks: latest
+    norwegian-utils: ^0.4.1
     postcss: ^8.4.16
     postcss-import: ^15.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-hook-form: ^7.47.0
     react-router-dom: ^6.0.0
     react-scripts: 5.0.1
+    react-tailwindcss-datepicker: ^1.6.6
     tailwindcss: ^3.1.8
     typescript: ^4.4.2
     vite: ^3.1.0

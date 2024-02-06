@@ -42,7 +42,7 @@ interface HasName {
 }
 export const PhoneInput:React.FC<HasName> = ({name}) => {
     return (<>
-        <Input name={name} label="Telefon" placeholder="--------" type="tel" pattern="\d{8}" error="Telefonnummeret må ha 8 siffer."/>
+        <Input name={name} label="Telefon" type="tel" pattern="\d{8}" error="Telefonnummeret må ha 8 siffer."/>
     </>)
 }
 
