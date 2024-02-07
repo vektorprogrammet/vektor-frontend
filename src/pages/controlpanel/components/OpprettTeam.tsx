@@ -8,38 +8,29 @@ const OpprettTeam = (): JSX.Element => {
 
   var toolbarOptions = [
     [{ 'header': [1, 2, false] }],
+    [{ 'size': [ 'small', 'large'] }],
 
     ['bold', 'italic', 'underline', 'image'],
 
     [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-    [{ 'indent': '-1' }, { 'indent': '+1' }],
-
-    [{ 'color': [] }, { 'background': [] }],
-
-    ['clean']                       
+    [{ 'indent': '-1' }, { 'indent': '+1' }],                      
   ];
 
   return (
-    <div className="flex flex-col items-center space-between w-full">
-      <h1 className="text-2xl row-start-1 row-end-1 pt-10">Opprett team</h1>
-      <div className="mt-32 flex text-2xl w-2/3">
-        <div className="flex flex-col gap-12 text-xl w-1/3">
-          <label >Navn:</label>
-          <label>Distrikt:</label>
-          <label>E-post:</label>
-          <label >Kort beskrivelse:</label>
-          <label>Lang beskrivelse:</label>
-        </div>
-        <div className="flex flex-col gap-6">
-          <input type="text" placeholder="Teamnavn" className="input input-bordered input-info w-96 max-w-xs" />
-          <select className="select select-info w-full max-w-xs fit-content">
+    <div className="flex flex-col items-center space-between w-full ml-24 mr-2">
+      <h1 className="text-2xl row-start-1 row-end-1 pt-6">Opprett team</h1>
+      <div className="mt-12 flex text-xl">
+        <div className="flex flex-col gap-6 items-center">
+          <input type="text" placeholder="Teamnavn" className="input input-bordered input-info w-72 max-w-72" />
+          <select className="select select-info w-72 max-w-72 fit-content">
             <option>Trondheim</option>
             <option>Ås</option>
             <option>Bergen</option>
           </select>
-          <input type="text" name="epost" placeholder="E-post" className="input input-bordered input-info w-full max-w-xs" />
-          <input placeholder="Beskrivelse" className="input input-bordered input-info max-w-xs" />
-          <div className="textarea textarea-info h-72 w-full">
+          <input type="text" name="epost" placeholder="E-post" className="input input-bordered input-info w-72 max-w-72" />
+          <input placeholder="Beskrivelse" className="input input-bordered input-info w-72 max-w-72" />
+          <label>Lang beskrivelse:</label>
+          <div className="textarea textarea-info h-72 w-full max-w-xl">
             <ReactQuill
               theme="snow"
               value={value}
