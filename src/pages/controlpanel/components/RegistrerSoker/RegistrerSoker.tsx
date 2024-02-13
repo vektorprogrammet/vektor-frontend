@@ -78,10 +78,10 @@ const RegistrerSoker:React.FC = () => {
                     </div>
                     </>
                 }
-                <h1 className="w-1/2 text-5xl text-center my-5">Registrer søker NTNU Høst 2023</h1>
+                <h1 className="max-md:text-3xl w-1/2 text-5xl text-center my-5">Registrer søker NTNU Høst 2023</h1>
                 <form onSubmit={submitForm} className="flex flex-col justify-center w-1/2 gap-10">
-                    <section className="self-center flex flex-col w-full gap-5">
-                        <section className="flex justify-around w-full gap-10">
+                    <section className="self-center max-md:gap-20 flex flex-col w-full gap-5">
+                        <section className="flex max-md:flex-col justify-around w-full gap-10">
                             <div className="w-full">
                                 <NameInput name="fornavn" label="Fornavn" />
                             </div>
@@ -89,7 +89,7 @@ const RegistrerSoker:React.FC = () => {
                                 <NameInput name="etternavn" label="Etternavn" />
                             </div>
                         </section>
-                        <section className="flex justify-around w-full gap-10">
+                        <section className="flex max-md:flex-col justify-around w-full gap-10">
                             <div className="w-full">
                                 <PhoneInput name="telefon" />
                             </div>
@@ -98,7 +98,7 @@ const RegistrerSoker:React.FC = () => {
                             </div>
                         </section>
                     </section>
-                    <section className="self-start flex w-1/2">
+                    <section className="self-start flex max-md:flex-col max-md:items-center max-md:w-full max-md:text-center w-1/2">
                         <SelectInput name="linje" label="Linje" options={ LINJER } />
                         <SelectInput name="aarstrinn" label="Årstrinn" options={ AARSTRINN } />
                         <SelectInput name="kjonn" label="Kjønn" options={ KJONN } />

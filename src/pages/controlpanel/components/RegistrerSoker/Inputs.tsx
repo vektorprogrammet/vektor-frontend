@@ -42,13 +42,13 @@ interface HasName {
 }
 export const PhoneInput:React.FC<HasName> = ({name}) => {
     return (<>
-        <Input name={name} label="Telefon" type="tel" pattern="\d{8}" error="Telefonnummeret må ha 8 siffer."/>
+        <Input name={name} label="Telefon" type="tel" pattern="\d{8}" error="Ikke et gyldig telefonnummer. Må ha 8 siffer"/>
     </>)
 }
 
 export const EmailInput:React.FC<HasName> = ({name}) => {
     return (<>
-        <Input name={name} label="Epost" placeholder="navn@navnesen.no" type="email" error="Ikke en gyldig epost." />
+        <Input name={name} label="Epost" placeholder="navn@navnesen.no" type="email" error="Ikke en gyldig epost" />
     </>)
 }
 
@@ -65,7 +65,7 @@ interface SelectProps {
 export const SelectInput:React.FC<SelectProps> = ({name, label, options}) => {
     return (<>
         <div className="w-5/6">
-            <label className="" htmlFor={toId(name)}>{label}</label>
+            <label className="block" htmlFor={toId(name)}>{label}</label>
             <select name={name} className="w-5/6 mr-4" id={toId(name)} required>
                 <option value="" disabled selected>Velg</option>
                 {options.map((option) => (
