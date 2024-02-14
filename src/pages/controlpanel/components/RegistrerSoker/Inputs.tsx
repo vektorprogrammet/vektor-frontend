@@ -14,7 +14,7 @@ interface SelectProps {
 
 export const SelectInput:React.FC<SelectProps> = ({name, label, options}) => {
     return (<>
-        <div className="w-5/6">
+        <div className="">
             <label className="label block" htmlFor={toId(name)}>{label}</label>
             <select name={name} className="select select-info" id={toId(name)} required>
                 <option value="" disabled selected>Velg</option>

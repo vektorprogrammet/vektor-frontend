@@ -63,7 +63,7 @@ const RegistrerSoker:React.FC = () => {
     
     return (
         <>
-            <section className="flex flex-col items-center w-screen h-screen">
+            <section className="flex flex-col items-center w-screen h-screen bg-vektor-bg">
                 { isBoxVisible && <>
                     <div className="flex rounded-lg bg-vektor-kontrollblue w-1/2 p-5 justify-between my-5 text-table-grey">
                         <div className="">
@@ -80,23 +80,23 @@ const RegistrerSoker:React.FC = () => {
                 }
                 <h1 className="text-3xl w-1/2 text-5xl text-center my-5 max-md:text-2xl">Registrer søker NTNU Høst 2023</h1>
                 <form onSubmit={submitForm} className="flex flex-col justify-center items-center w-1/2 gap-10">
-                        <div className="w-full max-w-[300px]">
-                            <label className="label" htmlFor="input-firstname">Fornavn</label>
-                            <input className="input input-info w-full" name="firstname" id="input-firstname" type="text" placeholder="" required/>
-                        </div>
-                        <div className="w-full max-w-[300px]">
-                            <label className="label" htmlFor="input-lastname">Etternavn</label>
-                            <input className="input input-info w-full" name="lastname" id="input-lastname" type="text" placeholder="" required/>
-                        </div>
-                        <div className="w-full max-w-[300px]">
-                            <label className="label" htmlFor="input-phone">Telefon</label>
-                            <input className="input input-info w-full" name="phone" id="input-phone" type="phone" placeholder="" required/>
-                        </div>
-                        <div className="w-full max-w-[300px]">
-                            <label className="label" htmlFor="input-email">Email</label>
-                            <input className="input input-info w-full" name="email" id="input-email" type="email" placeholder="" required/>
-                        </div>
-                    <section className="flex max-md:flex-col max-md:items-center max-md:w-full max-md:text-center w-1/2 gap-5">
+                    <div className="w-full max-w-[300px]">
+                        <label className="label" htmlFor="input-firstname">Fornavn</label>
+                        <input className="input input-info w-full" name="firstname" id="input-firstname" type="text" placeholder="" required/>
+                    </div>
+                    <div className="w-full max-w-[300px]">
+                        <label className="label" htmlFor="input-lastname">Etternavn</label>
+                        <input className="input input-info w-full" name="lastname" id="input-lastname" type="text" placeholder="" required/>
+                    </div>
+                    <div className="w-full max-w-[300px]">
+                        <label className="label" htmlFor="input-phone">Telefon</label>
+                        <input className="input input-info w-full" name="phone" id="input-phone" type="phone" placeholder="" required/>
+                    </div>
+                    <div className="w-full max-w-[300px]">
+                        <label className="label" htmlFor="input-email">Email</label>
+                        <input className="input input-info w-full" name="email" id="input-email" type="email" placeholder="" required/>
+                    </div>
+                    <section className="flex max-md:flex-col max-md:items-center max-md:text-center justify-center gap-5">
                         <SelectInput name="linje" label="Linje" options={ LINJER } />
                         <SelectInput name="aarstrinn" label="Årstrinn" options={ AARSTRINN } />
                         <SelectInput name="kjonn" label="Kjønn" options={ KJONN } />
