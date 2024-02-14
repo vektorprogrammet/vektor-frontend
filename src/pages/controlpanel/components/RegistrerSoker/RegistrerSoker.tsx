@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NameInput, PhoneInput, EmailInput, SelectInput } from "./Inputs";
+import { SelectInput } from "./Inputs";
 
 const LINJER = [
     {
@@ -65,11 +65,11 @@ const RegistrerSoker:React.FC = () => {
         <>
             <section className="flex flex-col items-center w-screen h-screen">
                 { isBoxVisible && <>
-                    <div className="flex rounded-lg bg-green-300 w-1/2 p-5 justify-between my-5">
+                    <div className="flex rounded-lg bg-vektor-kontrollblue w-1/2 p-5 justify-between my-5 text-table-grey">
                         <div className="">
                             <div className="">
                             <h2 className="text-2xl">Søknad registrert!</h2> 
-                            <p>En bekreftelsesmail med videre informasjon er sendt til assistenten.</p>
+                            <p className="max-md:hidden">En bekreftelsesmail med videre informasjon er sendt til assistenten.</p>
                             </div>
                         </div>
                         <div className="">
@@ -78,32 +78,30 @@ const RegistrerSoker:React.FC = () => {
                     </div>
                     </>
                 }
-                <h1 className="max-md:text-3xl w-1/2 text-5xl text-center my-5">Registrer søker NTNU Høst 2023</h1>
-                <form onSubmit={submitForm} className="flex flex-col justify-center w-1/2 gap-10">
-                    <section className="self-center max-md:gap-20 flex flex-col w-full gap-5">
-                        <section className="flex max-md:flex-col justify-around w-full gap-10">
-                            <div className="w-full">
-                                <NameInput name="fornavn" label="Fornavn" />
-                            </div>
-                            <div className="w-full">
-                                <NameInput name="etternavn" label="Etternavn" />
-                            </div>
-                        </section>
-                        <section className="flex max-md:flex-col justify-around w-full gap-10">
-                            <div className="w-full">
-                                <PhoneInput name="telefon" />
-                            </div>
-                            <div className="w-full">
-                                <EmailInput name="epost" />
-                            </div>
-                        </section>
-                    </section>
-                    <section className="self-start flex max-md:flex-col max-md:items-center max-md:w-full max-md:text-center w-1/2">
+                <h1 className="text-3xl w-1/2 text-5xl text-center my-5 max-md:text-2xl">Registrer søker NTNU Høst 2023</h1>
+                <form onSubmit={submitForm} className="flex flex-col justify-center items-center w-1/2 gap-10">
+                        <div className="w-full max-w-[300px]">
+                            <label className="label" htmlFor="input-firstname">Fornavn</label>
+                            <input className="input input-info w-full" name="firstname" id="input-firstname" type="text" placeholder="" required/>
+                        </div>
+                        <div className="w-full max-w-[300px]">
+                            <label className="label" htmlFor="input-lastname">Etternavn</label>
+                            <input className="input input-info w-full" name="lastname" id="input-lastname" type="text" placeholder="" required/>
+                        </div>
+                        <div className="w-full max-w-[300px]">
+                            <label className="label" htmlFor="input-phone">Telefon</label>
+                            <input className="input input-info w-full" name="phone" id="input-phone" type="phone" placeholder="" required/>
+                        </div>
+                        <div className="w-full max-w-[300px]">
+                            <label className="label" htmlFor="input-email">Email</label>
+                            <input className="input input-info w-full" name="email" id="input-email" type="email" placeholder="" required/>
+                        </div>
+                    <section className="flex max-md:flex-col max-md:items-center max-md:w-full max-md:text-center w-1/2 gap-5">
                         <SelectInput name="linje" label="Linje" options={ LINJER } />
                         <SelectInput name="aarstrinn" label="Årstrinn" options={ AARSTRINN } />
                         <SelectInput name="kjonn" label="Kjønn" options={ KJONN } />
                     </section>
-                    <button className="self-center rounded border-2 text-white hover:bg-green-400 bg-green-500 border-green-600 px-5 py-2" type="submit">Registrer</button>
+                    <button className="rounded-full border-1 text-white hover:bg-vektor-blue-hover bg-vektor-blue border-vektor-darblue px-5 py-2 w-32 h-14" type="submit">Registrer</button>
                 </form>
             </section>
         </>
