@@ -12,7 +12,7 @@ const routes: AppRoute[] = [
   { path: "/kontrollpanel/skoler", element: <Skoler />, name: "Skoler" },
   { path: "/kontrollpanel/teams/:id", element: <Teammedlemmer />, name: "Teammedlemmer" },
   { path: "/kontrollpanel/teaminteresse", element: <Teaminteresse />, name: "Teaminteresse" },
-  { path: "/kontrollpanel/registrer-soker", element: <RegistrerSoker />, name: "Registrer søker"}
+  { path: "/kontrollpanel/registrer-soker", element: <RegistrerSoker />, name: "Registrer søker" },
 ];
 
 export default routes;
