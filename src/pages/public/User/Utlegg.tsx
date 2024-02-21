@@ -45,13 +45,14 @@ const Utlegg = (): JSX.Element => {
   });
 
   // dirtyFields må brukes for at den skal oppdateres (minneoptimering react-hook-form)
-  console.assert(formState.dirtyFields || true);
+  // console.assert(formState.dirtyFields || true);
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const formData = { ...data, date: dateValue?.startDate };
+  // "data" må legges til i onSubmit for å sende data til backend når den er klar. const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    // const formData = { ...data, date: dateValue?.startDate };
 
     // send to backend here..
-    console.log("Form submitted with the following data:", formData);
+    // console.log("Form submitted with the following data:", formData);
   };
 
   const isCurrentInputValid = () => {
