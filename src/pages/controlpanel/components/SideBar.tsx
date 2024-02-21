@@ -51,7 +51,7 @@ const Icon: React.FC<IconProps> = ({ svg, name }) => {
 
 const SideBar = (): JSX.Element => {
   return (
-    <div className="bg-vektor-kontrollblue border-8 rounded-3xl w-24 sm:w-32 md:w-40 h-full flex flex-col items-center justify-start fixed overflow-y-auto overflow-x-hidden">
+    <div className="bg-vektor-kontrollblue border-8 rounded-3xl w-24 sm:w-32 md:w-40 h-auto flex flex-col items-center justify-start overflow-y-auto overflow-x-hidden">
       <div className="bg-white rounded-full flex items-center justify-center mt-2 w-16 h-16 sm:w-24 sm:h-24">
         <img
           src="/images/vektor-logo-circle.svg"
