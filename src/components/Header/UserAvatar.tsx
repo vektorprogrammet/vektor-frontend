@@ -21,10 +21,14 @@ const UserAvatar = () => {
           </Link>
         </li>
         <li>
-          <a href="#0">Mine søknader</a>
+          <Link reloadDocument to="/mine-soknader/1">
+            Mine Søknader
+          </Link>
         </li>
         <li>
-          <Link reloadDocument to="/utlegg">Mine utlegg</Link>
+          <Link reloadDocument to="/utlegg">
+            Mine utlegg
+          </Link>
         </li>
         <li className="text-red-500">
           <a href="#0">Logg ut</a>
