@@ -18,32 +18,14 @@ interface Props {
 
 const CreateTable:React.FC<Props> = ({header, content}) => {
   return (
-      <div className="p-10 flex justify-center items-center ml-6">
+      <div className="w-full p-10 flex justify-center items-center ml-6">
         <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
           <table className="w-full">
             <thead>
               <tr className="bg-white">
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  Navn
-                </th>
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  Skole
-                </th>
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  E-post
-                </th>
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  Semester
-                </th>
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  Avdeling
-                </th>
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  Bolk
-                </th>
-                <th className="text-center w-1/7 py-3 px-6 text-vektor-darblue">
-                  Dag
-                </th>
+                {header.map((value, index) => (
+                  <th key={index} className="text-center w-1/7 py-3 px-6 text-vektor-darblue">{value}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
