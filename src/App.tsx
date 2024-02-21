@@ -12,9 +12,9 @@ import MainPage from "pages/public";
 import ControlPanel from "pages/controlpanel";
 import Profil from "pages/public/Profil/components/Profil";
 import Utlegg from "pages/public/User/Utlegg";
+import MineSoknader from "pages/public/MineSoknader";
 import appRoutes from "./pages/public/routes";
 import controlPanelRoutes from "./pages/controlpanel/routes";
-import MineSoknader from "pages/public/MineSoknader";
 
 const Root = (): JSX.Element => {
   return (

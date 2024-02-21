@@ -12,8 +12,8 @@ const ProfileModal = ({ imgUrl, name }: ProfileModalProps): JSX.Element => {
         <img
           src={imgUrl}
           alt="Aaryan"
-          className="max-w-sm mt-2 rounded-full w-1/2" // Set width to half of the parent element
-        ></img>
+          className="max-w-sm mt-2 rounded-full w-1/2"
+        />
       </div>
       <p className=" text-gray-600 text-m font-medium mt-2">
         Du er logget inn som
