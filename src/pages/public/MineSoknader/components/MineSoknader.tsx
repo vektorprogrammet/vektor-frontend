@@ -6,7 +6,7 @@ const MineSoknader = (): JSX.Element => {
   return (
     <div className="flex justify-center mb-10 w-full">
       <div className="col-12 text-center">
-        <h1 className="text-4xl font-medium text-vektor-darblue pb-2 pt-4">
+        <h1 className="text-4xl font-medium text-vektor-darblue pb-2 pt-4 md:mt-0 mt-14">
           Mine Søknader
         </h1>
         <ProfileModal
