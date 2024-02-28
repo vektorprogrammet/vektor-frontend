@@ -1,4 +1,4 @@
-export  interface Assistenter {
+export interface Assistenter {
   name: string;
   school: string;
   email: string;
@@ -8,7 +8,7 @@ export  interface Assistenter {
   dag: string;
 }
 
-export  interface Vikarer {
+export interface Vikarer {
   name: string;
   tlf: string;
   email: string;

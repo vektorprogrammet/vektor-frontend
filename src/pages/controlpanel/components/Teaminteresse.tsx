@@ -57,15 +57,15 @@ const Teaminteresse = (): JSX.Element => {
         </div>
         {selected === select[0] ? (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        ) : selected == select [1] ? (
+        ) : selected === select[1] ? (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
-        ) : selected == select [2] ? (
+        ) : selected === select[2] ? (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        ) : selected == select [3] ? (
+        ) : selected === select[3] ? (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
-        ) : selected == select [4] ? (
+        ) : selected === select[4] ? (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        ) : selected == select [5] ? (
+        ) : selected === select[5] ? (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
         ) : (
           <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />

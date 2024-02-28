@@ -56,9 +56,9 @@ const Skoler = (): JSX.Element => {
           <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
         {selected === select[0] ? (
-          <CreateTable header={["Skole",	"Kontakperson",	"E-post",	"Telefon",	"Språk"]} content={aktiveSkolerListe} />
+          <CreateTable header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]} content={aktiveSkolerListe} />
         ) : (
-          <CreateTable header={["Skole",	"Kontakperson",	"E-post",	"Telefon",	"Språk"]} content={inaktiveSkolerListe} />
+          <CreateTable header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]} content={inaktiveSkolerListe} />
         )}
       </div>
     </div>

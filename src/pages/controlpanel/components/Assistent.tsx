@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
 import { Assistenter, Vikarer } from "./Interfaces";
-import { sys } from "typescript";
 
 const Assistent = (): JSX.Element => {
-  const select = ["Assistenter", "Vikarer"]
+  const select = ["Assistenter", "Vikarer"];
   const [selected, setSelected] = useState<string>(select[0]);
 
   const assistenter: Assistenter[] = [
@@ -16,7 +15,7 @@ const Assistent = (): JSX.Element => {
       semester: "Høst 2021",
       department: "IT",
       bolk: "Bolk 1, Bolk 2",
-      dag: "Mandag"
+      dag: "Mandag",
     },
     {
       name: "Aaryan Potet",
@@ -25,7 +24,7 @@ const Assistent = (): JSX.Element => {
       semester: "Høst 2021",
       department: "IT",
       bolk: "Bolk 1, Bolk 2",
-      dag: "Mandag"
+      dag: "Mandag",
     },
   ];
 
@@ -58,11 +57,11 @@ const Assistent = (): JSX.Element => {
         {selected === select[0] ? (
           <CreateTable header={["Navn", "Skole", "E-post", "Semester", "Avdeling", "Bolk", "Dag"]} content={assistenter} />
         ) : (
-          <CreateTable header={["Navn", "Tlf", "E-post", "Linje", "År", "Språk", "M", "T", "O", "T", "F", "Bolk", "Poeng" , "Passende"]} content={vikarer} />
+          <CreateTable header={["Navn", "Tlf", "E-post", "Linje", "År", "Språk", "M", "T", "O", "T", "F", "Bolk", "Poeng", "Passende"]} content={vikarer} />
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Assistent;

@@ -3,9 +3,9 @@ import Kontrollpanel from "pages/controlpanel/components/Kontrollpanel";
 import { AppRoute } from "App";
 import Skoler from "pages/controlpanel/components/Skoler";
 import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
+import Assistent from "pages/controlpanel/components/Assistent";
 import RegistrerSoker from "./components/RegistrerSoker/RegistrerSoker";
 import Teammedlemmer from "./components/Teammedlemmer";
-import Assistent from "pages/controlpanel/components/Assistent";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [
