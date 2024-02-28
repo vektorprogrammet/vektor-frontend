@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Division from "./Division";
 
@@ -87,7 +87,14 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
 const Tabs = ({
   divisions,
 }: TabProps): JSX.Element => {
-  const [openTab, setOpenTab] = React.useState(1);
+  const initialTabState = () => {
+    const storedTab = sessionStorage.getItem("teamTab");
+    return storedTab ? parseInt(storedTab, 10) : 1;
+  };
+  const [openTab, setOpenTab] = React.useState(initialTabState);
+  useEffect(() => {
+    sessionStorage.setItem("teamTab", openTab.toString());
+  }, [openTab]);
   return (
     <div className="w-full flex flex-wrap">
       <div className="w-full">
