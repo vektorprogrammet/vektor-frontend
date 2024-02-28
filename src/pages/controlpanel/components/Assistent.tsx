@@ -50,7 +50,7 @@ const Assistent = (): JSX.Element => {
 
   return (
     <div className="w-full">
-      <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
+      <div className="pt-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Assistenter</h1>
         <div className="flex flex-wrap">
           <Navbar select={select} selected={selected} setSelected={setSelected} />
