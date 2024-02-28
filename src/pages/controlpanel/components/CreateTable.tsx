@@ -8,7 +8,7 @@ const mapToTable = (skoler: Object[]) => {
   return skoler.map((school, index) => (
     <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
       {Object.values(school).map((value, valueIndex) => (
-        <td key={`${index}-${valueIndex}`} className="whitespace-nowrap text-xs text-center py-2 px-4">{value}</td>
+        <td key={`${index}-${valueIndex}`} className="whitespace-nowrap text-xs text-center py-3 px-6">{value}</td>
       ))}
     </tr>
   ));
@@ -27,7 +27,7 @@ const CreateTable:React.FC<Props> = ({header, content}) => {
             <thead>
               <tr className="bg-white">
                 {header.map((value, index) => (
-                  <th key={index} className="text-center text-xs py-2 px-4 text-vektor-darblue">{value}</th>
+                  <th key={index} className="text-center text-xs py-3 px-6 text-vektor-darblue">{value}</th>
                 ))}
               </tr>
             </thead>
