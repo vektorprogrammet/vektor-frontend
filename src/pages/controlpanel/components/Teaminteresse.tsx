@@ -1,19 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import CreateTable from "./CreateTable";
 
 const Teaminteresse = (): JSX.Element => {
   const select = ["IT", "Evaluering", "Rekruttering", "Profilering", "Skolekoordinering", "Sponsor", "Økonomi"];
   const [selected, setSelected] = useState<string>(select[0]);
-
-  const mapToTable = (sokere: Soker[]) => {
-    return sokere.map((soker, index) => (
-      <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
-        <td className="text-center py-3 px-6">{soker.name}</td>
-        <td className="text-center py-3 px-6">{soker.email}</td>
-        <td className="text-center py-3 px-6">{soker.phone}</td>
-      </tr>
-    ));
-  };
 
   interface Soker {
     name: string;
@@ -21,7 +12,7 @@ const Teaminteresse = (): JSX.Element => {
     phone: string;
   }
 
-  const itListe: Soker[] = [
+  const example1: Soker[] = [
     {
       name: "Aaryan Potet",
       email: "Aaryan.er.kul@hotmail.com",
@@ -39,7 +30,7 @@ const Teaminteresse = (): JSX.Element => {
     },
   ];
 
-  const evalueringListe: Soker[] = [
+  const example2: Soker[] = [
     {
       name: "Kaalhode",
       email: "kaalhode@hotmail.com",
@@ -59,39 +50,26 @@ const Teaminteresse = (): JSX.Element => {
 
   return (
     <div className="w-full">
-      <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
+      <div className="pt-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Teaminteresse</h1>
-        <div className="flex flex-wrap ml-16">
+        <div className="flex flex-wrap">
           <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
-      </div>
-      <div className="p-10 flex justify-center items-center ml-6">
-        <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-white">
-                <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                  Søker
-                </th>
-                <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                  E-post
-                </th>
-                <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                  Telefon
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {mapToTable(
-                (selected === select[0]
-                  && itListe)
-                  || (selected === select[1]
-                  && evalueringListe)
-                  || ([]),
-              )}
-            </tbody>
-          </table>
-        </div>
+        {selected === select[0] ? (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
+        ) : selected == select [1] ? (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
+        ) : selected == select [2] ? (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
+        ) : selected == select [3] ? (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
+        ) : selected == select [4] ? (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
+        ) : selected == select [5] ? (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
+        ) : (
+          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
+        )}
       </div>
     </div>
   );
