@@ -1,13 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
-  faCaretLeft, faCaretRight, faCheckToSlot,
+  faCaretLeft, faCaretRight, faCheckToSlot, faSmileWink,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 type Inputs = {
   amount: number
@@ -16,7 +17,12 @@ type Inputs = {
   bankAccountNumber: string
 };
 
-const Utlegg = (): JSX.Element => {
+interface NyttUtleggProps {
+  showConfirmation: boolean;
+  setConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
   const [currentStep, setCurrentStep] = useState(1);
   const [dateValue, setDateValue] = useState<DateValueType>({
     startDate: null,
@@ -24,10 +30,13 @@ const Utlegg = (): JSX.Element => {
   });
   const [file, setFile] = useState(new File([""], "filename"));
   const [currentErrorMessage, setCurrentErrorMessage] = useState("");
+  const [showConfirmation, setConfirmation] = useState(false);
 
   const handleDateValueChange = (value: DateValueType) => {
     setDateValue(value);
   };
+
+  const navigate = useNavigate();
 
   const validateDate = (date: Date) => {
     return date > new Date("01/01/2024");
@@ -49,10 +58,14 @@ const Utlegg = (): JSX.Element => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const formData = { ...data, date: dateValue?.startDate };
-
+    
     // send to backend here..
     console.log("Form submitted with the following data:", formData);
   };
+
+  const mineUtlegg = {
+    
+  }
 
   const isCurrentInputValid = () => {
     const date = new Date(dateValue?.startDate?.toString() || "");
@@ -98,6 +111,11 @@ const Utlegg = (): JSX.Element => {
     setCurrentErrorMessage("");
     return true;
   };
+
+  const handleConfirm = () => {
+    props.setConfirmation(!props.showConfirmation);
+  }
+
   const handleNext = () => {
     if (isCurrentInputValid()) {
       setCurrentStep(currentStep + 1);
@@ -180,7 +198,7 @@ const Utlegg = (): JSX.Element => {
   );
 
   const Confirm = (
-    <button type="submit" className="btn btn-success btn-md m-6" hidden={currentStep !== 6}>
+    <button type="submit" onClick={handleConfirm} className="btn btn-success btn-md m-6" hidden={currentStep !== 6}>
       <span>Bekreft</span>
       <FontAwesomeIcon className="text-white pl-4" icon={faCheckToSlot} />
     </button>
@@ -220,10 +238,7 @@ const Utlegg = (): JSX.Element => {
 
   return (
     <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center">
-      <h1 className="font-sans max-w-2xl mt-10 text-vektor-darblue text-4xl text-center font-bold mx-3">
-        Utlegg
-      </h1>
-      <form id="disbursementForm" name="disbursementForm" className="bg-vektor-blue w-5/6 rounded-xl my-16 flex flex-col pt-8" onSubmit={handleSubmit(onSubmit)}>
+      {<form id="disbursementForm" name="disbursementForm" className="bg-vektor-blue w-5/6 rounded-xl my-16 flex flex-col pt-8" onSubmit={handleSubmit(onSubmit)}>
         <div className="rounded-t-xl w-11/12 h-36 m-6 px-3 justify-center self-center">
           <img
             className="w-1/4 -mt-6 float-right hidden md:block"
@@ -237,9 +252,9 @@ const Utlegg = (): JSX.Element => {
           {Back}
           {Next}
         </div>
-      </form>
+      </form>}
     </div>
   );
 };
 
-export default Utlegg;
+export default NyttUtlegg;
