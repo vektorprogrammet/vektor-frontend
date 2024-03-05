@@ -13,7 +13,7 @@ const Kontrollpanel = (): JSX.Element => {
   ];
 
   const infoCards: Array<string> = ["Søkere", "Nyheter"];
-
+  // test commit
   // Map control page pages to main buttons
   const buttonElements = mainButtons.map((mainButton) => (
     <Link
