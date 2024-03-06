@@ -4,7 +4,7 @@ import SideBar from "./components/SideBar";
 
 const ControlPanel = (): JSX.Element => {
   return (
-    <div className="bg-gray-100 flex flex-row">
+    <div className="bg-gray-100 flex flex-row min-h-screen">
       <SideBar />
       <Outlet />
     </div>
