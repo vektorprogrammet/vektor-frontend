@@ -12,25 +12,25 @@ const Utlegg: React.FC = () => {
   }
 
   const mapToTable = (utlegg: Utlegg[]) => {
-    return utlegg.map((etUtlegg, index) => (
+    return utlegg.map((u, index) => (
       <tr key={index.valueOf()} className="bg-white">
-        <td className="py-3 px-6">{etUtlegg.Id}</td>
-        <td className="py-3 px-4">{etUtlegg.utleggsdato}</td>
-        <td className="py-3 px-20">{etUtlegg.beskrivelse}</td>
-        <td className="py-3 px-10">{etUtlegg.sum}</td>
-        <td className="py-3 px-6 text-blue-600 hover:font-semibold">{etUtlegg.kvittering}</td>
+        <td className="py-3 px-6">{u.Id}</td>
+        <td className="py-3 px-4">{u.utleggsdato}</td>
+        <td className="py-3 px-20">{u.beskrivelse}</td>
+        <td className="py-3 px-10">{u.sum}</td>
+        <td className="py-3 px-6 text-blue-600 hover:font-semibold">{u.kvittering}</td>
         <td className={
-          `py-3 px-6 ${etUtlegg.status === "Til behandling" ? 'text-amber-300' : 'text-green-500'}`
+          `py-3 px-6 ${u.status === "Til behandling" ? 'text-amber-300' : 'text-green-500'}`
         }>
-          {etUtlegg.status}
+          {u.status}
         </td>
         <td className="py-3 px-4 text-blue-600 hover:font-semibold">
-          {etUtlegg.status === "Til behandling" && (
+          {u.status === "Til behandling" && (
             <>Rediger <FontAwesomeIcon icon={faPencil}/></>
           )}
         </td>
         <td className="py-3 px-4 text-rose-600 hover:font-semibold">
-          {etUtlegg.status === "Til behandling" && (
+          {u.status === "Til behandling" && (
             <>Slett <FontAwesomeIcon icon={faTrashCan} /></>
           ) }
 
@@ -71,6 +71,11 @@ const Utlegg: React.FC = () => {
     }
   ]
 
+ /*  const handleSubmit = (confirm: boolean) => {
+    setConfirmation(confirm);
+    handleClick;
+  } */
+
   const Bekreftelse = () => {
 
     return(
@@ -98,16 +103,12 @@ const Utlegg: React.FC = () => {
               Hva kan jeg få refundert?
             </h1>
             <div className="mt-4 mb-20 text-lg">
-              Du kan typisk få refusjon for bussbilletter til og fra skole, kaffeposer til stand, kake til
+              {`Du kan typisk få refusjon for bussbilletter til og fra skole, kaffeposer til stand, kake til
               arrangementer og lignende. Det er ellers lurt å høre med en leder om du kan få utlegget ditt
-              refundert før du legger ut. Om du har spørsmål kan du kontakte økonomiteamet på 
-              <a
-                className="hover:underline text-vektor-darblue break-all"
-                href="mailto:okonomi@vektorprogrammet.no"
-              >
-               okonomi@vektorprogrammet.no
+              refundert før du legger ut. Om du har spørsmål kan du kontakte økonomiteamet på `}
+              <a className="hover:underline text-vektor-darblue break-all" href="mailto:okonomi@vektorprogrammet.no">
+                okonomi@vektorprogrammet.no
               </a>
-              .
             </div>
 
             <h1 className="font-sans max-w-2xl mb-4 text-vektor-darblue text-2xl text-center font-bold mx-3">
@@ -115,18 +116,18 @@ const Utlegg: React.FC = () => {
             </h1>
         </div>
         <div className="flex flex-col">
-          <div className="items-start">
-            <button className={`text-xl hover:font-semibold ml-48 ${!showWindow ? 'text-green-600':'text-blue-600'}`} onClick={handleClick}>
-              {!showWindow ? <><FontAwesomeIcon icon={faPlus}/> Nytt utlegg</> : <><FontAwesomeIcon icon={faMinus} className="mr-2"/>Skjul skjema</>}
+          <div className="flex flex-col items-center lg:ml-40 lg:items-start sm:items-center sm:justify-centerr">
+            <button className={`text-xl hover:font-semibold ${!showWindow ? 'text-green-600':'text-blue-600'}`} onClick={handleClick}>
+              {!showWindow || showConfirmation? <><FontAwesomeIcon icon={faPlus}/> Nytt utlegg</> : <><FontAwesomeIcon icon={faMinus} className="mr-2"/>Skjul skjema</>}
             </button>
           </div>
           {
             !showConfirmation && showWindow &&
-            <NyttUtlegg showConfirmation={showConfirmation} setConfirmation={setConfirmation}/>
+            <NyttUtlegg showConfirmation={showConfirmation} setConfirmation={setConfirmation} setNew={handleClick}/>
           }
-          <hr className="bg-slate-100 mt-10 h-px w-8/12 m-auto"/>
+          <hr className="bg-slate-100 mt-10 h-px w-4/5 m-auto "/>
           <div className="flex justify-center mt-10 mb-20">
-            <table className="table-fixed text-left divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300">
+            <table className="table-fixed text-left divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300 ml-10 mr-10">
               <thead>
                 <tr>
                   <th className="w-1/12 py-3 px-6 bg-table-grey">Id</th>

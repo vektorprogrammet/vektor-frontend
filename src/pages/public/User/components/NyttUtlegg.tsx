@@ -19,6 +19,7 @@ type Inputs = {
 
 interface NyttUtleggProps {
   showConfirmation: boolean;
+  setNew: () => void;
   setConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -114,6 +115,7 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
 
   const handleConfirm = () => {
     props.setConfirmation(!props.showConfirmation);
+    props.setNew();
   }
 
   const handleNext = () => {
