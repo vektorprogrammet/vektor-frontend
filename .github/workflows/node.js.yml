@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Lint with eslint
         uses: actions/setup-node@v3
         with:
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run tests
         run: |
           yarn install --immutable
@@ -71,7 +71,7 @@ jobs:
       image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
       options: --user 1001
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download the build folders
         uses: actions/download-artifact@v3
         with:
