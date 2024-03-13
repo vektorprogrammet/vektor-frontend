@@ -53,16 +53,17 @@ const routes = createBrowserRouter([
           },
         ],
       },
-      { 
+      {
         path: "",
         element: <MainPage />,
         children: [
           {
             path: "/utlegg",
-            element: <Utlegg />
-          }
-        ]
-      }],
+            element: <Utlegg />,
+          },
+        ],
+      },
+    ],
   },
 ]);
 

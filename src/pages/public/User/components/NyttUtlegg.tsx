@@ -1,20 +1,21 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
-  faCaretLeft, faCaretRight, faCheckToSlot, faSmileWink,
+  faCaretLeft,
+  faCaretRight,
+  faCheckToSlot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
-import {Routes, Route, useNavigate} from 'react-router-dom';
 
 type Inputs = {
-  amount: number
-  description: string
-  receipt: File
-  bankAccountNumber: string
+  amount: number;
+  description: string;
+  receipt: File;
+  bankAccountNumber: string;
 };
 
 interface NyttUtleggProps {
@@ -31,13 +32,10 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
   });
   const [file, setFile] = useState(new File([""], "filename"));
   const [currentErrorMessage, setCurrentErrorMessage] = useState("");
-  const [showConfirmation, setConfirmation] = useState(false);
 
   const handleDateValueChange = (value: DateValueType) => {
     setDateValue(value);
   };
-
-  const navigate = useNavigate();
 
   const validateDate = (date: Date) => {
     return date > new Date("01/01/2024");
@@ -59,14 +57,10 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const formData = { ...data, date: dateValue?.startDate };
-    
+
     // send to backend here..
     console.log("Form submitted with the following data:", formData);
   };
-
-  const mineUtlegg = {
-    
-  }
 
   const isCurrentInputValid = () => {
     const date = new Date(dateValue?.startDate?.toString() || "");
@@ -79,21 +73,32 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
         break;
 
       case 2:
-        if (formState.errors.description || !formState.dirtyFields.description) {
-          setCurrentErrorMessage("Beskrivelse må være lengre enn to bokstaver.");
+        if (
+          formState.errors.description
+          || !formState.dirtyFields.description
+        ) {
+          setCurrentErrorMessage(
+            "Beskrivelse må være lengre enn to bokstaver.",
+          );
           return false;
         }
         break;
 
       case 3:
         if (!validateDate(date)) {
-          setCurrentErrorMessage("Utleggsdato må være en gyldig dato etter 1. januar 2024 (DD-MM-YYYY).");
+          setCurrentErrorMessage(
+            "Utleggsdato må være en gyldig dato etter 1. januar 2024 (DD-MM-YYYY).",
+          );
           return false;
         }
         break;
 
       case 4:
-        if (formState.errors.receipt || file.name === "filename" || !file.type.includes("image")) {
+        if (
+          formState.errors.receipt
+          || file.name === "filename"
+          || !file.type.includes("image")
+        ) {
           setCurrentErrorMessage("Kvittering må være et opplastet bilde.");
           return false;
         }
@@ -101,7 +106,9 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
 
       case 5:
         if (formState.errors.bankAccountNumber) {
-          setCurrentErrorMessage("Kontonummer må være et gyldig norsk kontonummer.");
+          setCurrentErrorMessage(
+            "Kontonummer må være et gyldig norsk kontonummer.",
+          );
           return false;
         }
         break;
@@ -114,9 +121,10 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
   };
 
   const handleConfirm = () => {
-    props.setConfirmation(!props.showConfirmation);
-    props.setNew();
-  }
+    const { showConfirmation, setConfirmation, setNew } = props;
+    setConfirmation(!showConfirmation);
+    setNew();
+  };
 
   const handleNext = () => {
     if (isCurrentInputValid()) {
@@ -174,7 +182,10 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
   );
   const BankAccountNumber = (
     <input
-      {...register("bankAccountNumber", { required: true, validate: validateAccountNumber })}
+      {...register("bankAccountNumber", {
+        required: true,
+        validate: validateAccountNumber,
+      })}
       type="text"
       id="bankAccountNumber"
       name="bankAccountNumber"
@@ -193,21 +204,36 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
   );
 
   const Next = (
-    <button type="button" onClick={handleNext} className="btn btn-md hidden" disabled={currentStep === 6}>
+    <button
+      type="button"
+      onClick={handleNext}
+      className="btn btn-md hidden"
+      disabled={currentStep === 6}
+    >
       <span>Neste</span>
       <FontAwesomeIcon className="text-white pl-4" icon={faCaretRight} />
     </button>
   );
 
   const Confirm = (
-    <button type="submit" onClick={handleConfirm} className="btn btn-success btn-md m-6" hidden={currentStep !== 6}>
+    <button
+      type="submit"
+      onClick={handleConfirm}
+      className="btn btn-success btn-md m-6"
+      hidden={currentStep !== 6}
+    >
       <span>Bekreft</span>
       <FontAwesomeIcon className="text-white pl-4" icon={faCheckToSlot} />
     </button>
   );
 
   const Back = (
-    <button type="button" onClick={handlePrevious} className="btn btn-md" disabled={currentStep === 1}>
+    <button
+      type="button"
+      onClick={handlePrevious}
+      className="btn btn-md"
+      disabled={currentStep === 1}
+    >
       <FontAwesomeIcon className="text-white pr-4" icon={faCaretLeft} />
       <span>Forrige</span>
     </button>
@@ -228,7 +254,9 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
       case 6:
         return (
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-vektor-darblue text-2xl font-bold">Bekrefte utlegg?</h1>
+            <h1 className="text-vektor-darblue text-2xl font-bold">
+              Bekrefte utlegg?
+            </h1>
             {Confirm}
           </div>
         );
@@ -240,7 +268,12 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
 
   return (
     <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center">
-      {<form id="disbursementForm" name="disbursementForm" className="bg-vektor-blue w-5/6 rounded-xl my-16 flex flex-col pt-8" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        id="disbursementForm"
+        name="disbursementForm"
+        className="bg-vektor-blue w-5/6 rounded-xl my-16 flex flex-col pt-8"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className="rounded-t-xl w-11/12 h-36 m-6 px-3 justify-center self-center">
           <img
             className="w-1/4 -mt-6 float-right hidden md:block"
@@ -248,13 +281,15 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
             alt=""
           />
           {stepToComponent(currentStep)}
-          <p className="text-red-600 text-sm my-4 m-1 w-full max-w-xs">{currentErrorMessage}</p>
+          <p className="text-red-600 text-sm my-4 m-1 w-full max-w-xs">
+            {currentErrorMessage}
+          </p>
         </div>
         <div className="flex justify-around space-x-6 py-5 bg-slate-800 rounded-b-xl">
           {Back}
           {Next}
         </div>
-      </form>}
+      </form>
     </div>
   );
 };
