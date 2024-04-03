@@ -55,11 +55,11 @@ const Skoler = (): JSX.Element => {
         <div className="flex flex-wrap">
           <Navbar select={select} selected={selected} setSelected={setSelected} />
         </div>
-        {selected === select[0] ? (
+        {(selected === select[0] && (
           <CreateTable header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]} content={aktiveSkolerListe} />
-        ) : (
+        )) || (selected === select[1] && (
           <CreateTable header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]} content={inaktiveSkolerListe} />
-        )}
+        ))}
       </div>
     </div>
   );
