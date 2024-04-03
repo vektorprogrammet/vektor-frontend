@@ -3,6 +3,7 @@ import Kontrollpanel from "pages/controlpanel/components/Kontrollpanel";
 import { AppRoute } from "App";
 import Skoler from "pages/controlpanel/components/Skoler";
 import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
+import Assistent from "pages/controlpanel/components/Assistent";
 import OpprettTeam from "./components/OpprettTeam";
 import RegistrerSoker from "./components/RegistrerSoker/RegistrerSoker";
 import Teammedlemmer from "./components/Teammedlemmer";
@@ -14,6 +15,7 @@ const routes: AppRoute[] = [
   { path: "/kontrollpanel/opprett-team", element: <OpprettTeam />, name: "Opprett nytt team" },
   { path: "/kontrollpanel/teams/:id", element: <Teammedlemmer />, name: "Teammedlemmer" },
   { path: "/kontrollpanel/teaminteresse", element: <Teaminteresse />, name: "Teaminteresse" },
+  { path: "/kontrollpanel/assistenter", element: <Assistent />, name: "Assistent" },
   { path: "/kontrollpanel/registrer-soker", element: <RegistrerSoker />, name: "Registrer søker" },
 ];
 
