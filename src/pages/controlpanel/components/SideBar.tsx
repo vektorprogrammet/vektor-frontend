@@ -35,13 +35,13 @@ const linkData = [
 
 const Icon: React.FC<IconProps> = ({ svg, name }) => {
   return (
-    <div className="flex flex-col items-center justify-center m-3">
-      <button
-        type="button"
-        className="bg-vektor-blue hover:bg-white rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11"
+    // The svg on hover is styled in app.css
+    <div className="iconWrapper flex flex-col items-center justify-center [&>*:first-child]:bg-vektor-blue [&>*:first-child]:hover:bg-white p-2">
+      <div
+        className="rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11"
       >
         {svg}
-      </button>
+      </div>
       <div className="text-center text-white text-xs md:text-sm mx-2 truncate w-fit">
         {name}
       </div>
@@ -51,7 +51,7 @@ const Icon: React.FC<IconProps> = ({ svg, name }) => {
 
 const SideBar = (): JSX.Element => {
   return (
-    <div className="min-w-min bg-vektor-kontrollblue border-8 rounded-3xl min-h-full flex flex-col items-center justify-start overflow-y-auto overflow-x-hidden">
+    <div className="min-w-min bg-vektor-kontrollblue m-1 rounded-3xl min-h-full flex flex-col items-center justify-start overflow-y-auto overflow-x-hidden">
       <div className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16 sm:w-20 sm:h-20">
         <img
           src="/images/vektor-logo-circle.svg"
