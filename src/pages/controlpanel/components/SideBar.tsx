@@ -49,10 +49,10 @@ const Icon: React.FC<IconProps> = ({ svg, name }) => {
   );
 };
 
-const SideBar = (): JSX.Element => {
+const SideBar = ({ className} : { className: string}): JSX.Element => {
   return (
-    <div className="min-w-min bg-vektor-kontrollblue m-1 rounded-3xl min-h-full flex flex-col items-center justify-start overflow-y-auto overflow-x-hidden">
-      <div className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16 sm:w-20 sm:h-20">
+    <div className={`${className} bg-vektor-kontrollblue m-1 rounded-3xl flex flex-col items-center justify-start overflow-y-scroll overflow-x-clip`}>
+      <div className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16 sm:w-40 sm:h-20">
         <img
           src="/images/vektor-logo-circle.svg"
           className="w-5/6 h-5/6 object-contain"
