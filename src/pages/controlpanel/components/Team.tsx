@@ -16,7 +16,7 @@ const Team = (): JSX.Element => {
     },
     {
       name: "Evaluering",
-      email: "email@domene.com",
+      email: "custom@epost.no",
       opptak: "Stengt",
     },
     {
