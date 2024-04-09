@@ -113,9 +113,9 @@ const Teammedlemmer = (): JSX.Element => {
             </thead>
             <tbody>
               {mapToTable(
-                (selected === select[0] && itListe) ||
-                  (selected === select[1] && inactiveitListe) ||
-                  []
+                (selected === select[0] && itListe)
+                  || (selected === select[1] && inactiveitListe)
+                  || [],
               )}
               {mapToTableSoker((selected === select[2] && sokere) || [])}
             </tbody>
