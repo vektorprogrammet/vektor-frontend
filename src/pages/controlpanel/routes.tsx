@@ -4,6 +4,7 @@ import { AppRoute } from "App";
 import Skoler from "pages/controlpanel/components/Skoler";
 import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
 import Assistent from "pages/controlpanel/components/Assistent";
+import Brukere from "pages/controlpanel/components/Brukere";
 import RegistrerSoker from "./components/RegistrerSoker/RegistrerSoker";
 import Teammedlemmer from "./components/Teammedlemmer";
 
@@ -15,6 +16,7 @@ const routes: AppRoute[] = [
   { path: "/kontrollpanel/teaminteresse", element: <Teaminteresse />, name: "Teaminteresse" },
   { path: "/kontrollpanel/assistenter", element: <Assistent />, name: "Assistent" },
   { path: "/kontrollpanel/registrer-soker", element: <RegistrerSoker />, name: "Registrer søker" },
+  { path: "/kontrollpanel/brukere", element: <Brukere />, name: "Brukere" },
 ];
 
 export default routes;
