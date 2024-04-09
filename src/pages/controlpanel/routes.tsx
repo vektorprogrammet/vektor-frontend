@@ -5,8 +5,8 @@ import Skoler from "pages/controlpanel/components/Skoler";
 import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
 import Assistent from "pages/controlpanel/components/Assistent";
 import RegistrerSoker from "./components/RegistrerSoker/RegistrerSoker";
-import Teammedlemmer from "./components/Teammedlemmer";
-import Team from "./components/Team";
+import Teammedlemmer from "./components/Team/Teammedlemmer";
+import Team from "./components/Team/Team";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [
