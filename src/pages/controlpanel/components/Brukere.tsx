@@ -66,15 +66,32 @@ const Brukere = (): JSX.Element => {
     <div className="w-full">
       <div className="pt-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Brukere</h1>
-        <div className="flex flex-wrap">
-          <Navbar select={select} selected={selected} setSelected={setSelected} />
-          <input className="mt-auto ml-20 w-30 h-10 input input-info input-sm" type="text" placeholder="Søk..." />
+        <div className="flex flex-col">
+          <div className="flex flex-wrap mb-5">
+            <Navbar
+              select={select}
+              selected={selected}
+              setSelected={setSelected}
+            />
+          </div>
+          <input
+            className="mt-auto w-30 h-10 input input-info input-sm"
+            type="text"
+            placeholder="Søk..."
+          />
         </div>
         {(selected === select[0] && (
-          <CreateTable header={["Navn", "Telefon", "E-post", "Linje", "Avdeling"]} content={aktiveBrukereListe} />
-        )) || (selected === select[1] && (
-          <CreateTable header={["Navn", "Telefon", "E-post", "Linje", "Avdeling"]} content={inaktiveBrukereListe} />
-        ))}
+          <CreateTable
+            header={["Navn", "Telefon", "E-post", "Linje", "Avdeling"]}
+            content={aktiveBrukereListe}
+          />
+        )) ||
+          (selected === select[1] && (
+            <CreateTable
+              header={["Navn", "Telefon", "E-post", "Linje", "Avdeling"]}
+              content={inaktiveBrukereListe}
+            />
+          ))}
       </div>
     </div>
   );
