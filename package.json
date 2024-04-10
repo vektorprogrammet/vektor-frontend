@@ -26,6 +26,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.47.0",
+    "react-remove-scroll": "^2.5.9",
     "react-router-dom": "^6.0.0",
     "react-scripts": "5.0.1",
     "react-tailwindcss-datepicker": "^1.6.6",
