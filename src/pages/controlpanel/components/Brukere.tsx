@@ -68,7 +68,7 @@ const Brukere = (): JSX.Element => {
         <h1 className="text-2xl row-start-1 row-end-1">Brukere</h1>
         <div className="flex flex-wrap">
           <Navbar select={select} selected={selected} setSelected={setSelected} />
-          <input className="mt-auto ml-20 w-30 h-10 input input-info input-sm" type="text" placeholder="Søk..."/>
+          <input className="mt-auto ml-20 w-30 h-10 input input-info input-sm" type="text" placeholder="Søk..." />
         </div>
         {(selected === select[0] && (
           <CreateTable header={["Navn", "Telefon", "E-post", "Linje", "Avdeling"]} content={aktiveBrukereListe} />
