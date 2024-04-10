@@ -5,7 +5,7 @@ import {RemoveScroll} from 'react-remove-scroll';
 
 const ControlPanel = (): JSX.Element => {
   return (
-    <div className="bg-gray-100 flex flex-row min-h-screen">
+    <div className="bg-gray-100 flex flex-row">
       <SideBar />
       <RemoveScroll className="w-full h-screen overflow-scroll">
         <Outlet />
