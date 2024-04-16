@@ -16,7 +16,7 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Runs the cypress tests defined in (cypress)[./cypress].
+Runs the cypress tests defined in [e2e](./e2e).
 To specify the tests to run in firefox specifically run `yarn test:firefox`
 
 ### `yarn build`
