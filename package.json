@@ -36,8 +36,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "cypress run && vitest run",
-    "test:cypress:firefox": "cypress run --browser firefox",
+    "test": "npx playwright test",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\""
@@ -55,13 +54,13 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.0",
     "@testing-library/dom": "^9.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
     "@types/jest": "^29.0.0",
     "@types/tailwindcss": "^3.0.0",
     "@vitejs/plugin-react": "^3.0.0",
-    "cypress": "12.8.1",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-airbnb-typescript": "^14.0.0",
