@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 
 const Teammedlemmer = (): JSX.Element => {
   const select = ["Aktive medlemmer", "Inaktive medlemmer", "Søkere"];
@@ -77,62 +77,59 @@ const Teammedlemmer = (): JSX.Element => {
       <div className="pt-10 pr-10 pl-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">{id}</h1>
         <div className="flex flex-wrap ml-16">
-          <Navbar select={select} selected={selected} setSelected={setSelected} />
+          <Navbar
+            select={select}
+            selected={selected}
+            setSelected={setSelected}
+          />
         </div>
       </div>
       <div className="p-10 flex flex-col justify-center items-center ml-6">
         <div className="w-10/12 border-2 mt-100 shadow overflow-x-scroll">
           <table className="w-full">
             <thead>
-              {selected === select[2]
-                ? (
-                  <tr className="bg-white">
-                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                      Navn
-                    </th>
-                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                      Epost
-                    </th>
-                  </tr>
-                )
-                : (
-                  <tr className="bg-white">
-                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                      Navn
-                    </th>
-                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                      Stilling
-                    </th>
-                    <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
-                      Start
-                    </th>
-                  </tr>
-                )}
+              {selected === select[2] ? (
+                <tr className="bg-white">
+                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                    Navn
+                  </th>
+                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                    Epost
+                  </th>
+                </tr>
+              ) : (
+                <tr className="bg-white">
+                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                    Navn
+                  </th>
+                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                    Stilling
+                  </th>
+                  <th className="text-center w-1/5 py-3 px-6 text-vektor-darblue">
+                    Start
+                  </th>
+                </tr>
+              )}
             </thead>
             <tbody>
               {mapToTable(
-                (selected === select[0]
-                  && itListe)
-                || (selected === select[1]
-                  && inactiveitListe) || ([]),
+                (selected === select[0] && itListe)
+                  || (selected === select[1] && inactiveitListe)
+                  || [],
               )}
-              {mapToTableSoker(
-                (selected === select[2]
-                  && sokere) || ([]),
-              )}
+              {mapToTableSoker((selected === select[2] && sokere) || [])}
             </tbody>
           </table>
         </div>
-        {selected === select[0]
-          ? (
-            <button
-              type="button"
-              className="login-buttons mt-6 bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
-              onClick={() => navigate(`/kontrollpanel/teams/${id}/leggtil`)}
-            >
-              Legg til teammedlem
-            </button>
-          ) : null}
+        {selected === select[0] ? (
+          <button
+            type="button"
+            className="login-buttons mt-6 bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
+            onClick={() => navigate(`/kontrollpanel/teams/${id}/leggtil`)}
+          >
+            Legg til teammedlem
+          </button>
+        ) : null}
       </div>
     </div>
   );
