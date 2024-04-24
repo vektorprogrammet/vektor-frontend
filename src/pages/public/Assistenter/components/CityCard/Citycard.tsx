@@ -11,7 +11,7 @@ const Tab = (
     city: City,
     open: boolean },
 ): JSX.Element => {
-  const chosenStyle = open ? `tab-active` : `text-vektor-darblue`;
+  const chosenStyle = open ? `tab-active` : `text-vektor-darblue dark:text-gray-300`;
   return (
     <button
       type="button"
@@ -29,7 +29,7 @@ const Tabs = (): JSX.Element => {
   const [openTab, setOpenTab] = React.useState(City.TRONDHEIM);
   return (
     <div className="w-full">
-      <div className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400" role="tablist">
+      <div className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-900" role="tablist">
         {Object.values(City).map((value) => (
           <Tab
             city={value}
@@ -39,7 +39,7 @@ const Tabs = (): JSX.Element => {
           />
         ))}
       </div>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space">
+      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space dark:bg-neutral-800">
         <ApplyReg cities={openTab} />
       </div>
     </div>
