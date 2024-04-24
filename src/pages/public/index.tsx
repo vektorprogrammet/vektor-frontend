@@ -1,4 +1,3 @@
-import React from "react";
 import AppFooter from "components/AppFooter/AppFooter";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import AppHeader from "components/Header/AppHeader";

@@ -1,5 +1,3 @@
-import React from "react";
-
 export enum City {
   BERGEN = "Bergen",
   TRONDHEIM = "Trondheim",
@@ -28,8 +26,7 @@ export const CityButton = ({ onChooseCity, city, isActive }: ChildProps) => {
             ${activeClass}`}
         onClick={() => {
           onChooseCity(city);
-        }}
-      >
+        }}>
         {city}
       </button>
       <br />

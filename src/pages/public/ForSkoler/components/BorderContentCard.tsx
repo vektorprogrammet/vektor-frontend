@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Props {
   title?: string;
   text?: Array<string>;
@@ -15,7 +13,9 @@ const BorderContentCard = ({ title, text, children }: Props): JSX.Element => {
         </h1>
         {text?.map((textParagraph) => {
           return (
-            <p key={textParagraph} className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
+            <p
+              key={textParagraph}
+              className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
               {textParagraph}
             </p>
           );

@@ -1,4 +1,3 @@
-import React from "react";
 import ImageCard from "components/Pages/TextPictureCard";
 import BorderContentCard from "pages/public/ForSkoler/components/BorderContentCard";
 import Accordion from "./Accordion";
@@ -132,7 +131,9 @@ const OmOss = (): JSX.Element => {
       {assistantAccordions.map(({ title, content }) => (
         <Accordion key={title} title={title} content={content} />
       ))}
-      <h2 className="text-2xl text-gray-600 mt-10 mb-3 dark:text-gray-200">Team</h2>
+      <h2 className="text-2xl text-gray-600 mt-10 mb-3 dark:text-gray-200">
+        Team
+      </h2>
       {teamAccordions.map(({ title, content }) => (
         <Accordion key={title} title={title} content={content} />
       ))}
@@ -140,8 +141,7 @@ const OmOss = (): JSX.Element => {
         Lurer du på noe?
         <a
           className="underline text-blue-600 hover:text-blue-800 dark:text-blue-300"
-          href="/kontakt"
-        >
+          href="/kontakt">
           Ta kontakt med oss!
         </a>
       </p>
@@ -163,9 +163,7 @@ const OmOss = (): JSX.Element => {
             er gode rollemodeller – de er Norges realfagshelter.
         `}
       </p>
-      {cards.map(({
-        title: cardTitle, text, image, pictureOnLeft = false,
-      }) => (
+      {cards.map(({ title: cardTitle, text, image, pictureOnLeft = false }) => (
         <ImageCard
           key={cardTitle}
           title={cardTitle}

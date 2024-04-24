@@ -54,10 +54,40 @@ const Assistent = (): JSX.Element => {
         <Navbar select={select} selected={selected} setSelected={setSelected} />
       </div>
       {(selected === select[0] && (
-        <CreateTable header={["Navn", "Skole", "E-post", "Semester", "Avdeling", "Bolk", "Dag"]} content={assistenter} />
-      )) || (selected === select[1] && (
-        <CreateTable header={["Navn", "Tlf", "E-post", "Linje", "År", "Språk", "M", "T", "O", "T", "F", "Bolk", "Poeng", "Passende"]} content={vikarer} />
-      ))}
+        <CreateTable
+          header={[
+            "Navn",
+            "Skole",
+            "E-post",
+            "Semester",
+            "Avdeling",
+            "Bolk",
+            "Dag",
+          ]}
+          content={assistenter}
+        />
+      )) ||
+        (selected === select[1] && (
+          <CreateTable
+            header={[
+              "Navn",
+              "Tlf",
+              "E-post",
+              "Linje",
+              "År",
+              "Språk",
+              "M",
+              "T",
+              "O",
+              "T",
+              "F",
+              "Bolk",
+              "Poeng",
+              "Passende",
+            ]}
+            content={vikarer}
+          />
+        ))}
     </div>
   );
 };
