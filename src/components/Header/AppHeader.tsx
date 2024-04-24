@@ -26,8 +26,8 @@ const AppHeader = (): JSX.Element => {
   ));
 
   return (
-    <nav className="AppHeader md:sticky top-0 shadow-sm z-50">
-      <div className="hidden md:flex mx-auto p-3 space-x-6 items-center justify-center lg:px-8 w-full max-w-7xl">
+    <nav className="md:sticky top-0 shadow-sm z-50">
+      <div className="hidden md:flex mx-auto p-3 space-x-6 items-center lg:px-8 w-full">
         <div className="w-1/5 justify-center flex">
           <Link to="/">
             <img
@@ -42,7 +42,7 @@ const AppHeader = (): JSX.Element => {
             />
           </Link>
         </div>
-        <div className="flex flex-grow justify-evenly justify-self-center max-w-lg m-auto items-center w-2/5">
+        <div className="flex flex-grow justify-evenly justify-self-center m-auto items-center w-2/5">
           {linkElements}
         </div>
         <div className="flex w-1/5 justify-center">

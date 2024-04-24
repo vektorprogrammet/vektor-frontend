@@ -1,16 +1,7 @@
 @import "tailwindcss/components";
 
-.AppHeader {
-  background-color: white;
-  transition: background-color 0.5s;
-}
-
-.dark .AppHeader {
-  background-color: #333;
-}
-
 .App {
-  background-color: white;
+  background-color: #E2F4FA;
   transition: background-color 0.5s;
 }
 
@@ -32,7 +23,7 @@
 
 @layer components {
   .header-link {
-    @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-base md:m-0 md:p-0 md:font-normal;
+    @apply md:text-gray-600 md:hover:text-blue-400 md:dark:text-white md:text-base md:m-0 md:p-0 md:font-normal text-nowrap;
   }
 
   .container {
