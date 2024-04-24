@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ApplyReg from "../ApplyReg";
 import { City } from "./CityButton";
 
@@ -25,7 +26,7 @@ const Tab = ({
 };
 
 const Tabs = (): JSX.Element => {
-  const [openTab, setOpenTab] = React.useState(City.TRONDHEIM);
+  const [openTab, setOpenTab] = useState(City.TRONDHEIM);
   return (
     <div className="w-full">
       <div
