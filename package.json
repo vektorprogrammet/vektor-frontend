@@ -44,9 +44,9 @@
     "test:cypress:firefox": "cypress run --browser firefox",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
-    "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{js,ts,tsx}\"",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "check": "biome check ./src --apply",
+    "lint": "biome format ./src --apply",
+    "format": "biome format ./src --write"
   },
   "browserslist": {
     "production": [
