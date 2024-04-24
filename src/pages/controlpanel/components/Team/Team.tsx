@@ -60,7 +60,7 @@ const Team = (): JSX.Element => {
         <CreateTable header={["Navn", "Epost", "Opptak"]} content={example1} />
         <button
           type="button"
-          className="login-buttons mt-6 text-black px-4 py-2 rounded-full duration-300 mb-4 bg-white hover:bg-slate-300"
+          className="login-buttons bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 mt-12 rounded-full duration-300 "
           onClick={() => navigate(`/kontrollpanel/opprett-team`)}
         >
           + Opprett Team
