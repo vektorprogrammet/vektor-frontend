@@ -30,7 +30,8 @@ export const NoApplyCard = (props: any) => {
 
       <button
         type="submit"
-        className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded">
+        className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded"
+      >
         Send
       </button>
     </form>

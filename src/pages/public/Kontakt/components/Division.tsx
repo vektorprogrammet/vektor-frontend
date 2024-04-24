@@ -43,14 +43,16 @@ const Division = ({
               stroke="currentColor"
               fill="none"
               strokeLinecap="round"
-              strokeLinejoin="round">
+              strokeLinejoin="round"
+            >
               <path stroke="none" d="M0 0h24v24H0z" />
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <polyline points="3 7 12 13 21 7" />
             </svg>
             <a
               className="truncate block max-w-[200px] text-sm hover:underline"
-              href={`mailto:${mail}`}>
+              href={`mailto:${mail}`}
+            >
               {mail}
             </a>
           </div>
@@ -60,7 +62,8 @@ const Division = ({
                 className="h-4 w-4 text-black"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor">
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -83,7 +86,8 @@ const Division = ({
                 className="h-4 w-4 text-black"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor">
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -98,7 +102,8 @@ const Division = ({
             <div className="py-5 left-0">
               <button
                 type="submit"
-                className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              >
                 Les mer om hovedstyret
               </button>
             </div>
@@ -112,7 +117,8 @@ const Division = ({
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a
                   className="text-sm hover:underline"
-                  href={`mailto:${contactInfos[id].mail}`}>
+                  href={`mailto:${contactInfos[id].mail}`}
+                >
                   {contactInfos[id].mail}
                 </a>
               </div>
@@ -127,7 +133,8 @@ const Division = ({
             <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
               <label
                 htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900">
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
                 Ditt navn
                 <input
                   type="name"
@@ -138,7 +145,8 @@ const Division = ({
               </label>
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900">
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
                 Din e-post
                 <input
                   type="email"
@@ -151,7 +159,8 @@ const Division = ({
             <div className="mb-6">
               <label
                 htmlFor="topic"
-                className="block mb-2 text-sm font-medium text-gray-900">
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
                 Emne
                 <input
                   type="topic"
@@ -164,7 +173,8 @@ const Division = ({
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900">
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
                 Melding
                 <textarea
                   id="message"
@@ -175,7 +185,8 @@ const Division = ({
             </div>
             <button
               type="submit"
-              className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+              className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            >
               Send melding
             </button>
           </form>

@@ -53,7 +53,8 @@ const ForSkoler = (): JSX.Element => {
           title="Enkelt å bruke assistenter i undervisningen"
           text={[
             "Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:",
-          ]}>
+          ]}
+        >
           <ul className="pl-4 ml-4 mb-3 list-disc dark:text-gray-300">
             {[
               "Hjelpe til med oppgaveløsing i klasserom",
@@ -72,7 +73,8 @@ const ForSkoler = (): JSX.Element => {
           text={[
             `Ta kontakt med ansvarlig for skolekoordinering i din by 
           for å sende inn en søknad om å få vektorassistenter til din skole:`,
-          ]}>
+          ]}
+        >
           <div>
             <table className="table-fixed divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300">
               <thead>
@@ -103,14 +105,16 @@ const ForSkoler = (): JSX.Element => {
                       <td className="py-3 px-6">
                         <a
                           className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
-                          href={`mailto:${email}`}>
+                          href={`mailto:${email}`}
+                        >
                           {email}
                         </a>
                       </td>
                       <td className="py-3 px-6">
                         <a
                           className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
-                          href={url}>
+                          href={url}
+                        >
                           Kontakt {city}
                         </a>
                       </td>

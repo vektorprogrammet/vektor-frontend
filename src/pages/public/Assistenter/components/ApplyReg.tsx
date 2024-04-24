@@ -50,7 +50,8 @@ export const ApplyCard = (props: any) => {
         <div className="my-4 space-x-4">
           <select
             className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
-            defaultValue="Kjønn">
+            defaultValue="Kjønn"
+          >
             <option value="Kjønn" disabled>
               Kjønn
             </option>
@@ -61,7 +62,8 @@ export const ApplyCard = (props: any) => {
 
           <select
             className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
-            defaultValue="Årstrinn">
+            defaultValue="Årstrinn"
+          >
             <option value="Årstrinn" disabled>
               Årstrinn
             </option>
@@ -74,7 +76,8 @@ export const ApplyCard = (props: any) => {
         </div>
         <button
           type="submit"
-          className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 m-8 rounded ">
+          className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 m-8 rounded "
+        >
           Søk nå!
         </button>
       </div>

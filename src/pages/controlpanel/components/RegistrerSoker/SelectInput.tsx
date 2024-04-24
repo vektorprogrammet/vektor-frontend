@@ -22,7 +22,8 @@ const SelectInput: React.FC<SelectProps> = ({ name, label, options }) => {
         name={name}
         className="select select-info"
         id={toId(name)}
-        required>
+        required
+      >
         <option value="" disabled selected>
           Velg
         </option>

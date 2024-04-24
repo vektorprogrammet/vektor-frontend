@@ -7,7 +7,8 @@ const mapToTable = (skoler: Object[]) => {
       {Object.values(school).map((value, valueIndex) => (
         <td
           key={`${index.valueOf()}-${valueIndex.valueOf()}`}
-          className="whitespace-nowrap text-xs text-center py-3 px-6">
+          className="whitespace-nowrap text-xs text-center py-3 px-6"
+        >
           {value}
         </td>
       ))}
@@ -30,7 +31,8 @@ const CreateTable: React.FC<Props> = ({ header, content }) => {
               {header.map((value, index) => (
                 <th
                   key={index.valueOf()}
-                  className="text-center text-xs py-3 px-6 text-vektor-darblue">
+                  className="text-center text-xs py-3 px-6 text-vektor-darblue"
+                >
                   {value}
                 </th>
               ))}

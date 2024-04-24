@@ -4,7 +4,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["react", "@typescript-eslint"],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
@@ -19,32 +19,15 @@ module.exports = {
     },
   },
   ignorePatterns: ["/*", "!/src"],
-
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": [
-      "warn",
-      {
-        namedComponents: "arrow-function",
-        unnamedComponents: "arrow-function",
-      },
-    ],
-    quotes: [
-      "warn",
-      "double",
-      { avoidEscape: true, allowTemplateLiterals: true },
-    ],
-    "react/require-default-props": "off",
-    "linebreak-style": "off",
-    "@typescript-eslint/quotes": "off",
-    "arrow-body-style": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      { devDependencies: ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"] },
-    ],
-    "max-len": "off", // Disable max-len rule
-    "jsx-a11y/alt-text": "off", // Disable alt-text rule
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    // Temporary rules
+    // TODO: remove
+    "react/prop-types": "off",
+    "react/jsx-key": "off",
   },
 };

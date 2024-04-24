@@ -36,14 +36,16 @@ const Division = ({
               stroke="currentColor"
               fill="none"
               strokeLinecap="round"
-              strokeLinejoin="round">
+              strokeLinejoin="round"
+            >
               <path stroke="none" d="M0 0h24v24H0z" />
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <polyline points="3 7 12 13 21 7" />
             </svg>
             <a
               className="text-sm truncate overflow-hidden hover:underline"
-              href={`mailto:${mail}`}>
+              href={`mailto:${mail}`}
+            >
               {mail}
             </a>
           </div>
@@ -52,7 +54,8 @@ const Division = ({
               className="h-4 w-4 text-black"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor">
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -68,7 +71,8 @@ const Division = ({
         <button
           type="button"
           onClick={() => navigate(`/team/${url}`)}
-          className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font duration-200">
+          className="py-2 px-4 w-full font-medium text-mid border-b inset-x-0 bottom-0 bg-vektor-darblue hover:bg-vektor-blue text-white font duration-200"
+        >
           {button_name}
         </button>
       </div>

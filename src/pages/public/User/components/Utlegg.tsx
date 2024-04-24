@@ -37,7 +37,8 @@ const Utlegg: React.FC = () => {
         <td
           className={`py-3 px-6 ${
             u.status === "Til behandling" ? "text-amber-300" : "text-green-500"
-          }`}>
+          }`}
+        >
           {u.status}
         </td>
         <td className="py-3 px-4 text-blue-600 hover:font-semibold">
@@ -111,7 +112,8 @@ const Utlegg: React.FC = () => {
               refundert før du legger ut. Om du har spørsmål kan du kontakte økonomiteamet på `}
           <a
             className="hover:underline text-vektor-darblue break-all"
-            href="mailto:okonomi@vektorprogrammet.no">
+            href="mailto:okonomi@vektorprogrammet.no"
+          >
             okonomi@vektorprogrammet.no
           </a>
         </div>
@@ -127,7 +129,8 @@ const Utlegg: React.FC = () => {
             className={`text-xl hover:font-semibold mb-4 ${
               !showWindow ? "text-green-600" : "text-blue-600"
             }`}
-            onClick={handleClick}>
+            onClick={handleClick}
+          >
             {!showWindow || showConfirmation ? (
               <>
                 <FontAwesomeIcon icon={faPlus} /> Nytt utlegg

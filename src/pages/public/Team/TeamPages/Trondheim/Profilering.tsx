@@ -157,7 +157,8 @@ const Profilering = (): JSX.Element => {
         Hvis du har noen spørsmål, er det bare å ta kontakt på{" "}
         <a
           className="hover:underline text-vektor-darblue break-all"
-          href="mailto:profilering.ntnu@vektorprogrammet.no">
+          href="mailto:profilering.ntnu@vektorprogrammet.no"
+        >
           profilering.ntnu@vektorprogrammet.no.
         </a>
       </div>

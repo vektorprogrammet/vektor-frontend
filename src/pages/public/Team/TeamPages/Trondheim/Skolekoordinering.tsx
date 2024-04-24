@@ -187,7 +187,8 @@ const Skolekoordinering = (): JSX.Element => {
         Sitter du inne med spørsmål, ta mer enn gjerne kontakt med oss på{" "}
         <a
           className="hover:underline text-vektor-darblue break-all"
-          href="mailto:skolekoordinering.ntnu@vektorprogrammet.no">
+          href="mailto:skolekoordinering.ntnu@vektorprogrammet.no"
+        >
           skolekoordinering.ntnu@vektorprogrammet.no.
         </a>
       </div>

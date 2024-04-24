@@ -136,7 +136,8 @@ const Sponsor = (): JSX.Element => {
         kontakt på{" "}
         <a
           className="hover:underline text-vektor-darblue break-all"
-          href="mailto:sponsor.ntnu@vektorprogrammet.no">
+          href="mailto:sponsor.ntnu@vektorprogrammet.no"
+        >
           sponsor.ntnu@vektorprogrammet.no.
         </a>
       </div>

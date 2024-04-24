@@ -122,7 +122,8 @@ const Okonomi = (): JSX.Element => {
             Har du noen spørsmål er det bare å ta kontakt med oss på{" "}
             <a
               className="hover:underline text-vektor-darblue"
-              href="mailto:okonomi@vektorprogrammet.no">
+              href="mailto:okonomi@vektorprogrammet.no"
+            >
               okonomi@vektorprogrammet.no.
             </a>
             <div className="mt-3">Vi ser frem til å høre fra deg!</div>

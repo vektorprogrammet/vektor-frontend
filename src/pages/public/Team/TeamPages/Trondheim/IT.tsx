@@ -188,7 +188,8 @@ const IT = (): JSX.Element => {
         Sjekk ut hva vi jobber med på{" "}
         <a
           href="https://github.com/vektorprogrammet"
-          className="hover:underline text-vektor-darblue">
+          className="hover:underline text-vektor-darblue"
+        >
           http://github.com/vektorprogrammet
         </a>
         !

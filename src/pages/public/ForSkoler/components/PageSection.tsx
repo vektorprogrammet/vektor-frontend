@@ -21,7 +21,8 @@ const PageSection: React.FC<Props> = ({ title, text, children }: Props) => {
       {text.map((textParagraph) => (
         <p
           key={textParagraph}
-          className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
+          className="text-xl mb-3 px-3 mx-auto dark:text-gray-300"
+        >
           {textParagraph}
         </p>
       ))}

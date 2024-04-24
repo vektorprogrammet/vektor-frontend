@@ -141,7 +141,8 @@ const Rekruttering = (): JSX.Element => {
         Er det noe mer du lurer på er det bare å sende mail til{" "}
         <a
           className="hover:underline text-vektor-darblue break-all"
-          href="mailto:rekruttering.ntnu@vektorprogrammet.no">
+          href="mailto:rekruttering.ntnu@vektorprogrammet.no"
+        >
           rekruttering.ntnu@vektorprogrammet.no
         </a>
       </div>

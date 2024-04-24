@@ -17,7 +17,8 @@ const Tab = ({
       className={`tab tab-lifted w-1/3 text-base font-bold border-white ${chosenStyle}`}
       onClick={onTabClick}
       data-toggle="tab"
-      role="tablist">
+      role="tablist"
+    >
       {city}
     </button>
   );
@@ -29,7 +30,8 @@ const Tabs = (): JSX.Element => {
     <div className="w-full">
       <div
         className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400"
-        role="tablist">
+        role="tablist"
+      >
         {Object.values(City).map((value) => (
           <Tab
             city={value}

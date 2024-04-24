@@ -23,7 +23,8 @@ const TeamTemplate = ({ name, mail, text, members }: Team): JSX.Element => {
         Epost:{" "}
         <a
           className="text-sm overflow-hidden hover:underline break-all text-base font-normal"
-          href={`mailto:${mail}`}>
+          href={`mailto:${mail}`}
+        >
           {mail}
         </a>
       </div>

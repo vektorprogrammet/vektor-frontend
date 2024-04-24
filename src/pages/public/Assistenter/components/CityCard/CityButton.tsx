@@ -26,7 +26,8 @@ export const CityButton = ({ onChooseCity, city, isActive }: ChildProps) => {
             ${activeClass}`}
         onClick={() => {
           onChooseCity(city);
-        }}>
+        }}
+      >
         {city}
       </button>
       <br />

@@ -141,7 +141,8 @@ const OmOss = (): JSX.Element => {
         Lurer du på noe?
         <a
           className="underline text-blue-600 hover:text-blue-800 dark:text-blue-300"
-          href="/kontakt">
+          href="/kontakt"
+        >
           Ta kontakt med oss!
         </a>
       </p>

@@ -142,7 +142,8 @@ const Evaluering = (): JSX.Element => {
         Dersom du har noen spørsmål er det bare å ta kontakt med oss på{" "}
         <a
           className="hover:underline text-vektor-darblue break-all"
-          href="mailto:evaluering.ntnu@vektorprogrammet.no">
+          href="mailto:evaluering.ntnu@vektorprogrammet.no"
+        >
           evaluering.ntnu@vektorprogrammet.no.
         </a>
       </div>

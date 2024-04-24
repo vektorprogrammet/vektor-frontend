@@ -26,7 +26,8 @@ const PageTitleCard = ({
         {link && (
           <a
             className="block text-xl font-bold mt-3 px-3 dark:text-gray-200"
-            href={link?.path.href}>
+            href={link?.path.href}
+          >
             {link?.text}
           </a>
         )}

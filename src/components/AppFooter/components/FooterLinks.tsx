@@ -15,17 +15,20 @@ const FooterLinks = () => {
       <div className="flex space-x-2 place-items-center">
         <a
           className="hover:underline"
-          href="https://www.facebook.com/vektorprogrammet/">
+          href="https://www.facebook.com/vektorprogrammet/"
+        >
           Trondheim
         </a>
         <a
           className="hover:underline"
-          href="https://www.facebook.com/vektorprogrammetNMBU/">
+          href="https://www.facebook.com/vektorprogrammetNMBU/"
+        >
           Ås
         </a>
         <a
           className="hover:underline"
-          href="https://www.facebook.com/VektorprogrammetBergen/">
+          href="https://www.facebook.com/VektorprogrammetBergen/"
+        >
           Bergen
         </a>
       </div>
@@ -34,7 +37,8 @@ const FooterLinks = () => {
       <div className="flex space-x-2 place-items-center">
         <a
           className="hover:underline"
-          href="mailto:hovedstyret@vektorprogrammet.no">
+          href="mailto:hovedstyret@vektorprogrammet.no"
+        >
           hovedstyret@vektorprogrammet.no
         </a>
       </div>

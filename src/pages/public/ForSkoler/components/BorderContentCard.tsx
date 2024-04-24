@@ -15,7 +15,8 @@ const BorderContentCard = ({ title, text, children }: Props): JSX.Element => {
           return (
             <p
               key={textParagraph}
-              className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
+              className="text-xl mb-3 px-3 mx-auto dark:text-gray-300"
+            >
               {textParagraph}
             </p>
           );

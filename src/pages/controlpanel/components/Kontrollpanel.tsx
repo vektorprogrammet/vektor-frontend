@@ -18,7 +18,8 @@ const Kontrollpanel = (): JSX.Element => {
       reloadDocument
       key={mainButton.toLowerCase()}
       to={mainButton.toLowerCase()}
-      className="w-40 h-40 bg-vektor-blue flex items-center justify-center rounded-lg font-bold hover:bg-vektor-darblue hover:text-white duration-200 shadow-lg hover:mb-2">
+      className="w-40 h-40 bg-vektor-blue flex items-center justify-center rounded-lg font-bold hover:bg-vektor-darblue hover:text-white duration-200 shadow-lg hover:mb-2"
+    >
       {mainButton}
     </Link>
   ));
@@ -26,7 +27,8 @@ const Kontrollpanel = (): JSX.Element => {
   const infoElements = infoCards.map((infoCard) => (
     <div
       key={infoCard}
-      className="w-2/5 h-5/6 bg-gray-400 flex items-center justify-center rounded-lg font-bold">
+      className="w-2/5 h-5/6 bg-gray-400 flex items-center justify-center rounded-lg font-bold"
+    >
       {infoCard}
     </div>
   ));
