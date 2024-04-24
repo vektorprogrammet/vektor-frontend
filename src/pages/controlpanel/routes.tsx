@@ -4,6 +4,7 @@ import { AppRoute } from "App";
 import Skoler from "pages/controlpanel/components/Skoler";
 import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
 import Assistent from "pages/controlpanel/components/Assistent";
+import Brukere from "pages/controlpanel/components/Brukere";
 import OpprettTeam from "./components/Team/OpprettTeam";
 import RegistrerSoker from "./components/RegistrerSoker/RegistrerSoker";
 import Teammedlemmer from "./components/Team/Teammedlemmer";
@@ -14,7 +15,13 @@ const routes: AppRoute[] = [
   { path: "", element: <Kontrollpanel />, name: "Kontrollpanel" },
   { path: "/kontrollpanel/team", element: <Team />, name: "Team" },
   { path: "/kontrollpanel/skoler", element: <Skoler />, name: "Skoler" },
-  { path: "/kontrollpanel/opprett-team", element: <OpprettTeam />, name: "Opprett nytt team" },
+  {
+    path: "/kontrollpanel/opprett-team",
+    element: <OpprettTeam />,
+    name: "Opprett nytt team",
+  },
+  { path: "/kontrollpanel/brukere", element: <Brukere />, name: "Brukere" },
+
   {
     path: "/kontrollpanel/teams/:id",
     element: <Teammedlemmer />,
