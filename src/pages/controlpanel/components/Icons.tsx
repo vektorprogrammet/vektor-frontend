@@ -1,8 +1,13 @@
-import React from "react";
-
 export const BrukereIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 640 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3
     304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM609.3
     512H471.4c5.4-9.4 8.6-20.3 8.6-32v-8c0-60.7-27.1-115.2-69.8-151.8c2.4-.1 4.7-.2 7.1-.2h61.4C567.8 320 640
     392.2 640 481.3c0 17-13.8 30.7-30.7 30.7zM432 256c-31 0-59-12.6-79.3-32.9C372.4 196.5 384 163.6 384
@@ -12,8 +17,15 @@ export const BrukereIcon = () => (
 );
 
 export const AssistentIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 640 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7
     64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32
     32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3
     352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0
@@ -23,8 +35,15 @@ export const AssistentIcon = () => (
 );
 
 export const OpptakIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 576 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80
     256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0
     64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0
     16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8
@@ -34,8 +53,15 @@ export const OpptakIcon = () => (
 );
 
 export const OpptaksstatistikkIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 512 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8
     0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3
     0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"
     />
@@ -43,8 +69,15 @@ export const OpptaksstatistikkIcon = () => (
 );
 
 export const SkoleIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H592c26.5 0
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 640 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H592c26.5 0
         48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM256 416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H256V416zM96
         192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16
         16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2
@@ -56,8 +89,15 @@ export const SkoleIcon = () => (
 );
 
 export const TeamIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 640 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3V245.7zm144.4-49.3C178.7
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 640 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3V245.7zm144.4-49.3C178.7
         222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V389.2C26.2 371.2 0 332.7 0
         288c0-61.9 50.1-112 112-112h32c24 0 46.2 7.5 64.4 20.3zM448 416V394.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8
         183.5 472 176 496 176h32c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2V416c0 17.7-14.3 32-32 32H480c-17.7
@@ -70,8 +110,15 @@ export const TeamIcon = () => (
 );
 
 export const TeamInteresseIcon = () => (
-  <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet" fill="#ffffff">
-    <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V428.7c-2.7 1.1-5.4 2-8.2 2.7l-60.1 15c-3
+  <svg
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="60%"
+    viewBox="0 0 576 512"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#ffffff">
+    <path
+      d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V428.7c-2.7 1.1-5.4 2-8.2 2.7l-60.1 15c-3
     .7-6 1.2-9 1.4c-.9 .1-1.8 .2-2.7 .2H240c-6.1 0-11.6-3.4-14.3-8.8l-8.8-17.7c-1.7-3.4-5.1-5.5-8.8-5.5s-7.2 2.1-8.8 5.5l-8.8
     17.7c-2.9 5.9-9.2 9.4-15.7 8.8s-12.1-5.1-13.9-11.3L144 381l-9.8 32.8c-6.1 20.3-24.8 34.2-46 34.2H80c-8.8 0-16-7.2-16-16s7.2-16
     16-16h8.2c7.1 0 13.3-4.6 15.3-11.4l14.9-49.5c3.4-11.3 13.8-19.1 25.6-19.1s22.2 7.8 25.6 19.1l11.6 38.6c7.4-6.2 16.8-9.7

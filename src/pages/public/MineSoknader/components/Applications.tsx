@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ApplicationProps {
   applications: Application[];
 }
@@ -20,13 +18,10 @@ const Applications = ({ applications }: ApplicationProps) => {
               {application.role}
             </h1>
             <p className="text-gray-600 text-m font-medium mt-2">
-              <span className="font-bold">Status:</span>
-              {" "}
-              {application.status}
+              <span className="font-bold">Status:</span> {application.status}
             </p>
             <p className="text-gray-600 text-m font-medium my-2">
-              <span className="font-bold">Forventet Handling:</span>
-              {" "}
+              <span className="font-bold">Forventet Handling:</span>{" "}
               {application.expectedAction}
             </p>
           </div>

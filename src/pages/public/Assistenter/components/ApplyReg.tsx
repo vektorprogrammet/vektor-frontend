@@ -1,10 +1,7 @@
-import React from "react";
-
 export const ApplyCard = (props: any) => {
   const { cities } = props;
   return (
     <form>
-
       <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center">
         {cities}
       </h1>
@@ -13,7 +10,6 @@ export const ApplyCard = (props: any) => {
 
       <div className="grid justify-items-center">
         <div className="flex flex-wrap w-full my-4 space-x-8 justify-center">
-
           <input
             type="fornavn"
             className="mb-2 p-1 rounded block border-solid border-2 border-vektor-darblue"
@@ -25,7 +21,6 @@ export const ApplyCard = (props: any) => {
             className="mb-2 p-1 rounded block border-solid border-2 border-vektor-darblue"
             placeholder="Etternavn"
           />
-
         </div>
 
         <div className="flex mt-3 justify-center w-full">
@@ -53,7 +48,9 @@ export const ApplyCard = (props: any) => {
         </div>
 
         <div className="my-4 space-x-4">
-          <select className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold" defaultValue="Kjønn">
+          <select
+            className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
+            defaultValue="Kjønn">
             <option value="Kjønn" disabled>
               Kjønn
             </option>
@@ -62,7 +59,9 @@ export const ApplyCard = (props: any) => {
             <option>Annet</option>
           </select>
 
-          <select className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold" defaultValue="Årstrinn">
+          <select
+            className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
+            defaultValue="Årstrinn">
             <option value="Årstrinn" disabled>
               Årstrinn
             </option>
@@ -75,17 +74,14 @@ export const ApplyCard = (props: any) => {
         </div>
         <button
           type="submit"
-          className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 m-8 rounded "
-        >
+          className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 m-8 rounded ">
           Søk nå!
         </button>
-
       </div>
       <div className="items-center mx-16 mb-10 text-center">
         Har du vært assistent tidligere? Da kan du søke på nytt her (krever
         innlogging)
       </div>
-
     </form>
   );
 };

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Props {
   title: string;
   text: Array<string>;
@@ -21,7 +19,9 @@ const PageSection: React.FC<Props> = ({ title, text, children }: Props) => {
         {title}
       </h1>
       {text.map((textParagraph) => (
-        <p key={textParagraph} className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
+        <p
+          key={textParagraph}
+          className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
           {textParagraph}
         </p>
       ))}

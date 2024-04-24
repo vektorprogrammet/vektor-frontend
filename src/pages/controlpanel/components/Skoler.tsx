@@ -53,13 +53,24 @@ const Skoler = (): JSX.Element => {
       <div className="pt-10 mt-50 grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Skoler i Trondheim</h1>
         <div className="flex flex-wrap">
-          <Navbar select={select} selected={selected} setSelected={setSelected} />
+          <Navbar
+            select={select}
+            selected={selected}
+            setSelected={setSelected}
+          />
         </div>
         {(selected === select[0] && (
-          <CreateTable header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]} content={aktiveSkolerListe} />
-        )) || (selected === select[1] && (
-          <CreateTable header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]} content={inaktiveSkolerListe} />
-        ))}
+          <CreateTable
+            header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]}
+            content={aktiveSkolerListe}
+          />
+        )) ||
+          (selected === select[1] && (
+            <CreateTable
+              header={["Skole", "Kontakperson", "E-post", "Telefon", "Språk"]}
+              content={inaktiveSkolerListe}
+            />
+          ))}
       </div>
     </div>
   );

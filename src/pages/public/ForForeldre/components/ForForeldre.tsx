@@ -1,11 +1,8 @@
-import React from "react";
 import TextPictureCard from "components/Pages/TextPictureCard";
 import getContent from "api/ForForeldre";
 
 const ForForeldre = (): JSX.Element => {
-  const {
-    title, ingress, cards, bottomText,
-  } = getContent();
+  const { title, ingress, cards, bottomText } = getContent();
   return (
     <div className="max-w-screen-lg mt-20 mb-20 mx-auto flex flex-col items-center dark:text-gray-300">
       <h1 className="max-w-2xl text-gray-600 text-4xl text-center font-bold mx-3 dark:text-gray-200">

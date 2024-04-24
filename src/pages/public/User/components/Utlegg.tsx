@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinus,
@@ -37,25 +37,20 @@ const Utlegg: React.FC = () => {
         <td
           className={`py-3 px-6 ${
             u.status === "Til behandling" ? "text-amber-300" : "text-green-500"
-          }`}
-        >
+          }`}>
           {u.status}
         </td>
         <td className="py-3 px-4 text-blue-600 hover:font-semibold">
           {u.status === "Til behandling" && (
             <>
-              Rediger
-              {" "}
-              <FontAwesomeIcon icon={faPencil} />
+              Rediger <FontAwesomeIcon icon={faPencil} />
             </>
           )}
         </td>
         <td className="py-3 px-4 text-rose-600 hover:font-semibold">
           {u.status === "Til behandling" && (
             <>
-              Slett
-              {" "}
-              <FontAwesomeIcon icon={faTrashCan} />
+              Slett <FontAwesomeIcon icon={faTrashCan} />
             </>
           )}
         </td>
@@ -116,8 +111,7 @@ const Utlegg: React.FC = () => {
               refundert før du legger ut. Om du har spørsmål kan du kontakte økonomiteamet på `}
           <a
             className="hover:underline text-vektor-darblue break-all"
-            href="mailto:okonomi@vektorprogrammet.no"
-          >
+            href="mailto:okonomi@vektorprogrammet.no">
             okonomi@vektorprogrammet.no
           </a>
         </div>
@@ -133,13 +127,10 @@ const Utlegg: React.FC = () => {
             className={`text-xl hover:font-semibold mb-4 ${
               !showWindow ? "text-green-600" : "text-blue-600"
             }`}
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             {!showWindow || showConfirmation ? (
               <>
-                <FontAwesomeIcon icon={faPlus} />
-                {" "}
-                Nytt utlegg
+                <FontAwesomeIcon icon={faPlus} /> Nytt utlegg
               </>
             ) : (
               <>
@@ -173,8 +164,14 @@ const Utlegg: React.FC = () => {
                   Kvittering
                 </th>
                 <th className="w-3/12 py-3 px-6 bg-table-grey">Status</th>
-                <th className="w-1/12 py-3 px-4 bg-table-grey" aria-label="Empty Cell" />
-                <th className="w-1/12 py-3 px-4 bg-table-grey" aria-label="Empty Cell" />
+                <th
+                  className="w-1/12 py-3 px-4 bg-table-grey"
+                  aria-label="Empty Cell"
+                />
+                <th
+                  className="w-1/12 py-3 px-4 bg-table-grey"
+                  aria-label="Empty Cell"
+                />
               </tr>
             </thead>
             <tbody>{mapToTable(MineUtlegg)}</tbody>

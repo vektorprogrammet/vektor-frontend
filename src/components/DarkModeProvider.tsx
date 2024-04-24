@@ -8,7 +8,9 @@ export const DarkModeContext = React.createContext({
 });
 
 export const DarkModeProvider = (props: { children: JSX.Element }) => {
-  const [darkMode, setDarkModeState] = useState(localStorage.getItem("darkMode") === "dark");
+  const [darkMode, setDarkModeState] = useState(
+    localStorage.getItem("darkMode") === "dark",
+  );
   const { children } = props;
 
   const setDarkMode = (newDarkMode: boolean) => {

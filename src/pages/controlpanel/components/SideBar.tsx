@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   BrukereIcon,
@@ -56,7 +55,7 @@ const SideBar = (): JSX.Element => {
           className="w-5/6 h-5/6 object-contain"
         />
       </div>
-      <HorizontalLine/>
+      <HorizontalLine />
       <div className="my-3">
         {linkData.map((item) => (
           <Link key={item.name} to={item.to}>

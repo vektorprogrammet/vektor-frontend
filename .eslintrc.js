@@ -1,12 +1,10 @@
 module.exports = {
   extends: [
+    "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks"
+    "plugin:prettier/recommended",
   ],
-  plugins: ['react', '@typescript-eslint'],
-  parser: "@typescript-eslint/parser",
+  plugins: ["react", "@typescript-eslint"],
   parserOptions: {
     project: "./tsconfig.json",
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
@@ -20,14 +18,12 @@ module.exports = {
       version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
     },
   },
-  "ignorePatterns": [
-    "/*",
-    "!/src",
-  ],
+  ignorePatterns: ["/*", "!/src"],
 
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    "react/react-in-jsx-scope": "off",
     "react/function-component-definition": [
       "warn",
       {
@@ -46,9 +42,9 @@ module.exports = {
     "arrow-body-style": "off",
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"] }
+      { devDependencies: ["**/*.test.{ts,tsx,js}", "src/setupTests.ts"] },
     ],
     "max-len": "off", // Disable max-len rule
-    "jsx-a11y/alt-text": "off" // Disable alt-text rule
+    "jsx-a11y/alt-text": "off", // Disable alt-text rule
   },
 };
