@@ -1,6 +1,7 @@
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import React, { useRef, useState } from "react";
+import type React from "react";
+import { useRef, useState } from "react";
 
 interface AccordionProps {
   title: React.ReactNode;
@@ -25,7 +26,11 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   return (
     <div className="flex flex-col w-full items-center">
       <button
-        className={`mt-6 py-3 border-b-2 border-gray-300 dark:border-gray-600 dark:hover:bg-gray-500 box-border appearance-none cursor-pointer hover:bg-gray-200 focus:outline-none flex items-center justify-between w-full duration-200 ${active ? "bg-gray-300 dark:bg-gray-500" : "bg-gray-100 dark:bg-gray-600"}`}
+        className={`mt-6 py-3 border-b-2 border-gray-300 dark:border-gray-600 dark:hover:bg-gray-500 box-border appearance-none cursor-pointer hover:bg-gray-200 focus:outline-none flex items-center justify-between w-full duration-200 ${
+          active
+            ? "bg-gray-300 dark:bg-gray-500"
+            : "bg-gray-100 dark:bg-gray-600"
+        }`}
         onClick={toggleAccordion}
         type="button"
       >

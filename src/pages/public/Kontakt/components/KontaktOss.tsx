@@ -152,7 +152,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
 const Tabs = ({ divisions }: TabProps): JSX.Element => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("kontaktTab");
-    return storedTab ? parseInt(storedTab, 10) : 1;
+    return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
   const [openTab, setOpenTab] = React.useState(initialTabState);
   useEffect(() => {

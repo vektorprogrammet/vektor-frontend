@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
-import { Assistenter, Vikarer } from "./Interfaces";
+import type { Assistenter, Vikarer } from "./Interfaces";
+import Navbar from "./Navbar";
 
 const Assistent = (): JSX.Element => {
   const select = ["Assistenter", "Vikarer"];

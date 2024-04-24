@@ -4,10 +4,11 @@ import {
   faCheckToSlot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
+import type React from "react";
+import { useState } from "react";
+import { type SubmitHandler, useForm } from "react-hook-form";
+import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
 
 type Inputs = {
   amount: number;

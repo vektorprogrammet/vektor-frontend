@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
-  BrukereIcon,
   AssistentIcon,
+  BrukereIcon,
   OpptakIcon,
   OpptaksstatistikkIcon,
   SkoleIcon,

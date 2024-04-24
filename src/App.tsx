@@ -1,19 +1,19 @@
 import { DarkModeProvider } from "components/DarkModeProvider";
 import {
   Outlet,
-  createBrowserRouter,
+  type RouteObject,
   RouterProvider,
-  RouteObject,
+  createBrowserRouter,
 } from "react-router-dom";
 
-import "./App.css";
-import MainPage from "pages/public";
 import ControlPanel from "pages/controlpanel";
-import Profil from "pages/public/Profil/components/Profil";
+import MainPage from "pages/public";
 import MineSoknader from "pages/public/MineSoknader";
+import Profil from "pages/public/Profil/components/Profil";
 import Utlegg from "pages/public/User/components/Utlegg";
-import appRoutes from "./pages/public/routes";
+import "./App.css";
 import controlPanelRoutes from "./pages/controlpanel/routes";
+import appRoutes from "./pages/public/routes";
 
 const Root = (): JSX.Element => {
   return (

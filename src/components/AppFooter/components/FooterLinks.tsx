@@ -1,8 +1,8 @@
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
-  faMapMarkerAlt,
   faFolderOpen,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

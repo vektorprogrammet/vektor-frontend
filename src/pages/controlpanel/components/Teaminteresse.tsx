@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
+import Navbar from "./Navbar";
 
 const Teaminteresse = (): JSX.Element => {
   const select = [

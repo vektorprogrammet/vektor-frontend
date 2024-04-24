@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinus,
   faPencil,
   faPlus,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import NyttUtlegg from "./NyttUtlegg";
 
 const Bekreftelse = () => {
