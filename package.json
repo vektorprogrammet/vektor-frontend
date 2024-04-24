@@ -44,16 +44,12 @@
     "test:cypress:firefox": "cypress run --browser firefox",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
-    "check": "biome check ./src --apply",
-    "lint": "biome format ./src --apply",
-    "format": "biome format ./src --write"
+    "check": "biome check ./ --apply",
+    "lint": "biome format ./ --apply",
+    "format": "biome format ./ --apply"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
