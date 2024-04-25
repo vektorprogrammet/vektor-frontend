@@ -55,7 +55,7 @@ const Team = (): JSX.Element => {
 
   return (
     <div className="w-full">
-      <div className="pt-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
+      <div className="pt-10 mt-50 grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Team</h1>
         <CreateTable header={["Navn", "Epost", "Opptak"]} content={example1} />
         <button
