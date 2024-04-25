@@ -2,7 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
   "files": {
     "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json"],
-    "ignore": ["node_modules", "build"]
+    "ignore": ["node_modules", "build", ".vscode", ".github"]
   },
   "formatter": {
     "enabled": true,
