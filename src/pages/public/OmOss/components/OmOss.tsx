@@ -1,4 +1,4 @@
-import ImageCard from "components/Pages/TextPictureCard";
+import ImageCard from "@/components/TextPictureCard";
 import BorderContentCard from "pages/public/ForSkoler/components/BorderContentCard";
 import Accordion from "./Accordion";
 
