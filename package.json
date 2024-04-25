@@ -45,7 +45,7 @@
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
     "check": "biome check ./ --apply",
-    "lint": "biome format ./ --apply",
+    "lint": "biome lint ./ --apply",
     "format": "biome format ./ --apply"
   },
   "browserslist": {
