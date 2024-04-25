@@ -4,7 +4,7 @@
 name: Node.js Build CI
 
 env:
-  NODE_VERSION: 20.12.7
+  NODE_VERSION: 20.12.2
 
 on:
   push:
