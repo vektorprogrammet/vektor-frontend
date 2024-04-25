@@ -13,7 +13,10 @@ const Applications = ({ applications }: ApplicationProps) => {
     <div className="flex flex-col justify-center mt-2">
       {applications.map((application) => {
         return (
-          <div className="border-2 border-gray-200 shadow-md mt-4 max-w-lg mx-4 p-2 rounded-sm">
+          <div
+            key={application.toString()}
+            className="border-2 border-gray-200 shadow-md mt-4 max-w-lg mx-4 p-2 rounded-sm"
+          >
             <h1 className="text-2xl font-medium text-vektor-darblue mt-2">
               {application.role}
             </h1>
