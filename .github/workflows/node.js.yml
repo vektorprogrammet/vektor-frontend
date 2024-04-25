@@ -15,44 +15,40 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
         with:
           version: 8
-      - name: Use Node.js ${{ env.NODE_VERSION }}
+      - name: Setup Node 
         uses: actions/setup-node@v3
         with:
           node-version: ${{env.NODE_VERSION}}
           cache: "pnpm"
       - name: Install dependencies
-        run: |
+        run:
           pnpm install
-          pnpm build
+      - name: Build
+        run: pnpm build
       - name: store build artifact
         uses: actions/upload-artifact@v3
         with:
           name: build
           path: build
 
-  lint:
+  code-quality:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
         with:
-          version: 8
-      - name: Lint with eslint
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{env.NODE_VERSION}}
-          cache: "pnpm"
-      - name: pnpm lint
-        run: |
-          pnpm install
-          pnpm lint
+          version: 1.7.1
+      - name: Run Biome
+        run: biome ci .
 
   vitest_tests:
     needs: build
