@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -57,4 +57,4 @@ module.exports = {
     ],
   },
   plugins: [require("postcss-import"), require("daisyui")],
-};
+} satisfies Config;
