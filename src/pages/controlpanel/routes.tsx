@@ -1,4 +1,4 @@
-import type { AppRoute } from "App";
+import type { AppRoute } from "@/App";
 import Assistent from "pages/controlpanel/components/Assistent";
 import Kontrollpanel from "pages/controlpanel/components/Kontrollpanel";
 import Skoler from "pages/controlpanel/components/Skoler";
