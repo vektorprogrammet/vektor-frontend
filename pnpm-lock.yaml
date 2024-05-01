@@ -36,8 +36,8 @@ dependencies:
     specifier: ^1.11.10
     version: 1.11.10
   node:
-    specifier: ^20.12.2
-    version: 20.12.2
+    specifier: ^22.0.0
+    version: 22.0.0
   norwegian-utils:
     specifier: ^0.4.1
     version: 0.4.1
@@ -2567,8 +2567,8 @@ packages:
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
 
-  /node@20.12.2:
-    resolution: {integrity: sha512-9cHolaEZHSU7/VY7ri0onA3o1sQbjDL/HbRO14CJKosSL7JMlkkCywQZj8Tn8p633fC+l8a4CrnzWiH2B339tw==}
+  /node@22.0.0:
+    resolution: {integrity: sha512-erpiz5vVgqdPOUo/1+xQLlSeqf95EgVVHkQ/b1eHq1VGEJYJSjgitYoYWtH85U1qF9polkt8TdrNEjtAQ38jEw==}
     engines: {npm: '>=5.0.0'}
     hasBin: true
     requiresBuild: true

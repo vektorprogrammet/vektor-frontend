@@ -14,7 +14,7 @@
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.0.0",
     "dayjs": "^1.11.10",
-    "node": "^20.12.2",
+    "node": "^22.0.0",
     "norwegian-utils": "^0.4.1",
     "postcss": "^8.4.38",
     "postcss-import": "^16.0.0",
