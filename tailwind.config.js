@@ -3,6 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",],
   darkMode: "class", // or false or 'media'
   theme: {
+    fontFamily: {
+      'AHsans': ['Arial','Helvetica','sans-serif'],
+      'msans': ['Montserrat','sans-serif'],
+    },
     screens: {
       sm: "640px",
       md: "860px",
@@ -18,6 +22,8 @@ module.exports = {
         "vektor-bg": "#fafdff",
         "table-grey": "#EFEFEF",
         "vektor-kontrollblue": "#292E4C",
+        "vektor-index-blue": "#e6f3f7",
+        "vektor-button-green": "#16ab39",
       },
     },
   },
