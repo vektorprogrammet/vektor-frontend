@@ -5,8 +5,8 @@ const UserAvatar = () => {
   return (
     <button tabIndex={0} className="dropdown dropdown-end" type="button">
       <div className="btn btn-ghost btn-circle avatar">
-        <div className="w-12 rounded-full">
-          <img src="https://placekitten.com/80/80" alt="profile avatar" />
+        <div className="w-12 rounded-full border-solid border-2 border-gray-600">
+          <img src="/images/team/IT-Tor.png" alt="profile avatar" />
         </div>
       </div>
       <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
