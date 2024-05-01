@@ -6,6 +6,26 @@
   "engines": {
     "node": ">=16.19.1"
   },
+  "packageManager": "pnpm@8.15.8",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "test": "cypress run && vitest run",
+    "test:cypress:firefox": "cypress run --browser firefox",
+    "test:vitest": "vitest run",
+    "test:vitest:watch": "vitest watch",
+    "check": "biome check ./ --apply",
+    "lint": "biome lint ./ --apply",
+    "format": "biome format ./ --apply"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
@@ -35,25 +55,7 @@
     "vite": "^5.2.10",
     "web-vitals": "^3.0.0"
   },
-  "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "test": "cypress run && vitest run",
-    "test:cypress:firefox": "cypress run --browser firefox",
-    "test:vitest": "vitest run",
-    "test:vitest:watch": "vitest watch",
-    "check": "biome check ./ --apply",
-    "lint": "biome lint ./ --apply",
-    "format": "biome format ./ --apply"
-  },
-  "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
     "@testing-library/dom": "^10.0.0",
@@ -64,6 +66,5 @@
     "cypress": "12.8.1",
     "vite": "^3.1.0",
     "vitest": "^1.5.1"
-  },
-  "packageManager": "pnpm@8.15.8"
+  }
 }
