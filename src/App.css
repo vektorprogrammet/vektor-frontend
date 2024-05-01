@@ -1,7 +1,6 @@
 @import "tailwindcss/components";
 .App {
   transition: background-color 0.5s;
-  background-color: #E2F4FA;
 }
 
 .dark .App {
