@@ -1,5 +1,5 @@
 import getContent from "api/ForForeldre";
-import TextPictureCard from "components/Pages/TextPictureCard";
+import TextPictureCard from "@/components/TextPictureCard";
 
 const ForForeldre = (): JSX.Element => {
   const { title, ingress, cards, bottomText } = getContent();

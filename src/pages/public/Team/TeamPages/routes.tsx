@@ -1,4 +1,4 @@
-import type { AppRoute } from "App";
+import type { AppRoute } from "@/App";
 import Team from "../index";
 import Hovedstyret from "./Hovedstyret/Hovedstyret";
 import {
