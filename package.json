@@ -12,7 +12,7 @@
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "autoprefixer": "^10.4.19",
-    "daisyui": "^2.52.0",
+    "daisyui": "^4.0.0",
     "dayjs": "^1.11.10",
     "node": "^20.12.2",
     "norwegian-utils": "^0.4.1",
