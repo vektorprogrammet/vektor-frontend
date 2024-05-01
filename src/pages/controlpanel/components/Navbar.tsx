@@ -10,7 +10,9 @@ const Navbar: React.FC<Props> = ({ select, selected, setSelected }) => {
       {select.map((item: string) => (
         <button
           key={item}
-          className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${selected === item ? "border-vektor-blue-hover border-b-4 pb-1" : ""}`}
+          className={`row-start-2 col-start-1 pr-2 pl-2 pt-8 pb-2 ${
+            selected === item ? "border-vektor-blue-hover border-b-4 pb-1" : ""
+          }`}
           onClick={() => setSelected(item)}
           type="button"
         >

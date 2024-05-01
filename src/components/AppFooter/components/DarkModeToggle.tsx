@@ -1,5 +1,5 @@
 import { DarkModeContext } from "components/DarkModeProvider";
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import "./DarkModeToggle.css";
 

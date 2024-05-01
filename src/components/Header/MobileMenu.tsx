@@ -1,11 +1,11 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { type Dispatch, type SetStateAction } from "react";
 
 import { Link } from "react-router-dom";
 
-import "./mobile.css";
+import LoginButtons from "./LoginButtons";
 import LoginPopup from "./LoginPopup";
 import UserAvatar from "./UserAvatar";
-import LoginButtons from "./LoginButtons";
+import "./mobile.css";
 
 interface Props {
   menuOpen: boolean;

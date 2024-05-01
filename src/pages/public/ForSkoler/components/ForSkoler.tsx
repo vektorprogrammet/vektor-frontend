@@ -1,6 +1,6 @@
-import PageTitleCard from "./PageTitleCard";
-import PageParagraph from "./PageSection";
 import BorderContentCard from "./BorderContentCard";
+import PageParagraph from "./PageSection";
+import PageTitleCard from "./PageTitleCard";
 
 const ForSkoler = (): JSX.Element => {
   return (

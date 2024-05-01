@@ -8,6 +8,7 @@ const Member = ({ name, role, image }: TeamMember): JSX.Element => {
   return (
     <div className="justify-between content-center max-w-6xl">
       <img
+        alt={`Bilde av ${name}`}
         src={image}
         className="h-32 mt-6 rounded-full mx-auto mb-2 grayscale"
       />

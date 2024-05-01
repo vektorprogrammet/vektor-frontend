@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
 
-import { fetchServers, StagingServerAPIResponse } from "./FetchUtils";
+import { type StagingServerAPIResponse, fetchServers } from "./FetchUtils";
 
 import "../../../../App.css";
 
 const ServerOverview = (): JSX.Element => {
   const [servers, setServers] = useState<[StagingServerAPIResponse]>();
-  const [rows, setRows] = useState<Array<Boolean>>([]);
+  const [rows, setRows] = useState<Array<boolean>>([]);
 
   useEffect(() => {
     async function getServers() {
@@ -47,7 +47,9 @@ const ServerOverview = (): JSX.Element => {
                     rowsCopy[index] = rowsCopy[index] === 0 ? 1 : 0;
                     setRows(rowsCopy);
                   }}
-                  className={`cursor-pointer bg-gray-900 hover:bg-opacity-20 ${index % 2 === 1 ? "bg-opacity-10" : "bg-opacity-0"}`}
+                  className={`cursor-pointer bg-gray-900 hover:bg-opacity-20 ${
+                    index % 2 === 1 ? "bg-opacity-10" : "bg-opacity-0"
+                  }`}
                 >
                   <td className="p-5">{server.branch}</td>
                   <td className="p-5">

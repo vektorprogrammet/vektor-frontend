@@ -152,7 +152,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
 const Tabs = ({ divisions }: TabProps): JSX.Element => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("kontaktTab");
-    return storedTab ? parseInt(storedTab, 10) : 1;
+    return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
   const [openTab, setOpenTab] = React.useState(initialTabState);
   useEffect(() => {
@@ -164,8 +164,8 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
         {divisions.map((data) => {
           const chosenStyle =
             openTab === data.number
-              ? `border-t-gray-200 border-l-gray-200 border-r-gray-200 border-b-white text-vektor-darblue z-50`
-              : `text-vektor-darblue z-50`;
+              ? "border-t-gray-200 border-l-gray-200 border-r-gray-200 border-b-white text-vektor-darblue z-50"
+              : "text-vektor-darblue z-50";
           return (
             <div
               className="flex-auto text-center border-gray-200 border-b-2 -mb-[2px]"

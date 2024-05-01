@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
+import Navbar from "./Navbar";
 
 const Skoler = (): JSX.Element => {
   const select = ["Aktive Skoler", "Inaktive Skoler"];

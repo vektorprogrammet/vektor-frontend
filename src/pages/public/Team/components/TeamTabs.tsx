@@ -14,7 +14,9 @@ interface DivisionList {
 const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${open ? "block" : "hidden"}`}
+      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${
+        open ? "block" : "hidden"
+      }`}
     >
       <Division
         title="STYRET"
@@ -87,7 +89,9 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
 const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${open ? "block" : "hidden"}`}
+      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${
+        open ? "block" : "hidden"
+      }`}
     >
       <Division
         title="STYRET"
@@ -136,7 +140,9 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
 const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${open ? "block" : "hidden"}`}
+      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${
+        open ? "block" : "hidden"
+      }`}
     >
       <Division
         title="STYRET"
@@ -170,7 +176,9 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   const navigate = useNavigate();
   return (
     <div
-      className={`flex flex-row flex-col md:flex-row ${open ? "block" : "hidden"}`}
+      className={`flex flex-row flex-col md:flex-row ${
+        open ? "block" : "hidden"
+      }`}
     >
       <div className="flex-1 md:w-1/2 object-contain">
         <h1 className="text-gray-600 text-4xl font-bold ml-4 md:ml-10 dark:text-gray-200">
@@ -241,7 +249,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
 const Tabs = ({ divisions }: TabProps): JSX.Element => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
-    return storedTab ? parseInt(storedTab, 10) : 1;
+    return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
   const [openTab, setOpenTab] = React.useState(initialTabState);
   useEffect(() => {
@@ -265,7 +273,11 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
                     rounded-t-lg
                     pb-12
                     dark:hover:text-gray-800 transition duration-300 dark:hover:bg-gray-500
-                    ${openTab === data.number ? `text-vektor-darblue bg-white  tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2` : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`}`}
+                    ${
+                      openTab === data.number
+                        ? `text-vektor-darblue bg-white  tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2`
+                        : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`
+                    }`}
                   onClick={(e) => {
                     e.preventDefault();
                     setOpenTab(data.number);

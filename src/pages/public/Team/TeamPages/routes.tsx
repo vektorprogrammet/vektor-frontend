@@ -1,23 +1,23 @@
-import { AppRoute } from "App";
+import type { AppRoute } from "App";
 import Team from "../index";
 import Hovedstyret from "./Hovedstyret/Hovedstyret";
 import {
-  IT,
   Evaluering,
+  EvalueringRekrutteringProfileringAas,
+  IT,
   Okonomi,
   Profilering,
   Rekruttering,
+  RekrutteringBergen,
   Skolekoordinering,
+  SkolekoordineringAas,
+  SkolekoordineringBergen,
+  SosialtAas,
   Sponsor,
+  SponsorOkonomiAas,
   Styret,
   StyretAas,
-  SponsorOkonomiAas,
-  SkolekoordineringAas,
-  EvalueringRekrutteringProfileringAas,
-  SosialtAas,
   StyretBergen,
-  SkolekoordineringBergen,
-  RekrutteringBergen,
 } from "./index";
 
 // The route with the corresponding component to render in the route

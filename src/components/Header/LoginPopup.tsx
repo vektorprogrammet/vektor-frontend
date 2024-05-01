@@ -1,7 +1,8 @@
-import React, {
-  Dispatch,
-  MouseEventHandler,
-  SetStateAction,
+import type React from "react";
+import {
+  type Dispatch,
+  type MouseEventHandler,
+  type SetStateAction,
   useState,
 } from "react";
 

@@ -1,12 +1,12 @@
+import type { AppRoute } from "App";
+import Assistent from "pages/controlpanel/components/Assistent";
 import Kontrollpanel from "pages/controlpanel/components/Kontrollpanel";
-import { AppRoute } from "App";
 import Skoler from "pages/controlpanel/components/Skoler";
 import Teaminteresse from "pages/controlpanel/components/Teaminteresse";
-import Assistent from "pages/controlpanel/components/Assistent";
-import OpprettTeam from "./components/Team/OpprettTeam";
 import RegistrerSoker from "./components/RegistrerSoker/RegistrerSoker";
-import Teammedlemmer from "./components/Team/Teammedlemmer";
+import OpprettTeam from "./components/Team/OpprettTeam";
 import Team from "./components/Team/Team";
+import Teammedlemmer from "./components/Team/Teammedlemmer";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [

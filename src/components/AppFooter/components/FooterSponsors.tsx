@@ -1,4 +1,4 @@
-import getSponsors, { Sponsor } from "../../../api/Sponsor";
+import getSponsors, { type Sponsor } from "../../../api/Sponsor";
 
 const FooterSponsors = (): JSX.Element => {
   const sponsors: Array<Sponsor> = getSponsors();

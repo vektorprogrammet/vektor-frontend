@@ -60,7 +60,7 @@ const Team = (): JSX.Element => {
         <button
           type="button"
           className="login-buttons mt-6 text-black px-4 py-2 rounded-full duration-300 mb-4 bg-white hover:bg-slate-300"
-          onClick={() => navigate(`/kontrollpanel/opprett-team`)}
+          onClick={() => navigate("/kontrollpanel/opprett-team")}
         >
           + Opprett Team
         </button>

@@ -28,7 +28,9 @@ const SelectInput: React.FC<SelectProps> = ({ name, label, options }) => {
           Velg
         </option>
         {options.map((option) => (
-          <option value={option.id}>{option.name}</option>
+          <option key={option.name} value={option.id}>
+            {option.name}
+          </option>
         ))}
       </select>
     </div>
