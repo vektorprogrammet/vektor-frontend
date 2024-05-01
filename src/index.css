@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 /* width */
+body{
+  background-color: #E2F4FA;
+  overscroll-behavior: none;
+}
+
 body::-webkit-scrollbar {
   width: 15px;
 }
