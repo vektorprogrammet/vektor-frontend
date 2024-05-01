@@ -1,4 +1,3 @@
-import React from "react";
 import { DarkModeProvider } from "components/DarkModeProvider";
 import {
   Outlet,

@@ -1,6 +1,10 @@
 import React, { Dispatch, SetStateAction } from "react";
 
-const LoginButtons = ({ setVisible }: { setVisible: Dispatch<SetStateAction<boolean>> }) => {
+const LoginButtons = ({
+  setVisible,
+}: {
+  setVisible: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <div className="flex space-x-4">
       <button

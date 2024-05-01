@@ -3,8 +3,8 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import React, { useRef, useState } from "react";
 
 interface AccordionProps {
-  title: React.ReactNode
-  content: React.ReactNode
+  title: React.ReactNode;
+  content: React.ReactNode;
 }
 
 const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
@@ -29,7 +29,9 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         onClick={toggleAccordion}
         type="button"
       >
-        <h2 className="md:text-xl sm:text-lg pl-6 text-left w-full dark:text-gray-300">{title}</h2>
+        <h2 className="md:text-xl sm:text-lg pl-6 text-left w-full dark:text-gray-300">
+          {title}
+        </h2>
         <FontAwesomeIcon className="mr-4" icon={symbol} size="lg" />
       </button>
       <div
@@ -37,7 +39,9 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         style={{ height: `${height}` }}
         className="overflow-hidden duration-700 ease-in-out w-full"
       >
-        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto dark:text-gray-300">{content}</p>
+        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto dark:text-gray-300">
+          {content}
+        </p>
       </div>
     </div>
   );

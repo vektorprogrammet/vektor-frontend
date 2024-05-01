@@ -1,4 +1,3 @@
-import React from "react";
 import TeamTemplate from "../TeamTemplate";
 
 const Styret = (): JSX.Element => {

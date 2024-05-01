@@ -1,4 +1,3 @@
-import React from "react";
 import { AppRoute } from "App";
 import Assistenter from "./Assistenter";
 import ForForeldre from "./ForForeldre";

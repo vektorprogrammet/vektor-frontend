@@ -1,4 +1,3 @@
-import React from "react";
 import Kontrollpanel from "pages/controlpanel/components/Kontrollpanel";
 import { AppRoute } from "App";
 import Skoler from "pages/controlpanel/components/Skoler";
@@ -14,7 +13,11 @@ const routes: AppRoute[] = [
   { path: "", element: <Kontrollpanel />, name: "Kontrollpanel" },
   { path: "/kontrollpanel/team", element: <Team />, name: "Team" },
   { path: "/kontrollpanel/skoler", element: <Skoler />, name: "Skoler" },
-  { path: "/kontrollpanel/opprett-team", element: <OpprettTeam />, name: "Opprett nytt team" },
+  {
+    path: "/kontrollpanel/opprett-team",
+    element: <OpprettTeam />,
+    name: "Opprett nytt team",
+  },
   {
     path: "/kontrollpanel/teams/:id",
     element: <Teammedlemmer />,

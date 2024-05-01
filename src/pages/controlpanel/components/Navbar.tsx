@@ -1,12 +1,10 @@
-import React from "react";
-
 interface Props {
   select: Array<string>;
   selected: string;
   setSelected: (item: string) => void;
 }
 
-const Navbar:React.FC<Props> = ({ select, selected, setSelected }) => {
+const Navbar: React.FC<Props> = ({ select, selected, setSelected }) => {
   return (
     <>
       {select.map((item: string) => (
@@ -16,7 +14,7 @@ const Navbar:React.FC<Props> = ({ select, selected, setSelected }) => {
           onClick={() => setSelected(item)}
           type="button"
         >
-          { item }
+          {item}
         </button>
       ))}
     </>
