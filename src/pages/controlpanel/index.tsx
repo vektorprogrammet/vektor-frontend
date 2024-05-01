@@ -7,7 +7,7 @@ const ControlPanel = (): JSX.Element => {
   return (
     <div className="bg-gray-100 flex flex-row">
       <SideBar />
-      <RemoveScroll className="w-full h-screen overflow-scroll">
+      <RemoveScroll className="w-full h-screen overflow-scroll ">
         <Outlet />
       </RemoveScroll>
     </div>

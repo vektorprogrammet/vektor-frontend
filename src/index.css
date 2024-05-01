@@ -3,19 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 /* width */
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 15px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: #313131;
   border-left: 1.5px solid #4e4e4e;
   border-right: 1.5px solid #4e4e4e;
 }
 
 /* Handle */
- ::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   border: 4px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
   border-radius: 9999px;
