@@ -17,7 +17,7 @@ const AppHeader = (): JSX.Element => {
   const linkElements = routes.map((route) => (
     <NavLink
       key={route.path}
-      className="header-link mobile-link"
+      className="md:text-gray-600 md:hover:text-blue-400 md:dark:text-white p-1 font-semibold text-nowrap"
       to={route.path ?? ""}
       style={({ isActive }) => (isActive ? activeStyle : {})}
     >
@@ -27,8 +27,8 @@ const AppHeader = (): JSX.Element => {
 
   return (
     <nav className="md:sticky top-0 shadow-sm z-50 bg-vektor-lightblue">
-      <div className="hidden md:flex mx-auto p-3 space-x-6 items-center lg:px-8 w-full">
-        <div className="w-1/5 justify-center flex">
+      <div className="hidden md:flex p-3 justify-between lg:px-8 w-full">
+        <div className="w-fit justify-center flex">
           <Link to="/">
             <img
               src="/images/vektor-logo.svg"
@@ -42,17 +42,15 @@ const AppHeader = (): JSX.Element => {
             />
           </Link>
         </div>
-        <div className="flex flex-grow justify-evenly justify-self-center m-auto items-center w-2/5">
+        <div className="flex justify-center items-center gap-8 w-full">
           {linkElements}
         </div>
-        <div className="flex w-1/5 justify-center">
+        <div className="flex w-fit justify-center">
           {isLoggedIn ? (
             <UserAvatar />
           ) : (
             <LoginButtons setVisible={setLoginPopupVisible} />
           )}
-        </div>
-        <div>
           {loginPopupVisible ? (
             <LoginPopup setVisible={setLoginPopupVisible} />
           ) : null}
