@@ -26,7 +26,7 @@ const AppHeader = (): JSX.Element => {
   ));
 
   return (
-    <nav className="md:sticky top-0  z-5 bg-[rgba(226,244,250,0.9)] backdrop-blur-sm">
+    <nav className="md:sticky top-0  z-50 bg-[rgba(226,244,250,0.9)] backdrop-blur-sm">
       <div className="hidden md:flex p-1 justify-between lg:px-8 w-full">
         <div className="w-fit justify-center flex">
           <Link to="/">
