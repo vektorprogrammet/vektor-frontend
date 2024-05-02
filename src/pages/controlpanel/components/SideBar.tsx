@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
-  BrukereIcon,
   AssistentIcon,
+  BrukereIcon,
   OpptakIcon,
   OpptaksstatistikkIcon,
   SkoleIcon,
@@ -52,6 +51,7 @@ const SideBar = (): JSX.Element => {
     <div className="self-center min-w-min h-fit bg-vektor-kontrollblue ml-2 rounded-3xl flex flex-col items-center justify-start">
       <Link to="/" className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16">
         <img
+          alt="Vektor logo"
           src="/images/vektor-logo-circle.svg"
           className="w-5/6 h-5/6 object-contain"
         />

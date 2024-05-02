@@ -1,11 +1,9 @@
-import React from "react";
-
 interface Props {
   title: string;
   text: string;
   imgPath: URL;
   alt: string;
-  link?:{
+  link?: {
     text: string;
     path: URL;
   };

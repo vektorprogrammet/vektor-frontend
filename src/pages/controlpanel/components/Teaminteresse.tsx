@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
+import Navbar from "./Navbar";
 
 const Teaminteresse = (): JSX.Element => {
-  const select = ["IT", "Evaluering", "Rekruttering", "Profilering", "Skolekoordinering", "Sponsor", "Økonomi"];
+  const select = [
+    "IT",
+    "Evaluering",
+    "Rekruttering",
+    "Profilering",
+    "Skolekoordinering",
+    "Sponsor",
+    "Økonomi",
+  ];
   const [selected, setSelected] = useState<string>(select[0]);
 
   interface Soker {
@@ -53,23 +61,53 @@ const Teaminteresse = (): JSX.Element => {
       <div className="pt-10 mt-50 grid-rows-2 grid-cols-2 flex flex-col items-center">
         <h1 className="text-2xl row-start-1 row-end-1">Teaminteresse</h1>
         <div className="flex flex-wrap">
-          <Navbar select={select} selected={selected} setSelected={setSelected} />
+          <Navbar
+            select={select}
+            selected={selected}
+            setSelected={setSelected}
+          />
         </div>
         {(selected === select[0] && (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        )) || (selected === select[1] && (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
-        )) || (selected === select[2] && (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        )) || (selected === select[3] && (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
-        )) || (selected === select[4] && (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        )) || (selected === select[5] && (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example2} />
-        )) || (
-          <CreateTable header={["Søkere", "Epost", "Telefon"]} content={example1} />
-        )}
+          <CreateTable
+            header={["Søkere", "Epost", "Telefon"]}
+            content={example1}
+          />
+        )) ||
+          (selected === select[1] && (
+            <CreateTable
+              header={["Søkere", "Epost", "Telefon"]}
+              content={example2}
+            />
+          )) ||
+          (selected === select[2] && (
+            <CreateTable
+              header={["Søkere", "Epost", "Telefon"]}
+              content={example1}
+            />
+          )) ||
+          (selected === select[3] && (
+            <CreateTable
+              header={["Søkere", "Epost", "Telefon"]}
+              content={example2}
+            />
+          )) ||
+          (selected === select[4] && (
+            <CreateTable
+              header={["Søkere", "Epost", "Telefon"]}
+              content={example1}
+            />
+          )) ||
+          (selected === select[5] && (
+            <CreateTable
+              header={["Søkere", "Epost", "Telefon"]}
+              content={example2}
+            />
+          )) || (
+            <CreateTable
+              header={["Søkere", "Epost", "Telefon"]}
+              content={example1}
+            />
+          )}
       </div>
     </div>
   );

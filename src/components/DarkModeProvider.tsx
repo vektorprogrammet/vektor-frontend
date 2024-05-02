@@ -8,7 +8,9 @@ export const DarkModeContext = React.createContext({
 });
 
 export const DarkModeProvider = (props: { children: JSX.Element }) => {
-  const [darkMode, setDarkModeState] = useState(localStorage.getItem("darkMode") === "dark");
+  const [darkMode, setDarkModeState] = useState(
+    localStorage.getItem("darkMode") === "dark",
+  );
   const { children } = props;
 
   const setDarkMode = (newDarkMode: boolean) => {
@@ -20,7 +22,10 @@ export const DarkModeProvider = (props: { children: JSX.Element }) => {
     setDarkModeState(newDarkMode);
   };
 
-  const providerValue = useMemo(() => ({ darkMode, setDarkMode }), [darkMode]);
+  const providerValue = useMemo(
+    () => ({ darkMode, setDarkMode }),
+    [darkMode, setDarkMode],
+  );
 
   // Effect called on first render, and whenever darkMode changes
   // Tailwind has classes triggered by the "dark" class on parent elements

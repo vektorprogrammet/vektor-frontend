@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
-import { Assistenter, Vikarer } from "./Interfaces";
+import type { Assistenter, Vikarer } from "./Interfaces";
+import Navbar from "./Navbar";
 
 const Assistent = (): JSX.Element => {
   const select = ["Assistenter", "Vikarer"];
@@ -54,10 +54,40 @@ const Assistent = (): JSX.Element => {
         <Navbar select={select} selected={selected} setSelected={setSelected} />
       </div>
       {(selected === select[0] && (
-        <CreateTable header={["Navn", "Skole", "E-post", "Semester", "Avdeling", "Bolk", "Dag"]} content={assistenter} />
-      )) || (selected === select[1] && (
-        <CreateTable header={["Navn", "Tlf", "E-post", "Linje", "År", "Språk", "M", "T", "O", "T", "F", "Bolk", "Poeng", "Passende"]} content={vikarer} />
-      ))}
+        <CreateTable
+          header={[
+            "Navn",
+            "Skole",
+            "E-post",
+            "Semester",
+            "Avdeling",
+            "Bolk",
+            "Dag",
+          ]}
+          content={assistenter}
+        />
+      )) ||
+        (selected === select[1] && (
+          <CreateTable
+            header={[
+              "Navn",
+              "Tlf",
+              "E-post",
+              "Linje",
+              "År",
+              "Språk",
+              "M",
+              "T",
+              "O",
+              "T",
+              "F",
+              "Bolk",
+              "Poeng",
+              "Passende",
+            ]}
+            content={vikarer}
+          />
+        ))}
     </div>
   );
 };

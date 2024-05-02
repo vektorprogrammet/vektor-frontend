@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
-import MobileMenu from "./MobileMenu";
-import LoginPopup from "./LoginPopup";
-import UserAvatar from "./UserAvatar";
 import LoginButtons from "./LoginButtons";
+import LoginPopup from "./LoginPopup";
+import MobileMenu from "./MobileMenu";
+import UserAvatar from "./UserAvatar";
 
 const activeStyle: React.CSSProperties = {
   fontWeight: "bold",

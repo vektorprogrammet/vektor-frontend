@@ -1,4 +1,3 @@
-
 .footerLinks {
   display: grid;
   grid-template-columns: [first] 40px [line] auto [end];
@@ -7,10 +6,10 @@
   column-gap: 10px;
 }
 
-.footerLinks>* {
+.footerLinks > * {
   align-self: center;
 }
 
-.footerLinks>.icon {
+.footerLinks > .icon {
   justify-self: center;
 }
