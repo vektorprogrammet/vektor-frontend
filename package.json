@@ -55,7 +55,6 @@
     "vite": "^5.2.10",
     "web-vitals": "^3.0.0"
   },
-
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
     "@testing-library/dom": "^10.0.0",
@@ -64,7 +63,6 @@
     "@types/jest": "^29.5.12",
     "@vitejs/plugin-react": "^4.2.1",
     "cypress": "12.8.1",
-    "vite": "^3.1.0",
     "vitest": "^1.5.1"
   }
 }
