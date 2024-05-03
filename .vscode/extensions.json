@@ -1,0 +1,36 @@
+{
+  "recommendations": [
+    // Conventional Commits
+    // Helps with writing commit messages
+    "vivaxy.vscode-conventional-commits",
+    // Github Actions
+    "github.vscode-github-actions",
+    // Github Copilot
+    "GitHub.copilot",
+    // GitHub Pull Requests and Issues
+    "GitHub.vscode-pull-request-github",
+    // GitLens
+    "eamodio.gitlens",
+    // Live Share
+    "ms-vsliveshare.vsliveshare",
+    // Vitest
+    "vitest.explorer",
+    // YAML
+    "redhat.vscode-yaml",
+    // Material Icon Theme
+    "PKief.material-icon-theme",
+
+    // Biome
+    // for linting and formatting
+    "biomejs.biome",
+    // Pretty TypeScript Errors
+    "YoavBls.pretty-ts-errors",
+    // Tailwind CSS IntelliSense
+    "bradlc.vscode-tailwindcss",
+    // npm Intellisense
+    "christian-kohler.npm-intellisense",
+
+    // Playwright Test for VS Code
+    "ms-playwright.playwright"
+  ]
+}
