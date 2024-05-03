@@ -1,3 +1,8 @@
+---
+name: Pull Request
+description: Create a pull request
+title: VF-XXX <issue-title>
+---
 ### Describe your changes 📖
 
 <text here>
