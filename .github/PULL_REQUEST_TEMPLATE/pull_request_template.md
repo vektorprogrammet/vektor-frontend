@@ -5,7 +5,7 @@ title: VF-XXX <issue-title>
 ---
 ### Describe your changes 📖
 
-<!-- text here -->
+<!-- What are your changes, is there any reasons for your particular implementation? -->
 
 ### Linear ticket: 🔖
 
