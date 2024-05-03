@@ -1,7 +1,6 @@
-import React from "react";
 import AppFooter from "components/AppFooter/AppFooter";
-import { Outlet, ScrollRestoration, Link } from "react-router-dom";
 import AppHeader from "components/Header/AppHeader";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 import img from "/images/mainpage/vektor-forsidebilde.png";
 import hoved1 from "/images/mainpage/hoved1.png";
@@ -69,7 +68,7 @@ const MainPage = (): JSX.Element => {
                 <div className="mt-10 flex md:block justify-center">
                   <p className="text-xl text-left w-96">- sender studenter til ungdomsskoler for å hjelpe til som lærerens assistent i matematikkundervisningen</p>
                 </div>
-                <button className=" bg-vektor-button-green text-white p-2 pl-4 pr-4 rounded-[3px] mt-4 text-[14px]">LES MER OG BLI ASSISTENT</button>
+                <button type="button" className=" bg-vektor-button-green text-white p-2 pl-4 pr-4 rounded-[3px] mt-4 text-[14px]">LES MER OG BLI ASSISTENT</button>
             </div>
           </div> {/*Upper end*/}
 
