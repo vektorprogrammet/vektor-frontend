@@ -2,17 +2,17 @@ import AppFooter from "components/AppFooter/AppFooter";
 import AppHeader from "components/Header/AppHeader";
 import { Outlet, ScrollRestoration, Link } from "react-router-dom";
 
-import img from "/images/mainpage/vektor-forsidebilde.png";
-import hoved1 from "/images/mainpage/hoved1.png";
-import hoved2 from "/images/mainpage/hoved2.png";
-import normal1 from "/images/mainpage/normal1.png";
-import normal2 from "/images/mainpage/normal2.jpeg";
-import normal3 from "/images/mainpage/normal3.jpeg";
-import normal4 from "/images/mainpage/normal4.png";
-import normal5 from "/images/mainpage/normal5.png";
-import normal6 from "/images/mainpage/normal6.png";
-import normal7 from "/images/mainpage/normal7.png";
-import normal8 from "/images/mainpage/normal8.png";
+import img from "/images/mainPage/vektor-forsidebilde.png";
+import hoved1 from "/images/mainPage/hoved1.png";
+import hoved2 from "/images/mainPage/hoved2.png";
+import normal1 from "/images/mainPage/normal1.png";
+import normal2 from "/images/mainPage/normal2.jpeg";
+import normal3 from "/images/mainPage/normal3.jpeg";
+import normal4 from "/images/mainPage/normal4.png";
+import normal5 from "/images/mainPage/normal5.png";
+import normal6 from "/images/mainPage/normal6.png";
+import normal7 from "/images/mainPage/normal7.png";
+import normal8 from "/images/mainPage/normal8.png";
 
 interface MainPageProps {
   // Props
