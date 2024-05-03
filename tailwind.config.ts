@@ -38,7 +38,7 @@ export default {
           secondary: "#023874",
           "secondary-focus": "#001854",
           "secondary-content": "#ffffff",
-          accent: "#37cdbe",
+          accent: "#E2F4FA",
           "accent-focus": "#2aa79b",
           "accent-content": "#ffffff",
           neutral: "#3d4451",

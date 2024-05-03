@@ -1,6 +1,9 @@
 import AppFooter from "components/AppFooter/AppFooter";
 import AppHeader from "components/Header/AppHeader";
-import { Outlet, ScrollRestoration, Link } from "react-router-dom";
+import { Outlet, ScrollRestoration, Link} from "react-router-dom";
+import "/src/index.css";
+import CountUp from "react-countup";
+import VisibilitySensor from 'react-visibility-sensor';
 
 import img from "/images/mainPage/vektor-forsidebilde.png";
 import hoved1 from "/images/mainPage/hoved1.png";
@@ -83,33 +86,36 @@ const MainPage = (): JSX.Element => {
               LES MER OG BLI ASSISTENT
             </button>
           </div>
-        </div>{" "}
+        </div>
         {/*Upper end*/}
-        <div className="md:flex text-center w-full">
-          {" "}
+        <div className="info-background flex flex-row text-center w-full justify-center gap-40 pt-72 pb-72 mt-20 mb-20">
           {/*Middle start*/}
           {cards.map(({ number, title, text, route }) => (
-            <div key={title} className="w-full md:w-1/2 mt-20">
-              <p className="text-2xl">
-                <span className="font-bold text-4xl">{number}</span>
-                <br />
-                {title}
-              </p>
-              <p className="text-left text-lg mt-4 w-96 mx-auto">
+            <div key={title} className="flex flex-col gap-5 text-accent">
+              <div>
+                <VisibilitySensor partialVisibility>
+                  {({ isVisible }: { isVisible: boolean }) => (
+                    <div className="font-bold text-4xl">
+                      {isVisible ? <CountUp end={number} duration={4} separator=""/> : 0}
+                    </div>
+                  )}
+                </VisibilitySensor>
+                <p className="text-2xl">
+                  {title}
+                </p>
+              </div>
+              <p className="text-lg max-w-96">
                 {text}
-                <br className="mb-3" />
-                <Link to={route.pathname}>
-                  <p className="underline text-blue-600 hover:text-blue-800">
-                    {route.text}
-                  </p>
-                </Link>
               </p>
+              <div>
+                <Link className="btn btn-accent text-secondary w-fit" to={route.pathname}>
+                  {route.text}
+                </Link>
+              </div>
             </div>
           ))}
-          <hr />
-        </div>{" "}
+        </div>
         {/*Middle end*/}
-        <hr className="w-3/4 mt-12 mx-auto" />
         <div className="text-center mt-16 font-bold">
           <h1 className="text-4xl">Hovedsponsorer</h1>
         </div>
