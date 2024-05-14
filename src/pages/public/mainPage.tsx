@@ -3,17 +3,18 @@ import CountUp from "react-countup";
 import VisibilitySensor from 'react-visibility-sensor';
 import { Link } from "react-router-dom";
 
-import img from "/images/mainPage/vektor-forsidebilde.png";
-import hoved1 from "/images/mainPage/hoved1.png";
-import hoved2 from "/images/mainPage/hoved2.png";
-import normal1 from "/images/mainPage/normal1.png";
-import normal2 from "/images/mainPage/normal2.jpeg";
-import normal3 from "/images/mainPage/normal3.jpeg";
-import normal4 from "/images/mainPage/normal4.png";
-import normal5 from "/images/mainPage/normal5.png";
-import normal6 from "/images/mainPage/normal6.png";
-import normal7 from "/images/mainPage/normal7.png";
-import normal8 from "/images/mainPage/normal8.png";
+import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
+import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
+import KSBergen from "/images/mainPage/sponsor/KSBergen.png";
+import SparebankstiftelsenDNB from "/images/mainPage/sponsor/SparebankstiftelsenDNB.png";
+import Tekna from "/images/mainPage/sponsor/Tekna.png";
+import UiB from "/images/mainPage/sponsor/UIB.png";
+import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
+import NTNUIE from "/images/mainPage/sponsor/NTNUIE.jpeg";
+import NTNUIV from "/images/mainPage/sponsor/NTNUIV.jpeg";
+import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
+import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
+
 
 interface MainPageProps {
   // Props
@@ -61,7 +62,7 @@ const mainPage = (): JSX.Element => {
           </h1>
           <img
             className="pt-10 md:pt-0 mx-auto my-auto md:ml-auto md:mr-0 h-full"
-            src={img}
+            src={vektorForsidebilde}
             alt="Vektorprogrammet"
           />
         </div>
@@ -114,12 +115,14 @@ const mainPage = (): JSX.Element => {
       </div>
       <div className="flex mx-96 mt-12">
         <div className="w-1/2 h-28">
-          <img className="h-full m-auto " src={hoved1} alt="Abelprisen" />
+          <img className="h-full m-auto" 
+            src={Abelprisen} 
+            alt="Abelprisen" />
         </div>
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto"
-            src={hoved2}
+            src={SparebankstiftelsenDNB}
             alt="Sparebankstiftelsen DNB"
           />
         </div>
@@ -129,12 +132,14 @@ const mainPage = (): JSX.Element => {
       </div>
       <div className="flex mx-96 mt-12">
         <div className="w-1/2 h-28">
-          <img className="h-full m-auto p-4" src={normal1} alt="Tekna" />
+          <img className="h-full m-auto p-4" 
+            src={Tekna} 
+            alt="Tekna" />
         </div>
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto p-4"
-            src={normal2}
+            src={NTNUIV}
             alt="NTNU - Fakultet for ingeniørvitenskap"
           />
         </div>
@@ -143,14 +148,14 @@ const mainPage = (): JSX.Element => {
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto p-4"
-            src={normal3}
+            src={NTNUIE}
             alt="NTNU - Fakultet for informasjonsteknologi og elektronikk"
           />
         </div>
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto p-4"
-            src={normal4}
+            src={Samarbeidsforum}
             alt="Samarbeidsforum"
           />
         </div>
@@ -159,26 +164,29 @@ const mainPage = (): JSX.Element => {
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto p-4"
-            src={normal5}
+            src={UiB}
             alt="Universitetet i Bergen - Det matematisk-naturvitenskapelige fakultet"
           />
         </div>
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto p-4"
-            src={normal6}
+            src={Matematikksenteret}
             alt="Matematikksenteret"
           />
         </div>
       </div>
       <div className="flex mx-96 mt-12">
         <div className="w-1/2 h-28">
-          <img className="h-full m-auto p-4" src={normal7} alt="VisionTech" />
+          <img 
+            className="h-full m-auto p-4" 
+            src={VisionTech} 
+            alt="VisionTech" />
         </div>
         <div className="w-1/2 h-28">
           <img
             className="h-full m-auto p-4"
-            src={normal8}
+            src={KSBergen}
             alt="Kulturstyret Bergen"
           />
         </div>
