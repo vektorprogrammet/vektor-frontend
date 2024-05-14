@@ -110,85 +110,87 @@ const mainPage = (): JSX.Element => {
         ))}
       </div>
       {/*Middle end*/}
-      <div className="text-center mt-16 font-bold">
-        <h1 className="text-4xl">Hovedsponsorer</h1>
-      </div>
-      <div className="flex mx-96 mt-12">
-        <div className="w-1/2 h-28">
-          <img className="h-full m-auto" 
-            src={Abelprisen} 
-            alt="Abelprisen" />
+      <div className="mt-32 mb-32">
+        <div className="text-center font-bold">
+          <h1 className="text-4xl">Hovedsponsorer</h1>
         </div>
-        <div className="w-1/2 h-28">
-          <img
-            className="h-full m-auto"
-            src={SparebankstiftelsenDNB}
-            alt="Sparebankstiftelsen DNB"
-          />
+        <div className="flex mx-96 mt-12">
+          <div className="w-1/2 h-28">
+            <img className="h-full m-auto" 
+              src={Abelprisen} 
+              alt="Abelprisen" />
+          </div>
+          <div className="w-1/2 h-28">
+            <img
+              className="h-full m-auto"
+              src={SparebankstiftelsenDNB}
+              alt="Sparebankstiftelsen DNB"
+            />
+          </div>
         </div>
-      </div>
-      <div className="text-center mt-16 font-bold">
-        <h1 className="text-4xl">Sponsorer og samarbeidspartnere</h1>
-      </div>
-      <div className="flex mx-96 mt-12">
-        <div className="w-1/2 h-28">
-          <img className="h-full m-auto p-4" 
-            src={Tekna} 
-            alt="Tekna" />
+        <div className="text-center mt-32 font-bold">
+          <h1 className="text-4xl">Sponsorer og samarbeidspartnere</h1>
         </div>
-        <div className="w-1/2 h-28">
-          <img
-            className="m-auto p-4"
-            src={NTNUIV}
-            alt="NTNU - Fakultet for ingeniørvitenskap"
-          />
+        <div className="flex mx-96 mt-12">
+          <div className="w-1/2 h-28">
+            <img className="h-full m-auto p-4" 
+              src={Tekna} 
+              alt="Tekna" />
+          </div>
+          <div className="w-1/2 h-28">
+            <img
+              className="m-auto p-4"
+              src={NTNUIV}
+              alt="NTNU - Fakultet for ingeniørvitenskap"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex mx-96 mt-12">
-        <div className="w-1/2 h-28">
-          <img
-            className=" m-auto p-4"
-            src={NTNUIE}
-            alt="NTNU - Fakultet for informasjonsteknologi og elektronikk"
-          />
+        <div className="flex mx-96 mt-12">
+          <div className="w-1/2 h-28">
+            <img
+              className=" m-auto p-4"
+              src={NTNUIE}
+              alt="NTNU - Fakultet for informasjonsteknologi og elektronikk"
+            />
+          </div>
+          <div className="w-1/2 h-28">
+            <img
+              className="h-full m-auto p-4"
+              src={Samarbeidsforum}
+              alt="Samarbeidsforum"
+            />
+          </div>
         </div>
-        <div className="w-1/2 h-28">
-          <img
-            className="h-full m-auto p-4"
-            src={Samarbeidsforum}
-            alt="Samarbeidsforum"
-          />
+        <div className="flex mx-96 mt-12">
+          <div className="w-1/2 h-28">
+            <img
+              className="h-full m-auto p-4"
+              src={UiB}
+              alt="Universitetet i Bergen - Det matematisk-naturvitenskapelige fakultet"
+            />
+          </div>
+          <div className="w-1/2 h-28">
+            <img
+              className="h-full m-auto p-4"
+              src={Matematikksenteret}
+              alt="Matematikksenteret"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex mx-96 mt-12">
-        <div className="w-1/2 h-28">
-          <img
-            className="h-full m-auto p-4"
-            src={UiB}
-            alt="Universitetet i Bergen - Det matematisk-naturvitenskapelige fakultet"
-          />
-        </div>
-        <div className="w-1/2 h-28">
-          <img
-            className="h-full m-auto p-4"
-            src={Matematikksenteret}
-            alt="Matematikksenteret"
-          />
-        </div>
-      </div>
-      <div className="flex mx-96 mt-12">
-        <div className="w-1/2 h-28">
-          <img 
-            className="h-full m-auto p-4" 
-            src={VisionTech} 
-            alt="VisionTech" />
-        </div>
-        <div className="w-1/2 h-28">
-          <img
-            className="h-full m-auto p-4"
-            src={KSBergen}
-            alt="Kulturstyret Bergen"
-          />
+        <div className="flex mx-96 mt-12">
+          <div className="w-1/2 h-28">
+            <img 
+              className="h-full m-auto p-4" 
+              src={VisionTech} 
+              alt="VisionTech" />
+          </div>
+          <div className="w-1/2 h-28">
+            <img
+              className="h-full m-auto p-4"
+              src={KSBergen}
+              alt="Kulturstyret Bergen"
+            />
+          </div>
         </div>
       </div>
     </main>
