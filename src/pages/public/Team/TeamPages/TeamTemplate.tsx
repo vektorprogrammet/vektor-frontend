@@ -1,4 +1,3 @@
-import React from "react";
 import Member from "./Member";
 
 interface Team {
@@ -14,17 +13,14 @@ interface Members {
   role: string;
 }
 
-const TeamTemplate = ({
-  name, mail, text, members,
-}: Team): JSX.Element => {
+const TeamTemplate = ({ name, mail, text, members }: Team): JSX.Element => {
   return (
     <div>
       <h1 className="mt-10 text-vektor-darblue text-4xl text-center font-bold">
         {name}
       </h1>
       <div className="text-vektor-darblue text-center mt-5 text-base font-bold">
-        Epost:
-        {" "}
+        Epost:{" "}
         <a
           className="text-sm overflow-hidden hover:underline break-all text-base font-normal"
           href={`mailto:${mail}`}

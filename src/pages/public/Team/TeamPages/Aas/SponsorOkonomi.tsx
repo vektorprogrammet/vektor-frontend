@@ -1,4 +1,3 @@
-import React from "react";
 import TeamTemplate from "../TeamTemplate";
 
 const SponsorOkonomi = (): JSX.Element => {
@@ -8,15 +7,38 @@ const SponsorOkonomi = (): JSX.Element => {
         name="Sponsor og økonomi"
         mail="sponsor.nmbu@vektorprogrammet.no"
         text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås."
-        members={[{ name: "Vasilii Anderson", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/644435c0abfa7.jpeg", role: "Leder" },
-          { name: "Elinor Smedstad", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/636c0467baba3.jpeg", role: "Medlem" },
-          { name: "Kamilla Kleppang", image: "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/636c058bdf4de.jpeg", role: "Medlem" },
-          { name: "Iftikhar Amiri", image: "https://vektorprogrammet.no/media/cache/profile_img/images/defaultProfile.png", role: "Medlem" }]}
+        members={[
+          {
+            name: "Vasilii Anderson",
+            image:
+              "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/644435c0abfa7.jpeg",
+            role: "Leder",
+          },
+          {
+            name: "Elinor Smedstad",
+            image:
+              "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/636c0467baba3.jpeg",
+            role: "Medlem",
+          },
+          {
+            name: "Kamilla Kleppang",
+            image:
+              "https://vektorprogrammet.no/media/cache/profile_img/images/Profile%20photos/636c058bdf4de.jpeg",
+            role: "Medlem",
+          },
+          {
+            name: "Iftikhar Amiri",
+            image:
+              "https://vektorprogrammet.no/media/cache/profile_img/images/defaultProfile.png",
+            role: "Medlem",
+          },
+        ]}
       />
 
       <div className="font-sans text-lg text-black text-left m-5 mt-20">
-        Teamet har ansvar for å holde oversikt over økonomien til Vektorprogrammet på Ås. I tillegg jobber de også med å skaffe sponsorer i løpet av semesteret ved å ta
-        kontakt med bedrifter i nærområdet.
+        Teamet har ansvar for å holde oversikt over økonomien til
+        Vektorprogrammet på Ås. I tillegg jobber de også med å skaffe sponsorer
+        i løpet av semesteret ved å ta kontakt med bedrifter i nærområdet.
       </div>
       <div className="m-3">
         <img

@@ -13,9 +13,9 @@ export async function fetchDiskUsage(): Promise<any> {
   return body;
 }
 
-export interface StagingServerAPIResponse{
-  branch: string,
-  domain: string,
-  repo: string,
-  url: string
+export interface StagingServerAPIResponse {
+  branch: string;
+  domain: string;
+  repo: string;
+  url: string;
 }

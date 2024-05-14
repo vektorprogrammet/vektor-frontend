@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinus,
   faPencil,
   faPlus,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import NyttUtlegg from "./NyttUtlegg";
 
 const Bekreftelse = () => {
@@ -44,18 +44,14 @@ const Utlegg: React.FC = () => {
         <td className="py-3 px-4 text-blue-600 hover:font-semibold">
           {u.status === "Til behandling" && (
             <>
-              Rediger
-              {" "}
-              <FontAwesomeIcon icon={faPencil} />
+              Rediger <FontAwesomeIcon icon={faPencil} />
             </>
           )}
         </td>
         <td className="py-3 px-4 text-rose-600 hover:font-semibold">
           {u.status === "Til behandling" && (
             <>
-              Slett
-              {" "}
-              <FontAwesomeIcon icon={faTrashCan} />
+              Slett <FontAwesomeIcon icon={faTrashCan} />
             </>
           )}
         </td>
@@ -137,9 +133,7 @@ const Utlegg: React.FC = () => {
           >
             {!showWindow || showConfirmation ? (
               <>
-                <FontAwesomeIcon icon={faPlus} />
-                {" "}
-                Nytt utlegg
+                <FontAwesomeIcon icon={faPlus} /> Nytt utlegg
               </>
             ) : (
               <>
@@ -173,8 +167,14 @@ const Utlegg: React.FC = () => {
                   Kvittering
                 </th>
                 <th className="w-3/12 py-3 px-6 bg-table-grey">Status</th>
-                <th className="w-1/12 py-3 px-4 bg-table-grey" aria-label="Empty Cell" />
-                <th className="w-1/12 py-3 px-4 bg-table-grey" aria-label="Empty Cell" />
+                <th
+                  className="w-1/12 py-3 px-4 bg-table-grey"
+                  aria-label="Empty Cell"
+                />
+                <th
+                  className="w-1/12 py-3 px-4 bg-table-grey"
+                  aria-label="Empty Cell"
+                />
               </tr>
             </thead>
             <tbody>{mapToTable(MineUtlegg)}</tbody>

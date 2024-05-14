@@ -46,9 +46,7 @@ export default (): ForForeldreContent => {
         \n
         Kursene blir vanligvis holdt i Realfagsbygget på NTNU Gløshaugen, med lett bespisning (kaffe, kaker, kjeks).`,
         image: {
-          url: new URL(
-            "https://vektorprogrammet.no/images/assistenter.jpg",
-          ),
+          url: new URL("https://vektorprogrammet.no/images/assistenter.jpg"),
           alt: "Under møte",
         },
       },

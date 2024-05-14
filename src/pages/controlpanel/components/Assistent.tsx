@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 import CreateTable from "./CreateTable";
-import { Assistenter, Vikarer } from "./Interfaces";
+import type { Assistenter, Vikarer } from "./Interfaces";
+import Navbar from "./Navbar";
 
 const Assistent = (): JSX.Element => {
   const select = ["Assistenter", "Vikarer"];
@@ -48,18 +48,46 @@ const Assistent = (): JSX.Element => {
   ];
 
   return (
-    <div className="w-full">
-      <div className="pt-10 mt-50 shadow grid-rows-2 grid-cols-2 flex flex-col items-center">
-        <h1 className="text-2xl row-start-1 row-end-1">Assistenter</h1>
-        <div className="flex flex-wrap">
-          <Navbar select={select} selected={selected} setSelected={setSelected} />
-        </div>
-        {(selected === select[0] && (
-          <CreateTable header={["Navn", "Skole", "E-post", "Semester", "Avdeling", "Bolk", "Dag"]} content={assistenter} />
-        )) || (selected === select[1] && (
-          <CreateTable header={["Navn", "Tlf", "E-post", "Linje", "År", "Språk", "M", "T", "O", "T", "F", "Bolk", "Poeng", "Passende"]} content={vikarer} />
-        ))}
+    <div className="h-[4000px] pt-10 mt-50 grid-rows-2 grid-cols-2 flex flex-col items-center">
+      <h1 className="text-2xl row-start-1 row-end-1">Assistenter</h1>
+      <div className="flex flex-wrap">
+        <Navbar select={select} selected={selected} setSelected={setSelected} />
       </div>
+      {(selected === select[0] && (
+        <CreateTable
+          header={[
+            "Navn",
+            "Skole",
+            "E-post",
+            "Semester",
+            "Avdeling",
+            "Bolk",
+            "Dag",
+          ]}
+          content={assistenter}
+        />
+      )) ||
+        (selected === select[1] && (
+          <CreateTable
+            header={[
+              "Navn",
+              "Tlf",
+              "E-post",
+              "Linje",
+              "År",
+              "Språk",
+              "M",
+              "T",
+              "O",
+              "T",
+              "F",
+              "Bolk",
+              "Poeng",
+              "Passende",
+            ]}
+            content={vikarer}
+          />
+        ))}
     </div>
   );
 };

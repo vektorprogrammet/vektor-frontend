@@ -1,7 +1,6 @@
-import React from "react";
-import PageTitleCard from "./PageTitleCard";
-import PageParagraph from "./PageSection";
 import BorderContentCard from "./BorderContentCard";
+import PageParagraph from "./PageSection";
+import PageTitleCard from "./PageTitleCard";
 
 const ForSkoler = (): JSX.Element => {
   return (
@@ -116,9 +115,7 @@ const ForSkoler = (): JSX.Element => {
                           className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
                           href={url}
                         >
-                          Kontakt
-                          {" "}
-                          {city}
+                          Kontakt {city}
                         </a>
                       </td>
                     </tr>
@@ -130,7 +127,8 @@ const ForSkoler = (): JSX.Element => {
               Har ikke Vektorprogrammet etablert seg i din by ennå?
             </h2>
             <p className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
-              Ta kontakt med hovedstyret@vektorprogrammet.no for å melde din interesse!
+              Ta kontakt med hovedstyret@vektorprogrammet.no for å melde din
+              interesse!
             </p>
           </div>
         </BorderContentCard>

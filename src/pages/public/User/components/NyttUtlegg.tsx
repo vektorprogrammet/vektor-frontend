@@ -1,15 +1,14 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/jsx-props-no-spreading */
 import {
   faCaretLeft,
   faCaretRight,
   faCheckToSlot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
+import type React from "react";
+import { useState } from "react";
+import { type SubmitHandler, useForm } from "react-hook-form";
+import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
 
 type Inputs = {
   amount: number;
@@ -58,7 +57,6 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
   // "data" må legges til i onSubmit for å sende data til backend når den er klar. const onSubmit: SubmitHandler<Inputs> = (data) => {
   const onSubmit: SubmitHandler<Inputs> = () => {
     // const formData = { ...data, date: dateValue?.startDate };
-
     // send to backend here..
     // console.log("Form submitted with the following data:", formData);
   };
@@ -75,8 +73,8 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
 
       case 2:
         if (
-          formState.errors.description
-          || !formState.dirtyFields.description
+          formState.errors.description ||
+          !formState.dirtyFields.description
         ) {
           setCurrentErrorMessage(
             "Beskrivelse må være lengre enn to bokstaver.",
@@ -96,9 +94,9 @@ const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
 
       case 4:
         if (
-          formState.errors.receipt
-          || file.name === "filename"
-          || !file.type.includes("image")
+          formState.errors.receipt ||
+          file.name === "filename" ||
+          !file.type.includes("image")
         ) {
           setCurrentErrorMessage("Kvittering må være et opplastet bilde.");
           return false;

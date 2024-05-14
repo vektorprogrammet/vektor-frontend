@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ProfileModalProps {
   imgUrl: string;
   name: string;
