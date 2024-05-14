@@ -20,17 +20,13 @@ const RegionTab = (): JSX.Element => {
 
   return (
     <div className="fixed right-12 top-6 flex h-12">
-      <button type="button" className={`login-buttons hover:bg-blue-900 text-white px-4 w-26 rounded-l-full ease-in duration-300 ${value === "Trondheim" ? "bg-blue-900" : "bg-blue-400"}`}>
-            {value}
-      </button>
-
-      <button onClick={() => handleChange("Trondheim")} type="button" className={`login-buttons hover:bg-blue-900 text-white px-4 w-26 rounded-l-full ease-in duration-300 ${value === "Trondheim" ? "bg-blue-900" : "bg-blue-400"}`}>
+      <button onClick={() => handleChange("Trondheim")} type="button" className={`login-buttons text-white px-4 w-26 rounded-l-full ease-in duration-300 ${value === "Trondheim" ? "bg-blue-900" : "bg-blue-400 hover:bg-blue-300"}`}>
             Trondheim
       </button>
-      <button onClick={() => handleChange("Bergen")} type="button" className={`login-buttons hover:bg-blue-900 text-white px-4 w-24 ease-in duration-300 ${value === "Bergen" ? "bg-blue-900" : "bg-blue-400"}`}>
+      <button onClick={() => handleChange("Bergen")} type="button" className={`login-buttons text-white px-4 w-24 ease-in duration-300 ${value === "Bergen" ? "bg-blue-900" : "bg-blue-400 hover:bg-blue-300"}`}>
             Bergen
       </button>
-      <button onClick={() => handleChange("Ås")} type="button" className={`login-buttons hover:bg-blue-900 text-white px-4 w-20 rounded-r-full ease-in duration-300 ${value === "Ås" ? "bg-blue-900" : "bg-blue-400"}`}>
+      <button onClick={() => handleChange("Ås")} type="button" className={`login-buttons text-white px-4 w-20 rounded-r-full ease-in duration-300 ${value === "Ås" ? "bg-blue-900" : "bg-blue-400 hover:bg-blue-300"}`}>
             Ås
       </button>
     </div>
