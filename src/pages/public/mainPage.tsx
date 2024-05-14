@@ -10,8 +10,8 @@ import SparebankstiftelsenDNB from "/images/mainPage/sponsor/Sparebankstiftelsen
 import Tekna from "/images/mainPage/sponsor/Tekna.png";
 import UiB from "/images/mainPage/sponsor/UIB.png";
 import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
-import NTNUIE from "/images/mainPage/sponsor/NTNUIE.jpeg";
-import NTNUIV from "/images/mainPage/sponsor/NTNUIV.jpeg";
+import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
+import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
 import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
 import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
 
@@ -138,7 +138,7 @@ const mainPage = (): JSX.Element => {
         </div>
         <div className="w-1/2 h-28">
           <img
-            className="h-full m-auto p-4"
+            className="m-auto p-4"
             src={NTNUIV}
             alt="NTNU - Fakultet for ingeniørvitenskap"
           />
@@ -147,7 +147,7 @@ const mainPage = (): JSX.Element => {
       <div className="flex mx-96 mt-12">
         <div className="w-1/2 h-28">
           <img
-            className="h-full m-auto p-4"
+            className=" m-auto p-4"
             src={NTNUIE}
             alt="NTNU - Fakultet for informasjonsteknologi og elektronikk"
           />
