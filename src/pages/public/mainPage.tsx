@@ -70,13 +70,13 @@ const mainPage = (): JSX.Element => {
           <h1 className="hidden md:block text-4xl font-bold mb-4">
             Vektorprogrammet
           </h1>
-          <div className="mt-10 flex md:block justify-center">
-            <p className="text-xl text-left w-96">
+          <div className="mt-6 mb-4 flex md:block justify-center">
+            <p className="text-xl text-left w-4/5">
               - sender studenter til ungdomsskoler for å hjelpe til som
               lærerens assistent i matematikkundervisningen
             </p>
           </div>
-          <button type="button" className="btn btn-primary text-white">
+          <button type="button" className="btn btn-success text-white">
             LES MER OG BLI ASSISTENT
           </button>
         </div>
