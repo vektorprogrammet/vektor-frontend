@@ -76,7 +76,7 @@ const mainPage = (): JSX.Element => {
               lærerens assistent i matematikkundervisningen
             </p>
           </div>
-          <button type="button" className="bg-vektor-button-green text-white p-2 pl-4 pr-4 rounded-[3px] mt-4 text-[14px]">
+          <button type="button" className="btn btn-primary text-white">
             LES MER OG BLI ASSISTENT
           </button>
         </div>
