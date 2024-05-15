@@ -275,7 +275,7 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
                     dark:hover:text-gray-800 transition duration-300 dark:hover:bg-gray-500
                     ${
                       openTab === data.number
-                        ? `text-vektor-darblue bg-white  tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2`
+                        ? `text-vektor-dablue bg-[#c7ecf8] tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2`
                         : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`
                     }`}
                   onClick={(e) => {
@@ -292,7 +292,7 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
             );
           })}
         </ul>
-        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
+        <div className="bg-[#c7ecf8] relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
           <TrondheimTab open={openTab === 1} />
           <AasTab open={openTab === 2} />
           <BergenTab open={openTab === 3} />

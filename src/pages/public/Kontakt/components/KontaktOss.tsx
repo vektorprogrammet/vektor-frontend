@@ -187,7 +187,7 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
           );
         })}
       </div>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5">
+      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
