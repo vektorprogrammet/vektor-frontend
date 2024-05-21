@@ -9,6 +9,7 @@ import UserAvatar from "./UserAvatar";
 
 const activeStyle: React.CSSProperties = {
   fontWeight: "bold",
+  color: "#023874",
 };
 
 const AppHeader = (): JSX.Element => {
@@ -18,7 +19,7 @@ const AppHeader = (): JSX.Element => {
   const linkElements = routes.map((route) => (
     <NavLink
       key={route.path}
-      className="md:text-gray-600 md:hover:text-blue-400 md:dark:text-white p-1 font-semibold text-nowrap"
+      className="md:text-gray-600 md:hover:text-black md:dark:text-white p-1 font-semibold text-nowrap"
       to={route.path ?? ""}
       style={({ isActive }) => (isActive ? activeStyle : {})}
     >

@@ -50,12 +50,6 @@ const routes = createBrowserRouter([
             path: "mine-soknader/:id",
             element: <MineSoknader />,
           },
-        ],
-      },
-      {
-        path: "",
-        element: <MainPage />,
-        children: [
           {
             path: "/utlegg",
             element: <Utlegg />,

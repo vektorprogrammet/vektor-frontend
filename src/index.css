@@ -26,3 +26,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 9999px;
   background-color: #6fceee;
 } 
+
+.info-background {
+  background: rgb(226,244,250);
+  background: linear-gradient(0deg, transparent 0%, #223c70 20%, #223c70 80%, transparent 100%);
+}
