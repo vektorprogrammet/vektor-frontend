@@ -6,7 +6,7 @@ interface Props {
 
 const BorderContentCard = ({ title, text, children }: Props): JSX.Element => {
   return (
-    <div className="text-center rounded border my-20 mx-auto md:p-6 sm:p-0">
+    <div className="text-center rounded border my-20 mx-auto md:p-6 sm:p-0 border-secondary">
       <div>
         <h1 className="px-3 pb-5 text-gray-600 text-3xl border-b-2 text-center font-bold mx-auto my-4 dark:text-gray-200">
           {title}

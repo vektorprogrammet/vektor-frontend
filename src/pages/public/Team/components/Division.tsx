@@ -19,11 +19,11 @@ const Division = ({
 }: Props): JSX.Element => {
   const navigate = useNavigate();
   return (
-    <div className="relative h-full content-center grow rounded bg-grey-light w-64 shadow-md border-2 place-items-center dark:bg-gray-600">
-      <div className="justify-between py-1 text-center border-b-2 text-blue-900 text-lg font-bold dark:text-blue-300">
+    <div className="relative h-full border-secondary content-center grow rounded bg-accent w-64 shadow-md border-2 place-items-center dark:bg-gray-600">
+      <div className="justify-between py-1 text-center border-b-2 border-secondary text-blue-900 text-lg font-bold dark:text-blue-300">
         {title}
       </div>
-      <div className="text-sm mt-2 bg-white p-2 rounded cursor-pointer hover:bg-grey-lighter pb-14 dark:bg-gray-600 dark:text-gray-300">
+      <div className="text-sm mt-2 bg-accent p-2 rounded cursor-pointer hover:bg-grey-lighter pb-14 dark:bg-gray-600 dark:text-gray-300">
         {text}
         <div className="space-y-1 pt-12">
           <div className="flex space-x-1 space-y-0 items-end">

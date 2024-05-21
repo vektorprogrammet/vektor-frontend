@@ -42,7 +42,7 @@ const Tabs = (): JSX.Element => {
           />
         ))}
       </div>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space">
+      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space">
         <ApplyReg cities={openTab} />
       </div>
     </div>
