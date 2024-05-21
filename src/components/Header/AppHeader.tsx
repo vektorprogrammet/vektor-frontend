@@ -16,7 +16,8 @@ const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
   const isLoggedIn = true;
-  const linkElements = routes.map((route) => (
+  const navRoutes = routes.filter(route => route.path);
+  const linkElements = navRoutes.map((route) => (
     <NavLink
       key={route.path}
       className="md:text-gray-600 md:hover:text-black md:dark:text-white p-1 font-semibold text-nowrap"
@@ -29,13 +30,13 @@ const AppHeader = (): JSX.Element => {
 
   return (
     <nav className="md:sticky top-0  z-50 bg-[rgba(226,244,250,0.9)] backdrop-blur-sm">
-      <div className="hidden md:flex p-1 justify-between lg:px-8 w-full">
+      <div className="hidden md:flex p-1 justify-center lg:px-8 w-full">
         <div className="w-fit justify-center flex">
           <Link to="/">
             <img
-              src="/images/vektor-logo.svg"
+              src="/images/vektor-logo-circle.svg"
               alt="vektorprogrammet logo"
-              className="h-16 lg:h-20 dark:hidden"
+              className="btn btn-lg btn-link dark:hidden"
             />
             <img
               src="/images/vektor-logo-darkmode.png"
@@ -44,7 +45,7 @@ const AppHeader = (): JSX.Element => {
             />
           </Link>
         </div>
-        <div className="flex justify-center items-center gap-8 w-full">
+        <div className="flex justify-center items-center gap-8 w-fit">
           {linkElements}
         </div>
         <div className="flex w-fit justify-center">
