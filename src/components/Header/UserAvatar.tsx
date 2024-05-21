@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 const UserAvatar = () => {
   return (
     <button tabIndex={0} className="dropdown dropdown-end" type="button">
-      <div className="btn btn-ghost btn-circle avatar">
+      <div className="btn btn-ghost btn-circle avatar bg-accent">
         <div className="w-full rounded-full border-solid border-2 border-gray-600">
           <img src="/images/team/IT-Tor.png" alt="profile avatar" />
         </div>
       </div>
-      <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-[#EDF8FC] text-[#313131] rounded-box w-52">
+      <ul className="mt-2 p-2 shadow menu menu-compact dropdown-content bg-[#EDF8FC] text-[#313131] rounded-box w-52">
         <li>
           <Link reloadDocument to="/kontrollpanel">
             Kontrollpanel
