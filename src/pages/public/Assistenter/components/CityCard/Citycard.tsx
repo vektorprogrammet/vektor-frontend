@@ -15,7 +15,7 @@ const Tab = (
   return (
     <button
       type="button"
-      className={`tab tab-lifted w-1/3 text-base font-bold border-white ${chosenStyle}`}
+      className={`tab tab-lifted w-1/3 text-base font-bold border-white dark:hover:bg-neutral-700 ${chosenStyle}`}
       onClick={onTabClick}
       data-toggle="tab"
       role="tablist"
