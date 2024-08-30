@@ -1,5 +1,5 @@
-import React from "react";
-import { AppRoute } from "App";
+import type { AppRoute } from "@/App";
+import MainPage from "pages/public/mainPage";
 import Assistenter from "./Assistenter";
 import ForForeldre from "./ForForeldre";
 import ForSkoler from "./ForSkoler";
@@ -11,6 +11,7 @@ import Utlegg from "./User/components/Utlegg";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [
+  { path: "", element: <MainPage />},
   { path: "/assistenter", element: <Assistenter />, name: "Assistenter" },
   { path: "/staging", element: <ServerOverview />, name: "Staging" },
   { path: "/foreldre", element: <ForForeldre />, name: "Foreldre" },
