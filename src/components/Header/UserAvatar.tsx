@@ -9,7 +9,7 @@ const UserAvatar = () => {
           <img src="https://placekitten.com/80/80" alt="profile avatar" />
         </div>
       </div>
-      <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 dark:bg-neutral-700 dark:text-white">
         <li>
           <Link reloadDocument to="/kontrollpanel">
             Kontrollpanel
