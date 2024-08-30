@@ -26,12 +26,12 @@ const Utlegg: React.FC = () => {
 
   const mapToTable = (utlegg: Utlegg[]) => {
     return utlegg.map((u, index) => (
-      <tr key={index.valueOf()} className="bg-white">
+      <tr key={index.valueOf()} className="bg-white dark:bg-neutral-600">
         <td className="py-3 px-6 sm:px-3">{u.Id}</td>
         <td className="py-3 px-4 sm:px-2">{u.utleggsdato}</td>
         <td className="py-3 px-20 sm:px-10">{u.beskrivelse}</td>
         <td className="py-3 px-10 sm:px-5">{u.sum}</td>
-        <td className="py-3 px-6 sm:px-3 text-blue-600 hover:font-semibold">
+        <td className="py-3 px-6 sm:px-3 text-blue-600 hover:underline">
           {u.kvittering}
         </td>
         <td
@@ -41,7 +41,7 @@ const Utlegg: React.FC = () => {
         >
           {u.status}
         </td>
-        <td className="py-3 px-4 text-blue-600 hover:font-semibold">
+        <td className="py-3 px-4 text-blue-600 hover:underline">
           {u.status === "Til behandling" && (
             <>
               Rediger
@@ -50,7 +50,7 @@ const Utlegg: React.FC = () => {
             </>
           )}
         </td>
-        <td className="py-3 px-4 text-rose-600 hover:font-semibold">
+        <td className="py-3 px-4 text-rose-600 hover:underline">
           {u.status === "Til behandling" && (
             <>
               Slett
@@ -97,8 +97,8 @@ const Utlegg: React.FC = () => {
   return (
     <div>
       {showConfirmation && <Bekreftelse />}
-      <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center ">
-        <h1 className="font-sans max-w-2xl mt-16 text-vektor-darblue text-4xl text-center font-bold mx-3">
+      <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center dark:text-gray-300">
+        <h1 className="font-sans max-w-2xl mt-16 text-vektor-darblue text-4xl text-center font-bold mx-3 dark:text-gray-300">
           Utlegg
         </h1>
         <div className="mt-4 mb-10 text-xl">
@@ -107,7 +107,7 @@ const Utlegg: React.FC = () => {
           som bekrefter utlegget ditt.
         </div>
 
-        <h1 className="font-sans max-w-2xl mt-2 text-vektor-darblue text-2xl text-center font-bold mx-3">
+        <h1 className="font-sans max-w-2xl mt-2 text-vektor-darblue text-2xl text-center font-bold mx-3 dark:text-gray-300">
           Hva kan jeg få refundert?
         </h1>
         <div className="mt-4 mb-20 text-lg">
@@ -122,7 +122,7 @@ const Utlegg: React.FC = () => {
           </a>
         </div>
 
-        <h1 className="font-sans max-w-2xl mb-4 text-vektor-darblue text-2xl text-center font-bold mx-3">
+        <h1 className="font-sans max-w-2xl mb-4 text-vektor-darblue text-2xl text-center font-bold mx-3 dark:text-gray-300">
           Mine utlegg
         </h1>
       </div>
@@ -161,20 +161,20 @@ const Utlegg: React.FC = () => {
           <table className="table-fixed text-left divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300 mx-10">
             <thead>
               <tr>
-                <th className="w-1/12 py-3 px-6 sm:px-3 bg-table-grey">Id</th>
-                <th className="w-1/12 py-3 px-4 sm:px-2 bg-table-grey">
+                <th className="w-1/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">Id</th>
+                <th className="w-1/12 py-3 px-4 sm:px-2 bg-table-grey dark:bg-neutral-700">
                   Utleggsdato
                 </th>
-                <th className="w-3/12 py-3 px-20 sm:px-10 bg-table-grey">
+                <th className="w-3/12 py-3 px-20 sm:px-10 bg-table-grey dark:bg-neutral-700">
                   Beskrivelse
                 </th>
-                <th className="w-2/12 py-3 px-10 sm:px-5 bg-table-grey">Sum</th>
-                <th className="w-3/12 py-3 px-6 sm:px-3 bg-table-grey">
+                <th className="w-2/12 py-3 px-10 sm:px-5 bg-table-grey dark:bg-neutral-700">Sum</th>
+                <th className="w-3/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">
                   Kvittering
                 </th>
-                <th className="w-3/12 py-3 px-6 bg-table-grey">Status</th>
-                <th className="w-1/12 py-3 px-4 bg-table-grey" aria-label="Empty Cell" />
-                <th className="w-1/12 py-3 px-4 bg-table-grey" aria-label="Empty Cell" />
+                <th className="w-3/12 py-3 px-6 bg-table-grey dark:bg-neutral-700">Status</th>
+                <th className="w-1/12 py-3 px-4 bg-table-grey dark:bg-neutral-700" aria-label="Empty Cell" />
+                <th className="w-1/12 py-3 px-4 bg-table-grey dark:bg-neutral-700" aria-label="Empty Cell" />
               </tr>
             </thead>
             <tbody>{mapToTable(MineUtlegg)}</tbody>
