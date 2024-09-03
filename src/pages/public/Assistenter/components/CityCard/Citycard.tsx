@@ -11,7 +11,7 @@ const Tab = ({
   city: City;
   open: boolean;
 }): JSX.Element => {
-  const chosenStyle = open ? `tab-active` : `text-vektor-darblue dark:text-gray-300`;
+  const chosenStyle = open ? `tab-active dark:text-vektor-darblue` : `text-vektor-darblue dark:text-gray-300`;
   return (
     <button
       type="button"
