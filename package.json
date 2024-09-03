@@ -69,6 +69,6 @@
     "@types/jest": "^29.5.12",
     "@vitejs/plugin-react": "^4.2.1",
     "cypress": "12.8.1",
-    "vitest": "^1.5.1"
+    "vitest": "^2.0.0"
   }
 }
