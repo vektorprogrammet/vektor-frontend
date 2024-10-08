@@ -42,7 +42,7 @@ const MobileMenu = (props: Props): JSX.Element => {
   } = props;
 
   const linkElements = routes.map((route) => (
-    <li>
+    <li key={route.name}>
       <Link className="text-lg" reloadDocument to={route.path ?? ""}>
           {route.name}
         </Link>
