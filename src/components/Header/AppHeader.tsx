@@ -31,8 +31,8 @@ const AppHeader = (): JSX.Element => {
   return (
     <div className="sticky top-0 z-50">
       <div className="hidden md:flex justify-around p-1 lg:px-8 w-full bg-[rgba(226,244,250,0.9)] backdrop-blur-sm">
-        <div className="flex w-fit justify-center">
-          <div className="btn btn-ghost btn-circle bt-lg bg-accent hover:bg-white">
+        <div className="flex w-fit items-center">
+          <div className="btn btn-ghost btn-circle btn-md hover:bg-white">
             <div className="w-full rounded-full">
               <Link to="/">
                 <img
@@ -51,7 +51,7 @@ const AppHeader = (): JSX.Element => {
         <div className="flex justify-center items-center gap-8 w-fit">
           {linkElements}
         </div>
-        <div className="flex w-fit justify-center">
+        <div className="flex w-fit items-center">
           {isLoggedIn ? (
             <UserAvatar />
           ) : (
