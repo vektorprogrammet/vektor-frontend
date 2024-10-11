@@ -27,7 +27,7 @@ const MobileMenu = (props: Props): JSX.Element => {
   } = props;
   return (
     <div className="fixed vektor-font">
-      <div className="relative md:hidden z-10 flex shadow-md w-screen text-3xl bg-white">
+      <div className="relative md:hidden z-10 flex shadow-md w-screen text-3xl bg-white dark:bg-neutral-700">
         <div
           role="button"
           tabIndex={0}
@@ -47,7 +47,7 @@ const MobileMenu = (props: Props): JSX.Element => {
           />
         </div>
         <Link
-          className="relative font-bold vektor-dark-blue text-2xl flex my-3 m-auto"
+          className="relative font-bold vektor-dark-blue text-2xl flex my-3 m-auto dark:text-white"
           onClick={() => {
             if (menuOpen) {
               setMenuOpen(!menuOpen);

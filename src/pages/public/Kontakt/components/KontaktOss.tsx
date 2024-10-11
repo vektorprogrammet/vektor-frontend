@@ -164,8 +164,8 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
         {divisions.map((data) => {
           const chosenStyle =
             openTab === data.number
-              ? "border-t-gray-200 border-l-gray-200 border-r-gray-200 border-b-white text-vektor-darblue z-50"
-              : "text-vektor-darblue z-50";
+              ? "border-t-gray-200 border-l-gray-200 border-r-gray-200 border-b-white text-vektor-darblue z-50 dark:bg-neutral-800 dark:text-neutral-200 dark:border-t-white dark:border-l-white dark:border-r-white"
+              : "text-vektor-darblue z-50 dark:hover:bg-neutral-700 dark:border-b-white";
           return (
             <div
               className="flex-auto text-center border-gray-200 border-b-2 -mb-[2px]"
@@ -173,7 +173,7 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
             >
               <button
                 type="button"
-                className={`rounded-t-lg -mb-[2px] z-50 text-base w-full font-bold py-3 border-b-gray-200 hover:border-2 hover:border-gray-200 hover:text-vektor-blue border-2 border-b-2 border-white ${chosenStyle}`}
+                className={`rounded-t-lg -mb-[2px] z-50 text-base w-full font-bold py-3 border-b-gray-200 hover:border-2 hover:border-t-gray-200 hover:text-vektor-blue border-2 border-b-2 border-white dark:border-transparent ${chosenStyle}`}
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(data.number);
@@ -187,7 +187,7 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
           );
         })}
       </div>
-      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5">
+      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 dark:bg-neutral-800">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
