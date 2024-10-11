@@ -1,4 +1,5 @@
 @import "tailwindcss/components";
+
 .App {
   transition: background-color 0.5s;
 }
@@ -18,10 +19,4 @@
 
 .iconWrapper:hover .icon {
   fill: #6fceee;
-}
-
-@layer components {
-  .container {
-    @apply mx-auto p-4;
-  }
 }
