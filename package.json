@@ -6,7 +6,7 @@
   "engines": {
     "node": ">=20.12.2"
   },
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
@@ -62,13 +62,13 @@
     "web-vitals": "^3.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.1",
+    "@biomejs/biome": "1.8.3",
     "@testing-library/dom": "^10.0.0",
-    "@testing-library/react": "^15.0.0",
+    "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@vitejs/plugin-react": "^4.2.1",
     "cypress": "12.8.1",
-    "vitest": "^1.5.1"
+    "vitest": "^2.0.0"
   }
 }

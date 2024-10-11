@@ -35,12 +35,7 @@ const AppHeader = (): JSX.Element => {
             <img
               src="/images/vektor-logo.svg"
               alt="vektorprogrammet logo"
-              className="h-16 lg:h-20 dark:hidden"
-            />
-            <img
-              src="/images/vektor-logo-darkmode.png"
-              alt="vektorprogrammet logo"
-              className="h-16 lg:h-20 hidden dark:block"
+              className="h-16 lg:h-20"
             />
           </Link>
         </div>
