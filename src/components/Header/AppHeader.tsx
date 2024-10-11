@@ -30,7 +30,7 @@ const AppHeader = (): JSX.Element => {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="hidden md:flex justify-around p-1 lg:px-8 w-full bg-[rgba(226,244,250,0.9)] backdrop-blur-sm">
+      <div className="hidden md:flex justify-around p-1 lg:px-8 w-full bg-[rgba(226,244,250,0.9)] backdrop-blur-sm dark:bg-[#2a2a2a]">
         <div className="flex w-fit items-center">
           <div className="btn btn-ghost btn-circle btn-md hover:bg-white">
             <div className="w-full rounded-full">
@@ -38,11 +38,6 @@ const AppHeader = (): JSX.Element => {
                 <img
                   src="/images/vektor-logo-circle.svg"
                   alt="vektorprogrammet logo"
-                />
-                <img
-                  src="/images/vektor-logo-darkmode.png"
-                  alt="vektorprogrammet logo"
-                  className="h-16 lg:h-20 hidden dark:block"
                 />
               </Link>
             </div>

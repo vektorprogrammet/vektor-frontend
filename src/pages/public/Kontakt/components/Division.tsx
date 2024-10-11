@@ -28,10 +28,10 @@ const Division = ({
 }: DivisionProps): JSX.Element => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-2 gap-10 dark:bg-neutral-800 dark:text-neutral-300">
         <div>
-          <div className="font-bold text-2xl text-blue-800">{name}</div>
-          {subtitle && <div className="text-base">{subtitle}</div>}
+          <div className="font-bold text-2xl text-blue-800 dark:text-neutral-200">{name}</div>
+          {subtitle && <div className="text-base dark:text-neutral-200">{subtitle}</div>}
           {description && <div className="text-base">{description}</div>}
           <div className="flex space-x-1 mt-8">
             <svg
@@ -50,7 +50,7 @@ const Division = ({
               <polyline points="3 7 12 13 21 7" />
             </svg>
             <a
-              className="truncate block max-w-[200px] text-sm hover:underline"
+              className="truncate block max-w-[200px] text-sm hover:underline dark:text-vektor-darblue"
               href={`mailto:${mail}`}
             >
               {mail}
@@ -113,10 +113,10 @@ const Division = ({
           {contactInfos.map((data, id) => {
             return (
               <div className="py-2 mt-5" key={data.name}>
-                <div className="text-blue-800">{contactInfos[id].name}</div>
+                <div className="text-blue-800 dark:text-gray-200">{contactInfos[id].name}</div>
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a
-                  className="text-sm hover:underline"
+                  className="text-sm hover:underline dark:text-vektor-darblue"
                   href={`mailto:${contactInfos[id].mail}`}
                 >
                   {contactInfos[id].mail}
@@ -127,13 +127,13 @@ const Division = ({
         </div>
       </div>
       {contact && (
-        <div>
-          <div className="font-bold text-2xl text-blue-800 text-center pt-10">{`Kontakt styret i ${name}`}</div>
+        <div className="dark:bg-neutral-800">
+          <div className="font-bold text-2xl text-blue-800 text-center pt-10 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
           <form>
             <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
               <label
                 htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Ditt navn
                 <input
@@ -145,7 +145,7 @@ const Division = ({
               </label>
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Din e-post
                 <input
@@ -159,7 +159,7 @@ const Division = ({
             <div className="mb-6">
               <label
                 htmlFor="topic"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Emne
                 <input
@@ -173,7 +173,7 @@ const Division = ({
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Melding
                 <textarea
