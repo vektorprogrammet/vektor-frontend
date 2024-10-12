@@ -15,7 +15,7 @@ const activeStyle: React.CSSProperties = {
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const navRoutes = routes.filter(route => route.path);
   const linkElements = navRoutes.map((route) => (
       <NavLink
