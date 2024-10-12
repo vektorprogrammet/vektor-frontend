@@ -18,7 +18,7 @@ export default {
         "vektor-blue": "#6fceee",
         "vektor-blue-hover": "#46b6dd",
         "vektor-darkblue": "#023874",
-        "vektor-darkfooter": "#022346",
+        "vektor-DARKblue": "#022346",
         "table-grey": "#EFEFEF",
         "vektor-kontrollblue": "#292E4C",
         "vektor-bg": "#E2F4FA",
