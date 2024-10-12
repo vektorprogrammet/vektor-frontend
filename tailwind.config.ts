@@ -23,6 +23,8 @@ export default {
         "vektor-kontrollblue": "#292E4C",
         "vektor-bg": "#E2F4FA",
         "vektor-bg-dark": "#2a2a2a",
+        "text-light": "#000",
+        "text-dark": "#fff",
       },
     },
   },
