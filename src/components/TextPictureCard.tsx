@@ -24,11 +24,13 @@ const TextPictureCard = ({
   return (
     <div className="flex w-full gap-5 justify-between flex-wrap">
       {pictureOnLeft && image}
-      <div className="max-w-6xl gap-5 m-auto">
+      <div className="flex flex-col max-w-6xl gap-3 m-auto">
         <h1 className="text-center text-xl font-bold text-vektor-DARKblue dark:text-text-dark">
           {title}
         </h1>
-        <p className="max-w-lg text-md dark:text-text-dark">{text}</p>
+        <p className="max-w-lg text-md dark:text-text-dark">
+          {text}
+        </p>
       </div>
       {!pictureOnLeft && image}
     </div>
