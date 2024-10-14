@@ -7,8 +7,7 @@ export const NoApplyCard = (props: any) => {
       <div className="block mt-3">
         <input
           type="email"
-          className="inline-flex items-center form-input block block border-solid border-2
-                     border-grey"
+          className="inline-flex items-center form-input border-solid border-2 border-grey"
           placeholder="E-post"
         />
       </div>
@@ -30,7 +29,7 @@ export const NoApplyCard = (props: any) => {
 
       <button
         type="submit"
-        className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded"
+        className="bg-vektor-darkblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded"
       >
         Send
       </button>
