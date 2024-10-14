@@ -1,3 +1,5 @@
+import Divider from "@/components/Divider";
+
 interface Props {
   title: string;
   text: string;
@@ -33,6 +35,7 @@ const TextPictureCard = ({
         </p>
       </div>
       {!pictureOnLeft && image}
+      <Divider/>
     </div>
   );
 };
