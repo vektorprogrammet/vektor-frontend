@@ -164,14 +164,14 @@ const OmOss = (): JSX.Element => {
             er gode rollemodeller – de er Norges realfagshelter.
         `}
       </p>
-      {cards.map(({ title: cardTitle, text, image, pictureOnLeft = false }) => (
+      {cards.map((card, index) => (
         <ImageCard
-          key={cardTitle}
-          title={cardTitle}
-          text={text}
-          imgPath={image.url}
-          alt={image.alt}
-          pictureOnLeft={pictureOnLeft}
+          key={card.title}
+          title={card.title}
+          text={card.text}
+          imgPath={card.image.url.toString()}
+          alt={card.image.alt}
+          pictureOnLeft={false}
         />
       ))}
       <h1 className="mt-20 max-w-2xl text-gray-600 text-4xl text-center font-bold mx-3 dark:text-gray-200">
