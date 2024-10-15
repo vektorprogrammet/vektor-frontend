@@ -13,13 +13,14 @@ const ForForeldre = (): JSX.Element => {
         <p className="max-w-3xl text-md md:text-lg">{ingress}</p>
         <Divider />
       </div>
-      {cards.map(({ title: cardTitle, text, image }) => (
+      {cards.map((card, index) => (
         <TextPictureCard
-          key={cardTitle}
-          title={cardTitle}
-          text={text}
-          imgPath={image.url}
-          alt={image.alt}
+          key={card.title}
+          title={card.title}
+          text={card.text}
+          imgPath={card.image.url.toString()}
+          alt={card.image.alt}
+          pictureOnLeft={index % 2 === 0}
         />
       ))}
       <p className="max-w-3xl text-md md:text-lg">
