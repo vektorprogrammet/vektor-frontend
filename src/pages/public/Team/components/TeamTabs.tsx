@@ -4,6 +4,12 @@ import Division from "./Division";
 
 interface TabProps {
   divisions: DivisionList[];
+  tabstate: number;
+  setOpenTab: (number: number) => void;
+};
+
+interface TeamTabProps {
+  divisions: DivisionList[];
 }
 
 interface DivisionList {
@@ -19,7 +25,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
       }`}
     >
       <Division
-        title="STYRET"
+        title="Styret"
         text="Ansvarlig for driften av Vektorprogrammet i Trondheim."
         mail="styret.ntnu@vektorprogrammet.no"
         numberOfMembers={9}
@@ -27,7 +33,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/styret"
       />
       <Division
-        title="EVALUERING"
+        title="Evaluering"
         text="Vi sender ut spørreundersøkelser, lager statistikk av dem og skriver så semester- og årsrapporter."
         mail="evaluering.ntnu@vektorprogrammet.no"
         numberOfMembers={5}
@@ -35,7 +41,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/evaluering"
       />
       <Division
-        title="REKRUTTERING"
+        title="Rekruttering"
         text="I rekruttering jobber vi med å skaffe nye vektorassistenter."
         mail="rekruttering.ntnu@vektorprogrammet.no"
         numberOfMembers={11}
@@ -43,7 +49,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/rekruttering"
       />
       <Division
-        title="SKOLEKOORDINERING"
+        title="Skolekoordinering"
         text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
         mail="skolekoordinering.ntnu@vektorprogrammet.no"
         numberOfMembers={8}
@@ -51,7 +57,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/skolekoordinering"
       />
       <Division
-        title="SPONSOR"
+        title="Sponsor"
         text="Vektorprogrammets bindeledd til næringslivet, samarbeidspartnere og sponsorer."
         mail="sponsor.ntnu@vektorprogrammet.no"
         numberOfMembers={6}
@@ -59,7 +65,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/sponsor"
       />
       <Division
-        title="ØKONOMI"
+        title="Økonomi"
         text="Økonomiteamet har ansvaret for Vektorprogrammets økonomi."
         mail="okonomi@vektorprogrammet.no"
         numberOfMembers={9}
@@ -75,7 +81,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/IT"
       />
       <Division
-        title="PROFILERING"
+        title="Profilering"
         text="Profileringsteamet jobber for å gjøre Vektorprogrammet mer synlig gjennom sosiale medier."
         mail="profilering.ntnu@vektorprogrammet.no"
         numberOfMembers={7}
@@ -94,7 +100,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
       }`}
     >
       <Division
-        title="STYRET"
+        title="Styret"
         text="Ansvarlig for driften av Vektorprogrammet i Ås."
         mail="nmbu@vektorprogrammet.no"
         numberOfMembers={5}
@@ -102,7 +108,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/styret"
       />
       <Division
-        title="SPONSOR"
+        title="Sponsor"
         text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås."
         mail="sponsor.nmbu@vektorprogrammet.no"
         numberOfMembers={4}
@@ -110,7 +116,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/sponsor-okonomi"
       />
       <Division
-        title="SKOLEKOORDINERING"
+        title="Skolekoordinering"
         text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene."
         mail="skolekoordinering.nmbu@vektorprogrammet.no"
         numberOfMembers={5}
@@ -118,7 +124,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/skolekoordinering"
       />
       <Division
-        title="EVALUERING"
+        title="Evaluering"
         text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet."
         mail="evaluering.nmbu@vektorprogrammet.no"
         numberOfMembers={8}
@@ -126,7 +132,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/evaluering-rekruttering-profilering"
       />
       <Division
-        title="SOSIALT"
+        title="Sosialt"
         text="Vi arrangerer sosiale arrangementer for assistenter og sørger for at alle trives i vervet."
         mail="sosialt.nmbu@vektorprogrammet.no"
         numberOfMembers={6}
@@ -145,7 +151,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
       }`}
     >
       <Division
-        title="STYRET"
+        title="Styret"
         text="Ansvarlig for driften av Vektorprogrammet i Bergen."
         mail="uib@vektorprogrammet.no"
         numberOfMembers={2}
@@ -153,7 +159,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
         url="bergen/styret"
       />
       <Division
-        title="SKOLEKOORDINERING"
+        title="Skolekoordinering"
         text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
         mail="skolekoordinering.uib@vektorprogrammet.no"
         numberOfMembers={2}
@@ -161,7 +167,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
         url="bergen/skolekoordinering"
       />
       <Division
-        title="REKRUTTERING"
+        title="Rekruttering"
         text="I rekruttering jobber vi med å skaffe nye vektorassistenter!"
         mail="rekruttering.uib@vektorprogrammet.no"
         numberOfMembers={2}
@@ -246,61 +252,58 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const Tabs = ({ divisions }: TabProps): JSX.Element => {
+
+
+export const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element => {
+
+  return (
+    <div className="flex flex-col items-start w-1/12">
+        {divisions.map((data) => {
+          const chosenStyle =
+          tabstate === data.number
+          ? "bg-vektor-darblue text-white"
+          : "bg-transparent hover:bg-[#c7ecf8]";
+          return (
+            <div key={data.name}>
+              <button
+                type="button"
+                className={`btn rounded-full btn-sm w-32 border-none shadow-none my-1 ${chosenStyle}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(data.number);
+                }}
+              >
+                {data.name}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+  )
+}
+
+const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => { 
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
-  const [openTab, setOpenTab] = React.useState(initialTabState);
+  const [openTab, setOpenTab] = React.useState<number>(initialTabState);
+  
   useEffect(() => {
     sessionStorage.setItem("teamTab", openTab.toString());
   }, [openTab]);
+
   return (
-    <div className="w-full flex flex-wrap">
-      <div className="w-full">
-        <ul
-          className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400"
-          role="tablist"
-        >
-          {divisions.map((data) => {
-            return (
-              <li
-                className="-mb-px mr-0 last:mr-0 flex-auto text-center"
-                key={data.name}
-              >
-                <a
-                  className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
-                    rounded-t-lg
-                    pb-12
-                    dark:hover:text-gray-800 transition duration-300 dark:hover:bg-gray-500
-                    ${
-                      openTab === data.number
-                        ? `text-vektor-dablue bg-[#c7ecf8] tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2`
-                        : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`
-                    }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(data.number);
-                  }}
-                  data-toggle="tab"
-                  href={`#link${data.number}`}
-                  role="tablist"
-                >
-                  {data.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="bg-[#c7ecf8] relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
-          <TrondheimTab open={openTab === 1} />
-          <AasTab open={openTab === 2} />
-          <BergenTab open={openTab === 3} />
-          <HovedstyretTab open={openTab === 4} />
-        </div>
+    <div className="flex flex-row w-full" role="tablist">
+      <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
+      <div className="flex flex-col items-start ml-10 w-4/5">
+        <TrondheimTab open={openTab === 1} />
+        <AasTab open={openTab === 2} />
+        <BergenTab open={openTab === 3} />
+        <HovedstyretTab open={openTab === 4} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default TeamTabs;
