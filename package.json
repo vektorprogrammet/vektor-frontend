@@ -45,7 +45,7 @@
     "clsx": "^2.1.1",
     "daisyui": "^4.0.0",
     "dayjs": "^1.11.10",
-    "lucide-react": "^0.451.0",
+    "lucide-react": "^0.453.0",
     "node": "^20.12.2",
     "norwegian-utils": "^0.4.1",
     "postcss": "^8.4.38",
