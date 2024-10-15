@@ -15,7 +15,7 @@ const activeStyle: React.CSSProperties = {
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const navRoutes = routes.filter(route => route.path);
   const linkElements = navRoutes.map((route) => (
       <NavLink
@@ -30,7 +30,7 @@ const AppHeader = (): JSX.Element => {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="hidden md:flex justify-around p-1 lg:px-8 w-full bg-[rgba(226,244,250,0.9)] backdrop-blur-sm dark:bg-[#2a2a2a]">
+      <div className="hidden md:flex justify-around p-1 lg:px-8 w-full bg-vektor-bg backdrop-blur-sm bg-opacity-90 dark:bg-vektor-bg-dark dark:bg-opacity-90">
         <div className="flex w-fit items-center">
           <div className="btn btn-ghost btn-circle btn-md hover:bg-white">
             <div className="w-full rounded-full">

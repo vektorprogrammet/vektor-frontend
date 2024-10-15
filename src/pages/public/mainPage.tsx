@@ -67,11 +67,11 @@ const mainPage = (): JSX.Element => {
           />
         </div>
         <div className="mt-16 w-full md:w-1/2 p-10 md:mr-auto md:mt-24 md:text-left text-center">
-          <h1 className="hidden md:block text-4xl font-bold mb-4 dark:text-white">
+          <h1 className="hidden md:block text-4xl font-bold mb-4 dark:text-text-dark">
             Vektorprogrammet
           </h1>
           <div className="mt-6 mb-4 flex md:block justify-center">
-            <p className="text-xl text-left w-4/5 dark:text-white">
+            <p className="text-xl text-left w-4/5 dark:text-text-dark">
               - sender studenter til ungdomsskoler for å hjelpe til som
               lærerens assistent i matematikkundervisningen
             </p>
@@ -85,7 +85,7 @@ const mainPage = (): JSX.Element => {
       <div className="info-background flex flex-row text-center w-full justify-center gap-40 pt-72 pb-72 mt-20 mb-20">
         {/*Middle start*/}
         {cards.map(({ number, title, text, route }) => (
-          <div key={title} className="flex flex-col gap-5 text-accent">
+          <div key={title} className="flex flex-col gap-5 text-vektor-bg">
             <div>
               <VisibilitySensor partialVisibility>
                 {({ isVisible }: { isVisible: boolean }) => (

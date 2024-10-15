@@ -43,7 +43,7 @@ const MobileMenu = (props: Props): JSX.Element => {
 
   const linkElements = routes.map((route) => (
     <li key={route.name}>
-      <Link className="text-lg" reloadDocument to={route.path ?? ""}>
+      <Link className="text-lg dark:text-white" reloadDocument to={route.path ?? ""}>
           {route.name}
         </Link>
     </li>
@@ -53,8 +53,8 @@ const MobileMenu = (props: Props): JSX.Element => {
       <Drawer>
         <DrawerTrigger>
           <div className="flex fixed top-12 right-0 bg-[rgba(0,0,0,0.8)] p-1 pr-2 rounded-l-full" >
-            <div className="btn btn-md btn-ghost btn-circle avatar bg-accent">
-              <div className="w-full rounded-full border-solid border-2 border-gray-600">
+            <div className="btn btn-md btn-ghost btn-circle avatar bg-vektor-bg">
+              <div className="w-full rounded-full">
                 <img src="/images/team/IT-Tor.png" alt="profile avatar" />
               </div>
             </div>

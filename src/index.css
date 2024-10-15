@@ -4,7 +4,6 @@
 @tailwind utilities;
 /* width */
 body{
-  background-color: #E2F4FA;
   overscroll-behavior: none;
 }
 
