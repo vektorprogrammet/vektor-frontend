@@ -9,7 +9,7 @@ const LoginButtons = ({
     <div className="flex space-x-4">
       <button
         type="button"
-        className="btn btn-success text-white rounded-full btn-sm"
+        className="btn btn-success text-white rounded-full"
         onClick={() => setVisible(true)}
       >
         Logg inn
