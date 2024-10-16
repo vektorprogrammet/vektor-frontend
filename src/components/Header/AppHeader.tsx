@@ -5,28 +5,12 @@ import LoginButtons from "./LoginButtons";
 import LoginPopup from "./LoginPopup";
 import MobileMenu from "./MobileMenu";
 import UserAvatar from "./UserAvatar";
-import routes from "../../pages/public/routes";
-
-const activeStyle: React.CSSProperties = {
-  fontWeight: "bold",
-  color: "#023874",
-};
+import Tab from "@/components/Header/Tab";
 
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginPopupVisible, setLoginPopupVisible] = useState(false);
   const isLoggedIn = false;
-  const navRoutes = routes.filter(route => route.path);
-  const linkElements = navRoutes.map((route) => (
-      <NavLink
-        key={route.path}
-        className="md:text-gray-600 md:hover:text-black md:dark:text-white p-1 font-semibold text-nowrap"
-        to={route.path ?? ""}
-        style={({ isActive }) => (isActive ? activeStyle : {})}
-      >
-        {route.name}
-      </NavLink>
-  ));
 
   return (
     <div className="sticky top-0 z-50">
@@ -44,7 +28,7 @@ const AppHeader = (): JSX.Element => {
           </div>
         </div>
         <div className="flex justify-center items-center gap-8 w-fit">
-          {linkElements}
+          <Tab />
         </div>
         <div className="flex w-fit items-center">
           {isLoggedIn ? (
