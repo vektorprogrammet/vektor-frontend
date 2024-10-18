@@ -9,12 +9,13 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "npx playwright test",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
+    "test:e2e": "npx playwright test",
     "check": "biome check ./ --apply",
     "lint": "biome lint ./ --apply",
-    "format": "biome format ./ --apply"
+    "format": "biome format ./ --apply",
+    "playwright:install": "exec playwright install"
   },
   "browserslist": {
     "production": [
