@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: $NODE_VERSION
+          node-version: ${{ env.NODE_VERSION }}
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
@@ -60,7 +60,7 @@ jobs:
           version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: $NODE_VERSION
+          node-version: ${{ env.NODE_VERSION }}
           cache: "pnpm"
       - name: Run tests
         run: |
@@ -78,7 +78,7 @@ jobs:
           version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: $NODE_VERSION
+          node-version: ${{ env.NODE_VERSION }}
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
