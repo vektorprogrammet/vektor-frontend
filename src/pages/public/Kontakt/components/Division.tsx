@@ -28,7 +28,7 @@ const Division = ({
 }: DivisionProps): JSX.Element => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-2 gap-10 p-6">
         <div>
           <div className="font-bold text-2xl text-blue-800">{name}</div>
           {subtitle && <div className="text-base">{subtitle}</div>}

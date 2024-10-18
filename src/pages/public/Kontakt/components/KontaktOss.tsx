@@ -71,7 +71,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`w-full ${open ? "block" : "hidden"}`}>
       <Division
         name="Bergen"
         subtitle="Universitetet i Bergen"
@@ -150,7 +150,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const KontactTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
+const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("kontaktTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
@@ -160,16 +160,19 @@ const KontactTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
     sessionStorage.setItem("kontaktTab", openTab.toString());
   }, [openTab]);
   return (
-    <div className="w-full">
-      <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
-      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5">
+    <div className="grid grid-cols-5 justify-items-center">
+      <div className="">
+        <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
+      </div>
+      <div className="flex flex-col col-start-2 col-end-5 break-words mb-6 bg-vektor-light-blue rounded-md px-5 py-5 mx-auto w-full shadow-md">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
         <HovedstyretTab open={openTab === 4} />
       </div>
+      <div></div>
     </div>
   );
 };
 
-export default KontactTabs;
+export default KontaktTabs;
