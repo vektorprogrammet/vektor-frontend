@@ -1,7 +1,7 @@
 ### Describe your changes 📖
 <text here>
 
-### Linear ticket: 🔖
+### Jira ticket: 🔖
 VF-XXX
 
 ### Checklist before requesting a review ✔️

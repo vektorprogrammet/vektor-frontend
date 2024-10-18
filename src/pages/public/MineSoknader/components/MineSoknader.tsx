@@ -1,6 +1,5 @@
-import React from "react";
-import ProfileModal from "./ProfileModal";
 import Applications from "./Applications";
+import ProfileModal from "./ProfileModal";
 
 const MineSoknader = (): JSX.Element => {
   return (

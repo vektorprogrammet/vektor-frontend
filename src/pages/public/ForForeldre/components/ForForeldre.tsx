@@ -1,27 +1,29 @@
-import React from "react";
-import TextPictureCard from "components/Pages/TextPictureCard";
 import getContent from "api/ForForeldre";
+import TextPictureCard from "@/components/TextPictureCard";
+import Divider from "@/components/Divider";
 
 const ForForeldre = (): JSX.Element => {
-  const {
-    title, ingress, cards, bottomText,
-  } = getContent();
+  const { title, ingress, cards, bottomText } = getContent();
   return (
-    <div className="max-w-screen-lg mt-20 mb-20 mx-auto flex flex-col items-center dark:text-gray-300">
-      <h1 className="max-w-2xl text-gray-600 text-4xl text-center font-bold mx-3 dark:text-gray-200">
-        {title}
-      </h1>
-      <p className="max-w-2xl text-center mt-4 mb-20 text-xl mx-3">{ingress}</p>
-      {cards.map(({ title: cardTitle, text, image }) => (
+    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-40 dark:text-text-dark">
+      <div className="flex flex-col gap-3 md:gap-5">
+        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          {title}
+        </h1>
+        <p className="max-w-3xl text-md md:text-lg">{ingress}</p>
+        <Divider />
+      </div>
+      {cards.map((card, index) => (
         <TextPictureCard
-          key={cardTitle}
-          title={cardTitle}
-          text={text}
-          imgPath={image.url}
-          alt={image.alt}
+          key={card.title}
+          title={card.title}
+          text={card.text}
+          imgPath={card.image.url.toString()}
+          alt={card.image.alt}
+          pictureOnLeft={index % 2 === 0}
         />
       ))}
-      <p className="max-w-2xl text-center mt-20 text-xl mx-auto">
+      <p className="max-w-3xl text-md md:text-lg">
         {bottomText}
       </p>
     </div>

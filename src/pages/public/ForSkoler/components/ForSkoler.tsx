@@ -1,11 +1,10 @@
-import React from "react";
-import PageTitleCard from "./PageTitleCard";
-import PageParagraph from "./PageSection";
 import BorderContentCard from "./BorderContentCard";
+import PageParagraph from "./PageSection";
+import PageTitleCard from "./PageTitleCard";
 
 const ForSkoler = (): JSX.Element => {
   return (
-    <div className="container">
+    <div className="mx-auto p-4">
       <PageTitleCard
         title="Vektorassistenter i skolen"
         text={`Vektorprogrammet er en frivillig organisasjon 
@@ -56,7 +55,7 @@ const ForSkoler = (): JSX.Element => {
             "Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:",
           ]}
         >
-          <ul className="pl-4 ml-4 mb-3 list-disc dark:text-gray-300">
+          <ul className="pl-4 ml-4 mb-3 list-disc dark:text-text-dark">
             {[
               "Hjelpe til med oppgaveløsing i klasserom",
               "Utfordre de sterkeste elevene med vanskeligere oppgaver",
@@ -116,9 +115,7 @@ const ForSkoler = (): JSX.Element => {
                           className="text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-100"
                           href={url}
                         >
-                          Kontakt
-                          {" "}
-                          {city}
+                          Kontakt {city}
                         </a>
                       </td>
                     </tr>
@@ -130,7 +127,8 @@ const ForSkoler = (): JSX.Element => {
               Har ikke Vektorprogrammet etablert seg i din by ennå?
             </h2>
             <p className="text-xl mb-3 px-3 mx-auto dark:text-gray-300">
-              Ta kontakt med hovedstyret@vektorprogrammet.no for å melde din interesse!
+              Ta kontakt med hovedstyret@vektorprogrammet.no for å melde din
+              interesse!
             </p>
           </div>
         </BorderContentCard>

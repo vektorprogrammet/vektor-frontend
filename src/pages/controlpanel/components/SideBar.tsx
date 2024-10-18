@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
-  BrukereIcon,
   AssistentIcon,
+  BrukereIcon,
   OpptakIcon,
   OpptaksstatistikkIcon,
   SkoleIcon,
@@ -11,7 +10,7 @@ import {
 } from "./Icons";
 
 const HorizontalLine = (): JSX.Element => {
-  return <hr className="border-t-2 mb-2 border-white w-4/5 mt-4" />;
+  return <hr className="border-t-2 border-white w-4/5" />;
 };
 
 interface IconProps {
@@ -26,23 +25,21 @@ const linkData = [
   {
     to: "opptaksstatistikk",
     icon: <OpptaksstatistikkIcon />,
-    name: "Opptaksstatistikk",
+    name: "Statistikk",
   },
   { to: "skoler", icon: <SkoleIcon />, name: "Skoler" },
   { to: "team", icon: <TeamIcon />, name: "Team" },
-  { to: "teaminteresse", icon: <TeamInteresseIcon />, name: "Teaminteresse" },
+  { to: "teaminteresse", icon: <TeamInteresseIcon />, name: "Interesse" },
 ];
 
 const Icon: React.FC<IconProps> = ({ svg, name }) => {
   return (
-    <div className="flex flex-col items-center justify-center my-2">
-      <button
-        type="button"
-        className="bg-vektor-blue hover:bg-white rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11"
-      >
+    // The svg on hover is styled in app.css
+    <div className="iconWrapper flex flex-col items-center justify-center my-1 [&>*:first-child]:bg-vektor-blue [&>*:first-child]:hover:bg-white p-2">
+      <div className="rounded-full flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11">
         {svg}
-      </button>
-      <div className="text-center text-white text-xs md:text-sm mx-2 truncate w-20 sm:w-28 md:w-36">
+      </div>
+      <div className="text-center text-white text-xs md:text-sm mx-2 truncate w-fit">
         {name}
       </div>
     </div>
@@ -51,19 +48,22 @@ const Icon: React.FC<IconProps> = ({ svg, name }) => {
 
 const SideBar = (): JSX.Element => {
   return (
-    <div className="min-w-min bg-vektor-kontrollblue border-8 rounded-3xl w-24 sm:w-32 md:w-40 min-h-full flex flex-col items-center justify-start overflow-y-auto overflow-x-hidden">
-      <div className="bg-white rounded-full flex items-center justify-center mt-2 w-16 h-16 sm:w-24 sm:h-24">
+    <div className="self-center min-w-min h-fit bg-vektor-kontrollblue ml-2 rounded-3xl flex flex-col items-center justify-start">
+      <Link to="/" className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16">
         <img
+          alt="Vektor logo"
           src="/images/vektor-logo-circle.svg"
           className="w-5/6 h-5/6 object-contain"
         />
+      </Link>
+      <HorizontalLine/>
+      <div className="my-3">
+        {linkData.map((item) => (
+          <Link key={item.name} to={item.to}>
+            <Icon svg={item.icon} name={item.name} />
+          </Link>
+        ))}
       </div>
-      <HorizontalLine />
-      {linkData.map((item) => (
-        <Link key={item.name} to={item.to}>
-          <Icon svg={item.icon} name={item.name} />
-        </Link>
-      ))}
     </div>
   );
 };
