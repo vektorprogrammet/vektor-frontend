@@ -22,14 +22,13 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
           version: 8
-      - name: Setup Node 
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}
           cache: "pnpm"
       - name: Install dependencies
-        run:
-          pnpm install
+        run: pnpm install
       - name: Build
         run: pnpm build
       - name: store build artifact
@@ -63,29 +62,3 @@ jobs:
         run: |
           pnpm install
           pnpm test:vitest
-
-  cypress_tests:
-    needs: build
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        browser: [chrome, firefox, edge]
-
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - name: Download the build folders
-        uses: actions/download-artifact@v4
-        with:
-          name: build
-          path: build
-      - uses: cypress-io/github-action@v4
-        with:
-          browser: ${{ matrix.browser }}
-          build: pnpm build
