@@ -12,9 +12,9 @@ const AppHeader = (): JSX.Element => {
   const isLoggedIn = false;
 
   return (
-    <div className="sticky top-4 z-50">
-      <div className="hidden md:flex justify-between lg:px-4 w-full">
-        <div className="flex bg-neutral-800 bg-opacity-80 rounded-full w-fit p-2 gap-2 items-center backdrop-blur-sm">
+    <div className="sticky top-3 z-50">
+      <div className="hidden md:flex justify-center lg:px-4 w-full">
+        <div className="flex bg-neutral-800 bg-opacity-80 rounded-full w-fit p-2 mr-12 gap-2 items-center backdrop-blur-sm">
           <div className="w-10 h-10">
             <div className="w-full rounded-full">
                 <img
@@ -25,16 +25,16 @@ const AppHeader = (): JSX.Element => {
           </div>
           <Tab />
         </div>
-        <div className="flex w-fit items-center">
-          {isLoggedIn ? (
-            <UserAvatar />
-          ) : (
-            <LoginButtons setVisible={setLoginPopupVisible} />
-          )}
-          {loginPopupVisible ? (
-            <LoginPopup setVisible={setLoginPopupVisible} />
-          ) : null}
-        </div>
+      </div>
+      <div className="flex w-fit absolute top-0 h-full right-2 items-center">
+        {isLoggedIn ? (
+          <UserAvatar />
+        ) : (
+          <LoginButtons setVisible={setLoginPopupVisible} />
+        )}
+        {loginPopupVisible ? (
+          <LoginPopup setVisible={setLoginPopupVisible} />
+        ) : null}
       </div>
       <MobileMenu
         menuOpen={menuOpen}
