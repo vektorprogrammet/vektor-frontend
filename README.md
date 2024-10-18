@@ -49,11 +49,11 @@ and Playwright for e2e testing in browsers.
 
 Install required browsers by running:
 
-- `pnpm playwright:install`
+- `pnpm e2e:install`
 
 Then run e2e test with:
 
-- `pnpm test:e2e`
+- `pnpm e2e:test`
 
 ## Learn More
 
