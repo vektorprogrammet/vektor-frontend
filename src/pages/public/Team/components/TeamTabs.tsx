@@ -190,7 +190,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
         <h1 className="text-gray-600 text-4xl font-bold ml-4 md:ml-10 dark:text-gray-200">
           Hovedstyret
         </h1>
-        <div className="mt-4 mb-4 md:mb-20 text-xl ml-4 md:ml-10 dark:text-gray-300">
+        <div className="mt-4 mb-4 md:mb-20 text-lg ml-4 mr-8 md:ml-10 dark:text-gray-300">
           Hovedstyret er det nasjonale styret i vektorprogrammet. De er et
           overordnet organ med ansvar for drifting av hele organisasjonen.
         </div>
@@ -257,12 +257,12 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
 export const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element => {
 
   return (
-    <div className="flex flex-col items-start w-1/12">
+    <div className="flex flex-col">
         {divisions.map((data) => {
           const chosenStyle =
           tabstate === data.number
-          ? "bg-vektor-darblue text-white"
-          : "bg-transparent hover:bg-[#c7ecf8]";
+          ? "bg-vektor-darblue text-white hover:bg-vektor-darblue"
+          : "bg-transparent hover:bg-vektor-light-blue";
           return (
             <div key={data.name}>
               <button
@@ -296,7 +296,7 @@ const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => {
   return (
     <div className="flex flex-row w-full" role="tablist">
       <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
-      <div className="flex flex-col items-start ml-10 w-4/5">
+      <div className="flex flex-col items-start ml-8">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
