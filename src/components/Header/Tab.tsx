@@ -24,7 +24,7 @@ export const Tab = () => {
   }, [activeTabIndex]);
 
   return (
-    <div className="flew-row relative mx-auto flex h-12 rounded-full px-2 bg-black bg-opacity-40">
+    <div className="flew-row relative mx-auto flex h-10 rounded-full px-2 bg-black bg-opacity-50">
       <span
         className="absolute bottom-0 top-0 z-10 flex overflow-hidden rounded-full py-2 transition-all duration-300"
         style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
@@ -38,7 +38,7 @@ export const Tab = () => {
             type="button"
             key={index}
             ref={(el) => (tabsRef.current[index] = el)}
-            className={`${isActive ? `text-black` : `hover:text-neutral-50 text-neutral-300`} z-20 my-auto cursor-pointer select-none rounded-full px-5 text-center font-medium`}
+            className={`${isActive ? `text-black` : `hover:text-neutral-50 text-neutral-300`} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
             onClick={() => {
               setActiveTabIndex(index);
               navigate(route.path ?? "");

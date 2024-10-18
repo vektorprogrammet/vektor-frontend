@@ -15,8 +15,8 @@ const AppHeader = (): JSX.Element => {
   return (
     <div className="sticky top-4 z-50">
       <div className="hidden md:flex justify-between lg:px-4 w-full">
-        <div className="flex bg-black bg-opacity-70 rounded-full w-fit p-2 gap-2 items-center backdrop-blur-sm">
-          <div className="btn btn-ghost btn-circle btn-md hover:bg-black hover:bg-opacity-40">
+        <div className="flex bg-neutral-800 bg-opacity-80 rounded-full w-fit p-2 gap-2 items-center backdrop-blur-sm">
+          <div className="btn btn-ghost btn-circle btn-sm w-10 h-10 hover:bg-black hover:bg-opacity-40">
             <div className="w-full rounded-full">
               <Link to="/">
                 <img
