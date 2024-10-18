@@ -14,7 +14,9 @@ const baseURL = `http://localhost:${port}`;
  */
 export default defineConfig({
   timeout: 60000,
-  testDir: './e2e',
+  testDir: "./e2e",
+  outputDir: "./e2e/results",
+  snapshotDir: "./e2e/snapshots",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

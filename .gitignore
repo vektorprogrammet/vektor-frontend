@@ -13,6 +13,10 @@
 
 # testing
 /coverage
+e2e/results/
+/playwright-report/
+/playwright/.cache/
+/blob-report/
 
 # production
 /build
@@ -29,8 +33,3 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
-
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
