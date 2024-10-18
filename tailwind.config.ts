@@ -22,6 +22,7 @@ export default {
         "vektor-bg": "#fafdff",
         "table-grey": "#EFEFEF",
         "vektor-kontrollblue": "#292E4C",
+        "vektor-light-blue": "#c7ecf8",
       },
     },
   },
