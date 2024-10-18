@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import routes from "../../pages/public/routes";
+import routes from "@/pages/public/routes";
 import { useNavigate } from 'react-router-dom';
 
 export const Tab = () => {
@@ -36,7 +36,7 @@ export const Tab = () => {
         return (
           <button
             type="button"
-            key={index}
+            key={route.name}
             ref={(el) => (tabsRef.current[index] = el)}
             className={`${isActive ? `text-black` : `hover:text-neutral-50 text-neutral-300`} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
             onClick={() => {

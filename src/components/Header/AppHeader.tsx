@@ -1,6 +1,5 @@
 import type React from "react";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
 import LoginButtons from "./LoginButtons";
 import LoginPopup from "./LoginPopup";
 import MobileMenu from "./MobileMenu";
@@ -16,14 +15,12 @@ const AppHeader = (): JSX.Element => {
     <div className="sticky top-4 z-50">
       <div className="hidden md:flex justify-between lg:px-4 w-full">
         <div className="flex bg-neutral-800 bg-opacity-80 rounded-full w-fit p-2 gap-2 items-center backdrop-blur-sm">
-          <div className="btn btn-ghost btn-circle btn-sm w-10 h-10 hover:bg-black hover:bg-opacity-40">
+          <div className="w-10 h-10">
             <div className="w-full rounded-full">
-              <Link to="/">
                 <img
                   src="/images/vektor-logo-circle.svg"
                   alt="vektorprogrammet logo"
                 />
-              </Link>
             </div>
           </div>
           <Tab />
