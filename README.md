@@ -14,11 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `pnpm test`
-
-Runs the cypress tests defined in [e2e](./e2e).
-To specify the tests to run in firefox specifically run `pnpm test:firefox`
-
 ### `pnpm build`
 
 Builds the app for production to the `build` folder.\
@@ -46,6 +41,19 @@ Runs the linter with `eslint */**/*.{js,ts,tsx}` linting all .js, .ts and .tsx f
 The linter settings are stored in the [.eslintrc.js file](.eslintrc.js) which also enables TypeScript linting.
 
 Running `pnpm lint --fix` will fix small auto-fixable problems.
+
+## Testing
+
+Testing is done with Vitest for simple testing,
+and Playwright for e2e testing in browsers.
+
+Install required browsers by running:
+
+- `pnpm playwright:install`
+
+Then run e2e test with:
+
+- `pnpm test:e2e`
 
 ## Learn More
 
