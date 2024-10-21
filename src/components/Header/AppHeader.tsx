@@ -12,10 +12,10 @@ const AppHeader = (): JSX.Element => {
   const isLoggedIn = false;
 
   return (
-    <div className="sticky top-3 z-50">
+    <div className="sticky top-2 z-50">
       <div className="hidden md:flex justify-center lg:px-4 w-full">
-        <div className="flex bg-neutral-800 bg-opacity-80 rounded-full w-fit p-2 mr-12 gap-2 items-center backdrop-blur-sm">
-          <div className="w-10 h-10">
+        <div className="flex bg-[#ccecf6] bg-opacity-40 rounded-full w-fit px-1.5 mr-12 gap-1 items-center shadow-md backdrop-blur">
+          <div className="w-8 h-8">
             <div className="w-full rounded-full">
                 <img
                   src="/images/vektor-logo-circle.svg"
