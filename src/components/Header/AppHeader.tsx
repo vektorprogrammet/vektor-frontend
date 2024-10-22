@@ -8,8 +8,6 @@ import Tab from "@/components/Header/Tab";
 
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [loginPopupVisible, setLoginPopupVisible] = useState(false);
-  const isLoggedIn = false;
 
   return (
     <div className="sticky top-2 z-50">
@@ -27,21 +25,11 @@ const AppHeader = (): JSX.Element => {
         </div>
       </div>
       <div className="hidden md:flex w-fit absolute top-0 h-full right-2 items-center">
-        {isLoggedIn ? (
-          <UserAvatar />
-        ) : (
-          <LoginButtons setVisible={setLoginPopupVisible} />
-        )}
-        {loginPopupVisible ? (
-          <LoginPopup setVisible={setLoginPopupVisible} />
-        ) : null}
+        <LoginButtons />
       </div>
       <MobileMenu
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        setLoginPopupVisible={setLoginPopupVisible}
-        isLoggedIn={isLoggedIn}
-        loginPopupVisible={loginPopupVisible}
       />
     </div>
   );
