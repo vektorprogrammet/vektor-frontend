@@ -26,7 +26,7 @@ const AppHeader = (): JSX.Element => {
           <Tab />
         </div>
       </div>
-      <div className="flex w-fit absolute top-0 h-full right-2 items-center">
+      <div className="hidden md:flex w-fit absolute top-0 h-full right-2 items-center">
         {isLoggedIn ? (
           <UserAvatar />
         ) : (
