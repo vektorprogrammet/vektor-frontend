@@ -53,7 +53,7 @@ const mainPage = (): JSX.Element => {
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}
       {/* Getting the routes from the defined route file in pages */}
-      <div className="bg-vektor-index-blue md:flex">
+      <div className="bg-vektor-index-blue md:pt-14 md:flex">
         {" "}
         {/*Upper start*/}
         <div className="w-full md:w-1/2 h-[29rem] md:h-[26rem] lg:h-[31rem] xl:h-[35rem] md:p-8 text-center">
@@ -82,10 +82,10 @@ const mainPage = (): JSX.Element => {
         </div>
       </div>
       {/*Upper end*/}
-      <div className="info-background flex flex-row text-center w-full justify-center gap-40 pt-72 pb-72 mt-20 mb-20">
+      <div className="info-background flex flex-wrap flex-row text-center max-w-full justify-center items-center gap-24 md:gap-40 pt-72 pb-72 mt-20 mb-20">
         {/*Middle start*/}
         {cards.map(({ number, title, text, route }) => (
-          <div key={title} className="flex flex-col gap-5 text-vektor-bg">
+          <div key={title} className="flex flex-col max-w-96 gap-5 text-vektor-bg">
             <div>
               <VisibilitySensor partialVisibility>
                 {({ isVisible }: { isVisible: boolean }) => (
@@ -102,7 +102,7 @@ const mainPage = (): JSX.Element => {
               {text}
             </p>
             <div>
-              <Link className="btn btn-accent text-secondary w-fit" to={route.pathname}>
+              <Link className="btn btn-success text-white w-fit" to={route.pathname}>
                 {route.text}
               </Link>
             </div>
@@ -110,7 +110,7 @@ const mainPage = (): JSX.Element => {
         ))}
       </div>
       {/*Middle end*/}
-      <div className="mt-32 mb-32">
+      {/* <div className="mt-32 mb-32">
         <div className="text-center font-bold dark:text-gray-200">
           <h1 className="text-4xl">Hovedsponsorer</h1>
         </div>
@@ -192,7 +192,7 @@ const mainPage = (): JSX.Element => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   )
 };
