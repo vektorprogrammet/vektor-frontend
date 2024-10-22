@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import LoginButtons from "./LoginButtons";
-import LoginPopup from "./LoginPopup";
+import LoginPopup from "../../pages/controlpanel/components/LoginPopup";
 import UserAvatar from "./UserAvatar";
 import "./mobile.css";
 import {

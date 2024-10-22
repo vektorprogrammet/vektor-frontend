@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import LoginButtons from "./LoginButtons";
-import LoginPopup from "./LoginPopup";
+import LoginPopup from "../../pages/controlpanel/components/LoginPopup";
 import MobileMenu from "./MobileMenu";
 import UserAvatar from "./UserAvatar";
 import Tab from "@/components/Header/Tab";
