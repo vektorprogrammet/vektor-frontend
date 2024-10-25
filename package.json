@@ -9,10 +9,12 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "cypress run && vitest run",
-    "test:cypress:firefox": "cypress run --browser firefox",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
+    "e2e:test": "exec playwright test",
+    "e2e:test:ui": "exec playwright test --ui",
+    "e2e:show-report": "exec playwright show-report",
+    "e2e:install": "exec playwright install",
     "check": "biome check ./ --apply",
     "lint": "biome lint ./ --apply",
     "format": "biome format ./ --apply"
@@ -70,13 +72,13 @@
     "web-vitals": "^4.2.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.0",
     "@biomejs/biome": "1.9.4",
     "@testing-library/dom": "^10.0.0",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@vitejs/plugin-react": "^4.2.1",
-    "cypress": "12.8.1",
     "vitest": "^2.0.0"
   }
 }
