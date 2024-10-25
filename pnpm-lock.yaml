@@ -57,8 +57,8 @@ importers:
         specifier: ^0.453.0
         version: 0.453.0(react@18.3.1)
       node:
-        specifier: ^20.12.2
-        version: 20.18.0
+        specifier: ^23.0.0
+        version: 23.1.0
       norwegian-utils:
         specifier: ^0.4.1
         version: 0.4.1
@@ -1784,8 +1784,8 @@ packages:
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
 
-  node@20.18.0:
-    resolution: {integrity: sha512-h+KoNd+g/04xj9baLfNTFo5okLQn/s4z31oioKsXTPvoWmZdBbvKlA5PiWV4fZzVHQqdk8xBBQ8R3R0531fUIA==}
+  node@23.1.0:
+    resolution: {integrity: sha512-iXS5lEeG4fcXcBugoRy/+wRuOQdXOvmYgTOuIP8bS9ez2tLHx54pDI0UP+p4gGta6Rj+Asz64z3Ase8BQSOfsw==}
     engines: {npm: '>=5.0.0'}
     hasBin: true
 
@@ -4074,7 +4074,7 @@ snapshots:
 
   node-releases@2.0.18: {}
 
-  node@20.18.0:
+  node@23.1.0:
     dependencies:
       node-bin-setup: 1.1.3
 
