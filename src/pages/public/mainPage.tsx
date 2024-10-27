@@ -53,15 +53,15 @@ const mainPage = (): JSX.Element => {
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}
       {/* Getting the routes from the defined route file in pages */}
-      <div className="bg-vektor-index-blue md:pt-14 md:flex">
+      <div className="bg-vektor-index-blue h-[80vh] md:pt-14 md:flex">
         {" "}
         {/*Upper start*/}
-        <div className="w-full md:w-1/2 h-[29rem] md:h-[26rem] lg:h-[31rem] xl:h-[35rem] md:p-8 text-center">
+        <div className="w-full md:w-1/2 h-[18rem] md:h-[26rem] lg:h-[31rem] xl:h-[35rem] md:p-8 text-center">
           <h1 className="pt-20 md:p-0 font-bold text-4xl visible md:hidden mx-auto">
             Vektorprogrammet
           </h1>
           <img
-            className="pt-10 md:pt-0 mx-auto my-auto md:ml-auto md:mr-0 h-full"
+            className="pt-14 md:pt-0 mx-auto my-auto md:ml-auto md:mr-0 h-full"
             src={vektorForsidebilde}
             alt="Vektorprogrammet"
           />
@@ -70,8 +70,8 @@ const mainPage = (): JSX.Element => {
           <h1 className="hidden md:block text-4xl font-bold mb-4 dark:text-text-dark">
             Vektorprogrammet
           </h1>
-          <div className="mt-6 mb-4 flex md:block justify-center">
-            <p className="text-xl text-left w-4/5 dark:text-text-dark">
+          <div className="mb-4 mt-6 flex md:block justify-center">
+            <p className="text-md md:text-xl text-left md:w-4/5 dark:text-text-dark">
               - sender studenter til ungdomsskoler for å hjelpe til som
               lærerens assistent i matematikkundervisningen
             </p>
@@ -94,11 +94,11 @@ const mainPage = (): JSX.Element => {
                   </div>
                 )}
               </VisibilitySensor>
-              <p className="text-2xl">
+              <p className="text-xl md:text-2xl">
                 {title}
               </p>
             </div>
-            <p className="text-lg max-w-96">
+            <p className="text-sm md:text-xl max-w-96">
               {text}
             </p>
             <div>
