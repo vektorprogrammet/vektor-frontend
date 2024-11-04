@@ -15,9 +15,52 @@ import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
 import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
 import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
 
+const hovedsponsor = [
+  {
+    name: "Abelprisen",
+    image: Abelprisen,
+  },
+  {
+    name: "Sparebankstiftelsen DNB",
+    image: SparebankstiftelsenDNB,
+  },  
+]
 
+const sponsorer = [
+  {
+    name: "Tekna",
+    image: Tekna,
+  },
+  {
+    name: "NTNU - Fakultet for ingeniørvitenskap",
+    image: NTNUIV,
+  },
+  {
+    name: "NTNU - Fakultet for informasjonsteknologi og elektronikk",
+    image: NTNUIE,
+  },
+  {
+    name: "Samarbeidsforum",
+    image: Samarbeidsforum,
+  },
+  {
+    name: "Universitetet i Bergen - Det matematisk-naturvitenskapelige fakultet",
+    image: UiB,
+  },
+  {
+    name: "Matematikksenteret",
+    image: Matematikksenteret,
+  },
+  {
+    name: "VisionTech",
+    image: VisionTech,
+  },
+  {
+    name: "Kulturstyret Bergen",
+    image: KSBergen,
+  },
+]
 interface MainPageProps {
-  // Props
   number: number;
   title: string;
   text: string;
@@ -82,7 +125,7 @@ const mainPage = (): JSX.Element => {
         </div>
       </div>
       {/*Upper end*/}
-      <div className="info-background flex flex-wrap flex-row text-center max-w-full justify-center items-center gap-24 md:gap-40 pt-72 pb-72 mt-20 mb-20">
+      <div className="info-background flex flex-wrap flex-row text-center max-w-full justify-center items-center gap-24 md:gap-40 pt-72 pb-72 mt-20 mb-0">
         {/*Middle start*/}
         {cards.map(({ number, title, text, route }) => (
           <div key={title} className="flex flex-col max-w-96 gap-5 text-vektor-bg">
@@ -98,7 +141,7 @@ const mainPage = (): JSX.Element => {
                 {title}
               </p>
             </div>
-            <p className="text-sm md:text-xl max-w-96">
+            <p className="text-sm max-w-80 md:text-xl md:max-w-96">
               {text}
             </p>
             <div>
@@ -110,89 +153,26 @@ const mainPage = (): JSX.Element => {
         ))}
       </div>
       {/*Middle end*/}
-      {/* <div className="mt-32 mb-32">
-        <div className="text-center font-bold dark:text-gray-200">
-          <h1 className="text-4xl">Hovedsponsorer</h1>
+      <div className="flex flex-col justify-self-center max-w-4xl gap-32">
+        <div className="flex flex-row flex-wrap justify-around md:justify-between">
+          {hovedsponsor.map((sponsor) => (
+            <div className="flex w-72 h-72 md:w-96 md:h-96 items-center">
+              <img className="w-full h-fit" 
+                src={sponsor.image} 
+                alt={sponsor.name} />
+            </div>
+          ))}
         </div>
-        <div className="flex mx-96 mt-12">
-          <div className="w-1/2 h-28">
-            <img className="h-full m-auto" 
-              src={Abelprisen} 
-              alt="Abelprisen" />
-          </div>
-          <div className="w-1/2 h-28">
-            <img
-              className="h-full m-auto"
-              src={SparebankstiftelsenDNB}
-              alt="Sparebankstiftelsen DNB"
-            />
-          </div>
+        <div className="flex flex-row flex-wrap justify-around md:justify-between">
+          {sponsorer.map((sponsor) => (
+            <div className="flex w-36 h-36 md:w-64 md:h-64">
+              <img className="w-full h-fit" 
+                src={sponsor.image} 
+                alt={sponsor.name} />
+            </div>
+          ))}
         </div>
-        <div className="text-center mt-32 font-bold dark:text-gray-200">
-          <h1 className="text-4xl">Sponsorer og samarbeidspartnere</h1>
-        </div>
-        <div className="flex mx-96 mt-12">
-          <div className="w-1/2 h-28">
-            <img className="h-full m-auto p-4" 
-              src={Tekna} 
-              alt="Tekna" />
-          </div>
-          <div className="w-1/2 h-28">
-            <img
-              className="m-auto p-4"
-              src={NTNUIV}
-              alt="NTNU - Fakultet for ingeniørvitenskap"
-            />
-          </div>
-        </div>
-        <div className="flex mx-96 mt-12">
-          <div className="w-1/2 h-28">
-            <img
-              className=" m-auto p-4"
-              src={NTNUIE}
-              alt="NTNU - Fakultet for informasjonsteknologi og elektronikk"
-            />
-          </div>
-          <div className="w-1/2 h-28">
-            <img
-              className="h-full m-auto p-4"
-              src={Samarbeidsforum}
-              alt="Samarbeidsforum"
-            />
-          </div>
-        </div>
-        <div className="flex mx-96 mt-12">
-          <div className="w-1/2 h-28">
-            <img
-              className="h-full m-auto p-4"
-              src={UiB}
-              alt="Universitetet i Bergen - Det matematisk-naturvitenskapelige fakultet"
-            />
-          </div>
-          <div className="w-1/2 h-28">
-            <img
-              className="h-full m-auto p-4"
-              src={Matematikksenteret}
-              alt="Matematikksenteret"
-            />
-          </div>
-        </div>
-        <div className="flex mx-96 mt-12">
-          <div className="w-1/2 h-28">
-            <img 
-              className="h-full m-auto p-4" 
-              src={VisionTech} 
-              alt="VisionTech" />
-          </div>
-          <div className="w-1/2 h-28">
-            <img
-              className="h-full m-auto p-4"
-              src={KSBergen}
-              alt="Kulturstyret Bergen"
-            />
-          </div>
-        </div>
-      </div> */}
+      </div>
     </main>
   )
 };
