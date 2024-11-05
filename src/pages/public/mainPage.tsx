@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from 'react-visibility-sensor';
 import { Link } from "react-router-dom";
 
+import vektorLogo from "/images/vektor-logo.svg";
 import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import KSBergen from "/images/mainPage/sponsor/KSBergen.png";
@@ -96,20 +97,21 @@ const mainPage = (): JSX.Element => {
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}
       {/* Getting the routes from the defined route file in pages */}
-      <div className="bg-vektor-index-blue h-[80vh] md:pt-14 md:flex">
-        {" "}
+      <div className="bg-vektor-index-blue md:h-[80vh] md:pt-14 md:flex">
         {/*Upper start*/}
-        <div className="w-full md:w-1/2 h-[18rem] md:h-[26rem] lg:h-[31rem] xl:h-[35rem] md:p-8 text-center">
-          <h1 className="pt-20 md:p-0 font-bold text-4xl visible md:hidden mx-auto">
-            Vektorprogrammet
-          </h1>
+        <div className="flex flex-col items-center w-full md:w-1/2 md:h-[26rem] lg:h-[31rem] xl:h-[35rem] md:p-8 text-center">
           <img
-            className="pt-14 md:pt-0 mx-auto my-auto md:ml-auto md:mr-0 h-full"
-            src={vektorForsidebilde}
+            className="md:hidden pt-12 pb-14 w-2/4"
+            src={vektorLogo}
             alt="Vektorprogrammet"
           />
+          <img
+            className="p-5 pt-14 md:pt-0 mx-auto my-auto md:ml-auto md:mr-0 w-full md:w-auto h-full"
+            src={vektorForsidebilde}
+            alt="Vektorprogrammet bildet"
+          />
         </div>
-        <div className="mt-16 w-full md:w-1/2 p-10 md:mr-auto md:mt-24 md:text-left text-center">
+        <div className="w-full md:w-1/2 p-6 md:p-10 md:mr-auto md:mt-24 md:text-left text-center">
           <h1 className="hidden md:block text-4xl font-bold mb-4 dark:text-text-dark">
             Vektorprogrammet
           </h1>
@@ -125,7 +127,7 @@ const mainPage = (): JSX.Element => {
         </div>
       </div>
       {/*Upper end*/}
-      <div className="info-background flex flex-wrap flex-row text-center max-w-full justify-center items-center gap-24 md:gap-40 pt-72 pb-72 mt-20 mb-0">
+      <div className="info-background flex flex-wrap flex-row text-center max-w-full justify-center items-center gap-24 md:gap-40 pt-72 pb-72 md:mt-20 mb-0">
         {/*Middle start*/}
         {cards.map(({ number, title, text, route }) => (
           <div key={title} className="flex flex-col max-w-96 gap-5 text-vektor-bg">
