@@ -25,9 +25,9 @@ const Division = ({
           : "w-64";
 
   return (
-    <div className={`h-48 flex flex-col justify-between rounded-md shadow-md bg-vektor-light-blue dark:bg-gray-600 ${chosenStyle}`} onClick={() => navigate(`/team/${url}`)}>
-      <div className="bg-vektor-blue rounded-t-md h-10 content-center h-20">
-        <h1 className="text-center text-lg text-vektor-darblue font-medium">
+    <div className={`h-48 flex flex-col justify-between rounded-md shadow-md bg-vektor-light-blue dark:bg-gray-600 dark:text-white ${chosenStyle}`} onClick={() => navigate(`/team/${url}`)}>
+      <div className="bg-vektor-blue dark:bg-vektor-darblue rounded-t-md h-10 content-center h-20">
+        <h1 className="text-center text-lg text-vektor-darblue font-medium dark:text-white">
           {title}
         </h1>
       </div>
