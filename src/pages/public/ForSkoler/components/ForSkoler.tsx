@@ -1,8 +1,36 @@
 import BorderContentCard from "./BorderContentCard";
 import PageParagraph from "./PageSection";
 import PageTitleCard from "./PageTitleCard";
+import getContent from "api/ForSkoler";
+import TextCard from "@/components/TextCard";
+import Divider from "@/components/Divider";
 
 const ForSkoler = (): JSX.Element => {
+  const { title, ingress, cards, bottomText } = getContent();
+  return (
+    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-40 dark:text-text-dark">
+      <div className="flex flex-col gap-3 md:gap-5">
+        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          {title}
+        </h1>
+        <p className="max-w-3xl text-md md:text-lg">{ingress}</p>
+        <Divider />
+      </div>
+      {cards.map((card, index) => (
+        <TextCard
+          key={card.title}
+          title={card.title}
+          text={card.text}
+        />
+      ))}
+      <p className="max-w-3xl text-md md:text-lg">
+        {bottomText}
+      </p>
+    </div>
+  );
+};
+
+/* const ForSkoler = (): JSX.Element => {
   return (
     <div className="mx-auto p-4">
       <PageTitleCard
@@ -68,7 +96,7 @@ const ForSkoler = (): JSX.Element => {
             ))}
           </ul>
         </PageParagraph>
-        <BorderContentCard
+                <BorderContentCard
           title="Søk om å få assistenter til din skole"
           text={[
             `Ta kontakt med ansvarlig for skolekoordinering i din by 
@@ -135,6 +163,6 @@ const ForSkoler = (): JSX.Element => {
       </div>
     </div>
   );
-};
+}; */
 
 export default ForSkoler;
