@@ -1,6 +1,11 @@
 import ImageCard from "@/components/TextPictureCard";
-import BorderContentCard from "pages/public/ForSkoler/components/BorderContentCard";
-import Accordion from "./Accordion";
+import Divider from "@/components/Divider";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./Accordion";
 
 interface TextAndPicture {
   title: string;
@@ -128,15 +133,25 @@ const OmOss = (): JSX.Element => {
   const accordionSection = (
     <div className=" items-center flex flex-col mx-auto sm:w-full md:w-4/5 px-5">
       <h2 className="text-2xl text-gray-600 dark:text-gray-200">Assistent</h2>
-      {assistantAccordions.map(({ title, content }) => (
-        <Accordion key={title} title={title} content={content} />
-      ))}
+      <Accordion type="single" collapsible className="w-full">
+        {assistantAccordions.map(({ title, content }, index) => (
+          <AccordionItem key={index} value={`item-${index + 1}`}>
+            <AccordionTrigger><p className="text-left">{title}</p></AccordionTrigger>
+            <AccordionContent><p className="text-left">{content}</p></AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
       <h2 className="text-2xl text-gray-600 mt-10 mb-3 dark:text-gray-200">
         Team
       </h2>
-      {teamAccordions.map(({ title, content }) => (
-        <Accordion key={title} title={title} content={content} />
-      ))}
+      <Accordion type="single" collapsible className="w-full">
+        {teamAccordions.map(({ title, content }, index) => (
+          <AccordionItem key={index} value={`item-${index + 1}`}>
+            <AccordionTrigger><p className="text-left">{title}</p></AccordionTrigger>
+            <AccordionContent><p className="text-left">{content}</p></AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
       <p className="my-6 text-xl dark:text-gray-200">
         Lurer du på noe?
         <a
@@ -150,20 +165,23 @@ const OmOss = (): JSX.Element => {
   );
 
   return (
-    <div className="max-w-screen-lg mt-20 mb-20 mx-auto flex flex-col items-center">
-      <h1 className="max-w-2xl text-gray-600 text-4xl text-center font-bold mx-3 dark:text-gray-200">
-        Om Vektorprogrammet
-      </h1>
-      <p className="max-w-2xl text-center mt-4 mb-2 text-xl mx-3 dark:text-gray-300">
-        {`
-        Vektorprogrammet arbeider for å øke interessen for matematikk 
-        og realfag blant elever i grunnskolen. Vi er en nasjonal studentorganisasjon
-         som sender studenter med god realfagskompetanse til skoler
-          for å hjelpe elevene i matematikktimene. Disse
-           studentene har også gode pedagogiske evner og
-            er gode rollemodeller – de er Norges realfagshelter.
-        `}
-      </p>
+    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-28 dark:text-text-dark">
+      <div className="flex flex-col gap-3 md:gap-5">
+        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          Om Vektorprogrammet
+        </h1>
+        <p className="max-w-3xl text-md md:text-lg">
+          {`
+          Vektorprogrammet arbeider for å øke interessen for matematikk 
+          og realfag blant elever i grunnskolen. Vi er en nasjonal studentorganisasjon
+          som sender studenter med god realfagskompetanse til skoler
+            for å hjelpe elevene i matematikktimene. Disse
+            studentene har også gode pedagogiske evner og
+              er gode rollemodeller – de er Norges realfagshelter.
+          `}
+        </p>
+        <Divider />
+      </div>
       {cards.map((card, index) => (
         <ImageCard
           key={card.title}
@@ -174,25 +192,33 @@ const OmOss = (): JSX.Element => {
           pictureOnLeft={false}
         />
       ))}
-      <h1 className="mt-20 max-w-2xl text-gray-600 text-4xl text-center font-bold mx-3 dark:text-gray-200">
-        En forsmak til læreryrket!
-      </h1>
-      <p className="max-w-2xl text-center mt-12 text-xl mx-auto dark:text-gray-300">
-        {`Siden studentene er tilstede i
-         undervisningen får de en introduksjon til
+      <div className="flex flex-col gap-3 md:gap-5">
+        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          En forsmak til læreryrket!
+        </h1>
+        <p className="max-w-3xl text-md md:text-lg">
+          {
+          `Siden studentene er tilstede i
+          undervisningen får de en introduksjon til
           læreryrket. Mange som studerer realfag
-           vurderer en fremtid som lærer,
-            og får gjennom oss muligheten til
-             å få reell erfaring.`}
-      </p>
-      <img
-        className="mt-4"
+          vurderer en fremtid som lærer,
+          og får gjennom oss muligheten til
+          å få reell erfaring.`
+          }
+        </p>
+        <img
+        className="mt-0"
         alt=""
         src="https://vektorprogrammet.no/images/nett.jpg?v=1598900041"
-      />
-      <BorderContentCard title="Ofte stilte spørsmål og svar">
+        />
+        <Divider />
+      </div>
+      <div>
+        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          En forsmak til læreryrket!
+        </h1>
         {accordionSection}
-      </BorderContentCard>
+      </div>
     </div>
   );
 };
