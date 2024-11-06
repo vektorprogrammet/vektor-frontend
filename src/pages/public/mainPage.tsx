@@ -155,24 +155,26 @@ const mainPage = (): JSX.Element => {
         ))}
       </div>
       {/*Middle end*/}
-      <div className="flex flex-col justify-self-center max-w-4xl md:gap-32">
-        <div className="flex flex-row flex-wrap justify-around md:justify-between">
-          {hovedsponsor.map((sponsor) => (
-            <div className="flex w-72 h-72 md:w-96 md:h-96 items-center">
-              <img className="w-auto h-auto" 
-                src={sponsor.image} 
-                alt={sponsor.name} />
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-row flex-wrap justify-around md:justify-between">
-          {sponsorer.map((sponsor) => (
-            <div className="flex w-36 h-36 md:w-64 md:h-64 items-center">
-              <img className="w-auto h-auto" 
-                src={sponsor.image} 
-                alt={sponsor.name} />
-            </div>
-          ))}
+      <div className="flex justify-center">
+        <div className="flex flex-col max-w-4xl md:gap-32">
+          <div className="flex flex-row flex-wrap justify-around md:justify-between">
+            {hovedsponsor.map((sponsor) => (
+              <div className="flex w-72 h-72 md:w-96 md:h-96 items-center">
+                <img className="w-auto h-auto" 
+                  src={sponsor.image} 
+                  alt={sponsor.name} />
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-row flex-wrap justify-around md:justify-between">
+            {sponsorer.map((sponsor) => (
+              <div className="flex w-36 h-36 md:w-64 md:h-64 items-center">
+                <img className="w-auto h-auto" 
+                  src={sponsor.image} 
+                  alt={sponsor.name} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </main>
