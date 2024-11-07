@@ -25,7 +25,7 @@ const TextPictureCard = ({
   );
 
   return (
-    <div className={`flex ${pictureOnLeft ? 'md:flex-row-reverse' : ''} w-full gap-5 md:gap-14 justify-center flex-wrap`}>
+    <div className={`flex ${pictureOnLeft ? 'md:flex-row-reverse' : ''} gap-5 md:gap-14 justify-center flex-wrap`}>
       {image}
       <div className="flex flex-col max-w-6xl gap-3 md:gap-5 m-auto">
         <h1 className="text-center text-xl md:text-3xl font-bold text-vektor-DARKblue dark:text-text-dark">

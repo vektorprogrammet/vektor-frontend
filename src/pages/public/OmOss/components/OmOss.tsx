@@ -1,10 +1,10 @@
 import ImageCard from "@/components/TextPictureCard";
 import Divider from "@/components/Divider";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+import { 
+  Accordion, 
+  AccordionContent, 
+  AccordionItem, 
+  AccordionTrigger 
 } from "./Accordion";
 
 interface TextAndPicture {
@@ -131,7 +131,7 @@ const teamAccordions: AccordionType[] = [
 
 const OmOss = (): JSX.Element => {
   const accordionSection = (
-    <div className=" items-center flex flex-col mx-auto sm:w-full md:w-4/5 px-5">
+    <div className="flex flex-col items-center w-full">
       <h2 className="text-2xl text-gray-600 dark:text-gray-200">Assistent</h2>
       <Accordion type="single" collapsible className="w-full">
         {assistantAccordions.map(({ title, content }, index) => (
@@ -155,8 +155,8 @@ const OmOss = (): JSX.Element => {
       <p className="my-6 text-xl dark:text-gray-200">
         Lurer du på noe?
         <a
-          className="underline text-blue-600 hover:text-blue-800 dark:text-blue-300"
-          href="/kontakt"
+        className="underline text-blue-600 hover:text-blue-800 dark:text-blue-300 pl-4"
+        href="/kontakt"
         >
           Ta kontakt med oss!
         </a>
@@ -165,7 +165,7 @@ const OmOss = (): JSX.Element => {
   );
 
   return (
-    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-28 dark:text-text-dark">
+    <div className="flex flex-col w-full items-center p-5 mt-40 mb-20 gap-10 md:gap-28 dark:text-text-dark">
       <div className="flex flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Om Vektorprogrammet
@@ -193,7 +193,7 @@ const OmOss = (): JSX.Element => {
         />
       ))}
       <div className="flex flex-col gap-3 md:gap-5">
-        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+        <h1 className="w-full text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           En forsmak til læreryrket!
         </h1>
         <p className="max-w-3xl text-md md:text-lg">
@@ -213,9 +213,9 @@ const OmOss = (): JSX.Element => {
         />
         <Divider />
       </div>
-      <div>
-        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
-          En forsmak til læreryrket!
+      <div className="flex flex-col w-full max-w-4xl gap-10">
+        <h1 className="w-full text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          Ofte stilte spørsmål og svar
         </h1>
         {accordionSection}
       </div>
