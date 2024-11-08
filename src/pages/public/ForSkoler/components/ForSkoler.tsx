@@ -13,7 +13,7 @@ const ForSkoler = (): JSX.Element => {
   }
 
   return (
-    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-20 dark:text-text-dark">
+    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-20 dark:text-text-dark max-w-80 md:max-w-none">
       <div className="flex flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Søk om å få assistenter til din skole
@@ -22,12 +22,12 @@ const ForSkoler = (): JSX.Element => {
           Ta kontakt med ansvarlig for skolekoordinering i din by for å sende inn en søknad om å få vektorassistenter til din skole.
         </p>
       </div>
-      <div>
+      <div className="flex flex-col md:flex-row">
         {[
           {
             city: "Trondheim",
             url: ""
-          }, 
+          },
           {
             city: "Ås",
             url: ""
@@ -35,23 +35,24 @@ const ForSkoler = (): JSX.Element => {
           {
             city: "Bergen",
             url: ""
-          } 
+          }
         ].map(({ city, url }) => {
           return (
             <button
-            type="button"
-            onClick={goToContact(url)}
-            className="btn btn-success text-white text-lg py-2 px-4 w-48 mx-6">
+              type="button"
+              onClick={goToContact(url)}
+              className="btn btn-success text-white my-2 text-lg py-2 px-4 w-48 md:mx-6"
+            >
               {city}
             </button>
           )
         })}
       </div>
       <div>
-        <h2 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-2xl text-center font-bold dark:text-text-dark">
+        <h2 className="max-w-3xl text-vektor-DARKblue text-xl md:text-2xl text-center font-bold dark:text-text-dark">
           Har ikke Vektorprogrammet etablert seg i din by enda?
         </h2>
-        <p className="max-w-3xl text-md md:text-lg">
+        <p className="max-w-3xl text-md md:text-lg my-6">
           Ta kontakt med <a href="">hovedstyret</a> for å melde din interesse!
         </p>
       </div>
