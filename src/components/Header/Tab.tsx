@@ -4,10 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
-  const [activeTabIndex, setActiveTabIndex] = useState<number | null>(null);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
   const navigate = useNavigate();
+
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(
+    () => Number(localStorage.getItem("activeTabIndex")) || 0
+  );
 
   useEffect(() => {
     if (activeTabIndex === null) {
@@ -21,7 +24,10 @@ export const Tab = () => {
     };
 
     setTabPosition();
+
+    localStorage.setItem("activeTabIndex", String(activeTabIndex));
   }, [activeTabIndex]);
+
 
   return (
     <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
