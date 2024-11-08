@@ -13,7 +13,7 @@ interface DivisionList {
 
 const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`sm:min-w-[448px] ${open ? "block" : "hidden"}`}>
       <Division
         name="Trondheim"
         subtitle="Norges teknisk-naturvitenskapelige universitet"
@@ -43,7 +43,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`sm:min-w-[448px] ${open ? "block" : "hidden"}`}>
       <Division
         name="Ås"
         subtitle="Norges miljø- og biovitenskapelige universitet"
@@ -71,7 +71,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`w-full ${open ? "block" : "hidden"}`}>
+    <div className={`sm:min-w-[448px] ${open ? "block" : "hidden"}`}>
       <Division
         name="Bergen"
         subtitle="Universitetet i Bergen"
@@ -95,7 +95,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`sm:w-lg ${open ? "block" : "hidden"}`}>
       <Division
         name="Hovedstyret"
         description="Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen."
@@ -160,17 +160,16 @@ const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
     sessionStorage.setItem("kontaktTab", openTab.toString());
   }, [openTab]);
   return (
-    <div className="grid grid-cols-5 justify-items-center">
-      <div className="">
+    <div className="flex-col md:flex-row lg:max-w-2xl md:max-w-xl md:mb-auto mb-6 items-start sm:max-w-md max-w-xs">
+      <div className="md:absolute md:left-3 lg:left-8 xl:left-12">
         <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
       </div>
-      <div className="flex flex-col col-start-2 col-end-5 break-words mb-6 bg-vektor-light-blue rounded-md px-5 py-5 mx-auto w-full shadow-md">
+      <div className="flex flex-col items-start break-words mb-6 bg-vektor-light-blue rounded-md px-5 py-5 mx-auto shadow-md">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
         <HovedstyretTab open={openTab === 4} />
       </div>
-      <div></div>
     </div>
   );
 };

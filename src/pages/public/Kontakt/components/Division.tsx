@@ -28,12 +28,12 @@ const Division = ({
 }: DivisionProps): JSX.Element => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-10 p-6">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 sm:p-6 pd:2">
         <div>
           <div className="font-bold text-2xl text-blue-800">{name}</div>
           {subtitle && <div className="text-base">{subtitle}</div>}
           {description && <div className="text-base">{description}</div>}
-          <div className="flex space-x-1 mt-8">
+          <div className="flex space-x-1 mt-3 md:mt-8">
             <svg
               className="h-4 w-4 text-balck"
               width="24"
@@ -50,14 +50,14 @@ const Division = ({
               <polyline points="3 7 12 13 21 7" />
             </svg>
             <a
-              className="truncate block max-w-[200px] text-sm hover:underline"
+              className="truncate block text-sm hover:underline"
               href={`mailto:${mail}`}
             >
               {mail}
             </a>
           </div>
           {address && (
-            <div className="flex space-x-1">
+            <div className="flex space-x-1 text-sm">
               <svg
                 className="h-4 w-4 text-black"
                 fill="none"
@@ -81,7 +81,7 @@ const Division = ({
             </div>
           )}
           {members && (
-            <div className="whitespace-nowrap flex space-x-1">
+            <div className="whitespace-nowrap flex space-x-1 text-sm">
               <svg
                 className="h-4 w-4 text-black"
                 fill="none"
@@ -116,7 +116,7 @@ const Division = ({
                 <div className="text-blue-800">{contactInfos[id].name}</div>
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a
-                  className="text-sm hover:underline"
+                  className="text-sm hover:underline truncate block"
                   href={`mailto:${contactInfos[id].mail}`}
                 >
                   {contactInfos[id].mail}
