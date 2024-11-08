@@ -165,12 +165,12 @@ const OmOss = (): JSX.Element => {
   );
 
   return (
-    <div className="flex flex-col w-full items-center p-5 mt-40 mb-20 gap-10 md:gap-28 dark:text-text-dark">
-      <div className="flex flex-col gap-3 md:gap-5">
-        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+    <div className="flex flex-col self-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark">
+      <div className="flex flex-col max-w-full gap-3 md:gap-5">
+        <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Om Vektorprogrammet
         </h1>
-        <p className="max-w-3xl text-md md:text-lg">
+        <p className="text-md md:text-lg">
           {`
           Vektorprogrammet arbeider for å øke interessen for matematikk 
           og realfag blant elever i grunnskolen. Vi er en nasjonal studentorganisasjon
@@ -189,11 +189,11 @@ const OmOss = (): JSX.Element => {
           text={card.text}
           imgPath={card.image.url.toString()}
           alt={card.image.alt}
-          pictureOnLeft={false}
+          pictureOnLeft={index % 2 === 0}
         />
       ))}
-      <div className="flex flex-col gap-3 md:gap-5">
-        <h1 className="w-full text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+      <div className="flex flex-col w-full gap-3 md:gap-5">
+        <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           En forsmak til læreryrket!
         </h1>
         <p className="max-w-3xl text-md md:text-lg">
@@ -213,7 +213,7 @@ const OmOss = (): JSX.Element => {
         />
         <Divider />
       </div>
-      <div className="flex flex-col w-full max-w-4xl gap-10">
+      <div className="flex flex-col w-full gap-10">
         <h1 className="w-full text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Ofte stilte spørsmål og svar
         </h1>
