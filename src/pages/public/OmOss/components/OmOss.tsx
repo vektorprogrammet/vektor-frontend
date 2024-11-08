@@ -132,7 +132,7 @@ const teamAccordions: AccordionType[] = [
 const OmOss = (): JSX.Element => {
   const accordionSection = (
     <div className="flex flex-col items-center w-full">
-      <h2 className="text-2xl text-gray-600 dark:text-gray-200">Assistent</h2>
+      <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">Assistent</h2>
       <Accordion type="single" collapsible className="w-full">
         {assistantAccordions.map(({ title, content }, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
@@ -141,7 +141,8 @@ const OmOss = (): JSX.Element => {
           </AccordionItem>
         ))}
       </Accordion>
-      <h2 className="text-2xl text-gray-600 mt-10 mb-3 dark:text-gray-200">
+      <Divider />
+      <h2 className="text-2xl text-vektor-DARKblue mb-3 dark:text-gray-200">
         Team
       </h2>
       <Accordion type="single" collapsible className="w-full">
@@ -152,7 +153,7 @@ const OmOss = (): JSX.Element => {
           </AccordionItem>
         ))}
       </Accordion>
-      <p className="my-6 text-xl dark:text-gray-200">
+      <p className="my-6 md:text-xl dark:text-gray-200">
         Lurer du på noe?
         <a
         className="underline text-blue-600 hover:text-blue-800 dark:text-blue-300 pl-4"
@@ -165,7 +166,7 @@ const OmOss = (): JSX.Element => {
   );
 
   return (
-    <div className="flex flex-col self-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark">
+    <div className="flex flex-col self-center max-w-4xl p-5 mt-20 mb-20 gap-3 md:gap-28 dark:text-text-dark">
       <div className="flex flex-col max-w-full gap-3 md:gap-5">
         <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Om Vektorprogrammet

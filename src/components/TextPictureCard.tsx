@@ -20,7 +20,7 @@ const TextPictureCard = ({
     <img
       src={imgPath}
       alt={alt}
-      className="flex max-h-96 rounded-lg sm:w-auto md:max-w-96 h-fit"
+      className="flex max-h-96 rounded-lg sm:w-auto md:max-w-96 md:h-fit"
     />
   );
 
