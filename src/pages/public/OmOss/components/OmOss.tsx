@@ -196,7 +196,7 @@ const OmOss = (): JSX.Element => {
         <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           En forsmak til læreryrket!
         </h1>
-        <p className="max-w-3xl text-md md:text-lg">
+        <p className="text-md md:text-lg">
           {
           `Siden studentene er tilstede i
           undervisningen får de en introduksjon til
