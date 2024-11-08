@@ -9,7 +9,7 @@ const ForSkoler = (): JSX.Element => {
   const { title, ingress, cards, bottomText } = getContent();
 
   const goToContact = (url: string) => () => {
-    window.open(url);
+    window.location.href = url;
   }
 
   return (
@@ -26,15 +26,15 @@ const ForSkoler = (): JSX.Element => {
         {[
           {
             city: "Trondheim",
-            url: ""
+            url: "#"
           },
           {
             city: "Ås",
-            url: ""
+            url: "#"
           },
           {
             city: "Bergen",
-            url: ""
+            url: "#"
           }
         ].map(({ city, url }) => {
           return (
@@ -53,7 +53,7 @@ const ForSkoler = (): JSX.Element => {
           Har ikke Vektorprogrammet etablert seg i din by enda?
         </h2>
         <p className="max-w-3xl text-md md:text-lg my-6">
-          Ta kontakt med <a href="">hovedstyret</a> for å melde din interesse!
+          Ta kontakt med <a href="#">hovedstyret</a> for å melde din interesse!
         </p>
       </div>
     </div>
