@@ -54,7 +54,7 @@ const LoginPopup = ({
 
   return (
     <div
-      className="bg-black/40 fixed top-0 left-0 w-full h-screen flex justify-center items-center"
+      className="bg-black/70 fixed top-0 left-0 w-full h-screen flex justify-center items-center backdrop-blur-lg"
       onClick={closeOrOpen}
       onKeyDown={() => {}}
       role="button"
