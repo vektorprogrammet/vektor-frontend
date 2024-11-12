@@ -13,7 +13,7 @@ const ForSkoler = (): JSX.Element => {
   }
 
   return (
-    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-20 dark:text-text-dark max-w-80 md:max-w-none">
+    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-10 dark:text-text-dark max-w-80 md:max-w-none">
       <div className="flex flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Søk om å få assistenter til din skole
@@ -52,7 +52,7 @@ const ForSkoler = (): JSX.Element => {
         <h2 className="max-w-3xl text-vektor-DARKblue text-xl md:text-2xl text-center font-bold dark:text-text-dark">
           Har ikke Vektorprogrammet etablert seg i din by enda?
         </h2>
-        <p className="max-w-3xl text-md md:text-lg my-6">
+        <p className="max-w-3xl text-md md:text-lg my-4 md:text-center">
           Ta kontakt med <a href="#">hovedstyret</a> for å melde din interesse!
         </p>
       </div>
