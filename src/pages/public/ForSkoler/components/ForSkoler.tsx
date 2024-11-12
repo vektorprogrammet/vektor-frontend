@@ -3,7 +3,7 @@ import Divider from "@/components/Divider";
 const ForSkoler = (): JSX.Element => {
   return (
     <div>
-    <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-40 dark:text-text-dark">
+    <div className="flex flex-col items-center p-5 mt-40 mx-auto md:gap-40 dark:text-text-dark">
       <div className="flex flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Vektorassistenter i skolen
@@ -34,7 +34,7 @@ const ForSkoler = (): JSX.Element => {
           gi elevene mer motivasjon.
           </p>
         </div>
-        <Divider />
+        {/* <Divider /> */}
       </div>
       {/* {cards.map((card, index) => (
         <TextCard
@@ -47,18 +47,19 @@ const ForSkoler = (): JSX.Element => {
         {/* {bottomText} */}
       </p>
     </div>
-    <div className="info-background w-full pt-72 pb-72 mb-16 flex flex-col items-center space-y-10">
-        <h3>Enkelt å bruke assistenter i undervisningen</h3>
-        <p>
+    <div className="info-background py-48 flex flex-col items-center p-5 mb-20 mx-auto gap-5 md:gap-40 text-vektor-bg">
+      <h3 className="max-w-3xl text-vektor-bg text-2xl md:text-4xl text-center font-bold">
+        Enkelt å bruke assistenter i undervisningen
+      </h3>
+      <p className="max-w-3xl text-md md:text-lg mt-5">
         Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:
-        </p>
-        <ul>
-        <li>Hjelpe til med oppgaveløsing i klasserom</li>
-        <li>Utfordre de sterkeste elevene med vanskeligere oppgaver</li>
-        <li>Engasjere elever med matteleker, gåter og spill</li>
-        <li>Arbeid med elever på grupperom</li>
-        </ul>
-        
+      </p>
+      <ul className="max-w-3xl text-md md:text-lg list-disc ml-5">
+        <li className="py-1">Hjelpe til med oppgaveløsing i klasserom</li>
+        <li className="py-1">Utfordre de sterkeste elevene med vanskeligere oppgaver</li>
+        <li className="py-1">Engasjere elever med matteleker, gåter og spill</li>
+        <li className="py-1">Arbeid med elever på grupperom</li>
+      </ul>  
     </div>
     </div>
   );
