@@ -1,36 +1,70 @@
-import BorderContentCard from "./BorderContentCard";
-import PageParagraph from "./PageSection";
-import PageTitleCard from "./PageTitleCard";
-import getContent from "api/ForSkoler";
-import TextCard from "@/components/TextCard";
 import Divider from "@/components/Divider";
 
 const ForSkoler = (): JSX.Element => {
-  const { title, ingress, cards, bottomText } = getContent();
   return (
+    <div>
     <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-40 dark:text-text-dark">
       <div className="flex flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
-          {title}
+          Vektorassistenter i skolen
         </h1>
-        <p className="max-w-3xl text-md md:text-lg">{ingress}</p>
+        <div className="max-w-3xl text-md md:text-lg"> {/* alle p's arver className fra div */}
+          <p className="max-w-3xl text-md md:text-lg">Vektorprogrammet er en frivillig organisasjon som tilbyr ungdomsskoler i Norge hjelpelærere i matematikktimene. Her kan du enkelt søke om å få 
+          studenter til å hjelpe og motivere elevene i dine timer.</p>
+          <Divider />
+          <h2 className="max-w-3xl text-vektor-DARKblue text-xl md:text-xl text-center font-bold dark:text-text-dark">Test</h2>
+          <p>Vektorprogrammet er Norges største organisasjon 
+          som arbeider for å øke interessen for matematikk 
+          og realfag blant elever i grunnskolen. Vi er en 
+          studentorganisasjon som sender ut dyktige og 
+          motiverte studenter til ungdomsskoler i Norge.</p>
+          <br />
+          <p>Studentene fungerer som lærerens assistenter og kan dermed bidra til at elevene raskere får 
+          hjelp i timen, og at undervisningen blir mer tilpasset de ulike elevgruppene. Vi har erfart 
+          at lærerne ofte har mye å gjøre i timene, og ofte ikke rekker å hjelpe alle elevene som står 
+          fast. Derfor er vi overbevist om at to assistenter kan forhindre mye hodebry for både lærere og elever.</p>
+          <br />
+          <p>Hvert år gjennomfører vi evalueringsundersøkelser, og i gjennomsnitt sier over 95% av lærerne at de 
+          er fornøyde med prosjektet og ønsker å delta videre.</p>
+          <br />
+          <p>
+          Alle assistentene har vært gjennom en intervjuprossess som gjør oss sikre på at de vil passe som 
+          assistentlærere og kan være gode forbilder for elevene. Dette er en unik mulighet til å få inn 
+          rollemodeller i klasserommet som kan være med å 
+          gi elevene mer motivasjon.
+          </p>
+        </div>
         <Divider />
       </div>
-      {cards.map((card, index) => (
+      {/* {cards.map((card, index) => (
         <TextCard
           key={card.title}
           title={card.title}
           text={card.text}
         />
-      ))}
+      ))} */}
       <p className="max-w-3xl text-md md:text-lg">
-        {bottomText}
+        {/* {bottomText} */}
       </p>
+    </div>
+    <div className="info-background w-full pt-72 pb-72 mb-16 flex flex-col items-center space-y-10">
+        <h3>Enkelt å bruke assistenter i undervisningen</h3>
+        <p>
+        Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:
+        </p>
+        <ul>
+        <li>Hjelpe til med oppgaveløsing i klasserom</li>
+        <li>Utfordre de sterkeste elevene med vanskeligere oppgaver</li>
+        <li>Engasjere elever med matteleker, gåter og spill</li>
+        <li>Arbeid med elever på grupperom</li>
+        </ul>
+        
+    </div>
     </div>
   );
 };
 
-/* const ForSkoler = (): JSX.Element => {
+{/* const ForSkoler = (): JSX.Element => {
   return (
     <div className="mx-auto p-4">
       <PageTitleCard
@@ -163,6 +197,6 @@ const ForSkoler = (): JSX.Element => {
       </div>
     </div>
   );
-}; */
+}; */}
 
 export default ForSkoler;

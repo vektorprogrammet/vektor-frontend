@@ -1,23 +1,15 @@
-export interface TextPictureCard {
-    title: string;
-    text: string;
-    image: {
-      url: URL;
-      alt: string;
-    };
-  }
   export interface TextCard {
     title: string;
     text: string;
   }
-  export interface ForForeldreContent {
+  export interface ForSkolerContent {
     title: string;
     ingress: string;
     cards: Array<TextCard>;
     bottomText: string;
   }
   
-  export default (): ForForeldreContent => {
+  export default (): ForSkolerContent => {
     return {
       title: "Vektorassistenter i skolen",
       ingress:
@@ -30,7 +22,7 @@ export interface TextPictureCard {
         som arbeider for å øke interessen for matematikk 
         og realfag blant elever i grunnskolen. Vi er en 
         studentorganisasjon som sender ut dyktige og 
-        motiverte studenter til ungdomsskoler i norge.\n\n
+        motiverte studenter til ungdomsskoler i norge.
         Studentene fungerer som lærerens assistenter 
         og kan dermed bidra til at elevene raskere får 
         hjelp i timen, og at undervisningen blir mer 
