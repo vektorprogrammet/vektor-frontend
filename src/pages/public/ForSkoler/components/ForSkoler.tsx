@@ -4,7 +4,7 @@ import PageTitleCard from "./PageTitleCard";
 
 const ForSkoler = (): JSX.Element => {
   return (
-    <div className="container">
+    <div className="mx-auto p-4">
       <PageTitleCard
         title="Vektorassistenter i skolen"
         text={`Vektorprogrammet er en frivillig organisasjon 
@@ -55,7 +55,7 @@ const ForSkoler = (): JSX.Element => {
             "Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:",
           ]}
         >
-          <ul className="pl-4 ml-4 mb-3 list-disc dark:text-gray-300">
+          <ul className="pl-4 ml-4 mb-3 list-disc dark:text-text-dark">
             {[
               "Hjelpe til med oppgaveløsing i klasserom",
               "Utfordre de sterkeste elevene med vanskeligere oppgaver",

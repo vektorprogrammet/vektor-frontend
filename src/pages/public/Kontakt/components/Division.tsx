@@ -30,8 +30,8 @@ const Division = ({
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-10 sm:p-6 pd:2">
         <div>
-          <div className="font-bold text-2xl text-blue-800">{name}</div>
-          {subtitle && <div className="text-base">{subtitle}</div>}
+          <div className="font-bold text-2xl text-blue-800 dark:text-neutral-200">{name}</div>
+          {subtitle && <div className="text-base dark:text-neutral-200">{subtitle}</div>}
           {description && <div className="text-base">{description}</div>}
           <div className="flex space-x-1 mt-3 md:mt-8">
             <svg
@@ -113,7 +113,7 @@ const Division = ({
           {contactInfos.map((data, id) => {
             return (
               <div className="py-2 mt-5" key={data.name}>
-                <div className="text-blue-800">{contactInfos[id].name}</div>
+                <div className="text-blue-800 dark:text-gray-200">{contactInfos[id].name}</div>
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a
                   className="text-sm hover:underline truncate block"
@@ -127,13 +127,13 @@ const Division = ({
         </div>
       </div>
       {contact && (
-        <div>
-          <div className="font-bold text-2xl text-blue-800 text-center pt-10">{`Kontakt styret i ${name}`}</div>
+        <div className="dark:bg-neutral-800">
+          <div className="font-bold text-2xl text-blue-800 text-center pt-10 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
           <form>
             <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
               <label
                 htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Ditt navn
                 <input
@@ -145,7 +145,7 @@ const Division = ({
               </label>
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Din e-post
                 <input
@@ -159,7 +159,7 @@ const Division = ({
             <div className="mb-6">
               <label
                 htmlFor="topic"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Emne
                 <input
@@ -173,7 +173,7 @@ const Division = ({
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Melding
                 <textarea
