@@ -3,7 +3,7 @@ import Divider from "@/components/Divider";
 const ForSkoler = (): JSX.Element => {
   return (
     <div>
-    <div className="flex flex-col items-center p-5 mt-40 mx-auto md:gap-40 dark:text-text-dark">
+    <div className="flex flex-col items-center p-5 mt-40 mx-auto md:gap-7 dark:text-text-dark">
       <div className="flex flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
           Vektorassistenter i skolen
@@ -12,7 +12,8 @@ const ForSkoler = (): JSX.Element => {
           <p className="max-w-3xl text-md md:text-lg">Vektorprogrammet er en frivillig organisasjon som tilbyr ungdomsskoler i Norge hjelpelærere i matematikktimene. Her kan du enkelt søke om å få 
           studenter til å hjelpe og motivere elevene i dine timer.</p>
           <Divider />
-          <h2 className="max-w-3xl text-vektor-DARKblue text-xl md:text-xl text-center font-bold dark:text-text-dark">Test</h2>
+          <br />
+          {/* <h2 className="max-w-3xl text-vektor-DARKblue text-xl md:text-xl text-center font-bold dark:text-text-dark">Test</h2> */}
           <p>Vektorprogrammet er Norges største organisasjon 
           som arbeider for å øke interessen for matematikk 
           og realfag blant elever i grunnskolen. Vi er en 
@@ -47,19 +48,21 @@ const ForSkoler = (): JSX.Element => {
         {/* {bottomText} */}
       </p>
     </div>
-    <div className="info-background py-48 flex flex-col items-center p-5 mb-20 mx-auto gap-5 md:gap-40 text-vektor-bg">
+    <div className="info-background py-48 flex flex-col items-center p-5 mb-20 mx-auto gap-5 md:gap-5 text-vektor-bg">
       <h3 className="max-w-3xl text-vektor-bg text-2xl md:text-4xl text-center font-bold">
         Enkelt å bruke assistenter i undervisningen
       </h3>
-      <p className="max-w-3xl text-md md:text-lg mt-5">
+      <p className="max-w-3xl md:max-w-2xl text-md md:text-xl mt-5">
         Assistentene kan brukes som hjelp i undervisningen. Her er noen forslag vi har gode erfaringer med:
       </p>
-      <ul className="max-w-3xl text-md md:text-lg list-disc ml-5">
-        <li className="py-1">Hjelpe til med oppgaveløsing i klasserom</li>
-        <li className="py-1">Utfordre de sterkeste elevene med vanskeligere oppgaver</li>
-        <li className="py-1">Engasjere elever med matteleker, gåter og spill</li>
-        <li className="py-1">Arbeid med elever på grupperom</li>
-      </ul>  
+      <div className="md:max-w-2xl md:w-full">
+        <ul className="text-md md:text-xl list-disc ml-5">
+          <li className="py-1">Hjelpe til med oppgaveløsing i klasserom</li>
+          <li className="py-1">Utfordre de sterkeste elevene med vanskeligere oppgaver</li>
+          <li className="py-1">Engasjere elever med matteleker, gåter og spill</li>
+          <li className="py-1">Arbeid med elever på grupperom</li>
+        </ul>
+      </div>
     </div>
     </div>
   );
