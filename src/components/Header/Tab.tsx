@@ -7,7 +7,9 @@ export const Tab = () => {
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
   const navigate = useNavigate();
-  const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(
+    () => Number(localStorage.getItem("activeTabIndex")) || 0
+  );
 
   useEffect(() => {
     if (activeTabIndex === null) {
