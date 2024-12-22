@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from "react-router-dom";
 import routes from "../../pages/public/routes";
 import LoginButtons from "./LoginButtons";
-import LoginPopup from "./LoginPopup";
+import LoginPopup from "../../pages/controlpanel/components/LoginPopup";
 import UserAvatar from "./UserAvatar";
 import "./mobile.css";
 import {
@@ -22,9 +22,6 @@ import {
 interface Props {
   menuOpen: boolean;
   setMenuOpen: (values: boolean) => void;
-  isLoggedIn: boolean;
-  loginPopupVisible: boolean;
-  setLoginPopupVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const activeStyle: React.CSSProperties = {
@@ -36,9 +33,6 @@ const MobileMenu = (props: Props): JSX.Element => {
   const {
     menuOpen,
     setMenuOpen,
-    isLoggedIn,
-    loginPopupVisible,
-    setLoginPopupVisible,
   } = props;
 
   const linkElements = routes.map((route) => (
@@ -69,14 +63,7 @@ const MobileMenu = (props: Props): JSX.Element => {
                 {linkElements}
               </ul>
               <div className="flex w-fit justify-center">
-              {isLoggedIn ? (
-                <UserAvatar />
-              ) : (
-                <LoginButtons setVisible={setLoginPopupVisible} />
-              )}
-              {loginPopupVisible ? (
-                <LoginPopup setVisible={setLoginPopupVisible} />
-              ) : null}
+              <LoginButtons />
             </div>
           </div>
           </DrawerDescription>
