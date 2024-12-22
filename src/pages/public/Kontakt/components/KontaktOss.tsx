@@ -13,12 +13,12 @@ interface DivisionList {
 
 const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`sm:min-w-[448px] ${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Trondheim"
         subtitle="Norges teknisk-naturvitenskapelige universitet"
         mail="styret.ntnu@vektorprogrammet.no"
-        address="Høgskoleringen 5 7491 Trondheim"
+        address="Høgskoleringen 5, 7491 Trondheim"
         contactInfos={[
           { name: "Styret", mail: "styret.ntnu@vektorprogrammet.no" },
           { name: "Evaluering", mail: "evaluering.ntnu@vektorprogrammet.no" },
@@ -43,7 +43,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`sm:min-w-[448px] ${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Ås"
         subtitle="Norges miljø- og biovitenskapelige universitet"
@@ -71,7 +71,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`sm:min-w-[448px] ${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Bergen"
         subtitle="Universitetet i Bergen"
@@ -95,7 +95,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`sm:w-lg ${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Hovedstyret"
         description="Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen."
@@ -160,11 +160,11 @@ const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
     sessionStorage.setItem("kontaktTab", openTab.toString());
   }, [openTab]);
   return (
-    <div className="flex-col md:flex-row lg:max-w-2xl md:max-w-xl md:mb-auto mb-6 items-start sm:max-w-md max-w-xs">
-      <div className="md:absolute md:left-3 lg:left-8 xl:left-12">
+    <div className="flex flex-col md:flex-row items-start md:max-w-6xl md:mb-auto mb-6 items-start">
+      <div className="w-1/5 ml-3">
         <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
       </div>
-      <div className="flex flex-col items-start break-words mb-6 bg-vektor-light-blue rounded-md px-5 py-5 mx-auto shadow-md">
+      <div className="flex flex-col w-full items-start overflow-y-scroll h-[500px] break-words mb-6 rounded-md px-5 py-5 mx-auto xl:ml-20 lg:ml-16 w-[322px] sm:w-[440px] md:w-[720px] lg:w-[820px] xl:w-[1100px]">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
