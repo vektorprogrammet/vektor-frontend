@@ -153,15 +153,6 @@ const OmOss = (): JSX.Element => {
           </AccordionItem>
         ))}
       </Accordion>
-      <p className="my-6 md:text-xl dark:text-gray-200">
-        Lurer du på noe?
-        <a
-        className="underline text-blue-600 hover:text-blue-800 dark:text-blue-300 pl-4"
-        href="/kontakt"
-        >
-          Ta kontakt med oss!
-        </a>
-      </p>
     </div>
   );
 

@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import routes from "@/pages/public/routes";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
   const navigate = useNavigate();
-
   const [activeTabIndex, setActiveTabIndex] = useState<number>(
     () => Number(localStorage.getItem("activeTabIndex")) || 0
   );
