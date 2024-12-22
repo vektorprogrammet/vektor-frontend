@@ -102,7 +102,7 @@ const Division = ({
             <div className="py-5 left-0">
               <button
                 type="submit"
-                className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                className="bg-vektor-darkblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
               >
                 Les mer om hovedstyret
               </button>
@@ -127,7 +127,7 @@ const Division = ({
         </div>
       </div>
       {contact && (
-        <div className="dark:bg-neutral-800">
+        <div className="dark:bg-neutral-800 max-w-[600px]">
           <div className="font-bold text-2xl text-blue-800 text-center pt-10 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
           <form>
             <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
@@ -185,7 +185,7 @@ const Division = ({
             </div>
             <button
               type="submit"
-              className="bg-vektor-darblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              className="bg-vektor-darkblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
               Send melding
             </button>

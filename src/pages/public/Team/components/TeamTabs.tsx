@@ -188,7 +188,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   const navigate = useNavigate();
-  return (/* w-full max-w-4xl mx-auto p-4 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 */ /* flex flex-col items-start md:col-span-1 md:w-auto */
+  return (
     <div
       className={`${
         open ? "block" : "hidden"
@@ -245,7 +245,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
         <button
           type="button"
           onClick={() => navigate(`/team/hovedstyret`)}
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
         >
           Les mer om hovedstyret
         </button>
@@ -289,7 +289,7 @@ export const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element =
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild className="flex flex-row mb-4 relative">
           <button
-            className="bg-white w-36 h-8 items-center cursor-default rounded-md flex justify-between px-2"
+            className="bg-vektor-darkblue text-white w-36 h-8 items-center cursor-default rounded-md flex justify-between px-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             <div className="flex items-center justify-between w-full">
@@ -302,7 +302,7 @@ export const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element =
           {divisions.map((data) => {
             const chosenStyle =
               tabstate === data.number
-                ? "font-semibold text-vektor-darblue"
+                ? "font-semibold text-vektor-darkblue"
                 : "hover:text-vektor-light-blue";
             return (
               <div key={data.number}>
@@ -331,7 +331,7 @@ export const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element =
         {divisions.map((data) => {
           const chosenStyle =
           tabstate === data.number
-          ? "bg-vektor-darblue text-white hover:bg-vektor-darblue"
+          ? "bg-vektor-darkblue text-white hover:bg-vektor-darkblue"
           : "bg-transparent hover:bg-vektor-light-blue dark:text-white";
           return (
             <div key={data.name}>
