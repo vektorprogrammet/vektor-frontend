@@ -1,55 +1,58 @@
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import type React from "react";
-import { useRef, useState } from "react";
+"use client"
 
-interface AccordionProps {
-  title: React.ReactNode;
-  content: React.ReactNode;
-}
+import * as React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ChevronDown } from "lucide-react"
 
-const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
-  const [active, setActive] = useState(false);
-  const [height, setHeight] = useState("0px");
-  const [symbol, setSymbol] = useState(faPlus);
+import { cn } from "@/lib/utils"
 
-  const contentSpace = useRef(null);
+const Accordion = AccordionPrimitive.Root
 
-  function toggleAccordion() {
-    setActive(active === false);
-    // @ts-ignore
-    setHeight(active ? "0px" : `${contentSpace.current.scrollHeight}px`);
-    setSymbol(active ? faPlus : faMinus);
-    // setRotate(active ? 'transform duration-700 ease' : 'transform duration-700 ease rotate-180')
-  }
+const AccordionItem = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn("border-b border-vektor-DARKblue dark:border-vektor-bg border-opacity-10 ", className)}
+    {...props}
+  />
+))
+AccordionItem.displayName = "AccordionItem"
 
-  return (
-    <div className="flex flex-col w-full items-center">
-      <button
-        className={`mt-6 py-3 border-b-2 border-gray-300 dark:border-gray-600 dark:hover:bg-gray-500 box-border appearance-none cursor-pointer hover:bg-primary focus:outline-none flex items-center justify-between w-full duration-200 ${
-          active
-            ? "bg-primary dark:bg-gray-500"
-            : "bg-[#c7ecf8] dark:bg-gray-600"
-        }`}
-        onClick={toggleAccordion}
-        type="button"
-      >
-        <h2 className="md:text-xl sm:text-lg pl-6 text-left w-full dark:text-gray-300">
-          {title}
-        </h2>
-        <FontAwesomeIcon className="mr-4" icon={symbol} size="lg" />
-      </button>
-      <div
-        ref={contentSpace}
-        style={{ height: `${height}` }}
-        className="overflow-hidden duration-700 ease-in-out w-full"
-      >
-        <p className="p-3 pl-6 w-full md:text-xl sm:text-lg text-left mx-auto dark:text-gray-300">
-          {content}
-        </p>
-      </div>
-    </div>
-  );
-};
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex ">
+    <AccordionPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        "flex flex-1 text-md md:text-lg text-vektor-DARKblue items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+))
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
-export default Accordion;
+const AccordionContent = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Content
+    ref={ref}
+    className="overflow-hidden text-sm md:text-md transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    {...props}
+  >
+    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+  </AccordionPrimitive.Content>
+))
+
+AccordionContent.displayName = AccordionPrimitive.Content.displayName
+
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
