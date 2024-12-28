@@ -1,14 +1,15 @@
 export const ApplyCard = (props: any) => {
   const { cities } = props;
   return (
-    <form>
-      <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center">
+    <form className="dark:bg-neutral-800">
+
+      <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center dark:text-gray-200">
         {cities}
       </h1>
 
-      <div className="mt-1 mb-8 text-center">Søknadsfrist: </div>
+      <div className="mt-1 mb-8 text-center dark:text-gray-300">Søknadsfrist: </div>
 
-      <div className="grid justify-items-center">
+      <div className="grid justify-items-center dark:text-gray-800">
         <div className="flex flex-wrap w-full my-4 space-x-8 justify-center">
           <input
             type="fornavn"
@@ -81,7 +82,7 @@ export const ApplyCard = (props: any) => {
           Søk nå!
         </button>
       </div>
-      <div className="items-center mx-16 mb-10 text-center">
+      <div className="items-center mx-16 mb-10 text-center dark:text-gray-300">
         Har du vært assistent tidligere? Da kan du søke på nytt her (krever
         innlogging)
       </div>

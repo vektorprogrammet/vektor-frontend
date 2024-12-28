@@ -1,27 +1,13 @@
 @import "tailwindcss/components";
+
 .App {
   transition: background-color 0.5s;
-}
-
-.dark .App {
-  background-color: #2a2a2a;
 }
 
 .Banner {
   background-color: #6fceee;
 }
 
-
-.Footer {
-  background-color: #223c70;
-}
-
 .iconWrapper:hover .icon {
   fill: #6fceee;
-}
-
-@layer components {
-  .container {
-    @apply mx-auto p-4;
-  }
 }

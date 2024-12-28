@@ -1,19 +1,18 @@
 import React, { type Dispatch, type SetStateAction } from "react";
+import { Link } from "react-router-dom";
 
-const LoginButtons = ({
-  setVisible,
-}: {
-  setVisible: Dispatch<SetStateAction<boolean>>;
-}) => {
+
+const LoginButtons = () => {
   return (
     <div className="flex space-x-4">
-      <button
-        type="button"
-        className="login-buttons bg-blue-400 hover:bg-blue-900 text-white px-4 py-2 rounded-full duration-300"
-        onClick={() => setVisible(true)}
-      >
-        Logg inn
-      </button>
+      <Link reloadDocument to="/kontrollpanel">
+        <button
+          type="button"
+          className="btn btn-success btn-sm text-white rounded-full h-10 w-32"
+        >
+          Logg inn
+        </button>
+      </Link>
     </div>
   );
 };

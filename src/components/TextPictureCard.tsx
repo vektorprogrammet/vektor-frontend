@@ -1,9 +1,12 @@
+import Divider from "@/components/Divider";
+
 interface Props {
+  key: string;
   title: string;
   text: string;
-  imgPath: URL;
+  imgPath: string;
   alt: string;
-  pictureOnLeft?: boolean;
+  pictureOnLeft: boolean; 
 }
 
 const TextPictureCard = ({
@@ -15,22 +18,24 @@ const TextPictureCard = ({
 }: Props): JSX.Element => {
   const image = (
     <img
-      src={imgPath.href}
+      src={imgPath}
       alt={alt}
-      className="max-h-96 mt-6 rounded-lg mx-auto sm:w-auto md:max-w-md"
+      className="flex max-h-96 rounded-lg sm:w-auto md:max-w-96 md:h-fit"
     />
   );
 
   return (
-    <div className="flex w-full mx-auto justify-between flex-wrap mt-10">
-      {pictureOnLeft && image}
-      <div className="max-w-6xl m-auto">
-        <h1 className="text-center mt-7 text-2xl dark:text-gray-200">
+    <div className={`flex ${pictureOnLeft ? 'md:flex-row-reverse' : ''} justify-center md:justify-between items-center gap-5 md:gap-14 flex-wrap md:flex-nowrap`}>
+      {image}
+      <div className="flex flex-col max-w-6xl gap-3 md:gap-5">
+        <h1 className="text-center  text-xl md:text-3xl font-bold text-vektor-DARKblue dark:text-text-dark">
           {title}
         </h1>
-        <p className="max-w-lg text-xl mt-3 px-3 dark:text-gray-300">{text}</p>
+        <p className="md:w-full text-md md:text-lg dark:text-text-dark">
+          {text}
+        </p>
       </div>
-      {!pictureOnLeft && image}
+      <Divider/>
     </div>
   );
 };

@@ -6,14 +6,15 @@
   "engines": {
     "node": ">=20.12.2"
   },
-  "packageManager": "pnpm@9.0.6",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "cypress run && vitest run",
-    "test:cypress:firefox": "cypress run --browser firefox",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
+    "e2e:test": "exec playwright test",
+    "e2e:test:ui": "exec playwright test --ui",
+    "e2e:show-report": "exec playwright show-report",
+    "e2e:install": "exec playwright install",
     "check": "biome check ./ --apply",
     "lint": "biome lint ./ --apply",
     "format": "biome format ./ --apply"
@@ -35,12 +36,18 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@radix-ui/react-accordion": "^1.2.1",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-separator": "^1.1.0",
     "@types/node": "^20.12.2",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "autoprefixer": "^10.4.19",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "daisyui": "^4.0.0",
     "dayjs": "^1.11.10",
+    "lucide-react": "^0.469.0",
     "node": "^20.12.2",
     "norwegian-utils": "^0.4.1",
     "postcss": "^8.4.38",
@@ -53,22 +60,25 @@
     "react-hook-form": "^7.51.3",
     "react-quill": "^2.0.0",
     "react-remove-scroll": "^2.5.9",
-    "react-router-dom": "^6.23.0",
+    "react-router-dom": "^7.0.0",
     "react-tailwindcss-datepicker": "^1.6.6",
     "react-visibility-sensor": "^5.1.1",
+    "tailwind-merge": "^2.5.3",
     "tailwindcss": "^3.4.3",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10",
-    "web-vitals": "^3.0.0"
+    "vaul": "^1.0.0",
+    "vite": "^6.0.0",
+    "web-vitals": "^4.2.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.1",
+    "@playwright/test": "^1.43.0",
+    "@biomejs/biome": "1.9.4",
     "@testing-library/dom": "^10.0.0",
-    "@testing-library/react": "^15.0.0",
+    "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@vitejs/plugin-react": "^4.2.1",
-    "cypress": "12.8.1",
-    "vitest": "^1.5.1"
+    "vitest": "^2.0.0"
   }
 }
