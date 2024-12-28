@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Division from "./Division.js";
-import { Tabs } from "../../Team/components/TeamTabs.js";
+import Tabs from "@/components/Tabs.js";
 
 interface KontaktTabProps {
   divisions: DivisionList[];
