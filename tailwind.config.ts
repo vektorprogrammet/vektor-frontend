@@ -25,6 +25,7 @@ export default {
         "vektor-bg-dark": "#2a2a2a",
         "text-light": "#000",
         "text-dark": "#fff",
+        "vektor-light-blue": "#c7ecf8",
       },
       keyframes: {
         "accordion-down": {

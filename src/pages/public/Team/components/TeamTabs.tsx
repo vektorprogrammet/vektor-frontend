@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Division from "./Division";
+import Tabs from "@/components/Tabs";
 
-interface TabProps {
+interface TeamTabProps {
   divisions: DivisionList[];
 }
 
@@ -14,12 +15,12 @@ interface DivisionList {
 const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${
+      className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center ${
         open ? "block" : "hidden"
       }`}
     >
       <Division
-        title="STYRET"
+        title="Styret"
         text="Ansvarlig for driften av Vektorprogrammet i Trondheim."
         mail="styret.ntnu@vektorprogrammet.no"
         numberOfMembers={9}
@@ -27,7 +28,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/styret"
       />
       <Division
-        title="EVALUERING"
+        title="Evaluering"
         text="Vi sender ut spørreundersøkelser, lager statistikk av dem og skriver så semester- og årsrapporter."
         mail="evaluering.ntnu@vektorprogrammet.no"
         numberOfMembers={5}
@@ -35,7 +36,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/evaluering"
       />
       <Division
-        title="REKRUTTERING"
+        title="Rekruttering"
         text="I rekruttering jobber vi med å skaffe nye vektorassistenter."
         mail="rekruttering.ntnu@vektorprogrammet.no"
         numberOfMembers={11}
@@ -43,7 +44,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/rekruttering"
       />
       <Division
-        title="SKOLEKOORDINERING"
+        title="Skolekoordinering"
         text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
         mail="skolekoordinering.ntnu@vektorprogrammet.no"
         numberOfMembers={8}
@@ -51,7 +52,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/skolekoordinering"
       />
       <Division
-        title="SPONSOR"
+        title="Sponsor"
         text="Vektorprogrammets bindeledd til næringslivet, samarbeidspartnere og sponsorer."
         mail="sponsor.ntnu@vektorprogrammet.no"
         numberOfMembers={6}
@@ -59,7 +60,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/sponsor"
       />
       <Division
-        title="ØKONOMI"
+        title="Økonomi"
         text="Økonomiteamet har ansvaret for Vektorprogrammets økonomi."
         mail="okonomi@vektorprogrammet.no"
         numberOfMembers={9}
@@ -75,7 +76,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
         url="trondheim/IT"
       />
       <Division
-        title="PROFILERING"
+        title="Profilering"
         text="Profileringsteamet jobber for å gjøre Vektorprogrammet mer synlig gjennom sosiale medier."
         mail="profilering.ntnu@vektorprogrammet.no"
         numberOfMembers={7}
@@ -89,12 +90,12 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
 const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${
+      className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center ${
         open ? "block" : "hidden"
       }`}
     >
       <Division
-        title="STYRET"
+        title="Styret"
         text="Ansvarlig for driften av Vektorprogrammet i Ås."
         mail="nmbu@vektorprogrammet.no"
         numberOfMembers={5}
@@ -102,7 +103,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/styret"
       />
       <Division
-        title="SPONSOR"
+        title="Sponsor"
         text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås."
         mail="sponsor.nmbu@vektorprogrammet.no"
         numberOfMembers={4}
@@ -110,7 +111,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/sponsor-okonomi"
       />
       <Division
-        title="SKOLEKOORDINERING"
+        title="Skolekoordinering"
         text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene."
         mail="skolekoordinering.nmbu@vektorprogrammet.no"
         numberOfMembers={5}
@@ -118,7 +119,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/skolekoordinering"
       />
       <Division
-        title="EVALUERING"
+        title="Evaluering"
         text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet."
         mail="evaluering.nmbu@vektorprogrammet.no"
         numberOfMembers={8}
@@ -126,7 +127,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
         url="aas/evaluering-rekruttering-profilering"
       />
       <Division
-        title="SOSIALT"
+        title="Sosialt"
         text="Vi arrangerer sosiale arrangementer for assistenter og sørger for at alle trives i vervet."
         mail="sosialt.nmbu@vektorprogrammet.no"
         numberOfMembers={6}
@@ -140,12 +141,12 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
 const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center ${
+      className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center  ${
         open ? "block" : "hidden"
       }`}
     >
       <Division
-        title="STYRET"
+        title="Styret"
         text="Ansvarlig for driften av Vektorprogrammet i Bergen."
         mail="uib@vektorprogrammet.no"
         numberOfMembers={2}
@@ -153,7 +154,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
         url="bergen/styret"
       />
       <Division
-        title="SKOLEKOORDINERING"
+        title="Skolekoordinering"
         text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
         mail="skolekoordinering.uib@vektorprogrammet.no"
         numberOfMembers={2}
@@ -161,7 +162,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
         url="bergen/skolekoordinering"
       />
       <Division
-        title="REKRUTTERING"
+        title="Rekruttering"
         text="I rekruttering jobber vi med å skaffe nye vektorassistenter!"
         mail="rekruttering.uib@vektorprogrammet.no"
         numberOfMembers={2}
@@ -176,19 +177,19 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   const navigate = useNavigate();
   return (
     <div
-      className={`flex flex-row flex-col md:flex-row ${
+      className={`${
         open ? "block" : "hidden"
-      }`}
+      } flex flex-col md:flex-row md:max-w-2xl md:ml-24 lg:ml-16 xl:ml-auto`}
     >
-      <div className="flex-1 md:w-1/2 object-contain">
-        <h1 className="text-gray-600 text-4xl font-bold ml-4 md:ml-10 dark:text-gray-200">
+      <div className="flex-1 object-contain">
+        <h1 className="text-gray-600 text-2xl sm:text-4xl font-bold dark:text-gray-200">
           Hovedstyret
         </h1>
-        <div className="mt-4 mb-4 md:mb-20 text-xl ml-4 md:ml-10 dark:text-gray-300">
+        <p className="mt-4 mb-4 text-md sm:text-lg dark:text-gray-300">
           Hovedstyret er det nasjonale styret i vektorprogrammet. De er et
           overordnet organ med ansvar for drifting av hele organisasjonen.
-        </div>
-        <div className="flex space-x-1 space-y-0 items-end ml-4 md:ml-10">
+        </p>
+        <div className="flex items-center space-x-1">
           <svg
             className="h-4 w-4 text-black dark:text-white"
             width="24"
@@ -205,13 +206,13 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
             <polyline points="3 7 12 13 21 7" />
           </svg>
           <a
-            className="text-sm truncate overflow-hidden hover:underline dark:text-white"
+            className="text-sm truncate hover:underline dark:text-white"
             href="mailto:hovedstyret@vektorprogrammet.no"
           >
             hovedstyret@vektorprogrammet.no
           </a>
         </div>
-        <div className="flex flex-row space-x-1 items-center ml-4 md:ml-10">
+        <div className="flex items-center space-x-1 mt-2">
           <svg
             className="h-4 w-4 text-black dark:text-white"
             fill="none"
@@ -231,76 +232,47 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
         <button
           type="button"
           onClick={() => navigate(`/team/hovedstyret`)}
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-4 md:ml-10 dark:bg-vektor-darblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
         >
           Les mer om hovedstyret
         </button>
       </div>
-
-      <img
-        src="https://vektorprogrammet.no/images/HS_22.jpg?v=1664622616"
-        alt="Team1"
-        className="max-h-80 object-contain mt-4 md:mt-0"
-      />
-    </div>
-  );
-};
-
-const Tabs = ({ divisions }: TabProps): JSX.Element => {
-  const initialTabState = () => {
-    const storedTab = sessionStorage.getItem("teamTab");
-    return storedTab ? Number.parseInt(storedTab, 10) : 1;
-  };
-  const [openTab, setOpenTab] = React.useState(initialTabState);
-  useEffect(() => {
-    sessionStorage.setItem("teamTab", openTab.toString());
-  }, [openTab]);
-  return (
-    <div className="w-full flex flex-wrap">
-      <div className="w-full">
-        <ul
-          className="flex flex-wrap text-sm font-medium text-center border-gray dark:text-gray-400"
-          role="tablist"
-        >
-          {divisions.map((data) => {
-            return (
-              <li
-                className="-mb-px mr-0 last:mr-0 flex-auto text-center"
-                key={data.name}
-              >
-                <a
-                  className={`tab-boxed tab-lg text-base font-bold px-1 py-3 block line leading-normal 
-                    rounded-t-lg
-                    pb-12
-                    dark:hover:text-gray-800 transition duration-300 dark:hover:bg-gray-500
-                    ${
-                      openTab === data.number
-                        ? `text-vektor-dablue bg-[#c7ecf8] tab-active dark:bg-gray-500 dark:text-gray-800 border-gray border-t-2 border-l-2 border-r-2`
-                        : `text-vektor-darblue  border-b-2 hover:bg-gray-200 dark:text-vektor-blue`
-                    }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(data.number);
-                  }}
-                  data-toggle="tab"
-                  href={`#link${data.number}`}
-                  role="tablist"
-                >
-                  {data.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="bg-[#c7ecf8] relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 flex-auto tab-content tab-space dark:bg-gray-500">
-          <TrondheimTab open={openTab === 1} />
-          <AasTab open={openTab === 2} />
-          <BergenTab open={openTab === 3} />
-          <HovedstyretTab open={openTab === 4} />
-        </div>
+      <div className="flex justify-center items-center md:col-span-1 max-h-80 md:p-4 md:mt-auto mt-6">
+        <img
+          src="https://vektorprogrammet.no/images/HS_22.jpg?v=1664622616"
+          alt="Hovedstyret"
+          className="max-h-80 object-contain"
+        />
       </div>
     </div>
   );
 };
 
-export default Tabs;
+
+const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => { 
+  const initialTabState = () => {
+    const storedTab = sessionStorage.getItem("teamTab");
+    return storedTab ? Number.parseInt(storedTab, 10) : 1;
+  };
+  const [openTab, setOpenTab] = React.useState<number>(initialTabState);
+  
+  useEffect(() => {
+    sessionStorage.setItem("teamTab", openTab.toString());
+  }, [openTab]);
+
+  return (
+    <div className="flex flex-col md:flex-row md:max-w-6xl md:mb-auto mb-6 items-start sm:max-w-[544px] max-w-[256px]" role="tablist">
+      <div className="md:absolute md:left-3 lg:left-12">
+        <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
+      </div>
+      <div className="flex flex-col items-start max-w-5xl w-full">
+        <TrondheimTab open={openTab === 1} />
+        <AasTab open={openTab === 2} />
+        <BergenTab open={openTab === 3} />
+        <HovedstyretTab open={openTab === 4} />
+      </div>
+    </div>
+  )
+}
+
+export default TeamTabs;
