@@ -41,6 +41,4 @@ const PageTitleCard = ({
   );
 };
 
-PageTitleCard.defaultProps = { link: undefined };
-
 export default PageTitleCard;
