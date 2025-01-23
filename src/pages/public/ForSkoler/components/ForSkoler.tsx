@@ -8,7 +8,7 @@ const ForSkoler = (): JSX.Element => {
 
   return (
     <div>
-      <div className="flex flex-col items-center p-5 mt-40 mx-auto md:gap-7 dark:text-text-dark">
+      <div className="flex flex-col self-center items-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark">
         <div className="flex flex-col gap-3 md:gap-5">
           <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
             Vektorassistenter i skolen
@@ -17,9 +17,8 @@ const ForSkoler = (): JSX.Element => {
             <p className="max-w-3xl text-md md:text-lg">Vektorprogrammet er en frivillig organisasjon som tilbyr ungdomsskoler i Norge hjelpelærere i matematikktimene. Her kan du enkelt søke om å få 
             studenter til å hjelpe og motivere elevene i dine timer.</p>
             <Divider />
-            <br />
             <p>Vektorprogrammet er Norges største organisasjon 
-            som arbeider for å øke interessen for matematikk 
+            som arbeider for2 å øke interessen for matematikk 
             og realfag blant elever i grunnskolen. Vi er en 
             studentorganisasjon som sender ut dyktige og 
             motiverte studenter til ungdomsskoler i Norge.</p>
