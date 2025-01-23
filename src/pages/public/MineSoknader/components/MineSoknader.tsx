@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 import Applications from "./Applications";
 import ProfileModal from "./ProfileModal";
 

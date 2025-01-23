@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 interface Props {
   title: string;
   text1: string;

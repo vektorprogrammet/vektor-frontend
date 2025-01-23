@@ -1,10 +1,9 @@
-interface Props {
+
+const BorderContentCard = ({ title, text, children }: {
   title?: string;
   text?: Array<string>;
   children?: React.ReactNode;
-}
-
-const BorderContentCard = ({ title, text, children }: Props): JSX.Element => {
+}): JSX.Element => {
   return (
     <div className="text-center rounded border my-20 mx-auto md:p-6 sm:p-0 border-secondary">
       <div>
@@ -25,12 +24,6 @@ const BorderContentCard = ({ title, text, children }: Props): JSX.Element => {
       {children}
     </div>
   );
-};
-
-BorderContentCard.defaultProps = {
-  title: undefined,
-  text: undefined,
-  children: undefined,
 };
 
 export default BorderContentCard;

@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 interface ProfileModalProps {
   imgUrl: string;
   name: string;

@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 import Divider from "@/components/Divider";
 
 const ForSkoler = (): JSX.Element => {

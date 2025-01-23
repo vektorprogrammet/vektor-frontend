@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, type JSX } from "react";
 import { useNavigate } from "react-router-dom";
+
 import Division from "./Division";
 import Tabs from "@/components/Tabs";
 
@@ -248,22 +249,28 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-
-const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => { 
+const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
   const [openTab, setOpenTab] = React.useState<number>(initialTabState);
-  
+
   useEffect(() => {
     sessionStorage.setItem("teamTab", openTab.toString());
   }, [openTab]);
 
   return (
-    <div className="flex flex-col md:flex-row md:max-w-6xl md:mb-auto mb-6 items-start sm:max-w-[544px] max-w-[256px]" role="tablist">
+    <div
+      className="flex flex-col md:flex-row md:max-w-6xl md:mb-auto mb-6 items-start sm:max-w-[544px] max-w-[256px]"
+      role="tablist"
+    >
       <div className="md:absolute md:left-3 lg:left-12">
-        <Tabs divisions={divisions} tabstate={openTab} setOpenTab={setOpenTab}/>
+        <Tabs
+          divisions={divisions}
+          tabstate={openTab}
+          setOpenTab={setOpenTab}
+        />
       </div>
       <div className="flex flex-col items-start max-w-5xl w-full">
         <TrondheimTab open={openTab === 1} />
@@ -272,7 +279,7 @@ const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => {
         <HovedstyretTab open={openTab === 4} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TeamTabs;

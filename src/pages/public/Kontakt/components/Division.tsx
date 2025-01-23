@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 interface DivisionProps {
   name: string;
   subtitle?: string;
@@ -30,8 +32,12 @@ const Division = ({
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-10 sm:p-6 pd:2">
         <div>
-          <div className="font-bold text-2xl text-blue-800 dark:text-neutral-200">{name}</div>
-          {subtitle && <div className="text-base dark:text-neutral-200">{subtitle}</div>}
+          <div className="font-bold text-2xl text-blue-800 dark:text-neutral-200">
+            {name}
+          </div>
+          {subtitle && (
+            <div className="text-base dark:text-neutral-200">{subtitle}</div>
+          )}
           {description && <div className="text-base">{description}</div>}
           <div className="flex space-x-1 mt-3 md:mt-8">
             <svg
@@ -113,7 +119,9 @@ const Division = ({
           {contactInfos.map((data, id) => {
             return (
               <div className="py-2 mt-5" key={data.name}>
-                <div className="text-blue-800 dark:text-gray-200">{contactInfos[id].name}</div>
+                <div className="text-blue-800 dark:text-gray-200">
+                  {contactInfos[id].name}
+                </div>
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a
                   className="text-sm hover:underline truncate block"

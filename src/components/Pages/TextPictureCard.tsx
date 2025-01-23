@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 interface Props {
   title: string;
   text: string;
@@ -11,7 +13,7 @@ const TextPictureCard = ({
   text,
   imgPath,
   alt,
-  pictureOnLeft,
+  pictureOnLeft = true,
 }: Props): JSX.Element => {
   const image = (
     <img
@@ -33,10 +35,6 @@ const TextPictureCard = ({
       {!pictureOnLeft && image}
     </div>
   );
-};
-
-TextPictureCard.defaultProps = {
-  pictureOnLeft: true,
 };
 
 export default TextPictureCard;

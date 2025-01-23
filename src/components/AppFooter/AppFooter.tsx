@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 import DarkModeToggle from "./components/DarkModeToggle";
 import FooterLinks from "./components/FooterLinks";
 import FooterSponsors from "./components/FooterSponsors";

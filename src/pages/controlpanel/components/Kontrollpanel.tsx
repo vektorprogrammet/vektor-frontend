@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import type { JSX } from "react";
 
 const Kontrollpanel = (): JSX.Element => {
   // dummy data for buttons on control panel home page
