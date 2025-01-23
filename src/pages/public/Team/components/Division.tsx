@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import type { JSX } from "react";
 
 interface Props {
   title: string;
@@ -19,13 +20,13 @@ const Division = ({
 }: Props): JSX.Element => {
   const navigate = useNavigate();
 
-  const chosenStyle =
-          title === "Styret"
-          ? "w-64"
-          : "w-64";
+  const chosenStyle = title === "Styret" ? "w-64" : "w-64";
 
   return (
-    <div className={`h-48 flex flex-col justify-between rounded-md shadow-md bg-vektor-light-blue dark:bg-gray-600 dark:text-white ${chosenStyle}`} onClick={() => navigate(`/team/${url}`)}>
+    <div
+      className={`h-48 flex flex-col justify-between rounded-md shadow-md bg-vektor-light-blue dark:bg-gray-600 dark:text-white ${chosenStyle}`}
+      onClick={() => navigate(`/team/${url}`)}
+    >
       <div className="bg-vektor-blue dark:bg-vektor-darblue rounded-t-md h-10 content-center h-20">
         <h1 className="text-center text-lg text-vektor-darblue font-medium dark:text-white">
           {title}
@@ -52,15 +53,15 @@ const Division = ({
       </div>
       <div className="flex w-full justify-end self-end mb-1.5 mr-1.5">
         <button
-            type="button"
-            onClick={() => navigate(`/team/${url}`)}
-            className="btn btn-success btn-sm text-white rounded-full"
-          >
+          type="button"
+          onClick={() => navigate(`/team/${url}`)}
+          className="btn btn-success btn-sm text-white rounded-full"
+        >
           {button_name}
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Division;

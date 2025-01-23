@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
 import type React from "react";
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
 

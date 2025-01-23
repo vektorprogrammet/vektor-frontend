@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 import TeamCard from "./TeamCard";
 import TeamTabs from "./TeamTabs";
 

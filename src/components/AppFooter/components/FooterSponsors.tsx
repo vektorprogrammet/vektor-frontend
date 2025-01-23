@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 import getSponsors, { type Sponsor } from "../../../api/Sponsor";
 
 const FooterSponsors = (): JSX.Element => {

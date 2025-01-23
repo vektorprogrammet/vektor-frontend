@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 import KontaktCard from "pages/public/Kontakt/components/KontaktCard";
 import Tabs from "./KontaktOss.js";
 

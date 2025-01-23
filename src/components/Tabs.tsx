@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type JSX } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,32 +13,30 @@ interface TabProps {
   divisions: DivisionList[];
   tabstate: number;
   setOpenTab: (number: number) => void;
-};
+}
 
 interface DivisionList {
   name: string;
   number: number;
 }
 
-const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element => {
+const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps): JSX.Element => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  
+
   useEffect(() => {
     const checkScreenSize = () => {
       const isSmall = window.matchMedia("(max-width: 860px)").matches;
       setIsSmallScreen(isSmall);
-    }
+    };
 
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
     return () => {
       window.removeEventListener("resize", checkScreenSize);
-    }
-
-
-  }, [])
+    };
+  }, []);
 
   if (isSmallScreen) {
     return (
@@ -49,8 +47,12 @@ const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element => {
             onClick={() => setIsOpen(!isOpen)}
           >
             <div className="flex items-center justify-between w-full">
-              {divisions.find((data) => tabstate === data.number)?.name || "Select Tab"}
-              <FontAwesomeIcon icon={faAngleDown} className="ml-2 text-gray-600" />
+              {divisions.find((data) => tabstate === data.number)?.name ||
+                "Select Tab"}
+              <FontAwesomeIcon
+                icon={faAngleDown}
+                className="ml-2 text-gray-600"
+              />
             </div>
           </button>
         </DropdownMenuTrigger>
@@ -80,32 +82,31 @@ const Tabs = ({divisions, tabstate, setOpenTab}: TabProps): JSX.Element => {
       </DropdownMenu>
     );
   }
-  
 
   return (
     <div className="flex flex-row md:flex-col">
-        {divisions.map((data) => {
-          const chosenStyle =
+      {divisions.map((data) => {
+        const chosenStyle =
           tabstate === data.number
-          ? "bg-vektor-darkblue text-white hover:bg-vektor-darkblue"
-          : "bg-transparent hover:bg-vektor-light-blue dark:text-white";
-          return (
-            <div key={data.name}>
-              <button
-                type="button"
-                className={`btn rounded-full btn-sm w-32 border-none shadow-none my-1 ${chosenStyle}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenTab(data.number);
-                }}
-              >
-                {data.name}
-              </button>
-            </div>
-          );
-        })}
-      </div>
-  )
-}
+            ? "bg-vektor-darkblue text-white hover:bg-vektor-darkblue"
+            : "bg-transparent hover:bg-vektor-light-blue dark:text-white";
+        return (
+          <div key={data.name}>
+            <button
+              type="button"
+              className={`btn rounded-full btn-sm w-32 border-none shadow-none my-1 ${chosenStyle}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpenTab(data.number);
+              }}
+            >
+              {data.name}
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Tabs;

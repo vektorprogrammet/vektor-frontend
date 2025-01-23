@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState, type JSX } from "react";
+
 import CreateTable from "./CreateTable";
 import type { Assistenter, Vikarer } from "./Interfaces";
 import Navbar from "./Navbar";

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, type JSX } from "react";
+
 import ApplyReg from "../ApplyReg";
 import { City } from "./CityButton";
 
@@ -11,7 +12,9 @@ const Tab = ({
   city: City;
   open: boolean;
 }): JSX.Element => {
-  const chosenStyle = open ? `tab-active dark:text-vektor-darblue` : `text-vektor-darblue dark:text-gray-300`;
+  const chosenStyle = open
+    ? `tab-active dark:text-vektor-darblue`
+    : `text-vektor-darblue dark:text-gray-300`;
   return (
     <button
       type="button"
