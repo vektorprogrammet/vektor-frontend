@@ -14,7 +14,7 @@ const TextPictureCard = ({
   text,
   imgPath,
   alt,
-  pictureOnLeft,
+  pictureOnLeft = true,
 }: Props): JSX.Element => {
   const image = (
     <img
@@ -38,10 +38,6 @@ const TextPictureCard = ({
       <Divider/>
     </div>
   );
-};
-
-TextPictureCard.defaultProps = {
-  pictureOnLeft: true,
 };
 
 export default TextPictureCard;
