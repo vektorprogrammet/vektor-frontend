@@ -15,9 +15,9 @@
     "e2e:test:ui": "exec playwright test --ui",
     "e2e:show-report": "exec playwright show-report",
     "e2e:install": "exec playwright install",
-    "check": "biome check ./ --apply",
-    "lint": "biome lint ./ --apply",
-    "format": "biome format ./ --apply"
+    "check": "biome check ./ --write",
+    "lint": "biome lint ./ --write",
+    "format": "biome format ./ --write"
   },
   "browserslist": {
     "production": [
