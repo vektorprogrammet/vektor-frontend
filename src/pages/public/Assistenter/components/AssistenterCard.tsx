@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 interface Props {
   title: string;
   text: string;
@@ -7,10 +5,7 @@ interface Props {
   alt: string;
 }
 
-export const SelectCity = (props: {
-  selectCity: () => void;
-  cities: string;
-}) => {
+export const SelectCity = (props: { selectCity: () => void; cities: string }) => {
   const { selectCity, cities } = props;
   return (
     <button type="button" onClick={selectCity}>
@@ -39,9 +34,7 @@ const TextPictureCard = ({ title, text, imgPath, alt }: Props): JSX.Element => {
         <div className="font-sans font-bold text-xl text-primary text-center p-1">
           {title}
         </div>
-        <div className="font-sans text-center my-1 dark:text-text-dark">
-          {text}
-        </div>
+        <div className="font-sans text-center my-1 dark:text-text-dark">{text}</div>
       </div>
     </div>
   );

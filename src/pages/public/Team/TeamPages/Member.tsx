@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 interface TeamMember {
   name: string;
   role: string;

@@ -1,12 +1,10 @@
-import type { JSX } from "react";
-
 import ImageCard from "@/components/TextPictureCard";
 import Divider from "@/components/Divider";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+import { 
+  Accordion, 
+  AccordionContent, 
+  AccordionItem, 
+  AccordionTrigger 
 } from "./Accordion";
 
 interface TextAndPicture {
@@ -134,18 +132,12 @@ const teamAccordions: AccordionType[] = [
 const OmOss = (): JSX.Element => {
   const accordionSection = (
     <div className="flex flex-col items-center w-full">
-      <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
-        Assistent
-      </h2>
+      <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">Assistent</h2>
       <Accordion type="single" collapsible className="w-full">
         {assistantAccordions.map(({ title, content }, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
-            <AccordionTrigger>
-              <p className="text-left">{title}</p>
-            </AccordionTrigger>
-            <AccordionContent>
-              <p className="text-left">{content}</p>
-            </AccordionContent>
+            <AccordionTrigger><p className="text-left">{title}</p></AccordionTrigger>
+            <AccordionContent><p className="text-left">{content}</p></AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
@@ -156,12 +148,8 @@ const OmOss = (): JSX.Element => {
       <Accordion type="single" collapsible className="w-full">
         {teamAccordions.map(({ title, content }, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
-            <AccordionTrigger>
-              <p className="text-left">{title}</p>
-            </AccordionTrigger>
-            <AccordionContent>
-              <p className="text-left">{content}</p>
-            </AccordionContent>
+            <AccordionTrigger><p className="text-left">{title}</p></AccordionTrigger>
+            <AccordionContent><p className="text-left">{content}</p></AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
@@ -201,17 +189,19 @@ const OmOss = (): JSX.Element => {
           En forsmak til læreryrket!
         </h1>
         <p className="text-md md:text-lg">
-          {`Siden studentene er tilstede i
+          {
+          `Siden studentene er tilstede i
           undervisningen får de en introduksjon til
           læreryrket. Mange som studerer realfag
           vurderer en fremtid som lærer,
           og får gjennom oss muligheten til
-          å få reell erfaring.`}
+          å få reell erfaring.`
+          }
         </p>
         <img
-          className="mt-0"
-          alt=""
-          src="https://vektorprogrammet.no/images/nett.jpg?v=1598900041"
+        className="mt-0"
+        alt=""
+        src="https://vektorprogrammet.no/images/nett.jpg?v=1598900041"
         />
         <Divider />
       </div>

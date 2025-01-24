@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 import routes from "@/pages/public/routes";
+import { useNavigate} from 'react-router-dom';
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
@@ -9,7 +8,7 @@ export const Tab = () => {
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
   const navigate = useNavigate();
   const [activeTabIndex, setActiveTabIndex] = useState<number>(
-    () => Number(localStorage.getItem("activeTabIndex")) || 0,
+    () => Number(localStorage.getItem("activeTabIndex")) || 0
   );
 
   useEffect(() => {
@@ -28,6 +27,7 @@ export const Tab = () => {
     localStorage.setItem("activeTabIndex", String(activeTabIndex));
   }, [activeTabIndex]);
 
+
   return (
     <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
       <span
@@ -42,9 +42,7 @@ export const Tab = () => {
           <button
             type="button"
             key={route.name}
-            ref={(el) => {
-              tabsRef.current[index] = el;
-            }}
+            ref={(el) => (tabsRef.current[index] = el)}
             className={`${isActive ? `text-black` : `hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg`} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
             onClick={() => {
               setActiveTabIndex(index);

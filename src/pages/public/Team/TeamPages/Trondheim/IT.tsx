@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 import TeamTemplate from "../TeamTemplate";
 
 const IT = (): JSX.Element => {

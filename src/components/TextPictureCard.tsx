@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 import Divider from "@/components/Divider";
 
 interface Props {
@@ -8,7 +6,7 @@ interface Props {
   text: string;
   imgPath: string;
   alt: string;
-  pictureOnLeft: boolean;
+  pictureOnLeft: boolean; 
 }
 
 const TextPictureCard = ({
@@ -16,7 +14,7 @@ const TextPictureCard = ({
   text,
   imgPath,
   alt,
-  pictureOnLeft = true,
+  pictureOnLeft,
 }: Props): JSX.Element => {
   const image = (
     <img
@@ -27,9 +25,7 @@ const TextPictureCard = ({
   );
 
   return (
-    <div
-      className={`flex ${pictureOnLeft ? "md:flex-row-reverse" : ""} justify-center md:justify-between items-center gap-5 md:gap-14 flex-wrap md:flex-nowrap`}
-    >
+    <div className={`flex ${pictureOnLeft ? 'md:flex-row-reverse' : ''} justify-center md:justify-between items-center gap-5 md:gap-14 flex-wrap md:flex-nowrap`}>
       {image}
       <div className="flex flex-col max-w-6xl gap-3 md:gap-5">
         <h1 className="text-center  text-xl md:text-3xl font-bold text-vektor-DARKblue dark:text-text-dark">
@@ -39,9 +35,13 @@ const TextPictureCard = ({
           {text}
         </p>
       </div>
-      <Divider />
+      <Divider/>
     </div>
   );
+};
+
+TextPictureCard.defaultProps = {
+  pictureOnLeft: true,
 };
 
 export default TextPictureCard;

@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 const Profil = (): JSX.Element => {
   return (
     <div className="sm:flex sm:justify-center mb-10 w-full">

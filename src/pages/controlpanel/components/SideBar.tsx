@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import type { JSX } from "react";
-
 import {
   AssistentIcon,
   BrukereIcon,
@@ -51,17 +49,14 @@ const Icon: React.FC<IconProps> = ({ svg, name }) => {
 const SideBar = (): JSX.Element => {
   return (
     <div className="self-center min-w-min h-fit bg-vektor-kontrollblue ml-2 rounded-3xl flex flex-col items-center justify-start">
-      <Link
-        to="/"
-        className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16"
-      >
+      <Link to="/" className="bg-white rounded-full flex items-center justify-center m-3 w-16 h-16">
         <img
           alt="Vektor logo"
           src="/images/vektor-logo-circle.svg"
           className="w-5/6 h-5/6 object-contain"
         />
       </Link>
-      <HorizontalLine />
+      <HorizontalLine/>
       <div className="my-3">
         {linkData.map((item) => (
           <Link key={item.name} to={item.to}>
