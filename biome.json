@@ -18,9 +18,11 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
-    },
-    "ignore": ["/*", "!/src"]
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "warn"
+      }
+    }
   },
   "javascript": {
     "formatter": {
