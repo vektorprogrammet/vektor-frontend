@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, type JSX } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 export const DarkModeContext = React.createContext({
   darkMode: false,

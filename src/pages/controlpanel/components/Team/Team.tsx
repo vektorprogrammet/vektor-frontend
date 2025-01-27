@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import type { JSX } from "react";
-
 import CreateTable from "../CreateTable";
 
 const Team = (): JSX.Element => {

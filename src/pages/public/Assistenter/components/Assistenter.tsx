@@ -1,6 +1,5 @@
-import { useRef, type JSX } from "react";
-
 import getContent from "api/Assistenter";
+import React, { useRef } from "react";
 import TextPictureCard from "./AssistenterCard";
 import Citycard from "./CityCard/Citycard";
 
@@ -16,10 +15,12 @@ const Assistenter = (): JSX.Element => {
 
   return (
     <div className="leading-relaxed font-sans flex flex-col justify-center items-center dark:text-text-dark mt-10">
-      <h1 className="font-sans max-w-2xl mt-10 text-vektor-DARKblue text-4xl text-center font-bold mx-3 dark:text-text-dark">
-        {title}
-      </h1>
-      <div className="mt-8 mb-20 text-xl w-3/5">{ingress}</div>
+        <h1 className="font-sans max-w-2xl mt-10 text-vektor-DARKblue text-4xl text-center font-bold mx-3 dark:text-text-dark">
+          {title}
+        </h1>
+      <div className="mt-8 mb-20 text-xl w-3/5">
+        {ingress}
+        </div>
       <div className="space-y-20 p-10 w-full text-center mb-14 border-secondary">
         <div className="conte mx-8 bg-center font-sans font-bold text-secondary dark:text-text-dark">
           Disse avdelingene har opptak nå:
@@ -48,10 +49,7 @@ const Assistenter = (): JSX.Element => {
           ))}
         </div>
       </div>
-      <div
-        className="mb-16 flex flex-col items-center dark:text-text-dark"
-        id="tc"
-      >
+      <div className="mb-16 flex flex-col items-center dark:text-text-dark" id="tc">
         <div className="my-2 mb-2 font-bold text-2xl text-secondary w-fit dark:text-text-dark">
           Lærerassistent i matematikk
         </div>

@@ -1,13 +1,12 @@
-import type { JSX } from "react";
+import { DarkModeProvider } from "./components/DarkModeProvider";
+
 import {
   Outlet,
   type RouteObject,
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-
 import "./App.css";
-import { DarkModeProvider } from "./components/DarkModeProvider";
 import ControlPanel from "./pages/controlpanel";
 import controlPanelRoutes from "./pages/controlpanel/routes";
 import MainPage from "./pages/public";
