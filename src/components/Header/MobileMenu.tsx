@@ -17,7 +17,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/Drawer"
+} from "@/components/ui/drawer"
 
 interface Props {
   menuOpen: boolean;

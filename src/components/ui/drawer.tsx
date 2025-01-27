@@ -1,10 +1,8 @@
-"use client"
- 
 import * as React from "react"
 import { Drawer as DrawerPrimitive } from "vaul"
- 
+
 import { cn } from "@/lib/utils"
- 
+
 const Drawer = ({
   shouldScaleBackground = true,
   ...props
@@ -15,13 +13,13 @@ const Drawer = ({
   />
 )
 Drawer.displayName = "Drawer"
- 
+
 const DrawerTrigger = DrawerPrimitive.Trigger
- 
+
 const DrawerPortal = DrawerPrimitive.Portal
- 
+
 const DrawerClose = DrawerPrimitive.Close
- 
+
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
@@ -33,7 +31,7 @@ const DrawerOverlay = React.forwardRef<
   />
 ))
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
- 
+
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
@@ -43,18 +41,18 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border-2 border-black bg-vektor-bg dark:bg-vektor-bg-dark dark:border-[rgba(255,255,255,0.2)]",
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
         className
       )}
       {...props}
     >
-      <div className="mx-auto mt-4 h-2 w-[150px] rounded-full bg-[rgba(0,0,0,0.8)] dark:bg-[rgba(255,255,255,0.5)]" />
+      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>
 ))
 DrawerContent.displayName = "DrawerContent"
- 
+
 const DrawerHeader = ({
   className,
   ...props
@@ -65,7 +63,7 @@ const DrawerHeader = ({
   />
 )
 DrawerHeader.displayName = "DrawerHeader"
- 
+
 const DrawerFooter = ({
   className,
   ...props
@@ -76,7 +74,7 @@ const DrawerFooter = ({
   />
 )
 DrawerFooter.displayName = "DrawerFooter"
- 
+
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
@@ -91,7 +89,7 @@ const DrawerTitle = React.forwardRef<
   />
 ))
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName
- 
+
 const DrawerDescription = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
@@ -103,7 +101,7 @@ const DrawerDescription = React.forwardRef<
   />
 ))
 DrawerDescription.displayName = DrawerPrimitive.Description.displayName
- 
+
 export {
   Drawer,
   DrawerPortal,
