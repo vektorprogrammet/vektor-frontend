@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import ImageCard from "@/components/TextPictureCard";
+import TextPictureParagraph from "@/components/TextPictureParagraph";
 import Divider from "@/components/Divider";
 import {
   Accordion,
@@ -187,7 +187,7 @@ const OmOss = (): JSX.Element => {
         <Divider />
       </div>
       {cards.map((card, index) => (
-        <ImageCard
+        <TextPictureParagraph
           key={card.title}
           title={card.title}
           text={card.text}

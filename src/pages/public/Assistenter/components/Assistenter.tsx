@@ -1,7 +1,6 @@
 import { useRef, type JSX } from "react";
 
 import getContent from "api/Assistenter";
-import TextPictureCard from "./AssistenterCard";
 import Citycard from "./CityCard/Citycard";
 
 const Assistenter = (): JSX.Element => {
@@ -37,14 +36,22 @@ const Assistenter = (): JSX.Element => {
           Hvorfor bli assistent?
         </div>
         <div className="flex justify-evenly space-x-10 text-accent">
-          {cards.map(({ title: cardTitle, text, image }) => (
-            <TextPictureCard
-              key={cardTitle}
-              title={cardTitle}
-              text={text}
-              imgPath={image.url}
-              alt={image.alt}
-            />
+          {cards.map(({ title, text, image }) => (
+            <div className="leading-relaxed flex w-full mx-auto justify-between flex-wrap">
+              <div className="max-w-6xl ">
+                <img
+                  src={image.url.href}
+                  alt={image.alt}
+                  className="h-24 mt-6 rounded-lg mx-auto mb-2"
+                />
+                <div className="font-sans font-bold text-xl text-primary text-center p-1">
+                  {title}
+                </div>
+                <div className="font-sans text-center my-1 dark:text-text-dark">
+                  {text}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
