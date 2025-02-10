@@ -115,6 +115,7 @@ const ForSkoler = (): JSX.Element => {
           ].map(({ city, url }) => {
             return (
               <button
+                key={city}
                 type="button"
                 onClick={goToContact(url)}
                 className="btn btn-success text-white my-2 text-lg py-2 px-4 w-48 md:mx-6"

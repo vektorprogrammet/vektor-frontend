@@ -42,7 +42,7 @@ export const Tab = () => {
             type="button"
             key={route.name}
             ref={(el) => (tabsRef.current[index] = el)}
-            className={`${isActive ? `text-black` : `hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg`} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
+            className={`${isActive ? "text-black" : "hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
             onClick={() => {
               setActiveTabIndex(index);
               navigate(route.path ?? "");

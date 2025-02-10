@@ -231,7 +231,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
         <br />
         <button
           type="button"
-          onClick={() => navigate(`/team/hovedstyret`)}
+          onClick={() => navigate("/team/hovedstyret")}
           className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
         >
           Les mer om hovedstyret

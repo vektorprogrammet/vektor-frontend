@@ -7,7 +7,7 @@ export async function fetchServers(): Promise<[StagingServerAPIResponse]> {
   return body;
 }
 
-export async function fetchDiskUsage(): Promise<any> {
+export async function fetchDiskUsage(): Promise<DiskUsageAPIResponse> {
   const response = await fetch(diskUsageURL);
   const body = await response.json();
   return body;
@@ -18,4 +18,9 @@ export interface StagingServerAPIResponse {
   domain: string;
   repo: string;
   url: string;
+}
+
+export interface DiskUsageAPIResponse {
+  size: number;
+  used: number;
 }

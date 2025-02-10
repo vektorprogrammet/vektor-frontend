@@ -1,5 +1,6 @@
-export const ApplyCard = (props: any) => {
-  const { cities } = props;
+import type { City } from "./CityCard/CityButton";
+
+export const ApplyCard = ({ cities }: { cities: City }) => {
   return (
     <form className="dark:bg-neutral-800">
       <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center dark:text-gray-200">

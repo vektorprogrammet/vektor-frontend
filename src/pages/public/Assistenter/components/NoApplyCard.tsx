@@ -1,5 +1,6 @@
-export const NoApplyCard = (props: any) => {
-  const { cities } = props;
+import type { City } from "./CityCard/CityButton";
+
+export const NoApplyCard = ({ cities }: { cities: City }) => {
   return (
     <form>
       <h1 className="font-bold text-xl my-8 text-vektor-darblue"> {cities}</h1>

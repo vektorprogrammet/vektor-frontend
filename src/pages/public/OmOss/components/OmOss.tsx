@@ -136,8 +136,8 @@ const OmOss = (): JSX.Element => {
         Assistent
       </h2>
       <Accordion type="single" collapsible className="w-full">
-        {assistantAccordions.map(({ title, content }, index) => (
-          <AccordionItem key={index} value={`item-${index + 1}`}>
+        {assistantAccordions.map(({ title, content }) => (
+          <AccordionItem key={title} value={title}>
             <AccordionTrigger>
               <p className="text-left">{title}</p>
             </AccordionTrigger>
@@ -152,8 +152,8 @@ const OmOss = (): JSX.Element => {
         Team
       </h2>
       <Accordion type="single" collapsible className="w-full">
-        {teamAccordions.map(({ title, content }, index) => (
-          <AccordionItem key={index} value={`item-${index + 1}`}>
+        {teamAccordions.map(({ title, content }) => (
+          <AccordionItem key={title} value={title}>
             <AccordionTrigger>
               <p className="text-left">{title}</p>
             </AccordionTrigger>

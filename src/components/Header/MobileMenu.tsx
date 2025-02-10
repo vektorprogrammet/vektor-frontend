@@ -56,7 +56,7 @@ const MobileMenu = (props: Props): JSX.Element => {
           </div>
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerHeader></DrawerHeader>
+          <DrawerHeader />
           <DrawerDescription>
             <div className="flex justify-between items-start p-6">
               <ul className="flex flex-col w-full items-start text-center gap-4">
