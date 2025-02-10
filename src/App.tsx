@@ -5,7 +5,7 @@ import {
   type RouteObject,
   RouterProvider,
   createBrowserRouter,
-} from "react-router-dom";
+} from "react-router";
 import "./App.css";
 import ControlPanel from "./pages/controlpanel";
 import controlPanelRoutes from "./pages/controlpanel/routes";

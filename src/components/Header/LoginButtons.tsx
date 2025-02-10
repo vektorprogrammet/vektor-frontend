@@ -1,5 +1,5 @@
 import React, { type Dispatch, type SetStateAction } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 
 const LoginButtons = () => {

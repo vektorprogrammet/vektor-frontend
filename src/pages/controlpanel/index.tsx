@@ -1,5 +1,5 @@
 import { RemoveScroll } from "react-remove-scroll";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import { useState } from "react";
 import SideBar from "./components/SideBar";
 import LoginPopup from "./components/LoginPopup";

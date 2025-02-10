@@ -1,7 +1,7 @@
 import react from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from 'react-visibility-sensor';
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 import vektorLogo from "/images/vektor-logo.svg";
 import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";

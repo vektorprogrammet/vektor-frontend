@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import routes from "@/pages/public/routes";
-import { useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router';
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
