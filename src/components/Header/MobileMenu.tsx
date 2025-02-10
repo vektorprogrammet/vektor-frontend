@@ -3,7 +3,7 @@ import type React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from "react-router";
-import routes from "../../pages/public/routes";
+import { NavRoutes } from "@/routes";
 import LoginButtons from "./LoginButtons";
 import LoginPopup from "../../pages/controlpanel/components/LoginPopup";
 import UserAvatar from "./UserAvatar";
@@ -35,7 +35,7 @@ const MobileMenu = (props: Props): JSX.Element => {
     setMenuOpen,
   } = props;
 
-  const linkElements = routes.map((route) => (
+  const linkElements = NavRoutes.map((route) => (
     <li key={route.name}>
       <Link className="text-lg dark:text-white" reloadDocument to={route.path ?? ""}>
           {route.name}
