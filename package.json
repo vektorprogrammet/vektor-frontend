@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "react-router dev",
-    "start": "vite",
-    "build": "tsc && vite build",
+    "build": "react-router build",
+    "start": "react-router-serve build/server/index.js",
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
     "e2e:test": "exec playwright test",
