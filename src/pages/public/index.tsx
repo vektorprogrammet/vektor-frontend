@@ -1,6 +1,6 @@
 import AppFooter from "components/AppFooter/AppFooter";
 import AppHeader from "components/Header/AppHeader";
-import { Outlet, ScrollRestoration} from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import "/src/index.css";
 
 const infoSite = (): JSX.Element => {
@@ -9,7 +9,7 @@ const infoSite = (): JSX.Element => {
       <AppHeader />
       <ScrollRestoration />
       {/* Banner */}
-        <Outlet />
+      <Outlet />
       <AppFooter />
     </div>
   );

@@ -1,20 +1,20 @@
 import react from "react";
 import CountUp from "react-countup";
-import VisibilitySensor from 'react-visibility-sensor';
 import { Link } from "react-router-dom";
+import VisibilitySensor from "react-visibility-sensor";
 
-import vektorLogo from "/images/vektor-logo.svg";
-import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import KSBergen from "/images/mainPage/sponsor/KSBergen.png";
+import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
+import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
+import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
+import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
 import SparebankstiftelsenDNB from "/images/mainPage/sponsor/SparebankstiftelsenDNB.png";
 import Tekna from "/images/mainPage/sponsor/Tekna.png";
 import UiB from "/images/mainPage/sponsor/UIB.png";
 import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
-import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
-import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
-import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
-import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
+import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
+import vektorLogo from "/images/vektor-logo.svg";
 
 const hovedsponsor = [
   {
@@ -24,8 +24,8 @@ const hovedsponsor = [
   {
     name: "Sparebankstiftelsen DNB",
     image: SparebankstiftelsenDNB,
-  },  
-]
+  },
+];
 
 const sponsorer = [
   {
@@ -60,7 +60,7 @@ const sponsorer = [
     name: "Kulturstyret Bergen",
     image: KSBergen,
   },
-]
+];
 interface MainPageProps {
   number: number;
   title: string;
@@ -117,8 +117,8 @@ const mainPage = (): JSX.Element => {
           </h1>
           <div className="mb-4 mt-6 flex md:block justify-center">
             <p className="text-md md:text-xl text-left md:w-4/5 dark:text-text-dark">
-              - sender studenter til ungdomsskoler for å hjelpe til som
-              lærerens assistent i matematikkundervisningen
+              - sender studenter til ungdomsskoler for å hjelpe til som lærerens
+              assistent i matematikkundervisningen
             </p>
           </div>
           <button type="button" className="btn btn-success text-white">
@@ -130,24 +130,30 @@ const mainPage = (): JSX.Element => {
       <div className="info-background flex flex-wrap flex-row text-center max-w-full justify-center items-center gap-24 md:gap-40 pt-72 pb-72 md:mt-20 mb-0">
         {/*Middle start*/}
         {cards.map(({ number, title, text, route }) => (
-          <div key={title} className="flex flex-col max-w-96 gap-5 text-vektor-bg">
+          <div
+            key={title}
+            className="flex flex-col max-w-96 gap-5 text-vektor-bg"
+          >
             <div>
               <VisibilitySensor partialVisibility>
                 {({ isVisible }: { isVisible: boolean }) => (
                   <div className="font-bold text-4xl">
-                    {isVisible ? <CountUp end={number} duration={4} separator=""/> : 0}
+                    {isVisible ? (
+                      <CountUp end={number} duration={4} separator="" />
+                    ) : (
+                      0
+                    )}
                   </div>
                 )}
               </VisibilitySensor>
-              <p className="text-xl md:text-2xl">
-                {title}
-              </p>
+              <p className="text-xl md:text-2xl">{title}</p>
             </div>
-            <p className="text-sm max-w-80 md:text-xl md:max-w-96">
-              {text}
-            </p>
+            <p className="text-sm max-w-80 md:text-xl md:max-w-96">{text}</p>
             <div>
-              <Link className="btn btn-success text-white w-fit" to={route.pathname}>
+              <Link
+                className="btn btn-success text-white w-fit"
+                to={route.pathname}
+              >
                 {route.text}
               </Link>
             </div>
@@ -159,26 +165,36 @@ const mainPage = (): JSX.Element => {
         <div className="flex flex-col max-w-4xl md:gap-32">
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
             {hovedsponsor.map((sponsor) => (
-              <div className="flex w-72 h-72 md:w-96 md:h-96 items-center">
-                <img className="w-auto h-auto" 
-                  src={sponsor.image} 
-                  alt={sponsor.name} />
+              <div
+                className="flex w-72 h-72 md:w-96 md:h-96 items-center"
+                key={sponsor.name}
+              >
+                <img
+                  className="w-auto h-auto"
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                />
               </div>
             ))}
           </div>
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
             {sponsorer.map((sponsor) => (
-              <div className="flex w-36 h-36 md:w-64 md:h-64 items-center">
-                <img className="w-auto h-auto" 
-                  src={sponsor.image} 
-                  alt={sponsor.name} />
+              <div
+                className="flex w-36 h-36 md:w-64 md:h-64 items-center"
+                key={sponsor.name}
+              >
+                <img
+                  className="w-auto h-auto"
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                />
               </div>
             ))}
           </div>
         </div>
       </div>
     </main>
-  )
+  );
 };
 
 export default mainPage;

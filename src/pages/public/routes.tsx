@@ -11,7 +11,7 @@ import Utlegg from "./User/components/Utlegg";
 
 // The route with the corresponding component to render in the route
 const routes: AppRoute[] = [
-  { path: "", element: <MainPage />, name: "Hjem"},
+  { path: "", element: <MainPage />, name: "Hjem" },
   { path: "/om-oss", element: <OmOss />, name: "Om oss" },
   { path: "/assistenter", element: <Assistenter />, name: "Assistenter" },
   { path: "/team", name: "Team", children: teamRoutes },

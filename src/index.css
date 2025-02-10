@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 /* width */
-body{
+body {
   overscroll-behavior: none;
 }
 
@@ -24,11 +24,17 @@ body::-webkit-scrollbar-thumb {
   background-clip: padding-box;
   border-radius: 9999px;
   background-color: #6fceee;
-} 
+}
 
 .info-background {
-  background: rgb(226,244,250);
-  background: linear-gradient(0deg, transparent 0%, #022346 20%, #022346 80%, transparent 100%);
+  background: rgb(226, 244, 250);
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    #022346 20%,
+    #022346 80%,
+    transparent 100%
+  );
 }
 
 @layer base {
@@ -127,4 +133,3 @@ body::-webkit-scrollbar-thumb {
     @apply bg-background text-foreground;
   }
 }
-
