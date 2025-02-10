@@ -2,35 +2,40 @@ import type { JSX } from "react";
 
 import Divider from "@/components/Divider";
 
-interface Props {
-  key: string;
+interface TextPictureParagraphProps {
   title: string;
   text: string;
-  imgPath: string;
-  alt: string;
   pictureOnLeft: boolean;
+  image: {
+    url: URL;
+    alt: string;
+    };
+  }
+export interface TextPictureParagraphAPIProps {
+  title: string;
+  text: string;
+  image: {
+    url: URL;
+    alt: string;
+  };
 }
 
-const TextPictureCard = ({
+const TextPictureParagraph = ({
   title,
   text,
-  imgPath,
-  alt,
-  pictureOnLeft = true,
-}: Props): JSX.Element => {
-  const image = (
-    <img
-      src={imgPath}
-      alt={alt}
-      className="flex max-h-96 rounded-lg sm:w-auto md:max-w-96 md:h-fit"
-    />
-  );
-
+  pictureOnLeft,
+  image
+}: TextPictureParagraphProps): JSX.Element => {
+  
   return (
     <div
       className={`flex ${pictureOnLeft ? "md:flex-row-reverse" : ""} justify-center md:justify-between items-center gap-5 md:gap-14 flex-wrap md:flex-nowrap`}
     >
-      {image}
+      <img
+      src={image.url.toString()}
+      alt={image.alt}
+      className="flex max-h-96 rounded-lg sm:w-auto md:max-w-96 md:h-fit"
+      />
       <div className="flex flex-col max-w-6xl gap-3 md:gap-5">
         <h1 className="text-center  text-xl md:text-3xl font-bold text-vektor-DARKblue dark:text-text-dark">
           {title}
@@ -44,4 +49,4 @@ const TextPictureCard = ({
   );
 };
 
-export default TextPictureCard;
+export default TextPictureParagraph;
