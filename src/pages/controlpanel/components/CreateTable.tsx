@@ -1,7 +1,7 @@
 // create table takes in header and content and maps the content to a table,
 // header is a string of the table headers and content is an array of objects
 
-const mapToTable = (skoler: Object[]) => {
+const mapToTable = (skoler: Record<string, string>[]) => {
   return skoler.map((school, index) => (
     <tr key={index.valueOf()} className="even:bg-white odd:bg-table-grey">
       {Object.values(school).map((value, valueIndex) => (
@@ -18,7 +18,7 @@ const mapToTable = (skoler: Object[]) => {
 
 interface Props {
   header: string[];
-  content: Object[];
+  content: Record<string, string>[];
 }
 
 const CreateTable: React.FC<Props> = ({ header, content }) => {
