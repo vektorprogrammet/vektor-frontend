@@ -8,7 +8,7 @@ const infoSite = (): JSX.Element => {
     <div className="App flex flex-col items-stretch min-h-screen">
       <AppHeader />
       {/* Banner */}
-        <Outlet />
+      <Outlet />
       <AppFooter />
     </div>
   );

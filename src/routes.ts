@@ -2,12 +2,12 @@ import {
   type RouteConfig,
   index,
   layout,
-  route,
   prefix,
+  route,
 } from "@react-router/dev/routes";
 
 export const NavRoutes = [
-  { path: "", name: "Hjem"},
+  { path: "", name: "Hjem" },
   { path: "om-oss", name: "Om oss" },
   { path: "assistenter", name: "Assistenter" },
   { path: "team", name: "Team" },

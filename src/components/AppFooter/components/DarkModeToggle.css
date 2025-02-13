@@ -32,9 +32,7 @@
   line-height: 25px;
   text-align: center;
 
-  transition:
-    left 0.4s,
-    background-color 0.4s;
+  transition: left 0.4s, background-color 0.4s;
 }
 
 .darkModeToggle:checked:after {
