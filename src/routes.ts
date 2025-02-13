@@ -6,7 +6,7 @@ import {
   route,
 } from "@react-router/dev/routes";
 
-export const NavRoutes = [
+export const navRoutes = [
   { path: "", name: "Hjem" },
   { path: "om-oss", name: "Om oss" },
   { path: "assistenter", name: "Assistenter" },

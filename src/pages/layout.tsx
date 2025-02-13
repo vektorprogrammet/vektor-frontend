@@ -1,6 +1,6 @@
-import { Outlet, useNavigate } from "react-router";
+import { NavLink, Outlet, useLocation } from "react-router";
 import { useEffect, useRef, useState } from "react";
-import { NavRoutes as routes } from "~/routes";
+import { navRoutes } from "~/routes";
 import getSponsors, { type Sponsor } from "@/api/Sponsor";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
@@ -17,6 +17,18 @@ import {
 } from "~/components/ui/drawer";
 
 export default function Layout() {
+  const location = useLocation();
+
+  // Set active nav index based on current location
+  // Used in NavTabs to highlight the correct tab
+  for (let i = 0; i < navRoutes.length; i++) {
+    const route = navRoutes[i];
+    if (`/${route.path}` === location.pathname) {
+      location.state = { activeNavIndex: i };
+      break;
+    }
+  }
+
   return (
     <div className="transition-colors flex flex-col items-stretch min-h-screen">
       <AppHeader />
@@ -42,7 +54,7 @@ function AppHeader() {
               />
             </div>
           </div>
-          <Tab />
+          <NavTabs routes={navRoutes} />
         </div>
       </div>
       <div className="hidden md:flex w-fit absolute top-0 h-full right-2 items-center">
@@ -53,59 +65,53 @@ function AppHeader() {
   );
 }
 
-const Tab = () => {
-  const tabsRef = useRef<(HTMLElement | null)[]>([]);
-  const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
-  const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
-  const navigate = useNavigate();
-  const [activeTabIndex, setActiveTabIndex] = useState<number>(
-    () => Number(localStorage.getItem("activeTabIndex")) || 0,
+function NavTabs({
+  routes,
+}: { routes: Array<{ name: string; path: string }> }) {
+  const location = useLocation();
+  const navLinkRefs = useRef<(HTMLElement | null)[]>([]);
+  const [pillWidth, setPillWidth] = useState(
+    navLinkRefs.current[location.state.activeNavIndex]?.offsetWidth ?? 0,
+  );
+  const [pillLeft, setPillLeft] = useState(
+    navLinkRefs.current[location.state.activeNavIndex]?.offsetLeft ?? 0,
   );
 
   useEffect(() => {
-    if (activeTabIndex === null) {
-      return;
+    const el = navLinkRefs.current[location.state.activeNavIndex];
+    if (el) {
+      setPillWidth(el.offsetWidth);
+      setPillLeft(el.offsetLeft);
     }
-
-    const setTabPosition = () => {
-      const currentTab = tabsRef.current[activeTabIndex] as HTMLElement;
-      setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
-      setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
-    };
-
-    setTabPosition();
-
-    localStorage.setItem("activeTabIndex", String(activeTabIndex));
-  }, [activeTabIndex]);
+  }, [location.state.activeNavIndex]);
 
   return (
     <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
       <span
         className="absolute bottom-0 top-0 z-10 flex overflow-hidden rounded-full py-1.5 transition-all duration-300"
-        style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
+        style={{ left: pillLeft, width: pillWidth }}
       >
         <span className="h-full w-full rounded-full bg-vektor-blue shadow-sm" />
       </span>
-      {routes.map((route, index) => {
-        const isActive = activeTabIndex === index;
+      {routes.map((route, i) => {
         return (
-          <button
-            type="button"
-            key={route.name}
-            ref={(el) => (tabsRef.current[index] = el)}
-            className={`${isActive ? "text-black" : "hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
-            onClick={() => {
-              setActiveTabIndex(index);
-              navigate(route.path ?? "");
+          <NavLink
+            to={route.path}
+            key={route.path}
+            ref={(el) => {
+              navLinkRefs.current[i] = el;
             }}
+            className={({ isActive }) =>
+              `${isActive ? "text-black" : "hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`
+            }
           >
             {route.name}
-          </button>
+          </NavLink>
         );
       })}
     </div>
   );
-};
+}
 
 function LoginButtons() {
   return (
@@ -135,7 +141,7 @@ const activeStyle: React.CSSProperties = {
 const MobileMenu = (props: Props): JSX.Element => {
   const { menuOpen, setMenuOpen } = props;
 
-  const linkElements = routes.map((route) => (
+  const linkElements = navRoutes.map((route) => (
     <li key={route.name}>
       <Link
         className="text-lg dark:text-white"
@@ -159,7 +165,7 @@ const MobileMenu = (props: Props): JSX.Element => {
           </div>
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerHeader/>
+          <DrawerHeader />
           <DrawerDescription>
             <div className="flex justify-between items-start p-6">
               <ul className="flex flex-col w-full items-start text-center gap-4">
