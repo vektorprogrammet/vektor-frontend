@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useLocation } from "react-router";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { navRoutes } from "~/routes";
 import getSponsors, { type Sponsor } from "@/api/Sponsor";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
@@ -17,18 +17,6 @@ import {
 } from "~/components/ui/drawer";
 
 export default function Layout() {
-  const location = useLocation();
-
-  // Set active nav index based on current location
-  // Used in NavTabs to highlight the correct tab
-  for (let i = 0; i < navRoutes.length; i++) {
-    const route = navRoutes[i];
-    if (`/${route.path}` === location.pathname) {
-      location.state = { activeNavIndex: i };
-      break;
-    }
-  }
-
   return (
     <div className="transition-colors flex flex-col items-stretch min-h-screen">
       <AppHeader />
@@ -67,23 +55,17 @@ function AppHeader() {
 
 function NavTabs({
   routes,
-}: { routes: Array<{ name: string; path: string }> }) {
+}: {
+  routes: Array<{ name: string; path: string }>;
+}) {
   const location = useLocation();
-  const navLinkRefs = useRef<(HTMLElement | null)[]>([]);
-  const [pillWidth, setPillWidth] = useState(
-    navLinkRefs.current[location.state.activeNavIndex]?.offsetWidth ?? 0,
-  );
-  const [pillLeft, setPillLeft] = useState(
-    navLinkRefs.current[location.state.activeNavIndex]?.offsetLeft ?? 0,
-  );
+  const navLinkRefs = useRef<HTMLElement[]>([]); // Refs to the nav links
+  const [pillWidth, setPillWidth] = useState<number>();
+  const [pillLeft, setPillLeft] = useState<number>();
 
-  useEffect(() => {
-    const el = navLinkRefs.current[location.state.activeNavIndex];
-    if (el) {
-      setPillWidth(el.offsetWidth);
-      setPillLeft(el.offsetLeft);
-    }
-  }, [location.state.activeNavIndex]);
+  const activeNavIndex = navRoutes.findIndex(
+    (route) => `/${route.path}` === location.pathname,
+  );
 
   return (
     <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
@@ -99,7 +81,15 @@ function NavTabs({
             to={route.path}
             key={route.path}
             ref={(el) => {
+              if (!el) return;
+
+              // Add the ref to the array
               navLinkRefs.current[i] = el;
+              // If the current link is the active one, set the pill width and left offset
+              if (i === activeNavIndex) {
+                setPillWidth(el.offsetWidth);
+                setPillLeft(el.offsetLeft);
+              }
             }}
             className={({ isActive }) =>
               `${isActive ? "text-black" : "hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`
