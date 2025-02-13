@@ -1,10 +1,12 @@
 import type React from "react";
-import type { JSX } from "react";
 
-import "./mobile.css";
-import { Link } from "react-router-dom";
-import routes from "../../pages/public/routes";
+import { NavRoutes } from "@/routes";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, NavLink } from "react-router";
 import LoginButtons from "./LoginButtons";
+import UserAvatar from "./UserAvatar";
+import "./mobile.css";
 import {
   Drawer,
   DrawerClose,
@@ -12,8 +14,9 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
-} from "@/components/Drawer";
+} from "@/components/ui/drawer";
 
 interface Props {
   menuOpen: boolean;
@@ -28,7 +31,7 @@ const activeStyle: React.CSSProperties = {
 const MobileMenu = (props: Props): JSX.Element => {
   const { menuOpen, setMenuOpen } = props;
 
-  const linkElements = routes.map((route) => (
+  const linkElements = NavRoutes.map((route) => (
     <li key={route.name}>
       <Link
         className="text-lg dark:text-white"

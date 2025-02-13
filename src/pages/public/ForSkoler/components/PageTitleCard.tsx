@@ -32,7 +32,7 @@ const PageTitleCard = ({
           </a>
         )}
       </div>
-{/*       <img
+      {/*       <img
         src={imgPath.href}
         alt={alt}
         className=" sm:max-w-md w-max mt-6 rounded-lg mx-auto"
@@ -40,5 +40,7 @@ const PageTitleCard = ({
     </div>
   );
 };
+
+PageTitleCard.defaultProps = { link: undefined };
 
 export default PageTitleCard;

@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import type { JSX } from "react";
+import { useNavigate } from "react-router";
 
 interface Props {
   title: string;

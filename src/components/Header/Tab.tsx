@@ -1,7 +1,6 @@
+import { NavRoutes as routes } from "@/routes";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-import routes from "@/pages/public/routes";
+import { useNavigate } from "react-router";
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
@@ -42,9 +41,7 @@ export const Tab = () => {
           <button
             type="button"
             key={route.name}
-            ref={(el) => {
-              tabsRef.current[index] = el;
-            }}
+            ref={(el) => (tabsRef.current[index] = el)}
             className={`${isActive ? `text-black` : `hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg`} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`}
             onClick={() => {
               setActiveTabIndex(index);

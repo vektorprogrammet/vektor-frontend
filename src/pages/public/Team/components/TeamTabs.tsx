@@ -1,8 +1,7 @@
-import React, { useEffect, type JSX } from "react";
-import { useNavigate } from "react-router-dom";
-
-import Division from "./Division";
 import Tabs from "@/components/Tabs";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import Division from "./Division";
 
 interface TeamTabProps {
   divisions: DivisionList[];

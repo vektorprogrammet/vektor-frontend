@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 interface InfoProps {
   info: string[];
 }

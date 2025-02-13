@@ -1,6 +1,5 @@
-import { useRef, type JSX } from "react";
-
 import getContent from "api/Assistenter";
+import { useRef } from "react";
 import Citycard from "./CityCard/Citycard";
 
 const Assistenter = (): JSX.Element => {

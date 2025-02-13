@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 import Divider from "@/components/Divider";
 
 interface TextPictureParagraphProps {
@@ -23,7 +21,7 @@ export interface TextPictureParagraphAPIProps {
 const TextPictureParagraph = ({
   title,
   text,
-  pictureOnLeft,
+  pictureOnLeft = true,
   image
 }: TextPictureParagraphProps): JSX.Element => {
   

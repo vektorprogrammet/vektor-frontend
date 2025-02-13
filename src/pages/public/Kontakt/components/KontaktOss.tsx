@@ -1,7 +1,6 @@
-import React, { useEffect, type JSX } from "react";
-
-import Division from "./Division.js";
 import Tabs from "@/components/Tabs.js";
+import React, { useEffect } from "react";
+import Division from "./Division.js";
 
 interface KontaktTabProps {
   divisions: DivisionList[];
@@ -161,7 +160,7 @@ const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
     sessionStorage.setItem("kontaktTab", openTab.toString());
   }, [openTab]);
   return (
-    <div className="flex flex-col md:flex-row items-start md:max-w-6xl md:mb-auto mb-6 items-start">
+    <div className="flex flex-col md:flex-row items-start md:max-w-6xl md:mb-auto mb-6">
       <div className="w-1/5 ml-3">
         <Tabs
           divisions={divisions}
@@ -169,7 +168,7 @@ const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
           setOpenTab={setOpenTab}
         />
       </div>
-      <div className="flex flex-col w-full items-start overflow-y-scroll h-[500px] break-words mb-6 rounded-md px-5 py-5 mx-auto xl:ml-20 lg:ml-16 w-[322px] sm:w-[440px] md:w-[720px] lg:w-[820px] xl:w-[1100px]">
+      <div className="flex flex-col w-full items-start overflow-y-scroll h-[500px] break-words mb-6 rounded-md px-5 py-5 mx-auto xl:ml-20 lg:ml-16 sm:w-[440px] md:w-[720px] lg:w-[820px] xl:w-[1100px]">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />

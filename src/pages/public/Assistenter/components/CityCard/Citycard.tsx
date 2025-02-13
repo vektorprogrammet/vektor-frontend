@@ -1,5 +1,4 @@
-import { useState, type JSX } from "react";
-
+import { useState } from "react";
 import ApplyReg from "../ApplyReg";
 import { City } from "./CityButton";
 

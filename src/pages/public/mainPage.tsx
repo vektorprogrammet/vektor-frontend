@@ -1,20 +1,20 @@
-import { type JSX } from "react";
+import react from "react";
 import CountUp from "react-countup";
+import { Link } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
-import { Link } from "react-router-dom";
 
-import vektorLogo from "/images/vektor-logo.svg";
-import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import KSBergen from "/images/mainPage/sponsor/KSBergen.png";
+import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
+import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
+import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
+import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
 import SparebankstiftelsenDNB from "/images/mainPage/sponsor/SparebankstiftelsenDNB.png";
 import Tekna from "/images/mainPage/sponsor/Tekna.png";
 import UiB from "/images/mainPage/sponsor/UIB.png";
 import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
-import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
-import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
-import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
-import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
+import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
+import vektorLogo from "/images/vektor-logo.svg";
 
 const hovedsponsor = [
   {
@@ -165,7 +165,10 @@ const mainPage = (): JSX.Element => {
         <div className="flex flex-col max-w-4xl md:gap-32">
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
             {hovedsponsor.map((sponsor) => (
-              <div className="flex w-72 h-72 md:w-96 md:h-96 items-center">
+              <div
+                className="flex w-72 h-72 md:w-96 md:h-96 items-center"
+                key={sponsor.name}
+              >
                 <img
                   className="w-auto h-auto"
                   src={sponsor.image}
@@ -176,7 +179,10 @@ const mainPage = (): JSX.Element => {
           </div>
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
             {sponsorer.map((sponsor) => (
-              <div className="flex w-36 h-36 md:w-64 md:h-64 items-center">
+              <div
+                className="flex w-36 h-36 md:w-64 md:h-64 items-center"
+                key={sponsor.name}
+              >
                 <img
                   className="w-auto h-auto"
                   src={sponsor.image}

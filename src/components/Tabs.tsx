@@ -1,4 +1,5 @@
-import { useEffect, useState, type JSX } from "react";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,8 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 interface TabProps {
   divisions: DivisionList[];
@@ -45,6 +45,7 @@ const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps): JSX.Element => {
           <button
             className="bg-vektor-darkblue text-white w-36 h-8 items-center cursor-default rounded-md flex justify-between px-2"
             onClick={() => setIsOpen(!isOpen)}
+            type="button"
           >
             <div className="flex items-center justify-between w-full">
               {divisions.find((data) => tabstate === data.number)?.name ||

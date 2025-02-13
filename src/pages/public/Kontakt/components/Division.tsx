@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 interface DivisionProps {
   name: string;
   subtitle?: string;

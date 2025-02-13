@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 import Logo from "/images/vektor-logo-circle.svg";
 
 const Divider = (): JSX.Element => {

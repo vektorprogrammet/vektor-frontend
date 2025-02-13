@@ -1,8 +1,10 @@
-import { useState, type JSX } from "react";
-
+import Tab from "@/components/Header/Tab";
+import type React from "react";
+import { useState } from "react";
+import LoginPopup from "../../pages/controlpanel/components/LoginPopup";
 import LoginButtons from "./LoginButtons";
 import MobileMenu from "./MobileMenu";
-import Tab from "@/components/Header/Tab";
+import UserAvatar from "./UserAvatar";
 
 const AppHeader = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
