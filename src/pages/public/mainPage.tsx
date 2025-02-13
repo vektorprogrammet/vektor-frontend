@@ -1,6 +1,6 @@
 import react from "react";
 import CountUp from "react-countup";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
 
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";

@@ -1,6 +1,6 @@
-import routes from "@/pages/public/routes";
+import { NavRoutes as routes } from "@/routes";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);

@@ -1,10 +1,9 @@
 import type React from "react";
 
+import { NavRoutes } from "@/routes";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, NavLink } from "react-router-dom";
-import LoginPopup from "../../pages/controlpanel/components/LoginPopup";
-import routes from "../../pages/public/routes";
+import { Link, NavLink } from "react-router";
 import LoginButtons from "./LoginButtons";
 import UserAvatar from "./UserAvatar";
 import "./mobile.css";
@@ -32,7 +31,7 @@ const activeStyle: React.CSSProperties = {
 const MobileMenu = (props: Props): JSX.Element => {
   const { menuOpen, setMenuOpen } = props;
 
-  const linkElements = routes.map((route) => (
+  const linkElements = NavRoutes.map((route) => (
     <li key={route.name}>
       <Link
         className="text-lg dark:text-white"
