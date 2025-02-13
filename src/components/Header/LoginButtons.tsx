@@ -1,7 +1,6 @@
 import React, { type Dispatch, type SetStateAction } from "react";
 import { Link } from "react-router-dom";
 
-
 const LoginButtons = () => {
   return (
     <div className="flex space-x-4">

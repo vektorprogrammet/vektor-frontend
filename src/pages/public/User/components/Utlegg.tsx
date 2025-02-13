@@ -155,18 +155,24 @@ const Utlegg: React.FC = () => {
           <table className="table-fixed text-left divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300 mx-10">
             <thead>
               <tr>
-                <th className="w-1/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">Id</th>
+                <th className="w-1/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">
+                  Id
+                </th>
                 <th className="w-1/12 py-3 px-4 sm:px-2 bg-table-grey dark:bg-neutral-700">
                   Utleggsdato
                 </th>
                 <th className="w-3/12 py-3 px-20 sm:px-10 bg-table-grey dark:bg-neutral-700">
                   Beskrivelse
                 </th>
-                <th className="w-2/12 py-3 px-10 sm:px-5 bg-table-grey dark:bg-neutral-700">Sum</th>
+                <th className="w-2/12 py-3 px-10 sm:px-5 bg-table-grey dark:bg-neutral-700">
+                  Sum
+                </th>
                 <th className="w-3/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">
                   Kvittering
                 </th>
-                <th className="w-3/12 py-3 px-6 bg-table-grey dark:bg-neutral-700">Status</th>
+                <th className="w-3/12 py-3 px-6 bg-table-grey dark:bg-neutral-700">
+                  Status
+                </th>
                 <th
                   className="w-1/12 py-3 px-4 bg-table-grey dark:bg-neutral-700"
                   aria-label="Empty Cell"

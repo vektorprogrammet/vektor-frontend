@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
 import routes from "@/pages/public/routes";
-import { useNavigate} from 'react-router-dom';
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Tab = () => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
@@ -8,7 +8,7 @@ export const Tab = () => {
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
   const navigate = useNavigate();
   const [activeTabIndex, setActiveTabIndex] = useState<number>(
-    () => Number(localStorage.getItem("activeTabIndex")) || 0
+    () => Number(localStorage.getItem("activeTabIndex")) || 0,
   );
 
   useEffect(() => {
@@ -26,7 +26,6 @@ export const Tab = () => {
 
     localStorage.setItem("activeTabIndex", String(activeTabIndex));
   }, [activeTabIndex]);
-
 
   return (
     <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
