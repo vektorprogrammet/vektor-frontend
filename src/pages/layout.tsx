@@ -63,7 +63,7 @@ function NavTabs({
   const [pillWidth, setPillWidth] = useState<number>();
   const [pillLeft, setPillLeft] = useState<number>();
 
-  const activeNavIndex = navRoutes.findIndex(
+  const activeNavIndex = routes.findIndex(
     (route) => `/${route.path}` === location.pathname,
   );
 
