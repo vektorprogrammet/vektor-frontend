@@ -1,6 +1,6 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
-import "./index.css";
+import "~/index.css";
 
 export function Layout({
   children,

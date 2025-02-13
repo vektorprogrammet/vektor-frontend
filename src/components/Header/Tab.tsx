@@ -1,4 +1,4 @@
-import { NavRoutes as routes } from "@/routes";
+import { NavRoutes as routes } from "~/routes";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 

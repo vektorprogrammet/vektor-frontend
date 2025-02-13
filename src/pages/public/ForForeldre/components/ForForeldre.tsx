@@ -1,6 +1,6 @@
 import Divider from "@/components/Divider";
 import TextPictureCard from "@/components/TextPictureCard";
-import getContent from "api/ForForeldre";
+import getContent from "@/api/ForForeldre";
 
 const ForForeldre = (): JSX.Element => {
   const { title, ingress, cards, bottomText } = getContent();

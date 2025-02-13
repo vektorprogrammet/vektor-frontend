@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 
 import { type StagingServerAPIResponse, fetchServers } from "./FetchUtils";
 
-import "../../../../App.css";
-
 const ServerOverview = (): JSX.Element => {
   const [servers, setServers] = useState<[StagingServerAPIResponse]>();
   const [rows, setRows] = useState<Array<boolean>>([]);
