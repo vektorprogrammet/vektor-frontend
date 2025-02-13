@@ -36,7 +36,7 @@ export function Layout({
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-vektor-bg">
         {children}
         <ScrollRestoration />
         <Scripts />
