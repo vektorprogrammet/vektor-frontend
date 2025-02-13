@@ -1,4 +1,3 @@
-import DarkModeToggle from "./components/DarkModeToggle";
 import FooterLinks from "./components/FooterLinks";
 import FooterSponsors from "./components/FooterSponsors";
 
@@ -13,7 +12,6 @@ const AppFooter = (): JSX.Element => {
         />
         <FooterLinks />
         <FooterSponsors />
-        <DarkModeToggle />
       </div>
     </footer>
   );
