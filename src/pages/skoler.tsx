@@ -1,6 +1,6 @@
 import Divider from "@/components/Divider";
 
-const ForSkoler = (): JSX.Element => {
+export default function ForSkoler () {
   const goToContact = (url: string) => () => {
     window.location.href = url;
   };
@@ -137,5 +137,3 @@ const ForSkoler = (): JSX.Element => {
     </div>
   );
 };
-
-export default ForSkoler;

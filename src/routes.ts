@@ -80,7 +80,7 @@ export default [
       ),
     ]),
     route("foreldre", "pages/public/ForForeldre/index.ts"),
-    route("skoler", "pages/public/ForSkoler/index.ts"),
+    route("skoler", "pages/skoler.tsx"),
     route("kontakt", "pages/public/Kontakt/index.ts"),
 
     // personal pages
