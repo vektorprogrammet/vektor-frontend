@@ -2,7 +2,6 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import "./index.css";
 import "./App.css";
-import { DarkModeProvider } from "./components/DarkModeProvider";
 
 export function Layout({
   children,
@@ -46,9 +45,5 @@ export function Layout({
 }
 
 export default function Root() {
-  return (
-    <DarkModeProvider>
-      <Outlet />
-    </DarkModeProvider>
-  );
+  return <Outlet />;
 }
