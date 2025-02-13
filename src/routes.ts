@@ -84,7 +84,7 @@ export default [
     route("kontakt", "pages/public/Kontakt/index.ts"),
 
     // personal pages
-    route("profil", "pages/public/Profil/index.ts"),
+    route("profil", "pages/profil.tsx"),
     route("soknader", "pages/soknader.tsx"),
     route("utlegg", "pages/public/User/components/Utlegg.tsx"),
   ]),
