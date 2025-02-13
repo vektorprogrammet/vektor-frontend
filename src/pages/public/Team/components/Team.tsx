@@ -1,5 +1,5 @@
 import TeamCard from "./TeamCard";
-import Tabs from "./TeamTabs";
+import TeamTabs from "./TeamTabs";
 
 const teamInfo = {
   title: "Våre team",
@@ -18,7 +18,7 @@ const teamInfo = {
 
 const Team = (): JSX.Element => {
   return (
-    <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center">
+    <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center w-full">
       <TeamCard
         key={teamInfo.card.title}
         title={teamInfo.card.title}
@@ -31,7 +31,7 @@ const Team = (): JSX.Element => {
       <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10 dark:text-gray-200">
         {teamInfo.title}
       </h1>
-      <Tabs
+      <TeamTabs
         divisions={[
           { name: "Trondheim", number: 1 },
           { name: "Ås", number: 2 },

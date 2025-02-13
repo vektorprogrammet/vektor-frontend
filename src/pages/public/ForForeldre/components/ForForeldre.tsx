@@ -1,6 +1,6 @@
-import getContent from "api/ForForeldre";
-import TextPictureCard from "@/components/TextPictureCard";
 import Divider from "@/components/Divider";
+import TextPictureCard from "@/components/TextPictureCard";
+import getContent from "api/ForForeldre";
 
 const ForForeldre = (): JSX.Element => {
   const { title, ingress, cards, bottomText } = getContent();
@@ -23,9 +23,7 @@ const ForForeldre = (): JSX.Element => {
           pictureOnLeft={index % 2 === 0}
         />
       ))}
-      <p className="max-w-3xl text-md md:text-lg">
-        {bottomText}
-      </p>
+      <p className="max-w-3xl text-md md:text-lg">{bottomText}</p>
     </div>
   );
 };

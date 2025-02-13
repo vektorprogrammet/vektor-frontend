@@ -1,7 +1,8 @@
+import Tabs from "@/components/Tabs.js";
 import React, { useEffect } from "react";
 import Division from "./Division.js";
 
-interface TabProps {
+interface KontaktTabProps {
   divisions: DivisionList[];
 }
 
@@ -12,12 +13,12 @@ interface DivisionList {
 
 const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Trondheim"
         subtitle="Norges teknisk-naturvitenskapelige universitet"
         mail="styret.ntnu@vektorprogrammet.no"
-        address="Høgskoleringen 5 7491 Trondheim"
+        address="Høgskoleringen 5, 7491 Trondheim"
         contactInfos={[
           { name: "Styret", mail: "styret.ntnu@vektorprogrammet.no" },
           { name: "Evaluering", mail: "evaluering.ntnu@vektorprogrammet.no" },
@@ -42,7 +43,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Ås"
         subtitle="Norges miljø- og biovitenskapelige universitet"
@@ -70,7 +71,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Bergen"
         subtitle="Universitetet i Bergen"
@@ -94,7 +95,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
 
 const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   return (
-    <div className={`${open ? "block" : "hidden"}`}>
+    <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
         name="Hovedstyret"
         description="Hovedstyret er det nasjonale styret i vektorprogrammet. De er et overordnet organ med ansvar for drifting av hele organisasjonen."
@@ -149,7 +150,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const Tabs = ({ divisions }: TabProps): JSX.Element => {
+const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("kontaktTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
@@ -159,35 +160,15 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
     sessionStorage.setItem("kontaktTab", openTab.toString());
   }, [openTab]);
   return (
-    <div className="w-full">
-      <div className="flex font-medium text-center border-b" role="tablist">
-        {divisions.map((data) => {
-          const chosenStyle =
-            openTab === data.number
-              ? "border-t-gray-200 border-l-gray-200 border-r-gray-200 border-b-white text-vektor-darblue z-50 dark:bg-neutral-800 dark:text-neutral-200 dark:border-t-white dark:border-l-white dark:border-r-white"
-              : "text-vektor-darblue z-50 dark:hover:bg-neutral-700 dark:border-b-white";
-          return (
-            <div
-              className="flex-auto text-center border-gray-200 border-b-2 -mb-[2px]"
-              key={data.name}
-            >
-              <button
-                type="button"
-                className={`rounded-t-lg -mb-[2px] z-50 text-base w-full font-bold py-3 border-b-gray-200 hover:border-2 hover:border-t-gray-200 hover:text-vektor-blue border-2 border-b-2 border-white dark:border-transparent ${chosenStyle}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenTab(data.number);
-                }}
-                data-toggle="tab"
-                role="tablist"
-              >
-                {data.name}
-              </button>
-            </div>
-          );
-        })}
+    <div className="flex flex-col md:flex-row items-start md:max-w-6xl md:mb-auto mb-6">
+      <div className="w-1/5 ml-3">
+        <Tabs
+          divisions={divisions}
+          tabstate={openTab}
+          setOpenTab={setOpenTab}
+        />
       </div>
-      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-2 border-r-2 border-l-2 px-4 py-5 dark:bg-neutral-800">
+      <div className="flex flex-col w-full items-start overflow-y-scroll h-[500px] break-words mb-6 rounded-md px-5 py-5 mx-auto xl:ml-20 lg:ml-16 sm:w-[440px] md:w-[720px] lg:w-[820px] xl:w-[1100px]">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
@@ -197,4 +178,4 @@ const Tabs = ({ divisions }: TabProps): JSX.Element => {
   );
 };
 
-export default Tabs;
+export default KontaktTabs;

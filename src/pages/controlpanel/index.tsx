@@ -1,8 +1,10 @@
-import { RemoveScroll } from "react-remove-scroll";
-import { Outlet } from "react-router-dom";
 import { useState } from "react";
-import SideBar from "./components/SideBar";
+import { useState } from "react";
+import { RemoveScroll } from "react-remove-scroll";
+import { Outlet } from "react-router";
 import LoginPopup from "./components/LoginPopup";
+import SideBar from "./components/SideBar";
+import SideBar from "./components/SideBar";
 
 const ControlPanel = (): JSX.Element => {
   const [loginPopupVisible, setLoginPopupVisible] = useState(true);
