@@ -9,10 +9,13 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": "/src",
-      components: "/src/components",
-      pages: "/src/pages",
-      api: "/src/api",
+      "~": "/src",
+      "@/components": "/src/components",
+      "@/hooks": "/src/hooks",
+      "@/lib": "/src/lib",
+      "@/ui": "/src/components/ui",
+      "@/pages": "/src/pages",
+      "@/api": "/src/api",
     },
   },
 });

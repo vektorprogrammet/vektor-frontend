@@ -1,4 +1,4 @@
-import KontaktCard from "pages/public/Kontakt/components/KontaktCard";
+import KontaktCard from "./KontaktCard";
 import Tabs from "./KontaktOss.js";
 
 const kontaktInfo = {

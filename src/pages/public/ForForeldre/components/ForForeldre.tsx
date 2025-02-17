@@ -1,10 +1,8 @@
-import type { JSX } from "react";
-
-import getContent from "api/ForForeldre";
-import TextPictureParagraph from "@/components/TextPictureParagraph";
 import Divider from "@/components/Divider";
+import TextPictureCard from "@/components/TextPictureCard";
+import getContent from "@/api/ForForeldre";
 
-const ForForeldre = (): JSX.Element => {
+const ForForeldre = () => {
   const { title, ingress, cards, bottomText } = getContent();
   return (
     <div className="flex flex-col self-center items-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark">

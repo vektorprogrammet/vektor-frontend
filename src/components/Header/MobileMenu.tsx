@@ -1,6 +1,6 @@
 import type React from "react";
 
-import { NavRoutes } from "@/routes";
+import { NavRoutes } from "~/routes";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, NavLink } from "react-router";
