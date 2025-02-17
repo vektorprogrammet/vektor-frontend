@@ -6,7 +6,7 @@ import {
   route,
 } from "@react-router/dev/routes";
 
-export const NavRoutes = [
+export const navRoutes = [
   { path: "", name: "Hjem" },
   { path: "om-oss", name: "Om oss" },
   { path: "assistenter", name: "Assistenter" },
@@ -18,7 +18,7 @@ export const NavRoutes = [
 ];
 
 export default [
-  layout("pages/public/index.tsx", [
+  layout("pages/layout.tsx", [
     index("pages/public/mainPage.tsx"),
     route("om-oss", "pages/public/OmOss/index.ts"),
     route("assistenter", "pages/public/Assistenter/index.ts"),
