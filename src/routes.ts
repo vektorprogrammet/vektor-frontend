@@ -18,20 +18,6 @@ export const NavRoutes = [
 ];
 
 export default [
-  // controlpanel
-  /* ...prefix("kontrollpanel", [
-    layout("pages/controlpanel/index.tsx", [
-      index("pages/controlpanel/components/Kontrollpanel.tsx"),
-      route("team", "pages/controlpanel/components/Team/Team.tsx"),
-      route("skoler", "pages/controlpanel/components/Skoler.tsx"),
-      route("opprett-team", "pages/controlpanel/components/Team/OpprettTeam.tsx"),
-      route("teams/:id", "pages/controlpanel/components/Team/Teammedlemmer.tsx"),
-      route("teaminteresse", "pages/controlpanel/components/Teaminteresse.tsx"),
-      route("assistenter", "pages/controlpanel/components/Assistent.tsx"),
-      route("registrer-soker", "pages/controlpanel/components/RegistrerSoker/RegistrerSoker.tsx"),
-    ]),
-  ]), */
-
   layout("pages/public/index.tsx", [
     index("pages/public/mainPage.tsx"),
     route("om-oss", "pages/public/OmOss/index.ts"),
