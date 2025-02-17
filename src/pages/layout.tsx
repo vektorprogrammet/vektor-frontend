@@ -5,7 +5,7 @@ import getSponsors, { type Sponsor } from "@/api/Sponsor";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
 import { Link } from "react-router";
-import "./mobile.css";
+import "./layout.css";
 import {
   Drawer,
   DrawerTrigger,
