@@ -1,4 +1,4 @@
-export interface TextPictureCard {
+export interface AssistentMotivationCard {
   title: string;
   text: string;
   image: {
@@ -10,7 +10,7 @@ export interface TextPictureCard {
 export interface ForAssistenterContent {
   title: string;
   ingress: string;
-  cards: Array<TextPictureCard>;
+  cards: Array<AssistentMotivationCard>;
 }
 
 // Lag et card for elementene på forrige side
@@ -19,10 +19,10 @@ export default (): ForAssistenterContent => {
   return {
     title: "Assistenter",
     ingress:
-      "Vektorassistent er et frivillig verv der du reiser til en ungdomsskole" +
-      " én dag i uka for å hjelpe til som lærerassistent i matematikk." +
-      " En stilling som vektorassistent varer i 4 eller 8 uker, og du kan selv velge" +
-      " hvilken ukedag som passer best for deg.",
+      `Vektorassistent er et frivillig verv der du reiser til en ungdomsskole
+       én dag i uka for å hjelpe til som lærerassistent i matematikk.
+       En stilling som vektorassistent varer i 4 eller 8 uker, og du kan selv velge
+       hvilken ukedag som passer best for deg.`,
 
     cards: [
       {
