@@ -1,15 +1,9 @@
-export interface TextPictureCard {
-  title: string;
-  text: string;
-  image: {
-    url: URL;
-    alt: string;
-  };
-}
+import type { TextPictureParagraphAPIProps } from "@/components/TextPictureParagraph";
+
 export interface ForForeldreContent {
   title: string;
   ingress: string;
-  cards: Array<TextPictureCard>;
+  cards: Array<TextPictureParagraphAPIProps>;
   bottomText: string;
 }
 
