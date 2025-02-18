@@ -80,12 +80,12 @@ export default [
       ),
     ]),
     route("foreldre", "pages/foreldre.tsx"),
-    route("skoler", "pages/public/ForSkoler/index.ts"),
+    route("skoler", "pages/skoler.tsx"),
     route("kontakt", "pages/public/Kontakt/index.ts"),
 
     // personal pages
-    route("profil", "pages/public/Profil/index.ts"),
-    route("soknader", "pages/public/MineSoknader/index.ts"),
+    route("profil", "pages/profil.tsx"),
+    route("soknader", "pages/soknader.tsx"),
     route("utlegg", "pages/public/User/components/Utlegg.tsx"),
   ]),
 ] satisfies RouteConfig;
