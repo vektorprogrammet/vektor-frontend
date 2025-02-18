@@ -23,7 +23,7 @@ interface NyttUtleggProps {
   setConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NyttUtlegg = (props: NyttUtleggProps): JSX.Element => {
+const NyttUtlegg = (props: NyttUtleggProps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [dateValue, setDateValue] = useState<DateValueType>({
     startDate: null,

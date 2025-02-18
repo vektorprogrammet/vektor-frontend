@@ -20,7 +20,7 @@ interface DivisionList {
   number: number;
 }
 
-const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps): JSX.Element => {
+const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 

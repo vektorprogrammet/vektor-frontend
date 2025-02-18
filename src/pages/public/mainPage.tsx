@@ -92,7 +92,7 @@ const cards: MainPageProps[] = [
   },
 ];
 
-const mainPage = (): JSX.Element => {
+const mainPage = () => {
   return (
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}

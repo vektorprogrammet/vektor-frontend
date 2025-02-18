@@ -4,7 +4,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const BorderContentCard = ({ title, text, children }: Props): JSX.Element => {
+const BorderContentCard = ({ title, text, children }: Props) => {
   return (
     <div className="text-center rounded border my-20 mx-auto md:p-6 sm:p-0 border-secondary">
       <div>

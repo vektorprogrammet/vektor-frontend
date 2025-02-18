@@ -1,4 +1,4 @@
-const Profil = (): JSX.Element => {
+const Profil = () => {
   return (
     <div className="sm:flex sm:justify-center mb-10 w-full">
       <div className="max-w-sm sm:max-w-full sm:mx-4 mx-auto">

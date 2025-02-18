@@ -15,7 +15,7 @@ const PageTitleCard = ({
   imgPath,
   alt,
   link,
-}: Props): JSX.Element => {
+}: Props) => {
   return (
     <div className="flex max-w-7xl mx-auto justify-between flex-wrap mt-10">
       <div className="max-w-6xl  m-auto">

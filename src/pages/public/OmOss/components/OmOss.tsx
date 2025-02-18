@@ -87,7 +87,7 @@ const teamAccordions: AccordionType[] = [
   },
 ];
 
-const OmOss = (): JSX.Element => {
+const OmOss = () => {
   const { title, ingress, bottomText, bottomHeader, bottomImage, cards} = getContent();
   const accordionSection = (
     <div className="flex flex-col items-center w-full">

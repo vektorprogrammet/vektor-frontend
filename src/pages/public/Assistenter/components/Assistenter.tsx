@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import TextPictureCard from "./AssistenterCard";
 import Citycard from "./CityCard/Citycard";
 
-const Assistenter = (): JSX.Element => {
+const Assistenter = () => {
   const { title, ingress, cards } = getContent();
 
   const cardElement = useRef<HTMLDivElement>(null);

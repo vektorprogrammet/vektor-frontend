@@ -10,7 +10,7 @@ const Tab = ({
   onTabClick: () => void;
   city: City;
   open: boolean;
-}): JSX.Element => {
+}) => {
   const chosenStyle = open
     ? `tab-active dark:text-vektor-darblue`
     : `text-vektor-darblue dark:text-gray-300`;
@@ -27,7 +27,7 @@ const Tab = ({
   );
 };
 
-const Tabs = (): JSX.Element => {
+const Tabs = () => {
   const [openTab, setOpenTab] = useState(City.TRONDHEIM);
   return (
     <div className="w-full">

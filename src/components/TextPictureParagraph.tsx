@@ -23,7 +23,7 @@ export const TextPictureParagraph = ({
   text,
   pictureOnLeft = true,
   image
-}: TextPictureParagraphProps): JSX.Element => {
+}: TextPictureParagraphProps) => {
   
   return (
     <div

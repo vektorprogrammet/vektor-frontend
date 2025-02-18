@@ -14,7 +14,7 @@ const kontaktInfo = {
     },
   },
 };
-const Kontakt = (): JSX.Element => {
+const Kontakt = () => {
   return (
     <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center">
       <KontaktCard

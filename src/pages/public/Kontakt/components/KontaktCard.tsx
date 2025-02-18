@@ -5,7 +5,7 @@ interface Props {
   alt: string;
 }
 
-const KontaktCard = ({ title, text, imgPath, alt }: Props): JSX.Element => {
+const KontaktCard = ({ title, text, imgPath, alt }: Props) => {
   return (
     <div className="flex w-full mx-auto justify-around flex-wrap">
       <div className="max-w-6xl mt-5 flex flex-col">

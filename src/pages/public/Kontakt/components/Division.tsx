@@ -25,7 +25,7 @@ const Division = ({
   address,
   contactInfos,
   contact,
-}: DivisionProps): JSX.Element => {
+}: DivisionProps) => {
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-10 sm:p-6 pd:2">

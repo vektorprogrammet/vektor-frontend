@@ -12,7 +12,7 @@ interface DivisionList {
   number: number;
 }
 
-const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
+const TrondheimTab = ({ open }: { open: boolean }) => {
   return (
     <div
       className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center ${
@@ -87,7 +87,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const AasTab = ({ open }: { open: boolean }): JSX.Element => {
+const AasTab = ({ open }: { open: boolean }) => {
   return (
     <div
       className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center ${
@@ -138,7 +138,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
+const BergenTab = ({ open }: { open: boolean }) => {
   return (
     <div
       className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center  ${
@@ -173,7 +173,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
+const HovedstyretTab = ({ open }: { open: boolean }) => {
   const navigate = useNavigate();
   return (
     <div
@@ -248,7 +248,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const TeamTabs = ({ divisions }: TeamTabProps): JSX.Element => {
+const TeamTabs = ({ divisions }: TeamTabProps) => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;

@@ -1,6 +1,6 @@
 import Divider from "@/components/Divider";
 
-const ForSkoler = (): JSX.Element => {
+const ForSkoler = () => {
   const goToContact = (url: string) => () => {
     window.location.href = url;
   };

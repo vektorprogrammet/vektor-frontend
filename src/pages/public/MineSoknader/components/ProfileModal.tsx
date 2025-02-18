@@ -3,7 +3,7 @@ interface ProfileModalProps {
   name: string;
 }
 
-const ProfileModal = ({ imgUrl, name }: ProfileModalProps): JSX.Element => {
+const ProfileModal = ({ imgUrl, name }: ProfileModalProps) => {
   return (
     <div>
       <div className="flex justify-center">

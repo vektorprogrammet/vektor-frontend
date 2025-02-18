@@ -1,7 +1,7 @@
 import Applications from "./Applications";
 import ProfileModal from "./ProfileModal";
 
-const MineSoknader = (): JSX.Element => {
+const MineSoknader = () => {
   return (
     <div className="flex justify-center mb-10 w-full">
       <div className="col-12 text-center">

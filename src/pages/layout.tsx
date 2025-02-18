@@ -128,7 +128,7 @@ const activeStyle: React.CSSProperties = {
   background: "rgba(111,206,238,0.8)",
 };
 
-const MobileMenu = (props: Props): JSX.Element => {
+const MobileMenu = (props: Props) => {
   const { menuOpen, setMenuOpen } = props;
 
   const linkElements = navRoutes.map((route) => (

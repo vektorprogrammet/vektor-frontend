@@ -16,7 +16,7 @@ const teamInfo = {
   },
 };
 
-const Team = (): JSX.Element => {
+const Team = () => {
   return (
     <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center w-full">
       <TeamCard
