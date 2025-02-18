@@ -1,6 +1,6 @@
-import { TextPictureParagraph } from "@/components/TextPictureParagraph";
-import { Divider } from "@/components/Divider";
 import getContent from "@/api/OmOss";
+import { Divider } from "@/components/Divider";
+import { TextPictureParagraph } from "@/components/TextPictureParagraph";
 import {
   Accordion,
   AccordionContent,
@@ -86,7 +86,8 @@ const teamAccordions: AccordionType[] = [
 ];
 
 const OmOss = () => {
-  const { title, ingress, bottomText, bottomHeader, bottomImage, cards} = getContent();
+  const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
+    getContent();
   const accordionSection = (
     <div className="flex flex-col items-center w-full">
       <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
@@ -143,11 +144,9 @@ const OmOss = () => {
       ))}
       <div className="flex flex-col w-full gap-3 md:gap-5">
         <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
-            {bottomHeader}
+          {bottomHeader}
         </h1>
-        <p className="text-md md:text-lg">
-          {bottomText}
-        </p>
+        <p className="text-md md:text-lg">{bottomText}</p>
         <img
           className="mt-0"
           alt={bottomImage.alt}

@@ -127,7 +127,7 @@ const Utlegg: React.FC = () => {
           <button
             type="button"
             className={`text-xl hover:font-semibold mb-4 ${
-              !showWindow ? "text-green-600" : "text-blue-600"
+              showWindow ? "text-blue-600" : "text-green-600"
             }`}
             onClick={handleClick}
           >

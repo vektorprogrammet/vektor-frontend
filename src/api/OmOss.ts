@@ -8,14 +8,13 @@ export interface OmOssContent {
   bottomImage: {
     url: URL;
     alt: string;
-    };
+  };
   cards: Array<TextPictureParagraphAPIProps>;
 }
 export default (): OmOssContent => {
   return {
     title: "Om Vektorprogrammet",
-    ingress:
-      `Vektorprogrammet arbeider for å øke interessen for matematikk 
+    ingress: `Vektorprogrammet arbeider for å øke interessen for matematikk 
         og realfag blant elever i grunnskolen. Vi er en nasjonal studentorganisasjon
         som sender studenter med god realfagskompetanse til skoler
         for å hjelpe elevene i matematikktimene. Disse

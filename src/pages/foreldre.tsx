@@ -1,6 +1,6 @@
+import getContent from "@/api/ForForeldre";
 import { Divider } from "@/components/Divider";
 import { TextPictureParagraph } from "@/components/TextPictureParagraph";
-import getContent from "@/api/ForForeldre";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForForeldre() {

@@ -1,7 +1,7 @@
 import { Divider } from "@/components/Divider";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
-export default function ForSkoler () {
+export default function ForSkoler() {
   const goToContact = (url: string) => () => {
     window.location.href = url;
   };
@@ -137,4 +137,4 @@ export default function ForSkoler () {
       </div>
     </div>
   );
-};
+}

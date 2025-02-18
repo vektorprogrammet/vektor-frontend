@@ -1,14 +1,14 @@
-const serverURL = "https://staging.vektorprogrammet.no/api/servers";
-const diskUsageURL = "https://staging.vektorprogrammet.no/api/disk-space";
+const serverUrl = "https://staging.vektorprogrammet.no/api/servers";
+const diskUsageUrl = "https://staging.vektorprogrammet.no/api/disk-space";
 
 export async function fetchServers(): Promise<[StagingServerAPIResponse]> {
-  const response = await fetch(serverURL);
+  const response = await fetch(serverUrl);
   const body = await response.json();
   return body;
 }
 
 export async function fetchDiskUsage(): Promise<any> {
-  const response = await fetch(diskUsageURL);
+  const response = await fetch(diskUsageUrl);
   const body = await response.json();
   return body;
 }
