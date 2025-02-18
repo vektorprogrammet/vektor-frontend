@@ -1,15 +1,14 @@
-import react from "react";
 import CountUp from "react-countup";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
 
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
-import KSBergen from "/images/mainPage/sponsor/KSBergen.png";
+import ksBergen from "/images/mainPage/sponsor/KSBergen.png";
 import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
 import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
 import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
 import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
-import SparebankstiftelsenDNB from "/images/mainPage/sponsor/SparebankstiftelsenDNB.png";
+import sparebankstiftelsenDnb from "/images/mainPage/sponsor/SparebankstiftelsenDNB.png";
 import Tekna from "/images/mainPage/sponsor/Tekna.png";
 import UiB from "/images/mainPage/sponsor/UIB.png";
 import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
@@ -23,7 +22,7 @@ const hovedsponsor = [
   },
   {
     name: "Sparebankstiftelsen DNB",
-    image: SparebankstiftelsenDNB,
+    image: sparebankstiftelsenDnb,
   },
 ];
 
@@ -58,7 +57,7 @@ const sponsorer = [
   },
   {
     name: "Kulturstyret Bergen",
-    image: KSBergen,
+    image: ksBergen,
   },
 ];
 interface MainPageProps {
@@ -92,7 +91,7 @@ const cards: MainPageProps[] = [
   },
 ];
 
-const mainPage = (): JSX.Element => {
+const mainPage = () => {
   return (
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}
@@ -197,4 +196,5 @@ const mainPage = (): JSX.Element => {
   );
 };
 
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default mainPage;

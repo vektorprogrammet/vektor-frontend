@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 interface Props {
   title: string;
@@ -16,7 +16,7 @@ const Division = ({
   numberOfMembers,
   button_name,
   url,
-}: Props): JSX.Element => {
+}: Props) => {
   const navigate = useNavigate();
 
   const chosenStyle = title === "Styret" ? "w-64" : "w-64";

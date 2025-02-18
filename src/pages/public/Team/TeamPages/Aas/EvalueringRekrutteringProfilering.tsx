@@ -1,6 +1,6 @@
 import TeamTemplate from "../TeamTemplate";
 
-const EvalueringRekrutteringProfilering = (): JSX.Element => {
+const EvalueringRekrutteringProfilering = () => {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
       <TeamTemplate

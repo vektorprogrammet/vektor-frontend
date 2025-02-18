@@ -1,9 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
+  },
+  "files": {
+    "ignore": ["package.json", ".vscode", "src/components/ui", "*.config.ts"]
   },
   "formatter": {
     "enabled": true,
@@ -18,9 +21,36 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "all": true,
       "a11y": {
         "noSvgWithoutTitle": "warn"
+      },
+      "correctness": {
+        "noNodejsModules": "off",
+        "useImportExtensions": "off"
+      },
+      "performance": {
+        "useTopLevelRegex": "off"
+      },
+      "style": {
+        "noImplicitBoolean": "off",
+        "useBlockStatements": "off",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": {
+            "syntax": "generic"
+          }
+        },
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case", "snake_case"]
+          }
+        },
+        "useShorthandArrayType": "off"
+      },
+      "suspicious": {
+        "noReactSpecificProps": "off"
       }
     }
   },

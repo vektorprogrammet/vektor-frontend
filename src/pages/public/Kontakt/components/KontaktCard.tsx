@@ -5,7 +5,7 @@ interface Props {
   alt: string;
 }
 
-const KontaktCard = ({ title, text, imgPath, alt }: Props): JSX.Element => {
+const KontaktCard = ({ title, text, imgPath, alt }: Props) => {
   return (
     <div className="flex w-full mx-auto justify-around flex-wrap">
       <div className="max-w-6xl mt-5 flex flex-col">
@@ -19,7 +19,7 @@ const KontaktCard = ({ title, text, imgPath, alt }: Props): JSX.Element => {
       <img
         src={imgPath.href}
         alt={alt}
-        className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg mt-5 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-16 mx-auto max-h-32 sm:max-h-36 md:max-h-40 lg:max-h-44 mr-auto ml-auto dark:invert dark:saturate-0"
+        className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg mt-5 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-16 mx-auto mr-auto ml-auto dark:invert dark:saturate-0"
       />
     </div>
   );

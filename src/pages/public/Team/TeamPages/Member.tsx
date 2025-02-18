@@ -4,7 +4,7 @@ interface TeamMember {
   image: string;
 }
 
-const Member = ({ name, role, image }: TeamMember): JSX.Element => {
+const Member = ({ name, role, image }: TeamMember) => {
   return (
     <div className="justify-between content-center max-w-6xl">
       <img

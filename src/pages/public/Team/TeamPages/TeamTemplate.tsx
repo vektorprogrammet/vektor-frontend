@@ -13,7 +13,7 @@ interface Members {
   role: string;
 }
 
-const TeamTemplate = ({ name, mail, text, members }: Team): JSX.Element => {
+const TeamTemplate = ({ name, mail, text, members }: Team) => {
   return (
     <div>
       <h1 className="mt-10 text-vektor-darblue text-4xl text-center font-bold">

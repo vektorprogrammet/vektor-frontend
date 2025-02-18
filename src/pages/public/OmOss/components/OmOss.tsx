@@ -1,56 +1,12 @@
-import Divider from "@/components/Divider";
-import ImageCard from "@/components/TextPictureCard";
+import getContent from "@/api/OmOss";
+import { Divider } from "@/components/Divider";
+import { TextPictureParagraph } from "@/components/TextPictureParagraph";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./Accordion";
-
-interface TextAndPicture {
-  title: string;
-  text: string;
-  image: {
-    url: URL;
-    alt: string;
-  };
-  pictureOnLeft?: boolean;
-}
-
-const cards: TextAndPicture[] = [
-  {
-    title: "Motivere elever",
-    text: `Vektorprogrammet ønsker å øke
-   matematikkforståelsen blant elever i grunnskolen. Forståelse
-    gir mestringsfølelse som fører til videre motivasjon. Siden
-     matematikk er grunnlaget for alle realfag er målet at dette
-      også skal føre til motivasjon og videre utforskning av realfagene.`,
-    image: {
-      url: new URL(
-        "https://vektorprogrammet.no/images/tormedmer.jpg?v=1598900041",
-      ),
-      alt: "Kosing med Tor.",
-    },
-  },
-  {
-    title: "Motivere studenter",
-    text: `Vi har som mål at alle studentene skal 
-      sitte igjen mer motivert for videre studier 
-      etter å ha vært vektorassistent. Av erfaring 
-      vet vi at muligheten til å formidle egen kunnskap
-       og se at deres arbeid gir elevene 
-       mestringsfølelse er en sterk motivasjonsfaktor. Videre arrangerer
-        vi både sosiale og faglige arrangementer for å
-         forsterke denne motivasjonen.`,
-    image: {
-      url: new URL(
-        "https://vektorprogrammet.no/images/membersV18.JPG?v=1598900041",
-      ),
-      alt: "Samlede vektormedlemmer.",
-    },
-    pictureOnLeft: true,
-  },
-];
 
 interface AccordionType {
   title: string;
@@ -129,15 +85,17 @@ const teamAccordions: AccordionType[] = [
   },
 ];
 
-const OmOss = (): JSX.Element => {
+const OmOss = () => {
+  const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
+    getContent();
   const accordionSection = (
     <div className="flex flex-col items-center w-full">
       <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
         Assistent
       </h2>
       <Accordion type="single" collapsible className="w-full">
-        {assistantAccordions.map(({ title, content }) => (
-          <AccordionItem key={title} value={title}>
+        {assistantAccordions.map(({ title, content }, index) => (
+          <AccordionItem key={title} value={`item-${index + 1}`}>
             <AccordionTrigger>
               <p className="text-left">{title}</p>
             </AccordionTrigger>
@@ -152,8 +110,8 @@ const OmOss = (): JSX.Element => {
         Team
       </h2>
       <Accordion type="single" collapsible className="w-full">
-        {teamAccordions.map(({ title, content }) => (
-          <AccordionItem key={title} value={title}>
+        {teamAccordions.map(({ title, content }, index) => (
+          <AccordionItem key={title} value={`item-${index + 1}`}>
             <AccordionTrigger>
               <p className="text-left">{title}</p>
             </AccordionTrigger>
@@ -167,49 +125,32 @@ const OmOss = (): JSX.Element => {
   );
 
   return (
-    <div className="flex flex-col self-center max-w-4xl p-5 mt-20 mb-20 gap-3 md:gap-28 dark:text-text-dark">
+    <div className="flex flex-col self-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark items-center">
       <div className="flex flex-col max-w-full gap-3 md:gap-5">
-        <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
-          Om Vektorprogrammet
+        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          {title}
         </h1>
-        <p className="text-md md:text-lg">
-          {`
-          Vektorprogrammet arbeider for å øke interessen for matematikk 
-          og realfag blant elever i grunnskolen. Vi er en nasjonal studentorganisasjon
-          som sender studenter med god realfagskompetanse til skoler
-            for å hjelpe elevene i matematikktimene. Disse
-            studentene har også gode pedagogiske evner og
-              er gode rollemodeller – de er Norges realfagshelter.
-          `}
-        </p>
+        <p className="max-w-3xl text-md md:text-lg">{ingress}</p>
         <Divider />
       </div>
       {cards.map((card, index) => (
-        <ImageCard
+        <TextPictureParagraph
           key={card.title}
           title={card.title}
           text={card.text}
-          imgPath={card.image.url.toString()}
-          alt={card.image.alt}
+          image={card.image}
           pictureOnLeft={index % 2 === 0}
         />
       ))}
       <div className="flex flex-col w-full gap-3 md:gap-5">
         <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
-          En forsmak til læreryrket!
+          {bottomHeader}
         </h1>
-        <p className="text-md md:text-lg">
-          {`Siden studentene er tilstede i
-          undervisningen får de en introduksjon til
-          læreryrket. Mange som studerer realfag
-          vurderer en fremtid som lærer,
-          og får gjennom oss muligheten til
-          å få reell erfaring.`}
-        </p>
+        <p className="text-md md:text-lg">{bottomText}</p>
         <img
           className="mt-0"
-          alt=""
-          src="https://vektorprogrammet.no/images/nett.jpg?v=1598900041"
+          alt={bottomImage.alt}
+          src={bottomImage.url.toString()}
         />
         <Divider />
       </div>

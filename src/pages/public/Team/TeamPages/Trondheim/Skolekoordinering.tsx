@@ -1,6 +1,6 @@
 import TeamTemplate from "../TeamTemplate";
 
-const Skolekoordinering = (): JSX.Element => {
+const Skolekoordinering = () => {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
       <TeamTemplate

@@ -1,4 +1,4 @@
-import Tabs from "@/components/Tabs.js";
+import { Tabs } from "@/components/Tabs";
 import React, { useEffect } from "react";
 import Division from "./Division.js";
 
@@ -11,7 +11,7 @@ interface DivisionList {
   number: number;
 }
 
-const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
+const TrondheimTab = ({ open }: { open: boolean }) => {
   return (
     <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
@@ -41,7 +41,7 @@ const TrondheimTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const AasTab = ({ open }: { open: boolean }): JSX.Element => {
+const AasTab = ({ open }: { open: boolean }) => {
   return (
     <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
@@ -69,7 +69,7 @@ const AasTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
+const BergenTab = ({ open }: { open: boolean }) => {
   return (
     <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
@@ -93,7 +93,7 @@ const BergenTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
+const HovedstyretTab = ({ open }: { open: boolean }) => {
   return (
     <div className={`flex-grow ${open ? "block" : "hidden"}`}>
       <Division
@@ -150,7 +150,7 @@ const HovedstyretTab = ({ open }: { open: boolean }): JSX.Element => {
   );
 };
 
-const KontaktTabs = ({ divisions }: KontaktTabProps): JSX.Element => {
+const KontaktTabs = ({ divisions }: KontaktTabProps) => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("kontaktTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;

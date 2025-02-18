@@ -1,6 +1,6 @@
 import TeamTemplate from "../TeamTemplate";
 
-const Hovedstyret = (): JSX.Element => {
+const Hovedstyret = () => {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
       <TeamTemplate

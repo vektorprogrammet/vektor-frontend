@@ -1,6 +1,6 @@
 import TeamTemplate from "../TeamTemplate";
 
-const Okonomi = (): JSX.Element => {
+const Okonomi = () => {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
       ,

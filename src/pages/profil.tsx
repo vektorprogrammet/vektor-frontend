@@ -1,4 +1,5 @@
-const Profil = (): JSX.Element => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Profil() {
   return (
     <div className="sm:flex sm:justify-center mb-10 w-full">
       <div className="max-w-sm sm:max-w-full sm:mx-4 mx-auto">
@@ -13,7 +14,7 @@ const Profil = (): JSX.Element => {
           alt="Aaryan"
           className="max-w-full mt-2"
         />
-        <div className=" mt-2 bg-white shadow max-w-full p-2">
+        <div className="mt-2 bg-white shadow max-w-full p-2">
           <p className="m-2">Avdeling: Trondheim</p>
           <p className="m-2">Linje: MTING</p>
           <p className="m-2">Telefon: 123 45 678</p>
@@ -21,8 +22,8 @@ const Profil = (): JSX.Element => {
           <p className="m-2">Vektorepost: aaryan.er.kul@domene.no</p>
         </div>
       </div>
-      <div className=" sm:w-full sm:max-w-2xl max-w-sm sm:my-14 sm:mx-4 mx-auto mb-8 md:mt-14">
-        <div className=" mt-2 bg-white shadow max-w-full p-2">
+      <div className="sm:w-full sm:max-w-2xl max-w-sm sm:my-14 sm:mx-4 mx-auto mb-8 md:mt-14">
+        <div className="mt-2 bg-white shadow max-w-full p-2">
           <h1 className="text-2xl font-medium text-vektor-darblue pb-2 pt-2">
             Medlem i hovedstyret
           </h1>
@@ -43,7 +44,7 @@ const Profil = (): JSX.Element => {
             </tbody>
           </table>
         </div>
-        <div className=" mt-2 bg-white shadow max-w-full p-2">
+        <div className="mt-2 bg-white shadow max-w-full p-2">
           <h1 className="text-2xl font-medium text-vektor-darblue pt-2 pb-2">
             Assistenthistorikk
           </h1>
@@ -94,6 +95,4 @@ const Profil = (): JSX.Element => {
       </div>
     </div>
   );
-};
-
-export default Profil;
+}

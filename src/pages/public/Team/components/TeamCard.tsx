@@ -7,14 +7,7 @@ interface Props {
   alt: string;
 }
 
-const TeamCard = ({
-  title,
-  text1,
-  text2,
-  text3,
-  alt,
-  imgPath,
-}: Props): JSX.Element => {
+const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: Props) => {
   return (
     <div className="flex w-full mx-auto justify-around flex-wrap">
       <div className="max-w-6xl mt-5 flex flex-col">
