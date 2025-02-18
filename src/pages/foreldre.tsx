@@ -2,7 +2,7 @@ import Divider from "@/components/Divider";
 import TextPictureParagraph from "@/components/TextPictureParagraph";
 import getContent from "@/api/ForForeldre";
 
-const ForForeldre = () => {
+export default function ForForeldre () {
   const { title, ingress, cards, bottomText } = getContent();
   return (
     <div className="flex flex-col self-center items-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark">
@@ -26,5 +26,3 @@ const ForForeldre = () => {
     </div>
   );
 };
-
-export default ForForeldre;

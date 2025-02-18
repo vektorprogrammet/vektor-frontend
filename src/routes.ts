@@ -79,7 +79,7 @@ export default [
         "pages/public/Team/TeamPages/Hovedstyret/Hovedstyret.tsx",
       ),
     ]),
-    route("foreldre", "pages/public/ForForeldre/index.ts"),
+    route("foreldre", "pages/foreldre.tsx"),
     route("skoler", "pages/public/ForSkoler/index.ts"),
     route("kontakt", "pages/public/Kontakt/index.ts"),
 
