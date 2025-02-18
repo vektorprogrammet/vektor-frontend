@@ -1,6 +1,5 @@
 import getContent from "@/api/Assistenter";
-import React, { useRef } from "react";
-import TextPictureCard from "./AssistenterCard";
+import { useRef } from "react";
 import Citycard from "./CityCard/Citycard";
 
 const Assistenter = () => {

@@ -1,5 +1,3 @@
-import type { JSX } from "react";
-
 import TextPictureParagraph from "@/components/TextPictureParagraph";
 import Divider from "@/components/Divider";
 import getContent from "@/api/OmOss";

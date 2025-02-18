@@ -1,5 +1,5 @@
 import Tabs from "@/components/Tabs";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Division from "./Division";
 
@@ -253,7 +253,7 @@ const TeamTabs = ({ divisions }: TeamTabProps) => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
-  const [openTab, setOpenTab] = React.useState<number>(initialTabState);
+  const [openTab, setOpenTab] = useState<number>(initialTabState);
 
   useEffect(() => {
     sessionStorage.setItem("teamTab", openTab.toString());
