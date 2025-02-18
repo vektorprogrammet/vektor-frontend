@@ -1,4 +1,4 @@
-import Tabs from "@/components/Tabs.js";
+import { Tabs } from "@/components/Tabs";
 import React, { useEffect } from "react";
 import Division from "./Division.js";
 

@@ -1,4 +1,4 @@
-import Divider from "@/components/Divider";
+import { Divider } from "@/components/Divider";
 
 const ForSkoler = () => {
   const goToContact = (url: string) => () => {

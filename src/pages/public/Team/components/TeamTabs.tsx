@@ -1,4 +1,4 @@
-import Tabs from "@/components/Tabs";
+import { Tabs } from "@/components/Tabs";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Division from "./Division";

@@ -1,5 +1,5 @@
 import { TextPictureParagraph } from "@/components/TextPictureParagraph";
-import Divider from "@/components/Divider";
+import { Divider } from "@/components/Divider";
 import getContent from "@/api/OmOss";
 import {
   Accordion,

@@ -1,6 +1,6 @@
 import Logo from "/images/vektor-logo-circle.svg";
 
-const Divider = () => {
+export function Divider () {
   return (
     <div className="w-full flex md:hidden lg:hidden flex-col items-center opacity-30 h-24 mt-5 mb-5">
       <img
@@ -12,5 +12,3 @@ const Divider = () => {
     </div>
   );
 };
-
-export default Divider;

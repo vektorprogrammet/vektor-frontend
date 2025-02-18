@@ -1,4 +1,4 @@
-import Divider from "@/components/Divider";
+import { Divider } from "@/components/Divider";
 import { TextPictureParagraph } from "@/components/TextPictureParagraph";
 import getContent from "@/api/ForForeldre";
 
