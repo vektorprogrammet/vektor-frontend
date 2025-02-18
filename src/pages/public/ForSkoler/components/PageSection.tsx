@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
+
 interface Props {
   title: string;
   text: Array<string>;
-  children?: JSX.Element | undefined;
+  children?: ReactNode | undefined;
 }
 
 /**

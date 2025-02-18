@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
 import type React from "react";
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
 
@@ -193,7 +193,7 @@ const NyttUtlegg = (props: NyttUtleggProps) => {
     />
   );
 
-  const inputWrapper = (label: string, input: JSX.Element) => (
+  const inputWrapper = (label: string, input: ReactNode) => (
     <div className="form-control w-full max-w-xs">
       <label className="label">
         <span className="label-text font-bold">{label}</span>
