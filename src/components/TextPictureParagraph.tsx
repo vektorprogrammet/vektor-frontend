@@ -18,7 +18,7 @@ export interface TextPictureParagraphAPIProps {
   };
 }
 
-const TextPictureParagraph = ({
+export const TextPictureParagraph = ({
   title,
   text,
   pictureOnLeft = true,
@@ -46,5 +46,3 @@ const TextPictureParagraph = ({
     </div>
   );
 };
-
-export default TextPictureParagraph;
