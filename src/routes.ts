@@ -22,7 +22,7 @@ export default [
   layout("pages/layout.tsx", [
     index("pages/public/mainPage.tsx"),
     route("om-oss", "pages/public/OmOss/index.ts"),
-    route("assistenter", "pages/public/Assistenter/index.ts"),
+    route("assistenter", "pages/assistenter.tsx"),
     // team
     ...prefix("team", [
       index("pages/public/Team/components/Team.tsx"),

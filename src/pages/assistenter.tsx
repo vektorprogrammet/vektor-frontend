@@ -1,8 +1,15 @@
 import getContent from "@/api/Assistenter";
-import { useRef } from "react";
-import Citycard from "./CityCard/Citycard";
+import { useRef, useState } from "react";
 
-const Assistenter = () => {
+const Cities = {
+  bergen: "Bergen",
+  trondheim: "Trondheim",
+  aas: "Ås",
+} as const;
+type City = typeof Cities[keyof typeof Cities];
+
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Assistenter() {
   const { title, ingress, cards } = getContent();
 
   const cardElement = useRef<HTMLDivElement>(null);
@@ -36,7 +43,7 @@ const Assistenter = () => {
         </div>
         <div className="flex justify-evenly space-x-10 text-accent">
           {cards.map(({ title, text, image }) => (
-            <div className="leading-relaxed flex w-full mx-auto justify-between flex-wrap">
+            <div key={title} className="leading-relaxed flex w-full mx-auto justify-between flex-wrap">
               <div className="max-w-6xl ">
                 <img
                   src={image.url.href}
@@ -156,6 +163,182 @@ const Assistenter = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Assistenter;
+function Citycard() {
+  const [openTab, setOpenTab] = useState<City>("Trondheim");
+  function Tab({
+    city,
+    onTabClick,
+    open,
+  }: {
+    onTabClick: () => void;
+    city: City;
+    open: boolean;
+  }) {
+    const chosenStyle = open
+      ? "tab-active dark:text-vektor-darblue"
+      : "text-vektor-darblue dark:text-gray-300";
+    return (
+      <button
+        type="button"
+        className={`tab tab-lifted w-1/3 text-base font-bold border-white dark:hover:bg-neutral-700 ${chosenStyle}`}
+        onClick={onTabClick}
+        data-toggle="tab"
+        role="tablist"
+      >
+        {city}
+      </button>
+    );
+  }
+  return (
+    <div className="w-full">
+      <div
+        className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-900"
+        role="tablist"
+      >
+        {Object.values(Cities).map((city) => (
+          <Tab
+            city={city}
+            onTabClick={() => setOpenTab(city)}
+            open={openTab === city}
+            key={city}
+          />
+        ))}
+      </div>
+      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space dark:bg-neutral-800">
+        <ApplyReg cities={openTab} />
+      </div>
+    </div>
+  );
+}
+
+function ApplyReg({ cities }: { cities: City }) {
+  return (
+    <form className="dark:bg-neutral-800">
+      <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center dark:text-gray-200">
+        {cities}
+      </h1>
+
+      <div className="mt-1 mb-8 text-center dark:text-gray-300">
+        Søknadsfrist:{" "}
+      </div>
+
+      <div className="grid justify-items-center dark:text-gray-800">
+        <div className="flex flex-wrap w-full my-4 space-x-8 justify-center">
+          <input
+            type="fornavn"
+            className="mb-2 p-1 rounded block border-solid border-2 border-vektor-darblue"
+            placeholder="Fornavn"
+          />
+
+          <input
+            type="etternavn"
+            className="mb-2 p-1 rounded block border-solid border-2 border-vektor-darblue"
+            placeholder="Etternavn"
+          />
+        </div>
+
+        <div className="flex mt-3 justify-center w-full">
+          <input
+            type="email"
+            className="mb-2 p-1 rounded inline-flex items-center form-input w-1/2 border-solid border-2 border-vektor-darblue"
+            placeholder="E-post"
+          />
+        </div>
+
+        <div className="flex mt-3 justify-center w-full">
+          <input
+            type="telefon"
+            className="mb-2 p-1 rounded inline-flex items-center form-input w-1/2 border-solid border-2 border-vektor-darblue"
+            placeholder="Telefon nr"
+          />
+        </div>
+
+        <div className="flex mt-3 justify-center w-full">
+          <input
+            type="linje"
+            className="mb-2 p-1 rounded inline-flex items-center form-input w-1/2 border-solid border-2 border-vektor-darblue"
+            placeholder="Linje"
+          />
+        </div>
+
+        <div className="my-4 space-x-4">
+          <select
+            className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
+            defaultValue="Kjønn"
+          >
+            <option value="Kjønn" disabled>
+              Kjønn
+            </option>
+            <option>Mann</option>
+            <option>Kvinne</option>
+            <option>Annet</option>
+          </select>
+
+          <select
+            className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
+            defaultValue="Årstrinn"
+          >
+            <option value="Årstrinn" disabled>
+              Årstrinn
+            </option>
+            <option>1. klasse</option>
+            <option>2. klasse</option>
+            <option>3. klasse</option>
+            <option>4. klasse</option>
+            <option>5. klasse</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 m-8 rounded "
+        >
+          Søk nå!
+        </button>
+      </div>
+      <div className="items-center mx-16 mb-10 text-center dark:text-gray-300">
+        Har du vært assistent tidligere? Da kan du søke på nytt her (krever
+        innlogging)
+      </div>
+    </form>
+  );
+}
+
+function NoApplyCard ({ cities }: { cities: City}) {
+  return (
+    <form>
+      <h1 className="font-bold text-xl my-8 text-vektor-darblue"> {cities}</h1>
+
+      <div className="block mt-3">
+        <input
+          type="email"
+          className="inline-flex items-center form-input border-solid border-2 border-grey"
+          placeholder="E-post"
+        />
+      </div>
+
+      <div className="block">
+        <div className="mt-2">
+          <div>
+            <div className="inline-flex items-center text-left">
+              <input type="checkbox" className="form-checkbox" />
+              <span className="m-2">Få påminnelse når opptaket starter </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex ">
+        <div className="flex items-center" />
+      </div>
+
+      <button
+        type="submit"
+        className="bg-vektor-darkblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded"
+      >
+        Send
+      </button>
+    </form>
+  );
+};
