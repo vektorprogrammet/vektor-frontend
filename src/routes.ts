@@ -17,6 +17,7 @@ export const navRoutes = [
   // { path: "/staging", element: <ServerOverview />, name: "Staging" },
 ];
 
+// biome-ignore lint/style/noDefaultExport: Routes configuration require default export https://reactrouter.com/start/framework/routing
 export default [
   layout("pages/layout.tsx", [
     index("pages/public/mainPage.tsx"),
