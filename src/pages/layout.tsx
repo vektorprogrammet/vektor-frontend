@@ -16,6 +16,7 @@ import {
   DrawerClose,
 } from "~/components/ui/drawer";
 
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
   return (
     <div className="transition-colors flex flex-col items-stretch min-h-screen">
