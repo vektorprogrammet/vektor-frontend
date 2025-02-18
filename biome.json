@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["package.json", ".vscode", "src/components/ui"]
+    "ignore": ["package.json", ".vscode", "src/components/ui", "*.config.ts"]
   },
   "formatter": {
     "enabled": true,
