@@ -1,5 +1,5 @@
 import Divider from "@/components/Divider";
-import TextPictureCard from "@/components/TextPictureCard";
+import TextPictureParagraph from "@/components/TextPictureParagraph";
 import getContent from "@/api/ForForeldre";
 
 const ForForeldre = () => {
