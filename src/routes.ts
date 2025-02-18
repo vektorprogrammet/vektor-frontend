@@ -21,7 +21,7 @@ export const navRoutes = [
 export default [
   layout("pages/layout.tsx", [
     index("pages/public/mainPage.tsx"),
-    route("om-oss", "pages/public/OmOss/index.ts"),
+    route("om-oss", "pages/om-oss.tsx"),
     route("assistenter", "pages/assistenter.tsx"),
     // team
     ...prefix("team", [

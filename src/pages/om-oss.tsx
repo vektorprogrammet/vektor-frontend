@@ -6,14 +6,14 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./Accordion";
+} from "@/components/ui/accordion";
 
 interface AccordionType {
   title: string;
   content: string;
 }
 
-const assistantAccordions: AccordionType[] = [
+const assistantAccordions: Array<AccordionType> = [
   {
     title: "Er verv i Vektorprogrammet betalt?",
     content:
@@ -63,7 +63,7 @@ const assistantAccordions: AccordionType[] = [
   },
 ];
 
-const teamAccordions: AccordionType[] = [
+const teamAccordions: Array<AccordionType> = [
   {
     title: "Hvordan søker jeg team?",
     content:
@@ -85,7 +85,8 @@ const teamAccordions: AccordionType[] = [
   },
 ];
 
-const OmOss = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function OmOss () {
   const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
     getContent();
   const accordionSection = (
@@ -163,5 +164,3 @@ const OmOss = () => {
     </div>
   );
 };
-
-export default OmOss;
