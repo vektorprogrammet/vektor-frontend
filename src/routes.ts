@@ -87,6 +87,6 @@ export default [
     // personal pages
     route("profil", "pages/profil.tsx"),
     route("soknader", "pages/soknader.tsx"),
-    route("utlegg", "pages/public/User/components/Utlegg.tsx"),
+    route("utlegg", "pages/utlegg.tsx"),
   ]),
 ] satisfies RouteConfig;

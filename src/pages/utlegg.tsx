@@ -1,14 +1,202 @@
 import {
+  faMinus,
+  faPencil,
+  faPlus,
+  faTrashCan,
   faCaretLeft,
   faCaretRight,
   faCheckToSlot,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
-import type React from "react";
-import { type ReactNode, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
+
+const Bekreftelse = () => {
+  return (
+    <div className="bg-green-700/20 h-10 text-center">
+      <h1 className="text-green-700">Utlegget ditt har blitt registrert</h1>
+    </div>
+  );
+};
+
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Utlegg() {
+  const [showWindow, setWindow] = useState(false);
+  const [showConfirmation, setConfirmation] = useState(false);
+  const handleClick = () => {
+    setWindow(!showWindow);
+    setConfirmation(false);
+  };
+
+  const mapToTable = (utlegg: Array<Utlegg>) => {
+    return utlegg.map((u, index) => (
+      <tr key={index.valueOf()} className="bg-white dark:bg-neutral-600">
+        <td className="py-3 px-6 sm:px-3">{u.id}</td>
+        <td className="py-3 px-4 sm:px-2">{u.utleggsdato}</td>
+        <td className="py-3 px-20 sm:px-10">{u.beskrivelse}</td>
+        <td className="py-3 px-10 sm:px-5">{u.sum}</td>
+        <td className="py-3 px-6 sm:px-3 text-blue-600 hover:underline">
+          {u.kvittering}
+        </td>
+        <td
+          className={`py-3 px-6 ${
+            u.status === "Til behandling" ? "text-amber-300" : "text-green-500"
+          }`}
+        >
+          {u.status}
+        </td>
+        <td className="py-3 px-4 text-blue-600 hover:underline">
+          {u.status === "Til behandling" && (
+            <>
+              Rediger <FontAwesomeIcon icon={faPencil} />
+            </>
+          )}
+        </td>
+        <td className="py-3 px-4 text-rose-600 hover:underline">
+          {u.status === "Til behandling" && (
+            <>
+              Slett <FontAwesomeIcon icon={faTrashCan} />
+            </>
+          )}
+        </td>
+      </tr>
+    ));
+  };
+
+  interface Utlegg {
+    id: string;
+    utleggsdato: string;
+    beskrivelse: string;
+    sum: string;
+    kvittering: string;
+    status: string;
+    endre: string;
+  }
+
+  const MineUtlegg: Array<Utlegg> = [
+    {
+      id: "123456789",
+      utleggsdato: "31.01.2024",
+      beskrivelse: "Pizza",
+      sum: "123,00 kr",
+      kvittering: "Vis kvittering",
+      status: "Til behandling",
+      endre: "slett",
+    },
+    {
+      id: "123456789",
+      utleggsdato: "31.01.2024",
+      beskrivelse: "Teamsosial",
+      sum: "600,00 kr",
+      kvittering: "Vis kvittering",
+      status: "Refundert",
+      endre: "",
+    },
+  ];
+
+  return (
+    <div>
+      {showConfirmation && <Bekreftelse />}
+      <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center dark:text-gray-300">
+        <h1 className="font-sans max-w-2xl mt-16 text-vektor-darblue text-4xl text-center font-bold mx-3 dark:text-gray-300">
+          Utlegg
+        </h1>
+        <div className="mt-4 mb-10 text-xl">
+          Her kan du registrere utlegg du har gjort for vektorprogrammet som du
+          ønsker å få refundert. For å få refusjon må du laste opp en kvittering
+          som bekrefter utlegget ditt.
+        </div>
+
+        <h1 className="font-sans max-w-2xl mt-2 text-vektor-darblue text-2xl text-center font-bold mx-3 dark:text-gray-300">
+          Hva kan jeg få refundert?
+        </h1>
+        <div className="mt-4 mb-20 text-lg">
+          {`Du kan typisk få refusjon for bussbilletter til og fra skole, kaffeposer til stand, kake til
+              arrangementer og lignende. Det er ellers lurt å høre med en leder om du kan få utlegget ditt
+              refundert før du legger ut. Om du har spørsmål kan du kontakte økonomiteamet på `}
+          <a
+            className="hover:underline text-vektor-darblue break-all"
+            href="mailto:okonomi@vektorprogrammet.no"
+          >
+            okonomi@vektorprogrammet.no
+          </a>
+        </div>
+
+        <h1 className="font-sans max-w-2xl mb-4 text-vektor-darblue text-2xl text-center font-bold mx-3 dark:text-gray-300">
+          Mine utlegg
+        </h1>
+      </div>
+      <div className="flex flex-col">
+        <div className="flex flex-col items-center lg:ml-60 lg:items-start sm:items-center sm:justify-center">
+          <button
+            type="button"
+            className={`text-xl hover:font-semibold mb-4 ${
+              showWindow ? "text-blue-600" : "text-green-600"
+            }`}
+            onClick={handleClick}
+          >
+            {!showWindow || showConfirmation ? (
+              <>
+                <FontAwesomeIcon icon={faPlus} /> Nytt utlegg
+              </>
+            ) : (
+              <>
+                <FontAwesomeIcon icon={faMinus} className="mr-2" />
+                Skjul skjema
+              </>
+            )}
+          </button>
+        </div>
+        {!showConfirmation && showWindow && (
+          <NyttUtlegg
+            showConfirmation={showConfirmation}
+            setConfirmation={setConfirmation}
+            setNew={handleClick}
+          />
+        )}
+        <hr className="bg-slate-100 lg:m-auto h-px lg:w-8/12 mx-10" />
+        <div className="flex justify-center mt-10 mb-20">
+          <table className="table-fixed text-left divide-y divide-gray-300 text-base block overflow-x-auto border-t-2 border-b-2 dark:text-gray-300 mx-10">
+            <thead>
+              <tr>
+                <th className="w-1/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">
+                  Id
+                </th>
+                <th className="w-1/12 py-3 px-4 sm:px-2 bg-table-grey dark:bg-neutral-700">
+                  Utleggsdato
+                </th>
+                <th className="w-3/12 py-3 px-20 sm:px-10 bg-table-grey dark:bg-neutral-700">
+                  Beskrivelse
+                </th>
+                <th className="w-2/12 py-3 px-10 sm:px-5 bg-table-grey dark:bg-neutral-700">
+                  Sum
+                </th>
+                <th className="w-3/12 py-3 px-6 sm:px-3 bg-table-grey dark:bg-neutral-700">
+                  Kvittering
+                </th>
+                <th className="w-3/12 py-3 px-6 bg-table-grey dark:bg-neutral-700">
+                  Status
+                </th>
+                <th
+                  className="w-1/12 py-3 px-4 bg-table-grey dark:bg-neutral-700"
+                  aria-label="Empty Cell"
+                />
+                <th
+                  className="w-1/12 py-3 px-4 bg-table-grey dark:bg-neutral-700"
+                  aria-label="Empty Cell"
+                />
+              </tr>
+            </thead>
+            <tbody>{mapToTable(MineUtlegg)}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 type Inputs = {
   amount: number;
@@ -20,7 +208,7 @@ type Inputs = {
 interface NyttUtleggProps {
   showConfirmation: boolean;
   setNew: () => void;
-  setConfirmation: React.Dispatch<React.SetStateAction<boolean>>;
+  setConfirmation: Dispatch<SetStateAction<boolean>>;
 }
 
 const NyttUtlegg = (props: NyttUtleggProps) => {
@@ -292,5 +480,3 @@ const NyttUtlegg = (props: NyttUtleggProps) => {
     </div>
   );
 };
-
-export default NyttUtlegg;
