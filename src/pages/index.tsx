@@ -70,7 +70,7 @@ interface MainPageProps {
   };
 }
 
-const cards: MainPageProps[] = [
+const cards: Array<MainPageProps> = [
   {
     number: 2218,
     title: "Assistenter",
@@ -91,7 +91,8 @@ const cards: MainPageProps[] = [
   },
 ];
 
-const mainPage = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function mainPage() {
   return (
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}
@@ -195,6 +196,3 @@ const mainPage = () => {
     </main>
   );
 };
-
-// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
-export default mainPage;
