@@ -82,7 +82,7 @@ export default [
     ]),
     route("foreldre", "pages/foreldre.tsx"),
     route("skoler", "pages/skoler.tsx"),
-    route("kontakt", "pages/public/Kontakt/index.ts"),
+    route("kontakt", "pages/kontakt.tsx"),
 
     // personal pages
     route("profil", "pages/profil.tsx"),
