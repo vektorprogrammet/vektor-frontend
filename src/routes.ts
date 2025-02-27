@@ -25,7 +25,7 @@ export default [
     route("assistenter", "pages/assistenter.tsx"),
     // team
     ...prefix("team", [
-      index("pages/public/Team/components/Team.tsx"),
+      index("pages/team.tsx"),
       ...prefix("trondheim", [
         route("it", "pages/public/Team/TeamPages/Trondheim/IT.tsx"),
         route(

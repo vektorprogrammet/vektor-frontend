@@ -1,11 +1,98 @@
 import { Tabs } from "@/components/Tabs";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import Division from "./Division";
+import { NavLink } from "react-router";
 
-interface TeamTabProps {
-  divisions: DivisionList[];
-}
+const teamInfo = {
+  title: "Våre team",
+  card: {
+    title: "Styre og team",
+    text1:
+      "Vektorprogrammet er en stor organisasjon med assistenter i 4 norske byer. Vi trenger derfor mange frivillige bak kulissene som kan få hjulene til å gå rundt. Uten Vektorprogrammets 15 team hadde dette aldri gått an! ",
+    text2: "Kunne du tenkt deg et team-verv hos oss?",
+    text3: "Les mer om de ulike teamene nedenfor!",
+    image: {
+      url: new URL("https://vektorprogrammet.no/images/departments_map.png"),
+      alt: "Team",
+    },
+  },
+};
+
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Team() {
+  return (
+    <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center w-full">
+      <TeamCard
+        key={teamInfo.card.title}
+        title={teamInfo.card.title}
+        text1={teamInfo.card.text1}
+        text2={teamInfo.card.text2}
+        text3={teamInfo.card.text3}
+        alt={teamInfo.card.image.alt}
+        imgPath={teamInfo.card.image.url}
+      />
+      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10 dark:text-gray-200">
+        {teamInfo.title}
+      </h1>
+      <TeamTabs
+        divisions={[
+          { name: "Trondheim", number: 1 },
+          { name: "Ås", number: 2 },
+          { name: "Bergen", number: 3 },
+          { name: "Hovedstyret", number: 4 },
+        ]}
+      />
+    </div>
+  );
+};
+
+/* Team Card */
+
+const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
+  title: string;
+  text1: string;
+  text2: string;
+  text3: string;
+  imgPath: URL;
+  alt: string;
+}) => {
+  return (
+    <div className="flex w-full mx-auto justify-around flex-wrap">
+      <div className="max-w-6xl mt-5 flex flex-col">
+        <h1 className="text-gray-600 text-4xl font-bold mx-3 dark:text-gray-200">
+          {title}
+        </h1>
+        <div className="max-w-md mt-4 mb-20 text-xl mx-3 dark:text-gray-300">
+          <span className="mb-4">{text1}</span>
+          {text2}
+          <div className="mt-6">
+            <strong>{text3}</strong>
+          </div>
+        </div>
+      </div>
+      <div className="mt-10 relative">
+        <div className="w-full absolute top-20 overflow-visible">
+          <svg className="overflow-visible">
+            <polyline
+              fill="none"
+              strokeWidth="2"
+              stroke="#2b69b0"
+              points="-60,51 30,51 90,101"
+            />
+          </svg>
+        </div>
+        <img
+          src={imgPath.href}
+          alt={alt}
+          className="w-auto max-w-full object-contain mx-auto max-h-80 mr-25"
+        />
+      </div>
+    </div>
+  );
+};
+
+/* Team Tabs */
+
+
 
 interface DivisionList {
   name: string;
@@ -24,7 +111,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="Ansvarlig for driften av Vektorprogrammet i Trondheim."
         mail="styret.ntnu@vektorprogrammet.no"
         numberOfMembers={9}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/styret"
       />
       <Division
@@ -32,7 +119,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="Vi sender ut spørreundersøkelser, lager statistikk av dem og skriver så semester- og årsrapporter."
         mail="evaluering.ntnu@vektorprogrammet.no"
         numberOfMembers={5}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/evaluering"
       />
       <Division
@@ -40,7 +127,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="I rekruttering jobber vi med å skaffe nye vektorassistenter."
         mail="rekruttering.ntnu@vektorprogrammet.no"
         numberOfMembers={11}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/rekruttering"
       />
       <Division
@@ -48,7 +135,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
         mail="skolekoordinering.ntnu@vektorprogrammet.no"
         numberOfMembers={8}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/skolekoordinering"
       />
       <Division
@@ -56,7 +143,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="Vektorprogrammets bindeledd til næringslivet, samarbeidspartnere og sponsorer."
         mail="sponsor.ntnu@vektorprogrammet.no"
         numberOfMembers={6}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/sponsor"
       />
       <Division
@@ -64,7 +151,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="Økonomiteamet har ansvaret for Vektorprogrammets økonomi."
         mail="okonomi@vektorprogrammet.no"
         numberOfMembers={9}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/okonomi"
       />
       <Division
@@ -72,7 +159,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="IT-teamet utvikler og drifter Vektorprogrammets nettside og interne datasystemer."
         mail="it@vektorprogrammet.no"
         numberOfMembers={10}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/IT"
       />
       <Division
@@ -80,7 +167,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         text="Profileringsteamet jobber for å gjøre Vektorprogrammet mer synlig gjennom sosiale medier."
         mail="profilering.ntnu@vektorprogrammet.no"
         numberOfMembers={7}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="trondheim/profilering"
       />
     </div>
@@ -99,7 +186,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         text="Ansvarlig for driften av Vektorprogrammet i Ås."
         mail="nmbu@vektorprogrammet.no"
         numberOfMembers={5}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="aas/styret"
       />
       <Division
@@ -107,7 +194,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås."
         mail="sponsor.nmbu@vektorprogrammet.no"
         numberOfMembers={4}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="aas/sponsor-okonomi"
       />
       <Division
@@ -115,7 +202,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene."
         mail="skolekoordinering.nmbu@vektorprogrammet.no"
         numberOfMembers={5}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="aas/skolekoordinering"
       />
       <Division
@@ -123,7 +210,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet."
         mail="evaluering.nmbu@vektorprogrammet.no"
         numberOfMembers={8}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="aas/evaluering-rekruttering-profilering"
       />
       <Division
@@ -131,7 +218,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         text="Vi arrangerer sosiale arrangementer for assistenter og sørger for at alle trives i vervet."
         mail="sosialt.nmbu@vektorprogrammet.no"
         numberOfMembers={6}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="aas/sosialt"
       />
     </div>
@@ -150,7 +237,7 @@ const BergenTab = ({ open }: { open: boolean }) => {
         text="Ansvarlig for driften av Vektorprogrammet i Bergen."
         mail="uib@vektorprogrammet.no"
         numberOfMembers={2}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="bergen/styret"
       />
       <Division
@@ -158,7 +245,7 @@ const BergenTab = ({ open }: { open: boolean }) => {
         text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
         mail="skolekoordinering.uib@vektorprogrammet.no"
         numberOfMembers={2}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="bergen/skolekoordinering"
       />
       <Division
@@ -166,7 +253,7 @@ const BergenTab = ({ open }: { open: boolean }) => {
         text="I rekruttering jobber vi med å skaffe nye vektorassistenter!"
         mail="rekruttering.uib@vektorprogrammet.no"
         numberOfMembers={2}
-        button_name="Les mer"
+        buttonName="Les mer"
         url="bergen/rekruttering"
       />
     </div>
@@ -174,7 +261,6 @@ const BergenTab = ({ open }: { open: boolean }) => {
 };
 
 const HovedstyretTab = ({ open }: { open: boolean }) => {
-  const navigate = useNavigate();
   return (
     <div
       className={`${
@@ -229,13 +315,13 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
           <div className="top-0 dark:text-white">{`${8} medlemmer`}</div>
         </div>
         <br />
-        <button
+        <NavLink
           type="button"
-          onClick={() => navigate("/team/hovedstyret")}
+          to="/team/hovedstyret"
           className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
         >
           Les mer om hovedstyret
-        </button>
+        </NavLink>
       </div>
       <div className="flex justify-center items-center md:col-span-1 max-h-80 md:p-4 md:mt-auto mt-6">
         <img
@@ -248,7 +334,9 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
   );
 };
 
-const TeamTabs = ({ divisions }: TeamTabProps) => {
+const TeamTabs = ({ divisions }: {
+  divisions: Array<DivisionList>;
+}) => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
@@ -281,4 +369,63 @@ const TeamTabs = ({ divisions }: TeamTabProps) => {
   );
 };
 
-export default TeamTabs;
+/* Division */
+
+const Division = ({
+  title,
+  text,
+  mail,
+  numberOfMembers,
+  buttonName,
+  url,
+}: {
+  title: string;
+  text: string;
+  mail: string;
+  numberOfMembers: number;
+  buttonName: string;
+  url: string;
+}) => {
+  const chosenStyle = title === "Styret" ? "w-64" : "w-64";
+
+  return (
+    <NavLink
+      className={`h-48 flex flex-col justify-between rounded-md shadow-md bg-vektor-light-blue dark:bg-gray-600 dark:text-white ${chosenStyle}`}
+      to={`/team/${url}`}
+    >
+      <div className="bg-vektor-blue dark:bg-vektor-darblue rounded-t-md h-10 content-center h-20">
+        <h1 className="text-center text-lg text-vektor-darblue font-medium dark:text-white">
+          {title}
+        </h1>
+      </div>
+      <div className="text-sm mx-2 h-full my-2 mx-3">
+        <p>{text}</p>
+      </div>
+      <div className="flex flex-row text-sm space-x-1 content-end mx-3">
+        <svg
+          className="h-4 w-4 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+          />
+        </svg>
+        <div>{`${numberOfMembers} medlemmer`}</div>
+      </div>
+      <div className="flex w-full justify-end self-end mb-1.5 mr-1.5">
+        <NavLink
+          type="button"
+          to={`/team/${url}`}
+          className="btn btn-success btn-sm text-white rounded-full"
+        >
+          {buttonName}
+        </NavLink>
+      </div>
+    </NavLink>
+  );
+};
