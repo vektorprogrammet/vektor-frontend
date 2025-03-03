@@ -1,6 +1,7 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const IT = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function IT() {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
       <TeamTemplate
@@ -197,5 +198,3 @@ const IT = () => {
     </div>
   );
 };
-
-export default IT;

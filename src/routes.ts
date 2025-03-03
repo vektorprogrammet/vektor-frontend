@@ -27,58 +27,34 @@ export default [
     ...prefix("team", [
       index("pages/team.tsx"),
       ...prefix("trondheim", [
-        route("it", "pages/public/Team/TeamPages/Trondheim/IT.tsx"),
-        route(
-          "evaluering",
-          "pages/public/Team/TeamPages/Trondheim/Evaluering.tsx",
-        ),
-        route("okonomi", "pages/public/Team/TeamPages/Trondheim/Okonomi.tsx"),
-        route(
-          "profilering",
-          "pages/public/Team/TeamPages/Trondheim/Profilering.tsx",
-        ),
-        route(
-          "rekruttering",
-          "pages/public/Team/TeamPages/Trondheim/Rekruttering.tsx",
-        ),
+        route("it", "pages/team/trondheim/it.tsx"),
+        route("evaluering", "pages/team/trondheim/evaluering.tsx"),
+        route("okonomi", "pages/team/trondheim/okonomi.tsx"),
+        route("profilering", "pages/team/trondheim/profilering.tsx"),
+        route("rekruttering", "pages/team/trondheim/rekruttering.tsx"),
         route(
           "skolekoordinering",
-          "pages/public/Team/TeamPages/Trondheim/Skolekoordinering.tsx",
+          "pages/team/trondheim/skolekoordinering.tsx",
         ),
-        route("sponsor", "pages/public/Team/TeamPages/Trondheim/Sponsor.tsx"),
-        route("styret", "pages/public/Team/TeamPages/Trondheim/Styret.tsx"),
+        route("sponsor", "pages/team/trondheim/sponsor.tsx"),
+        route("styret", "pages/team/trondheim/styret.tsx"),
       ]),
       ...prefix("aas", [
-        route("styret", "pages/public/Team/TeamPages/Aas/Styret.tsx"),
-        route(
-          "sponsor-okonomi",
-          "pages/public/Team/TeamPages/Aas/SponsorOkonomi.tsx",
-        ),
-        route(
-          "skolekoordinering",
-          "pages/public/Team/TeamPages/Aas/Skolekoordinering.tsx",
-        ),
+        route("styret", "pages/team/aas/styret.tsx"),
+        route("sponsor-okonomi", "pages/team/aas/sponsor-okonomi.tsx"),
+        route("skolekoordinering", "pages/team/aas/skolekoordinering.tsx"),
         route(
           "evaluering-rekruttering-profilering",
-          "pages/public/Team/TeamPages/Aas/EvalueringRekrutteringProfilering.tsx",
+          "pages/team/aas/evaluering-rekruttering-profilering.tsx",
         ),
-        route("sosialt", "pages/public/Team/TeamPages/Aas/Sosialt.tsx"),
+        route("sosialt", "pages/team/aas/sosialt.tsx"),
       ]),
       ...prefix("bergen", [
-        route("styret", "pages/public/Team/TeamPages/Bergen/Styret.tsx"),
-        route(
-          "skolekoordinering",
-          "pages/public/Team/TeamPages/Bergen/Skolekoordinering.tsx",
-        ),
-        route(
-          "rekruttering",
-          "pages/public/Team/TeamPages/Bergen/Rekruttering.tsx",
-        ),
+        route("styret", "pages/team/bergen/styret.tsx"),
+        route("skolekoordinering", "pages/team/bergen/skolekoordinering.tsx"),
+        route("rekruttering", "pages/team/bergen/rekruttering.tsx"),
       ]),
-      route(
-        "hovedstyret",
-        "pages/public/Team/TeamPages/Hovedstyret/Hovedstyret.tsx",
-      ),
+      route("hovedstyret", "pages/team/hovedstyret.tsx"),
     ]),
     route("foreldre", "pages/foreldre.tsx"),
     route("skoler", "pages/skoler.tsx"),

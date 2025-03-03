@@ -1,6 +1,7 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Profilering = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Profilering() {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
       <TeamTemplate
@@ -165,5 +166,3 @@ const Profilering = () => {
     </div>
   );
 };
-
-export default Profilering;

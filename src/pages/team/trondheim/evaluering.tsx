@@ -1,6 +1,7 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Evaluering = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Evaluering() {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
       <TeamTemplate
@@ -150,5 +151,3 @@ const Evaluering = () => {
     </div>
   );
 };
-
-export default Evaluering;

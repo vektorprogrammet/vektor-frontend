@@ -1,6 +1,7 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Sponsor = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Sponsor() {
   return (
     <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
       <TeamTemplate
@@ -144,5 +145,3 @@ const Sponsor = () => {
     </div>
   );
 };
-
-export default Sponsor;
