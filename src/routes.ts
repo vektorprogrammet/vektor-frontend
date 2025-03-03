@@ -20,12 +20,12 @@ export const navRoutes = [
 // biome-ignore lint/style/noDefaultExport: Routes configuration require default export https://reactrouter.com/start/framework/routing
 export default [
   layout("pages/layout.tsx", [
-    index("pages/public/mainPage.tsx"),
+    index("pages/index.tsx"),
     route("om-oss", "pages/om-oss.tsx"),
     route("assistenter", "pages/assistenter.tsx"),
     // team
     ...prefix("team", [
-      index("pages/public/Team/components/Team.tsx"),
+      index("pages/team.tsx"),
       ...prefix("trondheim", [
         route("it", "pages/public/Team/TeamPages/Trondheim/IT.tsx"),
         route(
@@ -82,11 +82,11 @@ export default [
     ]),
     route("foreldre", "pages/foreldre.tsx"),
     route("skoler", "pages/skoler.tsx"),
-    route("kontakt", "pages/public/Kontakt/index.ts"),
+    route("kontakt", "pages/kontakt.tsx"),
 
     // personal pages
     route("profil", "pages/profil.tsx"),
     route("soknader", "pages/soknader.tsx"),
-    route("utlegg", "pages/public/User/components/Utlegg.tsx"),
+    route("utlegg", "pages/utlegg.tsx"),
   ]),
 ] satisfies RouteConfig;
