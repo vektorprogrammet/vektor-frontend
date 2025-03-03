@@ -14,22 +14,41 @@ import type { Dispatch, ReactNode, SetStateAction } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
 
-const Bekreftelse = () => {
-  return (
-    <div className="bg-green-700/20 h-10 text-center">
-      <h1 className="text-green-700">Utlegget ditt har blitt registrert</h1>
-    </div>
-  );
-};
+interface Utlegg {
+  id: string;
+  utleggsdato: string;
+  beskrivelse: string;
+  sum: string;
+  kvittering: string;
+  status: string;
+  endre: string;
+}
+
+const SampleData: Array<Utlegg> = [
+  {
+    id: "123456789",
+    utleggsdato: "31.01.2024",
+    beskrivelse: "Pizza",
+    sum: "123,00 kr",
+    kvittering: "Vis kvittering",
+    status: "Til behandling",
+    endre: "slett",
+  },
+  {
+    id: "123456789",
+    utleggsdato: "31.01.2024",
+    beskrivelse: "Teamsosial",
+    sum: "600,00 kr",
+    kvittering: "Vis kvittering",
+    status: "Refundert",
+    endre: "",
+  },
+];
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Utlegg() {
   const [showWindow, setWindow] = useState(false);
   const [showConfirmation, setConfirmation] = useState(false);
-  const handleClick = () => {
-    setWindow(!showWindow);
-    setConfirmation(false);
-  };
 
   const mapToTable = (utlegg: Array<Utlegg>) => {
     return utlegg.map((u, index) => (
@@ -66,40 +85,19 @@ export default function Utlegg() {
     ));
   };
 
-  interface Utlegg {
-    id: string;
-    utleggsdato: string;
-    beskrivelse: string;
-    sum: string;
-    kvittering: string;
-    status: string;
-    endre: string;
-  }
-
-  const MineUtlegg: Array<Utlegg> = [
-    {
-      id: "123456789",
-      utleggsdato: "31.01.2024",
-      beskrivelse: "Pizza",
-      sum: "123,00 kr",
-      kvittering: "Vis kvittering",
-      status: "Til behandling",
-      endre: "slett",
-    },
-    {
-      id: "123456789",
-      utleggsdato: "31.01.2024",
-      beskrivelse: "Teamsosial",
-      sum: "600,00 kr",
-      kvittering: "Vis kvittering",
-      status: "Refundert",
-      endre: "",
-    },
-  ];
+  const handleClick = () => {
+    setWindow(!showWindow);
+    setConfirmation(false);
+  };
 
   return (
     <div>
-      {showConfirmation && <Bekreftelse />}
+      {showConfirmation && (
+        // Bekreftelse
+        <div className="bg-green-700/20 h-10 text-center">
+          <h1 className="text-green-700">Utlegget ditt har blitt registrert</h1>
+        </div>
+      )}
       <div className="leading-relaxed font-sans max-w-md mx-auto md:max-w-2xl flex flex-col justify-center items-center dark:text-gray-300">
         <h1 className="font-sans max-w-2xl mt-16 text-vektor-darblue text-4xl text-center font-bold mx-3 dark:text-gray-300">
           Utlegg
@@ -190,7 +188,7 @@ export default function Utlegg() {
                 />
               </tr>
             </thead>
-            <tbody>{mapToTable(MineUtlegg)}</tbody>
+            <tbody>{mapToTable(SampleData)}</tbody>
           </table>
         </div>
       </div>
@@ -205,13 +203,11 @@ type Inputs = {
   bankAccountNumber: string;
 };
 
-interface NyttUtleggProps {
+const NyttUtlegg = (props: {
   showConfirmation: boolean;
   setNew: () => void;
   setConfirmation: Dispatch<SetStateAction<boolean>>;
-}
-
-const NyttUtlegg = (props: NyttUtleggProps) => {
+}) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [dateValue, setDateValue] = useState<DateValueType>({
     startDate: null,
@@ -307,6 +303,115 @@ const NyttUtlegg = (props: NyttUtleggProps) => {
     return true;
   };
 
+  const stepToComponent = (step: number) => {
+    const inputWrapper = (label: string, input: ReactNode) => (
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text font-bold">{label}</span>
+        </label>
+        {input}
+      </div>
+    );
+    switch (step) {
+      case 1:
+        return inputWrapper(
+          "Utleggsbeløp:",
+          // Amount
+          <input
+            {...register("amount", { required: true, min: 1 })}
+            type="number"
+            id="amount"
+            name="amount"
+            placeholder="Beløp"
+            className="input input-bordered input-secondary text-sm sm:text-base w-full"
+          />,
+        );
+      case 2:
+        return inputWrapper(
+          "Utleggsbeskrivelse:",
+          // Description
+          <textarea
+            {...register("description", { required: true, minLength: 2 })}
+            id="description"
+            name="description"
+            placeholder="Beskrivelse"
+            className="textarea textarea-secondary textarea-lg text-sm sm:text-base w-full max-w-xs max-h-20"
+          />,
+        );
+      case 3:
+        return inputWrapper(
+          "Dato for utlegg:",
+          // Date
+          <Datepicker
+            value={dateValue}
+            displayFormat="DD-MM-YYYY"
+            asSingle
+            useRange={false}
+            onChange={handleDateValueChange}
+            inputClassName="border border-vektor-darblue rounded-md w-full px-3 py-2 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-vektor-darblue focus:border-vektor-darblue text-sm sm:text-base"
+          />,
+        );
+      case 4:
+        return inputWrapper(
+          "Bilde av kvittering:",
+          // Receipt Upload
+          <input
+            {...register("receipt", { required: true })}
+            type="file"
+            id="receipt"
+            name="receipt"
+            accept="image/*"
+            multiple={false}
+            onChange={(e) => setFile(e.target.files![0])}
+            form="disbursementForm"
+            className="file-input file-input-bordered file-input-md input-secondary w-full"
+          />,
+        );
+      case 5:
+        return inputWrapper(
+          "Utbetalingskonto:",
+          // Bank Account Number
+          <input
+            {...register("bankAccountNumber", {
+              required: true,
+              validate: validateAccountNumber,
+            })}
+            type="text"
+            id="bankAccountNumber"
+            name="bankAccountNumber"
+            className="input input-bordered input-md input-secondary w-full"
+            placeholder="Kontonummer"
+          />,
+        );
+      case 6:
+        return (
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-vektor-darblue text-2xl font-bold">
+              Bekrefte utlegg?
+            </h1>
+            {
+              // Confirm
+              <button
+                type="submit"
+                onClick={handleConfirm}
+                className="btn btn-success btn-md m-6"
+                hidden={currentStep !== 6}
+              >
+                <span>Bekreft</span>
+                <FontAwesomeIcon
+                  className="text-white pl-4"
+                  icon={faCheckToSlot}
+                />
+              </button>
+            }
+          </div>
+        );
+      default:
+        break;
+    }
+    return <div />;
+  };
+
   const handleConfirm = () => {
     const { showConfirmation, setConfirmation, setNew } = props;
     setConfirmation(!showConfirmation);
@@ -323,134 +428,6 @@ const NyttUtlegg = (props: NyttUtleggProps) => {
     if (currentStep !== 1) {
       setCurrentStep(currentStep - 1);
     }
-  };
-
-  const Amount = (
-    <input
-      {...register("amount", { required: true, min: 1 })}
-      type="number"
-      id="amount"
-      name="amount"
-      placeholder="Beløp"
-      className="input input-bordered input-secondary text-sm sm:text-base w-full"
-    />
-  );
-  const Description = (
-    <textarea
-      {...register("description", { required: true, minLength: 2 })}
-      id="description"
-      name="description"
-      placeholder="Beskrivelse"
-      className="textarea textarea-secondary textarea-lg text-sm sm:text-base w-full max-w-xs max-h-20"
-    />
-  );
-  const DateElement = (
-    <Datepicker
-      value={dateValue}
-      displayFormat="DD-MM-YYYY"
-      asSingle
-      useRange={false}
-      onChange={handleDateValueChange}
-      inputClassName="border border-vektor-darblue rounded-md w-full px-3 py-2 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-vektor-darblue focus:border-vektor-darblue text-sm sm:text-base"
-    />
-  );
-  const ReceiptUpload = (
-    <input
-      {...register("receipt", { required: true })}
-      type="file"
-      id="receipt"
-      name="receipt"
-      accept="image/*"
-      multiple={false}
-      onChange={(e) => setFile(e.target.files![0])}
-      form="disbursementForm"
-      className="file-input file-input-bordered file-input-md input-secondary w-full"
-    />
-  );
-  const BankAccountNumber = (
-    <input
-      {...register("bankAccountNumber", {
-        required: true,
-        validate: validateAccountNumber,
-      })}
-      type="text"
-      id="bankAccountNumber"
-      name="bankAccountNumber"
-      className="input input-bordered input-md input-secondary w-full"
-      placeholder="Kontonummer"
-    />
-  );
-
-  const inputWrapper = (label: string, input: ReactNode) => (
-    <div className="form-control w-full max-w-xs">
-      <label className="label">
-        <span className="label-text font-bold">{label}</span>
-      </label>
-      {input}
-    </div>
-  );
-
-  const Next = (
-    <button
-      type="button"
-      onClick={handleNext}
-      className="btn btn-md hidden"
-      disabled={currentStep === 6}
-    >
-      <span>Neste</span>
-      <FontAwesomeIcon className="text-white pl-4" icon={faCaretRight} />
-    </button>
-  );
-
-  const Confirm = (
-    <button
-      type="submit"
-      onClick={handleConfirm}
-      className="btn btn-success btn-md m-6"
-      hidden={currentStep !== 6}
-    >
-      <span>Bekreft</span>
-      <FontAwesomeIcon className="text-white pl-4" icon={faCheckToSlot} />
-    </button>
-  );
-
-  const Back = (
-    <button
-      type="button"
-      onClick={handlePrevious}
-      className="btn btn-md"
-      disabled={currentStep === 1}
-    >
-      <FontAwesomeIcon className="text-white pr-4" icon={faCaretLeft} />
-      <span>Forrige</span>
-    </button>
-  );
-
-  const stepToComponent = (step: number) => {
-    switch (step) {
-      case 1:
-        return inputWrapper("Utleggsbeløp:", Amount);
-      case 2:
-        return inputWrapper("Utleggsbeskrivelse:", Description);
-      case 3:
-        return inputWrapper("Dato for utlegg:", DateElement);
-      case 4:
-        return inputWrapper("Bilde av kvittering:", ReceiptUpload);
-      case 5:
-        return inputWrapper("Utbetalingskonto:", BankAccountNumber);
-      case 6:
-        return (
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="text-vektor-darblue text-2xl font-bold">
-              Bekrefte utlegg?
-            </h1>
-            {Confirm}
-          </div>
-        );
-      default:
-        break;
-    }
-    return <div />;
   };
 
   return (
@@ -473,8 +450,33 @@ const NyttUtlegg = (props: NyttUtleggProps) => {
           </p>
         </div>
         <div className="flex justify-around space-x-6 py-5 bg-slate-800 rounded-b-xl">
-          {Back}
-          {Next}
+          {
+            // Back
+            <button
+              type="button"
+              onClick={handlePrevious}
+              className="btn btn-md"
+              disabled={currentStep === 1}
+            >
+              <FontAwesomeIcon className="text-white pr-4" icon={faCaretLeft} />
+              <span>Forrige</span>
+            </button>
+          }
+          {
+            // Next
+            <button
+              type="button"
+              onClick={handleNext}
+              className="btn btn-md hidden"
+              disabled={currentStep === 6}
+            >
+              <span>Neste</span>
+              <FontAwesomeIcon
+                className="text-white pl-4"
+                icon={faCaretRight}
+              />
+            </button>
+          }
         </div>
       </form>
     </div>
