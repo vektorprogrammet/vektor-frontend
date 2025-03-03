@@ -18,6 +18,7 @@ export default {
         "vektor-blue": "#6fceee",
         "vektor-blue-hover": "#46b6dd",
         "vektor-darkblue": "#023874",
+        "vektor-darkblue-hover": "#001854",
         "vektor-DARKblue": "#022346",
         "table-grey": "#EFEFEF",
         "vektor-kontrollblue": "#292E4C",
@@ -26,6 +27,14 @@ export default {
         "text-light": "#000",
         "text-dark": "#fff",
         "vektor-light-blue": "#c7ecf8",
+        "neutral": "#B4C3C8",
+        "neutral-hover": "#2a2e37",
+        "vektor-green": "#4CAF50",
+        "vektor-green-hover": "#358438",
+        success: "#4CAF50", // fjern etter 
+        info: "#2094f3",
+        warning: "#ff9900",
+        error: "#ff5724",
         /* shadcn/ui variables */
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -99,34 +108,6 @@ export default {
   },
   variants: {
     extend: {},
-  },
-  daisyui: {
-    themes: [
-      {
-        vektor: {
-          primary: "#6fceee",
-          "primary-focus": "#46b6dd",
-          "primary-content": "#ffffff",
-          secondary: "#023874",
-          "secondary-focus": "#001854",
-          "secondary-content": "#ffffff",
-          accent: "#E2F4FA",
-          "accent-focus": "#222222",
-          "accent-content": "#ffffff",
-          neutral: "#B4C3C8",
-          "neutral-focus": "#2a2e37",
-          "neutral-content": "#ffffff",
-          "base-100": "#fafdff",
-          "base-200": "#f9fafb",
-          "base-300": "#d1d5db",
-          "base-content": "#1f2937",
-          info: "#2094f3",
-          success: "#4CAF50",
-          warning: "#ff9900",
-          error: "#ff5724",
-        },
-      },
-    ],
   },
   plugins: [
     require("postcss-import"),
