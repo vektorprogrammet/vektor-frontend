@@ -1,16 +1,15 @@
 import {
-  faMinus,
-  faPencil,
-  faPlus,
-  faTrashCan,
-  faCaretLeft,
-  faCaretRight,
-  faCheckToSlot,
-} from "@fortawesome/free-solid-svg-icons";
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Minus,
+  Pencil,
+  Plus,
+  Trash,
+} from "lucide-react";
 import validateAccountNumber from "norwegian-utils/validateAccountNumber";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
+import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import Datepicker, { type DateValueType } from "react-tailwindcss-datepicker";
 
@@ -70,14 +69,14 @@ export default function Utlegg() {
         <td className="py-3 px-4 text-blue-600 hover:underline">
           {u.status === "Til behandling" && (
             <>
-              Rediger <FontAwesomeIcon icon={faPencil} />
+              Rediger <Pencil />
             </>
           )}
         </td>
         <td className="py-3 px-4 text-rose-600 hover:underline">
           {u.status === "Til behandling" && (
             <>
-              Slett <FontAwesomeIcon icon={faTrashCan} />
+              Slett <Trash />
             </>
           )}
         </td>
@@ -137,14 +136,14 @@ export default function Utlegg() {
             onClick={handleClick}
           >
             {!showWindow || showConfirmation ? (
-              <>
-                <FontAwesomeIcon icon={faPlus} /> Nytt utlegg
-              </>
+              <div className="flex items-center">
+                <Plus size={20} /> <span>Nytt utlegg</span>
+              </div>
             ) : (
-              <>
-                <FontAwesomeIcon icon={faMinus} className="mr-2" />
-                Skjul skjema
-              </>
+              <div className="flex items-center">
+                <Minus className="mr-2" />
+                <span>Skjul skjema</span>
+              </div>
             )}
           </button>
         </div>
@@ -398,10 +397,7 @@ const NyttUtlegg = (props: {
                 hidden={currentStep !== 6}
               >
                 <span>Bekreft</span>
-                <FontAwesomeIcon
-                  className="text-white pl-4"
-                  icon={faCheckToSlot}
-                />
+                <Check className="pl-4" />
               </button>
             }
           </div>
@@ -458,7 +454,7 @@ const NyttUtlegg = (props: {
               className="btn btn-md"
               disabled={currentStep === 1}
             >
-              <FontAwesomeIcon className="text-white pr-4" icon={faCaretLeft} />
+              <ChevronLeft className="text-white pr-4" />
               <span>Forrige</span>
             </button>
           }
@@ -471,10 +467,7 @@ const NyttUtlegg = (props: {
               disabled={currentStep === 6}
             >
               <span>Neste</span>
-              <FontAwesomeIcon
-                className="text-white pl-4"
-                icon={faCaretRight}
-              />
+              <ChevronRight className="text-white pl-4" />
             </button>
           }
         </div>

@@ -1,5 +1,3 @@
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,6 +5,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface TabProps {
@@ -50,10 +49,7 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
             <div className="flex items-center justify-between w-full">
               {divisions.find((data) => tabstate === data.number)?.name ||
                 "Select Tab"}
-              <FontAwesomeIcon
-                icon={faAngleDown}
-                className="ml-2 text-gray-600"
-              />
+              <ChevronDown className="ml-2" />
             </div>
           </button>
         </DropdownMenuTrigger>
