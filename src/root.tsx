@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import "~/index.css";
@@ -5,7 +6,7 @@ import "~/index.css";
 export function Layout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
