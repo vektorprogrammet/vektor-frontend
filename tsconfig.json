@@ -16,7 +16,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
     "baseUrl": ".",
+    "rootDirs": [".", "./.react-router/types"],
     "paths": {
       "~/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
@@ -27,5 +29,5 @@
       "@/api/*": ["./src/api/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", ".react-router/types/**/*"]
 }
