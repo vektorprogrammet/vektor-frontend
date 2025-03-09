@@ -24,13 +24,13 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-router/node':
-        specifier: ^7.2.0
+        specifier: ^7.3.0
         version: 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
       '@react-router/serve':
         specifier: ^7.3.0
         version: 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
       '@types/node':
-        specifier: ^20.17.23
+        specifier: ^20.17.24
         version: 20.17.24
       '@types/react':
         specifier: ^18.3.18
@@ -84,7 +84,7 @@ importers:
         specifier: ^7.54.2
         version: 7.54.2(react@18.3.1)
       react-router:
-        specifier: ^7.2.0
+        specifier: ^7.3.0
         version: 7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-tailwindcss-datepicker:
         specifier: ^1.7.3
@@ -108,20 +108,20 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       vite:
-        specifier: ^6.2.0
+        specifier: ^6.2.1
         version: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
       '@playwright/test':
-        specifier: ^1.50.1
+        specifier: ^1.51.0
         version: 1.51.0
       '@react-router/dev':
-        specifier: ^7.2.0
+        specifier: ^7.3.0
         version: 7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@20.17.24)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
       vitest:
-        specifier: ^3.0.7
+        specifier: ^3.0.8
         version: 3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
 
 packages:
