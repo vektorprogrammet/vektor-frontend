@@ -46,7 +46,7 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "daisyui": "^4.12.24",
+    "daisyui": "^5.0.0",
     "dayjs": "^1.11.13",
     "isbot": "^5.1.23",
     "lucide-react": "^0.475.0",
