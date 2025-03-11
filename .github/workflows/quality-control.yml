@@ -50,6 +50,8 @@ jobs:
         run: biome ci .
 
   vitest_tests:
+    # Disabled until we have a test suite
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -66,6 +68,8 @@ jobs:
           pnpm test:vitest
 
   e2e-tests:
+    # Disabled until we have a test suite
+    if: false
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
