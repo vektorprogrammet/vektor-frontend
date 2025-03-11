@@ -14,6 +14,7 @@ on:
 
 jobs:
   build:
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -38,6 +39,7 @@ jobs:
           path: build
 
   code-quality:
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -52,6 +54,7 @@ jobs:
   vitest_tests:
     # Disabled until we have a test suite
     if: false
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -70,6 +73,7 @@ jobs:
   e2e-tests:
     # Disabled until we have a test suite
     if: false
+    permissions: read-all
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
