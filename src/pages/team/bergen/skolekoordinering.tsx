@@ -47,4 +47,4 @@ export default function Skolekoordinering() {
       </div>
     </div>
   );
-};
+}

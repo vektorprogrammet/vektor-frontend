@@ -195,4 +195,4 @@ export default function mainPage() {
       </div>
     </main>
   );
-};
+}

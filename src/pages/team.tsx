@@ -43,11 +43,18 @@ export default function Team() {
       />
     </div>
   );
-};
+}
 
 /* Team Card */
 
-const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
+const TeamCard = ({
+  title,
+  text1,
+  text2,
+  text3,
+  alt,
+  imgPath,
+}: {
   title: string;
   text1: string;
   text2: string;
@@ -91,8 +98,6 @@ const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
 };
 
 /* Team Tabs */
-
-
 
 interface DivisionList {
   name: string;
@@ -334,7 +339,9 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
   );
 };
 
-const TeamTabs = ({ divisions }: {
+const TeamTabs = ({
+  divisions,
+}: {
   divisions: Array<DivisionList>;
 }) => {
   const initialTabState = () => {

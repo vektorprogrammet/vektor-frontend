@@ -150,4 +150,4 @@ export default function Evaluering() {
       </div>
     </div>
   );
-};
+}

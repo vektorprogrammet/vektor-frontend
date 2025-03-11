@@ -60,4 +60,4 @@ export default function EvalueringRekrutteringProfilering() {
       </div>
     </div>
   );
-};
+}

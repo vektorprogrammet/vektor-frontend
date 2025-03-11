@@ -86,7 +86,7 @@ const teamAccordions: Array<AccordionType> = [
 ];
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
-export default function OmOss () {
+export default function OmOss() {
   const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
     getContent();
   const accordionSection = (
@@ -163,4 +163,4 @@ export default function OmOss () {
       </div>
     </div>
   );
-};
+}

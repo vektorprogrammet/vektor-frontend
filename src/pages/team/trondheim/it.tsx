@@ -197,4 +197,4 @@ export default function IT() {
       </div>
     </div>
   );
-};
+}

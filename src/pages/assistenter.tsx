@@ -6,7 +6,7 @@ const Cities = {
   trondheim: "Trondheim",
   aas: "Ås",
 } as const;
-type City = typeof Cities[keyof typeof Cities];
+type City = (typeof Cities)[keyof typeof Cities];
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Assistenter() {
@@ -43,7 +43,10 @@ export default function Assistenter() {
         </div>
         <div className="flex justify-evenly space-x-10 text-accent">
           {cards.map(({ title, text, image }) => (
-            <div key={title} className="leading-relaxed flex w-full mx-auto justify-between flex-wrap">
+            <div
+              key={title}
+              className="leading-relaxed flex w-full mx-auto justify-between flex-wrap"
+            >
               <div className="max-w-6xl ">
                 <img
                   src={image.url.href}
@@ -305,7 +308,7 @@ function ApplyReg({ cities }: { cities: City }) {
   );
 }
 
-function NoApplyCard ({ cities }: { cities: City}) {
+function NoApplyCard({ cities }: { cities: City }) {
   return (
     <form>
       <h1 className="font-bold text-xl my-8 text-vektor-darblue"> {cities}</h1>
@@ -341,4 +344,4 @@ function NoApplyCard ({ cities }: { cities: City}) {
       </button>
     </form>
   );
-};
+}

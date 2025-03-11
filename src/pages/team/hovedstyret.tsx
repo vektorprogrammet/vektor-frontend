@@ -84,4 +84,4 @@ export default function Hovedstyret() {
       </div>
     </div>
   );
-};
+}
