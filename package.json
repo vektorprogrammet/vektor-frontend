@@ -10,15 +10,23 @@
     "dev": "react-router dev",
     "build": "react-router build",
     "start": "react-router-serve build/server/index.js",
+
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
+
     "e2e:test": "exec playwright test",
     "e2e:test:ui": "exec playwright test --ui",
     "e2e:show-report": "exec playwright show-report",
     "e2e:install": "exec playwright install",
-    "check": "biome check ./ --write",
-    "lint": "biome lint ./ --write",
-    "format": "biome format ./ --write"
+
+    "check": "biome check",
+    "check:fix": "biome check --write",
+    "check:fix:unsafe": "biome check --write --unsafe",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "lint:fix:unsafe": "biome lint --write --unsafe",
+    "format": "biome format",
+    "format:fix": "biome format --write"
   },
   "browserslist": {
     "production": [
