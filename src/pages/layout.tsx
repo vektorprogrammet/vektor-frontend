@@ -19,7 +19,7 @@ import {
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
   return (
-    <div className="transition-colors flex flex-col items-stretch min-h-screen">
+    <div className="flex min-h-screen flex-col items-stretch transition-colors">
       <AppHeader />
       {/* Banner */}
       <Outlet />
@@ -33,9 +33,9 @@ function AppHeader() {
 
   return (
     <div className="sticky top-2 z-50">
-      <div className="hidden md:flex justify-center lg:px-4 w-full">
-        <div className="flex bg-[#ccecf6] bg-opacity-40 rounded-full w-fit px-1.5 mr-12 gap-1 items-center shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
-          <div className="w-8 h-8">
+      <div className="hidden w-full justify-center md:flex lg:px-4">
+        <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
+          <div className="h-8 w-8">
             <div className="w-full rounded-full">
               <img
                 src="/images/vektor-logo-circle.svg"
@@ -46,7 +46,7 @@ function AppHeader() {
           <NavTabs routes={navRoutes} />
         </div>
       </div>
-      <div className="hidden md:flex w-fit absolute top-0 h-full right-2 items-center">
+      <div className="absolute top-0 right-2 hidden h-full w-fit items-center md:flex">
         <LoginButtons />
       </div>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -60,7 +60,7 @@ function NavTabs({
   routes: Array<{ name: string; path: string }>;
 }) {
   const location = useLocation();
-  const navLinkRefs = useRef<HTMLElement[]>([]); // Refs to the nav links
+  const navLinkRefs = useRef<Array<HTMLElement>>([]); // Refs to the nav links
   const [pillWidth, setPillWidth] = useState<number>();
   const [pillLeft, setPillLeft] = useState<number>();
 
@@ -71,7 +71,7 @@ function NavTabs({
   return (
     <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
       <span
-        className="absolute bottom-0 top-0 z-10 flex overflow-hidden rounded-full py-1.5 transition-all duration-300"
+        className="absolute top-0 bottom-0 z-10 flex overflow-hidden rounded-full py-1.5 transition-all duration-300"
         style={{ left: pillLeft, width: pillWidth }}
       >
         <span className="h-full w-full rounded-full bg-vektor-blue shadow-sm" />
@@ -93,7 +93,7 @@ function NavTabs({
               }
             }}
             className={({ isActive }) =>
-              `${isActive ? "text-black" : "hover:text-black text-neutral-700 dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 text-sm my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium`
+              `${isActive ? "text-black" : "text-neutral-700 hover:text-black dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium text-sm`
             }
           >
             {route.name}
@@ -110,7 +110,7 @@ function LoginButtons() {
       <Link reloadDocument to="/kontrollpanel">
         <button
           type="button"
-          className="btn btn-success btn-sm text-white rounded-full h-10 w-32"
+          className="btn btn-success btn-sm h-10 w-32 rounded-full text-white"
         >
           Logg inn
         </button>
@@ -124,7 +124,7 @@ interface Props {
   setMenuOpen: (values: boolean) => void;
 }
 
-const activeStyle: React.CSSProperties = {
+const _activeStyle: React.CSSProperties = {
   fontWeight: "600",
   background: "rgba(111,206,238,0.8)",
 };
@@ -147,7 +147,7 @@ const MobileMenu = (props: Props) => {
     <div className="md:hidden">
       <Drawer>
         <DrawerTrigger>
-          <div className="flex fixed top-12 right-0 bg-[rgba(0,0,0,0.8)] p-1 pr-2 rounded-l-full">
+          <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
             <div className="btn btn-md btn-ghost btn-circle avatar bg-vektor-bg">
               <div className="w-full rounded-full">
                 <img src="/images/team/IT-Tor.png" alt="profile avatar" />
@@ -158,8 +158,8 @@ const MobileMenu = (props: Props) => {
         <DrawerContent>
           <DrawerHeader />
           <DrawerDescription>
-            <div className="flex justify-between items-start p-6">
-              <ul className="flex flex-col w-full items-start text-center gap-4">
+            <div className="flex items-start justify-between p-6">
+              <ul className="flex w-full flex-col items-start gap-4 text-center">
                 {linkElements}
               </ul>
               <div className="flex w-fit justify-center">
@@ -183,7 +183,7 @@ const MobileMenu = (props: Props) => {
 function AppFooter() {
   return (
     <footer className="bg-vektor-DARKblue">
-      <div className="max-w-6xl mx-auto p-2 py-8 flex justify-between place-items-center flex-col space-y-8 lg:flex-row lg:space-x-4 lg:space-y-0">
+      <div className="mx-auto flex max-w-6xl flex-col place-items-center justify-between space-y-8 p-2 py-8 lg:flex-row lg:space-x-4 lg:space-y-0">
         <img
           src="/images/vektor-logo-white.svg"
           alt="vektorprogrammet logo hvit"
@@ -219,9 +219,9 @@ function FooterLinks() {
   return (
     <div className="text-white">
       <ul className="grid grid-cols-1 gap-8">
-        <li className="flex space-x-4 place-items-center">
+        <li className="flex place-items-center space-x-4">
           <SiFacebook size={40} />
-          <ul className="flex space-x-2 place-items-center">
+          <ul className="flex place-items-center space-x-2">
             <li>
               <a
                 className="hover:underline"
@@ -251,9 +251,9 @@ function FooterLinks() {
           </ul>
         </li>
 
-        <li className="flex space-x-4 place-items-center">
+        <li className="flex place-items-center space-x-4">
           <Mail size={40} />
-          <div className="flex space-x-2 place-items-center">
+          <div className="flex place-items-center space-x-2">
             <a
               className="hover:underline"
               href="mailto:hovedstyret@vektorprogrammet.no"
@@ -263,16 +263,16 @@ function FooterLinks() {
           </div>
         </li>
 
-        <li className="flex space-x-4 place-items-center">
+        <li className="flex place-items-center space-x-4">
           <MapPin size={40} />
-          <div className="flex space-x-2 place-items-center">
+          <div className="flex place-items-center space-x-2">
             {"Høgskoleringen 5, 7491 Trondheim"}
           </div>
         </li>
 
-        <li className="flex space-x-4 place-items-center">
+        <li className="flex place-items-center space-x-4">
           <FolderOpen size={40} />
-          <div className="flex space-x-2 place-items-center">
+          <div className="flex place-items-center space-x-2">
             {"OrgNr: 998744814"}
           </div>
         </li>

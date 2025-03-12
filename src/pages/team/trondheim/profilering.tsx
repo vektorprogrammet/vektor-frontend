@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Profilering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Profilering"
         mail="profilering.ntnu@vektorprogrammet.no"
@@ -66,11 +66,11 @@ export default function Profilering() {
         ]}
       />
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Profileringsteamet har ansvar for å representere Vektorprogrammet utad.
         Dette innebærer å lage innhold og innlegg til sosiale medier, samt å nå
         ut til andre medier. Arbeidsoppgaver kan være å ta bilder på
@@ -82,11 +82,11 @@ export default function Profilering() {
         med profileringsarbeid, film eller foto fra før.
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Sosialt i profilering
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Vi har hyggelige og spennende arrangementer både innad i teamet og
         sammen med de andre teamene i Vektorprogrammet. Vi i profileringsteamet
         er spesielt gode på tacokvelder, minigolf og hygge på kontoret. Det
@@ -99,27 +99,27 @@ export default function Profilering() {
       <div className="m-3 mt-5">
         <img
           src="https://vektorprogrammet.no/images/team_images/Profilering/IMG_9785.jpeg"
-          className="md:max-w-3xl h-auto content-center mx-auto"
+          className="mx-auto h-auto content-center md:max-w-3xl"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Opptak
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 mt-5">
+      <div className="mx-5 mt-5 text-left font-sans text-black text-lg">
         Arbeidsmengden som teammedlem i profileringsteamet er ca. 2 timer i
         uken. Den største delen av arbeidet gjøres under de møter med teamet.
         Det er ikke noe arbeid i eksamensperioden, men en del sosiale
         arrangementer man kan være med på hvis man ønsker det.
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 mt-5 place-content-start">
+      <div className="mx-5 mt-5 place-content-start text-left font-sans text-black text-lg">
         Som medlem i teamet får du:
       </div>
 
-      <div className="flex mx-3 flex-wrap sm:flex-nowrap justify-center sm:justify-between">
-        <div className="font-sans text-lg text-black place-content-start flex-grow-1 mt-3">
+      <div className="mx-3 flex flex-wrap justify-center sm:flex-nowrap sm:justify-between">
+        <div className="mt-3 flex-grow-1 place-content-start font-sans text-black text-lg">
           <ul className="ml-10 list-disc">
             <li>
               Ansvar for et område du selv velger, innen profileringen. Dette
@@ -144,20 +144,20 @@ export default function Profilering() {
           </ul>
         </div>
         <img
-          className="max-h-96 sm:max-w-sm h-auto content-center mt-5 sm:ml-10 place-content-center"
+          className="mt-5 h-auto max-h-96 place-content-center content-center sm:ml-10 sm:max-w-sm"
           src="/images/team/ProfileringTor.png"
         />
       </div>
 
-      <div className="font-sans text-lg text-black m-5 place-self-start">
+      <div className="m-5 place-self-start font-sans text-black text-lg">
         Søk profilering hvis du har lyst til å påvirke organsisajonen og bli del
         av en fantastisk gjeng!
       </div>
 
-      <div className="mx-5 place-self-start font-sans text-lg text-black">
+      <div className="mx-5 place-self-start font-sans text-black text-lg">
         Hvis du har noen spørsmål, er det bare å ta kontakt på{" "}
         <a
-          className="hover:underline text-vektor-darblue break-all"
+          className="break-all text-vektor-darblue hover:underline"
           href="mailto:profilering.ntnu@vektorprogrammet.no"
         >
           profilering.ntnu@vektorprogrammet.no.

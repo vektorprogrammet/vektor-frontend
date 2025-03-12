@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Sponsor() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col items-center">
       <TeamTemplate
         name="Sponsor"
         mail="sponsor.ntnu@vektorprogrammet.no"
@@ -48,11 +48,11 @@ export default function Sponsor() {
         ]}
       />
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Samarbeidskoordinatorene har ansvaret for å skaffe midler til å drive
         Vektorprogrammet videre. Vi har kontakt med alt fra sjefer i
         næringslivet til studenter i andre organisasjoner. Vervet består både av
@@ -61,16 +61,16 @@ export default function Sponsor() {
 
       <div className="m-3">
         <img
-          className="md:max-w-2xl h-auto content-center mx-auto"
+          className="mx-auto h-auto content-center md:max-w-2xl"
           src="https://vektorprogrammet.no/images/team_images/20221005_163558.jpg"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Sosialt i Sponsor
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Vi har hyggelige og spennende arrangementer både innad i teamet og
         sammen med de andre teamene i Vektorprogrammet. I Sponsor har vi vært
         ute og spist sammen, hatt hjemmelaget sushi og vært på Escape Room. Det
@@ -81,22 +81,22 @@ export default function Sponsor() {
         i teamet får du:
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Opptak
       </div>
 
-      <div className="font-sans text-lg text-black text-left mt-5 mx-5 mb-3">
+      <div className="mx-5 mt-5 mb-3 text-left font-sans text-black text-lg">
         Arbeidsmengden i Sponsorteamet ligger på rundt 2-3 timer i uka, utenom
         eksamensperioden - da er det selvfølgelig ingen arbeidsoppgaver, kun
         frivillige sosiale arrangementer.
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 place-self-start">
+      <div className="mx-5 place-self-start text-left font-sans text-black text-lg">
         Som medlem i teamet får du:
       </div>
 
-      <div className="grid md:grid-cols-2 ml-4 mr-4 mt-5 items-center mb-2">
-        <div className="font-sans text-lg text-black place-content-start">
+      <div className="mt-5 mr-4 mb-2 ml-4 grid items-center md:grid-cols-2">
+        <div className="place-content-start font-sans text-black text-lg">
           <ul className="ml-10 list-disc">
             <li>
               Ansvaret for noen bedrifter eller organisasjoner som du skal
@@ -127,16 +127,16 @@ export default function Sponsor() {
           </ul>
         </div>
         <img
-          className="max-h-96 sm:max-w-sm h-auto content-center mx-auto m-5"
+          className="m-5 mx-auto h-auto max-h-96 content-center sm:max-w-sm"
           src="/images/team/SponsorTor.png"
         />
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5 place-self-start">
+      <div className="m-5 place-self-start text-left font-sans text-black text-lg">
         Vi ser hele tiden etter nye engasjerte medlemmer. Er du interessert, ta
         kontakt på{" "}
         <a
-          className="hover:underline text-vektor-darblue break-all"
+          className="break-all text-vektor-darblue hover:underline"
           href="mailto:sponsor.ntnu@vektorprogrammet.no"
         >
           sponsor.ntnu@vektorprogrammet.no.

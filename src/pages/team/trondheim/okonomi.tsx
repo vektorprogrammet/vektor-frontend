@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Okonomi() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col items-center">
       ,
       <TeamTemplate
         name="Økonomi"
@@ -66,10 +66,10 @@ export default function Okonomi() {
           },
         ]}
       />
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Økonomiteamet har ansvar for selve pengekassen til Vektorprogrammet.
         Dette innebærer å betale fakturaer i tide og føre regnskap over alle
         transaksjonene som blir utført. I tillegg jobber vi med budsjettet som
@@ -81,14 +81,14 @@ export default function Okonomi() {
       </div>
       <div className="m-3">
         <img
-          className="md:max-w-2xl h-auto content-center mx-auto"
+          className="mx-auto h-auto content-center md:max-w-2xl"
           src="https://vektorprogrammet.no/images/team_images/Skjermbilde%202022-10-24%20kl.%2017.56.55.png"
         />
       </div>
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Sosialt i Økonomi
       </div>
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Det blir arrangert mange sosiale arrangementer, hvor du kan bli bedre
         kjent med andre teammedlemmer, både innad i økonomitemaet og hele
         Vektorprogrammet. Det varierer etter hva man ønsker å gjøre, men vi har
@@ -99,16 +99,16 @@ export default function Okonomi() {
       </div>
       <div className="m-3">
         <img
-          className="md:max-w-2xl h-auto content-center mx-auto"
+          className="mx-auto h-auto content-center md:max-w-2xl"
           src="https://vektorprogrammet.no/images/team_images/Skjermbilde%202022-10-24%20kl.%2018.01.54.png"
         />
       </div>
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Opptak
       </div>
-      <div className="grid md:grid-cols-2 ml-4 mr-4 mt-5 items-center mb-2">
+      <div className="mt-5 mr-4 mb-2 ml-4 grid items-center md:grid-cols-2">
         <div className="m-3">
-          <div className="font-sans text-lg text-black place-content-start">
+          <div className="place-content-start font-sans text-black text-lg">
             Vi er på utkikk etter deg som er ansvarlig og strukturert, spesielt
             med tanke på du får delansvaret for alle pengemidlene til
             Vektorprogrammet. I tillegg er det fint om du har et ønske om å lære
@@ -119,10 +119,10 @@ export default function Okonomi() {
             kreves ingen forkunnskaper!
           </div>
 
-          <div className="font-sans text-lg text-black place-content-start mt-5">
+          <div className="mt-5 place-content-start font-sans text-black text-lg">
             Har du noen spørsmål er det bare å ta kontakt med oss på{" "}
             <a
-              className="hover:underline text-vektor-darblue"
+              className="text-vektor-darblue hover:underline"
               href="mailto:okonomi@vektorprogrammet.no"
             >
               okonomi@vektorprogrammet.no.
@@ -132,7 +132,7 @@ export default function Okonomi() {
         </div>
 
         <img
-          className="max-h-96 sm:max-w-sm h-auto content-center mx-auto m-3"
+          className="m-3 mx-auto h-auto max-h-96 content-center sm:max-w-sm"
           src="/images/team/OkonomiTor.png"
         />
       </div>

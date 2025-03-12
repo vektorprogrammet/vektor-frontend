@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function SponsorOkonomi() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Sponsor og økonomi"
         mail="sponsor.nmbu@vektorprogrammet.no"
@@ -36,7 +36,7 @@ export default function SponsorOkonomi() {
         ]}
       />
 
-      <div className="font-sans text-lg text-black text-left m-5 mt-20">
+      <div className="m-5 mt-20 text-left font-sans text-black text-lg">
         Teamet har ansvar for å holde oversikt over økonomien til
         Vektorprogrammet på Ås. I tillegg jobber de også med å skaffe sponsorer
         i løpet av semesteret ved å ta kontakt med bedrifter i nærområdet.
@@ -44,7 +44,7 @@ export default function SponsorOkonomi() {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/%C3%85s%20h%C3%B8st%202022/okonomi_spons.jpg"
-          className="sm:max-w-2xl h-auto content-center mx-auto m-5"
+          className="m-5 mx-auto h-auto content-center sm:max-w-2xl"
         />
       </div>
     </div>

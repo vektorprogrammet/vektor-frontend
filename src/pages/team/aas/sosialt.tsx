@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Sosialt() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Sosialt"
         mail="sosialt.nmbu@vektorprogrammet.no"

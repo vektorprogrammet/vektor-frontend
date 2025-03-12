@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Rekruttering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col items-center">
       <TeamTemplate
         name="Rekruttering"
         mail="rekruttering.ntnu@vektorprogrammet.no"
@@ -78,12 +78,12 @@ export default function Rekruttering() {
         ]}
       />
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
 
-      <div className="grid md:grid-cols-2 ml-4 mr-4 items-center">
-        <div className="font-sans text-lg text-black place-content-start my-5">
+      <div className="mr-4 ml-4 grid items-center md:grid-cols-2">
+        <div className="my-5 place-content-start font-sans text-black text-lg">
           <ul className="ml-10 list-disc">
             <li>Stå på stand</li>
             <li>Bleste i forelesninger</li>
@@ -95,12 +95,12 @@ export default function Rekruttering() {
         </div>
 
         <img
-          className="md:max-w-l max-h-80 content-right my-5 mx-auto"
+          className="mx-auto my-5 max-h-80 content-right md:max-w-l"
           src="/images/team/RekrutteringTor.png"
         />
       </div>
 
-      <div className="font-sans text-lg text-black place-self-start text-left m-5">
+      <div className="m-5 place-self-start text-left font-sans text-black text-lg">
         Det at vi er i rekrutteringsteamet betyr at vi har en mer intens periode
         i januar og august, men har det roligere resten av semesteret. I tillegg
         til rekrutteringsperioden har vi også ansvar for de sosiale og faglige
@@ -110,10 +110,10 @@ export default function Rekruttering() {
         Colin Wright, Newton programleder og Farmen-kjendisdeltager Stian Sandø.
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Sosialt i Rekruttering
       </div>
-      <div className="font-sans text-lg text-black place-self-start text-left m-5">
+      <div className="m-5 place-self-start text-left font-sans text-black text-lg">
         Vi er kanskje det teamet som liker å møtes oftest utenom vervet. Her
         finner vi på mye sprell og fanteri. Dette strekker seg fra fantastiske
         vors og uforglemmelige hytteturer til litt mer rolige og avslappede
@@ -121,34 +121,34 @@ export default function Rekruttering() {
         dagens (og nattens) festligheter deles hyppig.
       </div>
 
-      <div className="object-contains m-3">
+      <div className="m-3 object-contains">
         <img
-          className="md:max-w-2xl h-auto content-center mx-auto"
+          className="mx-auto h-auto content-center md:max-w-2xl"
           src="https://vektorprogrammet.no/images/team_images/313096245_1158050458440674_2660066729317743376_n.jpg"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Opptak
       </div>
 
-      <div className="font-sans text-lg text-black place-self-start m-3 mt-5 text-left">
+      <div className="m-3 mt-5 place-self-start text-left font-sans text-black text-lg">
         Vi i rekrutteringsteamet trenger stadig nye medlemmer. Så er du blid,
         hyggelig og utadvent, og har lyst på et givende og sosialt verv ved
         siden av studiene, ikke nøl med å ta kontakt!
       </div>
 
-      <div className="font-sans text-lg text-black place-self-start m-3 text-left">
+      <div className="m-3 place-self-start text-left font-sans text-black text-lg">
         Er det noe mer du lurer på er det bare å sende mail til{" "}
         <a
-          className="hover:underline text-vektor-darblue break-all"
+          className="break-all text-vektor-darblue hover:underline"
           href="mailto:rekruttering.ntnu@vektorprogrammet.no"
         >
           rekruttering.ntnu@vektorprogrammet.no
         </a>
       </div>
 
-      <div className="font-sans text-lg text-black place-self-start m-3 text-left">
+      <div className="m-3 place-self-start text-left font-sans text-black text-lg">
         Hilsen oss i rekruttering!
       </div>
     </div>

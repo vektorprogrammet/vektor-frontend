@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Skolekoordinering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Skolekoordinering"
         mail="skolekoordinering.nmbu@vektorprogrammet.no"
@@ -48,7 +48,7 @@ export default function Skolekoordinering() {
         ]}
       />
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-20">
+      <div className="mx-5 mt-20 text-start font-sans text-black text-lg">
         Team skolekoordinering er et bindeledd mellom vektorprogrammet,
         ungdomsskolene vi samarbeider med og våre assistenter. Gjennom semestert
         har teamet tett kontakt med skolene og assistentene. De har ansvar for å
@@ -63,7 +63,7 @@ export default function Skolekoordinering() {
         fra om.
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-5">
+      <div className="mx-5 mt-5 text-start font-sans text-black text-lg">
         Det er også lagt opp til sosiale arrangementer i løpet av et semester
         slik at man blir kjent innad i teamet, men også kjent med medlemmene i
         de andre teamene i vektorprogrammet. I eksamensperioden vil det ikke
@@ -74,7 +74,7 @@ export default function Skolekoordinering() {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/%C3%85s%20h%C3%B8st%202022/20_g_pp.jpeg"
-          className="sm:max-w-2xl h-auto content-center mx-auto m-5"
+          className="m-5 mx-auto h-auto content-center sm:max-w-2xl"
         />
       </div>
     </div>

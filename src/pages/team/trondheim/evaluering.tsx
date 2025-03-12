@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Evaluering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col items-center">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col items-center">
       <TeamTemplate
         name="Evaluering"
         mail="evaluering.ntnu@vektorprogrammet.no"
@@ -39,15 +39,15 @@ export default function Evaluering() {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/Evaluering/Teambildet.jpg"
-          className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-20"
+          className="m-3 mx-auto mt-20 h-auto content-center sm:max-w-2xl"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Evalueringsteamet lager hovedsaklig spørreundersøkelser for
         vektorassistenter, elever, lærere, samt foreldre som deltok på
         semesterets foreldrekurs. Å få tilbakemeldinger gjennom disse
@@ -62,27 +62,27 @@ export default function Evaluering() {
         året. Når denne rapporten lages bruker vi InDesign.
       </div>
 
-      <div className="flex flex-wrap justify-center sm:space-x-8 ml-4 mr-4">
+      <div className="mr-4 ml-4 flex flex-wrap justify-center sm:space-x-8">
         <div className="m-auto object-contain">
           <img
             src="https://vektorprogrammet.no/images/team_images/trapp_bygg.jpg"
-            className="max-h-80 sm:max-w-md content-center mx-auto m-5 mt-15"
+            className="m-5 mx-auto mt-15 max-h-80 content-center sm:max-w-md"
           />
         </div>
 
         <div className="m-auto object-contain">
           <img
             src="https://vektorprogrammet.no/images/team_images/trapp_park.jpg"
-            className="max-h-96 sm:max-w-xs content-center mx-auto m-5 mt-15"
+            className="m-5 mx-auto mt-15 max-h-96 content-center sm:max-w-xs"
           />
         </div>
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Sosialt i evaluering
       </div>
 
-      <div className="font-sans text-lg text-black text-left m-5">
+      <div className="m-5 text-left font-sans text-black text-lg">
         Vi har hyggelige og spennende arrangementer både innad i teamet og
         sammen med de andre teamene i Vektorprogrammet. Vi i evaluering har vært
         ute og spist sammen, og arrangert pizza- og spillkveld. Det skjer også
@@ -95,15 +95,15 @@ export default function Evaluering() {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/20200831_175600.jpg"
-          className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-3"
+          className="m-3 mx-auto mt-3 h-auto content-center sm:max-w-2xl"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Opptak
       </div>
 
-      <div className="font-sans text-lg text-black m-5">
+      <div className="m-5 font-sans text-black text-lg">
         Et verv i evalueringsteamet innebærer ca. 2 timer arbeid i uka. Vi blir
         enige innad i teamet om et fast ukentlig møtetidspunkt som passer for
         alle medlemmene, og vi har ikke møter i eksamensperioden. Gjennom hele
@@ -111,9 +111,9 @@ export default function Evaluering() {
         man står på stand minst to gang si rekrutteringsperiodene.
       </div>
 
-      <div className="grid md:grid-cols-2 ml-4 mr-4 mt-4">
-        <div className="font-sans text-lg text-black place-content-start">
-          <div className="mb-2 mt-4">Appellerer punktene under til deg?</div>
+      <div className="mt-4 mr-4 ml-4 grid md:grid-cols-2">
+        <div className="place-content-start font-sans text-black text-lg">
+          <div className="mt-4 mb-2">Appellerer punktene under til deg?</div>
           <ul className="ml-10 list-disc">
             <li>
               Være en del av Vektorprogrammet og bidra til å inspirere ungdom
@@ -134,15 +134,15 @@ export default function Evaluering() {
         </div>
 
         <img
-          className="max-h-96 sm:max-w-sm h-auto content-center mx-auto"
+          className="mx-auto h-auto max-h-96 content-center sm:max-w-sm"
           src="/images/team/EvalueringTor.png"
         />
       </div>
 
-      <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">
+      <div className="mt-10 ml-4 place-self-start font-sans text-black text-lg">
         Dersom du har noen spørsmål er det bare å ta kontakt med oss på{" "}
         <a
-          className="hover:underline text-vektor-darblue break-all"
+          className="break-all text-vektor-darblue hover:underline"
           href="mailto:evaluering.ntnu@vektorprogrammet.no"
         >
           evaluering.ntnu@vektorprogrammet.no.

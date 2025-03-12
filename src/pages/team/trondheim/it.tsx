@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function IT() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="IT"
         mail="it@vektorprogrammet.no"
@@ -90,13 +90,13 @@ export default function IT() {
         ]}
       />
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20">
+      <div className="mt-20 text-center font-sans text-3xl text-bold text-vektor-darblue">
         IT i Vektorprogrammet
       </div>
 
-      <div className="grid md:grid-cols-2 ml-4 mr-4 mt-5 items-center mb-2">
-        <div className="font-sans text-lg text-black place-content-start">
-          <div className="text-start mx-5 mt-5">
+      <div className="mt-5 mr-4 mb-2 ml-4 grid items-center md:grid-cols-2">
+        <div className="place-content-start font-sans text-black text-lg">
+          <div className="mx-5 mt-5 text-start">
             Siden oppstarten har Vektorprogrammet opplevd en kraftig vekst i
             antall vektorassistenter, ungdomsskoler som deltar i programmet og
             teammedlemmer som jobber med å drive Vektorprogrammet. Denne veksten
@@ -105,7 +105,7 @@ export default function IT() {
             organisasjonen til å fungere på best mulig måte.
           </div>
 
-          <div className="font-sans text-lg text-black text-start mx-5 mt-5 mb-10">
+          <div className="mx-5 mt-5 mb-10 text-start font-sans text-black text-lg">
             Vi jobber for alle avdelinger i Norge, men vi er lokalisert i
             Trondheim. Det betyr at vi får være med på alle sosiale
             arragangementer som Vektorprogrammet NTNU arrangerer!
@@ -113,16 +113,16 @@ export default function IT() {
         </div>
 
         <img
-          className="max-h-96 sm:max-w-sm h-auto content-center mx-auto"
+          className="mx-auto h-auto max-h-96 content-center sm:max-w-sm"
           src="/images/team/IT-Tor.png"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 mt-5">
+      <div className="mx-5 mt-5 text-left font-sans text-black text-lg">
         Vi jobber med webutvikling på alle ledd i stacken. I fjor var det store
         prosjektet å redesigne den offentlige siden fullstendig fra bunnen av. I
         år planlegger vi å utvikle et assistentdashboard, som skal ta
@@ -135,7 +135,7 @@ export default function IT() {
         voksende programmeringsspråket Go.
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 mt-5">
+      <div className="mx-5 mt-5 text-left font-sans text-black text-lg">
         Det her er bare en liten del av det vi har på agendaen og synes du noe
         av det høres spennende ut er det bare å sende oss en søknad! Du trenger
         ikke ha særlig kjennskap til noen av de overnevnte tingene, vi gir deg
@@ -145,15 +145,15 @@ export default function IT() {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/IT/IT_V23.jpg"
-          className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
+          className="m-3 mx-auto mt-10 h-auto content-center sm:max-w-2xl"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-10">
+      <div className="mt-10 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Kjempegod erfaring
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 mt-5">
+      <div className="mx-5 mt-5 text-left font-sans text-black text-lg">
         Vi tilbyr IT-erfaring på høyt nivå og med lav terskel. Erfaring med
         teamarbeid er noe alle arbeidsgivere er ute etter, og vi kan tilby dette
         i bøtter og spann. Du vil også tilegne deg kunnskap om state-of-the art
@@ -162,12 +162,12 @@ export default function IT() {
         skitne til fingrene.
       </div>
 
-      <div className="font-sans text-lg text-black text-left mx-5 mt-5">
+      <div className="mx-5 mt-5 text-left font-sans text-black text-lg">
         Er du kjent med minst én av disse tingene oppfordres du til å sende oss
         en søknad:
       </div>
 
-      <div className="font-sans text-lg text-black mt-3">
+      <div className="mt-3 font-sans text-black text-lg">
         <ul className="ml-10 list-disc">
           <li>Grafisk design for web</li>
           <li>UI/UX-design</li>
@@ -181,15 +181,15 @@ export default function IT() {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/logosnew.png"
-          className="sm:max-w-2xl h-auto content-center mx-auto m-3 mt-10"
+          className="m-3 mx-auto mt-10 h-auto content-center sm:max-w-2xl"
         />
       </div>
 
-      <div className="ml-4 mt-10 place-self-start font-sans text-lg text-black">
+      <div className="mt-10 ml-4 place-self-start font-sans text-black text-lg">
         Sjekk ut hva vi jobber med på{" "}
         <a
           href="https://github.com/vektorprogrammet"
-          className="hover:underline text-vektor-darblue"
+          className="text-vektor-darblue hover:underline"
         >
           http://github.com/vektorprogrammet
         </a>

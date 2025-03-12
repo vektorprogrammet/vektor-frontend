@@ -3,7 +3,7 @@ import { TeamTemplate } from "@/components/team-template";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Styret() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Styret"
         mail="uib@vektorprogrammet.no"
@@ -36,7 +36,7 @@ export default function Styret() {
         ]}
       />
 
-      <div className="font-sans text-lg text-black text-left m-5 mt-20">
+      <div className="m-5 mt-20 text-left font-sans text-black text-lg">
         Styret består av leder, nestleder, sekretær og alle teamlederne. I løpet
         av de ukentlige møtene gjennomgåes ukens og fremtidige saker, som kan
         være alt fra å organisere sosiale aktiviteter til å løse problemer som
