@@ -29,6 +29,14 @@
         "noNodejsModules": "off",
         "useImportExtensions": "off"
       },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "error",
+          "options": {
+            "functions": ["cn"]
+          }
+        }
+      },
       "performance": {
         "useTopLevelRegex": "off"
       },
