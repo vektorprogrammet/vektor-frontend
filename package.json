@@ -4,21 +4,18 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20.12.2"
+    "node": ">=20"
   },
   "scripts": {
     "dev": "react-router dev",
     "build": "react-router build",
     "start": "react-router-serve build/server/index.js",
-
     "test:vitest": "vitest run",
     "test:vitest:watch": "vitest watch",
-
     "e2e:test": "exec playwright test",
     "e2e:test:ui": "exec playwright test --ui",
     "e2e:show-report": "exec playwright show-report",
     "e2e:install": "exec playwright install",
-
     "check": "biome check",
     "check:fix": "biome check --write",
     "check:fix:unsafe": "biome check --write --unsafe",
