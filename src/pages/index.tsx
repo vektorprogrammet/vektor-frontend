@@ -14,6 +14,9 @@ import UiB from "/images/mainPage/sponsor/UIB.png";
 import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
 import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import vektorLogo from "/images/vektor-logo.svg";
+import { Button } from "~/components/ui/button";
+import { buttonVariants } from "@/components/ui/button"
+
 
 const hovedsponsor = [
   {
@@ -121,9 +124,9 @@ export default function mainPage() {
               assistent i matematikkundervisningen
             </p>
           </div>
-          <button type="button" className="btn btn-success text-white">
-            LES MER OG BLI ASSISTENT
-          </button>
+          <Button variant="green">
+            Les mer og bli assistent
+          </Button>
         </div>
       </div>
       {/*Upper end*/}
@@ -150,12 +153,7 @@ export default function mainPage() {
             </div>
             <p className="text-sm max-w-80 md:text-xl md:max-w-96">{text}</p>
             <div>
-              <Link
-                className="btn btn-success text-white w-fit"
-                to={route.pathname}
-              >
-                {route.text}
-              </Link>
+              <Link to={route.pathname} className={buttonVariants({ variant: "green" })}>{route.text}</Link>
             </div>
           </div>
         ))}

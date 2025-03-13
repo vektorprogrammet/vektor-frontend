@@ -15,6 +15,9 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "~/components/ui/drawer";
+import { Button, buttonVariants } from "~/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
@@ -43,11 +46,11 @@ function AppHeader() {
               />
             </div>
           </div>
-          <NavTabs routes={navRoutes} />
+          <NavTabs routes={navRoutes} /> 
         </div>
       </div>
-      <div className="hidden md:flex w-fit absolute top-0 h-full right-2 items-center">
-        <LoginButtons />
+      <div className="hidden md:flex rounded-full absolute top-0 right-2">
+        <LoginButtons/>
       </div>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </div>
@@ -78,6 +81,7 @@ function NavTabs({
       </span>
       {routes.map((route, i) => {
         return (
+          
           <NavLink
             to={route.path}
             key={route.path}
@@ -106,15 +110,8 @@ function NavTabs({
 
 function LoginButtons() {
   return (
-    <div className="flex space-x-4">
-      <Link reloadDocument to="/kontrollpanel">
-        <button
-          type="button"
-          className="btn btn-success btn-sm text-white rounded-full h-10 w-32"
-        >
-          Logg inn
-        </button>
-      </Link>
+    <div className="flex space-x-4 overflow-clip rounded-full">
+      <Link className={buttonVariants({ variant: "green" })} to={"/kontrollpanel"}>Logg inn</Link>
     </div>
   );
 }
@@ -148,11 +145,12 @@ const MobileMenu = (props: Props) => {
       <Drawer>
         <DrawerTrigger>
           <div className="flex fixed top-12 right-0 bg-[rgba(0,0,0,0.8)] p-1 pr-2 rounded-l-full">
-            <div className="btn btn-md btn-ghost btn-circle avatar bg-vektor-bg">
-              <div className="w-full rounded-full">
-                <img src="/images/team/IT-Tor.png" alt="profile avatar" />
-              </div>
-            </div>
+            <Button variant="outline" className="rounded-full p-0 bg-vektor-bg" size="icon" >
+                <Avatar className="w-full h-full rounded-full">
+                  <AvatarImage src="/images/team/IT-Tor.png" />
+                  <AvatarFallback>Tor</AvatarFallback>
+                </Avatar>
+            </Button>
           </div>
         </DrawerTrigger>
         <DrawerContent>
@@ -160,18 +158,18 @@ const MobileMenu = (props: Props) => {
           <DrawerDescription>
             <div className="flex justify-between items-start p-6">
               <ul className="flex flex-col w-full items-start text-center gap-4">
-                {linkElements}
+              {linkElements}
               </ul>
               <div className="flex w-fit justify-center">
-                <LoginButtons />
+                <LoginButtons/>
               </div>
             </div>
           </DrawerDescription>
           <DrawerFooter>
             <DrawerClose>
-              <button type="button" className="btn btn-outline btn-error">
+              <Button variant="outline">
                 Close
-              </button>
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>

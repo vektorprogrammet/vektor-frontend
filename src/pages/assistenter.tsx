@@ -1,5 +1,19 @@
 import getContent from "@/api/Assistenter";
 import { useRef, useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+
 
 const Cities = {
   bergen: "Bergen",
@@ -29,13 +43,9 @@ export default function Assistenter() {
         <div className="conte mx-8 bg-center font-sans font-bold text-secondary dark:text-text-dark">
           Disse avdelingene har opptak nå:
         </div>
-        <button
-          type="button"
-          onClick={scrollToCard}
-          className="btn btn-success text-white font-bold py-2 px-4"
-        >
-          Scroll ned for å søke!
-        </button>
+        <Button variant="green" onClick={scrollToCard}>
+              Scroll ned for å søke!
+        </Button>
       </div>
       <div className="info-background w-full pt-72 pb-72 mb-16 flex flex-col items-center space-y-10">
         <div className="w-fit text-accent font-bold text-3xl">
@@ -192,7 +202,39 @@ function Citycard() {
     );
   }
   return (
-    <div className="w-full">
+    <Tabs defaultValue="account" className="w-[400px]">
+      <TabsList className={`grid w-full grid-cols-${Object.keys(Cities).length}`}>
+        {Object.values(Cities).map((city) => (
+            <TabsTrigger key={city} value={city}>{city}</TabsTrigger>
+          ))}
+        {Object.values(Cities).map((city) => (
+          <TabsContent value={city}>
+          <Card>
+            <CardHeader>
+              <CardTitle>{city}</CardTitle>
+              <CardDescription>
+                Make changes to your account here. Click save when you're done.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="space-y-1">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" defaultValue="Pedro Duarte" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="username">Username</Label>
+                <Input id="username" defaultValue="@peduarte" />
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button>Save changes</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
+          ))}
+      </TabsList>
+    </Tabs>
+/*     <div className="w-full">
       <div
         className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-900"
         role="tablist"
@@ -209,7 +251,7 @@ function Citycard() {
       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space dark:bg-neutral-800">
         <ApplyReg cities={openTab} />
       </div>
-    </div>
+    </div> */
   );
 }
 

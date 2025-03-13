@@ -1,6 +1,7 @@
 import { Tabs } from "@/components/Tabs";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
+import { Button, buttonVariants } from "~/components/ui/button";
 
 const teamInfo = {
   title: "Våre team",
@@ -418,13 +419,9 @@ const Division = ({
         <div>{`${numberOfMembers} medlemmer`}</div>
       </div>
       <div className="flex w-full justify-end self-end mb-1.5 mr-1.5">
-        <NavLink
-          type="button"
-          to={`/team/${url}`}
-          className="btn btn-success btn-sm text-white rounded-full"
-        >
-          {buttonName}
-        </NavLink>
+        <Button className="overflow-clip rounded-full"  size="sm" variant="green" asChild>
+          <Link to={`/team/${url}`}>{buttonName}</Link>
+        </Button>
       </div>
     </NavLink>
   );
