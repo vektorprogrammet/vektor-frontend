@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@icons-pack/react-simple-icons':
-        specifier: ^11.2.0
-        version: 11.2.0(react@18.3.1)
+        specifier: ^12.0.0
+        version: 12.2.0(react@18.3.1)
       '@radix-ui/react-accordion':
         specifier: ^1.2.3
         version: 1.2.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -483,8 +483,8 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@icons-pack/react-simple-icons@11.2.0':
-    resolution: {integrity: sha512-jCJ+1Fe0yiBQGYSfhx8QGU/9o27t8J4Hw3mxHEI9vohRltLSi5CaPzO2fCQcMNeTrAUAm4j+yaDuAutskiKRjA==}
+  '@icons-pack/react-simple-icons@12.2.0':
+    resolution: {integrity: sha512-fhTX7hlMJzAmolYvqmE28qf+LEkzc79aqiM8GI251eLAdLmSPnN8v25wYxCHXoQGBJmlLvm34GA+SkX1I64VqQ==}
     peerDependencies:
       react: ^16.13 || ^17 || ^18 || ^19
 
@@ -2678,7 +2678,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@icons-pack/react-simple-icons@11.2.0(react@18.3.1)':
+  '@icons-pack/react-simple-icons@12.2.0(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
