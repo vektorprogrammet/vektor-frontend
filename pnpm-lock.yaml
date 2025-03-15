@@ -30,8 +30,8 @@ importers:
         specifier: ^7.3.0
         version: 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
       '@types/node':
-        specifier: ^20.17.24
-        version: 20.17.24
+        specifier: ^22.0.0
+        version: 22.13.10
       '@types/react':
         specifier: ^18.3.18
         version: 18.3.18
@@ -109,7 +109,7 @@ importers:
         version: 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       vite:
         specifier: ^6.2.1
-        version: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+        version: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -119,10 +119,10 @@ importers:
         version: 1.51.0
       '@react-router/dev':
         specifier: ^7.3.0
-        version: 7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@20.17.24)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
+        version: 7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
       vitest:
         specifier: ^3.0.8
-        version: 3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+        version: 3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
 
 packages:
 
@@ -1007,8 +1007,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/node@20.17.24':
-    resolution: {integrity: sha512-d7fGCyB96w9BnWQrOsJtpyiSaBcAYYr75bnK6ZRjDbql2cGLj/3GsL5OYmLPNq76l7Gf2q4Rv9J2o6h5CrD9sA==}
+  '@types/node@22.13.10':
+    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
@@ -2171,8 +2171,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   undici@6.21.1:
     resolution: {integrity: sha512-q/1rj5D0/zayJB2FraXdaWxbhWiNKDvu8naDT2dl1yTlvJp4BLtOcp2a5BvgGNQpYYJzau7tf1WgKv3b+7mqpQ==}
@@ -3058,7 +3058,7 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
-  '@react-router/dev@7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@20.17.24)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)':
+  '@react-router/dev@7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)':
     dependencies:
       '@babel/core': 7.26.9
       '@babel/generator': 7.26.9
@@ -3087,8 +3087,8 @@ snapshots:
       semver: 7.7.1
       set-cookie-parser: 2.7.1
       valibot: 0.41.0(typescript@5.8.2)
-      vite: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
-      vite-node: 3.0.0-beta.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite-node: 3.0.0-beta.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
     optionalDependencies:
       '@react-router/serve': 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
       typescript: 5.8.2
@@ -3201,9 +3201,9 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/node@20.17.24':
+  '@types/node@22.13.10':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.20.0
 
   '@types/prop-types@15.7.14': {}
 
@@ -3223,13 +3223,13 @@ snapshots:
       chai: 5.2.0
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.0.8(vite@6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))':
+  '@vitest/mocker@3.0.8(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
       '@vitest/spy': 3.0.8
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
 
   '@vitest/pretty-format@3.0.8':
     dependencies:
@@ -4367,7 +4367,7 @@ snapshots:
 
   typescript@5.8.2: {}
 
-  undici-types@6.19.8: {}
+  undici-types@6.20.0: {}
 
   undici@6.21.1: {}
 
@@ -4422,13 +4422,13 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  vite-node@3.0.0-beta.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
+  vite-node@3.0.0-beta.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 1.1.2
-      vite: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -4443,13 +4443,13 @@ snapshots:
       - tsx
       - yaml
 
-  vite-node@3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
+  vite-node@3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 2.0.3
-      vite: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -4464,21 +4464,21 @@ snapshots:
       - tsx
       - yaml
 
-  vite@6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
+  vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       esbuild: 0.25.0
       postcss: 8.5.3
       rollup: 4.35.0
     optionalDependencies:
-      '@types/node': 20.17.24
+      '@types/node': 22.13.10
       fsevents: 2.3.3
       jiti: 1.21.7
       yaml: 2.7.0
 
-  vitest@3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
+  vitest@3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.8
-      '@vitest/mocker': 3.0.8(vite@6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))
+      '@vitest/mocker': 3.0.8(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))
       '@vitest/pretty-format': 3.0.8
       '@vitest/runner': 3.0.8
       '@vitest/snapshot': 3.0.8
@@ -4494,11 +4494,11 @@ snapshots:
       tinyexec: 0.3.2
       tinypool: 1.0.2
       tinyrainbow: 2.0.0
-      vite: 6.2.1(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
-      vite-node: 3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite-node: 3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 20.17.24
+      '@types/node': 22.13.10
     transitivePeerDependencies:
       - jiti
       - less
