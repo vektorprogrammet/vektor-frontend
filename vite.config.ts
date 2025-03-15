@@ -14,7 +14,6 @@ export default defineConfig({
       "@/hooks": "/src/hooks",
       "@/lib": "/src/lib",
       "@/ui": "/src/components/ui",
-      "@/pages": "/src/pages",
       "@/api": "/src/api",
     },
   },
