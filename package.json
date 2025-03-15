@@ -45,9 +45,6 @@
     "@radix-ui/react-separator": "^1.1.2",
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.3.0",
-    "@types/node": "^22.0.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -55,7 +52,6 @@
     "dayjs": "^1.11.13",
     "isbot": "^5.1.23",
     "lucide-react": "^0.482.0",
-    "node": "^20.18.3",
     "norwegian-utils": "^0.4.1",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
@@ -77,6 +73,10 @@
     "@biomejs/biome": "1.9.4",
     "@playwright/test": "^1.51.0",
     "@react-router/dev": "^7.3.0",
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "vitest": "^3.0.8"
-  }
+  },
+  "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b"
 }
