@@ -54,7 +54,7 @@
     "daisyui": "^4.12.24",
     "dayjs": "^1.11.13",
     "isbot": "^5.1.23",
-    "lucide-react": "^0.479.0",
+    "lucide-react": "^0.482.0",
     "node": "^20.18.3",
     "norwegian-utils": "^0.4.1",
     "postcss": "^8.5.3",
