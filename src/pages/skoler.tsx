@@ -1,4 +1,4 @@
-import { Divider } from "@/components/Divider";
+import { Divider } from "~/components/divider";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {

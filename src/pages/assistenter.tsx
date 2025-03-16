@@ -1,4 +1,4 @@
-import getContent from "@/api/Assistenter";
+import { getAssistenter } from "@/api/assistenter";
 import { useRef, useState } from "react";
 
 const Cities = {
@@ -10,7 +10,7 @@ type City = (typeof Cities)[keyof typeof Cities];
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Assistenter() {
-  const { title, ingress, cards } = getContent();
+  const { title, ingress, cards } = getAssistenter();
 
   const cardElement = useRef<HTMLDivElement>(null);
   const scrollToCard = () =>

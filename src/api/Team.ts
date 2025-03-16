@@ -13,7 +13,7 @@ export interface TeamContent {
   card: TeamCard;
 }
 
-export default (): TeamContent => {
+export function getTeam(): TeamContent {
   return {
     title: "Våre team",
     card: {
@@ -28,4 +28,4 @@ export default (): TeamContent => {
       },
     },
   };
-};
+}

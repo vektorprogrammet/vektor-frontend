@@ -1,4 +1,4 @@
-import { Divider } from "@/components/Divider";
+import { Divider } from "~/components/divider";
 
 interface TextPictureParagraphProps {
   title: string;
@@ -9,7 +9,7 @@ interface TextPictureParagraphProps {
     alt: string;
   };
 }
-export interface TextPictureParagraphAPIProps {
+export interface TextPictureParagraphApiProps {
   title: string;
   text: string;
   image: {

@@ -1,24 +1,11 @@
-import { Tabs } from "@/components/Tabs";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
-
-const teamInfo = {
-  title: "Våre team",
-  card: {
-    title: "Styre og team",
-    text1:
-      "Vektorprogrammet er en stor organisasjon med assistenter i 4 norske byer. Vi trenger derfor mange frivillige bak kulissene som kan få hjulene til å gå rundt. Uten Vektorprogrammets 15 team hadde dette aldri gått an! ",
-    text2: "Kunne du tenkt deg et team-verv hos oss?",
-    text3: "Les mer om de ulike teamene nedenfor!",
-    image: {
-      url: new URL("https://vektorprogrammet.no/images/departments_map.png"),
-      alt: "Team",
-    },
-  },
-};
+import { getTeam } from "~/api/team";
+import { Tabs } from "~/components/tabs";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Team() {
+  const teamInfo = getTeam();
   return (
     <div className="mx-auto mt-10 mb-20 flex w-full max-w-6xl flex-col items-center">
       <TeamCard

@@ -1,12 +1,12 @@
-import getContent from "@/api/OmOss";
-import { Divider } from "@/components/Divider";
-import { TextPictureParagraph } from "@/components/TextPictureParagraph";
+import { getOmOss } from "@/api/om-oss";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Divider } from "~/components/divider";
+import { TextPictureParagraph } from "~/components/text-picture-paragraph";
 
 interface AccordionType {
   title: string;
@@ -88,7 +88,7 @@ const teamAccordions: Array<AccordionType> = [
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function OmOss() {
   const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
-    getContent();
+    getOmOss();
   const accordionSection = (
     <div className="flex w-full flex-col items-center">
       <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">

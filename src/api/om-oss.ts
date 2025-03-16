@@ -1,6 +1,6 @@
-import type { TextPictureParagraphAPIProps } from "@/components/TextPictureParagraph";
+import type { TextPictureParagraphApiProps } from "~/components/text-picture-paragraph";
 
-export interface OmOssContent {
+interface OmOssContent {
   title: string;
   ingress: string;
   bottomText: string;
@@ -9,9 +9,11 @@ export interface OmOssContent {
     url: URL;
     alt: string;
   };
-  cards: Array<TextPictureParagraphAPIProps>;
+  cards: Array<TextPictureParagraphApiProps>;
 }
-export default (): OmOssContent => {
+
+// TODO: This data should be fetched from backend later
+export function getOmOss(): OmOssContent {
   return {
     title: "Om Vektorprogrammet",
     ingress: `Vektorprogrammet arbeider for å øke interessen for matematikk 
@@ -19,8 +21,7 @@ export default (): OmOssContent => {
         som sender studenter med god realfagskompetanse til skoler
         for å hjelpe elevene i matematikktimene. Disse
         studentene har også gode pedagogiske evner og
-        er gode rollemodeller – de er Norges realfagshelter.
-          `,
+        er gode rollemodeller - de er Norges realfagshelter.`,
     bottomHeader: "En forsmak til læreryrket!",
     bottomText: `Siden studentene er tilstede i
           undervisningen får de en introduksjon til
@@ -66,4 +67,4 @@ export default (): OmOssContent => {
       },
     ],
   };
-};
+}

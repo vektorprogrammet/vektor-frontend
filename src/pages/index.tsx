@@ -1,7 +1,6 @@
 import CountUp from "react-countup";
 import { Link } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
-
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import ksBergen from "/images/mainPage/sponsor/KSBergen.png";
 import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";

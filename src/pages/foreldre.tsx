@@ -1,10 +1,10 @@
-import getContent from "@/api/ForForeldre";
-import { Divider } from "@/components/Divider";
-import { TextPictureParagraph } from "@/components/TextPictureParagraph";
+import { getForeldre } from "@/api/foreldre";
+import { Divider } from "~/components/divider";
+import { TextPictureParagraph } from "~/components/text-picture-paragraph";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForForeldre() {
-  const { title, ingress, cards, bottomText } = getContent();
+  const { title, ingress, cards, bottomText } = getForeldre();
   return (
     <div className="mt-20 mb-20 flex max-w-4xl flex-col items-center gap-10 self-center p-5 md:gap-28 dark:text-text-dark">
       <div className="flex max-w-full flex-col gap-3 md:gap-5">

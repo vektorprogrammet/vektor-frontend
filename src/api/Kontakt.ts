@@ -1,4 +1,4 @@
-export interface KontaktCard {
+interface KontaktCard {
   title: string;
   text: string;
   image: {
@@ -6,12 +6,12 @@ export interface KontaktCard {
     alt: string;
   };
 }
-export interface KontaktContent {
+interface KontaktContent {
   title: string;
   card: KontaktCard;
 }
 
-export default (): KontaktContent => {
+export function getKontakt(): KontaktContent {
   return {
     title: "Kontakt oss",
     card: {
@@ -25,4 +25,4 @@ export default (): KontaktContent => {
       },
     },
   };
-};
+}

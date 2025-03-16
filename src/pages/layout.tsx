@@ -1,11 +1,8 @@
-import getSponsors, { type Sponsor } from "@/api/Sponsor";
+import { type Sponsor, getSponsors } from "@/api/sponsor";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { useRef, useState } from "react";
-import { NavLink, Outlet, useLocation } from "react-router";
-import { Link } from "react-router";
-import { navRoutes } from "~/routes";
-import "./layout.css";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 import {
   Drawer,
   DrawerClose,
@@ -15,6 +12,8 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "~/components/ui/drawer";
+import { navRoutes } from "~/routes";
+import "./layout.css";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {

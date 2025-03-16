@@ -1,21 +1,10 @@
+import { getKontakt } from "@/api/kontakt";
 import { useEffect, useState } from "react";
-import { Tabs } from "~/components/Tabs";
+import { Tabs } from "~/components/tabs";
 
-const kontaktInfo = {
-  title: "Kontakt oss",
-  card: {
-    title: "Organisasjonen",
-    text: "Vektorprogrammet er en stor organisasjon med assistenter i 4 norske byer. Under kan du kontakte vektorprogrammet i nærmeste by eller hovedstyret for generelle henvendelser.",
-    image: {
-      url: new URL(
-        "https://vektorprogrammet.no/images/organizationstructure.png",
-      ),
-      alt: "Organisasjonsstruktur",
-    },
-  },
-};
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Kontakt() {
+  const kontaktInfo = getKontakt();
   return (
     <div className="mx-auto mt-10 mb-20 flex max-w-6xl flex-col items-center">
       <Card
