@@ -26,7 +26,6 @@
         "noSvgWithoutTitle": "warn"
       },
       "correctness": {
-        "noNodejsModules": "off",
         "useImportExtensions": "off"
       },
       "nursery": {
