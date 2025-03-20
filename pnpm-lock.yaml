@@ -33,7 +33,7 @@ importers:
         specifier: ^2.1.6
         version: 2.1.6(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-separator':
-        specifier: ^1.1.2
+        specifier: ^1.1.0
         version: 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-slot':
         specifier: ^1.1.2
@@ -42,13 +42,19 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-router/node':
-        specifier: ^7.3.0
+        specifier: ^7.1.5
         version: 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
-      '@react-router/serve':
-        specifier: ^7.3.0
-        version: 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
+      '@types/node':
+        specifier: ^20.12.2
+        version: 20.17.24
+      '@types/react':
+        specifier: ^18.2.79
+        version: 18.3.18
+      '@types/react-dom':
+        specifier: ^18.2.25
+        version: 18.3.5(@types/react@18.3.18)
       autoprefixer:
-        specifier: ^10.4.20
+        specifier: ^10.4.19
         version: 10.4.21(postcss@8.5.3)
       class-variance-authority:
         specifier: ^0.7.1
@@ -115,7 +121,7 @@ importers:
         version: 1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       vite:
         specifier: ^6.2.1
-        version: 6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+        version: 6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -125,19 +131,10 @@ importers:
         version: 1.51.0
       '@react-router/dev':
         specifier: ^7.3.0
-        version: 7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
-      '@types/node':
-        specifier: ^22.13.10
-        version: 22.13.10
-      '@types/react':
-        specifier: ^18.3.18
-        version: 18.3.18
-      '@types/react-dom':
-        specifier: ^18.3.5
-        version: 18.3.5(@types/react@18.3.18)
+        version: 7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@20.17.24)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
       vitest:
         specifier: ^3.0.8
-        version: 3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+        version: 3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
 
 packages:
 
@@ -1112,8 +1109,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/node@22.13.10':
-    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+  '@types/node@20.17.24':
+    resolution: {integrity: sha512-d7fGCyB96w9BnWQrOsJtpyiSaBcAYYr75bnK6ZRjDbql2cGLj/3GsL5OYmLPNq76l7Gf2q4Rv9J2o6h5CrD9sA==}
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
@@ -2268,8 +2265,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.20.0:
-    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   undici@6.21.1:
     resolution: {integrity: sha512-q/1rj5D0/zayJB2FraXdaWxbhWiNKDvu8naDT2dl1yTlvJp4BLtOcp2a5BvgGNQpYYJzau7tf1WgKv3b+7mqpQ==}
@@ -3254,7 +3251,7 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
-  '@react-router/dev@7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)':
+  '@react-router/dev@7.3.0(@react-router/serve@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2))(@types/node@20.17.24)(jiti@1.21.7)(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(vite@6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)':
     dependencies:
       '@babel/core': 7.26.9
       '@babel/generator': 7.26.9
@@ -3283,8 +3280,8 @@ snapshots:
       semver: 7.7.1
       set-cookie-parser: 2.7.1
       valibot: 0.41.0(typescript@5.8.2)
-      vite: 6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
-      vite-node: 3.0.0-beta.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite-node: 3.0.0-beta.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
     optionalDependencies:
       '@react-router/serve': 7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)
       typescript: 5.8.2
@@ -3311,6 +3308,7 @@ snapshots:
       react-router: 7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     optionalDependencies:
       typescript: 5.8.2
+    optional: true
 
   '@react-router/node@7.3.0(react-router@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)':
     dependencies:
@@ -3335,6 +3333,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    optional: true
 
   '@rollup/rollup-android-arm-eabi@4.35.0':
     optional: true
@@ -3397,9 +3396,9 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/node@22.13.10':
+  '@types/node@20.17.24':
     dependencies:
-      undici-types: 6.20.0
+      undici-types: 6.19.8
 
   '@types/prop-types@15.7.14': {}
 
@@ -3419,13 +3418,13 @@ snapshots:
       chai: 5.2.0
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.0.8(vite@6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))':
+  '@vitest/mocker@3.0.8(vite@6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
       '@vitest/spy': 3.0.8
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
 
   '@vitest/pretty-format@3.0.8':
     dependencies:
@@ -3456,6 +3455,7 @@ snapshots:
     dependencies:
       mime-types: 2.1.35
       negotiator: 0.6.3
+    optional: true
 
   ansi-regex@5.0.1: {}
 
@@ -3480,7 +3480,8 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  array-flatten@1.1.1: {}
+  array-flatten@1.1.1:
+    optional: true
 
   assertion-error@2.0.1: {}
 
@@ -3508,6 +3509,7 @@ snapshots:
   basic-auth@2.0.1:
     dependencies:
       safe-buffer: 5.1.2
+    optional: true
 
   binary-extensions@2.3.0: {}
 
@@ -3527,6 +3529,7 @@ snapshots:
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   brace-expansion@2.0.1:
     dependencies:
@@ -3545,7 +3548,8 @@ snapshots:
 
   buffer-from@1.1.2: {}
 
-  bytes@3.1.2: {}
+  bytes@3.1.2:
+    optional: true
 
   cac@6.7.14: {}
 
@@ -3553,11 +3557,13 @@ snapshots:
     dependencies:
       es-errors: 1.3.0
       function-bind: 1.1.2
+    optional: true
 
   call-bound@1.0.4:
     dependencies:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
+    optional: true
 
   camelcase-css@2.0.1: {}
 
@@ -3606,6 +3612,7 @@ snapshots:
   compressible@2.0.18:
     dependencies:
       mime-db: 1.53.0
+    optional: true
 
   compression@1.8.0:
     dependencies:
@@ -3618,18 +3625,23 @@ snapshots:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   content-disposition@0.5.4:
     dependencies:
       safe-buffer: 5.2.1
+    optional: true
 
-  content-type@1.0.5: {}
+  content-type@1.0.5:
+    optional: true
 
   convert-source-map@2.0.0: {}
 
-  cookie-signature@1.0.6: {}
+  cookie-signature@1.0.6:
+    optional: true
 
-  cookie@0.7.1: {}
+  cookie@0.7.1:
+    optional: true
 
   cookie@1.0.2: {}
 
@@ -3666,6 +3678,7 @@ snapshots:
   debug@2.6.9:
     dependencies:
       ms: 2.0.0
+    optional: true
 
   debug@4.4.0:
     dependencies:
@@ -3675,9 +3688,11 @@ snapshots:
 
   deep-eql@5.0.2: {}
 
-  depd@2.0.0: {}
+  depd@2.0.0:
+    optional: true
 
-  destroy@1.2.0: {}
+  destroy@1.2.0:
+    optional: true
 
   detect-node-es@1.1.0: {}
 
@@ -3690,10 +3705,12 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       es-errors: 1.3.0
       gopd: 1.2.0
+    optional: true
 
   eastasianwidth@0.2.0: {}
 
-  ee-first@1.1.1: {}
+  ee-first@1.1.1:
+    optional: true
 
   electron-to-chromium@1.5.119: {}
 
@@ -3701,21 +3718,26 @@ snapshots:
 
   emoji-regex@9.2.2: {}
 
-  encodeurl@1.0.2: {}
+  encodeurl@1.0.2:
+    optional: true
 
-  encodeurl@2.0.0: {}
+  encodeurl@2.0.0:
+    optional: true
 
   err-code@2.0.3: {}
 
-  es-define-property@1.0.1: {}
+  es-define-property@1.0.1:
+    optional: true
 
-  es-errors@1.3.0: {}
+  es-errors@1.3.0:
+    optional: true
 
   es-module-lexer@1.6.0: {}
 
   es-object-atoms@1.1.1:
     dependencies:
       es-errors: 1.3.0
+    optional: true
 
   esbuild@0.25.1:
     optionalDependencies:
@@ -3747,13 +3769,15 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  escape-html@1.0.3: {}
+  escape-html@1.0.3:
+    optional: true
 
   estree-walker@3.0.3:
     dependencies:
       '@types/estree': 1.0.6
 
-  etag@1.8.1: {}
+  etag@1.8.1:
+    optional: true
 
   exit-hook@2.2.1: {}
 
@@ -3794,6 +3818,7 @@ snapshots:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   fast-glob@3.3.3:
     dependencies:
@@ -3824,17 +3849,20 @@ snapshots:
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   foreground-child@3.3.1:
     dependencies:
       cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
-  forwarded@0.2.0: {}
+  forwarded@0.2.0:
+    optional: true
 
   fraction.js@4.3.7: {}
 
-  fresh@0.5.2: {}
+  fresh@0.5.2:
+    optional: true
 
   fs-extra@10.1.0:
     dependencies:
@@ -3864,15 +3892,18 @@ snapshots:
       has-symbols: 1.1.0
       hasown: 2.0.2
       math-intrinsics: 1.1.0
+    optional: true
 
   get-nonce@1.0.1: {}
 
-  get-port@5.1.1: {}
+  get-port@5.1.1:
+    optional: true
 
   get-proto@1.0.1:
     dependencies:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
+    optional: true
 
   glob-parent@5.1.2:
     dependencies:
@@ -3893,11 +3924,13 @@ snapshots:
 
   globals@11.12.0: {}
 
-  gopd@1.2.0: {}
+  gopd@1.2.0:
+    optional: true
 
   graceful-fs@4.2.11: {}
 
-  has-symbols@1.1.0: {}
+  has-symbols@1.1.0:
+    optional: true
 
   hasown@2.0.2:
     dependencies:
@@ -3914,14 +3947,18 @@ snapshots:
       setprototypeof: 1.2.0
       statuses: 2.0.1
       toidentifier: 1.0.1
+    optional: true
 
   iconv-lite@0.4.24:
     dependencies:
       safer-buffer: 2.1.2
+    optional: true
 
-  inherits@2.0.4: {}
+  inherits@2.0.4:
+    optional: true
 
-  ipaddr.js@1.9.1: {}
+  ipaddr.js@1.9.1:
+    optional: true
 
   is-binary-path@2.1.0:
     dependencies:
@@ -3995,30 +4032,38 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  math-intrinsics@1.1.0: {}
+  math-intrinsics@1.1.0:
+    optional: true
 
-  media-typer@0.3.0: {}
+  media-typer@0.3.0:
+    optional: true
 
-  merge-descriptors@1.0.3: {}
+  merge-descriptors@1.0.3:
+    optional: true
 
   merge2@1.4.1: {}
 
-  methods@1.1.2: {}
+  methods@1.1.2:
+    optional: true
 
   micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
 
-  mime-db@1.52.0: {}
+  mime-db@1.52.0:
+    optional: true
 
-  mime-db@1.53.0: {}
+  mime-db@1.53.0:
+    optional: true
 
   mime-types@2.1.35:
     dependencies:
       mime-db: 1.52.0
+    optional: true
 
-  mime@1.6.0: {}
+  mime@1.6.0:
+    optional: true
 
   minimatch@9.0.5:
     dependencies:
@@ -4035,8 +4080,10 @@ snapshots:
       on-headers: 1.0.2
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
-  ms@2.0.0: {}
+  ms@2.0.0:
+    optional: true
 
   ms@2.1.3: {}
 
@@ -4048,9 +4095,11 @@ snapshots:
 
   nanoid@3.3.9: {}
 
-  negotiator@0.6.3: {}
+  negotiator@0.6.3:
+    optional: true
 
-  negotiator@0.6.4: {}
+  negotiator@0.6.4:
+    optional: true
 
   node-releases@2.0.19: {}
 
@@ -4091,21 +4140,26 @@ snapshots:
 
   object-hash@3.0.0: {}
 
-  object-inspect@1.13.4: {}
+  object-inspect@1.13.4:
+    optional: true
 
   on-finished@2.3.0:
     dependencies:
       ee-first: 1.1.1
+    optional: true
 
   on-finished@2.4.1:
     dependencies:
       ee-first: 1.1.1
+    optional: true
 
-  on-headers@1.0.2: {}
+  on-headers@1.0.2:
+    optional: true
 
   package-json-from-dist@1.0.1: {}
 
-  parseurl@1.3.3: {}
+  parseurl@1.3.3:
+    optional: true
 
   path-key@3.1.1: {}
 
@@ -4116,7 +4170,8 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.2
 
-  path-to-regexp@0.1.12: {}
+  path-to-regexp@0.1.12:
+    optional: true
 
   pathe@1.1.2: {}
 
@@ -4205,14 +4260,17 @@ snapshots:
     dependencies:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
+    optional: true
 
   qs@6.13.0:
     dependencies:
       side-channel: 1.1.0
+    optional: true
 
   queue-microtask@1.2.3: {}
 
-  range-parser@1.2.1: {}
+  range-parser@1.2.1:
+    optional: true
 
   raw-body@2.5.2:
     dependencies:
@@ -4220,6 +4278,7 @@ snapshots:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    optional: true
 
   react-countup@6.5.3(react@18.3.1):
     dependencies:
@@ -4341,11 +4400,14 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  safe-buffer@5.1.2: {}
+  safe-buffer@5.1.2:
+    optional: true
 
-  safe-buffer@5.2.1: {}
+  safe-buffer@5.2.1:
+    optional: true
 
-  safer-buffer@2.1.2: {}
+  safer-buffer@2.1.2:
+    optional: true
 
   scheduler@0.23.2:
     dependencies:
@@ -4372,6 +4434,7 @@ snapshots:
       statuses: 2.0.1
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   serve-static@1.16.2:
     dependencies:
@@ -4381,10 +4444,12 @@ snapshots:
       send: 0.19.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   set-cookie-parser@2.7.1: {}
 
-  setprototypeof@1.2.0: {}
+  setprototypeof@1.2.0:
+    optional: true
 
   shebang-command@2.0.0:
     dependencies:
@@ -4396,6 +4461,7 @@ snapshots:
     dependencies:
       es-errors: 1.3.0
       object-inspect: 1.13.4
+    optional: true
 
   side-channel-map@1.0.1:
     dependencies:
@@ -4403,6 +4469,7 @@ snapshots:
       es-errors: 1.3.0
       get-intrinsic: 1.3.0
       object-inspect: 1.13.4
+    optional: true
 
   side-channel-weakmap@1.0.2:
     dependencies:
@@ -4411,6 +4478,7 @@ snapshots:
       get-intrinsic: 1.3.0
       object-inspect: 1.13.4
       side-channel-map: 1.0.1
+    optional: true
 
   side-channel@1.1.0:
     dependencies:
@@ -4419,6 +4487,7 @@ snapshots:
       side-channel-list: 1.0.0
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
+    optional: true
 
   siginfo@2.0.0: {}
 
@@ -4449,7 +4518,8 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  statuses@2.0.1: {}
+  statuses@2.0.1:
+    optional: true
 
   std-env@3.8.1: {}
 
@@ -4542,7 +4612,8 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  toidentifier@1.0.1: {}
+  toidentifier@1.0.1:
+    optional: true
 
   ts-interface-checker@0.1.13: {}
 
@@ -4554,16 +4625,18 @@ snapshots:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.35
+    optional: true
 
   typescript@5.8.2: {}
 
-  undici-types@6.20.0: {}
+  undici-types@6.19.8: {}
 
   undici@6.21.1: {}
 
   universalify@2.0.1: {}
 
-  unpipe@1.0.0: {}
+  unpipe@1.0.0:
+    optional: true
 
   update-browserslist-db@1.1.3(browserslist@4.24.4):
     dependencies:
@@ -4588,7 +4661,8 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  utils-merge@1.0.1: {}
+  utils-merge@1.0.1:
+    optional: true
 
   valibot@0.41.0(typescript@5.8.2):
     optionalDependencies:
@@ -4601,7 +4675,8 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vary@1.1.2: {}
+  vary@1.1.2:
+    optional: true
 
   vaul@1.1.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -4612,13 +4687,13 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  vite-node@3.0.0-beta.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
+  vite-node@3.0.0-beta.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 1.1.2
-      vite: 6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -4633,13 +4708,13 @@ snapshots:
       - tsx
       - yaml
 
-  vite-node@3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
+  vite-node@3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.0
       es-module-lexer: 1.6.0
       pathe: 2.0.3
-      vite: 6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -4654,21 +4729,21 @@ snapshots:
       - tsx
       - yaml
 
-  vite@6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
+  vite@6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       esbuild: 0.25.1
       postcss: 8.5.3
       rollup: 4.35.0
     optionalDependencies:
-      '@types/node': 22.13.10
+      '@types/node': 20.17.24
       fsevents: 2.3.3
       jiti: 1.21.7
       yaml: 2.7.0
 
-  vitest@3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0):
+  vitest@3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.8
-      '@vitest/mocker': 3.0.8(vite@6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))
+      '@vitest/mocker': 3.0.8(vite@6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0))
       '@vitest/pretty-format': 3.0.8
       '@vitest/runner': 3.0.8
       '@vitest/snapshot': 3.0.8
@@ -4684,11 +4759,11 @@ snapshots:
       tinyexec: 0.3.2
       tinypool: 1.0.2
       tinyrainbow: 2.0.0
-      vite: 6.2.2(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
-      vite-node: 3.0.8(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+      vite: 6.2.2(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
+      vite-node: 3.0.8(@types/node@20.17.24)(jiti@1.21.7)(yaml@2.7.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.13.10
+      '@types/node': 20.17.24
     transitivePeerDependencies:
       - jiti
       - less
