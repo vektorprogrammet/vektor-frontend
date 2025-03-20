@@ -312,6 +312,7 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
           type="button"
           to={href("/team/hovedstyret")}
           className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 transition duration-300 hover:border-transparent hover:bg-blue-500 hover:text-white dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600"
+          prefetch="intent"
         >
           Les mer om hovedstyret
         </NavLink>
@@ -387,6 +388,7 @@ const Division = ({
     <NavLink
       className={`flex h-48 flex-col justify-between rounded-md bg-vektor-light-blue shadow-md dark:bg-gray-600 dark:text-white ${chosenStyle}`}
       to={url}
+      prefetch="intent"
     >
       <div className="h-20 content-center rounded-t-md bg-vektor-blue dark:bg-vektor-darblue">
         <h1 className="text-center font-medium text-lg text-vektor-darblue dark:text-white">
@@ -419,7 +421,9 @@ const Division = ({
           variant="green"
           asChild
         >
-          <Link to={url}>{buttonName}</Link>
+          <Link to={url} prefetch="intent">
+            {buttonName}
+          </Link>
         </Button>
       </div>
     </NavLink>

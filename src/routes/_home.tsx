@@ -94,6 +94,7 @@ function NavTabs({
             className={({ isActive }) =>
               `${isActive ? "text-black" : "text-neutral-700 hover:text-black dark:text-vektor-blue dark:hover:text-vektor-bg"} z-20 my-auto cursor-pointer select-none rounded-full px-4 text-center font-medium text-sm`
             }
+            prefetch="intent"
           >
             {route.name}
           </NavLink>
@@ -109,6 +110,7 @@ function LoginButtons() {
       <Link
         className={buttonVariants({ variant: "green" })}
         to={"/kontrollpanel"}
+        prefetch="intent"
       >
         Logg inn
       </Link>
@@ -152,6 +154,7 @@ const MobileMenu = ({
                       className="text-lg dark:text-white"
                       reloadDocument
                       to={route.path}
+                      prefetch="intent"
                     >
                       {route.name}
                     </Link>

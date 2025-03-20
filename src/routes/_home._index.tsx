@@ -152,6 +152,7 @@ export default function mainPage() {
               <Link
                 to={route.path}
                 className={buttonVariants({ variant: "green" })}
+                prefetch="intent"
               >
                 {route.text}
               </Link>
