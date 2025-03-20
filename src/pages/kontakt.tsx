@@ -1,5 +1,9 @@
+import { Label } from "@radix-ui/react-label";
 import { useEffect, useState } from "react";
 import { Tabs } from "~/components/Tabs";
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Textarea } from "~/components/ui/textarea";
 
 const kontaktInfo = {
   title: "Kontakt oss",
@@ -355,12 +359,9 @@ const Division = ({
           )}
           {button && (
             <div className="py-5 left-0">
-              <button
-                type="submit"
-                className="bg-vektor-darkblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-              >
+              <Button className="bg-vektor-darkblue hover:bg-vektor-blue">
                 Les mer om hovedstyret
-              </button>
+              </Button>
             </div>
           )}
         </div>
@@ -388,64 +389,30 @@ const Division = ({
           <div className="font-bold text-2xl text-blue-800 text-center pt-10 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
           <form>
             <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
-              <label
-                htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Ditt navn
-                <input
-                  type="name"
-                  id="name"
-                  className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500"
-                  required
-                />
-              </label>
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Din e-post
-                <input
-                  type="email"
-                  id="email"
-                  className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                  required
-                />
-              </label>
+              <div>
+                <Label htmlFor="name">Ditt navn</Label>
+                <Input  placeholder="Skriv inn navn" required/>
+              </div>
+              <div>
+                <Label htmlFor="email">Din e-post</Label>
+                <Input  placeholder="Skriv inn epost" required/>
+              </div>
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="topic"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Emne
-                <input
-                  type="topic"
-                  id="topic"
-                  className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                  required
-                />
-              </label>
+              <div>
+                <Label htmlFor="topic">Emne</Label>
+                <Input  placeholder="Skriv inn emnet for meldingen" required/>
+              </div>
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Melding
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
-                />
-              </label>
+              <div>
+                <Label htmlFor="message">Melding</Label>
+                <Textarea placeholder="Skriv inn meldingen din" rows={6} required id="message" />
+              </div>
             </div>
-            <button
-              type="submit"
-              className="bg-vektor-darkblue hover:bg-vektor-blue text-white font focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-            >
+            <Button className="bg-vektor-darkblue hover:bg-vektor-blue">
               Send melding
-            </button>
+              </Button>
           </form>
         </div>
       )}

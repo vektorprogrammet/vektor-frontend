@@ -2,19 +2,18 @@ import getContent from "@/api/Assistenter";
 import { useRef, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import * as React from "react"
+import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
-
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Checkbox } from "~/components/ui/checkbox";
 const Cities = {
   bergen: "Bergen",
   trondheim: "Trondheim",
@@ -164,10 +163,9 @@ export default function Assistenter() {
         Søk nå!
       </div>
 
-      <div ref={cardElement}>
+      <div className="h-full mb-16" ref={cardElement}> {/* ikke helt dynamisk høyde her */}
         <Citycard />
       </div>
-
       <div className="font-bold mb-16 text-vektor-DARKblue">
         Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.
       </div>
@@ -177,6 +175,7 @@ export default function Assistenter() {
 
 function Citycard() {
   const [openTab, setOpenTab] = useState<City>("Trondheim");
+  const [position, setPosition] = React.useState("bottom")
   function Tab({
     city,
     onTabClick,
@@ -202,148 +201,80 @@ function Citycard() {
     );
   }
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
-      <TabsList className={`grid w-full grid-cols-${Object.keys(Cities).length}`}>
+    
+    <Tabs defaultValue={Object.values(Cities)[0]} className="h-full sm:w-[200px] lg:w-[600px]">
+      <TabsList className={`grid w-full grid-cols-3`}> {/* Eventuelt dynamisk antall kolonner med ${Object.keys(Cities).length}` */}
         {Object.values(Cities).map((city) => (
-            <TabsTrigger key={city} value={city}>{city}</TabsTrigger>
-          ))}
-        {Object.values(Cities).map((city) => (
-          <TabsContent value={city}>
-          <Card>
-            <CardHeader>
-              <CardTitle>{city}</CardTitle>
-              <CardDescription>
-                Make changes to your account here. Click save when you're done.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="space-y-1">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" defaultValue="Pedro Duarte" />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="username">Username</Label>
-                <Input id="username" defaultValue="@peduarte" />
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button>Save changes</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
+            <TabsTrigger className="w-full" key={city} value={city}>{city}</TabsTrigger>
           ))}
       </TabsList>
+      {Object.values(Cities).map((city) => (
+      <TabsContent value={city}>
+        <Card>
+          <CardHeader>
+            <CardTitle>{city}</CardTitle>
+            <CardDescription>
+              Søknadsfrist: ???
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="space-y-1">
+              <Label htmlFor="fornavn">Fornavn</Label>
+              <Input id="fornavn" defaultValue="Ola" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="etternavn">Etternavn</Label>
+              <Input id="etternavn" defaultValue="Nordmann" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="email">E-post</Label>
+              <Input id="email" defaultValue="Skriv inn epost" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="phone">Telefonnummer</Label>
+              <Input id="phone" defaultValue="Skriv inn telefonnummer" />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="study">Studieretning</Label>
+              <Input id="study" defaultValue="Bruk forkortelsen, f.eks. MTDT" />
+            </div>
+            <div className="space-y-1">
+            <Label htmlFor="gender">Kjønn</Label>
+              <Select >
+                <SelectTrigger className="w-[150px]">
+                  <SelectValue className="w-full" placeholder="Velg kjønn" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="male">Mann</SelectItem>
+                  <SelectItem value="female">Kvinne</SelectItem>
+                  <SelectItem value="other">Annet</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="grade">Årstrinn</Label>
+              <Select >
+                <SelectTrigger className="w-[150px]">
+                  <SelectValue className="w-full" placeholder="Velg årstrinn" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="firstGrade">1. klasse</SelectItem>
+                    <SelectItem value="secondGrade">2. klasse</SelectItem>
+                    <SelectItem value="thirdGrade">3. klasse</SelectItem>
+                    <SelectItem value="fourthGrade">4. klasse</SelectItem>
+                    <SelectItem value="fifthGrade">5. klasse</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-[150px]">Søk nå!</Button>
+          </CardFooter>
+        </Card>
+      </TabsContent>
+      ))}
     </Tabs>
-/*     <div className="w-full">
-      <div
-        className="tabs w-full flex text-sm font-medium text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-900"
-        role="tablist"
-      >
-        {Object.values(Cities).map((city) => (
-          <Tab
-            city={city}
-            onTabClick={() => setOpenTab(city)}
-            open={openTab === city}
-            key={city}
-          />
-        ))}
-      </div>
-      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 border-b-[1px] border-r-[1px] border-l-[1px] px-4 py-5 flex-auto tab-content tab-space dark:bg-neutral-800">
-        <ApplyReg cities={openTab} />
-      </div>
-    </div> */
-  );
-}
-
-function ApplyReg({ cities }: { cities: City }) {
-  return (
-    <form className="dark:bg-neutral-800">
-      <h1 className="text-xl my-8 text-vektor-darblue font-bold text-center dark:text-gray-200">
-        {cities}
-      </h1>
-
-      <div className="mt-1 mb-8 text-center dark:text-gray-300">
-        Søknadsfrist:{" "}
-      </div>
-
-      <div className="grid justify-items-center dark:text-gray-800">
-        <div className="flex flex-wrap w-full my-4 space-x-8 justify-center">
-          <input
-            type="fornavn"
-            className="mb-2 p-1 rounded block border-solid border-2 border-vektor-darblue"
-            placeholder="Fornavn"
-          />
-
-          <input
-            type="etternavn"
-            className="mb-2 p-1 rounded block border-solid border-2 border-vektor-darblue"
-            placeholder="Etternavn"
-          />
-        </div>
-
-        <div className="flex mt-3 justify-center w-full">
-          <input
-            type="email"
-            className="mb-2 p-1 rounded inline-flex items-center form-input w-1/2 border-solid border-2 border-vektor-darblue"
-            placeholder="E-post"
-          />
-        </div>
-
-        <div className="flex mt-3 justify-center w-full">
-          <input
-            type="telefon"
-            className="mb-2 p-1 rounded inline-flex items-center form-input w-1/2 border-solid border-2 border-vektor-darblue"
-            placeholder="Telefon nr"
-          />
-        </div>
-
-        <div className="flex mt-3 justify-center w-full">
-          <input
-            type="linje"
-            className="mb-2 p-1 rounded inline-flex items-center form-input w-1/2 border-solid border-2 border-vektor-darblue"
-            placeholder="Linje"
-          />
-        </div>
-
-        <div className="my-4 space-x-4">
-          <select
-            className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
-            defaultValue="Kjønn"
-          >
-            <option value="Kjønn" disabled>
-              Kjønn
-            </option>
-            <option>Mann</option>
-            <option>Kvinne</option>
-            <option>Annet</option>
-          </select>
-
-          <select
-            className="p-2 rounded border-solid border-2 border-vektor-darblue text-vektor-darblue font-bold"
-            defaultValue="Årstrinn"
-          >
-            <option value="Årstrinn" disabled>
-              Årstrinn
-            </option>
-            <option>1. klasse</option>
-            <option>2. klasse</option>
-            <option>3. klasse</option>
-            <option>4. klasse</option>
-            <option>5. klasse</option>
-          </select>
-        </div>
-        <button
-          type="submit"
-          className="bg-vektor-darblue hover:bg-vektor-blue text-white font-bold py-2 px-4 m-8 rounded "
-        >
-          Søk nå!
-        </button>
-      </div>
-      <div className="items-center mx-16 mb-10 text-center dark:text-gray-300">
-        Har du vært assistent tidligere? Da kan du søke på nytt her (krever
-        innlogging)
-      </div>
-    </form>
+  
   );
 }
 
@@ -353,19 +284,21 @@ function NoApplyCard ({ cities }: { cities: City}) {
       <h1 className="font-bold text-xl my-8 text-vektor-darblue"> {cities}</h1>
 
       <div className="block mt-3">
-        <input
-          type="email"
-          className="inline-flex items-center form-input border-solid border-2 border-grey"
-          placeholder="E-post"
-        />
+        <Input className="inline-flex items-center form-input border-solid border-2 border-grey">E-post
+        </Input>
       </div>
 
       <div className="block">
         <div className="mt-2">
-          <div>
-            <div className="inline-flex items-center text-left">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="m-2">Få påminnelse når opptaket starter </span>
+          <div className="inline-flex items-center text-left">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="reminder" />
+              <label
+                htmlFor="reminder"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Få påminnelse når opptaket starter
+              </label>
             </div>
           </div>
         </div>
