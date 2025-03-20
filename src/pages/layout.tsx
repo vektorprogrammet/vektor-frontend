@@ -1,9 +1,9 @@
-import { type Sponsor, getSponsors } from "~/api/sponsor";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { useRef, useState } from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router";
+import { Link, NavLink, Outlet, type To, useLocation } from "react-router";
+import { type Sponsor, getSponsors } from "~/api/sponsor";
 import { Button, buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
@@ -50,7 +50,11 @@ function AppHeader() {
       <div className="absolute top-0 right-2 hidden rounded-full md:flex">
         <LoginButtons />
       </div>
-      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        routes={navRoutes}
+      />
     </div>
   );
 }
@@ -58,7 +62,7 @@ function AppHeader() {
 function NavTabs({
   routes,
 }: {
-  routes: Array<{ name: string; path: string }>;
+  routes: Array<{ name: string; path: To }>;
 }) {
   const location = useLocation();
   const navLinkRefs = useRef<Array<HTMLElement>>([]); // Refs to the nav links
@@ -66,7 +70,7 @@ function NavTabs({
   const [pillLeft, setPillLeft] = useState<number>();
 
   const activeNavIndex = routes.findIndex(
-    (route) => `/${route.path}` === location.pathname,
+    (route) => route.path === location.pathname,
   );
 
   return (
@@ -81,7 +85,7 @@ function NavTabs({
         return (
           <NavLink
             to={route.path}
-            key={route.path}
+            key={route.path.toString()}
             ref={(el) => {
               if (!el) return;
 
@@ -118,30 +122,14 @@ function LoginButtons() {
   );
 }
 
-interface Props {
-  menuOpen: boolean;
-  setMenuOpen: (values: boolean) => void;
-}
-
 const _activeStyle: React.CSSProperties = {
   fontWeight: "600",
   background: "rgba(111,206,238,0.8)",
 };
 
-const MobileMenu = (props: Props) => {
-  const { menuOpen, setMenuOpen } = props;
-
-  const linkElements = navRoutes.map((route) => (
-    <li key={route.name}>
-      <Link
-        className="text-lg dark:text-white"
-        reloadDocument
-        to={route.path ?? ""}
-      >
-        {route.name}
-      </Link>
-    </li>
-  ));
+const MobileMenu = ({
+  routes,
+}: { routes: Array<{ name: string; path: To }> }) => {
   return (
     <div className="md:hidden">
       <Drawer>
@@ -164,7 +152,17 @@ const MobileMenu = (props: Props) => {
           <DrawerDescription>
             <div className="flex items-start justify-between p-6">
               <ul className="flex w-full flex-col items-start gap-4 text-center">
-                {linkElements}
+                {navRoutes.map((route) => (
+                  <li key={route.name}>
+                    <Link
+                      className="text-lg dark:text-white"
+                      reloadDocument
+                      to={route.path}
+                    >
+                      {route.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
               <div className="flex w-fit justify-center">
                 <LoginButtons />

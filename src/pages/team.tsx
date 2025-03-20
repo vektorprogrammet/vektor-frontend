@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, type To, href } from "react-router";
 import { getTeam } from "~/api/team";
 import { Tabs } from "~/components/tabs";
 import { Button } from "~/components/ui/button";
@@ -105,7 +105,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="styret.ntnu@vektorprogrammet.no"
         numberOfMembers={9}
         buttonName="Les mer"
-        url="trondheim/styret"
+        url={href("/team/trondheim/styret")}
       />
       <Division
         title="Evaluering"
@@ -113,7 +113,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="evaluering.ntnu@vektorprogrammet.no"
         numberOfMembers={5}
         buttonName="Les mer"
-        url="trondheim/evaluering"
+        url={href("/team/trondheim/evaluering")}
       />
       <Division
         title="Rekruttering"
@@ -121,7 +121,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="rekruttering.ntnu@vektorprogrammet.no"
         numberOfMembers={11}
         buttonName="Les mer"
-        url="trondheim/rekruttering"
+        url={href("/team/trondheim/rekruttering")}
       />
       <Division
         title="Skolekoordinering"
@@ -129,7 +129,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="skolekoordinering.ntnu@vektorprogrammet.no"
         numberOfMembers={8}
         buttonName="Les mer"
-        url="trondheim/skolekoordinering"
+        url={href("/team/trondheim/skolekoordinering")}
       />
       <Division
         title="Sponsor"
@@ -137,7 +137,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="sponsor.ntnu@vektorprogrammet.no"
         numberOfMembers={6}
         buttonName="Les mer"
-        url="trondheim/sponsor"
+        url={href("/team/trondheim/sponsor")}
       />
       <Division
         title="Økonomi"
@@ -145,7 +145,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="okonomi@vektorprogrammet.no"
         numberOfMembers={9}
         buttonName="Les mer"
-        url="trondheim/okonomi"
+        url={href("/team/trondheim/okonomi")}
       />
       <Division
         title="IT"
@@ -153,7 +153,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="it@vektorprogrammet.no"
         numberOfMembers={10}
         buttonName="Les mer"
-        url="trondheim/IT"
+        url={href("/team/trondheim/it")}
       />
       <Division
         title="Profilering"
@@ -161,7 +161,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
         mail="profilering.ntnu@vektorprogrammet.no"
         numberOfMembers={7}
         buttonName="Les mer"
-        url="trondheim/profilering"
+        url={href("/team/trondheim/profilering")}
       />
     </div>
   );
@@ -180,7 +180,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         mail="nmbu@vektorprogrammet.no"
         numberOfMembers={5}
         buttonName="Les mer"
-        url="aas/styret"
+        url={href("/team/aas/styret")}
       />
       <Division
         title="Sponsor"
@@ -188,7 +188,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         mail="sponsor.nmbu@vektorprogrammet.no"
         numberOfMembers={4}
         buttonName="Les mer"
-        url="aas/sponsor-okonomi"
+        url={href("/team/aas/sponsor-okonomi")}
       />
       <Division
         title="Skolekoordinering"
@@ -196,7 +196,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         mail="skolekoordinering.nmbu@vektorprogrammet.no"
         numberOfMembers={5}
         buttonName="Les mer"
-        url="aas/skolekoordinering"
+        url={href("/team/aas/skolekoordinering")}
       />
       <Division
         title="Evaluering"
@@ -204,7 +204,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         mail="evaluering.nmbu@vektorprogrammet.no"
         numberOfMembers={8}
         buttonName="Les mer"
-        url="aas/evaluering-rekruttering-profilering"
+        url={href("/team/aas/evaluering-rekruttering-profilering")}
       />
       <Division
         title="Sosialt"
@@ -212,7 +212,7 @@ const AasTab = ({ open }: { open: boolean }) => {
         mail="sosialt.nmbu@vektorprogrammet.no"
         numberOfMembers={6}
         buttonName="Les mer"
-        url="aas/sosialt"
+        url={href("/team/aas/sosialt")}
       />
     </div>
   );
@@ -231,7 +231,7 @@ const BergenTab = ({ open }: { open: boolean }) => {
         mail="uib@vektorprogrammet.no"
         numberOfMembers={2}
         buttonName="Les mer"
-        url="bergen/styret"
+        url={href("/team/bergen/styret")}
       />
       <Division
         title="Skolekoordinering"
@@ -239,7 +239,7 @@ const BergenTab = ({ open }: { open: boolean }) => {
         mail="skolekoordinering.uib@vektorprogrammet.no"
         numberOfMembers={2}
         buttonName="Les mer"
-        url="bergen/skolekoordinering"
+        url={href("/team/bergen/skolekoordinering")}
       />
       <Division
         title="Rekruttering"
@@ -247,7 +247,7 @@ const BergenTab = ({ open }: { open: boolean }) => {
         mail="rekruttering.uib@vektorprogrammet.no"
         numberOfMembers={2}
         buttonName="Les mer"
-        url="bergen/rekruttering"
+        url={href("/team/bergen/rekruttering")}
       />
     </div>
   );
@@ -310,7 +310,7 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
         <br />
         <NavLink
           type="button"
-          to="/team/hovedstyret"
+          to={href("/team/hovedstyret")}
           className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 transition duration-300 hover:border-transparent hover:bg-blue-500 hover:text-white dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600"
         >
           Les mer om hovedstyret
@@ -379,14 +379,14 @@ const Division = ({
   mail: string;
   numberOfMembers: number;
   buttonName: string;
-  url: string;
+  url: To;
 }) => {
   const chosenStyle = title === "Styret" ? "w-64" : "w-64";
 
   return (
     <NavLink
       className={`flex h-48 flex-col justify-between rounded-md bg-vektor-light-blue shadow-md dark:bg-gray-600 dark:text-white ${chosenStyle}`}
-      to={`/team/${url}`}
+      to={url}
     >
       <div className="h-20 content-center rounded-t-md bg-vektor-blue dark:bg-vektor-darblue">
         <h1 className="text-center font-medium text-lg text-vektor-darblue dark:text-white">
@@ -419,7 +419,7 @@ const Division = ({
           variant="green"
           asChild
         >
-          <Link to={`/team/${url}`}>{buttonName}</Link>
+          <Link to={url}>{buttonName}</Link>
         </Button>
       </div>
     </NavLink>

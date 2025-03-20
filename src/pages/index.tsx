@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import CountUp from "react-countup";
-import { Link } from "react-router";
+import { Link, type To, href } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
 import { Button } from "~/components/ui/button";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
@@ -66,7 +66,7 @@ interface MainPageProps {
   title: string;
   text: string;
   route: {
-    pathname: string;
+    path: To;
     text: string;
   };
 }
@@ -77,7 +77,7 @@ const cards: Array<MainPageProps> = [
     title: "Assistenter",
     text: "Over 2218 studenter har hatt et verv som vektorassistent i Vektorprogrammet",
     route: {
-      pathname: "/assistenter",
+      path: href("/assistenter"),
       text: "Les mer om assistenter",
     },
   },
@@ -86,7 +86,7 @@ const cards: Array<MainPageProps> = [
     title: "I team",
     text: "Over 608 studenter har hatt et verv i et av Vektorprogrammets mange team",
     route: {
-      pathname: "/team",
+      path: href("/team"),
       text: "Les mer om verv i team",
     },
   },
@@ -150,7 +150,7 @@ export default function mainPage() {
             <p className="max-w-80 text-sm md:max-w-96 md:text-xl">{text}</p>
             <div>
               <Link
-                to={route.pathname}
+                to={route.path}
                 className={buttonVariants({ variant: "green" })}
               >
                 {route.text}

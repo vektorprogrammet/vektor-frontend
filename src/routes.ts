@@ -5,15 +5,16 @@ import {
   prefix,
   route,
 } from "@react-router/dev/routes";
+import { href } from "react-router";
 
 export const navRoutes = [
-  { path: "", name: "Hjem" },
-  { path: "om-oss", name: "Om oss" },
-  { path: "assistenter", name: "Assistenter" },
-  { path: "team", name: "Team" },
-  { path: "foreldre", name: "Foreldre" },
-  { path: "skoler", name: "Skoler" },
-  { path: "kontakt", name: "Kontakt" },
+  { path: href("/"), name: "Hjem" },
+  { path: href("/om-oss"), name: "Om oss" },
+  { path: href("/assistenter"), name: "Assistenter" },
+  { path: href("/team"), name: "Team" },
+  { path: href("/foreldre"), name: "Foreldre" },
+  { path: href("/skoler"), name: "Skoler" },
+  { path: href("/kontakt"), name: "Kontakt" },
   // { path: "/staging", element: <ServerOverview />, name: "Staging" },
 ];
 
