@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,7 +42,7 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
     return (
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild className="relative mb-4 flex flex-row">
-          <button
+          <Button
             className="flex h-8 w-36 cursor-default items-center justify-between rounded-md bg-vektor-darkblue px-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
             type="button"
@@ -51,7 +52,7 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
                 "Select Tab"}
               <ChevronDown className="ml-2" />
             </div>
-          </button>
+          </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="m-1 w-full rounded-md bg-white shadow-sm">
           {divisions.map((data) => {
@@ -89,16 +90,16 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
             : "bg-transparent hover:bg-vektor-light-blue dark:text-white";
         return (
           <div key={data.name}>
-            <button
+            <Button
               type="button"
-              className={`btn btn-sm my-1 w-32 rounded-full border-none shadow-none ${chosenStyle}`}
+              className={`my-1 w-32 rounded-full border-none text-black shadow-none ${chosenStyle}`}
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(data.number);
               }}
             >
               {data.name}
-            </button>
+            </Button>
           </div>
         );
       })}
