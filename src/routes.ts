@@ -1,10 +1,5 @@
-import {
-  type RouteConfig,
-  index,
-  layout,
-  prefix,
-  route,
-} from "@react-router/dev/routes";
+import type { RouteConfig } from "@react-router/dev/routes";
+import { flatRoutes } from "@react-router/fs-routes";
 import { href } from "react-router";
 
 export const navRoutes = [
@@ -19,7 +14,9 @@ export const navRoutes = [
 ];
 
 // biome-ignore lint/style/noDefaultExport: Routes configuration require default export https://reactrouter.com/start/framework/routing
-export default [
+export default flatRoutes() satisfies RouteConfig;
+
+/* export default [
   layout("pages/layout.tsx", [
     index("pages/index.tsx"),
     route("om-oss", "pages/om-oss.tsx"),
@@ -64,4 +61,4 @@ export default [
     // personal pages
     route("soknader", "pages/soknader.tsx"),
   ]),
-] satisfies RouteConfig;
+] satisfies RouteConfig; */

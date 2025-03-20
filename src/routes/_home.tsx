@@ -14,8 +14,8 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "~/components/ui/drawer";
+import "~/home.css";
 import { navRoutes } from "~/routes";
-import "./layout.css";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
