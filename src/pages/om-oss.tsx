@@ -1,12 +1,12 @@
-import getContent from "@/api/OmOss";
-import { Divider } from "@/components/Divider";
-import { TextPictureParagraph } from "@/components/TextPictureParagraph";
+import { getOmOss } from "@/api/om-oss";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Divider } from "~/components/divider";
+import { TextPictureParagraph } from "~/components/text-picture-paragraph";
 
 interface AccordionType {
   title: string;
@@ -86,11 +86,11 @@ const teamAccordions: Array<AccordionType> = [
 ];
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
-export default function OmOss () {
+export default function OmOss() {
   const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
-    getContent();
+    getOmOss();
   const accordionSection = (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex w-full flex-col items-center">
       <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
         Assistent
       </h2>
@@ -107,7 +107,7 @@ export default function OmOss () {
         ))}
       </Accordion>
       <Divider />
-      <h2 className="text-2xl text-vektor-DARKblue mb-3 dark:text-gray-200">
+      <h2 className="mb-3 text-2xl text-vektor-DARKblue dark:text-gray-200">
         Team
       </h2>
       <Accordion type="single" collapsible className="w-full">
@@ -126,9 +126,9 @@ export default function OmOss () {
   );
 
   return (
-    <div className="flex flex-col self-center max-w-4xl p-5 mt-20 mb-20 gap-10 md:gap-28 dark:text-text-dark items-center">
-      <div className="flex flex-col max-w-full gap-3 md:gap-5">
-        <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+    <div className="mt-20 mb-20 flex max-w-4xl flex-col items-center gap-10 self-center p-5 md:gap-28 dark:text-text-dark">
+      <div className="flex max-w-full flex-col gap-3 md:gap-5">
+        <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           {title}
         </h1>
         <p className="max-w-3xl text-md md:text-lg">{ingress}</p>
@@ -143,8 +143,8 @@ export default function OmOss () {
           pictureOnLeft={index % 2 === 0}
         />
       ))}
-      <div className="flex flex-col w-full gap-3 md:gap-5">
-        <h1 className="text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+      <div className="flex w-full flex-col gap-3 md:gap-5">
+        <h1 className="text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           {bottomHeader}
         </h1>
         <p className="text-md md:text-lg">{bottomText}</p>
@@ -155,12 +155,12 @@ export default function OmOss () {
         />
         <Divider />
       </div>
-      <div className="flex flex-col w-full gap-10">
-        <h1 className="w-full text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+      <div className="flex w-full flex-col gap-10">
+        <h1 className="w-full text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           Ofte stilte spørsmål og svar
         </h1>
         {accordionSection}
       </div>
     </div>
   );
-};
+}

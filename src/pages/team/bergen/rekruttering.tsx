@@ -1,8 +1,9 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Rekruttering = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Rekruttering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Rekruttering"
         mail="Rekruttering.uib@vektorprogrammet.no"
@@ -64,7 +65,7 @@ const Rekruttering = () => {
           },
         ]}
       />
-      <div className="font-sans text-lg text-black text-left m-5 mt-20">
+      <div className="m-5 mt-20 text-left font-sans text-black text-lg">
         I rekrutteringsteamet har vi ansvaret for å skaffe nye og gode
         vektorassistenter. Hovedoppgavene som medlem av rekrutteringsteamet
         består av å stå på stand, bleste i forelesninger og intervjue nye
@@ -73,6 +74,4 @@ const Rekruttering = () => {
       </div>
     </div>
   );
-};
-
-export default Rekruttering;
+}

@@ -4,24 +4,26 @@
 name: Quality Control
 
 env:
-  NODE_VERSION: 20.12.2
+  NODE_VERSION: 22
+  BIOME_VERSION: 1.9.4
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  merge_group:
+    branches: [main]
 
 jobs:
   build:
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup PNPM
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+        uses: pnpm/action-setup@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -38,6 +40,7 @@ jobs:
           path: build
 
   code-quality:
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -45,17 +48,18 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
         with:
-          version: 1.7.1
+          version: ${{ env.BIOME_VERSION }}
       - name: Run Biome
         run: biome ci .
 
   vitest_tests:
+    # Disabled until we have a test suite
+    if: false
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -66,13 +70,14 @@ jobs:
           pnpm test:vitest
 
   e2e-tests:
+    # Disabled until we have a test suite
+    if: false
+    permissions: read-all
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}

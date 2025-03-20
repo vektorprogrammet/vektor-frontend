@@ -1,4 +1,10 @@
 {
   "codetogether.virtualCursorJoin": "sharedVirtualCursor",
-  "cSpell.words": ["Vektorprogrammet"]
+  "cSpell.words": ["Vektorprogrammet"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports.ts": "always",
+    "source.organizeImports": "always"
+  },
 }

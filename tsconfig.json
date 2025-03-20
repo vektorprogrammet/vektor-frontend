@@ -16,16 +16,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
     "baseUrl": ".",
+    "rootDirs": [".", "./.react-router/types"],
     "paths": {
       "~/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/ui/*": ["./src/components/ui/*"],
-      "@/pages/*": ["./src/pages/*"],
       "@/api/*": ["./src/api/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", ".react-router/types/**/*"]
 }

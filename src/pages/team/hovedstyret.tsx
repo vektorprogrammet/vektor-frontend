@@ -1,8 +1,9 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Hovedstyret = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Hovedstyret() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Hovedstyret"
         mail="hovedstyret@vektorprogrammet.no"
@@ -53,7 +54,7 @@ const Hovedstyret = () => {
         ]}
       />
 
-      <div className="font-sans text-lg text-black text-left m-5 mt-8">
+      <div className="m-5 mt-8 text-left font-sans text-black text-lg">
         Styret består av åtte stillinger: Leder, nestleder,
         ekspansjonsansvarlig, IT-ansvarlig, profileringsansvarlig,
         sponsoransvarlig, økonomiansvarlig og mentor. Samlet har styret varierte
@@ -61,7 +62,7 @@ const Hovedstyret = () => {
         utarbeiding av budsjett og oppfølging rundt organisasjonens daglige
         drift.
       </div>
-      <div className="font-sans text-lg text-black text-left m-5 mt-8">
+      <div className="m-5 mt-8 text-left font-sans text-black text-lg">
         Hovedstyret har ansvar for alle regionene, og samarbeider tett med
         lokalstyrene. Ekspansjonsansvarling har hovedansvar for å følge opp
         regionene, i tillegg innebærer rollen arbeid med utvidelse av
@@ -75,7 +76,7 @@ const Hovedstyret = () => {
         organisasjonen, og har ansvar for å bidra med sin erfaring for å hjelpe
         resten av Hovedstyret der det er behov.
       </div>
-      <div className="font-sans text-lg text-black text-left m-5 mt-8">
+      <div className="m-5 mt-8 text-left font-sans text-black text-lg">
         Nytt hovedstyre blir valgt hvert år på årsmøtet som avholdes i april.
         Alle medlemmer i Vektorprogrammet har mulighet til å stille til alle
         stillingene utenom mentor, hvor man må ha hatt en tidligere rolle i
@@ -83,6 +84,4 @@ const Hovedstyret = () => {
       </div>
     </div>
   );
-};
-
-export default Hovedstyret;
+}

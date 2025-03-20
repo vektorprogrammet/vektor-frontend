@@ -1,3 +1,4 @@
+import { getKontakt } from "@/api/kontakt";
 import { Label } from "@radix-ui/react-label";
 import { useEffect, useState } from "react";
 import { Tabs } from "~/components/Tabs";
@@ -5,23 +6,11 @@ import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Textarea } from "~/components/ui/textarea";
 
-const kontaktInfo = {
-  title: "Kontakt oss",
-  card: {
-    title: "Organisasjonen",
-    text: "Vektorprogrammet er en stor organisasjon med assistenter i 4 norske byer. Under kan du kontakte vektorprogrammet i nærmeste by eller hovedstyret for generelle henvendelser.",
-    image: {
-      url: new URL(
-        "https://vektorprogrammet.no/images/organizationstructure.png",
-      ),
-      alt: "Organisasjonsstruktur",
-    },
-  },
-};
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Kontakt() {
+  const kontaktInfo = getKontakt();
   return (
-    <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center">
+    <div className="mx-auto mt-10 mb-20 flex max-w-6xl flex-col items-center">
       <Card
         key={kontaktInfo.card.title}
         title={kontaktInfo.card.title}
@@ -29,7 +18,7 @@ export default function Kontakt() {
         alt={kontaktInfo.card.image.alt}
         imgPath={kontaktInfo.card.image.url}
       />
-      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10 dark:text-gray-200">
+      <h1 className="mx-auto mt-10 mb-10 max-w-lg text-center font-bold text-5xl text-gray-600 dark:text-gray-200">
         {kontaktInfo.title}
       </h1>
       <KontaktTabs
@@ -42,7 +31,7 @@ export default function Kontakt() {
       />
     </div>
   );
-};
+}
 
 /* Card */
 
@@ -55,19 +44,19 @@ interface Props {
 
 const Card = ({ title, text, imgPath, alt }: Props) => {
   return (
-    <div className="flex w-full mx-auto justify-around flex-wrap">
-      <div className="max-w-6xl mt-5 flex flex-col">
-        <h1 className=" text-gray-600 text-4xl font-bold mx-3 dark:text-gray-200">
+    <div className="mx-auto flex w-full flex-wrap justify-around">
+      <div className="mt-5 flex max-w-6xl flex-col">
+        <h1 className=" mx-3 font-bold text-4xl text-gray-600 dark:text-gray-200">
           {title}
         </h1>
-        <p className="max-w-md mt-4 mb-20 text-xl mx-3 dark:text-gray-300">
+        <p className="mx-3 mt-4 mb-20 max-w-md text-xl dark:text-gray-300">
           {text}
         </p>
       </div>
       <img
         src={imgPath.href}
         alt={alt}
-        className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg mt-5 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-16 mx-auto mr-auto ml-auto dark:invert dark:saturate-0"
+        className="mx-auto mt-5 mr-auto ml-auto w-full max-w-xs rounded-lg sm:mt-8 sm:max-w-sm md:mt-10 md:max-w-md lg:mt-12 lg:max-w-lg xl:mt-16 xl:max-w-xl dark:invert dark:saturate-0"
       />
     </div>
   );
@@ -233,15 +222,15 @@ const KontaktTabs = ({ divisions }: KontaktTabProps) => {
     sessionStorage.setItem("kontaktTab", openTab.toString());
   }, [openTab]);
   return (
-    <div className="flex flex-col md:flex-row items-start md:max-w-6xl md:mb-auto mb-6">
-      <div className="w-1/5 ml-3">
+    <div className="mb-6 flex flex-col items-start md:mb-auto md:max-w-6xl md:flex-row">
+      <div className="ml-3 w-1/5">
         <Tabs
           divisions={divisions}
           tabstate={openTab}
           setOpenTab={setOpenTab}
         />
       </div>
-      <div className="flex flex-col w-full items-start overflow-y-scroll h-[500px] break-words mb-6 rounded-md px-5 py-5 mx-auto xl:ml-20 lg:ml-16 sm:w-[440px] md:w-[720px] lg:w-[820px] xl:w-[1100px]">
+      <div className="mx-auto mb-6 flex h-[500px] w-full flex-col items-start overflow-y-scroll break-words rounded-md px-5 py-5 sm:w-[440px] md:w-[720px] lg:ml-16 lg:w-[820px] xl:ml-20 xl:w-[1100px]">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
@@ -283,7 +272,7 @@ const Division = ({
 }: DivisionProps) => {
   return (
     <>
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 sm:p-6 pd:2">
+      <div className="pd:2 grid grid-cols-1 gap-10 sm:p-6 md:grid-cols-2">
         <div>
           <div className="font-bold text-2xl text-blue-800 dark:text-neutral-200">
             {name}
@@ -292,7 +281,7 @@ const Division = ({
             <div className="text-base dark:text-neutral-200">{subtitle}</div>
           )}
           {description && <div className="text-base">{description}</div>}
-          <div className="flex space-x-1 mt-3 md:mt-8">
+          <div className="mt-3 flex space-x-1 md:mt-8">
             <svg
               className="h-4 w-4 text-balck"
               width="24"
@@ -309,7 +298,7 @@ const Division = ({
               <polyline points="3 7 12 13 21 7" />
             </svg>
             <a
-              className="truncate block text-sm hover:underline"
+              className="block truncate text-sm hover:underline"
               href={`mailto:${mail}`}
             >
               {mail}
@@ -340,7 +329,7 @@ const Division = ({
             </div>
           )}
           {members && (
-            <div className="whitespace-nowrap flex space-x-1 text-sm">
+            <div className="flex space-x-1 whitespace-nowrap text-sm">
               <svg
                 className="h-4 w-4 text-black"
                 fill="none"
@@ -368,13 +357,13 @@ const Division = ({
         <div className="divide-y divide-solid">
           {contactInfos.map((data, id) => {
             return (
-              <div className="py-2 mt-5" key={data.name}>
+              <div className="mt-5 py-2" key={data.name}>
                 <div className="text-blue-800 dark:text-gray-200">
                   {contactInfos[id].name}
                 </div>
                 {contactInfos[id].title && <div>{contactInfos[id].title}</div>}
                 <a
-                  className="text-sm hover:underline truncate block"
+                  className="block truncate text-sm hover:underline"
                   href={`mailto:${contactInfos[id].mail}`}
                 >
                   {contactInfos[id].mail}
@@ -385,8 +374,8 @@ const Division = ({
         </div>
       </div>
       {contact && (
-        <div className="dark:bg-neutral-800 max-w-[600px]">
-          <div className="font-bold text-2xl text-blue-800 text-center pt-10 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
+        <div className="max-w-[600px] dark:bg-neutral-800">
+          <div className="pt-10 text-center font-bold text-2xl text-blue-800 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
           <form>
             <div className="mb-6 mt-7 grid xl:grid-cols-2 xl:gap-6">
               <div>

@@ -1,4 +1,4 @@
-export interface AssistentMotivationCard {
+interface AssistentMotivationCard {
   title: string;
   text: string;
   image: {
@@ -7,7 +7,7 @@ export interface AssistentMotivationCard {
   };
 }
 
-export interface ForAssistenterContent {
+interface ForAssistenterContent {
   title: string;
   ingress: string;
   cards: Array<AssistentMotivationCard>;
@@ -15,7 +15,8 @@ export interface ForAssistenterContent {
 
 // Lag et card for elementene på forrige side
 
-export default (): ForAssistenterContent => {
+// TODO: This data should be fetched from backend later
+export function getAssistenter(): ForAssistenterContent {
   return {
     title: "Assistenter",
     ingress: `Vektorassistent er et frivillig verv der du reiser til en ungdomsskole
@@ -62,4 +63,4 @@ export default (): ForAssistenterContent => {
       },
     ],
   };
-};
+}

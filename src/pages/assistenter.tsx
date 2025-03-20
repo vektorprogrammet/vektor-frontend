@@ -1,4 +1,4 @@
-import getContent from "@/api/Assistenter";
+import { getAssistenter } from "@/api/assistenter";
 import { useRef, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -19,11 +19,11 @@ const Cities = {
   trondheim: "Trondheim",
   aas: "Ås",
 } as const;
-type City = typeof Cities[keyof typeof Cities];
+type City = (typeof Cities)[keyof typeof Cities];
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Assistenter() {
-  const { title, ingress, cards } = getContent();
+  const { title, ingress, cards } = getAssistenter();
 
   const cardElement = useRef<HTMLDivElement>(null);
   const scrollToCard = () =>
@@ -33,36 +33,39 @@ export default function Assistenter() {
     });
 
   return (
-    <div className="leading-relaxed font-sans flex flex-col justify-center items-center dark:text-text-dark mt-10">
-      <h1 className="font-sans max-w-2xl mt-10 text-vektor-DARKblue text-4xl text-center font-bold mx-3 dark:text-text-dark">
+    <div className="mt-10 flex flex-col items-center justify-center font-sans leading-relaxed dark:text-text-dark">
+      <h1 className="mx-3 mt-10 max-w-2xl text-center font-bold font-sans text-4xl text-vektor-DARKblue dark:text-text-dark">
         {title}
       </h1>
-      <div className="mt-8 mb-20 text-xl w-3/5">{ingress}</div>
-      <div className="space-y-20 p-10 w-full text-center mb-14 border-secondary">
-        <div className="conte mx-8 bg-center font-sans font-bold text-secondary dark:text-text-dark">
+      <div className="mt-8 mb-20 w-3/5 text-xl">{ingress}</div>
+      <div className="mb-14 w-full space-y-20 border-secondary p-10 text-center">
+        <div className="conte mx-8 bg-center font-bold font-sans text-secondary dark:text-text-dark">
           Disse avdelingene har opptak nå:
         </div>
         <Button variant="green" onClick={scrollToCard}>
               Scroll ned for å søke!
         </Button>
       </div>
-      <div className="info-background w-full pt-72 pb-72 mb-16 flex flex-col items-center space-y-10">
-        <div className="w-fit text-accent font-bold text-3xl">
+      <div className="info-background mb-16 flex w-full flex-col items-center space-y-10 pt-72 pb-72">
+        <div className="w-fit font-bold text-3xl text-accent">
           Hvorfor bli assistent?
         </div>
         <div className="flex justify-evenly space-x-10 text-accent">
           {cards.map(({ title, text, image }) => (
-            <div key={title} className="leading-relaxed flex w-full mx-auto justify-between flex-wrap">
+            <div
+              key={title}
+              className="mx-auto flex w-full flex-wrap justify-between leading-relaxed"
+            >
               <div className="max-w-6xl ">
                 <img
                   src={image.url.href}
                   alt={image.alt}
-                  className="h-24 mt-6 rounded-lg mx-auto mb-2"
+                  className="mx-auto mt-6 mb-2 h-24 rounded-lg"
                 />
-                <div className="font-sans font-bold text-xl text-primary text-center p-1">
+                <div className="p-1 text-center font-bold font-sans text-primary text-xl">
                   {title}
                 </div>
-                <div className="font-sans text-center my-1 dark:text-text-dark">
+                <div className="my-1 text-center font-sans dark:text-text-dark">
                   {text}
                 </div>
               </div>
@@ -74,7 +77,7 @@ export default function Assistenter() {
         className="mb-16 flex flex-col items-center dark:text-text-dark"
         id="tc"
       >
-        <div className="my-2 mb-2 font-bold text-2xl text-secondary w-fit dark:text-text-dark">
+        <div className="my-2 mb-2 w-fit font-bold text-2xl text-secondary dark:text-text-dark">
           Lærerassistent i matematikk
         </div>
         <div className="mb-4 w-3/5 dark:text-text-dark">
@@ -89,7 +92,7 @@ export default function Assistenter() {
 
         <img
           src="https://vektorprogrammet.no/images/teacher.png?v=1598900041"
-          className="h-80 mt-6 rounded-lg mx-auto"
+          className="mx-auto mt-6 h-80 rounded-lg"
           alt="vektorbilde"
         />
         <div className="mt-4 w-3/5 dark:text-text-dark">
@@ -103,7 +106,7 @@ export default function Assistenter() {
       </div>
 
       <div className="mb-16 flex flex-col items-center dark:text-text-dark">
-        <div className="font-bold text-2xl my-2 mb-3 text-vektor-darblue text-center dark:text-text-dark">
+        <div className="my-2 mb-3 text-center font-bold text-2xl text-vektor-darblue dark:text-text-dark">
           Arbeidsoppgaver
         </div>
 
@@ -118,13 +121,13 @@ export default function Assistenter() {
           blir satt stor pris på av både barn og lærere!
         </div>
       </div>
-      <div className="text-vektor-DARKblue font-bold my-8 text-2xl text-center dark:text-text-dark">
+      <div className="my-8 text-center font-bold text-2xl text-vektor-DARKblue dark:text-text-dark">
         Hvordan blir jeg Vektorassistent?
       </div>
       <div className="flex flex-row space-x-16 dark:text-text-dark">
-        <div className="flex-1 ...">
-          <ul className="leading-loose whitespace-normal md:whitespace-pre list-disc ">
-            <div className="text-vektor-darblue font-bold my-3 text-lg dark:text-text-dark">
+        <div className="flex-1">
+          <ul className="list-disc whitespace-normal leading-loose md:whitespace-pre ">
+            <div className="my-3 font-bold text-lg text-vektor-darblue dark:text-text-dark">
               Opptakskrav
             </div>
 
@@ -137,11 +140,11 @@ export default function Assistenter() {
           </ul>
         </div>
 
-        <div className="flex-2 ...">
-          <div className="font-bold text-vektor-DARKblue my-3 text-lg dark:text-text-dark">
+        <div className="flex-2">
+          <div className="my-3 font-bold text-lg text-vektor-DARKblue dark:text-text-dark">
             Opptaksprosessen
           </div>
-          <ol className="whitespace-normal md:whitespace-pre list-decimal leading-loose ">
+          <ol className="list-decimal whitespace-normal leading-loose md:whitespace-pre">
             <li>
               Vektorprogrammet tar opp nye assistenter i starten av hvert
               semester
@@ -159,7 +162,7 @@ export default function Assistenter() {
         </div>
       </div>
 
-      <div className="font-bold text-vektor-DARKblue text-3xl mt-16 mb-8 dark:text-text-dark">
+      <div className="mt-16 mb-8 font-bold text-3xl text-vektor-DARKblue dark:text-text-dark">
         Søk nå!
       </div>
 
@@ -191,10 +194,9 @@ function Citycard() {
     return (
       <button
         type="button"
-        className={`tab tab-lifted w-1/3 text-base font-bold border-white dark:hover:bg-neutral-700 ${chosenStyle}`}
+        className={`tab tab-lifted w-1/3 border-white font-bold text-base dark:hover:bg-neutral-700 ${chosenStyle}`}
         onClick={onTabClick}
         data-toggle="tab"
-        role="tablist"
       >
         {city}
       </button>
@@ -278,10 +280,10 @@ function Citycard() {
   );
 }
 
-function NoApplyCard ({ cities }: { cities: City}) {
+function NoApplyCard({ cities }: { cities: City }) {
   return (
     <form>
-      <h1 className="font-bold text-xl my-8 text-vektor-darblue"> {cities}</h1>
+      <h1 className="my-8 font-bold text-vektor-darblue text-xl"> {cities}</h1>
 
       <div className="block mt-3">
         <Input className="inline-flex items-center form-input border-solid border-2 border-grey">E-post
@@ -310,10 +312,10 @@ function NoApplyCard ({ cities }: { cities: City}) {
 
       <button
         type="submit"
-        className="bg-vektor-darkblue hover:bg-vektor-blue text-white font-bold py-2 px-4 border border-blue-700 m-8 rounded"
+        className="m-8 rounded border border-blue-700 bg-vektor-darkblue px-4 py-2 font-bold text-white hover:bg-vektor-blue"
       >
         Send
       </button>
     </form>
   );
-};
+}

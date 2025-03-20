@@ -26,8 +26,16 @@
         "noSvgWithoutTitle": "warn"
       },
       "correctness": {
-        "noNodejsModules": "off",
         "useImportExtensions": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "error",
+          "fix": "safe",
+          "options": {
+            "functions": ["cn"]
+          }
+        }
       },
       "performance": {
         "useTopLevelRegex": "off"
@@ -50,7 +58,13 @@
         "useShorthandArrayType": "off"
       },
       "suspicious": {
-        "noReactSpecificProps": "off"
+        "noReactSpecificProps": "off",
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["assert", "error", "info", "warn"]
+          }
+        }
       }
     }
   },

@@ -1,13 +1,14 @@
-import type { TextPictureParagraphAPIProps } from "@/components/TextPictureParagraph";
+import type { TextPictureParagraphApiProps } from "~/components/text-picture-paragraph";
 
-export interface ForForeldreContent {
+interface ForeldreContent {
   title: string;
   ingress: string;
-  cards: Array<TextPictureParagraphAPIProps>;
+  cards: Array<TextPictureParagraphApiProps>;
   bottomText: string;
 }
 
-export default (): ForForeldreContent => {
+// TODO: This data should be fetched from backend later
+export function getForeldre(): ForeldreContent {
   return {
     title: "Informasjon for foreldre",
     ingress:
@@ -66,4 +67,4 @@ export default (): ForForeldreContent => {
     bottomText:
       "Påmeldingsskjemaet er under konstruksjon! Ta kontakt med skolekoordineringsteamet for påmelding til eventuelle foreldrekurs.",
   };
-};
+}

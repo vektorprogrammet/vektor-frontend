@@ -1,8 +1,9 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Skolekoordinering = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Skolekoordinering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Skolekoordinering"
         mail="skolekoordinering.uib@vektorprogrammet.no"
@@ -35,7 +36,7 @@ const Skolekoordinering = () => {
         ]}
       />
 
-      <div className="font-sans text-lg text-black text-left m-5 mt-20">
+      <div className="m-5 mt-20 text-left font-sans text-black text-lg">
         Skolekoordineringsteamet har ansvaret for å fordele vektorassistentene
         på samarbeidsskolene våre, og opprettholde kontakten med disse
         semesteret gjennom. I praksis vil det si å være tilgjengelig på mail,
@@ -46,6 +47,4 @@ const Skolekoordinering = () => {
       </div>
     </div>
   );
-};
-
-export default Skolekoordinering;
+}

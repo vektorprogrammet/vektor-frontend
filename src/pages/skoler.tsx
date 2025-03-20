@@ -9,9 +9,9 @@ export default function ForSkoler() {
 
   return (
     <div>
-      <div className="leading-relaxed font-sans flex flex-col justify-center items-center dark:text-text-dark mt-10 gap-3 md:gap-5 mx-5">
+      <div className="mx-5 mt-10 flex flex-col items-center justify-center gap-3 font-sans leading-relaxed md:gap-5 dark:text-text-dark">
         <div className="flex flex-col gap-3 md:gap-5">
-          <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
             Vektorassistenter i skolen
           </h1>
           <div className="max-w-3xl text-md md:text-lg">
@@ -34,7 +34,7 @@ export default function ForSkoler() {
             <img
               src="/images/teacher2.png"
               alt="Teacher"
-              className="justify-center md:justify-between items-center gap-5 md:gap-14 flex-wrap md:flex-nowrap w-1/2 mx-auto"
+              className="mx-auto w-1/2 flex-wrap items-center justify-center gap-5 md:flex-nowrap md:justify-between md:gap-14"
             />
             <br />
             <p>
@@ -63,16 +63,16 @@ export default function ForSkoler() {
           </div>
         </div>
       </div>
-      <div className="info-background py-48 flex flex-col items-center p-5 mb-20 mx-auto gap-5 md:gap-5 text-vektor-bg">
-        <h3 className="max-w-3xl text-vektor-bg text-2xl md:text-4xl text-center font-bold">
+      <div className="info-background mx-auto mb-20 flex flex-col items-center gap-5 p-5 py-48 text-vektor-bg md:gap-5">
+        <h3 className="max-w-3xl text-center font-bold text-2xl text-vektor-bg md:text-4xl">
           Enkelt å bruke assistenter i undervisningen
         </h3>
-        <p className="max-w-3xl md:max-w-2xl text-md md:text-xl mt-5">
+        <p className="mt-5 max-w-3xl text-md md:max-w-2xl md:text-xl">
           Assistentene kan brukes som hjelp i undervisningen. Her er noen
           forslag vi har gode erfaringer med:
         </p>
-        <div className="md:max-w-2xl md:w-full">
-          <ul className="text-md md:text-xl list-disc ml-5">
+        <div className="md:w-full md:max-w-2xl">
+          <ul className="ml-5 list-disc text-md md:text-xl">
             <li className="py-1">Hjelpe til med oppgaveløsing i klasserom</li>
             <li className="py-1">
               Utfordre de sterkeste elevene med vanskeligere oppgaver
@@ -84,9 +84,9 @@ export default function ForSkoler() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-center p-5 mt-40 mb-20 mx-auto gap-10 md:gap-10 dark:text-text-dark max-w-80 md:max-w-none">
+      <div className="mx-auto mt-40 mb-20 flex max-w-80 flex-col items-center gap-10 p-5 md:max-w-none md:gap-10 dark:text-text-dark">
         <div className="flex flex-col gap-3 md:gap-5">
-          <h1 className="max-w-3xl text-vektor-DARKblue text-2xl md:text-4xl text-center font-bold dark:text-text-dark">
+          <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
             Søk om å få assistenter til din skole
           </h1>
           <p className="max-w-3xl text-md md:text-lg">
@@ -123,10 +123,10 @@ export default function ForSkoler() {
           })}
         </div>
         <div>
-          <h2 className="max-w-3xl text-vektor-DARKblue text-xl md:text-2xl text-center font-bold dark:text-text-dark">
+          <h2 className="max-w-3xl text-center font-bold text-vektor-DARKblue text-xl md:text-2xl dark:text-text-dark">
             Har ikke Vektorprogrammet etablert seg i din by enda?
           </h2>
-          <p className="max-w-3xl text-md md:text-lg my-4 md:text-center">
+          <p className="my-4 max-w-3xl text-md md:text-center md:text-lg">
             Ta kontakt med <a href="#">hovedstyret</a> for å melde din
             interesse!
           </p>

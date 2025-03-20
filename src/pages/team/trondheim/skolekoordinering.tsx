@@ -1,8 +1,9 @@
-import TeamTemplate from "../TeamTemplate";
+import { TeamTemplate } from "@/components/team-template";
 
-const Skolekoordinering = () => {
+// biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
+export default function Skolekoordinering() {
   return (
-    <div className="max-w-screen-lg mt-5 mb-20 mx-auto flex flex-col">
+    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col">
       <TeamTemplate
         name="Skolekoordinering"
         mail="skolekoordinering.ntnu@vektorprogrammet.no"
@@ -59,18 +60,18 @@ const Skolekoordinering = () => {
         ]}
       />
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-20 mb-7">
+      <div className="mt-20 mb-7 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Arbeidet vårt
       </div>
 
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/IMG_2564%203.jpg"
-          className="md:max-w-2xl h-auto content-center mx-auto m-3"
+          className="m-3 mx-auto h-auto content-center md:max-w-2xl"
         />
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-10">
+      <div className="mx-5 mt-10 text-start font-sans text-black text-lg">
         Skolekoordineringsteamet har ansvaret for å fordele vektorassistentene
         på samarbeidsskolene våre. Der er vi som er bindeleddet mellom
         vektorprogrammet og vektorassistentene, samt vektorprogrammet og skolene
@@ -81,7 +82,7 @@ const Skolekoordinering = () => {
         skolekoordinator.
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-5 mb-10">
+      <div className="mx-5 mt-5 mb-10 text-start font-sans text-black text-lg">
         Én av teamets hovedoppgaver i løpet av hvert semester er å arrangere
         foreldrekurs. I løpet av en til to kvelder får foreldre til
         ungdomsskoleelever en innføring i motivasjon, pedagogikk og matematikk
@@ -95,15 +96,15 @@ const Skolekoordinering = () => {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/211118-170639.png"
-          className="md:max-w-2xl h-auto content-center mx-auto m-3"
+          className="m-3 mx-auto h-auto content-center md:max-w-2xl"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-16 mb-5">
+      <div className="mt-16 mb-5 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Sosialt i skolekoordinering
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-5">
+      <div className="mx-5 mt-5 text-start font-sans text-black text-lg">
         Skolekoordinering har møter hver uke, og alle i teamet er enig om at
         dette er et av ukens høydepunkter. Det er obligatorisk med kake på
         møtene og det er alltid mye latter. Vi holder jevnlig kontakt på slack,
@@ -113,7 +114,7 @@ const Skolekoordinering = () => {
         Vektorprogrammet slik som hyttetur og fester.
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-5 mb-7">
+      <div className="mx-5 mt-5 mb-7 text-start font-sans text-black text-lg">
         Skolekoordinering jobber iherdig for å knytte Vektorprogrammet tettere
         sammen, og derfor arrangerer vi åpent kontor jevnlig gjennom semesteret.
         Her inviteres assistenter og team-medlemmer for et hyggelig avbrekk i
@@ -124,26 +125,26 @@ const Skolekoordinering = () => {
       <div className="m-3">
         <img
           src="https://vektorprogrammet.no/images/team_images/Skolekoordinering/IMG_3596.jpg"
-          className="md:max-w-2xl h-auto content-center mx-auto m-3"
+          className="m-3 mx-auto h-auto content-center md:max-w-2xl"
         />
       </div>
 
-      <div className="font-sans text-3xl text-vektor-darblue text-bold text-center mt-16 mb-4">
+      <div className="mt-16 mb-4 text-center font-sans text-3xl text-bold text-vektor-darblue">
         Opptak
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-5">
+      <div className="mx-5 mt-5 text-start font-sans text-black text-lg">
         Arbeidsmengden som skolekoordinator ligger på rundt 2 timer i uka,
         utenom eksamensperioden - da er det selvfølgelig ingen arbeidsoppgaver,
         kun frivillige sosiale arrangementer.
       </div>
 
-      <div className="font-sans text-lg text-black text-start mx-5 mt-5">
+      <div className="mx-5 mt-5 text-start font-sans text-black text-lg">
         Skolekoordineringsteamet er nå på utkikk etter deg som ønsker å:
       </div>
 
-      <div className="grid md:grid-cols-2 ml-4 mr-4 mt-5 items-center mb-2">
-        <div className="font-sans text-lg text-black place-content-start">
+      <div className="mt-5 mr-4 mb-2 ml-4 grid items-center md:grid-cols-2">
+        <div className="place-content-start font-sans text-black text-lg">
           <ul className="ml-10 list-disc">
             <li>
               Ha ansvar for egne skoler og tilhørende assistenter gjennom
@@ -178,26 +179,24 @@ const Skolekoordinering = () => {
         </div>
 
         <img
-          className="max-h-96 sm:max-w-sm h-auto content-center mx-auto"
+          className="mx-auto h-auto max-h-96 content-center sm:max-w-sm"
           src="/images/team/SkolekoordineringTor.png"
         />
       </div>
 
-      <div className="ml-4 mt-5 place-self-start font-sans text-lg text-black">
+      <div className="mt-5 ml-4 place-self-start font-sans text-black text-lg">
         Sitter du inne med spørsmål, ta mer enn gjerne kontakt med oss på{" "}
         <a
-          className="hover:underline text-vektor-darblue break-all"
+          className="break-all text-vektor-darblue hover:underline"
           href="mailto:skolekoordinering.ntnu@vektorprogrammet.no"
         >
           skolekoordinering.ntnu@vektorprogrammet.no.
         </a>
       </div>
 
-      <div className="font-sans text-lg text-black text-start ml-4 mt-5">
+      <div className="mt-5 ml-4 text-start font-sans text-black text-lg">
         Vi gleder oss til å høre fra deg!
       </div>
     </div>
   );
-};
-
-export default Skolekoordinering;
+}

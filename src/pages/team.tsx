@@ -1,27 +1,14 @@
-import { Tabs } from "@/components/Tabs";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { Button, buttonVariants } from "~/components/ui/button";
-
-const teamInfo = {
-  title: "Våre team",
-  card: {
-    title: "Styre og team",
-    text1:
-      "Vektorprogrammet er en stor organisasjon med assistenter i 4 norske byer. Vi trenger derfor mange frivillige bak kulissene som kan få hjulene til å gå rundt. Uten Vektorprogrammets 15 team hadde dette aldri gått an! ",
-    text2: "Kunne du tenkt deg et team-verv hos oss?",
-    text3: "Les mer om de ulike teamene nedenfor!",
-    image: {
-      url: new URL("https://vektorprogrammet.no/images/departments_map.png"),
-      alt: "Team",
-    },
-  },
-};
+import { getTeam } from "~/api/team";
+import { Tabs } from "~/components/tabs";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Team() {
+  const teamInfo = getTeam();
   return (
-    <div className="max-w-6xl mt-10 mb-20 mx-auto flex flex-col items-center w-full">
+    <div className="mx-auto mt-10 mb-20 flex w-full max-w-6xl flex-col items-center">
       <TeamCard
         key={teamInfo.card.title}
         title={teamInfo.card.title}
@@ -31,7 +18,7 @@ export default function Team() {
         alt={teamInfo.card.image.alt}
         imgPath={teamInfo.card.image.url}
       />
-      <h1 className="max-w-lg text-gray-600 text-5xl text-center font-bold mx-auto mt-10 mb-10 dark:text-gray-200">
+      <h1 className="mx-auto mt-10 mb-10 max-w-lg text-center font-bold text-5xl text-gray-600 dark:text-gray-200">
         {teamInfo.title}
       </h1>
       <TeamTabs
@@ -44,11 +31,18 @@ export default function Team() {
       />
     </div>
   );
-};
+}
 
 /* Team Card */
 
-const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
+const TeamCard = ({
+  title,
+  text1,
+  text2,
+  text3,
+  alt,
+  imgPath,
+}: {
   title: string;
   text1: string;
   text2: string;
@@ -57,12 +51,12 @@ const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
   alt: string;
 }) => {
   return (
-    <div className="flex w-full mx-auto justify-around flex-wrap">
-      <div className="max-w-6xl mt-5 flex flex-col">
-        <h1 className="text-gray-600 text-4xl font-bold mx-3 dark:text-gray-200">
+    <div className="mx-auto flex w-full flex-wrap justify-around">
+      <div className="mt-5 flex max-w-6xl flex-col">
+        <h1 className="mx-3 font-bold text-4xl text-gray-600 dark:text-gray-200">
           {title}
         </h1>
-        <div className="max-w-md mt-4 mb-20 text-xl mx-3 dark:text-gray-300">
+        <div className="mx-3 mt-4 mb-20 max-w-md text-xl dark:text-gray-300">
           <span className="mb-4">{text1}</span>
           {text2}
           <div className="mt-6">
@@ -70,8 +64,8 @@ const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
           </div>
         </div>
       </div>
-      <div className="mt-10 relative">
-        <div className="w-full absolute top-20 overflow-visible">
+      <div className="relative mt-10">
+        <div className="absolute top-20 w-full overflow-visible">
           <svg className="overflow-visible">
             <polyline
               fill="none"
@@ -84,7 +78,7 @@ const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
         <img
           src={imgPath.href}
           alt={alt}
-          className="w-auto max-w-full object-contain mx-auto max-h-80 mr-25"
+          className="mx-auto mr-25 max-h-80 w-auto max-w-full object-contain"
         />
       </div>
     </div>
@@ -92,8 +86,6 @@ const TeamCard = ({ title, text1, text2, text3, alt, imgPath }: {
 };
 
 /* Team Tabs */
-
-
 
 interface DivisionList {
   name: string;
@@ -103,7 +95,7 @@ interface DivisionList {
 const TrondheimTab = ({ open }: { open: boolean }) => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center ${
+      className={`grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3 ${
         open ? "block" : "hidden"
       }`}
     >
@@ -178,7 +170,7 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
 const AasTab = ({ open }: { open: boolean }) => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center ${
+      className={`grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3 ${
         open ? "block" : "hidden"
       }`}
     >
@@ -229,7 +221,7 @@ const AasTab = ({ open }: { open: boolean }) => {
 const BergenTab = ({ open }: { open: boolean }) => {
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center  ${
+      className={`grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3 ${
         open ? "block" : "hidden"
       }`}
     >
@@ -266,10 +258,10 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
     <div
       className={`${
         open ? "block" : "hidden"
-      } flex flex-col md:flex-row md:max-w-2xl md:ml-24 lg:ml-16 xl:ml-auto`}
+      } flex flex-col md:ml-24 md:max-w-2xl md:flex-row lg:ml-16 xl:ml-auto`}
     >
       <div className="flex-1 object-contain">
-        <h1 className="text-gray-600 text-2xl sm:text-4xl font-bold dark:text-gray-200">
+        <h1 className="font-bold text-2xl text-gray-600 sm:text-4xl dark:text-gray-200">
           Hovedstyret
         </h1>
         <p className="mt-4 mb-4 text-md sm:text-lg dark:text-gray-300">
@@ -293,13 +285,13 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
             <polyline points="3 7 12 13 21 7" />
           </svg>
           <a
-            className="text-sm truncate hover:underline dark:text-white"
+            className="truncate text-sm hover:underline dark:text-white"
             href="mailto:hovedstyret@vektorprogrammet.no"
           >
             hovedstyret@vektorprogrammet.no
           </a>
         </div>
-        <div className="flex items-center space-x-1 mt-2">
+        <div className="mt-2 flex items-center space-x-1">
           <svg
             className="h-4 w-4 text-black dark:text-white"
             fill="none"
@@ -319,12 +311,12 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
         <NavLink
           type="button"
           to="/team/hovedstyret"
-          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600 transition duration-300"
+          className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 transition duration-300 hover:border-transparent hover:bg-blue-500 hover:text-white dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600"
         >
           Les mer om hovedstyret
         </NavLink>
       </div>
-      <div className="flex justify-center items-center md:col-span-1 max-h-80 md:p-4 md:mt-auto mt-6">
+      <div className="mt-6 flex max-h-80 items-center justify-center md:col-span-1 md:mt-auto md:p-4">
         <img
           src="https://vektorprogrammet.no/images/HS_22.jpg?v=1664622616"
           alt="Hovedstyret"
@@ -335,7 +327,9 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
   );
 };
 
-const TeamTabs = ({ divisions }: {
+const TeamTabs = ({
+  divisions,
+}: {
   divisions: Array<DivisionList>;
 }) => {
   const initialTabState = () => {
@@ -350,7 +344,7 @@ const TeamTabs = ({ divisions }: {
 
   return (
     <div
-      className="flex flex-col md:flex-row md:max-w-6xl md:mb-auto mb-6 items-start sm:max-w-[544px] max-w-[256px]"
+      className="mb-6 flex max-w-[256px] flex-col items-start sm:max-w-[544px] md:mb-auto md:max-w-6xl md:flex-row"
       role="tablist"
     >
       <div className="md:absolute md:left-3 lg:left-12">
@@ -360,7 +354,7 @@ const TeamTabs = ({ divisions }: {
           setOpenTab={setOpenTab}
         />
       </div>
-      <div className="flex flex-col items-start max-w-5xl w-full">
+      <div className="flex w-full max-w-5xl flex-col items-start">
         <TrondheimTab open={openTab === 1} />
         <AasTab open={openTab === 2} />
         <BergenTab open={openTab === 3} />
@@ -391,18 +385,18 @@ const Division = ({
 
   return (
     <NavLink
-      className={`h-48 flex flex-col justify-between rounded-md shadow-md bg-vektor-light-blue dark:bg-gray-600 dark:text-white ${chosenStyle}`}
+      className={`flex h-48 flex-col justify-between rounded-md bg-vektor-light-blue shadow-md dark:bg-gray-600 dark:text-white ${chosenStyle}`}
       to={`/team/${url}`}
     >
-      <div className="bg-vektor-blue dark:bg-vektor-darblue rounded-t-md h-10 content-center h-20">
-        <h1 className="text-center text-lg text-vektor-darblue font-medium dark:text-white">
+      <div className="h-20 content-center rounded-t-md bg-vektor-blue dark:bg-vektor-darblue">
+        <h1 className="text-center font-medium text-lg text-vektor-darblue dark:text-white">
           {title}
         </h1>
       </div>
-      <div className="text-sm mx-2 h-full my-2 mx-3">
+      <div className="mx-3 my-2 h-full text-sm">
         <p>{text}</p>
       </div>
-      <div className="flex flex-row text-sm space-x-1 content-end mx-3">
+      <div className="mx-3 flex flex-row content-end space-x-1 text-sm">
         <svg
           className="h-4 w-4 text-black"
           fill="none"

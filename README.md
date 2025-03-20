@@ -4,8 +4,8 @@ Vektorprogrammets homepage website
 
 ## Required programs
 
-- [node v20+](https://nodejs.org/en)
-- [pnpm v9+](https://pnpm.io/)
+- [node v22](https://nodejs.org/en)
+- [pnpm v10](https://pnpm.io/)
 
 ## Scripts
 

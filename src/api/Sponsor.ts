@@ -4,7 +4,7 @@ export interface Sponsor {
 }
 
 // TODO: This data should be fetched from backend later
-const getSponsors = (): Array<Sponsor> => {
+export function getSponsors(): Array<Sponsor> {
   return [
     { name: "Tekna", url: new URL("https://www.tekna.no/") },
     {
@@ -26,6 +26,4 @@ const getSponsors = (): Array<Sponsor> => {
       url: new URL("https://www.uib.no/matnat"),
     },
   ];
-};
-
-export default getSponsors;
+}
