@@ -30,8 +30,6 @@ export default function Layout() {
 }
 
 function AppHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="sticky top-2 z-50">
       <div className="hidden w-full justify-center md:flex lg:px-4">
@@ -50,11 +48,7 @@ function AppHeader() {
       <div className="absolute top-0 right-2 hidden rounded-full md:flex">
         <LoginButtons />
       </div>
-      <MobileMenu
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-        routes={navRoutes}
-      />
+      <MobileMenu routes={navRoutes} />
     </div>
   );
 }
