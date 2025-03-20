@@ -74,9 +74,6 @@ importers:
       lucide-react:
         specifier: ^0.482.0
         version: 0.482.0(react@18.3.1)
-      norwegian-utils:
-        specifier: ^0.4.1
-        version: 0.4.1
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -98,9 +95,6 @@ importers:
       react-router:
         specifier: ^7.4.0
         version: 7.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-tailwindcss-datepicker:
-        specifier: ^1.7.3
-        version: 1.7.3(dayjs@1.11.13)(react@18.3.1)
       react-visibility-sensor:
         specifier: ^5.1.1
         version: 5.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1557,9 +1551,6 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
 
-  norwegian-utils@0.4.1:
-    resolution: {integrity: sha512-XE0gBhlMrXYnwmAeh6r6MRdZLy6m7aBuMwxf1Li6PVQOme7SSDxioMZ6uO5AlDuVnu4T9nCINMl91OZEyS79gg==}
-
   npm-install-checks@6.3.0:
     resolution: {integrity: sha512-W29RiK/xtpCGqn6f3ixfRYGk+zRyr+Ew9F2E20BfXxT5/euLdA/Nm7fO7OeTGuAmTs30cpgInyJ0cYe708YTZw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -1769,12 +1760,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  react-tailwindcss-datepicker@1.7.3:
-    resolution: {integrity: sha512-C0biZZg0IDvttqq3+Ey0qKMTF4QWtM2nPv9X2SL8RdQIuH+/MJRcsrKcXV0+SK45Zjy/dW5fICDKLcSB+f5ezg==}
-    peerDependencies:
-      dayjs: ^1.11.12
-      react: ^17.0.2 || ^18.2.0
 
   react-visibility-sensor@5.1.1:
     resolution: {integrity: sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==}
@@ -3499,8 +3484,6 @@ snapshots:
 
   normalize-range@0.1.2: {}
 
-  norwegian-utils@0.4.1: {}
-
   npm-install-checks@6.3.0:
     dependencies:
       semver: 7.7.1
@@ -3676,11 +3659,6 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       '@types/react': 18.3.19
-
-  react-tailwindcss-datepicker@1.7.3(dayjs@1.11.13)(react@18.3.1):
-    dependencies:
-      dayjs: 1.11.13
-      react: 18.3.1
 
   react-visibility-sensor@5.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
