@@ -1,6 +1,10 @@
-import { getKontakt } from "@/api/kontakt";
+import { getKontakt } from "~/api/kontakt";
+import { Label } from "@radix-ui/react-label";
 import { useEffect, useState } from "react";
 import { Tabs } from "~/components/tabs";
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Textarea } from "~/components/ui/textarea";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Kontakt() {
@@ -344,12 +348,9 @@ const Division = ({
           )}
           {button && (
             <div className="left-0 py-5">
-              <button
-                type="submit"
-                className="font w-full rounded-lg bg-vektor-darkblue px-5 py-2.5 text-center font-medium text-sm text-white hover:bg-vektor-blue focus:outline-none focus:ring-4 sm:w-auto"
-              >
+              <Button className="bg-vektor-darkblue hover:bg-vektor-blue">
                 Les mer om hovedstyret
-              </button>
+              </Button>
             </div>
           )}
         </div>
@@ -377,64 +378,35 @@ const Division = ({
           <div className="pt-10 text-center font-bold text-2xl text-blue-800 dark:text-gray-200">{`Kontakt styret i ${name}`}</div>
           <form>
             <div className="mt-7 mb-6 grid xl:grid-cols-2 xl:gap-6">
-              <label
-                htmlFor="name"
-                className="mb-2 block font-medium text-gray-900 text-sm dark:text-gray-300"
-              >
-                Ditt navn
-                <input
-                  type="name"
-                  id="name"
-                  className="block w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 text-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
-              </label>
-              <label
-                htmlFor="email"
-                className="mb-2 block font-medium text-gray-900 text-sm dark:text-gray-300"
-              >
-                Din e-post
-                <input
-                  type="email"
-                  id="email"
-                  className="block w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 text-sm"
-                  required
-                />
-              </label>
+              <div>
+                <Label htmlFor="name">Ditt navn</Label>
+                <Input placeholder="Skriv inn navn" required />
+              </div>
+              <div>
+                <Label htmlFor="email">Din e-post</Label>
+                <Input placeholder="Skriv inn epost" required />
+              </div>
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="topic"
-                className="mb-2 block font-medium text-gray-900 text-sm dark:text-gray-300"
-              >
-                Emne
-                <input
-                  type="topic"
-                  id="topic"
-                  className="block w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 text-sm"
-                  required
-                />
-              </label>
+              <div>
+                <Label htmlFor="topic">Emne</Label>
+                <Input placeholder="Skriv inn emnet for meldingen" required />
+              </div>
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="mb-2 block font-medium text-gray-900 text-sm dark:text-gray-300"
-              >
-                Melding
-                <textarea
-                  id="message"
+              <div>
+                <Label htmlFor="message">Melding</Label>
+                <Textarea
+                  placeholder="Skriv inn meldingen din"
                   rows={6}
-                  className="block w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 text-sm"
+                  required
+                  id="message"
                 />
-              </label>
+              </div>
             </div>
-            <button
-              type="submit"
-              className="font w-full rounded-lg bg-vektor-darkblue px-5 py-2.5 text-center font-medium text-sm text-white hover:bg-vektor-blue focus:outline-none focus:ring-4 sm:w-auto"
-            >
+            <Button className="bg-vektor-darkblue hover:bg-vektor-blue">
               Send melding
-            </button>
+            </Button>
           </form>
         </div>
       )}

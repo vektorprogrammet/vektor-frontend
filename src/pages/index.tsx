@@ -1,6 +1,8 @@
+import { buttonVariants } from "@/components/ui/button";
 import CountUp from "react-countup";
 import { Link } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
+import { Button } from "~/components/ui/button";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import ksBergen from "/images/mainPage/sponsor/KSBergen.png";
 import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
@@ -120,9 +122,7 @@ export default function mainPage() {
               assistent i matematikkundervisningen
             </p>
           </div>
-          <button type="button" className="btn btn-success text-white">
-            LES MER OG BLI ASSISTENT
-          </button>
+          <Button variant="green">Les mer og bli assistent</Button>
         </div>
       </div>
       {/*Upper end*/}
@@ -150,8 +150,8 @@ export default function mainPage() {
             <p className="max-w-80 text-sm md:max-w-96 md:text-xl">{text}</p>
             <div>
               <Link
-                className="btn btn-success w-fit text-white"
                 to={route.pathname}
+                className={buttonVariants({ variant: "green" })}
               >
                 {route.text}
               </Link>

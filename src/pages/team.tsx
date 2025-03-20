@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { getTeam } from "~/api/team";
 import { Tabs } from "~/components/tabs";
+import { Button } from "~/components/ui/button";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Team() {
@@ -412,13 +413,14 @@ const Division = ({
         <div>{`${numberOfMembers} medlemmer`}</div>
       </div>
       <div className="mr-1.5 mb-1.5 flex w-full justify-end self-end">
-        <NavLink
-          type="button"
-          to={`/team/${url}`}
-          className="btn btn-success btn-sm rounded-full text-white"
+        <Button
+          className="overflow-clip rounded-full"
+          size="sm"
+          variant="green"
+          asChild
         >
-          {buttonName}
-        </NavLink>
+          <Link to={`/team/${url}`}>{buttonName}</Link>
+        </Button>
       </div>
     </NavLink>
   );

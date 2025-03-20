@@ -1,4 +1,5 @@
 import { Divider } from "~/components/divider";
+import { Button } from "@/components/ui/button";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {
@@ -115,14 +116,14 @@ export default function ForSkoler() {
             },
           ].map(({ city, url }) => {
             return (
-              <button
+              <Button
+                variant="green"
+                className="my-2 min-w-48 px-4 py-2 md:mx-6"
                 key={city}
-                type="button"
                 onClick={goToContact(url)}
-                className="btn btn-success my-2 w-48 px-4 py-2 text-lg text-white md:mx-6"
               >
                 {city}
-              </button>
+              </Button>
             );
           })}
         </div>

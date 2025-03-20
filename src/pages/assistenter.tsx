@@ -1,6 +1,26 @@
-import { getAssistenter } from "@/api/assistenter";
+import { getAssistenter } from "~/api/assistenter";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRef, useState } from "react";
-
+import * as React from "react";
+import { Checkbox } from "~/components/ui/checkbox";
 const Cities = {
   bergen: "Bergen",
   trondheim: "Trondheim",
@@ -29,13 +49,9 @@ export default function Assistenter() {
         <div className="conte mx-8 bg-center font-bold font-sans text-secondary dark:text-text-dark">
           Disse avdelingene har opptak nå:
         </div>
-        <button
-          type="button"
-          onClick={scrollToCard}
-          className="btn btn-success px-4 py-2 font-bold text-white"
-        >
+        <Button variant="green" onClick={scrollToCard}>
           Scroll ned for å søke!
-        </button>
+        </Button>
       </div>
       <div className="info-background mb-16 flex w-full flex-col items-center space-y-10 pt-72 pb-72">
         <div className="w-fit font-bold text-3xl text-accent">
@@ -157,10 +173,11 @@ export default function Assistenter() {
         Søk nå!
       </div>
 
-      <div ref={cardElement}>
+      <div className="mb-16 h-full" ref={cardElement}>
+        {" "}
+        {/* ikke helt dynamisk høyde her */}
         <Citycard />
       </div>
-
       <div className="mb-16 font-bold text-vektor-DARKblue">
         Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.
       </div>
@@ -170,6 +187,7 @@ export default function Assistenter() {
 
 function Citycard() {
   const [openTab, setOpenTab] = useState<City>("Trondheim");
+  const [position, setPosition] = React.useState("bottom");
   function Tab({
     city,
     onTabClick,
@@ -194,116 +212,89 @@ function Citycard() {
     );
   }
   return (
-    <div className="w-full">
-      <div
-        className="tabs flex w-full border-gray-200 font-medium text-gray-500 text-sm dark:border-gray-700 dark:text-gray-900"
-        role="tablist"
-      >
+    <Tabs
+      defaultValue={Object.values(Cities)[0]}
+      className="h-full sm:w-[200px] lg:w-[600px]"
+    >
+      <TabsList className={`grid w-full grid-cols-3`}>
+        {" "}
+        {/* Eventuelt dynamisk antall kolonner med ${Object.keys(Cities).length}` */}
         {Object.values(Cities).map((city) => (
-          <Tab
-            city={city}
-            onTabClick={() => setOpenTab(city)}
-            open={openTab === city}
-            key={city}
-          />
+          <TabsTrigger className="w-full" key={city} value={city}>
+            {city}
+          </TabsTrigger>
         ))}
-      </div>
-      <div className="tab-content tab-space relative mb-6 flex w-full min-w-0 flex-auto flex-col break-words border-r-[1px] border-b-[1px] border-l-[1px] px-4 py-5 dark:bg-neutral-800">
-        <ApplyReg cities={openTab} />
-      </div>
-    </div>
-  );
-}
-
-function ApplyReg({ cities }: { cities: City }) {
-  return (
-    <form className="dark:bg-neutral-800">
-      <h1 className="my-8 text-center font-bold text-vektor-darblue text-xl dark:text-gray-200">
-        {cities}
-      </h1>
-
-      <div className="mt-1 mb-8 text-center dark:text-gray-300">
-        Søknadsfrist:{" "}
-      </div>
-
-      <div className="grid justify-items-center dark:text-gray-800">
-        <div className="my-4 flex w-full flex-wrap justify-center space-x-8">
-          <input
-            type="fornavn"
-            className="mb-2 block rounded border-2 border-vektor-darblue border-solid p-1"
-            placeholder="Fornavn"
-          />
-
-          <input
-            type="etternavn"
-            className="mb-2 block rounded border-2 border-vektor-darblue border-solid p-1"
-            placeholder="Etternavn"
-          />
-        </div>
-
-        <div className="mt-3 flex w-full justify-center">
-          <input
-            type="email"
-            className="form-input mb-2 inline-flex w-1/2 items-center rounded border-2 border-vektor-darblue border-solid p-1"
-            placeholder="E-post"
-          />
-        </div>
-
-        <div className="mt-3 flex w-full justify-center">
-          <input
-            type="telefon"
-            className="form-input mb-2 inline-flex w-1/2 items-center rounded border-2 border-vektor-darblue border-solid p-1"
-            placeholder="Telefon nr"
-          />
-        </div>
-
-        <div className="mt-3 flex w-full justify-center">
-          <input
-            type="linje"
-            className="form-input mb-2 inline-flex w-1/2 items-center rounded border-2 border-vektor-darblue border-solid p-1"
-            placeholder="Linje"
-          />
-        </div>
-
-        <div className="my-4 space-x-4">
-          <select
-            className="rounded border-2 border-vektor-darblue border-solid p-2 font-bold text-vektor-darblue"
-            defaultValue="Kjønn"
-          >
-            <option value="Kjønn" disabled>
-              Kjønn
-            </option>
-            <option>Mann</option>
-            <option>Kvinne</option>
-            <option>Annet</option>
-          </select>
-
-          <select
-            className="rounded border-2 border-vektor-darblue border-solid p-2 font-bold text-vektor-darblue"
-            defaultValue="Årstrinn"
-          >
-            <option value="Årstrinn" disabled>
-              Årstrinn
-            </option>
-            <option>1. klasse</option>
-            <option>2. klasse</option>
-            <option>3. klasse</option>
-            <option>4. klasse</option>
-            <option>5. klasse</option>
-          </select>
-        </div>
-        <button
-          type="submit"
-          className="m-8 rounded bg-vektor-darblue px-4 py-2 font-bold text-white hover:bg-vektor-blue "
-        >
-          Søk nå!
-        </button>
-      </div>
-      <div className="mx-16 mb-10 items-center text-center dark:text-gray-300">
-        Har du vært assistent tidligere? Da kan du søke på nytt her (krever
-        innlogging)
-      </div>
-    </form>
+      </TabsList>
+      {Object.values(Cities).map((city) => (
+        <TabsContent value={city}>
+          <Card>
+            <CardHeader>
+              <CardTitle>{city}</CardTitle>
+              <CardDescription>Søknadsfrist: ???</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="space-y-1">
+                <Label htmlFor="fornavn">Fornavn</Label>
+                <Input id="fornavn" defaultValue="Ola" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="etternavn">Etternavn</Label>
+                <Input id="etternavn" defaultValue="Nordmann" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="email">E-post</Label>
+                <Input id="email" defaultValue="Skriv inn epost" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="phone">Telefonnummer</Label>
+                <Input id="phone" defaultValue="Skriv inn telefonnummer" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="study">Studieretning</Label>
+                <Input
+                  id="study"
+                  defaultValue="Bruk forkortelsen, f.eks. MTDT"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="gender">Kjønn</Label>
+                <Select>
+                  <SelectTrigger className="w-[150px]">
+                    <SelectValue className="w-full" placeholder="Velg kjønn" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="male">Mann</SelectItem>
+                    <SelectItem value="female">Kvinne</SelectItem>
+                    <SelectItem value="other">Annet</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="grade">Årstrinn</Label>
+                <Select>
+                  <SelectTrigger className="w-[150px]">
+                    <SelectValue
+                      className="w-full"
+                      placeholder="Velg årstrinn"
+                    />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="firstGrade">1. klasse</SelectItem>
+                    <SelectItem value="secondGrade">2. klasse</SelectItem>
+                    <SelectItem value="thirdGrade">3. klasse</SelectItem>
+                    <SelectItem value="fourthGrade">4. klasse</SelectItem>
+                    <SelectItem value="fifthGrade">5. klasse</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-[150px]">Søk nå!</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
+      ))}
+    </Tabs>
   );
 }
 
@@ -313,19 +304,22 @@ function NoApplyCard({ cities }: { cities: City }) {
       <h1 className="my-8 font-bold text-vektor-darblue text-xl"> {cities}</h1>
 
       <div className="mt-3 block">
-        <input
-          type="email"
-          className="form-input inline-flex items-center border-2 border-grey border-solid"
-          placeholder="E-post"
-        />
+        <Input className="form-input inline-flex items-center border-2 border-grey border-solid">
+          E-post
+        </Input>
       </div>
 
       <div className="block">
         <div className="mt-2">
-          <div>
-            <div className="inline-flex items-center text-left">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="m-2">Få påminnelse når opptaket starter </span>
+          <div className="inline-flex items-center text-left">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="reminder" />
+              <label
+                htmlFor="reminder"
+                className="font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Få påminnelse når opptaket starter
+              </label>
             </div>
           </div>
         </div>

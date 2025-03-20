@@ -1,8 +1,10 @@
-import { type Sponsor, getSponsors } from "@/api/sponsor";
+import { type Sponsor, getSponsors } from "~/api/sponsor";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
+import { Button, buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -45,7 +47,7 @@ function AppHeader() {
           <NavTabs routes={navRoutes} />
         </div>
       </div>
-      <div className="absolute top-0 right-2 hidden h-full w-fit items-center md:flex">
+      <div className="absolute top-0 right-2 hidden rounded-full md:flex">
         <LoginButtons />
       </div>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -105,14 +107,12 @@ function NavTabs({
 
 function LoginButtons() {
   return (
-    <div className="flex space-x-4">
-      <Link reloadDocument to="/kontrollpanel">
-        <button
-          type="button"
-          className="btn btn-success btn-sm h-10 w-32 rounded-full text-white"
-        >
-          Logg inn
-        </button>
+    <div className="flex space-x-4 overflow-clip rounded-full">
+      <Link
+        className={buttonVariants({ variant: "green" })}
+        to={"/kontrollpanel"}
+      >
+        Logg inn
       </Link>
     </div>
   );
@@ -147,11 +147,16 @@ const MobileMenu = (props: Props) => {
       <Drawer>
         <DrawerTrigger>
           <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
-            <div className="btn btn-md btn-ghost btn-circle avatar bg-vektor-bg">
-              <div className="w-full rounded-full">
-                <img src="/images/team/IT-Tor.png" alt="profile avatar" />
-              </div>
-            </div>
+            <Button
+              variant="outline"
+              className="rounded-full bg-vektor-bg p-0"
+              size="icon"
+            >
+              <Avatar className="h-full w-full rounded-full">
+                <AvatarImage src="/images/team/IT-Tor.png" />
+                <AvatarFallback>Tor</AvatarFallback>
+              </Avatar>
+            </Button>
           </div>
         </DrawerTrigger>
         <DrawerContent>
@@ -168,9 +173,7 @@ const MobileMenu = (props: Props) => {
           </DrawerDescription>
           <DrawerFooter>
             <DrawerClose>
-              <button type="button" className="btn btn-outline btn-error">
-                Close
-              </button>
+              <Button variant="outline">Close</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
