@@ -61,8 +61,6 @@ export default [
     route("kontakt", "pages/kontakt.tsx"),
 
     // personal pages
-    route("profil", "pages/profil.tsx"),
     route("soknader", "pages/soknader.tsx"),
-    route("utlegg", "pages/utlegg.tsx"),
   ]),
 ] satisfies RouteConfig;
