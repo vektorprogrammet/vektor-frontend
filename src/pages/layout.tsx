@@ -1,8 +1,10 @@
-import { type Sponsor, getSponsors } from "@/api/sponsor";
+import { type Sponsor, getSponsors } from "~/api/sponsor";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
+import { Button, buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -12,8 +14,6 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "~/components/ui/drawer";
-import { Button, buttonVariants } from "~/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { navRoutes } from "~/routes";
 import "./layout.css";
 
@@ -44,11 +44,11 @@ function AppHeader() {
               />
             </div>
           </div>
-          <NavTabs routes={navRoutes} /> 
+          <NavTabs routes={navRoutes} />
         </div>
       </div>
-      <div className="hidden md:flex rounded-full absolute top-0 right-2">
-        <LoginButtons/>
+      <div className="absolute top-0 right-2 hidden rounded-full md:flex">
+        <LoginButtons />
       </div>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </div>
@@ -79,7 +79,6 @@ function NavTabs({
       </span>
       {routes.map((route, i) => {
         return (
-          
           <NavLink
             to={route.path}
             key={route.path}
@@ -109,7 +108,12 @@ function NavTabs({
 function LoginButtons() {
   return (
     <div className="flex space-x-4 overflow-clip rounded-full">
-      <Link className={buttonVariants({ variant: "green" })} to={"/kontrollpanel"}>Logg inn</Link>
+      <Link
+        className={buttonVariants({ variant: "green" })}
+        to={"/kontrollpanel"}
+      >
+        Logg inn
+      </Link>
     </div>
   );
 }
@@ -142,12 +146,16 @@ const MobileMenu = (props: Props) => {
     <div className="md:hidden">
       <Drawer>
         <DrawerTrigger>
-          <div className="flex fixed top-12 right-0 bg-[rgba(0,0,0,0.8)] p-1 pr-2 rounded-l-full">
-            <Button variant="outline" className="rounded-full p-0 bg-vektor-bg" size="icon" >
-                <Avatar className="w-full h-full rounded-full">
-                  <AvatarImage src="/images/team/IT-Tor.png" />
-                  <AvatarFallback>Tor</AvatarFallback>
-                </Avatar>
+          <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
+            <Button
+              variant="outline"
+              className="rounded-full bg-vektor-bg p-0"
+              size="icon"
+            >
+              <Avatar className="h-full w-full rounded-full">
+                <AvatarImage src="/images/team/IT-Tor.png" />
+                <AvatarFallback>Tor</AvatarFallback>
+              </Avatar>
             </Button>
           </div>
         </DrawerTrigger>
@@ -159,15 +167,13 @@ const MobileMenu = (props: Props) => {
                 {linkElements}
               </ul>
               <div className="flex w-fit justify-center">
-                <LoginButtons/>
+                <LoginButtons />
               </div>
             </div>
           </DrawerDescription>
           <DrawerFooter>
             <DrawerClose>
-              <Button variant="outline">
-                Close
-              </Button>
+              <Button variant="outline">Close</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>

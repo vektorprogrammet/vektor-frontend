@@ -1,18 +1,25 @@
-import { getAssistenter } from "@/api/assistenter";
-import { useRef, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
-import * as React from "react"
-import {Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { getAssistenter } from "~/api/assistenter";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useRef, useState } from "react";
+import * as React from "react";
 import { Checkbox } from "~/components/ui/checkbox";
 const Cities = {
   bergen: "Bergen",
@@ -43,7 +50,7 @@ export default function Assistenter() {
           Disse avdelingene har opptak nå:
         </div>
         <Button variant="green" onClick={scrollToCard}>
-              Scroll ned for å søke!
+          Scroll ned for å søke!
         </Button>
       </div>
       <div className="info-background mb-16 flex w-full flex-col items-center space-y-10 pt-72 pb-72">
@@ -166,10 +173,12 @@ export default function Assistenter() {
         Søk nå!
       </div>
 
-      <div className="h-full mb-16" ref={cardElement}> {/* ikke helt dynamisk høyde her */}
+      <div className="mb-16 h-full" ref={cardElement}>
+        {" "}
+        {/* ikke helt dynamisk høyde her */}
         <Citycard />
       </div>
-      <div className="font-bold mb-16 text-vektor-DARKblue">
+      <div className="mb-16 font-bold text-vektor-DARKblue">
         Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.
       </div>
     </div>
@@ -178,7 +187,7 @@ export default function Assistenter() {
 
 function Citycard() {
   const [openTab, setOpenTab] = useState<City>("Trondheim");
-  const [position, setPosition] = React.useState("bottom")
+  const [position, setPosition] = React.useState("bottom");
   function Tab({
     city,
     onTabClick,
@@ -203,80 +212,89 @@ function Citycard() {
     );
   }
   return (
-    
-    <Tabs defaultValue={Object.values(Cities)[0]} className="h-full sm:w-[200px] lg:w-[600px]">
-      <TabsList className={`grid w-full grid-cols-3`}> {/* Eventuelt dynamisk antall kolonner med ${Object.keys(Cities).length}` */}
+    <Tabs
+      defaultValue={Object.values(Cities)[0]}
+      className="h-full sm:w-[200px] lg:w-[600px]"
+    >
+      <TabsList className={`grid w-full grid-cols-3`}>
+        {" "}
+        {/* Eventuelt dynamisk antall kolonner med ${Object.keys(Cities).length}` */}
         {Object.values(Cities).map((city) => (
-            <TabsTrigger className="w-full" key={city} value={city}>{city}</TabsTrigger>
-          ))}
+          <TabsTrigger className="w-full" key={city} value={city}>
+            {city}
+          </TabsTrigger>
+        ))}
       </TabsList>
       {Object.values(Cities).map((city) => (
-      <TabsContent value={city}>
-        <Card>
-          <CardHeader>
-            <CardTitle>{city}</CardTitle>
-            <CardDescription>
-              Søknadsfrist: ???
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="space-y-1">
-              <Label htmlFor="fornavn">Fornavn</Label>
-              <Input id="fornavn" defaultValue="Ola" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="etternavn">Etternavn</Label>
-              <Input id="etternavn" defaultValue="Nordmann" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="email">E-post</Label>
-              <Input id="email" defaultValue="Skriv inn epost" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="phone">Telefonnummer</Label>
-              <Input id="phone" defaultValue="Skriv inn telefonnummer" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="study">Studieretning</Label>
-              <Input id="study" defaultValue="Bruk forkortelsen, f.eks. MTDT" />
-            </div>
-            <div className="space-y-1">
-            <Label htmlFor="gender">Kjønn</Label>
-              <Select >
-                <SelectTrigger className="w-[150px]">
-                  <SelectValue className="w-full" placeholder="Velg kjønn" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="male">Mann</SelectItem>
-                  <SelectItem value="female">Kvinne</SelectItem>
-                  <SelectItem value="other">Annet</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="grade">Årstrinn</Label>
-              <Select >
-                <SelectTrigger className="w-[150px]">
-                  <SelectValue className="w-full" placeholder="Velg årstrinn" />
-                </SelectTrigger>
-                <SelectContent>
+        <TabsContent value={city}>
+          <Card>
+            <CardHeader>
+              <CardTitle>{city}</CardTitle>
+              <CardDescription>Søknadsfrist: ???</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="space-y-1">
+                <Label htmlFor="fornavn">Fornavn</Label>
+                <Input id="fornavn" defaultValue="Ola" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="etternavn">Etternavn</Label>
+                <Input id="etternavn" defaultValue="Nordmann" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="email">E-post</Label>
+                <Input id="email" defaultValue="Skriv inn epost" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="phone">Telefonnummer</Label>
+                <Input id="phone" defaultValue="Skriv inn telefonnummer" />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="study">Studieretning</Label>
+                <Input
+                  id="study"
+                  defaultValue="Bruk forkortelsen, f.eks. MTDT"
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="gender">Kjønn</Label>
+                <Select>
+                  <SelectTrigger className="w-[150px]">
+                    <SelectValue className="w-full" placeholder="Velg kjønn" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="male">Mann</SelectItem>
+                    <SelectItem value="female">Kvinne</SelectItem>
+                    <SelectItem value="other">Annet</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="grade">Årstrinn</Label>
+                <Select>
+                  <SelectTrigger className="w-[150px]">
+                    <SelectValue
+                      className="w-full"
+                      placeholder="Velg årstrinn"
+                    />
+                  </SelectTrigger>
+                  <SelectContent>
                     <SelectItem value="firstGrade">1. klasse</SelectItem>
                     <SelectItem value="secondGrade">2. klasse</SelectItem>
                     <SelectItem value="thirdGrade">3. klasse</SelectItem>
                     <SelectItem value="fourthGrade">4. klasse</SelectItem>
                     <SelectItem value="fifthGrade">5. klasse</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button className="w-[150px]">Søk nå!</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
+                  </SelectContent>
+                </Select>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-[150px]">Søk nå!</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
       ))}
     </Tabs>
-  
   );
 }
 
@@ -285,8 +303,9 @@ function NoApplyCard({ cities }: { cities: City }) {
     <form>
       <h1 className="my-8 font-bold text-vektor-darblue text-xl"> {cities}</h1>
 
-      <div className="block mt-3">
-        <Input className="inline-flex items-center form-input border-solid border-2 border-grey">E-post
+      <div className="mt-3 block">
+        <Input className="form-input inline-flex items-center border-2 border-grey border-solid">
+          E-post
         </Input>
       </div>
 
@@ -297,7 +316,7 @@ function NoApplyCard({ cities }: { cities: City }) {
               <Checkbox id="reminder" />
               <label
                 htmlFor="reminder"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                className="font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
                 Få påminnelse når opptaket starter
               </label>

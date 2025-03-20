@@ -1,6 +1,8 @@
+import { buttonVariants } from "@/components/ui/button";
 import CountUp from "react-countup";
 import { Link } from "react-router";
 import VisibilitySensor from "react-visibility-sensor";
+import { Button } from "~/components/ui/button";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import ksBergen from "/images/mainPage/sponsor/KSBergen.png";
 import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
@@ -13,9 +15,6 @@ import UiB from "/images/mainPage/sponsor/UIB.png";
 import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
 import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import vektorLogo from "/images/vektor-logo.svg";
-import { Button } from "~/components/ui/button";
-import { buttonVariants } from "@/components/ui/button"
-
 
 const hovedsponsor = [
   {
@@ -123,9 +122,7 @@ export default function mainPage() {
               assistent i matematikkundervisningen
             </p>
           </div>
-          <Button variant="green">
-            Les mer og bli assistent
-          </Button>
+          <Button variant="green">Les mer og bli assistent</Button>
         </div>
       </div>
       {/*Upper end*/}
@@ -152,7 +149,12 @@ export default function mainPage() {
             </div>
             <p className="max-w-80 text-sm md:max-w-96 md:text-xl">{text}</p>
             <div>
-              <Link to={route.pathname} className={buttonVariants({ variant: "green" })}>{route.text}</Link>
+              <Link
+                to={route.pathname}
+                className={buttonVariants({ variant: "green" })}
+              >
+                {route.text}
+              </Link>
             </div>
           </div>
         ))}
