@@ -25,24 +25,58 @@ Run the dev server:
 pnpm run dev
 ```
 
-### pnpm lint, pnpm format, pnpm check
+### pnpm check
 
-Check for linting errors and apply safe fixes:
+Check for linting and formatting errors:
+
+```sh
+pnpm check
+```
+
+Apply safe fixes:
+
+```sh
+pnpm check:fix
+```
+
+Apply unsafe fixes:
+
+```sh
+pnpm check:fix:unsafe
+```
+
+### pnpm lint
+
+Check for linting errors:
 
 ```sh
 pnpm lint
 ```
 
-Check for formatting errors and apply safe fixes:
+Apply safe fixes:
+
+```sh
+pnpm lint:fix
+```
+
+Apply unsafe fixes:
+
+```sh
+pnpm lint:fix:unsafe
+```
+
+### pnpm format
+
+Check for formatting errors:
 
 ```sh
 pnpm format
 ```
 
-Do both in one check:
+Apply fixes:
 
 ```sh
-pnpm check
+pnpm lint:fix
 ```
 
 ### Testing
@@ -104,12 +138,12 @@ Now you'll need to pick a host to deploy it to.
   - `build/`: Build artifacts for deploying the app to servers
   - `public/`: Assets requiring no processing, clients download these files as is.
   - `src/`: All source code for the web app
+    - `__tests__/`: End-to-end tests for full pages or user stories
     - `components/`: Common components used in multiple pages. Encapsulates features into singular units.
       - `ui`: Primitives acting as the foundational building blocks for composing larger features or sections, for example common layout components like headers, footers and sidebars, or features like a login modal. Most primitives originates from shadcn/ui and might be manually tweaked to our preferences.
     - `hooks/`: Common React hooks reused in multiple pages
     - `lib/`: Common code reused in multiple pages
-    - `pages/`: Page components rendered by our router. This includes common layouts and should try to reflect either the routing or grouping of responsibilities as close as possible. If the component uses router apis, then it should most likely lie here.
-      - `__tests__/`: End-to-end tests for full pages or user stories
+    - `routes/`: React Router route modules with filenames following the flat route config <https://reactrouter.com/how-to/file-route-conventions>
     - `index.css`: Style variables accessable throughout the whole app. Mainly configuration of Tailwind and CSS variables.
     - `root.tsx`: Root HTML rendered for ALL pages. Contains global metadata, styles and providers.
-    - `routes.ts`: Routing declared through the React Router routes API. Check out the [docs](https://reactrouter.com/start/framework/routing) for an in-depth explanation of the API.
+    - `routes.ts`: React Router configuration. Check out the [docs](https://reactrouter.com/start/framework/routing) for an in-depth explanation of the API.
