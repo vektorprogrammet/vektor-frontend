@@ -183,7 +183,6 @@ function TeamTabs() {
 function Division({
   title,
   text,
-  mail,
   numberOfMembers,
   buttonName,
   url,

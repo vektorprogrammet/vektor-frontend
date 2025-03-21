@@ -1,5 +1,6 @@
+import { Link, href } from "react-router";
 import { Divider } from "~/components/divider";
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {
@@ -132,8 +133,11 @@ export default function ForSkoler() {
             Har ikke Vektorprogrammet etablert seg i din by enda?
           </h2>
           <p className="my-4 max-w-3xl text-md md:text-center md:text-lg">
-            Ta kontakt med <a href="#">hovedstyret</a> for å melde din
-            interesse!
+            {"Ta kontakt med "}
+            <Link to={href("/team/hovedstyret")}>
+              <span className="hover:underline">{"hovedstyret"}</span>
+            </Link>
+            {" for å melde din interesse!"}
           </p>
         </div>
       </div>
