@@ -1,10 +1,16 @@
 import { Mail, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, NavLink, type To, href } from "react-router";
-import { getTeam } from "~/api/team";
+import { Link, NavLink, type To } from "react-router";
+import {
+  getTeam,
+  teamsAas,
+  teamsBergen,
+  teamsHovedstyret,
+  teamsTrondheim,
+} from "~/api/team";
 import { Tabs } from "~/components/tabs";
 import { Button } from "~/components/ui/button";
-import type { DepartmentPretty } from "~/lib/types";
+import type { CityPretty, DepartmentPretty } from "~/lib/types";
 import { departments } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
@@ -52,170 +58,8 @@ export default function Team() {
   );
 }
 
-/* Team Tabs */
-
-function TrondheimTab() {
-  return (
-    <div
-      className={
-        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
-      }
-    >
-      <Division
-        title="Styret"
-        text="Ansvarlig for driften av Vektorprogrammet i Trondheim."
-        mail="styret.ntnu@vektorprogrammet.no"
-        numberOfMembers={9}
-        buttonName="Les mer"
-        url={href("/team/trondheim/styret")}
-      />
-      <Division
-        title="Evaluering"
-        text="Vi sender ut spørreundersøkelser, lager statistikk av dem og skriver så semester- og årsrapporter."
-        mail="evaluering.ntnu@vektorprogrammet.no"
-        numberOfMembers={5}
-        buttonName="Les mer"
-        url={href("/team/trondheim/evaluering")}
-      />
-      <Division
-        title="Rekruttering"
-        text="I rekruttering jobber vi med å skaffe nye vektorassistenter."
-        mail="rekruttering.ntnu@vektorprogrammet.no"
-        numberOfMembers={11}
-        buttonName="Les mer"
-        url={href("/team/trondheim/rekruttering")}
-      />
-      <Division
-        title="Skolekoordinering"
-        text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
-        mail="skolekoordinering.ntnu@vektorprogrammet.no"
-        numberOfMembers={8}
-        buttonName="Les mer"
-        url={href("/team/trondheim/skolekoordinering")}
-      />
-      <Division
-        title="Sponsor"
-        text="Vektorprogrammets bindeledd til næringslivet, samarbeidspartnere og sponsorer."
-        mail="sponsor.ntnu@vektorprogrammet.no"
-        numberOfMembers={6}
-        buttonName="Les mer"
-        url={href("/team/trondheim/sponsor")}
-      />
-      <Division
-        title="Økonomi"
-        text="Økonomiteamet har ansvaret for Vektorprogrammets økonomi."
-        mail="okonomi@vektorprogrammet.no"
-        numberOfMembers={9}
-        buttonName="Les mer"
-        url={href("/team/trondheim/okonomi")}
-      />
-      <Division
-        title="IT"
-        text="IT-teamet utvikler og drifter Vektorprogrammets nettside og interne datasystemer."
-        mail="it@vektorprogrammet.no"
-        numberOfMembers={10}
-        buttonName="Les mer"
-        url={href("/team/trondheim/it")}
-      />
-      <Division
-        title="Profilering"
-        text="Profileringsteamet jobber for å gjøre Vektorprogrammet mer synlig gjennom sosiale medier."
-        mail="profilering.ntnu@vektorprogrammet.no"
-        numberOfMembers={7}
-        buttonName="Les mer"
-        url={href("/team/trondheim/profilering")}
-      />
-    </div>
-  );
-}
-
-function AasTab() {
-  return (
-    <div
-      className={
-        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
-      }
-    >
-      <Division
-        title="Styret"
-        text="Ansvarlig for driften av Vektorprogrammet i Ås."
-        mail="nmbu@vektorprogrammet.no"
-        numberOfMembers={5}
-        buttonName="Les mer"
-        url={href("/team/aas/styret")}
-      />
-      <Division
-        title="Sponsor"
-        text="Har ansvaret for økonomien og sponsorene til Vektorprogrammet Ås."
-        mail="sponsor.nmbu@vektorprogrammet.no"
-        numberOfMembers={4}
-        buttonName="Les mer"
-        url={href("/team/aas/sponsor-okonomi")}
-      />
-      <Division
-        title="Skolekoordinering"
-        text="Skolekoordinering har ansvaret for kontakten med skolene og organisering av assistentene."
-        mail="skolekoordinering.nmbu@vektorprogrammet.no"
-        numberOfMembers={5}
-        buttonName="Les mer"
-        url={href("/team/aas/skolekoordinering")}
-      />
-      <Division
-        title="Evaluering"
-        text="Vi rekrutterer nye assistenter, styrer sosiale medier, arrangerer sosiale aktiviteter og følger opp at alle trives i vervet."
-        mail="evaluering.nmbu@vektorprogrammet.no"
-        numberOfMembers={8}
-        buttonName="Les mer"
-        url={href("/team/aas/evaluering-rekruttering-profilering")}
-      />
-      <Division
-        title="Sosialt"
-        text="Vi arrangerer sosiale arrangementer for assistenter og sørger for at alle trives i vervet."
-        mail="sosialt.nmbu@vektorprogrammet.no"
-        numberOfMembers={6}
-        buttonName="Les mer"
-        url={href("/team/aas/sosialt")}
-      />
-    </div>
-  );
-}
-
-function BergenTab() {
-  return (
-    <div
-      className={
-        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
-      }
-    >
-      <Division
-        title="Styret"
-        text="Ansvarlig for driften av Vektorprogrammet i Bergen."
-        mail="uib@vektorprogrammet.no"
-        numberOfMembers={2}
-        buttonName="Les mer"
-        url={href("/team/bergen/styret")}
-      />
-      <Division
-        title="Skolekoordinering"
-        text="Skolekoordinering fungerer som et bindeledd mellom skolene og vektorassistentene gjennom semesteret."
-        mail="skolekoordinering.uib@vektorprogrammet.no"
-        numberOfMembers={2}
-        buttonName="Les mer"
-        url={href("/team/bergen/skolekoordinering")}
-      />
-      <Division
-        title="Rekruttering"
-        text="I rekruttering jobber vi med å skaffe nye vektorassistenter!"
-        mail="rekruttering.uib@vektorprogrammet.no"
-        numberOfMembers={2}
-        buttonName="Les mer"
-        url={href("/team/bergen/rekruttering")}
-      />
-    </div>
-  );
-}
-
 function HovedstyretTab() {
+  const team = teamsHovedstyret();
   return (
     <div
       className={
@@ -224,40 +68,38 @@ function HovedstyretTab() {
     >
       <div className="flex-1 object-contain">
         <h2 className="font-bold text-2xl text-gray-600 sm:text-4xl dark:text-gray-200">
-          {"Hovedstyret"}
+          {team.title}
         </h2>
         <p className="mt-4 mb-4 text-md sm:text-lg dark:text-gray-300">
-          {`Hovedstyret er det nasjonale styret i vektorprogrammet.
-            De er et overordnet organ med ansvar for drifting av hele organisasjonen.
-          `}
+          {team.text}
         </p>
         <div className="flex items-center space-x-1">
           <Mail className="h-5 w-5 text-black" />
           <a
             className="truncate text-sm hover:underline dark:text-white"
-            href="mailto:hovedstyret@vektorprogrammet.no"
+            href={`mailto:${team.email}`}
           >
-            <span>{"hovedstyret@vektorprogrammet.no"}</span>
+            <span>{team.email}</span>
           </a>
         </div>
         <div className="mt-2 flex items-center space-x-1">
           <Users className="h-5 w-5 text-black" />
-          <span>{`${8} medlemmer`}</span>
+          <span>{`${team.numberOfMembers} medlemmer`}</span>
         </div>
         <br />
         <NavLink
           type="button"
-          to={href("/team/hovedstyret")}
+          to={team.url}
           className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 transition duration-300 hover:border-transparent hover:bg-blue-500 hover:text-white dark:bg-vektor-darkblue dark:text-white dark:hover:bg-blue-600"
           prefetch="intent"
         >
-          Les mer om hovedstyret
+          {team.buttonName}
         </NavLink>
       </div>
       <div className="mt-6 flex max-h-80 items-center justify-center md:col-span-1 md:mt-auto md:p-4">
         <img
-          src="https://vektorprogrammet.no/images/HS_22.jpg?v=1664622616"
-          alt="Hovedstyret"
+          src={team.image.src}
+          alt={team.image.alt}
           className="max-h-80 object-contain"
         />
       </div>
@@ -265,24 +107,36 @@ function HovedstyretTab() {
   );
 }
 
-function DepartmentTeams({ department }: { department: DepartmentPretty }) {
-  switch (department) {
-    case "Trondheim":
-      return <TrondheimTab />;
-    case "Ås":
-      return <AasTab />;
-    case "Bergen":
-      return <BergenTab />;
-    case "Hovedstyret":
-      return <HovedstyretTab />;
-    default: {
-      const _exhaustiveCheck: never = department;
-      return _exhaustiveCheck;
-    }
-  }
+function TeamTab({ team }: { team: CityPretty }) {
+  const teams =
+    team === "Bergen"
+      ? teamsBergen()
+      : team === "Ås"
+        ? teamsAas()
+        : teamsTrondheim();
+
+  return (
+    <div
+      className={
+        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
+      }
+    >
+      {teams.map((team) => (
+        <Division
+          key={team.mail}
+          title={team.title}
+          text={team.text}
+          mail={team.mail}
+          numberOfMembers={team.numberOfMembers}
+          buttonName="Les mer"
+          url={team.url}
+        />
+      ))}
+    </div>
+  );
 }
 
-const TeamTabs = () => {
+function TeamTabs() {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
@@ -314,11 +168,15 @@ const TeamTabs = () => {
         <Tabs divisions={keys} tabstate={openTab} setOpenTab={setOpenTab} />
       </div>
       <div className="flex w-full max-w-5xl flex-col items-start">
-        {<DepartmentTeams department={active.name} />}
+        {active.name === "Hovedstyret" ? (
+          <HovedstyretTab />
+        ) : (
+          <TeamTab team={active.name} />
+        )}
       </div>
     </div>
   );
-};
+}
 
 /* Division */
 
