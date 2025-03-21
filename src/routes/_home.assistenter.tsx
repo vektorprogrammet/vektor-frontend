@@ -1,5 +1,3 @@
-import { getAssistenter } from "~/api/assistenter";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -18,15 +16,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useRef, useState } from "react";
-import * as React from "react";
+import React, { useRef, useState } from "react";
+import { getAssistenter } from "~/api/assistenter";
+import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
-const Cities = {
-  bergen: "Bergen",
-  trondheim: "Trondheim",
-  aas: "Ås",
-} as const;
-type City = (typeof Cities)[keyof typeof Cities];
+import type { CityPretty } from "~/lib/types";
+import { cities } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Assistenter() {
@@ -186,7 +181,7 @@ export default function Assistenter() {
 }
 
 function Citycard() {
-  const [openTab, setOpenTab] = useState<City>("Trondheim");
+  const [openTab, setOpenTab] = useState<CityPretty>("Trondheim");
   const [position, setPosition] = React.useState("bottom");
   function Tab({
     city,
@@ -194,7 +189,7 @@ function Citycard() {
     open,
   }: {
     onTabClick: () => void;
-    city: City;
+    city: CityPretty;
     open: boolean;
   }) {
     const chosenStyle = open
@@ -213,20 +208,19 @@ function Citycard() {
   }
   return (
     <Tabs
-      defaultValue={Object.values(Cities)[0]}
+      defaultValue={Object.values(cities)[0]}
       className="h-full sm:w-[200px] lg:w-[600px]"
     >
-      <TabsList className={`grid w-full grid-cols-3`}>
-        {" "}
+      <TabsList className={"grid w-full grid-cols-3"}>
         {/* Eventuelt dynamisk antall kolonner med ${Object.keys(Cities).length}` */}
-        {Object.values(Cities).map((city) => (
+        {Object.values(cities).map((city) => (
           <TabsTrigger className="w-full" key={city} value={city}>
             {city}
           </TabsTrigger>
         ))}
       </TabsList>
-      {Object.values(Cities).map((city) => (
-        <TabsContent value={city}>
+      {Object.values(cities).map((city) => (
+        <TabsContent value={city} key={city}>
           <Card>
             <CardHeader>
               <CardTitle>{city}</CardTitle>
@@ -298,7 +292,7 @@ function Citycard() {
   );
 }
 
-function NoApplyCard({ cities }: { cities: City }) {
+function NoApplyCard({ cities }: { cities: CityPretty }) {
   return (
     <form>
       <h1 className="my-8 font-bold text-vektor-darblue text-xl"> {cities}</h1>

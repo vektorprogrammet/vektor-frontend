@@ -1,4 +1,4 @@
-const cities = {
+export const cities = {
   trondheim: "Trondheim",
   bergen: "Bergen",
   aas: "Ås",
