@@ -112,16 +112,11 @@ function LoginButtons() {
         to={"/kontrollpanel"}
         prefetch="intent"
       >
-        Logg inn
+        {"Logg inn"}
       </Link>
     </div>
   );
 }
-
-const _activeStyle: React.CSSProperties = {
-  fontWeight: "600",
-  background: "rgba(111,206,238,0.8)",
-};
 
 const MobileMenu = ({
   routes,
@@ -138,7 +133,7 @@ const MobileMenu = ({
             >
               <Avatar className="h-full w-full rounded-full">
                 <AvatarImage src="/images/team/IT-Tor.png" />
-                <AvatarFallback>Tor</AvatarFallback>
+                <AvatarFallback>{"Tor"}</AvatarFallback>
               </Avatar>
             </Button>
           </div>
@@ -148,13 +143,13 @@ const MobileMenu = ({
           <DrawerDescription>
             <div className="flex items-start justify-between p-6">
               <ul className="flex w-full flex-col items-start gap-4 text-center">
-                {navRoutes.map((route) => (
+                {routes.map((route) => (
                   <li key={route.name}>
                     <Link
                       className="text-lg dark:text-white"
                       reloadDocument
                       to={route.path}
-                      prefetch="intent"
+                      prefetch="render"
                     >
                       {route.name}
                     </Link>
@@ -168,7 +163,7 @@ const MobileMenu = ({
           </DrawerDescription>
           <DrawerFooter>
             <DrawerClose>
-              <Button variant="outline">Close</Button>
+              <Button variant="outline">{"Close"}</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
@@ -194,7 +189,7 @@ function AppFooter() {
 }
 
 function FooterSponsors() {
-  const sponsors: Array<Sponsor> = getSponsors();
+  const sponsors = getSponsors();
 
   return (
     <ul className="text-white">
