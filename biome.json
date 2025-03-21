@@ -22,9 +22,6 @@
     "enabled": true,
     "rules": {
       "all": true,
-      "a11y": {
-        "noSvgWithoutTitle": "warn"
-      },
       "correctness": {
         "useImportExtensions": "off"
       },
@@ -68,6 +65,18 @@
       }
     }
   },
+  "overrides": [
+    {
+      "include": ["src/routes/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    }
+  ],
   "javascript": {
     "formatter": {
       "jsxQuoteStyle": "double",
