@@ -63,7 +63,7 @@ function ContactTabCards() {
   return (
     <div className="mb-6 flex flex-col items-start md:mb-auto md:max-w-6xl md:flex-row">
       <div className="ml-3 w-1/5">
-        <Tabs divisions={keys} tabstate={openTab} setOpenTab={setOpenTab} />
+        <Tabs divisions={keys} tabState={openTab} setOpenTab={setOpenTab} />
       </div>
       <main className="mx-auto mb-6 flex h-[500px] w-full flex-col items-start overflow-y-scroll break-words rounded-md px-5 py-5 sm:w-[440px] md:w-[720px] lg:ml-16 lg:w-[820px] xl:ml-20 xl:w-[1100px]">
         <div className="flex-grow">

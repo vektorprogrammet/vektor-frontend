@@ -165,7 +165,7 @@ function TeamTabs() {
       role="tablist"
     >
       <div className="md:absolute md:left-3 lg:left-12">
-        <Tabs divisions={keys} tabstate={openTab} setOpenTab={setOpenTab} />
+        <Tabs divisions={keys} tabState={openTab} setOpenTab={setOpenTab} />
       </div>
       <div className="flex w-full max-w-5xl flex-col items-start">
         {active.name === "Hovedstyret" ? (

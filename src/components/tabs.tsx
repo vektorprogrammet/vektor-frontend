@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useMediaQuery } from "@mantine/hooks";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,11 +8,11 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface TabProps {
   divisions: Array<DivisionList>;
-  tabstate: number;
+  tabState: number;
   setOpenTab: (number: number) => void;
 }
 
@@ -20,23 +21,9 @@ interface DivisionList {
   number: number;
 }
 
-export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+export const Tabs = ({ divisions, tabState, setOpenTab }: TabProps) => {
+  const isSmallScreen = useMediaQuery("(max-width: 860px)");
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      const isSmall = window.matchMedia("(max-width: 860px)").matches;
-      setIsSmallScreen(isSmall);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
-  }, []);
 
   if (isSmallScreen) {
     return (
@@ -48,7 +35,7 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
             type="button"
           >
             <div className="flex w-full items-center justify-between">
-              {divisions.find((data) => tabstate === data.number)?.name ||
+              {divisions.find((data) => tabState === data.number)?.name ??
                 "Select Tab"}
               <ChevronDown className="ml-2" />
             </div>
@@ -57,7 +44,7 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
         <DropdownMenuContent className="m-1 w-full rounded-md bg-white shadow-sm">
           {divisions.map((data) => {
             const chosenStyle =
-              tabstate === data.number
+              tabState === data.number
                 ? "font-semibold text-vektor-darkblue"
                 : "hover:text-vektor-light-blue";
             return (
@@ -85,7 +72,7 @@ export const Tabs = ({ divisions, tabstate, setOpenTab }: TabProps) => {
     <div className="flex flex-row md:flex-col">
       {divisions.map((data) => {
         const chosenStyle =
-          tabstate === data.number
+          tabState === data.number
             ? "bg-vektor-darkblue text-white hover:bg-vektor-darkblue"
             : "bg-transparent hover:bg-vektor-light-blue dark:text-white";
         return (
