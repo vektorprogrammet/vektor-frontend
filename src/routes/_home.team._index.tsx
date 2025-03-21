@@ -1,3 +1,4 @@
+import { Mail, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, type To, href } from "react-router";
 import { getTeam } from "~/api/team";
@@ -269,21 +270,7 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
           overordnet organ med ansvar for drifting av hele organisasjonen.
         </p>
         <div className="flex items-center space-x-1">
-          <svg
-            className="h-4 w-4 text-black dark:text-white"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" />
-            <rect x="3" y="5" width="18" height="14" rx="2" />
-            <polyline points="3 7 12 13 21 7" />
-          </svg>
+          <Mail className="h-5 w-5 text-black" />
           <a
             className="truncate text-sm hover:underline dark:text-white"
             href="mailto:hovedstyret@vektorprogrammet.no"
@@ -292,20 +279,8 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
           </a>
         </div>
         <div className="mt-2 flex items-center space-x-1">
-          <svg
-            className="h-4 w-4 text-black dark:text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-            />
-          </svg>
-          <div className="top-0 dark:text-white">{`${8} medlemmer`}</div>
+          <Users className="h-5 w-5 text-black" />
+          <span>{`${8} medlemmer`}</span>
         </div>
         <br />
         <NavLink
@@ -398,20 +373,8 @@ const Division = ({
       <div className="mx-3 my-2 h-full text-sm">
         <p>{text}</p>
       </div>
-      <div className="mx-3 flex flex-row content-end space-x-1 text-sm">
-        <svg
-          className="h-4 w-4 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-          />
-        </svg>
+      <div className="mx-3 flex flex-row content-end gap-1 text-sm">
+        <Users className="h-5 w-5 text-black" />
         <div>{`${numberOfMembers} medlemmer`}</div>
       </div>
       <div className="mr-1.5 mb-1.5 flex w-full justify-end self-end">
