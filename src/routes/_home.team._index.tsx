@@ -4,6 +4,8 @@ import { Link, NavLink, type To, href } from "react-router";
 import { getTeam } from "~/api/team";
 import { Tabs } from "~/components/tabs";
 import { Button } from "~/components/ui/button";
+import type { DepartmentPretty } from "~/lib/types";
+import { departments } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Team() {
@@ -45,31 +47,19 @@ export default function Team() {
       <h1 className="mx-auto mt-10 mb-10 max-w-lg text-center font-bold text-5xl text-gray-600 dark:text-gray-200">
         {teamInfo.title}
       </h1>
-      <TeamTabs
-        divisions={[
-          { name: "Trondheim", number: 1 },
-          { name: "Ås", number: 2 },
-          { name: "Bergen", number: 3 },
-          { name: "Hovedstyret", number: 4 },
-        ]}
-      />
+      <TeamTabs />
     </div>
   );
 }
 
 /* Team Tabs */
 
-interface DivisionList {
-  name: string;
-  number: number;
-}
-
-const TrondheimTab = ({ open }: { open: boolean }) => {
+function TrondheimTab() {
   return (
     <div
-      className={`grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3 ${
-        open ? "block" : "hidden"
-      }`}
+      className={
+        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
+      }
     >
       <Division
         title="Styret"
@@ -137,14 +127,14 @@ const TrondheimTab = ({ open }: { open: boolean }) => {
       />
     </div>
   );
-};
+}
 
-const AasTab = ({ open }: { open: boolean }) => {
+function AasTab() {
   return (
     <div
-      className={`grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3 ${
-        open ? "block" : "hidden"
-      }`}
+      className={
+        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
+      }
     >
       <Division
         title="Styret"
@@ -188,14 +178,14 @@ const AasTab = ({ open }: { open: boolean }) => {
       />
     </div>
   );
-};
+}
 
-const BergenTab = ({ open }: { open: boolean }) => {
+function BergenTab() {
   return (
     <div
-      className={`grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3 ${
-        open ? "block" : "hidden"
-      }`}
+      className={
+        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
+      }
     >
       <Division
         title="Styret"
@@ -223,14 +213,14 @@ const BergenTab = ({ open }: { open: boolean }) => {
       />
     </div>
   );
-};
+}
 
-const HovedstyretTab = ({ open }: { open: boolean }) => {
+function HovedstyretTab() {
   return (
     <div
-      className={`${
-        open ? "block" : "hidden"
-      } flex flex-col md:ml-24 md:max-w-2xl md:flex-row lg:ml-16 xl:ml-auto`}
+      className={
+        "flex flex-col md:ml-24 md:max-w-2xl md:flex-row lg:ml-16 xl:ml-auto"
+      }
     >
       <div className="flex-1 object-contain">
         <h2 className="font-bold text-2xl text-gray-600 sm:text-4xl dark:text-gray-200">
@@ -273,22 +263,47 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
       </div>
     </div>
   );
-};
+}
 
-const TeamTabs = ({
-  divisions,
-}: {
-  divisions: Array<DivisionList>;
-}) => {
+function DepartmentTeams({ department }: { department: DepartmentPretty }) {
+  switch (department) {
+    case "Trondheim":
+      return <TrondheimTab />;
+    case "Ås":
+      return <AasTab />;
+    case "Bergen":
+      return <BergenTab />;
+    case "Hovedstyret":
+      return <HovedstyretTab />;
+    default: {
+      const _exhaustiveCheck: never = department;
+      return _exhaustiveCheck;
+    }
+  }
+}
+
+const TeamTabs = () => {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
     return storedTab ? Number.parseInt(storedTab, 10) : 1;
   };
   const [openTab, setOpenTab] = useState<number>(initialTabState);
-
   useEffect(() => {
     sessionStorage.setItem("teamTab", openTab.toString());
   }, [openTab]);
+
+  const names = Object.values(departments) as Array<DepartmentPretty>;
+
+  const keys = names.map((name, i) => {
+    return { name: name, number: i };
+  });
+
+  const active = keys.find((key) => key.number === openTab);
+
+  if (!active) {
+    console.error("ERROR: INVALID ACTIVE KEY");
+    return null;
+  }
 
   return (
     <div
@@ -296,17 +311,10 @@ const TeamTabs = ({
       role="tablist"
     >
       <div className="md:absolute md:left-3 lg:left-12">
-        <Tabs
-          divisions={divisions}
-          tabstate={openTab}
-          setOpenTab={setOpenTab}
-        />
+        <Tabs divisions={keys} tabstate={openTab} setOpenTab={setOpenTab} />
       </div>
       <div className="flex w-full max-w-5xl flex-col items-start">
-        <TrondheimTab open={openTab === 1} />
-        <AasTab open={openTab === 2} />
-        <BergenTab open={openTab === 3} />
-        <HovedstyretTab open={openTab === 4} />
+        {<DepartmentTeams department={active.name} />}
       </div>
     </div>
   );
@@ -314,7 +322,7 @@ const TeamTabs = ({
 
 /* Division */
 
-const Division = ({
+function Division({
   title,
   text,
   mail,
@@ -328,12 +336,12 @@ const Division = ({
   numberOfMembers: number;
   buttonName: string;
   url: To;
-}) => {
-  const chosenStyle = title === "Styret" ? "w-64" : "w-64";
-
+}) {
   return (
     <NavLink
-      className={`flex h-48 flex-col justify-between rounded-md bg-vektor-light-blue shadow-md dark:bg-gray-600 dark:text-white ${chosenStyle}`}
+      className={
+        "flex h-48 w-64 flex-col justify-between rounded-md bg-vektor-light-blue shadow-md dark:bg-gray-600 dark:text-white"
+      }
       to={url}
       prefetch="intent"
     >
@@ -363,4 +371,4 @@ const Division = ({
       </div>
     </NavLink>
   );
-};
+}
