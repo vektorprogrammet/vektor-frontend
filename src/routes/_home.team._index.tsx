@@ -67,6 +67,7 @@ const TeamCard = ({
       </div>
       <div className="relative mt-10">
         <div className="absolute top-20 w-full overflow-visible">
+          {/* biome-ignore lint/a11y/noSvgWithoutTitle: Decorative icon */}
           <svg className="overflow-visible">
             <polyline
               fill="none"
@@ -262,12 +263,13 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
       } flex flex-col md:ml-24 md:max-w-2xl md:flex-row lg:ml-16 xl:ml-auto`}
     >
       <div className="flex-1 object-contain">
-        <h1 className="font-bold text-2xl text-gray-600 sm:text-4xl dark:text-gray-200">
-          Hovedstyret
-        </h1>
+        <h2 className="font-bold text-2xl text-gray-600 sm:text-4xl dark:text-gray-200">
+          {"Hovedstyret"}
+        </h2>
         <p className="mt-4 mb-4 text-md sm:text-lg dark:text-gray-300">
-          Hovedstyret er det nasjonale styret i vektorprogrammet. De er et
-          overordnet organ med ansvar for drifting av hele organisasjonen.
+          {`Hovedstyret er det nasjonale styret i vektorprogrammet.
+            De er et overordnet organ med ansvar for drifting av hele organisasjonen.
+          `}
         </p>
         <div className="flex items-center space-x-1">
           <Mail className="h-5 w-5 text-black" />
@@ -275,7 +277,7 @@ const HovedstyretTab = ({ open }: { open: boolean }) => {
             className="truncate text-sm hover:underline dark:text-white"
             href="mailto:hovedstyret@vektorprogrammet.no"
           >
-            hovedstyret@vektorprogrammet.no
+            <span>{"hovedstyret@vektorprogrammet.no"}</span>
           </a>
         </div>
         <div className="mt-2 flex items-center space-x-1">
@@ -366,16 +368,16 @@ const Division = ({
       prefetch="intent"
     >
       <div className="h-20 content-center rounded-t-md bg-vektor-blue dark:bg-vektor-darblue">
-        <h1 className="text-center font-medium text-lg text-vektor-darblue dark:text-white">
+        <h3 className="text-center font-medium text-lg text-vektor-darblue dark:text-white">
           {title}
-        </h1>
+        </h3>
       </div>
       <div className="mx-3 my-2 h-full text-sm">
         <p>{text}</p>
       </div>
       <div className="mx-3 flex flex-row content-end gap-1 text-sm">
         <Users className="h-5 w-5 text-black" />
-        <div>{`${numberOfMembers} medlemmer`}</div>
+        <span>{`${numberOfMembers} medlemmer`}</span>
       </div>
       <div className="mr-1.5 mb-1.5 flex w-full justify-end self-end">
         <Button
