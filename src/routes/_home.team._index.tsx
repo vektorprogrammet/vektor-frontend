@@ -8,10 +8,9 @@ import {
   teamsHovedstyret,
   teamsTrondheim,
 } from "~/api/team";
-import { Tabs } from "~/components/tabs";
+import { TabMenu } from "~/components/tab-menu";
 import { Button } from "~/components/ui/button";
 import type { CityPretty, DepartmentPretty } from "~/lib/types";
-import { departments } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Team() {
@@ -139,25 +138,19 @@ function TeamTab({ team }: { team: CityPretty }) {
 function TeamTabs() {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("teamTab");
-    return storedTab ? Number.parseInt(storedTab, 10) : 1;
+    if (!storedTab) {
+      return "Trondheim";
+    }
+    if (!["Trondheim", "Bergen", "Ås", "Hovedstyret"].includes(storedTab)) {
+      return "Trondheim";
+    }
+    // Checks ensure that storedTab is a valid DepartmentPretty
+    return storedTab as DepartmentPretty;
   };
-  const [openTab, setOpenTab] = useState<number>(initialTabState);
+  const [active, setActive] = useState<DepartmentPretty>(initialTabState);
   useEffect(() => {
-    sessionStorage.setItem("teamTab", openTab.toString());
-  }, [openTab]);
-
-  const names = Object.values(departments) as Array<DepartmentPretty>;
-
-  const keys = names.map((name, i) => {
-    return { name: name, number: i };
-  });
-
-  const active = keys.find((key) => key.number === openTab);
-
-  if (!active) {
-    console.error("ERROR: INVALID ACTIVE KEY");
-    return null;
-  }
+    sessionStorage.setItem("teamTab", active.toString());
+  }, [active]);
 
   return (
     <div
@@ -165,13 +158,17 @@ function TeamTabs() {
       role="tablist"
     >
       <div className="md:absolute md:left-3 lg:left-12">
-        <Tabs divisions={keys} tabState={openTab} setOpenTab={setOpenTab} />
+        <TabMenu
+          tabs={["Trondheim", "Bergen", "Ås", "Hovedstyret"]}
+          activeTab={active}
+          setActiveTab={setActive}
+        />
       </div>
       <div className="flex w-full max-w-5xl flex-col items-start">
-        {active.name === "Hovedstyret" ? (
+        {active === "Hovedstyret" ? (
           <HovedstyretTab />
         ) : (
-          <TeamTab team={active.name} />
+          <TeamTab team={active} />
         )}
       </div>
     </div>

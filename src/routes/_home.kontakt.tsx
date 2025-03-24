@@ -1,13 +1,12 @@
-import { Label } from "@radix-ui/react-label";
 import { Mail, MapPin, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getKontakt, info } from "~/api/kontakt";
-import { Tabs } from "~/components/tabs";
+import { TabMenu } from "~/components/tab-menu";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
 import type { DepartmentPretty } from "~/lib/types";
-import { departments } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Kontakt() {
@@ -40,34 +39,34 @@ export default function Kontakt() {
 function ContactTabCards() {
   const initialTabState = () => {
     const storedTab = sessionStorage.getItem("kontaktTab");
-    return storedTab ? Number.parseInt(storedTab, 10) : 1;
+    if (!storedTab) {
+      return "Trondheim";
+    }
+    if (!["Trondheim", "Bergen", "Ås", "Hovedstyret"].includes(storedTab)) {
+      return "Trondheim";
+    }
+    // Checks ensure that storedTab is a valid DepartmentPretty
+    return storedTab as DepartmentPretty;
   };
-  const [openTab, setOpenTab] = useState(initialTabState);
+
+  const [active, setActive] = useState<DepartmentPretty>(initialTabState);
+
   useEffect(() => {
-    sessionStorage.setItem("kontaktTab", openTab.toString());
-  }, [openTab]);
-
-  const names = Object.values(departments) as Array<DepartmentPretty>;
-
-  const keys = names.map((name, i) => {
-    return { name: name, number: i };
-  });
-
-  const active = keys.find((key) => key.number === openTab);
-
-  if (!active) {
-    console.error("ERROR: INVALID ACTIVE KEY");
-    return null;
-  }
+    sessionStorage.setItem("kontaktTab", active);
+  }, [active]);
 
   return (
     <div className="mb-6 flex flex-col items-start md:mb-auto md:max-w-6xl md:flex-row">
       <div className="ml-3 w-1/5">
-        <Tabs divisions={keys} tabState={openTab} setOpenTab={setOpenTab} />
+        <TabMenu
+          tabs={["Trondheim", "Bergen", "Ås", "Hovedstyret"]}
+          activeTab={active}
+          setActiveTab={setActive}
+        />
       </div>
       <main className="mx-auto mb-6 flex h-[500px] w-full flex-col items-start overflow-y-scroll break-words rounded-md px-5 py-5 sm:w-[440px] md:w-[720px] lg:ml-16 lg:w-[820px] xl:ml-20 xl:w-[1100px]">
         <div className="flex-grow">
-          {<DepartmentCard department={active.name} />}
+          {<DepartmentCard department={active} />}
         </div>
       </main>
     </div>
