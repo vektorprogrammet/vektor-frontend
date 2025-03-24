@@ -4,10 +4,6 @@ import { Button } from "~/components/ui/button";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {
-  const goToContact = (url: string) => () => {
-    window.location.href = url;
-  };
-
   return (
     <div>
       <div className="mx-5 mt-10 flex flex-col items-center justify-center gap-3 font-sans leading-relaxed md:gap-5 dark:text-text-dark">
@@ -105,15 +101,15 @@ export default function ForSkoler() {
           {[
             {
               city: "Trondheim",
-              url: "#",
+              url: href("/kontakt"), //! This should be href("/kontakt/trondheim")
             },
             {
               city: "Ås",
-              url: "#",
+              url: href("/kontakt"), //! This should be href("/kontakt/aas")
             },
             {
               city: "Bergen",
-              url: "#",
+              url: href("/kontakt"), //! This should be href("/kontakt/bergen")
             },
           ].map(({ city, url }) => {
             return (
@@ -121,9 +117,9 @@ export default function ForSkoler() {
                 variant="green"
                 className="my-2 min-w-48 px-4 py-2 md:mx-6"
                 key={city}
-                onClick={goToContact(url)}
+                asChild
               >
-                {city}
+                <Link to={url}>{city}</Link>
               </Button>
             );
           })}
