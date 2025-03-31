@@ -1,7 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import CountUp from "react-countup";
 import { Link, type To, href } from "react-router";
-import VisibilitySensor from "react-visibility-sensor";
 import { Button } from "~/components/ui/button";
 import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
 import ksBergen from "/images/mainPage/sponsor/KSBergen.png";
@@ -134,17 +133,16 @@ export default function mainPage() {
             className="flex max-w-96 flex-col gap-5 text-vektor-bg"
           >
             <div>
-              <VisibilitySensor partialVisibility>
-                {({ isVisible }: { isVisible: boolean }) => (
-                  <div className="font-bold text-4xl">
-                    {isVisible ? (
-                      <CountUp end={number} duration={4} separator="" />
-                    ) : (
-                      0
-                    )}
-                  </div>
-                )}
-              </VisibilitySensor>
+              <div className="font-bold text-4xl">
+                <CountUp
+                  end={number}
+                  duration={4}
+                  separator=""
+                  preserveValue
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
+              </div>
               <p className="text-xl md:text-2xl">{title}</p>
             </div>
             <p className="max-w-80 text-sm md:max-w-96 md:text-xl">{text}</p>
