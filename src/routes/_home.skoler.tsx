@@ -6,7 +6,7 @@ import { cities } from "~/lib/types";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {
   return (
-    <div>
+    <main>
       <div className="mx-5 mt-10 flex flex-col items-center justify-center gap-3 font-sans leading-relaxed md:gap-5 dark:text-text-dark">
         <div className="flex flex-col gap-3 md:gap-5">
           <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
@@ -62,9 +62,9 @@ export default function ForSkoler() {
         </div>
       </div>
       <div className="info-background mx-auto mb-20 flex flex-col items-center gap-5 p-5 py-48 text-vektor-bg md:gap-5">
-        <h3 className="max-w-3xl text-center font-bold text-2xl text-vektor-bg md:text-4xl">
+        <h2 className="max-w-3xl text-center font-bold text-2xl text-vektor-bg md:text-4xl">
           Enkelt å bruke assistenter i undervisningen
-        </h3>
+        </h2>
         <p className="mt-5 max-w-3xl text-md md:max-w-2xl md:text-xl">
           Assistentene kan brukes som hjelp i undervisningen. Her er noen
           forslag vi har gode erfaringer med:
@@ -82,23 +82,17 @@ export default function ForSkoler() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-40 mb-20 flex max-w-80 flex-col items-center gap-10 p-5 md:max-w-none md:gap-10 dark:text-text-dark">
+      <section className="mx-auto mt-40 mb-20 flex max-w-80 flex-col items-center gap-10 p-5 md:max-w-none md:gap-10 dark:text-text-dark">
         <div className="flex flex-col gap-3 md:gap-5">
-          <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
+          <h2 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
             Søk om å få assistenter til din skole
-          </h1>
+          </h2>
           <p className="max-w-3xl text-md md:text-lg">
             Ta kontakt med ansvarlig for skolekoordinering i din by for å sende
             inn en søknad om å få vektorassistenter til din skole.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row">
-          <p className="max-w-3xl text-md md:text-lg">
-            Ta kontakt med ansvarlig for skolekoordinering i din by for å sende
-            inn en søknad om å få vektorassistenter til din skole.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row">
+        <nav className="flex flex-col md:flex-row">
           {Object.values(cities)
             .map((city) => {
               return {
@@ -118,11 +112,11 @@ export default function ForSkoler() {
                 </Button>
               );
             })}
-        </div>
+        </nav>
         <div>
-          <h2 className="max-w-3xl text-center font-bold text-vektor-DARKblue text-xl md:text-2xl dark:text-text-dark">
+          <h3 className="max-w-3xl text-center font-bold text-vektor-DARKblue text-xl md:text-2xl dark:text-text-dark">
             Har ikke Vektorprogrammet etablert seg i din by enda?
-          </h2>
+          </h3>
           <p className="my-4 max-w-3xl text-md md:text-center md:text-lg">
             {"Ta kontakt med "}
             <Link to={href("/team/hovedstyret")}>
@@ -131,7 +125,7 @@ export default function ForSkoler() {
             {" for å melde din interesse!"}
           </p>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
