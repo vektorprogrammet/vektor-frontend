@@ -13,7 +13,7 @@ interface AccordionType {
   content: string;
 }
 
-const assistantAccordions: Array<AccordionType> = [
+const assistantFaqs: Array<AccordionType> = [
   {
     title: "Er verv i Vektorprogrammet betalt?",
     content:
@@ -63,7 +63,7 @@ const assistantAccordions: Array<AccordionType> = [
   },
 ];
 
-const teamAccordions: Array<AccordionType> = [
+const teamFaqs: Array<AccordionType> = [
   {
     title: "Hvordan søker jeg team?",
     content:
@@ -89,41 +89,6 @@ const teamAccordions: Array<AccordionType> = [
 export default function OmOss() {
   const { title, ingress, bottomText, bottomHeader, bottomImage, cards } =
     getOmOss();
-  const accordionSection = (
-    <div className="flex w-full flex-col items-center">
-      <h2 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
-        Assistent
-      </h2>
-      <Accordion type="single" collapsible className="w-full">
-        {assistantAccordions.map(({ title, content }, index) => (
-          <AccordionItem key={title} value={`item-${index + 1}`}>
-            <AccordionTrigger>
-              <p className="text-left">{title}</p>
-            </AccordionTrigger>
-            <AccordionContent>
-              <p className="text-left">{content}</p>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-      <Divider />
-      <h2 className="mb-3 text-2xl text-vektor-DARKblue dark:text-gray-200">
-        Team
-      </h2>
-      <Accordion type="single" collapsible className="w-full">
-        {teamAccordions.map(({ title, content }, index) => (
-          <AccordionItem key={title} value={`item-${index + 1}`}>
-            <AccordionTrigger>
-              <p className="text-left">{title}</p>
-            </AccordionTrigger>
-            <AccordionContent>
-              <p className="text-left">{content}</p>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
-  );
 
   return (
     <div className="mt-20 mb-20 flex max-w-4xl flex-col items-center gap-10 self-center p-5 md:gap-28 dark:text-text-dark">
@@ -144,9 +109,9 @@ export default function OmOss() {
         />
       ))}
       <div className="flex w-full flex-col gap-3 md:gap-5">
-        <h1 className="text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
+        <h2 className="text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           {bottomHeader}
-        </h1>
+        </h2>
         <p className="text-md md:text-lg">{bottomText}</p>
         <img
           className="mt-0"
@@ -156,10 +121,44 @@ export default function OmOss() {
         <Divider />
       </div>
       <div className="flex w-full flex-col gap-10">
-        <h1 className="w-full text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
+        <h2 className="w-full text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           Ofte stilte spørsmål og svar
-        </h1>
-        {accordionSection}
+        </h2>
+
+        {/* FAQ Section */}
+        <div className="flex w-full flex-col items-center">
+          <h3 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
+            Assistent
+          </h3>
+          <Accordion type="single" collapsible className="w-full">
+            {assistantFaqs.map(({ title, content }, index) => (
+              <AccordionItem key={title} value={`item-${index + 1}`}>
+                <AccordionTrigger>
+                  <p className="text-left">{title}</p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-left">{content}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Divider />
+          <h3 className="mb-3 text-2xl text-vektor-DARKblue dark:text-gray-200">
+            Team
+          </h3>
+          <Accordion type="single" collapsible className="w-full">
+            {teamFaqs.map(({ title, content }, index) => (
+              <AccordionItem key={title} value={`item-${index + 1}`}>
+                <AccordionTrigger>
+                  <p className="text-left">{title}</p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-left">{content}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </div>
   );
