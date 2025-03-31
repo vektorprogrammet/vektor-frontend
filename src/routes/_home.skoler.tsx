@@ -1,6 +1,7 @@
 import { Link, href } from "react-router";
 import { Divider } from "~/components/divider";
 import { Button } from "~/components/ui/button";
+import { cities } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {
@@ -98,31 +99,25 @@ export default function ForSkoler() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row">
-          {[
-            {
-              city: "Trondheim",
-              url: href("/kontakt"), //! This should be href("/kontakt/trondheim")
-            },
-            {
-              city: "Ås",
-              url: href("/kontakt"), //! This should be href("/kontakt/aas")
-            },
-            {
-              city: "Bergen",
-              url: href("/kontakt"), //! This should be href("/kontakt/bergen")
-            },
-          ].map(({ city, url }) => {
-            return (
-              <Button
-                variant="green"
-                className="my-2 min-w-48 px-4 py-2 md:mx-6"
-                key={city}
-                asChild
-              >
-                <Link to={url}>{city}</Link>
-              </Button>
-            );
-          })}
+          {Object.values(cities)
+            .map((city) => {
+              return {
+                city: city,
+                url: href("/kontakt"), //! This should be href("/kontakt/${city}")
+              };
+            })
+            .map(({ city, url }) => {
+              return (
+                <Button
+                  variant="green"
+                  className="my-2 min-w-48 px-4 py-2 md:mx-6"
+                  key={city}
+                  asChild
+                >
+                  <Link to={url}>{city}</Link>
+                </Button>
+              );
+            })}
         </div>
         <div>
           <h2 className="max-w-3xl text-center font-bold text-vektor-DARKblue text-xl md:text-2xl dark:text-text-dark">
