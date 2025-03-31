@@ -121,7 +121,7 @@ function DepartmentCard({ department }: { department: DepartmentPretty }) {
           {button && (
             <div className="py-5">
               <Button className="bg-vektor-darkblue hover:bg-vektor-blue">
-                Les mer om hovedstyret
+                {"Les mer om hovedstyret"}
               </Button>
             </div>
           )}
@@ -153,23 +153,23 @@ function DepartmentCard({ department }: { department: DepartmentPretty }) {
           <form>
             <div className="mt-7 mb-6 grid xl:grid-cols-2 xl:gap-6">
               <div>
-                <Label htmlFor="name">Ditt navn</Label>
+                <Label htmlFor="name">{"Ditt navn"}</Label>
                 <Input placeholder="Skriv inn navn" required />
               </div>
               <div>
-                <Label htmlFor="email">Din e-post</Label>
+                <Label htmlFor="email">{"Din e-post"}</Label>
                 <Input placeholder="Skriv inn epost" required />
               </div>
             </div>
             <div className="mb-6">
               <div>
-                <Label htmlFor="topic">Emne</Label>
+                <Label htmlFor="topic">{"Emne"}</Label>
                 <Input placeholder="Skriv inn emnet for meldingen" required />
               </div>
             </div>
             <div className="mb-6">
               <div>
-                <Label htmlFor="message">Melding</Label>
+                <Label htmlFor="message">{"Melding"}</Label>
                 <Textarea
                   placeholder="Skriv inn meldingen din"
                   rows={6}
@@ -179,7 +179,7 @@ function DepartmentCard({ department }: { department: DepartmentPretty }) {
               </div>
             </div>
             <Button className="bg-vektor-darkblue hover:bg-vektor-blue">
-              Send melding
+              {"Send melding"}
             </Button>
           </form>
         </div>

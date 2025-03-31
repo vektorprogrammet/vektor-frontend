@@ -48,13 +48,13 @@ export default function OmOss() {
       </div>
       <div className="flex w-full flex-col gap-10">
         <h2 className="w-full text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
-          Ofte stilte spørsmål og svar
+          {"Ofte stilte spørsmål og svar"}
         </h2>
 
         {/* FAQ Section */}
         <div className="flex w-full flex-col items-center">
           <h3 className="text-2xl text-vektor-DARKblue dark:text-gray-200">
-            Assistent
+            {"Assistent"}
           </h3>
           <Accordion type="single" collapsible className="w-full">
             {assistantFaqs.map(({ question, answer }) => (
@@ -70,7 +70,7 @@ export default function OmOss() {
           </Accordion>
           <Divider />
           <h3 className="mb-3 text-2xl text-vektor-DARKblue dark:text-gray-200">
-            Team
+            {"Team"}
           </h3>
           <Accordion type="single" collapsible className="w-full">
             {teamFaqs.map(({ question, answer }) => (

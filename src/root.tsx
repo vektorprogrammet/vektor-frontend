@@ -31,7 +31,7 @@ export function Layout({
         />
 
         <link rel="manifest" href="/manifest.json" />
-        <title>Vektorprogrammet</title>
+        <title>{"Vektorprogrammet"}</title>
         <Meta />
         <Links />
       </head>
