@@ -46,7 +46,7 @@ export default function Assistenter() {
         <p className="max-w-3xl p-5 text-md md:text-lg">{ingress}</p>
         <Divider />
         <div className="w-full space-y-20 border-secondary p-10 text-center">
-          <div className="conte mx-8 bg-center font-bold font-sans text-vektor-DARKblue dark:text-text-dark">
+          <div className="mx-8 bg-center font-bold font-sans text-vektor-DARKblue dark:text-text-dark">
             Disse avdelingene har opptak nå:
           </div>
           <Button variant="green" onClick={scrollToCard}>
