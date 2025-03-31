@@ -113,15 +113,15 @@ export default function mainPage() {
         </div>
         <div className="w-full p-6 text-center md:mt-24 md:mr-auto md:w-1/2 md:p-10 md:text-left">
           <h1 className="mb-4 hidden font-bold text-4xl md:block dark:text-text-dark">
-            Vektorprogrammet
+            {"Vektorprogrammet"}
           </h1>
           <div className="mt-6 mb-4 flex justify-center md:block">
             <p className="text-left text-md md:w-4/5 md:text-xl dark:text-text-dark">
-              - sender studenter til ungdomsskoler for å hjelpe til som lærerens
-              assistent i matematikkundervisningen
+              {`- sender studenter til ungdomsskoler for å hjelpe til som lærerens
+              assistent i matematikkundervisningen`}
             </p>
           </div>
-          <Button variant="green">Les mer og bli assistent</Button>
+          <Button variant="green">{"Les mer og bli assistent"}</Button>
         </div>
       </div>
       {/*Upper end*/}
