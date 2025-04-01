@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: build
+          path: build/client
       - name: store build artifact
         uses: actions/upload-artifact@v4
         with:
