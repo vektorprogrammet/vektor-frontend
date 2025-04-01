@@ -29,9 +29,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "pnpm"
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
       - name: Install dependencies
         run: pnpm install
       - name: Build
