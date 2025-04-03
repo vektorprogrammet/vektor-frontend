@@ -15,13 +15,50 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import React, { useRef, useState } from "react";
+import { TabsContent } from "@/components/ui/tabs";
+import { Tabs } from "@radix-ui/react-tabs";
+import { useEffect, useRef, useState } from "react";
 import { getAssistenter } from "~/api/assistenter";
+import { TabMenu } from "~/components/tab-menu";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { CityPretty } from "~/lib/types";
-import { cities } from "~/lib/types";
+"use client"
+ 
+ 
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+
+ 
+import { Check, ChevronsUpDown } from "lucide-react";
+import * as React from "react";
+ 
+import { cn } from "@/lib/utils";
+ 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+ 
+const studyValues = [
+  "Annet", "BBI", "BDIGSEC", "BELDIG", "BFY", "BGEOL", "BIAIS", "BIBYGG", 
+  "BIDATA", "BIELEKTRO", "BIFOREN", "BIHAV", "BIMASKIN", "BIT", "BKJ", 
+  "BMAT", "BØA", "BSØK", "FTFORKURS", "FTHINGKJ", "FTHINGLOG", "FTHINGMAT", 
+  "FTREALFAG", "ITBAITBEDR", "MAAR", "MBIOT5", "MLREAL", "MSIT", "MSIVØK5", 
+  "MSØK/5", "MTBYGG", "MTDESIG", "MTDT", "MTELSYS", "MTENERG", "MTFYMA", 
+  "MTGEORT", "MTING", "MTINGGEO", "MTIØT", "MTKJ", "MTKOM", "MTMART", 
+  "MTMASKIN", "MTMT", "MTNANO", "MTTK", "ÅBIKJ", "ÅØKADM", "ÅSØK"
+];
+
+const studies = studyValues.map(value => ({ value, label: value }));
+
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Assistenter() {
@@ -168,10 +205,10 @@ export default function Assistenter() {
         Søk nå!
       </div>
 
-      <div className="mb-16 h-full" ref={cardElement}>
+      <div className="mb-16 h-full s:w-[100%] md:w-[75%]" ref={cardElement}>
         {" "}
         {/* ikke helt dynamisk høyde her */}
-        <Citycard />
+        <CityTabs />
       </div>
       <div className="mb-16 font-bold text-vektor-DARKblue">
         Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar.
@@ -180,114 +217,184 @@ export default function Assistenter() {
   );
 }
 
-function Citycard() {
-  const [openTab, setOpenTab] = useState<CityPretty>("Trondheim");
-  const [position, setPosition] = React.useState("bottom");
-  function Tab({
-    city,
-    onTabClick,
-    open,
-  }: {
-    onTabClick: () => void;
-    city: CityPretty;
-    open: boolean;
-  }) {
-    const chosenStyle = open
-      ? "tab-active dark:text-vektor-darblue"
-      : "text-vektor-darblue dark:text-gray-300";
-    return (
-      <button
-        type="button"
-        className={`tab tab-lifted w-1/3 border-white font-bold text-base dark:hover:bg-neutral-700 ${chosenStyle}`}
-        onClick={onTabClick}
-        data-toggle="tab"
+function CityTabs() {
+  const initialTabState = () => {
+    const storedTab = sessionStorage.getItem("kontaktTab");
+    if (!storedTab) {
+      return "Trondheim";
+    }
+    if (!["Trondheim", "Bergen", "Ås"].includes(storedTab)) {
+      return "Trondheim";
+    }
+    // Checks ensure that storedTab is a valid DepartmentPretty
+    return storedTab as CityPretty;
+  };
+
+  const [active, setActive] = useState<CityPretty>(initialTabState);
+
+  useEffect(() => {
+    sessionStorage.setItem("kontaktTab", active);
+  }, [active]);
+
+  /* return (
+    <div>
+      <main className="flex w-4/5 flex-col items-center rounded-md sm:w-[440px] md:w-[720px] lg:w-[820px] xl:w-[1100px]">
+        <div className="w-full">
+          {<CityApplyCard city={active} />}
+        </div>
+      </main>
+      <div className="ml-3 w-1/5">
+        <TabMenu
+          tabs={["Trondheim", "Bergen", "Ås"]}
+          activeTab={active}
+          setActiveTab={setActive}
+        />
+      </div>
+    </div>
+  ); */
+   return (
+      <div
+        className="sm:w-[100%] sm:min-w-[300px] md:w-auto items-center justify-center"
+        /* className="mb-6 flex max-w-[256px] flex-col items-start sm:max-w-[544px] md:mb-auto md:max-w-6xl md:flex-row" */
+        role="tablist"
       >
-        {city}
-      </button>
+        <div className="md:absolute s:left-0 md:left-3 lg:left-12">
+          <TabMenu
+              tabs={["Trondheim", "Bergen", "Ås"]}
+              activeTab={active}
+              setActiveTab={setActive}
+          />
+        </div>
+        {/* <div className="flex w-1 items-center"> */}
+        <div className="flex max-w-[800px] w-[70%] items-center justify-center mx-auto">
+          {<CityApplyCard city={active} />}
+        </div>
+      </div>
     );
-  }
+}
+
+function CityApplyCard({ city }: { city: CityPretty }) {
+  const [open, setOpen] = React.useState(false)
+  const [value, setValue] = React.useState("")
   return (
-    <Tabs
-      defaultValue={Object.values(cities)[0]}
-      className="h-full sm:w-[200px] lg:w-[600px]"
-    >
-      <TabsList className={"grid w-full grid-cols-3"}>
-        {/* Eventuelt dynamisk antall kolonner med ${Object.keys(Cities).length}` */}
-        {Object.values(cities).map((city) => (
-          <TabsTrigger className="w-full" key={city} value={city}>
-            {city}
-          </TabsTrigger>
-        ))}
-      </TabsList>
-      {Object.values(cities).map((city) => (
-        <TabsContent value={city} key={city}>
-          <Card>
-            <CardHeader>
-              <CardTitle>{city}</CardTitle>
-              <CardDescription>Søknadsfrist: ???</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="space-y-1">
+    <Tabs value={city} className="min-w-[300px] md:w-[90%] space-y-">
+      <TabsContent value={city} key={city} className="">
+        <Card className="bg-vektor-darkblue">
+          <CardHeader className=" text-white">
+            <CardTitle className="flex items-center justify-center">{city}</CardTitle>
+            <CardDescription className=" flex text-white items-center justify-center">Søknadsfrist: ???</CardDescription>
+          </CardHeader>
+          <CardContent className=" space-y-3  text-white">
+          {/* <CardContent className="min-w-[300px] md:w-[60%] md:min-w-[400px] lg:min-w-[700px] space-y-3"> */}
+            <div className="flex flex-col md:flex-row md:space-x-4 w-full">
+              <div className="space-y-1 w-full md:w-1/2">
                 <Label htmlFor="fornavn">Fornavn</Label>
-                <Input id="fornavn" defaultValue="Ola" />
+                <Input className="text-black" id="fornavn" placeholder="Ola" />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 w-full md:w-1/2">
                 <Label htmlFor="etternavn">Etternavn</Label>
-                <Input id="etternavn" defaultValue="Nordmann" />
+                <Input id="etternavn" className="text-black"  placeholder="Nordmann" />
               </div>
-              <div className="space-y-1">
+            </div>
+            <div className="flex flex-col md:flex-row md:space-x-4 w-full">
+              <div className="space-y-1 w-full md:w-1/2">
                 <Label htmlFor="email">E-post</Label>
-                <Input id="email" defaultValue="Skriv inn epost" />
+                <Input id="email" placeholder="Skriv inn epost" className="text-black" />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 w-full md:w-1/2">
                 <Label htmlFor="phone">Telefonnummer</Label>
-                <Input id="phone" defaultValue="Skriv inn telefonnummer" />
+                <Input id="phone" placeholder="Skriv inn telefonnummer" className="text-black" />
               </div>
-              <div className="space-y-1">
-                <Label htmlFor="study">Studieretning</Label>
-                <Input
-                  id="study"
-                  defaultValue="Bruk forkortelsen, f.eks. MTDT"
-                />
+            </div>
+            <div className="flex flex-col md:flex-row md:space-x-4 w-full">
+              <div className="space-y-1 w-full md:w-1/2">
+                <Label htmlFor="fornavn">Fornavn</Label>
+                <Popover open={open} onOpenChange={setOpen}>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={open}
+                        className="w-full text-left text-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        {value
+                          ? studies.find((studies) => studies.value === value)?.label
+                          : "Velg studieretning"}
+                        <ChevronsUpDown className="opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-full">
+                      <Command>
+                        <CommandInput placeholder="Finn studiekode" className="" />
+                        <CommandList>
+                          <CommandEmpty>Studiekode ikke funnet.</CommandEmpty>
+                          <CommandGroup>
+                            {studies.map((studies) => (
+                              <CommandItem
+                                key={studies.value}
+                                value={studies.value}
+                                onSelect={(currentValue) => {
+                                  setValue(currentValue === value ? "" : currentValue)
+                                  setOpen(false)
+                                }}
+                              >
+                                {studies.label}
+                                <Check
+                                  className={cn(
+                                    
+                                    value === studies.value ? "opacity-100" : "opacity-0"
+                                  )}
+                                />
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </CommandList>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
               </div>
-              <div className="space-y-1">
-                <Label htmlFor="gender">Kjønn</Label>
-                <Select>
-                  <SelectTrigger className="w-[150px]">
-                    <SelectValue className="w-full" placeholder="Velg kjønn" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="male">Mann</SelectItem>
-                    <SelectItem value="female">Kvinne</SelectItem>
-                    <SelectItem value="other">Annet</SelectItem>
-                  </SelectContent>
-                </Select>
+              <div className="space-y-1 w-full md:w-1/2">
+                <div className="flex flex-col md:flex-row md:space-x-4 w-full">
+                  <div className="space-y-1 w-full md:w-1/2">
+                    <Label htmlFor="gender">Kjønn</Label>
+                    <Select >
+                      <SelectTrigger className="w-full text-black">
+                        <SelectValue className="w-full" placeholder="Velg kjønn" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="male">Mann</SelectItem>
+                        <SelectItem value="female">Kvinne</SelectItem>
+                        <SelectItem value="other">Annet</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-1 w-full md:w-1/2">
+                    <Label htmlFor="grade">Årstrinn</Label>
+                    <Select>
+                      <SelectTrigger className="w-full text-black">
+                        <SelectValue
+                          className="w-full text-black"
+                          placeholder="Velg årstrinn"
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="firstGrade">1. klasse</SelectItem>
+                        <SelectItem value="secondGrade">2. klasse</SelectItem>
+                        <SelectItem value="thirdGrade">3. klasse</SelectItem>
+                        <SelectItem value="fourthGrade">4. klasse</SelectItem>
+                        <SelectItem value="fifthGrade">5. klasse</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
               </div>
-              <div className="space-y-1">
-                <Label htmlFor="grade">Årstrinn</Label>
-                <Select>
-                  <SelectTrigger className="w-[150px]">
-                    <SelectValue
-                      className="w-full"
-                      placeholder="Velg årstrinn"
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="firstGrade">1. klasse</SelectItem>
-                    <SelectItem value="secondGrade">2. klasse</SelectItem>
-                    <SelectItem value="thirdGrade">3. klasse</SelectItem>
-                    <SelectItem value="fourthGrade">4. klasse</SelectItem>
-                    <SelectItem value="fifthGrade">5. klasse</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-[150px]">Søk nå!</Button>
-            </CardFooter>
-          </Card>
-        </TabsContent>
-      ))}
+            </div>
+          </CardContent>
+          <CardFooter className="flex justify-end text-white">
+            <Button variant="green" className="w-[155px]">Søk nå!</Button>
+          </CardFooter>
+        </Card>
+      </TabsContent>
     </Tabs>
   );
 }
