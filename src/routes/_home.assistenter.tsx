@@ -36,9 +36,7 @@ export default function Assistenter() {
     });
 
   return (
-    <div className="mt-20 mb-20 flex flex-col items-center gap-10 self-center pt-5 pb-5 font-sans leading-relaxed dark:text-text-dark">
-      {/* mt-20 mb-20 flex flex-col items-center gap-10 self-center p-5 md:gap-28
-      dark:text-text-dark" */}
+    <div className="mt-20 mb-20 flex w-full flex-col items-center gap-10 self-center pt-5 pb-5 font-sans leading-relaxed dark:text-text-dark">
       <div className="flex max-w-full flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           {title}
@@ -87,7 +85,7 @@ export default function Assistenter() {
         <div className="my-2 mb-2 w-fit font-bold text-2xl text-vektor-DARKblue dark:text-text-dark">
           {"Lærerassistent i matematikk"}
         </div>
-        <div className="mb-4 w-3/5 dark:text-text-dark">
+        <div className="max-w-3xl p-5 text-md md:text-lg dark:text-text-dark">
           {`Vektorprogrammet er en studentorganisasjon som sender realfagssterke
           studenter til grunnskolen for å hjelpe elevene med matematikk i
           skoletiden. Vi ser etter deg som lengter etter en mulighet til å lære
@@ -102,7 +100,7 @@ export default function Assistenter() {
           className="mx-auto mt-6 h-80 rounded-lg"
           alt="vektorbilde"
         />
-        <div className="mt-4 w-3/5 dark:text-text-dark">
+        <div className="max-w-3xl p-5 text-md md:text-lg dark:text-text-dark">
           {`I tillegg vil du få muligheten til å delta på mange sosiale
           arrangementer, alt fra fest og grilling til go-kart, laser tag og
           spillkvelder. Samtidig arrangerer vi populærforedrag som er til for å
@@ -117,7 +115,7 @@ export default function Assistenter() {
           {"Arbeidsoppgaver"}
         </div>
 
-        <div className="w-3/5">
+        <div className="max-w-3xl p-5 text-md md:text-lg">
           {`Som vektorassistent er du ute én dag i uka, i 4 eller 8 uker, på en
           ungdomsskole i nærområdet. Vi tilpasser timeplanen slik at du selv kan
           bestemme hvilken dag som passer best. Vektorassistenter blir sendt ut
@@ -193,7 +191,7 @@ export default function Assistenter() {
         {/* ikke helt dynamisk høyde her */}
         <Citycard />
       </div>
-      <div className="mx-auto w-3/5 text-center font-bold text-vektor-DARKblue">
+      <div className="max-w-3xl p-5 text-center font-bold text-md text-vektor-DARKblue md:text-lg">
         {"Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar."}
       </div>
     </div>
