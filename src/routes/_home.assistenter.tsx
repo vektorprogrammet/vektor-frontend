@@ -18,6 +18,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React, { useRef, useState } from "react";
 import { getAssistenter } from "~/api/assistenter";
+import { Divider } from "~/components/divider";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { CityPretty } from "~/lib/types";
@@ -35,36 +36,40 @@ export default function Assistenter() {
     });
 
   return (
-    <div className="mt-10 flex flex-col items-center justify-center font-sans leading-relaxed dark:text-text-dark">
-      <h1 className="mx-3 mt-10 max-w-2xl text-center font-bold font-sans text-4xl text-vektor-DARKblue dark:text-text-dark">
-        {title}
-      </h1>
-      <div className="mt-8 mb-20 w-3/5 text-xl">{ingress}</div>
-      <div className="mb-14 w-full space-y-20 border-secondary p-10 text-center">
-        <div className="conte mx-8 bg-center font-bold font-sans text-secondary dark:text-text-dark">
-          {"Disse avdelingene har opptak nå:"}
+    <div className="mt-20 mb-20 flex w-full flex-col items-center gap-10 self-center pt-5 pb-5 font-sans leading-relaxed dark:text-text-dark">
+      <div className="flex max-w-full flex-col gap-3 md:gap-5">
+        <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
+          {title}
+        </h1>
+        <p className="max-w-3xl p-5 text-md md:text-lg">{ingress}</p>
+        <div className="w-full space-y-20 border-secondary p-10 text-center">
+          <div className="mx-8 bg-center font-bold font-sans text-vektor-DARKblue dark:text-text-dark">
+            {"Disse avdelingene har opptak nå: "}
+          </div>
+          <Button variant="green" onClick={scrollToCard}>
+            {"Scroll ned for å søke!"}
+          </Button>
         </div>
-        <Button variant="green" onClick={scrollToCard}>
-          {"Scroll ned for å søke!"}
-        </Button>
       </div>
-      <div className="info-background mb-16 flex w-full flex-col items-center space-y-10 pt-72 pb-72">
+      {/* upper end */}
+      {/* middle start */}
+      <div className="info-background mb-0 flex w-full max-w-full flex-col flex-wrap items-center justify-center gap-24 pt-96 pb-96 text-center md:mt-20 md:gap-40 md:pt-72 md:pb-72">
         <div className="w-fit font-bold text-3xl text-accent">
           {"Hvorfor bli assistent?"}
         </div>
-        <div className="flex justify-evenly space-x-10 text-accent">
+        <div className="info-background flex w-full flex-wrap items-center justify-center gap-10 text-center md:flex-row">
           {cards.map(({ title, text, image }) => (
             <div
               key={title}
-              className="mx-auto flex w-full flex-wrap justify-between leading-relaxed"
+              className="flex w-full max-w-xs flex-col gap-5 text-vektor-bg md:w-1/3"
             >
-              <div className="max-w-6xl ">
+              <div>
                 <img
                   src={image.url.href}
                   alt={image.alt}
                   className="mx-auto mt-6 mb-2 h-24 rounded-lg"
                 />
-                <div className="p-1 text-center font-bold font-sans text-primary text-xl">
+                <div className="p-1 text-center font-bold font-sans text-secondary text-xl">
                   {title}
                 </div>
                 <div className="my-1 text-center font-sans dark:text-text-dark">
@@ -75,11 +80,12 @@ export default function Assistenter() {
           ))}
         </div>
       </div>
+      {/* middle end */}
       <div className="mb-16 flex flex-col items-center dark:text-text-dark">
-        <div className="my-2 mb-2 w-fit font-bold text-2xl text-secondary dark:text-text-dark">
+        <div className="my-2 mb-2 w-fit font-bold text-2xl text-vektor-DARKblue dark:text-text-dark">
           {"Lærerassistent i matematikk"}
         </div>
-        <div className="mb-4 w-3/5 dark:text-text-dark">
+        <div className="max-w-3xl p-5 text-md md:text-lg dark:text-text-dark">
           {`Vektorprogrammet er en studentorganisasjon som sender realfagssterke
           studenter til grunnskolen for å hjelpe elevene med matematikk i
           skoletiden. Vi ser etter deg som lengter etter en mulighet til å lære
@@ -94,7 +100,7 @@ export default function Assistenter() {
           className="mx-auto mt-6 h-80 rounded-lg"
           alt="vektorbilde"
         />
-        <div className="mt-4 w-3/5 dark:text-text-dark">
+        <div className="max-w-3xl p-5 text-md md:text-lg dark:text-text-dark">
           {`I tillegg vil du få muligheten til å delta på mange sosiale
           arrangementer, alt fra fest og grilling til go-kart, laser tag og
           spillkvelder. Samtidig arrangerer vi populærforedrag som er til for å
@@ -103,13 +109,13 @@ export default function Assistenter() {
           Grime.`}
         </div>
       </div>
-
+      <Divider />
       <div className="mb-16 flex flex-col items-center dark:text-text-dark">
         <div className="my-2 mb-3 text-center font-bold text-2xl text-vektor-darblue dark:text-text-dark">
           {"Arbeidsoppgaver"}
         </div>
 
-        <div className="w-3/5">
+        <div className="max-w-3xl p-5 text-md md:text-lg">
           {`Som vektorassistent er du ute én dag i uka, i 4 eller 8 uker, på en
           ungdomsskole i nærområdet. Vi tilpasser timeplanen slik at du selv kan
           bestemme hvilken dag som passer best. Vektorassistenter blir sendt ut
@@ -120,65 +126,72 @@ export default function Assistenter() {
           blir satt stor pris på av både barn og lærere!`}
         </div>
       </div>
-      <div className="my-8 text-center font-bold text-2xl text-vektor-DARKblue dark:text-text-dark">
-        {"Hvordan blir jeg Vektorassistent?"}
-      </div>
-      <div className="flex flex-row space-x-16 dark:text-text-dark">
-        <div className="flex-1">
-          <ul className="list-disc whitespace-normal leading-loose md:whitespace-pre ">
-            <div className="my-3 font-bold text-lg text-vektor-darblue dark:text-text-dark">
-              {"Opptakskrav"}
-            </div>
-
-            <li>{"Du studerer på høgskole/universitet"}</li>
-            <li>{"Du har hatt R1/S2 på videregående"}</li>
-            <li>
-              {
-                "Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)"
-              }
-              <br />
-              {"i en periode på 4 eller 8 uker"}
-            </li>
-          </ul>
+      <Divider />
+      <div className="mx-auto w-4/5">
+        <div className="my-8 text-center font-bold text-2xl text-vektor-DARKblue dark:text-text-dark">
+          {"Hvordan blir jeg Vektorassistent?"}
         </div>
 
-        <div className="flex-2">
-          <div className="my-3 font-bold text-lg text-vektor-DARKblue dark:text-text-dark">
-            {"Opptaksprosessen"}
+        <div className="flex flex-col space-y-8 md:flex-row md:space-x-16 md:space-y-0 dark:text-text-dark">
+          {/* Left section */}
+          <div className="flex-1">
+            <ul className="list-disc whitespace-normal px-4 leading-loose md:px-0">
+              <div className="my-3 font-bold text-lg text-vektor-darblue dark:text-text-dark">
+                {"Opptakskrav"}
+              </div>
+
+              <li>{"Du studerer på høgskole/universitet"}</li>
+              <li>{"Du har hatt R1/S2 på videregående"}</li>
+              <li>
+                {
+                  "Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)"
+                }
+                <br />
+                {"i en periode på 4 eller 8 uker"}
+              </li>
+            </ul>
           </div>
-          <ol className="list-decimal whitespace-normal leading-loose md:whitespace-pre">
-            <li>
-              {
-                "Vektorprogrammet tar opp nye assistenter i starten av hvert semester"
-              }
-            </li>
-            <li>{"Send inn søknad fra skjemaet lengre ned på denne siden"}</li>
-            <li>
-              {"Møt opp på intervju slik at vi kan bli bedre kjent med deg"}
-            </li>
-            <li>
-              {
-                "Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet"
-              }
-            </li>
-            <li>
-              {
-                "Få tildelt en ungdomsskole som du og din vektorpartner skal dra til"
-              }
-            </li>
-          </ol>
+
+          {/* Right section */}
+          <div className="flex-1">
+            <div className="my-3 font-bold text-lg text-vektor-DARKblue dark:text-text-dark">
+              {"Opptaksprosessen"}
+            </div>
+            <ol className="list-decimal whitespace-normal px-4 leading-loose md:px-0">
+              <li>
+                {
+                  "Vektorprogrammet tar opp nye assistenter i starten av hvert semester"
+                }
+              </li>
+              <li>
+                {"Send inn søknad fra skjemaet lengre ned på denne siden"}
+              </li>
+              <li>
+                {"Møt opp på intervju slik at vi kan bli bedre kjent med deg"}
+              </li>
+              <li>
+                {
+                  "Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet"
+                }
+              </li>
+              <li>
+                {
+                  "Få tildelt en ungdomsskole som du og din vektorpartner skal dra til"
+                }
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
-
+      <Divider />
       <div className="mt-16 mb-8 font-bold text-3xl text-vektor-DARKblue dark:text-text-dark">
         {"Søk nå!"}
       </div>
-
       <div className="mb-16 h-full" ref={cardElement}>
         {/* ikke helt dynamisk høyde her */}
         <Citycard />
       </div>
-      <div className="mb-16 font-bold text-vektor-DARKblue">
+      <div className="max-w-3xl p-5 text-center font-bold text-md text-vektor-DARKblue md:text-lg">
         {"Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar."}
       </div>
     </div>
