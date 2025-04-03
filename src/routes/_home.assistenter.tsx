@@ -44,7 +44,6 @@ export default function Assistenter() {
           {title}
         </h1>
         <p className="max-w-3xl p-5 text-md md:text-lg">{ingress}</p>
-        <Divider />
         <div className="w-full space-y-20 border-secondary p-10 text-center">
           <div className="mx-8 bg-center font-bold font-sans text-vektor-DARKblue dark:text-text-dark">
             {"Disse avdelingene har opptak nå: "}
@@ -56,7 +55,7 @@ export default function Assistenter() {
       </div>
       {/* upper end */}
       {/* middle start */}
-      <div className="info-background mb-0 flex w-full max-w-full flex-col flex-wrap items-center justify-center gap-24 pt-72 pb-72 text-center md:mt-20 md:gap-40">
+      <div className="info-background mb-0 flex w-full max-w-full flex-col flex-wrap items-center justify-center gap-24 pt-96 pb-96 text-center md:mt-20 md:gap-40 md:pt-72 md:pb-72">
         <div className="w-fit font-bold text-3xl text-accent">
           {"Hvorfor bli assistent?"}
         </div>
@@ -112,6 +111,7 @@ export default function Assistenter() {
           Grime.`}
         </div>
       </div>
+      <Divider />
       <div className="mb-16 flex flex-col items-center dark:text-text-dark">
         <div className="my-2 mb-3 text-center font-bold text-2xl text-vektor-darblue dark:text-text-dark">
           {"Arbeidsoppgaver"}
@@ -128,6 +128,7 @@ export default function Assistenter() {
           blir satt stor pris på av både barn og lærere!`}
         </div>
       </div>
+      <Divider />
       <div className="mx-auto w-4/5">
         <div className="my-8 text-center font-bold text-2xl text-vektor-DARKblue dark:text-text-dark">
           {"Hvordan blir jeg Vektorassistent?"}
@@ -144,8 +145,11 @@ export default function Assistenter() {
               <li>{"Du studerer på høgskole/universitet"}</li>
               <li>{"Du har hatt R1/S2 på videregående"}</li>
               <li>
-                {"Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)"}
-                <br />{"i en periode på 4 eller 8 uker"}
+                {
+                  "Du har tid til å dra til en ungdomsskole én dag i uka (kl. 8-14)"
+                }
+                <br />
+                {"i en periode på 4 eller 8 uker"}
               </li>
             </ul>
           </div>
@@ -157,22 +161,31 @@ export default function Assistenter() {
             </div>
             <ol className="list-decimal whitespace-normal px-4 leading-loose md:px-0">
               <li>
-                {"Vektorprogrammet tar opp nye assistenter i starten av hvert semester"}
+                {
+                  "Vektorprogrammet tar opp nye assistenter i starten av hvert semester"
+                }
               </li>
-              <li>{"Send inn søknad fra skjemaet lengre ned på denne siden"}</li>
+              <li>
+                {"Send inn søknad fra skjemaet lengre ned på denne siden"}
+              </li>
               <li>
                 {"Møt opp på intervju slik at vi kan bli bedre kjent med deg"}
               </li>
               <li>
-                {"Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet"}
+                {
+                  "Dra på et gratis forberedelseskurs arrangert av Vektorprogrammet"
+                }
               </li>
               <li>
-                {"Få tildelt en ungdomsskole som du og din vektorpartner skal dra til"}
+                {
+                  "Få tildelt en ungdomsskole som du og din vektorpartner skal dra til"
+                }
               </li>
             </ol>
           </div>
         </div>
       </div>
+      <Divider />
       <div className="mt-16 mb-8 font-bold text-3xl text-vektor-DARKblue dark:text-text-dark">
         {"Søk nå!"}
       </div>
