@@ -1,12 +1,13 @@
 import { Mail, MapPin, Users } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useParams } from "react-router";
 import { getKontakt, info } from "~/api/kontakt";
 import { TabMenu } from "~/components/tab-menu";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
-import type { DepartmentPretty } from "~/lib/types";
+import { type DepartmentPretty, departments } from "~/lib/types";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Kontakt() {
@@ -37,29 +38,29 @@ export default function Kontakt() {
 }
 
 function ContactTabCards() {
-  const initialTabState = () => {
-    const storedTab = sessionStorage.getItem("kontaktTab");
-    if (!storedTab) {
-      return "Trondheim";
-    }
-    if (!["Trondheim", "Bergen", "Ås", "Hovedstyret"].includes(storedTab)) {
-      return "Trondheim";
-    }
-    // Checks ensure that storedTab is a valid DepartmentPretty
-    return storedTab as DepartmentPretty;
-  };
-
-  const [active, setActive] = useState<DepartmentPretty>(initialTabState);
-
-  useEffect(() => {
-    sessionStorage.setItem("kontaktTab", active);
-  }, [active]);
+  const { department } = useParams();
+  const [active, setActive] = useState<DepartmentPretty>(
+    // ! ugly ass solution
+    department === "hovedstyret"
+      ? departments.hovedstyret
+      : department === "aas"
+        ? departments.aas
+        : department === "bergen"
+          ? departments.bergen
+          : "Trondheim",
+    // ! for some reason this doesn't work
+    /* department === undefined
+      ? "Trondheim"
+      : department in Object.keys(departments)
+        ? departments[department as keyof typeof departments]
+        : "Trondheim", */
+  );
 
   return (
     <div className="mb-6 flex flex-col items-start md:mb-auto md:max-w-6xl md:flex-row">
       <div className="ml-3 w-1/5">
         <TabMenu
-          tabs={["Trondheim", "Bergen", "Ås", "Hovedstyret"]}
+          tabs={Object.values(departments)}
           activeTab={active}
           setActiveTab={setActive}
         />

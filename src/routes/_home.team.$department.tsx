@@ -1,6 +1,6 @@
 import { Mail, Users } from "lucide-react";
 import { useState } from "react";
-import { Link, NavLink, type To } from "react-router";
+import { Link, NavLink, type To, useParams } from "react-router";
 import {
   getTeam,
   teamsAas,
@@ -64,7 +64,11 @@ export default function Team() {
 function HovedstyretTab() {
   const team = teamsHovedstyret();
   return (
-    <div className="flex flex-col md:ml-24 md:max-w-2xl md:flex-row lg:ml-16 xl:ml-auto">
+    <div
+      className={
+        "flex flex-col md:ml-24 md:max-w-2xl md:flex-row lg:ml-16 xl:ml-auto"
+      }
+    >
       <div className="flex-1 object-contain">
         <h2 className="font-bold text-2xl text-gray-600 sm:text-4xl dark:text-gray-200">
           {team.title}
@@ -115,7 +119,11 @@ function TeamTab({ team }: { team: CityPretty }) {
         : teamsTrondheim();
 
   return (
-    <div className="grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3">
+    <div
+      className={
+        "grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 xl:grid-cols-3"
+      }
+    >
       {teams.map((team) => (
         <Division
           key={team.mail}
@@ -132,7 +140,23 @@ function TeamTab({ team }: { team: CityPretty }) {
 }
 
 function TeamTabs() {
-  const [active, setActive] = useState<DepartmentPretty>("Trondheim");
+  const { department } = useParams();
+  const [active, setActive] = useState<DepartmentPretty>(
+    // ! ugly ass solution
+    department === "hovedstyret"
+      ? departments.hovedstyret
+      : department === "aas"
+        ? departments.aas
+        : department === "bergen"
+          ? departments.bergen
+          : "Trondheim",
+    // ! for some reason this doesn't work
+    /* department === undefined
+      ? "Trondheim"
+      : department in Object.keys(departments)
+        ? departments[department as keyof typeof departments]
+        : "Trondheim", */
+  );
 
   return (
     <div
