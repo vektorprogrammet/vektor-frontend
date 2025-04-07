@@ -1,4 +1,10 @@
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -18,6 +24,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React, { useRef, useState } from "react";
 import { getAssistenter } from "~/api/assistenter";
+import { getAssistantFaqs } from "~/api/faq";
 import { Divider } from "~/components/divider";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
@@ -34,6 +41,8 @@ export default function Assistenter() {
       behavior: "smooth",
       block: "center",
     });
+
+  const assistantFaqs = getAssistantFaqs();
 
   return (
     <div className="mt-20 mb-20 flex w-full flex-col items-center gap-10 self-center pt-5 pb-5 font-sans leading-relaxed dark:text-text-dark">
@@ -191,8 +200,28 @@ export default function Assistenter() {
         {/* ikke helt dynamisk høyde her */}
         <Citycard />
       </div>
-      <div className="max-w-3xl p-5 text-center font-bold text-md text-vektor-DARKblue md:text-lg">
-        {"Har du noen spørsmål? Sjekk ut ofte stilte spørsmål og svar."}
+      <Divider />
+
+      {/* FAQ Section */}
+      <div className="flex w-4/5 max-w-4xl flex-col items-center gap-10 self-center dark:text-text-dark">
+        <h2 className="w-full text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
+          {"Ofte stilte spørsmål"}
+        </h2>
+
+        <div className="flex w-full flex-col items-center">
+          <Accordion type="single" collapsible className="w-full">
+            {assistantFaqs.map(({ question, answer }) => (
+              <AccordionItem key={question} value={question}>
+                <AccordionTrigger>
+                  <p className="text-left">{question}</p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-left">{answer}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </div>
   );

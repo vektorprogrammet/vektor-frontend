@@ -1,6 +1,13 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Mail, Users } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink, type To } from "react-router";
+import { getTeamFaqs } from "~/api/faq";
 import {
   getTeam,
   teamsAas,
@@ -8,6 +15,7 @@ import {
   teamsHovedstyret,
   teamsTrondheim,
 } from "~/api/team";
+import { Divider } from "~/components/divider";
 import { TabMenu } from "~/components/tab-menu";
 import { Button } from "~/components/ui/button";
 import {
@@ -19,8 +27,9 @@ import {
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Team() {
   const teamInfo = getTeam();
+  const teamFaqs = getTeamFaqs();
   return (
-    <div className="mx-auto mt-10 mb-20 flex w-full max-w-6xl flex-col items-center">
+    <div className="mx-auto mt-20 mb-20 flex w-full max-w-6xl flex-col items-center">
       <header className="mx-auto flex w-full flex-wrap justify-around">
         <div className="mt-5 flex max-w-6xl flex-col">
           <h2 className="mx-3 font-bold text-4xl text-gray-600 dark:text-gray-200">
@@ -57,6 +66,28 @@ export default function Team() {
         {teamInfo.title}
       </h1>
       <TeamTabs />
+      <Divider />
+
+      {/* FAQ Section */}
+      <div className="flex w-4/5 max-w-4xl flex-col items-center gap-10 self-center md:mt-20 dark:text-text-dark">
+        <h2 className="w-full text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
+          {"Ofte stilte spørsmål"}
+        </h2>
+        <div className="flex w-full flex-col items-center">
+          <Accordion type="single" collapsible className="w-full">
+            {teamFaqs.map(({ question, answer }) => (
+              <AccordionItem key={question} value={question}>
+                <AccordionTrigger>
+                  <p className="text-left">{question}</p>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-left">{answer}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
     </div>
   );
 }
