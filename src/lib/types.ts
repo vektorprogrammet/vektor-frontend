@@ -12,5 +12,5 @@ export const departments = {
   aas: "Ås",
   hovedstyret: "Hovedstyret",
 } as const;
-type Department = keyof typeof departments;
+export type Department = keyof typeof departments;
 export type DepartmentPretty = (typeof departments)[Department];
