@@ -97,11 +97,13 @@ export default function ForSkoler() {
           </p>
         </div>
         <nav className="flex flex-col md:flex-row">
-          {Object.values(cities)
+          {Object.entries(cities)
             .map((city) => {
+              const key = city[0];
+              const value = city[1];
               return {
-                city: city,
-                url: href("/kontakt"), //! This should be href("/kontakt/${city}")
+                city: value,
+                url: href("/kontakt/:department", { department: key }),
               };
             })
             .map(({ city, url }) => {
