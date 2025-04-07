@@ -4,6 +4,7 @@ import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { Link, NavLink, Outlet, type To } from "react-router";
 import { type Sponsor, getSponsors } from "~/api/sponsor";
+import ApplicationBanner from "~/components/application-banner";
 import { Button, buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
@@ -24,6 +25,7 @@ export default function Layout() {
       <AppHeader />
       {/* Banner */}
       <Outlet />
+      <ApplicationBanner />
       <AppFooter />
     </div>
   );

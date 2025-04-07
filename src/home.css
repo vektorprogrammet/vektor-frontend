@@ -107,3 +107,19 @@
     display: block;
   }
 }
+
+/* Rolling banner */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 15s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+}
