@@ -32,16 +32,14 @@ export default function Layout() {
 function AppHeader() {
   return (
     <div className="sticky top-2 z-50">
-      <div className="hidden w-full justify-center md:flex lg:px-4">
+      <div className="flex w-full flex-wrap justify-center lg:px-4">
         <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
-          <div className="h-8 w-8">
-            <div className="w-full rounded-full">
-              <img
-                src="/images/vektor-logo-circle.svg"
-                alt="vektorprogrammet logo"
-              />
-            </div>
-          </div>
+          <img
+            src="/images/vektor-logo-circle.svg"
+            alt="vektorprogrammet logo"
+            width={32}
+            height={32}
+          />
           <NavTabs routes={navRoutes} />
         </div>
       </div>

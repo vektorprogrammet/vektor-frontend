@@ -199,8 +199,11 @@ export default function Assistenter() {
 }
 
 function Citycard() {
-  const [openTab, setOpenTab] = useState<CityPretty>("Trondheim");
-  const [position, setPosition] = React.useState("bottom");
+  const [_openTab, _setOpenTab] = useState<CityPretty>("Trondheim");
+  const [_position, _setPosition] = React.useState("bottom");
+
+  //! TODO: Remove this component when the form is done
+  // biome-ignore lint/correctness/noUnusedVariables: Tempoarily ignore for ci/cd
   function Tab({
     city,
     onTabClick,
@@ -310,6 +313,8 @@ function Citycard() {
   );
 }
 
+//! TODO: Remove this component when the form is done
+// biome-ignore lint/correctness/noUnusedVariables: Tempoarily ignore for ci/cd
 function NoApplyCard({ cities }: { cities: CityPretty }) {
   return (
     <form>
