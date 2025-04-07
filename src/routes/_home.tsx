@@ -73,7 +73,7 @@ function NavTabs({
                 {isActive && (
                   <motion.div
                     layoutId="active"
-                    className="relative h-10 w-10 rounded-full bg-vektor-blue mix-blend-multiply shadow-sm"
+                    className="absolute inset-0 rounded-full bg-vektor-blue mix-blend-multiply shadow-sm"
                     transition={{
                       type: "spring",
                       bounce: 0.1,
@@ -81,7 +81,7 @@ function NavTabs({
                     }}
                   />
                 )}
-                <span>{route.name}</span>
+                {route.name}
               </>
             )}
           </NavLink>
