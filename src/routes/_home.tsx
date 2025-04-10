@@ -37,10 +37,12 @@ export default function Layout() {
 
       <Outlet />
 
-      <AppFooter
+      <Footer
         className={cn(
           // Dependent on parent layout
           "col-span-full",
+          // Affects children
+          "grid grid-cols-subgrid",
         )}
       />
     </div>
@@ -216,23 +218,35 @@ const MobileMenu = ({
   );
 };
 
-function AppFooter() {
+function Footer({ className }: { className?: string }) {
   return (
-    <footer className="bg-vektor-DARKblue">
-      <div className="mx-auto flex max-w-6xl flex-col place-items-center justify-between space-y-8 p-2 py-8 lg:flex-row lg:space-x-4 lg:space-y-0">
+    <footer className={cn("bg-vektor-DARKblue", className)}>
+      <div
+        className={cn(
+          "w-full p-4",
+          // Dependent on parent layout
+          "col-start-2 col-end-3",
+          // Affects children
+          "grid place-items-center gap-8 md:grid-cols-2 xl:grid-cols-3",
+        )}
+      >
         <img
           src={logoWhite}
           alt="vektorprogrammet logo hvit"
-          className="h-24 md:h-40"
+          className={cn(
+            "h-40",
+            // Dependent on parent layout
+            "col-span-full xl:col-span-1",
+          )}
         />
         <FooterLinks />
-        <FooterSponsors />
+        <SponsorLinks />
       </div>
     </footer>
   );
 }
 
-function FooterSponsors() {
+function SponsorLinks() {
   const sponsors = getAllSponsors();
 
   return (
@@ -255,9 +269,9 @@ function FooterLinks() {
   return (
     <div className="text-white">
       <ul className="grid grid-cols-1 gap-8">
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <SiFacebook size={40} />
-          <ul className="flex place-items-center space-x-2">
+          <ul className="flex place-items-center gap-2">
             <li>
               <a
                 className="hover:underline"
@@ -287,9 +301,9 @@ function FooterLinks() {
           </ul>
         </li>
 
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <Mail size={40} />
-          <div className="flex place-items-center space-x-2">
+          <div className="flex place-items-center gap-2">
             <a
               className="hover:underline"
               href="mailto:hovedstyret@vektorprogrammet.no"
@@ -299,16 +313,16 @@ function FooterLinks() {
           </div>
         </li>
 
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <MapPin size={40} />
-          <div className="flex place-items-center space-x-2">
+          <div className="flex place-items-center gap-2">
             {"Høgskoleringen 5, 7491 Trondheim"}
           </div>
         </li>
 
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <FolderOpen size={40} />
-          <div className="flex place-items-center space-x-2">
+          <div className="flex place-items-center gap-2">
             {"OrgNr: 998744814"}
           </div>
         </li>
