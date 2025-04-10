@@ -11,7 +11,7 @@ export default function ForForeldre() {
       className={cn(
         "mt-20 mb-20 max-w-4xl p-5",
         // Depends on parent layout
-        "col-span-full self-center",
+        "col-start-2 col-end-3 self-center",
         // Affects children
         "flex flex-col items-center gap-10 md:gap-28",
       )}
