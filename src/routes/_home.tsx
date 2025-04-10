@@ -5,7 +5,7 @@ import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { Link, NavLink, Outlet, type To } from "react-router";
 import { type Sponsor, getSponsors } from "~/api/sponsor";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -17,7 +17,7 @@ import {
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import "~/home.css";
-import { breakpointPixels } from "~/lib/utils";
+import { breakpointPixels, cn } from "~/lib/utils";
 import { navRoutes } from "~/routes";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
@@ -34,7 +34,7 @@ export default function Layout() {
 
 function AppHeader() {
   const { width } = useViewportSize();
-  const isMobile = width < breakpointPixels.sm;
+  const isMobile = width < breakpointPixels.md;
 
   return (
     <div className="sticky top-2 z-50">
@@ -53,7 +53,7 @@ function AppHeader() {
               <NavTabs routes={navRoutes} />
             </div>
           </div>
-          <div className="absolute top-0 right-2 hidden rounded-full md:flex">
+          <div className="absolute top-0 right-2 flex rounded-full">
             <LoginButtons />
           </div>
         </>
