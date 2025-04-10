@@ -19,6 +19,7 @@ import {
 import "~/home.css";
 import { breakpointPixels, cn } from "~/lib/utils";
 import { navRoutes } from "~/routes";
+import itTor from "/images/team/IT-Tor.png";
 import icon from "/images/vektor-logo-circle.svg";
 import logoWhite from "/images/vektor-logo-white.svg";
 
@@ -135,7 +136,7 @@ const MobileMenu = ({
               }),
             )}
           >
-            <AvatarImage src="/images/team/IT-Tor.png" />
+            <AvatarImage src={itTor} />
             <AvatarFallback>{"Tor"}</AvatarFallback>
           </Avatar>
         </div>
