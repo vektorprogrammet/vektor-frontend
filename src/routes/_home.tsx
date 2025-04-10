@@ -19,6 +19,8 @@ import {
 import "~/home.css";
 import { breakpointPixels, cn } from "~/lib/utils";
 import { navRoutes } from "~/routes";
+import icon from "/images/vektor-logo-circle.svg";
+import logoWhite from "/images/vektor-logo-white.svg";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
@@ -45,7 +47,7 @@ function AppHeader() {
           <div className="flex w-full flex-wrap justify-center lg:px-4">
             <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
               <img
-                src="/images/vektor-logo-circle.svg"
+                src={icon}
                 alt="vektorprogrammet logo"
                 width={32}
                 height={32}
@@ -181,7 +183,7 @@ function AppFooter() {
     <footer className="bg-vektor-DARKblue">
       <div className="mx-auto flex max-w-6xl flex-col place-items-center justify-between space-y-8 p-2 py-8 lg:flex-row lg:space-x-4 lg:space-y-0">
         <img
-          src="/images/vektor-logo-white.svg"
+          src={logoWhite}
           alt="vektorprogrammet logo hvit"
           className="h-24 md:h-40"
         />
