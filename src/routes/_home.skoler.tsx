@@ -2,11 +2,17 @@ import { Link, href } from "react-router";
 import { Divider } from "~/components/divider";
 import { Button } from "~/components/ui/button";
 import { cities } from "~/lib/types";
+import { cn } from "~/lib/utils";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function ForSkoler() {
   return (
-    <main>
+    <main
+      className={cn(
+        // Dependent on parent layout
+        "col-span-full",
+      )}
+    >
       <div className="mx-5 mt-10 flex flex-col items-center justify-center gap-3 font-sans leading-relaxed md:gap-5 dark:text-text-dark">
         <div className="flex flex-col gap-3 md:gap-5">
           <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">

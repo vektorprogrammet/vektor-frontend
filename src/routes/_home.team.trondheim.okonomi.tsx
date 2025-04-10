@@ -1,9 +1,18 @@
 import { TeamTemplate } from "@/components/team-template";
+import { cn } from "~/lib/utils";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Okonomi() {
   return (
-    <div className="mx-auto mt-5 mb-20 flex max-w-screen-lg flex-col items-center">
+    <div
+      className={cn(
+        "mx-auto mt-5 mb-20 max-w-screen-lg",
+        // Depends on parent layout
+        "col-span-full",
+        // Affects children
+        "flex flex-col items-center",
+      )}
+    >
       ,
       <TeamTemplate
         name="Økonomi"

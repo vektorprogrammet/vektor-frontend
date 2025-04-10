@@ -26,11 +26,23 @@ import logoWhite from "/images/vektor-logo-white.svg";
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
   return (
-    <div className="flex min-h-screen flex-col items-stretch transition-colors">
-      <AppHeader />
-      {/* Banner */}
+    <div
+      className={cn(
+        "min-h-screen w-full transition-colors",
+        // Affects children
+        "grid grid-cols-[10%_80%_10%] grid-rows-[auto_1fr_auto]",
+      )}
+    >
+      <AppHeader className="col-span-full" />
+
       <Outlet />
-      <AppFooter />
+
+      <AppFooter
+        className={cn(
+          // Dependent on parent layout
+          "col-span-full",
+        )}
+      />
     </div>
   );
 }

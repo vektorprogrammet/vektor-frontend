@@ -1,11 +1,20 @@
 import { Outlet } from "react-router";
 import { getKontakt } from "~/api/kontakt";
+import { cn } from "~/lib/utils";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function KontaktLayout() {
   const kontaktInfo = getKontakt();
   return (
-    <div className="mx-auto mt-10 mb-20 flex max-w-6xl flex-col items-center">
+    <div
+      className={cn(
+        "mx-auto mt-10 mb-20 max-w-6xl",
+        // Depends on parent layout
+        "col-span-full",
+        // Affects children
+        "flex flex-col items-center",
+      )}
+    >
       <header className="mx-auto flex w-full flex-wrap justify-around">
         <div className="mt-5 flex max-w-6xl flex-col">
           <h2 className=" mx-3 font-bold text-4xl text-gray-600 dark:text-gray-200">

@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { getMetrics } from "~/api/main";
 import { getMainSponsors, getSponsors } from "~/api/sponsor";
 import { Button } from "~/components/ui/button";
+import { cn } from "~/lib/utils";
 import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import vektorLogo from "/images/vektor-logo.svg";
 
@@ -15,7 +16,12 @@ export default function MainPage() {
   const metrics = getMetrics();
 
   return (
-    <main>
+    <main
+      className={cn(
+        // Depends on parent layout
+        "col-span-full",
+      )}
+    >
       <header className="grid grid-cols-1 place-items-center gap-14 bg-vektor-index-blue pt-14 md:grid-cols-2 md:flex-row">
         <img
           className="w-2/4 max-w-prose md:hidden"
