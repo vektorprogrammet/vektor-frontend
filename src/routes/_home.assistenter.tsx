@@ -30,6 +30,7 @@ import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { CityPretty } from "~/lib/types";
 import { cities } from "~/lib/types";
+import { cn } from "~/lib/utils";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Assistenter() {
@@ -45,7 +46,15 @@ export default function Assistenter() {
   const assistantFaqs = getAssistantFaqs();
 
   return (
-    <div className="mt-20 mb-20 flex w-full flex-col items-center gap-10 self-center pt-5 pb-5 font-sans leading-relaxed dark:text-text-dark">
+    <div
+      className={cn(
+        "mt-20 mb-20 w-full pt-5 pb-5 font-sans leading-relaxed",
+        // Depends on parent layout
+        "col-span-full self-center",
+        // Affects children
+        "flex flex-col items-center gap-10",
+      )}
+    >
       <div className="flex max-w-full flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           {title}

@@ -1,10 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
+import { useViewportSize } from "@mantine/hooks";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { Link, NavLink, Outlet, type To } from "react-router";
-import { type Sponsor, getSponsors } from "~/api/sponsor";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { type Sponsor, getAllSponsors } from "~/api/sponsor";
+import { buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -12,42 +13,85 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import "~/home.css";
+import { breakpointPixels, cn } from "~/lib/utils";
 import { navRoutes } from "~/routes";
+import itTor from "/images/team/IT-Tor.png";
+import icon from "/images/vektor-logo-circle.svg";
+import logoWhite from "/images/vektor-logo-white.svg";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
   return (
-    <div className="flex min-h-screen flex-col items-stretch transition-colors">
-      <AppHeader />
-      {/* Banner */}
+    <div
+      className={cn(
+        "min-h-screen w-full transition-colors",
+        // Affects children
+        "grid grid-cols-[10%_80%_10%] grid-rows-[auto_1fr_auto] place-items-center",
+      )}
+    >
+      <NavBar className="col-span-full" />
+
       <Outlet />
-      <AppFooter />
+
+      <Footer
+        className={cn(
+          // Dependent on parent layout
+          "col-span-full",
+          // Affects children
+          "grid grid-cols-subgrid",
+        )}
+      />
     </div>
   );
 }
 
-function AppHeader() {
+function NavBar({ className }: { className?: string }) {
+  const { width } = useViewportSize();
+  const isMobile = width < breakpointPixels.md;
+
   return (
-    <div className="sticky top-2 z-50">
-      <div className="flex w-full flex-wrap justify-center lg:px-4">
-        <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
-          <img
-            src="/images/vektor-logo-circle.svg"
-            alt="vektorprogrammet logo"
-            width={32}
-            height={32}
-          />
-          <NavTabs routes={navRoutes} />
-        </div>
-      </div>
-      <div className="absolute top-0 right-2 hidden rounded-full md:flex">
-        <LoginButtons />
-      </div>
-      <MobileMenu routes={navRoutes} />
-    </div>
+    <nav
+      className={cn(
+        "h-full w-full py-4",
+        // Affects children and is layout dependent
+        "grid grid-cols-subgrid place-items-center",
+        className,
+      )}
+    >
+      {isMobile ? (
+        <MobileMenu
+          routes={navRoutes}
+          className="sticky top-4 col-start-3 col-end-4 items-end"
+        />
+      ) : (
+        <>
+          <div
+            className={cn(
+              "sticky top-2 w-fit gap-1 rounded-full bg-[#ccecf6]/40 px-1.5 shadow-md backdrop-blur",
+              // Depends on parent layout
+              "col-start-2 col-end-3",
+              // Affects children
+              "flex flex-row place-items-center",
+            )}
+          >
+            <img
+              src={icon}
+              alt="vektorprogrammet logo"
+              width={32}
+              height={32}
+            />
+            <NavTabs routes={navRoutes} />
+          </div>
+          <div className="col-start-3 col-end-4">
+            <LoginButtons />
+          </div>
+        </>
+      )}
+    </nav>
   );
 }
 
@@ -57,14 +101,19 @@ function NavTabs({
   routes: Array<{ name: string; path: To }>;
 }) {
   return (
-    <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
+    <div className="flew-row flex h-11 rounded-full px-0.5">
       {routes.map((route) => {
         return (
           <NavLink
             to={route.path}
             key={route.path.toString()}
             className={({ isActive }) =>
-              `${isActive ? "text-black" : "text-neutral-700 hover:text-black"} relative my-1.5 place-content-center px-4 py-auto text-center font-medium text-sm`
+              cn(
+                isActive ? "text-black" : "text-neutral-700 hover:text-black",
+                "my-1.5 px-4 font-medium text-sm",
+                // Affects children
+                "relative place-content-center text-nowrap text-center",
+              )
             }
             prefetch="intent"
           >
@@ -93,90 +142,114 @@ function NavTabs({
 
 function LoginButtons() {
   return (
-    <div className="flex space-x-4 overflow-clip rounded-full">
-      <Link
-        className={buttonVariants({ variant: "green" })}
-        to={"/kontrollpanel"}
-        prefetch="intent"
-      >
-        {"Logg inn"}
-      </Link>
-    </div>
+    <Link
+      className={cn(
+        buttonVariants({
+          variant: "green",
+        }),
+        "rounded-full",
+      )}
+      to={"/kontrollpanel"}
+      prefetch="intent"
+    >
+      {"Logg inn"}
+    </Link>
   );
 }
 
 const MobileMenu = ({
   routes,
-}: { routes: Array<{ name: string; path: To }> }) => {
+  className,
+}: { routes: Array<{ name: string; path: To }>; className?: string }) => {
   return (
-    <div className="md:hidden">
-      <Drawer>
-        <DrawerTrigger>
-          <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
-            <Button
-              variant="outline"
-              className="rounded-full bg-vektor-bg p-0"
-              size="icon"
-            >
-              <Avatar className="h-full w-full rounded-full">
-                <AvatarImage src="/images/team/IT-Tor.png" />
-                <AvatarFallback>{"Tor"}</AvatarFallback>
-              </Avatar>
-            </Button>
-          </div>
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader />
-          <DrawerDescription>
-            <div className="flex items-start justify-between p-6">
-              <ul className="flex w-full flex-col items-start gap-4 text-center">
-                {routes.map((route) => (
-                  <li key={route.name}>
-                    <Link
-                      className="text-lg dark:text-white"
-                      reloadDocument
-                      to={route.path}
-                      prefetch="render"
-                    >
-                      {route.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex w-fit justify-center">
-                <LoginButtons />
-              </div>
-            </div>
+    <Drawer>
+      <DrawerTrigger className={cn(className)}>
+        <div className={cn("flex rounded-l-full bg-black/80 p-1 pr-2")}>
+          <Avatar
+            className={cn(
+              "h-full w-full bg-vektor-bg p-0",
+              buttonVariants({
+                variant: "outline",
+                size: "icon",
+                className: "rounded-full",
+              }),
+            )}
+          >
+            <AvatarImage src={itTor} />
+            <AvatarFallback>{"Tor"}</AvatarFallback>
+          </Avatar>
+        </div>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>{"Navigasjonsmeny"}</DrawerTitle>
+          <DrawerDescription hidden={true}>
+            {"Meny for å navigere til hovedsider på nettsiden"}
           </DrawerDescription>
-          <DrawerFooter>
-            <DrawerClose>
-              <Button variant="outline">{"Close"}</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
+        </DrawerHeader>
+
+        <div className="flex items-start justify-between p-6">
+          <ul className="flex w-full flex-col items-start gap-4 text-center">
+            {routes.map((route) => (
+              <li key={route.name}>
+                <Link
+                  className="text-lg dark:text-white"
+                  reloadDocument
+                  to={route.path}
+                  prefetch="render"
+                >
+                  {route.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex w-fit justify-center">
+            <LoginButtons />
+          </div>
+        </div>
+
+        <DrawerFooter>
+          <DrawerClose className={buttonVariants({ variant: "outline" })}>
+            {"Close"}
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 };
 
-function AppFooter() {
+function Footer({ className }: { className?: string }) {
   return (
-    <footer className="bg-vektor-DARKblue">
-      <div className="mx-auto flex max-w-6xl flex-col place-items-center justify-between space-y-8 p-2 py-8 lg:flex-row lg:space-x-4 lg:space-y-0">
+    <footer className={cn("bg-vektor-DARKblue", className)}>
+      <div
+        className={cn(
+          "w-full p-4",
+          // Dependent on parent layout
+          "col-start-2 col-end-3",
+          // Affects children
+          "grid place-items-center gap-8 md:grid-cols-2 xl:grid-cols-3",
+        )}
+      >
         <img
-          src="/images/vektor-logo-white.svg"
+          src={logoWhite}
           alt="vektorprogrammet logo hvit"
-          className="h-24 md:h-40"
+          width={274}
+          height={160}
+          className={cn(
+            "h-40",
+            // Dependent on parent layout
+            "col-span-full xl:col-span-1",
+          )}
         />
         <FooterLinks />
-        <FooterSponsors />
+        <SponsorLinks />
       </div>
     </footer>
   );
 }
 
-function FooterSponsors() {
-  const sponsors = getSponsors();
+function SponsorLinks() {
+  const sponsors = getAllSponsors();
 
   return (
     <ul className="text-white">
@@ -198,9 +271,9 @@ function FooterLinks() {
   return (
     <div className="text-white">
       <ul className="grid grid-cols-1 gap-8">
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <SiFacebook size={40} />
-          <ul className="flex place-items-center space-x-2">
+          <ul className="flex place-items-center gap-2">
             <li>
               <a
                 className="hover:underline"
@@ -230,9 +303,9 @@ function FooterLinks() {
           </ul>
         </li>
 
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <Mail size={40} />
-          <div className="flex place-items-center space-x-2">
+          <div className="flex place-items-center gap-2">
             <a
               className="hover:underline"
               href="mailto:hovedstyret@vektorprogrammet.no"
@@ -242,16 +315,16 @@ function FooterLinks() {
           </div>
         </li>
 
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <MapPin size={40} />
-          <div className="flex place-items-center space-x-2">
+          <div className="flex place-items-center gap-2">
             {"Høgskoleringen 5, 7491 Trondheim"}
           </div>
         </li>
 
-        <li className="flex place-items-center space-x-4">
+        <li className="flex place-items-center gap-4">
           <FolderOpen size={40} />
-          <div className="flex place-items-center space-x-2">
+          <div className="flex place-items-center gap-2">
             {"OrgNr: 998744814"}
           </div>
         </li>

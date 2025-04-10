@@ -1,6 +1,7 @@
 import { getOmOss } from "@/api/om-oss";
 import { Divider } from "~/components/divider";
 import { TextPictureParagraph } from "~/components/text-picture-paragraph";
+import { cn } from "~/lib/utils";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function OmOss() {
@@ -8,7 +9,15 @@ export default function OmOss() {
     getOmOss();
 
   return (
-    <div className="mt-20 mb-20 flex max-w-4xl flex-col items-center gap-10 self-center p-5 md:gap-28 dark:text-text-dark">
+    <div
+      className={cn(
+        "mt-20 mb-20 max-w-4xl p-5",
+        // Depends on parent layout
+        "col-start-2 col-end-3 self-center",
+        // Affects children
+        "flex flex-col items-center gap-10 md:gap-28",
+      )}
+    >
       <div className="flex max-w-full flex-col gap-3 md:gap-5">
         <h1 className="max-w-3xl text-center font-bold text-2xl text-vektor-DARKblue md:text-4xl dark:text-text-dark">
           {title}
