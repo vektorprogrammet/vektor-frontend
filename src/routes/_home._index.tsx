@@ -20,6 +20,8 @@ export default function MainPage() {
         <img
           className="w-2/4 max-w-prose md:hidden"
           src={vektorLogo}
+          width={381}
+          height={221}
           alt={"Logo til Vektorprogrammet"}
         />
         <img
