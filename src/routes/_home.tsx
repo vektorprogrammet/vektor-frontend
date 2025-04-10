@@ -107,15 +107,18 @@ function NavTabs({
 
 function LoginButtons() {
   return (
-    <div className="flex space-x-4 overflow-clip rounded-full">
-      <Link
-        className={buttonVariants({ variant: "green" })}
-        to={"/kontrollpanel"}
-        prefetch="intent"
-      >
-        {"Logg inn"}
-      </Link>
-    </div>
+    <Link
+      className={cn(
+        buttonVariants({
+          variant: "green",
+        }),
+        "rounded-full",
+      )}
+      to={"/kontrollpanel"}
+      prefetch="intent"
+    >
+      {"Logg inn"}
+    </Link>
   );
 }
 
