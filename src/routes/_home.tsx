@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
+import { useViewportSize } from "@mantine/hooks";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { Link, NavLink, Outlet, type To } from "react-router";
@@ -15,7 +16,7 @@ import {
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import "~/home.css";
-import { useIsMobile } from "~/hooks/use-mobile";
+import { breakpointPixels } from "~/lib/utils";
 import { navRoutes } from "~/routes";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
@@ -31,7 +32,8 @@ export default function Layout() {
 }
 
 function AppHeader() {
-  const isMobile = useIsMobile();
+  const { width } = useViewportSize();
+  const isMobile = width < breakpointPixels.sm;
 
   return (
     <div className="sticky top-2 z-50">
