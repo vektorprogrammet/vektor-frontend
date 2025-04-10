@@ -86,7 +86,7 @@ export default function MainPage() {
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
             {sponsors.map(({ name, image }) => (
               <Fragment key={name}>
-                {image ?? (
+                {image && (
                   <div
                     className="flex h-36 w-36 items-center md:h-64 md:w-64"
                     key={name}
