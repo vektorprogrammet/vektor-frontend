@@ -30,7 +30,7 @@ export default function Layout() {
       className={cn(
         "min-h-screen w-full transition-colors",
         // Affects children
-        "grid grid-cols-[10%_80%_10%] grid-rows-[auto_1fr_auto]",
+        "grid grid-cols-[10%_80%_10%] grid-rows-[auto_1fr_auto] place-items-center",
       )}
     >
       <NavBar className="col-span-full" />
@@ -233,6 +233,8 @@ function Footer({ className }: { className?: string }) {
         <img
           src={logoWhite}
           alt="vektorprogrammet logo hvit"
+          width={274}
+          height={160}
           className={cn(
             "h-40",
             // Dependent on parent layout
