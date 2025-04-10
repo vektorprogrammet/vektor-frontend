@@ -9,6 +9,7 @@ export default function ForSkoler() {
   return (
     <main
       className={cn(
+        "w-full",
         // Dependent on parent layout
         "col-span-full",
       )}
