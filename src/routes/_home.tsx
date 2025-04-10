@@ -1,10 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiFacebook } from "@icons-pack/react-simple-icons";
+import { useViewportSize } from "@mantine/hooks";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { Link, NavLink, Outlet, type To } from "react-router";
-import { type Sponsor, getSponsors } from "~/api/sponsor";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { type Sponsor, getAllSponsors } from "~/api/sponsor";
+import { buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -12,10 +13,14 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import "~/home.css";
+import { breakpointPixels, cn } from "~/lib/utils";
 import { navRoutes } from "~/routes";
+import icon from "/images/vektor-logo-circle.svg";
+import logoWhite from "/images/vektor-logo-white.svg";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
 export default function Layout() {
@@ -30,23 +35,31 @@ export default function Layout() {
 }
 
 function AppHeader() {
+  const { width } = useViewportSize();
+  const isMobile = width < breakpointPixels.md;
+
   return (
     <div className="sticky top-2 z-50">
-      <div className="flex w-full flex-wrap justify-center lg:px-4">
-        <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
-          <img
-            src="/images/vektor-logo-circle.svg"
-            alt="vektorprogrammet logo"
-            width={32}
-            height={32}
-          />
-          <NavTabs routes={navRoutes} />
-        </div>
-      </div>
-      <div className="absolute top-0 right-2 hidden rounded-full md:flex">
-        <LoginButtons />
-      </div>
-      <MobileMenu routes={navRoutes} />
+      {isMobile ? (
+        <MobileMenu routes={navRoutes} />
+      ) : (
+        <>
+          <div className="flex w-full flex-wrap justify-center lg:px-4">
+            <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
+              <img
+                src={icon}
+                alt="vektorprogrammet logo"
+                width={32}
+                height={32}
+              />
+              <NavTabs routes={navRoutes} />
+            </div>
+          </div>
+          <div className="absolute top-0 right-2 flex rounded-full">
+            <LoginButtons />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -109,53 +122,59 @@ const MobileMenu = ({
   routes,
 }: { routes: Array<{ name: string; path: To }> }) => {
   return (
-    <div className="md:hidden">
-      <Drawer>
-        <DrawerTrigger>
-          <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
-            <Button
-              variant="outline"
-              className="rounded-full bg-vektor-bg p-0"
-              size="icon"
-            >
-              <Avatar className="h-full w-full rounded-full">
-                <AvatarImage src="/images/team/IT-Tor.png" />
-                <AvatarFallback>{"Tor"}</AvatarFallback>
-              </Avatar>
-            </Button>
-          </div>
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader />
-          <DrawerDescription>
-            <div className="flex items-start justify-between p-6">
-              <ul className="flex w-full flex-col items-start gap-4 text-center">
-                {routes.map((route) => (
-                  <li key={route.name}>
-                    <Link
-                      className="text-lg dark:text-white"
-                      reloadDocument
-                      to={route.path}
-                      prefetch="render"
-                    >
-                      {route.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex w-fit justify-center">
-                <LoginButtons />
-              </div>
-            </div>
+    <Drawer>
+      <DrawerTrigger>
+        <div className="fixed top-12 right-0 flex rounded-l-full bg-black/80 p-1 pr-2">
+          <Avatar
+            className={cn(
+              "h-full w-full rounded-full bg-vektor-bg p-0",
+              buttonVariants({
+                variant: "outline",
+                size: "icon",
+                className: "rounded-full",
+              }),
+            )}
+          >
+            <AvatarImage src="/images/team/IT-Tor.png" />
+            <AvatarFallback>{"Tor"}</AvatarFallback>
+          </Avatar>
+        </div>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>{"Navigasjonsmeny"}</DrawerTitle>
+          <DrawerDescription hidden={true}>
+            {"Meny for å navigere til hovedsider på nettsiden"}
           </DrawerDescription>
-          <DrawerFooter>
-            <DrawerClose>
-              <Button variant="outline">{"Close"}</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
+        </DrawerHeader>
+
+        <div className="flex items-start justify-between p-6">
+          <ul className="flex w-full flex-col items-start gap-4 text-center">
+            {routes.map((route) => (
+              <li key={route.name}>
+                <Link
+                  className="text-lg dark:text-white"
+                  reloadDocument
+                  to={route.path}
+                  prefetch="render"
+                >
+                  {route.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex w-fit justify-center">
+            <LoginButtons />
+          </div>
+        </div>
+
+        <DrawerFooter>
+          <DrawerClose className={buttonVariants({ variant: "outline" })}>
+            {"Close"}
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 };
 
@@ -164,7 +183,7 @@ function AppFooter() {
     <footer className="bg-vektor-DARKblue">
       <div className="mx-auto flex max-w-6xl flex-col place-items-center justify-between space-y-8 p-2 py-8 lg:flex-row lg:space-x-4 lg:space-y-0">
         <img
-          src="/images/vektor-logo-white.svg"
+          src={logoWhite}
           alt="vektorprogrammet logo hvit"
           className="h-24 md:h-40"
         />
@@ -176,7 +195,7 @@ function AppFooter() {
 }
 
 function FooterSponsors() {
-  const sponsors = getSponsors();
+  const sponsors = getAllSponsors();
 
   return (
     <ul className="text-white">
