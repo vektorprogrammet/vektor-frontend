@@ -33,7 +33,7 @@ export default function Layout() {
         "grid grid-cols-[10%_80%_10%] grid-rows-[auto_1fr_auto]",
       )}
     >
-      <AppHeader className="col-span-full" />
+      <NavBar className="col-span-full" />
 
       <Outlet />
 
@@ -47,33 +47,49 @@ export default function Layout() {
   );
 }
 
-function AppHeader() {
+function NavBar({ className }: { className?: string }) {
   const { width } = useViewportSize();
   const isMobile = width < breakpointPixels.md;
 
   return (
-    <div className="sticky top-2 z-50">
+    <nav
+      className={cn(
+        "h-full w-full py-4",
+        // Affects children and is layout dependent
+        "grid grid-cols-subgrid place-items-center",
+        className,
+      )}
+    >
       {isMobile ? (
-        <MobileMenu routes={navRoutes} />
+        <MobileMenu
+          routes={navRoutes}
+          className="sticky top-4 col-start-3 col-end-4 items-end"
+        />
       ) : (
         <>
-          <div className="flex w-full flex-wrap justify-center lg:px-4">
-            <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
-              <img
-                src={icon}
-                alt="vektorprogrammet logo"
-                width={32}
-                height={32}
-              />
-              <NavTabs routes={navRoutes} />
-            </div>
+          <div
+            className={cn(
+              "sticky top-2 w-fit gap-1 rounded-full bg-[#ccecf6]/40 px-1.5 shadow-md backdrop-blur",
+              // Depends on parent layout
+              "col-start-2 col-end-3",
+              // Affects children
+              "flex flex-row place-items-center",
+            )}
+          >
+            <img
+              src={icon}
+              alt="vektorprogrammet logo"
+              width={32}
+              height={32}
+            />
+            <NavTabs routes={navRoutes} />
           </div>
-          <div className="absolute top-0 right-2 flex rounded-full">
+          <div className="col-start-3 col-end-4">
             <LoginButtons />
           </div>
         </>
       )}
-    </div>
+    </nav>
   );
 }
 
@@ -83,14 +99,19 @@ function NavTabs({
   routes: Array<{ name: string; path: To }>;
 }) {
   return (
-    <div className="flew-row relative mx-auto flex h-11 rounded-full px-0.5">
+    <div className="flew-row flex h-11 rounded-full px-0.5">
       {routes.map((route) => {
         return (
           <NavLink
             to={route.path}
             key={route.path.toString()}
             className={({ isActive }) =>
-              `${isActive ? "text-black" : "text-neutral-700 hover:text-black"} relative my-1.5 place-content-center px-4 py-auto text-center font-medium text-sm`
+              cn(
+                isActive ? "text-black" : "text-neutral-700 hover:text-black",
+                "my-1.5 px-4 font-medium text-sm",
+                // Affects children
+                "relative place-content-center text-nowrap text-center",
+              )
             }
             prefetch="intent"
           >
@@ -136,14 +157,15 @@ function LoginButtons() {
 
 const MobileMenu = ({
   routes,
-}: { routes: Array<{ name: string; path: To }> }) => {
+  className,
+}: { routes: Array<{ name: string; path: To }>; className?: string }) => {
   return (
     <Drawer>
-      <DrawerTrigger>
-        <div className="fixed top-12 right-0 flex rounded-l-full bg-black/80 p-1 pr-2">
+      <DrawerTrigger className={cn(className)}>
+        <div className={cn("flex rounded-l-full bg-black/80 p-1 pr-2")}>
           <Avatar
             className={cn(
-              "h-full w-full rounded-full bg-vektor-bg p-0",
+              "h-full w-full bg-vektor-bg p-0",
               buttonVariants({
                 variant: "outline",
                 size: "icon",
