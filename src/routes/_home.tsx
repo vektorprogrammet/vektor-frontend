@@ -15,6 +15,7 @@ import {
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import "~/home.css";
+import { useIsMobile } from "~/hooks/use-mobile";
 import { navRoutes } from "~/routes";
 
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
@@ -30,23 +31,30 @@ export default function Layout() {
 }
 
 function AppHeader() {
+  const isMobile = useIsMobile();
+
   return (
     <div className="sticky top-2 z-50">
-      <div className="flex w-full flex-wrap justify-center lg:px-4">
-        <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
-          <img
-            src="/images/vektor-logo-circle.svg"
-            alt="vektorprogrammet logo"
-            width={32}
-            height={32}
-          />
-          <NavTabs routes={navRoutes} />
-        </div>
-      </div>
-      <div className="absolute top-0 right-2 hidden rounded-full md:flex">
-        <LoginButtons />
-      </div>
-      <MobileMenu routes={navRoutes} />
+      {isMobile ? (
+        <MobileMenu routes={navRoutes} />
+      ) : (
+        <>
+          <div className="flex w-full flex-wrap justify-center lg:px-4">
+            <div className="mr-12 flex w-fit items-center gap-1 rounded-full bg-[#ccecf6] bg-opacity-40 px-1.5 shadow-md backdrop-blur dark:bg-black dark:bg-opacity-40">
+              <img
+                src="/images/vektor-logo-circle.svg"
+                alt="vektorprogrammet logo"
+                width={32}
+                height={32}
+              />
+              <NavTabs routes={navRoutes} />
+            </div>
+          </div>
+          <div className="absolute top-0 right-2 hidden rounded-full md:flex">
+            <LoginButtons />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -109,53 +117,51 @@ const MobileMenu = ({
   routes,
 }: { routes: Array<{ name: string; path: To }> }) => {
   return (
-    <div className="md:hidden">
-      <Drawer>
-        <DrawerTrigger>
-          <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
-            <Button
-              variant="outline"
-              className="rounded-full bg-vektor-bg p-0"
-              size="icon"
-            >
-              <Avatar className="h-full w-full rounded-full">
-                <AvatarImage src="/images/team/IT-Tor.png" />
-                <AvatarFallback>{"Tor"}</AvatarFallback>
-              </Avatar>
-            </Button>
-          </div>
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader />
-          <DrawerDescription>
-            <div className="flex items-start justify-between p-6">
-              <ul className="flex w-full flex-col items-start gap-4 text-center">
-                {routes.map((route) => (
-                  <li key={route.name}>
-                    <Link
-                      className="text-lg dark:text-white"
-                      reloadDocument
-                      to={route.path}
-                      prefetch="render"
-                    >
-                      {route.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex w-fit justify-center">
-                <LoginButtons />
-              </div>
+    <Drawer>
+      <DrawerTrigger>
+        <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
+          <Button
+            variant="outline"
+            className="rounded-full bg-vektor-bg p-0"
+            size="icon"
+          >
+            <Avatar className="h-full w-full rounded-full">
+              <AvatarImage src="/images/team/IT-Tor.png" />
+              <AvatarFallback>{"Tor"}</AvatarFallback>
+            </Avatar>
+          </Button>
+        </div>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader />
+        <DrawerDescription>
+          <div className="flex items-start justify-between p-6">
+            <ul className="flex w-full flex-col items-start gap-4 text-center">
+              {routes.map((route) => (
+                <li key={route.name}>
+                  <Link
+                    className="text-lg dark:text-white"
+                    reloadDocument
+                    to={route.path}
+                    prefetch="render"
+                  >
+                    {route.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="flex w-fit justify-center">
+              <LoginButtons />
             </div>
-          </DrawerDescription>
-          <DrawerFooter>
-            <DrawerClose>
-              <Button variant="outline">{"Close"}</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
+          </div>
+        </DrawerDescription>
+        <DrawerFooter>
+          <DrawerClose>
+            <Button variant="outline">{"Close"}</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 };
 
