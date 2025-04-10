@@ -15,36 +15,32 @@ export default function MainPage() {
   const metrics = getMetrics();
 
   return (
-    <main className="flex-grow">
-      {/* Use component when the rendered component needs no props */}
-      {/* Getting the routes from the defined route file in pages */}
-      <div className="bg-vektor-index-blue md:flex md:h-[80vh] md:pt-14">
-        {/*Upper start*/}
-        <div className="flex w-full flex-col items-center text-center md:h-[26rem] md:w-1/2 md:p-8 lg:h-[31rem] xl:h-[35rem]">
-          <img
-            className="w-2/4 pt-12 pb-14 md:hidden"
-            src={vektorLogo}
-            alt="Vektorprogrammet"
-          />
-          <img
-            className="mx-auto my-auto h-full w-full p-5 pt-14 md:mr-0 md:ml-auto md:w-auto md:pt-0"
-            src={vektorForsidebilde}
-            alt="Vektorprogrammet bildet"
-          />
-        </div>
-        <div className="w-full p-6 text-center md:mt-24 md:mr-auto md:w-1/2 md:p-10 md:text-left">
-          <h1 className="mb-4 hidden font-bold text-4xl md:block dark:text-text-dark">
-            {"Vektorprogrammet"}
-          </h1>
-          <div className="mt-6 mb-4 flex justify-center md:block">
-            <p className="text-left text-md md:w-4/5 md:text-xl dark:text-text-dark">
-              {`- sender studenter til ungdomsskoler for å hjelpe til som lærerens
+    <main>
+      <header className="grid grid-cols-1 place-items-center gap-14 bg-vektor-index-blue pt-14 md:grid-cols-2 md:flex-row">
+        <img
+          className="w-2/4 max-w-prose md:hidden"
+          src={vektorLogo}
+          alt={"Logo til Vektorprogrammet"}
+        />
+        <img
+          className="size-full max-w-prose object-contain"
+          src={vektorForsidebilde}
+          width={801}
+          height={765}
+          alt="Illustrasjon av assistenter fra Vektorprogrammet foran en tavle med matteformler"
+        />
+        <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+          <h1 className="text-wrap font-bold text-4xl">{"Vektorprogrammet"}</h1>
+          <p className="text-balance text-md">
+            {`- sender studenter til ungdomsskoler for å hjelpe til som lærerens
               assistent i matematikkundervisningen`}
-            </p>
-          </div>
-          <Button variant="green">{"Les mer og bli assistent"}</Button>
+          </p>
+          <Button variant="green" className="max-w-fit">
+            {"Les mer og bli assistent"}
+          </Button>
         </div>
-      </div>
+      </header>
+
       {/*Upper end*/}
       <div className="info-background mb-0 flex max-w-full flex-row flex-wrap items-center justify-center gap-24 pt-72 pb-72 text-center md:mt-20 md:gap-40">
         {/*Middle start*/}
