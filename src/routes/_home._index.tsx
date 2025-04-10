@@ -1,99 +1,19 @@
 import { buttonVariants } from "@/components/ui/button";
 import { useInView, useMotionValue, useSpring } from "motion/react";
-import { useEffect, useRef } from "react";
-import { Link, type To, href } from "react-router";
+import { Fragment, useEffect, useRef } from "react";
+import { Link } from "react-router";
+import { getMetrics } from "~/api/main";
+import { getMainSponsors, getSponsors } from "~/api/sponsor";
 import { Button } from "~/components/ui/button";
-import Abelprisen from "/images/mainPage/sponsor/Abelprisen.png";
-import ksBergen from "/images/mainPage/sponsor/KSBergen.png";
-import Matematikksenteret from "/images/mainPage/sponsor/Matematikksenteret.png";
-import NTNUIE from "/images/mainPage/sponsor/NTNUIE.png";
-import NTNUIV from "/images/mainPage/sponsor/NTNUIV.png";
-import Samarbeidsforum from "/images/mainPage/sponsor/SamarbeidsForum.png";
-import sparebankstiftelsenDnb from "/images/mainPage/sponsor/SparebankstiftelsenDNB.png";
-import Tekna from "/images/mainPage/sponsor/Tekna.png";
-import UiB from "/images/mainPage/sponsor/UIB.png";
-import VisionTech from "/images/mainPage/sponsor/VisionTech.png";
 import vektorForsidebilde from "/images/mainPage/vektor-forsidebilde.png";
 import vektorLogo from "/images/vektor-logo.svg";
 
-const hovedsponsor = [
-  {
-    name: "Abelprisen",
-    image: Abelprisen,
-  },
-  {
-    name: "Sparebankstiftelsen DNB",
-    image: sparebankstiftelsenDnb,
-  },
-];
-
-const sponsorer = [
-  {
-    name: "Tekna",
-    image: Tekna,
-  },
-  {
-    name: "NTNU - Fakultet for ingeniørvitenskap",
-    image: NTNUIV,
-  },
-  {
-    name: "NTNU - Fakultet for informasjonsteknologi og elektronikk",
-    image: NTNUIE,
-  },
-  {
-    name: "Samarbeidsforum",
-    image: Samarbeidsforum,
-  },
-  {
-    name: "Universitetet i Bergen - Det matematisk-naturvitenskapelige fakultet",
-    image: UiB,
-  },
-  {
-    name: "Matematikksenteret",
-    image: Matematikksenteret,
-  },
-  {
-    name: "VisionTech",
-    image: VisionTech,
-  },
-  {
-    name: "Kulturstyret Bergen",
-    image: ksBergen,
-  },
-];
-interface MainPageProps {
-  number: number;
-  title: string;
-  text: string;
-  route: {
-    path: To;
-    text: string;
-  };
-}
-
-const cards: Array<MainPageProps> = [
-  {
-    number: 2218,
-    title: "Assistenter",
-    text: "Over 2218 studenter har hatt et verv som vektorassistent i Vektorprogrammet",
-    route: {
-      path: href("/assistenter"),
-      text: "Les mer om assistenter",
-    },
-  },
-  {
-    number: 608,
-    title: "I team",
-    text: "Over 608 studenter har hatt et verv i et av Vektorprogrammets mange team",
-    route: {
-      path: href("/team"),
-      text: "Les mer om verv i team",
-    },
-  },
-];
-
 // biome-ignore lint/style/noDefaultExport: Route Modules require default export https://reactrouter.com/start/framework/route-module
-export default function mainPage() {
+export default function MainPage() {
+  const mainSponsors = getMainSponsors();
+  const sponsors = getSponsors();
+  const metrics = getMetrics();
+
   return (
     <main className="flex-grow">
       {/* Use component when the rendered component needs no props */}
@@ -128,7 +48,7 @@ export default function mainPage() {
       {/*Upper end*/}
       <div className="info-background mb-0 flex max-w-full flex-row flex-wrap items-center justify-center gap-24 pt-72 pb-72 text-center md:mt-20 md:gap-40">
         {/*Middle start*/}
-        {cards.map(({ number, title, text, route }) => (
+        {metrics.map(({ number, title, description, link }) => (
           <div
             key={title}
             className="flex max-w-96 flex-col gap-5 text-vektor-bg"
@@ -139,14 +59,16 @@ export default function mainPage() {
               </div>
               <p className="text-xl md:text-2xl">{title}</p>
             </div>
-            <p className="max-w-80 text-sm md:max-w-96 md:text-xl">{text}</p>
+            <p className="max-w-80 text-sm md:max-w-96 md:text-xl">
+              {description}
+            </p>
             <div>
               <Link
-                to={route.path}
+                to={link.path}
                 className={buttonVariants({ variant: "green" })}
                 prefetch="intent"
               >
-                {route.text}
+                {link.text}
               </Link>
             </div>
           </div>
@@ -156,31 +78,27 @@ export default function mainPage() {
       <div className="flex justify-center">
         <div className="flex max-w-4xl flex-col md:gap-32">
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
-            {hovedsponsor.map((sponsor) => (
+            {mainSponsors.map(({ name, image }) => (
               <div
                 className="flex h-72 w-72 items-center md:h-96 md:w-96"
-                key={sponsor.name}
+                key={name}
               >
-                <img
-                  className="h-auto w-auto"
-                  src={sponsor.image}
-                  alt={sponsor.name}
-                />
+                <img className="h-auto w-auto" src={image} alt={name} />
               </div>
             ))}
           </div>
           <div className="flex flex-row flex-wrap justify-around md:justify-between">
-            {sponsorer.map((sponsor) => (
-              <div
-                className="flex h-36 w-36 items-center md:h-64 md:w-64"
-                key={sponsor.name}
-              >
-                <img
-                  className="h-auto w-auto"
-                  src={sponsor.image}
-                  alt={sponsor.name}
-                />
-              </div>
+            {sponsors.map(({ name, image }) => (
+              <Fragment key={name}>
+                {image ?? (
+                  <div
+                    className="flex h-36 w-36 items-center md:h-64 md:w-64"
+                    key={name}
+                  >
+                    <img className="h-auto w-auto" src={image} alt={name} />
+                  </div>
+                )}
+              </Fragment>
             ))}
           </div>
         </div>

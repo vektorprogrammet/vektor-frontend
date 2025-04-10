@@ -4,7 +4,7 @@ import { useViewportSize } from "@mantine/hooks";
 import { FolderOpen, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { Link, NavLink, Outlet, type To } from "react-router";
-import { type Sponsor, getSponsors } from "~/api/sponsor";
+import { type Sponsor, getAllSponsors } from "~/api/sponsor";
 import { buttonVariants } from "~/components/ui/button";
 import {
   Drawer,
@@ -193,7 +193,7 @@ function AppFooter() {
 }
 
 function FooterSponsors() {
-  const sponsors = getSponsors();
+  const sponsors = getAllSponsors();
 
   return (
     <ul className="text-white">
