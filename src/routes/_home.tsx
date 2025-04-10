@@ -13,6 +13,7 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import "~/home.css";
@@ -121,45 +122,53 @@ const MobileMenu = ({
   return (
     <Drawer>
       <DrawerTrigger>
-        <div className="fixed top-12 right-0 flex rounded-l-full bg-[rgba(0,0,0,0.8)] p-1 pr-2">
-          <Button
-            variant="outline"
-            className="rounded-full bg-vektor-bg p-0"
-            size="icon"
+        <div className="fixed top-12 right-0 flex rounded-l-full bg-black/80 p-1 pr-2">
+          <Avatar
+            className={cn(
+              "h-full w-full rounded-full bg-vektor-bg p-0",
+              buttonVariants({
+                variant: "outline",
+                size: "icon",
+                className: "rounded-full",
+              }),
+            )}
           >
-            <Avatar className="h-full w-full rounded-full">
-              <AvatarImage src="/images/team/IT-Tor.png" />
-              <AvatarFallback>{"Tor"}</AvatarFallback>
-            </Avatar>
-          </Button>
+            <AvatarImage src="/images/team/IT-Tor.png" />
+            <AvatarFallback>{"Tor"}</AvatarFallback>
+          </Avatar>
         </div>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader />
-        <DrawerDescription>
-          <div className="flex items-start justify-between p-6">
-            <ul className="flex w-full flex-col items-start gap-4 text-center">
-              {routes.map((route) => (
-                <li key={route.name}>
-                  <Link
-                    className="text-lg dark:text-white"
-                    reloadDocument
-                    to={route.path}
-                    prefetch="render"
-                  >
-                    {route.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="flex w-fit justify-center">
-              <LoginButtons />
-            </div>
+        <DrawerHeader>
+          <DrawerTitle>{"Navigasjonsmeny"}</DrawerTitle>
+          <DrawerDescription hidden={true}>
+            {"Meny for å navigere til hovedsider på nettsiden"}
+          </DrawerDescription>
+        </DrawerHeader>
+
+        <div className="flex items-start justify-between p-6">
+          <ul className="flex w-full flex-col items-start gap-4 text-center">
+            {routes.map((route) => (
+              <li key={route.name}>
+                <Link
+                  className="text-lg dark:text-white"
+                  reloadDocument
+                  to={route.path}
+                  prefetch="render"
+                >
+                  {route.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex w-fit justify-center">
+            <LoginButtons />
           </div>
-        </DrawerDescription>
+        </div>
+
         <DrawerFooter>
-          <DrawerClose>
-            <Button variant="outline">{"Close"}</Button>
+          <DrawerClose className={buttonVariants({ variant: "outline" })}>
+            {"Close"}
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
